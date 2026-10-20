@@ -22,7 +22,7 @@ const Junk = ({ sail, size, flip = false }: { sail: string; size: number; flip?:
   </g>
 );
 
-const Flame = ({ size, seed, frame, k }: { size: number; seed: number; frame: number; k: number }) => {
+export const Flame = ({ size, seed, frame, k }: { size: number; seed: number; frame: number; k: number }) => {
   const f = (n: number) => 1 + 0.18 * Math.sin(frame * (0.7 + random(seed + n) * 0.6) + random(seed + n + 9) * 6);
   const tongue = (w: number, h: number, color: string, n: number) => (
     <path
