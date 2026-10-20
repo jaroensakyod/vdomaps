@@ -4,8 +4,8 @@ import { style } from "./style";
 
 export type ThumbProps = { headline: string; accent?: string; sub?: string; frame?: number };
 
-// Thumbnail = one frozen frame of the episode + a big headline. `accent` is the part of the headline drawn in
-// the accent colour (the hook word); "\n" forces a line break. Register it at 1280×720 (or 1080×1920) with the
+// Thumbnail = one frozen frame of the episode (render it without captions) + a big headline. `accent` is the part
+// of the headline drawn in the accent colour (the hook word); "\n" forces a line break. Register it at 1280×720 (or 1080×1920) with the
 // episode's durationInFrames — Freeze is clamped to the composition length — and render with scripts/thumb.mjs.
 export const Thumbnail = ({ headline, accent, sub, frame = 0, children }: ThumbProps & { children: ReactNode }) => {
   const { width, height } = useVideoConfig();
@@ -19,7 +19,7 @@ export const Thumbnail = ({ headline, accent, sub, frame = 0, children }: ThumbP
       <AbsoluteFill
         style={{
           background: vertical
-            ? "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%)"
+            ? "linear-gradient(180deg, rgba(0,0,0,0) 15%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0) 60%)"
             : "linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 62%)",
         }}
       />
@@ -28,7 +28,7 @@ export const Thumbnail = ({ headline, accent, sub, frame = 0, children }: ThumbP
           position: "absolute",
           left: 70 * s,
           right: vertical ? 70 * s : width * 0.3,
-          top: vertical ? height * 0.12 : undefined,
+          top: vertical ? height * 0.3 : undefined, // below the Shorts UI band and any top-corner HUD
           bottom: vertical ? undefined : 90 * s,
           fontFamily: style.font,
           lineHeight: 1.25,
