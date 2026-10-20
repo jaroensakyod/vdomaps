@@ -4,10 +4,11 @@ import { country, places } from "../../components/data";
 import { AreaLabel, PointLabel } from "../../components/Labels";
 import { Countries, Fill, Graticule, MapFrame, Sphere } from "../../components/Map";
 import { Credit, TearCalendar, Title } from "../../components/Overlays";
+import { ReasonChips } from "../../components/Reasons";
 import { DistanceHud, Route } from "../../components/Route";
 import { style } from "../../components/style";
 
-// 9 s toolchain test: globe spin → zoom to Thailand → fill → labels → calendar tear → flight to Tokyo.
+// 9 s toolchain test: globe spin → zoom to Thailand → fill → labels → calendar tear + reason chips → flight to Tokyo.
 export const MAP_TEST_FRAMES = 270;
 
 const thailand = country("764");
@@ -48,6 +49,15 @@ export const MapTest = () => {
         pages={[
           { frame: 135, day: "20", month: "ตุลาคม", year: "2569" },
           { frame: 185, day: "21", month: "ตุลาคม", year: "2569" },
+        ]}
+      />
+      <ReasonChips
+        title="ชุดเครื่องมือ"
+        end={190}
+        items={[
+          { text: "ระบายสีพื้นที่", at: 140 },
+          { text: "ป้ายชื่อเมือง", at: 154 },
+          { text: "ปฏิทินฉีก", at: 168 },
         ]}
       />
       <DistanceHud from={places.bangkok} to={places.tokyo} start={190} end={258} hours={6} />

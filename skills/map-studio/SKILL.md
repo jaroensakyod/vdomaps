@@ -18,7 +18,7 @@ current step needs:
 | `references/data-sources.md` | Fetching map data. Sources, licenses, exact credit lines. |
 | `references/remotion-recipes.md` | Writing scenes. Camera, projections, drawing, performance, Thai text. |
 | `references/pacing.md` | Writing the script. Shorts and long-form structures, hooks, retention. |
-| `references/audio.md` | Voice-over, word timing with Whisper, music, loudness. |
+| `references/audio.md` | Voice-over, word timing with Whisper, music + SFX, loudness, subtitles, description, thumbnail. |
 
 ## Hard rules
 
@@ -62,3 +62,4 @@ out/                  renders, stills, subtitles, thumbnail, description.txt
 
 `out/<slug>.mp4` (16:9 and/or 9:16), `out/<slug>.srt`, `out/<slug>-thumb.png` (1280×720 or 1080×1920),
 `out/<slug>-description.txt` (summary, chapters with timestamps for long-form, sources, map credits).
+Each has a script: `npm run align`, `srt`, `describe`, `thumb`, `sfx`, `loudness` (see `references/audio.md`).

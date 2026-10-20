@@ -8,7 +8,13 @@
     "data": "node scripts/fetch-data.mjs",
     "typecheck": "tsc --noEmit",
     "tts": "node scripts/tts-gemini.mjs",
-    "transcribe": "node scripts/transcribe.mjs"
+    "transcribe": "node scripts/transcribe.mjs",
+    "align": "node scripts/align.mjs",
+    "srt": "node scripts/srt.mjs",
+    "describe": "node scripts/describe.mjs",
+    "thumb": "node scripts/thumb.mjs",
+    "sfx": "node scripts/sfx.mjs",
+    "loudness": "node scripts/loudness.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.537",
@@ -21,11 +27,12 @@
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@remotion/install-whisper-cpp": "4.0.537",
     "@types/d3-geo": "^3.1.0",
     "@types/geojson": "^7946.0.16",
     "@types/react": "^19.1.0",
-    "@types/topojson-specification": "^1.0.5",
     "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
     "typescript": "^5.8.3"
   }
 }

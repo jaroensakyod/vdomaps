@@ -35,7 +35,8 @@ Follow `pacing.md`. Mark every approximate geography with *(approx.)*. Present t
 
 ## 6. Voice & timing
 - Generate or receive the VO (`public/audio/vo.wav`). See `audio.md`.
-- Run Whisper with word timestamps → `timing.json`. Align beat start frames to the first word of each beat.
+- `npm run align -- <slug>` adds word timing to `timing.json` (whisper.cpp, local). Fix any beat with a low
+  match % before building scenes. Beat frames come from `buildBeats()` in `src/components/subs.mjs`.
 
 ## 7. Build & render
 - Build scenes in `Scenes.tsx` with components from `src/components/`. Every animation is driven by
@@ -44,8 +45,8 @@ Follow `pacing.md`. Mark every approximate geography with *(approx.)*. Present t
 - Render draft at lower quality (`--scale=0.5`) for review if the video is long.
 
 ## 8. Deliver  ⛔ GATE 3 — user reviews the final render
-- Final render (`--crf 18`), subtitles (.srt from timing.json), thumbnail still, description with chapters,
-  sources and map credits. Check audio loudness (`audio.md`).
+- Final render (`--crf 18`), then `npm run loudness -- out/<slug>.mp4` (−14 LUFS), `npm run srt -- <slug>`,
+  `npm run describe -- <slug>` (chapters, sources, map + music credits) and `npm run thumb -- …`. See `audio.md`.
 - Hand over file paths. Do not upload.
 
 ## Re-using for the next episode

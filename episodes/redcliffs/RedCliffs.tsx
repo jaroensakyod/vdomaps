@@ -4,27 +4,18 @@ import { camAt, camForFeature, globeCam, type CamKey } from "../../components/ca
 import { Caption } from "../../components/Caption";
 import { MapFrame } from "../../components/Map";
 import { Region } from "../../components/Region";
+import { buildBeats, LAYOUT, totalFrames } from "../../components/subs.mjs";
 import beatsText from "./beats.json";
 import { Fleet, Wind } from "./Fleet";
 import { LIU_208, onRiver, P, SHU_222, VIEW, WEI_208, WEI_222, WU_208, WU_222 } from "./geo";
 import { Badge, C, fonts, InkLabel, PaperMap, PaperTexture } from "./Parchment";
 import timing from "./timing.json";
 
-export const FPS = 30;
-const LEAD = 12;
-const GAP = 8;
-const TAIL = 45;
+export const FPS = LAYOUT.fps;
 
-export const BEATS = (() => {
-  let f = LEAD;
-  return timing.map((t, i) => {
-    const len = Math.ceil(t.sec * FPS);
-    const b = { ...t, start: f, len, end: f + len, text: beatsText[i].caption ?? beatsText[i].text };
-    f += len + GAP;
-    return b;
-  });
-})();
-export const TOTAL_FRAMES = BEATS[BEATS.length - 1].end + TAIL;
+// Beat frames from the VO lengths (LEAD 12 / GAP 8 / TAIL 45 frames, shared with scripts/srt.mjs and describe.mjs).
+export const BEATS = buildBeats(timing, beatsText);
+export const TOTAL_FRAMES = totalFrames(BEATS);
 const B = Object.fromEntries(BEATS.map((b) => [b.id, b])) as Record<string, (typeof BEATS)[number]>;
 
 const fade = (frame: number, a: number, b: number, c?: number, d?: number) =>
@@ -190,7 +181,7 @@ export const RedCliffs = () => {
   return (
     <AbsoluteFill style={{ background: C.paper }}>
       {BEATS.map((b) => (
-        <Sequence key={b.id} from={b.start} durationInFrames={b.len + GAP}>
+        <Sequence key={b.id} from={b.start} durationInFrames={b.len + LAYOUT.gap}>
           <Html5Audio src={staticFile(b.file)} />
         </Sequence>
       ))}
@@ -237,7 +228,7 @@ export const RedCliffs = () => {
       <Title />
       <Numbers />
       {BEATS.map((b) => (
-        <Caption key={b.id} text={b.text} start={b.start} len={b.len} font={fonts.body} color="#fff6dd" stroke="#2a1b0e" />
+        <Caption key={b.id} text={b.text} spoken={b.spoken} words={b.words} start={b.start} len={b.len} font={fonts.body} color="#fff6dd" stroke="#2a1b0e" />
       ))}
       <Credit />
     </AbsoluteFill>

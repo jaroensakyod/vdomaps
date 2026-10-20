@@ -1,16 +1,10 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { cues, type Word } from "./subs.mjs";
 
-// Subtitles for one VO beat. Phrases are the space-separated parts of the line, merged up to `maxChars`,
-// and timed by their share of characters (good enough without word timestamps; swap in Whisper timing later).
-export const chunks = (text: string, maxChars = 26) => {
-  const out: string[] = [];
-  for (const phrase of text.split(/\s+/).filter(Boolean)) {
-    const last = out[out.length - 1];
-    if (last && (last + " " + phrase).length <= maxChars) out[out.length - 1] = last + " " + phrase;
-    else out.push(phrase);
-  }
-  return out;
-};
+// Subtitles for one VO beat. Phrases are the space-separated parts of the line, merged up to a max length.
+// With `words` (timing.json after `npm run align`) each phrase appears when it is spoken; without them,
+// phrases are timed by their share of characters. `spoken` is the TTS text when it differs from `text`.
+export { chunks } from "./subs.mjs";
 
 export const Caption = ({
   text,
@@ -19,6 +13,8 @@ export const Caption = ({
   font,
   color = "#fff",
   stroke = "#1b130b",
+  spoken,
+  words,
 }: {
   text: string;
   start: number;
@@ -26,24 +22,17 @@ export const Caption = ({
   font: string;
   color?: string;
   stroke?: string;
+  spoken?: string;
+  words?: Word[];
 }) => {
   const frame = useCurrentFrame();
-  const { width, height } = useVideoConfig();
+  const { width, height, fps } = useVideoConfig();
   const s = Math.min(width, height) / 1080;
   const vertical = height > width;
   if (frame < start || frame >= start + len + 4) return null;
-  const parts = chunks(text, vertical ? 20 : 30);
-  const total = parts.reduce((a, p) => a + p.length, 0);
-  const t = ((frame - start) / len) * total;
-  let acc = 0;
-  let idx = parts.length - 1;
-  for (let i = 0; i < parts.length; i++) {
-    acc += parts[i].length;
-    if (t < acc) {
-      idx = i;
-      break;
-    }
-  }
+  const list = cues({ text, spoken, words, sec: len / fps, maxChars: vertical ? 20 : 30 });
+  const t = (frame - start) / fps;
+  const cue = list.find((c) => t < c.end) ?? list[list.length - 1];
   const fadeIn = interpolate(frame - start, [0, 4], [0, 1], { extrapolateRight: "clamp" });
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
@@ -66,7 +55,7 @@ export const Caption = ({
           padding: `0 ${60 * s}px`,
         }}
       >
-        {parts[idx]}
+        {cue.text}
       </div>
     </AbsoluteFill>
   );

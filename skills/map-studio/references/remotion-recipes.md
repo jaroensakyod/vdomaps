@@ -39,6 +39,13 @@ All components referenced here are in `template/src/components/`. Read their sou
 - **Glow:** duplicate the layer behind itself with `filter: blur(6s px)` and higher brightness; for many
   glowing lines use canvas with `globalCompositeOperation = "lighter"`.
 
+## Overlays & sound
+- `ReasonChips` (`Reasons.tsx`): numbered reasons 1 2 3 that pop in on cue; the newest is highlighted, earlier
+  ones dim. Put a pop SFX on each `at`.
+- `Thumbnail` (`Thumbnail.tsx`): a frozen episode frame + headline with an accent word.
+- `Music`, `Sfx`, `SFX`, `voiceSpans` (`Sound.tsx`): ducked music bed and synthesised effects (`audio.md`).
+- `Caption` takes `words` + `spoken` from `buildBeats()` for word-timed subtitles.
+
 ## Rasters (DEM, imagery)
 - Pre-process outside Remotion (gdal or a Node script with `geotiff`): crop, reproject to EPSG:4326, export PNG.
 - Globe imagery: `@remotion/three` sphere with the Blue Marble equirectangular texture, or render to canvas with
