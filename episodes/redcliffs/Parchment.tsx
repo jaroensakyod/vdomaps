@@ -126,7 +126,8 @@ export const Badge = ({
   end?: number;
   above?: boolean;
 }) => {
-  const { projection, cam, s } = useMap();
+  const { projection, cam, s: s0, width, height } = useMap();
+  const s = s0 * (height > width ? 1.5 : 1); // 9:16 is watched on phones: map text 1.5× larger
   const { frame, k, out } = usePop(start, end);
   if (frame < start || out <= 0 || !isVisible(cam, at)) return null;
   const xy = projection(at);
@@ -208,7 +209,8 @@ export const InkLabel = ({
   dy?: number;
   color?: string;
 }) => {
-  const { projection, cam, s } = useMap();
+  const { projection, cam, s: s0, width, height } = useMap();
+  const s = s0 * (height > width ? 1.5 : 1); // 9:16 is watched on phones: map text 1.5× larger
   const { frame, k, out } = usePop(start, end);
   if (frame < start || out <= 0 || !isVisible(cam, at)) return null;
   const xy = projection(at);

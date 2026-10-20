@@ -46,7 +46,9 @@ const fade = (f: number, a: number, b: number, c?: number, d?: number) =>
   c === undefined ? interpolate(f, [a, b], [0, 1], clamp) : interpolate(f, [a, b, c, d!], [0, 1, 1, 0], clamp);
 const useUnit = () => {
   const { width, height, fps } = useVideoConfig();
-  return { width, height, fps, s: Math.min(width, height) / 1080, vertical: height > width };
+  const vertical = height > width;
+  // 9:16 is watched on phones: overlay cards and text 1.3× larger than in 16:9
+  return { width, height, fps, s: (Math.min(width, height) / 1080) * (vertical ? 1.3 : 1), vertical };
 };
 const card = (s: number) =>
   ({
@@ -66,8 +68,13 @@ const Title = () => {
   return (
     <AbsoluteFill style={{ alignItems: "center", paddingTop: vertical ? height * 0.13 : 70 * s, opacity: o }}>
       <div style={{ ...card(s), transform: `translateY(${y * s}px)`, textAlign: "center", padding: `${12 * s}px ${50 * s}px ${16 * s}px`, outline: `${2 * s}px solid ${C.ink}`, outlineOffset: `${6 * s}px` }}>
-        <div style={{ fontSize: 30 * s, color: C.wu, fontWeight: 700, lineHeight: 1.5 }}>สามก๊ก · ก่อนศึกผาแดง</div>
-        <div style={{ fontFamily: fonts.title, fontSize: (vertical ? 92 : 100) * s, lineHeight: 1.35 }}>ขงเบ้งยืมธนูแสนดอก</div>
+        <div style={{ fontSize: 30 * s, color: C.wu, fontWeight: 700, lineHeight: 1.5 }}>สามก๊ก · ขงเบ้งยืมธนูแสนดอก</div>
+        {/* the hook as a question: the episode name above it no longer gives the answer away first */}
+        <div style={{ fontFamily: fonts.title, fontSize: (vertical ? 64 : 84) * s, lineHeight: 1.3 }}>
+          ไม่ทำธนูสักดอก
+          <br />
+          <span style={{ color: C.wu }}>แต่ได้มาแสนดอก?</span>
+        </div>
       </div>
     </AbsoluteFill>
   );
@@ -226,7 +233,7 @@ const NextCard = () => {
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       <AbsoluteFill style={{ opacity: glow, background: `radial-gradient(ellipse at 50% 60%, rgba(255,122,26,0) 45%, rgba(255,122,26,0.35) 75%, rgba(198,45,20,0.6) 100%)` }} />
       {frame >= cardAt && (
-        <AbsoluteFill style={{ alignItems: vertical ? "center" : "flex-end", justifyContent: vertical ? "flex-start" : "flex-start", padding: vertical ? `${height * 0.42}px 0 0` : `${70 * s}px ${70 * s}px 0 0`, opacity: fade(frame, cardAt, cardAt + 6, end + 40, end + 44) }}>
+        <AbsoluteFill style={{ alignItems: vertical ? "center" : "flex-end", justifyContent: vertical ? "flex-start" : "flex-start", padding: vertical ? `${height * 0.2}px 0 0` : `${70 * s}px ${70 * s}px 0 0`, opacity: fade(frame, cardAt, cardAt + 6, end + 40, end + 44) }}>
           <div style={{ ...card(s), padding: `${16 * s}px ${36 * s}px`, transform: `scale(${k})`, textAlign: "center" }}>
             <div style={{ fontSize: 30 * s, fontWeight: 700, color: C.wu, lineHeight: 1.5 }}>ดูต่อ ▶ คลิปถัดไป</div>
             <div style={{ fontFamily: fonts.title, fontSize: 72 * s, lineHeight: 1.35 }}>ศึกผาแดง</div>
@@ -317,11 +324,11 @@ export const Arrows = ({ captions = true }: { captions?: boolean }) => {
       <Sounds />
       <MapFrame cam={cam}>
         <PaperMap riverBoost={1.6 * fade(frame, B.where.end, B.zhouyu.start + 40, T.stamp + 10, T.stamp + 30)} />
-        <InkLabel at={[116.2, 29.95]} text="แม่น้ำแยงซี" start={B.where.start + 40} end={B.zhouyu.start + 30} dot={false} size={1.2} color={C.river} />
+        <InkLabel at={[117.2, 30.75]} text="แม่น้ำแยงซี" start={B.where.start + 40} end={B.zhouyu.start + 30} dot={false} size={1.2} color={C.river} />
         <InkLabel at={P.wulin} text="ค่ายโจโฉ" start={B.where.start + 50} end={B.zhouyu.start + 20} dy={-24} color={C.wei} />
         <InkLabel at={P.redCliffs} text="ค่ายพันธมิตร (ง่อ + เล่าปี่)" start={B.where.start + 60} end={B.zhouyu.start + 20} dy={44} color={C.wu} />
         <CaoCamp start={B.zhouyu.start + 30} end={T.stamp + 20} />
-        <Badge at={river(0.5, 0.04)} name="โจโฉ" sub="ทัพฝั่งเหนือ" color={C.wei} start={B.zhouyu.start + 40} end={B.nothing.start} />
+        <Badge at={river(0.5, 0.04)} name="โจโฉ" sub="ทัพฝั่งเหนือ" color={C.wei} start={B.zhouyu.start + 40} end={at("zhouyu", 0.55)} />
         <Badge at={ALLY_CAMP} name="จิวยี่" sub="แม่ทัพง่อ" color={C.wu} start={B.zhouyu.start + 10} end={B.nothing.start + 20} above={false} />
         <Badge at={river(0.25, -0.03)} name="ขงเบ้ง" color={C.shu} start={at("zhouyu", 0.35)} end={B.fog.start} above={false} />
         <StrawFleet appear={T.boats} sailStart={T.sail} sailEnd={T.arrive} shootStart={T.shoot} flipAt={T.flip} shootEnd={T.shootEnd} returnStart={T.back} returnEnd={T.home} until={T.stamp + 20} />

@@ -44,7 +44,9 @@ const fade = (f: number, a: number, b: number, c?: number, d?: number) =>
   c === undefined ? interpolate(f, [a, b], [0, 1], clamp) : interpolate(f, [a, b, c, d!], [0, 1, 1, 0], clamp);
 const useUnit = () => {
   const { width, height, fps } = useVideoConfig();
-  return { width, height, fps, s: Math.min(width, height) / 1080, vertical: height > width };
+  const vertical = height > width;
+  // 9:16 is watched on phones: overlay cards and text 1.3× larger than in 16:9
+  return { width, height, fps, s: (Math.min(width, height) / 1080) * (vertical ? 1.3 : 1), vertical };
 };
 const card = (s: number) =>
   ({
@@ -89,9 +91,13 @@ const Title = () => {
   return (
     <AbsoluteFill style={{ alignItems: "center", paddingTop: vertical ? height * 0.13 : 60 * s, opacity: o }}>
       <div style={{ ...card(s), textAlign: "center", padding: `${12 * s}px ${50 * s}px ${16 * s}px`, outline: `${2 * s}px solid ${C.ink}`, outlineOffset: `${6 * s}px` }}>
-        <div style={{ fontSize: 30 * s, color: C.wu, fontWeight: 700, lineHeight: 1.5 }}>สามก๊ก · หลังศึกผาแดง</div>
-        <div style={{ fontFamily: fonts.title, fontSize: (vertical ? 84 : 96) * s, lineHeight: 1.35 }}>กวนอูปล่อยโจโฉ</div>
-        <div style={{ fontSize: 30 * s, lineHeight: 1.5, opacity: 0.8 }}>ทางแคบฮัวหยง · ค.ศ. 208</div>
+        <div style={{ fontSize: 30 * s, color: C.wu, fontWeight: 700, lineHeight: 1.5 }}>สามก๊ก · กวนอูที่ทางแคบฮัวหยง</div>
+        <div style={{ fontFamily: fonts.title, fontSize: (vertical ? 64 : 84) * s, lineHeight: 1.3 }}>
+          ปล่อยโจโฉ
+          <br />
+          <span style={{ color: C.wu }}>ทั้งที่ต้องตาย?</span>
+        </div>
+        <div style={{ fontSize: 30 * s, lineHeight: 1.5, opacity: 0.8 }}>ค.ศ. 208 · หลังศึกผาแดง</div>
       </div>
     </AbsoluteFill>
   );
@@ -144,7 +150,7 @@ const Quote = () => {
   if (o <= 0) return null;
   const k = spring({ frame: frame - from, fps, config: { damping: 14 } });
   return (
-    <AbsoluteFill style={{ alignItems: vertical ? "center" : "flex-start", justifyContent: vertical ? "flex-start" : "flex-end", padding: vertical ? `${height * 0.22}px 0 0` : `0 0 ${200 * s}px ${80 * s}px`, opacity: o }}>
+    <AbsoluteFill style={{ alignItems: vertical ? "center" : "flex-start", justifyContent: vertical ? "flex-start" : "flex-end", padding: vertical ? `${height * 0.13}px 0 0` : `0 0 ${200 * s}px ${80 * s}px`, opacity: o }}>
       <div style={{ ...card(s), maxWidth: 640 * s, padding: `${16 * s}px ${30 * s}px`, borderLeft: `${14 * s}px solid ${C.wei}`, transform: `translateY(${(1 - k) * 30 * s}px)` }}>
         <div style={{ fontSize: 34 * s, fontWeight: 700, lineHeight: 1.5 }}>“เล่าปี่ฉลาดพอ ๆ กับเรา แต่ได้แผนช้าไปหน่อย”</div>
         <div style={{ fontSize: 24 * s, lineHeight: 1.5, opacity: 0.75 }}>โจโฉ · ตามบันทึกซันหยางกงไจ้จี้</div>
@@ -235,12 +241,12 @@ export const Huarong = ({ captions = true }: { captions?: boolean }) => {
         <InkLabel at={P.jiangling} text="เกงจิ๋ว (กังเหลง)" start={B.pledge.start} end={B.plead.start + 20} dy={44} />
         <Arrow points={[P.wulin, [113.1, 29.6], ROAD[0], P.huarong]} start={B.hook.start + 10} end={at("hook", 0.6)} color={C.wei} width={22} variant="dashed" opacity={1 - fade(frame, B.plead.start, B.plead.start + 20)} />
         <InkLabel at={P.huarong} text="ทางแคบฮัวหยง · ตำแหน่งโดยประมาณ" start={at("hook", 0.55)} end={B.plead.start + 10} dot={false} dy={60} />
-        <InkLabel at={[112.5, 29.655]} text="ทางแคบฮัวหยง · ตำแหน่งโดยประมาณ" start={B.plead.start + 20} end={T.marchEnd} dot={false} />
+        <InkLabel at={[112.5, 29.655]} text="ทางแคบฮัวหยง · ตำแหน่งโดยประมาณ" start={B.plead.start + 20} end={B.release.start} dot={false} />
         <Pass appear={B.plead.start + 10} until={B.next.start + 30} arrive={T.arrive} release={T.release} through={T.through} historyAt={T.stamp} mudAt={T.mud} strawStart={T.straw} strawEnd={T.strawEnd} marchStart={T.march} marchEnd={T.marchEnd} fireAt={T.fire} />
         <Badge at={[P.huarong[0] - 0.02, P.huarong[1] + 0.012]} name="กวนอู" sub="ทหาร 500 คน" color={C.shu} start={at("hook", 0.62)} end={T.stamp + 12} />
         <Badge at={[ROAD[1][0] + 0.005, ROAD[1][1] - 0.012]} name="โจโฉ" sub="เหลือทหารไม่กี่ร้อย" color={C.wei} start={B.plead.start + 30} end={T.through} above={false} />
-        <Badge at={[ROAD[4][0], ROAD[4][1] + 0.01]} name="โจโฉ" sub="รอด" color={C.wei} start={T.marchEnd} end={B.next.start + 20} />
-        <InkLabel at={[ROAD[0][0], ROAD[0][1] - 0.025]} text="ไฟของเล่าปี่ · มาช้าไป" start={T.fire + 15} end={B.next.start + 20} dot={false} color={C.wu} />
+        <Badge at={[ROAD[3][0], ROAD[3][1] + 0.01]} name="โจโฉ" sub="รอด" color={C.wei} start={T.marchEnd} end={B.next.start + 20} />
+        <InkLabel at={[ROAD[1][0], ROAD[1][1] - 0.035]} text="ไฟของเล่าปี่ · มาช้าไป" start={T.fire + 15} end={B.next.start + 20} dot={false} color={C.wu} />
         <InkLabel at={[112.0, 29.2]} text="เกงจิ๋ว · เขตโดยประมาณ" start={at("next", 0.35)} size={1.6} dot={false} color={C.shu} />
       </MapFrame>
       <Stars />
