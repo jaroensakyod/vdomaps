@@ -1,0 +1,31 @@
+{
+  "name": "map-studio-project",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio",
+    "still": "remotion still",
+    "render": "remotion render",
+    "data": "node scripts/fetch-data.mjs",
+    "typecheck": "tsc --noEmit",
+    "tts": "node scripts/tts-gemini.mjs",
+    "transcribe": "node scripts/transcribe.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/google-fonts": "4.0.537",
+    "d3-geo": "^3.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "remotion": "4.0.537",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.0",
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.1.0",
+    "@types/topojson-specification": "^1.0.5",
+    "@types/topojson-client": "^3.1.5",
+    "typescript": "^5.8.3"
+  }
+}

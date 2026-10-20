@@ -1,0 +1,47 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/redcliffs/01.wav",
+    "sec": 6.808167
+  },
+  {
+    "id": "cao",
+    "file": "audio/redcliffs/02.wav",
+    "sec": 6.424042
+  },
+  {
+    "id": "liubei",
+    "file": "audio/redcliffs/03.wav",
+    "sec": 6.712708
+  },
+  {
+    "id": "alliance",
+    "file": "audio/redcliffs/04.wav",
+    "sec": 5.0675
+  },
+  {
+    "id": "numbers",
+    "file": "audio/redcliffs/05.wav",
+    "sec": 7.673667
+  },
+  {
+    "id": "redcliffs",
+    "file": "audio/redcliffs/06.wav",
+    "sec": 8.6245
+  },
+  {
+    "id": "fire",
+    "file": "audio/redcliffs/07.wav",
+    "sec": 8.21375
+  },
+  {
+    "id": "retreat",
+    "file": "audio/redcliffs/08.wav",
+    "sec": 5.384917
+  },
+  {
+    "id": "three",
+    "file": "audio/redcliffs/09.wav",
+    "sec": 6.980792
+  }
+]

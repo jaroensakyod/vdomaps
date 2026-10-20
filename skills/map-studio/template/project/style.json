@@ -1,0 +1,12 @@
+{
+  "id": "default-navy",
+  "note": "Replace with the approved style after Gate 2, then mirror the values in src/components/style.ts",
+  "bg": "#06101f",
+  "ocean": "#0d2238",
+  "land": "#1f3b4d",
+  "border": "#3f6378",
+  "highlight": "#f5b041",
+  "accent": "#ff5a4f",
+  "text": "#ffffff",
+  "font": "NotoSansThai"
+}
