@@ -1,13 +1,17 @@
 // Word timing for every VO beat with whisper.cpp (local, free). Usage: node scripts/align.mjs <slug>
 // Reads src/episodes/<slug>/beats.json + timing.json, adds `words: [{w, s, e}]` (seconds from the beat's audio
-// start) to each timing entry, and prints how well the VO matches the script.
+// start) to each timing entry that has none yet (FORCE=1 redoes all), and prints how well the VO matches the script.
 // Env: WHISPER_MODEL (default large-v3; Thai needs large-v3 or at least medium), WHISPER_VERSION (default 1.5.5,
 // the build Remotion ships for Windows), WHISPER_LANG (default th).
+// GPU: if whisper-cuda/build/bin/whisper-cli(.exe) exists (or WHISPER_BIN points at a whisper-cli), all pending beats
+// go through it in ONE call, so the model loads once. Official CUDA builds: github.com/ggml-org/whisper.cpp
+// releases, e.g. whisper-bin-win-cuda-11.8.0-x64.zip with its Release/ folder moved to whisper-cuda/build/bin/.
+// Measured on an RTX 2060: one 10 s beat in 7 s (3 s of it loading the model) vs ~25 s on the CPU build.
 // The script text is kept; Whisper only lends its timing. Thai tokens are sub-word (and sometimes split
 // mid-character), so script and transcript are aligned character by character with an edit-distance path.
 import { downloadWhisperModel, installWhisperCpp, transcribe } from "@remotion/install-whisper-cpp";
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
@@ -23,8 +27,10 @@ const beats = JSON.parse(readFileSync(`${dir}/beats.json`, "utf8"));
 const timingFile = `${dir}/timing.json`;
 const timing = JSON.parse(readFileSync(timingFile, "utf8"));
 
-await installWhisperCpp({ to: whisperPath, version, printOutput: false });
+const gpuBin = process.env.WHISPER_BIN ?? ["whisper-cuda/build/bin/whisper-cli.exe", "whisper-cuda/build/bin/whisper-cli"].find((p) => existsSync(p));
+if (!gpuBin) await installWhisperCpp({ to: whisperPath, version, printOutput: false });
 await downloadWhisperModel({ model, folder: whisperPath, printOutput: true });
+console.log(gpuBin ? `whisper: GPU build ${gpuBin}` : `whisper: CPU build ${version}`);
 
 const bare = (s) => s.replace(/\s+/g, "");
 const norm = (c) => c.toLowerCase();
@@ -76,11 +82,30 @@ const words = (text) => {
 
 const tmp = path.join(tmpdir(), `align-${process.pid}`);
 mkdirSync(tmp, { recursive: true });
-for (const [i, t] of timing.entries()) {
+const todo = timing
+  .map((t, i) => ({ t, i, wav16: path.join(tmp, `${i}.wav`) }))
+  .filter(({ t }) => {
+    const keep = t.words?.length && !process.env.FORCE;
+    if (keep) console.log(`${t.id.padEnd(12)} kept (already aligned; FORCE=1 to redo)`);
+    return !keep;
+  });
+for (const { t, wav16 } of todo) execFileSync("ffmpeg", ["-v", "error", "-y", "-i", `public/${t.file}`, "-ar", "16000", "-ac", "1", wav16]);
+
+// One transcript per beat: the GPU build in a single call (it writes <wav>.json), else the CPU build per beat.
+// -nfa: flash attention would switch DTW token timestamps off.
+const results = new Map();
+if (gpuBin && todo.length) {
+  const model_ = path.join(whisperPath, `ggml-${model}.bin`);
+  const files = todo.flatMap(({ wav16 }) => ["-f", wav16]);
+  execFileSync(gpuBin, ["-m", model_, "-l", language, "-dtw", model.replace(/-/g, "."), "-nfa", "-ojf", "-np", ...files], { stdio: ["ignore", "ignore", "pipe"] }); // its log only shows if it fails
+  for (const { wav16 } of todo) results.set(wav16, JSON.parse(readFileSync(`${wav16}.json`, "utf8")));
+} else
+  for (const { wav16 } of todo)
+    results.set(wav16, await transcribe({ inputPath: wav16, whisperPath, whisperCppVersion: version, model, tokenLevelTimestamps: true, language, printOutput: false }));
+
+for (const { t, i, wav16 } of todo) {
   const spoken = (beats.find((b) => b.id === t.id) ?? beats[i]).text;
-  const wav16 = path.join(tmp, `${i}.wav`);
-  execFileSync("ffmpeg", ["-v", "error", "-y", "-i", `public/${t.file}`, "-ar", "16000", "-ac", "1", wav16]);
-  const json = await transcribe({ inputPath: wav16, whisperPath, whisperCppVersion: version, model, tokenLevelTimestamps: true, language, printOutput: false });
+  const json = results.get(wav16);
   const hyp = transcriptChars(json);
   const script = [...bare(spoken)];
   const { map, score } = alignChars(script, hyp.map((h) => h.c));

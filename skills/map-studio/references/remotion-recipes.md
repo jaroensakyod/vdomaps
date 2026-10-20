@@ -62,6 +62,9 @@ All components referenced here are in `template/src/components/`. Read their sou
   `WebkitTextStroke` + `paintOrder` for HTML.
 
 ## Performance
+- **Render on the GPU:** `template/remotion.config.ts` sets `setChromiumOpenGlRenderer("vulkan")` + 50% concurrency.
+  Measured (RTX 2060, 150 frames of a map scene): software 49.8 s, angle 37 s, **vulkan 13.1 s**, identical image
+  (PSNR 42 dB). More concurrency did not help with vulkan. No working Vulkan driver → remove the line or `--gl=angle`.
 - **Never run full-frame SVG noise filters (feTurbulence) per frame** — a 1-minute video went from minutes to
   well over 25 minutes. Render textures once to PNG with a 1-frame composition (`npx remotion still … --image-format=png`)
   and overlay them with `<Img>`.

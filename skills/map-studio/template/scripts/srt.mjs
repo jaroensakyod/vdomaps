@@ -2,6 +2,7 @@
 // Uses the same beat layout as the scenes (src/components/subs.mjs) and the word timing from `npm run align`
 // when timing.json has it. Writes out/<slug>.srt. Cues: one line ≤ --max chars, at least 0.8 s each.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { buildBeats, cues } from "../src/components/subs.mjs";
 
@@ -38,6 +39,6 @@ const ts = (sec) => {
   return `${p(Math.floor(ms / 3600000))}:${p(Math.floor(ms / 60000) % 60)}:${p(Math.floor(ms / 1000) % 60)},${p(ms % 1000, 3)}`;
 };
 const srt = list.map((c, i) => `${i + 1}\n${ts(c.start)} --> ${ts(c.end)}\n${c.text}\n`).join("\n");
-mkdirSync("out", { recursive: true });
+mkdirSync(dirname(`out/${slug}.srt`), { recursive: true });
 writeFileSync(`out/${slug}.srt`, srt);
 console.log(`out/${slug}.srt  ${list.length} cues${beats.some((b) => b.words) ? "" : "  (no word timing — run `npm run align` for exact cues)"}`);

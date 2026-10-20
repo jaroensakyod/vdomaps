@@ -4,14 +4,17 @@
 // Same layout every episode uses: LEAD frames of silence, then each beat's audio, GAP frames between beats.
 export const LAYOUT = { fps: 30, lead: 12, gap: 8, tail: 45 };
 
-// timing.json [{id, file, sec, words?}] + beats.json [{id, text, caption?}] → beats with frame positions.
+// timing.json [{id, file, sec, words?}] + beats.json [{id, text, caption?, speaker?}] → beats with frame positions.
+// `speaker` (a cast key) marks a character line; without it the narrator speaks. `pause` (seconds) adds silence
+// before the beat, for a dramatic beat-drop before a reveal.
 export const buildBeats = (timing, beats = [], layout = {}) => {
   const { fps, lead, gap } = { ...LAYOUT, ...layout };
   let f = lead;
   return timing.map((t, i) => {
     const len = Math.ceil(t.sec * fps);
     const b = beats.find((x) => x.id === t.id) ?? beats[i] ?? {};
-    const out = { ...t, start: f, len, end: f + len, text: b.caption ?? b.text ?? "", spoken: b.text ?? "" };
+    f += Math.round((b.pause ?? 0) * fps);
+    const out = { ...t, start: f, len, end: f + len, text: b.caption ?? b.text ?? "", spoken: b.text ?? "", speaker: b.speaker };
     f += len + gap;
     return out;
   });

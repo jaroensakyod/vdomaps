@@ -1,8 +1,9 @@
 export type Word = { w: string; s: number; e: number };
 export type Timing = { id: string; file: string; sec: number; words?: Word[] };
-export type BeatText = { id: string; text: string; caption?: string };
+// speed: TTS tempo for this beat (1.15 = 15% faster) · pause: seconds of silence before it
+export type BeatText = { id: string; text: string; caption?: string; speaker?: string; voice?: string; speed?: number; pause?: number };
 export type Layout = { fps: number; lead: number; gap: number; tail: number };
-export type Beat = Timing & { start: number; len: number; end: number; text: string; spoken: string };
+export type Beat = Timing & { start: number; len: number; end: number; text: string; spoken: string; speaker?: string };
 export type Cue = { text: string; start: number; end: number };
 
 export declare const LAYOUT: Layout;

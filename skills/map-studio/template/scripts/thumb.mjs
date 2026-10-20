@@ -3,6 +3,7 @@
 // YouTube limit is 2 MB: a larger PNG is re-encoded to JPG.
 import { execFileSync } from "node:child_process";
 import { mkdirSync, statSync } from "node:fs";
+import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 
 const { values, positionals } = parseArgs({
@@ -13,8 +14,8 @@ const [comp, slug] = positionals;
 if (!comp || !slug) throw new Error('usage: node scripts/thumb.mjs <ThumbComposition> <slug> [--headline "..."]');
 const props = Object.fromEntries(Object.entries(values).map(([k, v]) => [k, k === "frame" ? Number(v) : v]));
 
-mkdirSync("out", { recursive: true });
 let file = `out/${slug}-thumb.png`;
+mkdirSync(dirname(file), { recursive: true });
 const args = ["remotion", "still", comp, file, "--frame=0", "--image-format=png"];
 if (Object.keys(props).length) args.push(`--props=${JSON.stringify(props)}`);
 execFileSync("npx", args, { stdio: "inherit", shell: process.platform === "win32" });

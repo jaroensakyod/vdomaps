@@ -1,3 +1,4 @@
 node_modules
 out
 whisper.cpp
+whisper-cuda

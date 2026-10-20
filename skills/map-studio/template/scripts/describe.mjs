@@ -3,6 +3,7 @@
 // Chapter times come from the beat each chapter starts on, so they follow the VO after every re-render.
 // Writes out/<slug>-description.txt.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { buildBeats, totalFrames } from "../src/components/subs.mjs";
 
@@ -68,7 +69,7 @@ if (meta.music?.length) out.push("เพลงและเสียงประ�
 if (meta.note) out.push(meta.note);
 if (meta.tags?.length) out.push("", meta.tags.map((t) => `#${t.replace(/\s+/g, "")}`).join(" "));
 
-mkdirSync("out", { recursive: true });
 const file = `out/${slug}-description.txt`;
+mkdirSync(dirname(file), { recursive: true });
 writeFileSync(file, out.join("\n") + "\n");
 console.log(`${file}  (${clock(total)} long)`);
