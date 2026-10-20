@@ -30,6 +30,18 @@ import { FPS, RedCliffs, TOTAL_FRAMES } from "./episodes/redcliffs/RedCliffs";
 <Composition id="RedCliffsVertical" component={RedCliffs} durationInFrames={TOTAL_FRAMES} fps={FPS} width={1080} height={1920} />
 ```
 
-แล้ว `npx remotion render RedCliffs out/redcliffs.mp4`
+สร้างลายกระดาษครั้งเดียวต่อขนาดจอ (เร็วกว่าคำนวณใหม่ทุกเฟรมมาก):
+
+```tsx
+import { PaperTextureLive } from "./episodes/redcliffs/Parchment";
+<Composition id="PaperTex16" component={PaperTextureLive} durationInFrames={1} fps={30} width={1920} height={1080} />
+<Composition id="PaperTex9" component={PaperTextureLive} durationInFrames={1} fps={30} width={1080} height={1920} />
+```
+
+```bash
+npx remotion still PaperTex16 public/paper-16x9.png --image-format=png
+npx remotion still PaperTex9 public/paper-9x16.png --image-format=png
+npx remotion render RedCliffs out/redcliffs.mp4
+```
 
 เสียงที่สร้างใหม่อาจยาวต่างจาก `timing.json` เดิมเล็กน้อย ฉากจะปรับเวลาตามเสียงใหม่เอง

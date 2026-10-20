@@ -4,7 +4,7 @@ import { geoArea, geoGraticule10 } from "d3-geo";
 import type { FeatureCollection, Geometry } from "geojson";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import land50 from "world-atlas/land-50m.json";
 import { isVisible } from "../../components/camera";
 import { useMap } from "../../components/Map";
@@ -73,8 +73,9 @@ export const PaperMap = ({ riverBoost = 0 }: { riverBoost?: number }) => {
   );
 };
 
-// Grain + blotches + vignette on top of everything map-like. Static (same every frame).
-export const PaperTexture = () => {
+// Grain + blotches + vignette, drawn live with SVG noise filters. Slow (full-frame feTurbulence every frame),
+// so render it once per aspect ratio with the PaperTex* compositions and use <PaperTexture> in the video.
+export const PaperTextureLive = () => {
   const { width, height } = useVideoConfig();
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
@@ -230,5 +231,15 @@ export const InkLabel = ({
         {text}
       </text>
     </g>
+  );
+};
+
+// The pre-rendered texture: public/paper-16x9.png and public/paper-9x16.png (npm run paper).
+export const PaperTexture = () => {
+  const { width, height } = useVideoConfig();
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <Img src={staticFile(height > width ? "paper-9x16.png" : "paper-16x9.png")} style={{ width, height }} />
+    </AbsoluteFill>
   );
 };

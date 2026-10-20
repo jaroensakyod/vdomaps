@@ -55,6 +55,9 @@ All components referenced here are in `template/src/components/`. Read their sou
   `WebkitTextStroke` + `paintOrder` for HTML.
 
 ## Performance
+- **Never run full-frame SVG noise filters (feTurbulence) per frame** — a 1-minute video went from minutes to
+  well over 25 minutes. Render textures once to PNG with a 1-frame composition (`npx remotion still … --image-format=png`)
+  and overlay them with `<Img>`.
 - Simplify data (mapshaper) — the #1 render-speed lever. 50m countries for world/continent shots, 10m only
   when zoomed to a region, and clip 10m to the bbox first.
 - Memoise projected paths when the camera is static (`useMemo` keyed on cam values).
