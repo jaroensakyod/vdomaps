@@ -11,6 +11,20 @@ are starting points. A chosen style is saved as `project/style.json`:
 
 Techniques referenced below are explained in `remotion-recipes.md`.
 
+**Built and tested so far** (copy from these before writing a style from scratch):
+
+| Style | Where | Data it uses |
+|---|---|---|
+| Default navy flat map | `template/src/episodes/test/MapTest.tsx` | Natural Earth countries |
+| S13 Parchment (Three Kingdoms tuning) | `episodes/redcliffs`, `episodes/sankok/kit` | Natural Earth land + 1:10m rivers |
+| A-base: satellite globe → country | `DataTour` scene 1 | NASA Blue Marble (`fetch-imagery`) |
+| S12 Natural-colour relief | `DataTour` scene 2 | Copernicus DEM relief (`fetch-dem`) + OSM rivers |
+| S15 Night Earth | `DataTour` scene 3 | NASA Black Marble (`fetch-imagery night`) |
+| S04 Then vs now | `DataTour` scene 4 | historical-basemaps 1700 (`fetch-history`) over Blue Marble |
+
+Every other recipe below has its data available through the fetch scripts; the visual treatment still has
+to be written (show the user a style still first).
+
 ---
 
 ## A. Satellite + cartoon (Shorts-first, high-retention)

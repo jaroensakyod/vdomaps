@@ -1,5 +1,6 @@
 import { Composition } from "remotion";
 import { Thumbnail, type ThumbProps } from "./components/Thumbnail";
+import { DATA_TOUR_FRAMES, DataTour } from "./episodes/datatour/DataTour";
 import { MAP_TEST_FRAMES, MapTest } from "./episodes/test/MapTest";
 
 const MapTestThumb = (p: ThumbProps) => (
@@ -18,5 +19,7 @@ export const Root = () => (
     <Composition id="MapTestVertical" component={MapTest} durationInFrames={MAP_TEST_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="MapTestThumb" component={MapTestThumb} defaultProps={thumb} durationInFrames={MAP_TEST_FRAMES} fps={30} width={1280} height={720} />
     <Composition id="MapTestThumbVertical" component={MapTestThumb} defaultProps={thumb} durationInFrames={MAP_TEST_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="DataTour" component={DataTour} durationInFrames={DATA_TOUR_FRAMES} fps={30} width={1920} height={1080} />
+    <Composition id="DataTourVertical" component={DataTour} durationInFrames={DATA_TOUR_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

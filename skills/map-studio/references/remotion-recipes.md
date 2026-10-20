@@ -47,10 +47,15 @@ All components referenced here are in `template/src/components/`. Read their sou
 - `Caption` takes `words` + `spoken` from `buildBeats()` for word-timed subtitles.
 
 ## Rasters (DEM, imagery)
-- Pre-process outside Remotion (gdal or a Node script with `geotiff`): crop, reproject to EPSG:4326, export PNG.
-- Globe imagery: `@remotion/three` sphere with the Blue Marble equirectangular texture, or render to canvas with
-  `d3-geo-projection` raster reprojection for a 2D look (slower — cache per frame range).
-- Hillshade: `gdaldem hillshade -multidirectional -z 1.5 dem.tif hs.tif`, multiply over colour.
+- Fetch as equirectangular images + bbox sidecar: `scripts/fetch-imagery.mjs` (NASA GIBS: Blue Marble, Black
+  Marble, shaded relief) and `scripts/fetch-dem.mjs` (Copernicus GLO-90 → `-hillshade.png`, `-relief.png`,
+  `-dem.json` with min/max/peak and a ~200-wide elevation grid). No gdal needed.
+- Draw with `<Raster layers={[{ name: "world" }, { name: "x-hillshade", op: "multiply", opacity: 0.8 }]} />`:
+  the bbox is cut into ≤ 2.5° cells, each split into two triangles drawn with an affine transform onto the
+  projected corners (canvas in a `<foreignObject>`), clipped to the globe. Works from whole-globe to valley
+  zoom; animate `opacity` per layer to cross-fade (day → night: night layer with `op: "lighter"`).
+- Fetch rasters wider than the shot so 9:16 framing does not show the edge.
+- Keep big images ≤ 8192 px; one world Blue Marble (8192×4096) + one regional image is plenty.
 
 ## Thai text
 - Load with `@remotion/google-fonts/<Font>` (`loadFont()` at module top) — e.g. NotoSansThai, IBMPlexSansThai,
@@ -65,6 +70,8 @@ All components referenced here are in `template/src/components/`. Read their sou
 - **Render on the GPU:** `template/remotion.config.ts` sets `setChromiumOpenGlRenderer("vulkan")` + 50% concurrency.
   Measured (RTX 2060, 150 frames of a map scene): software 49.8 s, angle 37 s, **vulkan 13.1 s**, identical image
   (PSNR 42 dB). More concurrency did not help with vulkan. No working Vulkan driver → remove the line or `--gl=angle`.
+  Intel UHD (i3-N305, 90 frames of the Red Cliffs battle): software 74 s, angle 45 s, **vulkan 38 s** (PSNR 46.7 dB
+  vs software); concurrency 25 %, 50 % and 100 % all within 2 s.
 - **Never run full-frame SVG noise filters (feTurbulence) per frame** — a 1-minute video went from minutes to
   well over 25 minutes. Render textures once to PNG with a 1-frame composition (`npx remotion still … --image-format=png`)
   and overlay them with `<Img>`.

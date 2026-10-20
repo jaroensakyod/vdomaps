@@ -40,8 +40,20 @@ current step needs:
 1. Check `node -v` (≥ 18) or `bun -v`, and `ffmpeg -version`. Install what is missing (ask before installing
    system packages).
 2. Copy `template/` to the user's project folder, run `npm install` (or `bun install`).
-3. World countries ship inside the `world-atlas` package (no download). `npm run data -- THA` fetches province
-   boundaries into `public/data/` and prints each layer's license — copy it into the credits.
+3. World countries ship inside the `world-atlas` package (no download). Everything else has a fetch script
+   that writes to `public/data/` or `public/raster/` and prints its credit line — copy it into `<Credit>`:
+
+   | Layer | Command |
+   |---|---|
+   | Province boundaries | `npm run data -- THA` |
+   | NASA satellite / night lights / shaded relief | `npm run imagery -- bluemarble\|night\|relief <name> [w s e n] [width]` |
+   | Elevation → hillshade + colour relief + grid | `npm run dem -- <name> <w> <s> <e> <n> [px/°]` |
+   | OpenStreetMap rivers, roads, rail, towns | `npm run osm -- <name> <w> <s> <e> <n> [rivers\|roads\|rail\|cities]` |
+   | River network + lakes (Natural Earth) | `npm run rivers -- <name> <w> <s> <e> <n>` |
+   | Historical borders for a year | `npm run history -- <year> [w s e n]` |
+
+   Draw imagery and relief with `<Raster layers={[{ name }]} />`, GeoJSON with `useJson()` + `useMap().path`.
+   `DataTour` (`src/episodes/datatour/`) uses every layer — copy from it.
 4. `npm run still -- MapTest out/test.png --frame=140` then `npm run render -- MapTest out/test.mp4`
    (and `MapTestVertical` for 9:16). Keep the project path short on Windows (e.g. `C:/maps/channel`).
    Show the user the still and the 9-second test (globe → zoom to Thailand → fill → labels → calendar →

@@ -2,17 +2,19 @@
 // Reads src/episodes/<slug>/beats.json + timing.json, adds `words: [{w, s, e}]` (seconds from the beat's audio
 // start) to each timing entry that has none yet (FORCE=1 redoes all), and prints how well the VO matches the script.
 // Env: WHISPER_MODEL (default large-v3; Thai needs large-v3 or at least medium), WHISPER_VERSION (default 1.5.5,
-// the build Remotion ships for Windows), WHISPER_LANG (default th).
+// the build Remotion ships for Windows), WHISPER_LANG (default th), WHISPER_DIR (model folder, default ./whisper.cpp —
+// point several projects at one shared folder so the model is downloaded once).
 // GPU: if whisper-cuda/build/bin/whisper-cli(.exe) exists (or WHISPER_BIN points at a whisper-cli), all pending beats
 // go through it in ONE call, so the model loads once. Official CUDA builds: github.com/ggml-org/whisper.cpp
 // releases, e.g. whisper-bin-win-cuda-11.8.0-x64.zip with its Release/ folder moved to whisper-cuda/build/bin/.
 // Measured on an RTX 2060: one 10 s beat in 7 s (3 s of it loading the model) vs ~25 s on the CPU build.
+// No NVIDIA GPU: point WHISPER_BIN at the official BLAS build (whisper-blas-bin-x64.zip) — still one call, all threads.
 // The script text is kept; Whisper only lends its timing. Thai tokens are sub-word (and sometimes split
 // mid-character), so script and transcript are aligned character by character with an edit-distance path.
 import { downloadWhisperModel, installWhisperCpp, transcribe } from "@remotion/install-whisper-cpp";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
+import { availableParallelism, tmpdir } from "node:os";
 import path from "node:path";
 
 const [slug] = process.argv.slice(2);
@@ -20,7 +22,7 @@ if (!slug) throw new Error("usage: node scripts/align.mjs <slug>");
 const model = process.env.WHISPER_MODEL ?? "large-v3";
 const version = process.env.WHISPER_VERSION ?? "1.5.5";
 const language = process.env.WHISPER_LANG ?? "th";
-const whisperPath = "whisper.cpp";
+const whisperPath = process.env.WHISPER_DIR ?? "whisper.cpp";
 
 const dir = `src/episodes/${slug}`;
 const beats = JSON.parse(readFileSync(`${dir}/beats.json`, "utf8"));
@@ -30,7 +32,7 @@ const timing = JSON.parse(readFileSync(timingFile, "utf8"));
 const gpuBin = process.env.WHISPER_BIN ?? ["whisper-cuda/build/bin/whisper-cli.exe", "whisper-cuda/build/bin/whisper-cli"].find((p) => existsSync(p));
 if (!gpuBin) await installWhisperCpp({ to: whisperPath, version, printOutput: false });
 await downloadWhisperModel({ model, folder: whisperPath, printOutput: true });
-console.log(gpuBin ? `whisper: GPU build ${gpuBin}` : `whisper: CPU build ${version}`);
+console.log(gpuBin ? `whisper: prebuilt ${gpuBin}` : `whisper: Remotion CPU build ${version}`);
 
 const bare = (s) => s.replace(/\s+/g, "");
 const norm = (c) => c.toLowerCase();
@@ -97,7 +99,7 @@ const results = new Map();
 if (gpuBin && todo.length) {
   const model_ = path.join(whisperPath, `ggml-${model}.bin`);
   const files = todo.flatMap(({ wav16 }) => ["-f", wav16]);
-  execFileSync(gpuBin, ["-m", model_, "-l", language, "-dtw", model.replace(/-/g, "."), "-nfa", "-ojf", "-np", ...files], { stdio: ["ignore", "ignore", "pipe"] }); // its log only shows if it fails
+  execFileSync(gpuBin, ["-m", model_, "-t", String(availableParallelism()), "-l", language, "-dtw", model.replace(/-/g, "."), "-nfa", "-ojf", "-np", ...files], { stdio: ["ignore", "ignore", "pipe"] }); // its log only shows if it fails
   for (const { wav16 } of todo) results.set(wav16, JSON.parse(readFileSync(`${wav16}.json`, "utf8")));
 } else
   for (const { wav16 } of todo)

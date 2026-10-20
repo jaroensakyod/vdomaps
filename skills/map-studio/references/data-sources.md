@@ -25,7 +25,20 @@ is not on this list, check: (a) commercial use allowed, (b) derivatives allowed,
 | Weather / rain radar look | Generate synthetic, or ERA5 (Copernicus C3S) for real fields | ERA5: free incl. commercial with attribution | "Contains modified Copernicus Climate Change Service information [year]" |
 | Thai fonts | Noto Sans Thai, IBM Plex Sans Thai, Sarabun, Kanit, Mitr, Chakra Petch (Google Fonts) | SIL OFL | none needed |
 
-## Fetching recipes
+## Fetch scripts (in `template/scripts/`, tested)
+
+| Script | Source | Output | Credit it prints |
+|---|---|---|---|
+| `fetch-imagery.mjs` | NASA GIBS WMS (Blue Marble NG, VIIRS Black Marble, shaded relief) | `public/raster/<name>.jpg` + `.json` | "Imagery: NASA Blue Marble" / "NASA Black Marble (VIIRS)" |
+| `fetch-dem.mjs` | Copernicus DEM GLO-90 COGs on AWS (no account; sea tiles → 0 m) | hillshade / relief PNG + `-dem.json` | Copernicus DEM line above |
+| `fetch-osm.mjs` | Overpass API, presets rivers / bigrivers / roads / rail / cities | `public/data/<name>.geojson` with `name` (Thai first) | "© OpenStreetMap contributors (ODbL)" |
+| `fetch-rivers.mjs` | Natural Earth 1:10m rivers + lakes (reservoirs dropped) | `public/data/<name>.json` | "Rivers & lakes: Natural Earth" |
+| `fetch-history.mjs` | aourednik/historical-basemaps, one year | `public/data/history-<year>.geojson` | "historical-basemaps (A. Ourednik, GPL-3.0), approximate" |
+| `fetch-data.mjs` | geoBoundaries ADM1 | `public/data/<iso>-adm1.geojson` | per-country licence it reports |
+
+HydroRIVERS (flow-scaled widths) has no script yet: continent zips are several hundred MB of shapefile.
+
+## Fetching recipes (manual)
 
 ```bash
 # Countries (already in template via world-atlas npm package)

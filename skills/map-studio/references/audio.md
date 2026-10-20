@@ -29,6 +29,11 @@ instead of spreading it by character count.
   (e.g. `whisper-bin-win-cuda-11.8.0-x64.zip`) so its `Release/` folder becomes `whisper-cuda/build/bin/` (git-ignored).
   `align` then sends every pending beat through `whisper-cli` in one call: a 9–11-beat episode in ~27 s on an
   RTX 2060, vs 3–4 min on the CPU build, word starts within ~60 ms of the CPU result. `WHISPER_BIN` overrides the path.
+- **No NVIDIA GPU (e.g. Intel UHD laptop):** there is no CUDA, and whisper.cpp ships no Windows Vulkan build. Use the
+  official BLAS CPU build `whisper-blas-bin-x64.zip` + the `medium` model in one shared folder, then set user env vars
+  `WHISPER_BIN=C:\whisper\blas\Release\whisper-cli.exe`, `WHISPER_DIR=C:\whisper`, `WHISPER_MODEL=medium`.
+  `align` passes all CPU threads (`-t`). Measured on an i3-N305 / 8 GB: the 9-beat Red Cliffs VO (62 s) in 264 s,
+  every beat ≥ 77 % match. large-v3 needs ~4 GB RAM and is much slower there.
 - First run installs whisper.cpp into `whisper.cpp/` (git-ignored) and downloads the model. Default
   `WHISPER_MODEL=large-v3` (≈ 3 GB) — Thai needs large-v3, or medium at least. `WHISPER_VERSION` defaults
   to 1.5.5, the build Remotion ships for Windows. `WHISPER_LANG` defaults to `th`.
