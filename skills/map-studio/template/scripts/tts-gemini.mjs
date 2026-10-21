@@ -7,7 +7,7 @@
 // "speed" on a beat (e.g. 1.15 for an angry line, 0.92 for a heavy one) changes its tempo without changing pitch.
 // Send plain text only: an English style instruction in the prompt gets read aloud. Write numbers as Thai words.
 //
-// BATCH=1: one request per voice instead of one per beat (the TTS models allow only ~100 requests a day, ~10 a
+// BATCH=1: one request per voice (split every BATCH_CHARS characters) instead of one per beat (the TTS models allow only ~100 requests a day, ~10 a
 // minute). All beats of a voice are read in one go, one paragraph each; Whisper (scripts/whisper-lib.mjs) finds
 // where each paragraph starts and the file is cut in the silence between them (snapped to the quietest stretch). An episode of 11 beats with a
 // narrator and 2 characters = 3 requests instead of 11. If Whisper cannot place the cuts cleanly (match < 75 % or
@@ -94,7 +94,7 @@ for (const beat of beats) {
   const voice = voiceFor(beat);
   if (beat.speaker && !beat.voice && !voices[beat.speaker]) console.warn(`⚠ ${beat.id}: no voice for speaker "${beat.speaker}" in voices.json, using ${voice}`);
   const old = before.find((t) => t.id === beat.id);
-  if (old && !process.env.FORCE && old.text === beat.text && old.voice === voice && (old.speed ?? 1) === (beat.speed ?? 1) && existsSync(`public/${old.file}`)) {
+  if (old && !old.draft && !process.env.FORCE && old.text === beat.text && old.voice === voice && (old.speed ?? 1) === (beat.speed ?? 1) && existsSync(`public/${old.file}`)) {
     timing.set(beat.id, old);
     console.log(beat.id.padEnd(10), old.sec.toFixed(2), voice, "(unchanged)");
   } else todo.push(beat);
@@ -116,7 +116,19 @@ else {
   const { bare, charTimes, silences, snapToSilence, whisper } = await import("./whisper-lib.mjs");
   const groups = new Map();
   for (const b of todo) groups.set(voiceFor(b), [...(groups.get(voiceFor(b)) ?? []), b]);
-  for (const [voice, list] of groups) {
+  // Long episodes: at most BATCH_CHARS characters per request (default 1000, about 1.5 min of Thai), so a take stays
+  // well inside the output limit of the model and one bad take costs little.
+  const max = Number(process.env.BATCH_CHARS ?? 1000);
+  const chunks = [];
+  for (const [voice, all] of groups) {
+    let cur = [];
+    for (const b of all) {
+      if (cur.length && [...cur, b].reduce((a, x) => a + x.text.length, 0) > max) chunks.push([voice, cur]), (cur = []);
+      cur.push(b);
+    }
+    chunks.push([voice, cur]);
+  }
+  for (const [voice, list] of chunks) {
     if (list.length === 1) {
       await perBeat(list);
       continue;

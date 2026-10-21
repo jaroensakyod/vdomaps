@@ -35,6 +35,35 @@ current step needs:
    episode so the channel looks consistent.
 6. **One scene = one idea.** A camera move, a fill, a label pop — never all at once.
 
+## House standard for every video (all channels)
+
+Set by the user on 21 Oct 2026 after the Ayutthaya episode. One rule set for every channel; only the look of the
+map changes with the story:
+
+| Channel | Map look | Rules 2–6 below |
+|---|---|---|
+| ประวัติศาสตร์บนแผนที่ (`episodes/thaihistory`) | News look (rule 1) | yes |
+| แผนที่ข่าวโลกรายวัน (`episodes/worldnews`) | News look (rule 1) | yes |
+| สามก๊กบนแผนที่ (`episodes/sankok`) | **Keeps its parchment paper map** (S13, `kit/theme.ts`) | yes — the storytelling and scene cadence are the new standard: a new illustrated panel / map event every 3–4 s on the spoken word, panels in the series' ink-on-paper style |
+| Anything new | News look unless the story asks for another style (ask at the style gate) | yes |
+
+1. **News look** (`episodes/worldnews`, `episodes/thaihistory/news`): real imagery as the base map — NASA Blue
+   Marble for region/globe, NASA HLS 30 m (`TIME=YYYY-MM-DD npm run imagery -- hls …`, pick a cloud-free dry-season
+   day) for close-ups — OSM/Natural Earth rivers on top, dark news cards (`rgba(8,14,26,0.86)` + red bar, big stat
+   number), red glow highlights, pulsing pins, word-timed captions, and code-drawn illustration panels
+   (`InsetPanel`, label "ภาพประกอบ") tied to the map by a dashed leader line. No flat cartoon paper maps.
+2. **A new picture every 3–4 s, cued on the spoken word** (`wf(beat, "คำ")` from Whisper timing): roughly one
+   illustration panel per sentence plus map moves, arrows, pins, counters in between. One static panel for a
+   whole beat is too few — a 10-min video has ~180 visual changes, 60–70 of them illustrated scenes.
+3. **Captions in sync:** after `align`, always run `node scripts/snap-words.mjs <slug>` (moves word starts out of
+   pauses — Whisper puts them 0.3–0.5 s early). `subs.mjs` maps on-screen tokens to spoken tokens 1:1, so write
+   `caption` and `text` with the same space-separated tokens ("พ.ศ. 2310" ↔ "พอศอ สองพันสามร้อยสิบ").
+4. **No flicker:** consecutive panels overlap ~14 frames (outgoing `end` = incoming `start + 14`) so the map never
+   blinks through. Final renders use `--gl=angle` (Vulkan occasionally composites a ghosted frame), then
+   `node scripts/check-glitch.mjs out/<file>.mp4` must report 0 glitch frames before delivery.
+5. Show a ~10–15 s test in the final look before building a whole video.
+6. Map/imagery credits go in the video description, not on screen (OSM's ODbL still requires the description credit).
+
 ## First run on a new machine
 
 1. Check `node -v` (≥ 18) or `bun -v`, and `ffmpeg -version`. Install what is missing (ask before installing

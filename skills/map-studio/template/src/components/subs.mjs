@@ -27,7 +27,8 @@ export const chunks = (text, maxChars = 26) => {
   const out = [];
   for (const phrase of text.split(/\s+/).filter(Boolean)) {
     const last = out[out.length - 1];
-    if (last && (last + " " + phrase).length <= maxChars) out[out.length - 1] = last + " " + phrase;
+    // a 1–2 letter token ("ปี", "คน") stays with the word before it, so "417 | ปี" never splits
+    if (last && ((last + " " + phrase).length <= maxChars || phrase.length <= 2)) out[out.length - 1] = last + " " + phrase;
     else out.push(phrase);
   }
   return out;
@@ -39,11 +40,13 @@ const bare = (s) => s.replace(/\s+/g, "");
 // words: [{w, s, e}] from scripts/align.mjs; without them, characters are spread evenly over the beat.
 const charTime = (words, total, dur) => {
   if (!words?.length) return (pos) => (pos / total) * dur;
+  // `pos` is the first character of a phrase: a boundary between two words belongs to the next word, so the
+  // phrase starts when that word starts (not when the previous one ended — that showed captions early by the pause).
   return (pos) => {
     let acc = 0;
     for (const { w, s, e } of words) {
       const n = bare(w).length;
-      if (pos <= acc + n) return s + ((pos - acc) / Math.max(n, 1)) * (e - s);
+      if (pos < acc + n) return s + ((pos - acc) / Math.max(n, 1)) * (e - s);
       acc += n;
     }
     return words[words.length - 1].e;
@@ -52,18 +55,30 @@ const charTime = (words, total, dur) => {
 
 // Subtitle cues for one beat: [{text, start, end}] in seconds from the beat start.
 // `text` is what appears on screen (digits allowed); `spoken` is what the VO says (what `words` were timed on).
-// When they differ, display positions are mapped proportionally onto the spoken text.
+// When both have the same number of space-separated tokens ("พ.ศ. 2310" ↔ "พอศอ สองพันสามร้อยสิบ"), each display
+// token is mapped onto its spoken token — a number on screen is much shorter than its words, so mapping by
+// character share drifted by over a second. Otherwise positions are mapped proportionally.
 export const cues = ({ text, spoken = text, words, sec, maxChars = 26 }) => {
   const parts = chunks(text, maxChars);
+  const dTok = text.split(/\s+/).filter(Boolean);
+  const sTok = spoken.split(/\s+/).filter(Boolean);
   const dispTotal = parts.reduce((a, p) => a + bare(p).length, 0) || 1;
   const spokenTotal = bare(spoken).length || dispTotal;
   const at = charTime(words, spokenTotal, sec);
+  // spoken character offset where display token k starts
+  const tokenStart = (k) => sTok.slice(0, k).reduce((a, t) => a + t.length, 0);
+  const sameTokens = dTok.length === sTok.length;
   let acc = 0;
+  let tok = 0;
   return parts.map((p, i) => {
     const a = acc;
+    const t0 = tok;
     acc += bare(p).length;
-    const start = i === 0 ? 0 : at((a / dispTotal) * spokenTotal);
-    const end = i === parts.length - 1 ? sec : at((acc / dispTotal) * spokenTotal);
+    tok += p.split(/\s+/).filter(Boolean).length;
+    const from = sameTokens ? tokenStart(t0) : (a / dispTotal) * spokenTotal;
+    const to = sameTokens ? tokenStart(tok) : (acc / dispTotal) * spokenTotal;
+    const start = i === 0 ? 0 : at(from);
+    const end = i === parts.length - 1 ? sec : at(to);
     return { text: p, start, end };
   });
 };
