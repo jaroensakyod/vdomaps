@@ -41,6 +41,15 @@ export const PLACES = {
   yinping: { at: [104.9, 32.9], th: "อิมเป๋ง", zh: "陰平" },
   jiange: { at: [105.53, 32.29], th: "ด่านเกียมโก๊ะ", zh: "劍閣" },
   nanzhong: { at: [102.7, 25.0], th: "ดินแดนใต้ (หนานจง)", zh: "南中" },
+  // batch 2 (eps 6–10)
+  suanzao: { at: [114.45, 35.2], th: "ซวนเจ๋า", zh: "酸棗" }, // allied camp, 190 · ? Thai name to verify
+  henei: { at: [113.1, 35.15], th: "ห้อลาย", zh: "河內" }, // Yuan Shao camp · ? Thai name to verify
+  nanyang: { at: [112.53, 33.0], th: "ลำหยง", zh: "南陽" }, // Yuan Shu · ? Thai name to verify
+  chenliu: { at: [114.8, 34.8], th: "ตันลิว", zh: "陳留" }, // Cao Cao raises troops · ? Thai name to verify
+  chenggao: { at: [113.25, 34.78], th: "เซงก๋อ", zh: "成皋" }, // Lü Boshe · ? Thai name to verify
+  xingyang: { at: [113.38, 34.79], th: "เอ๊กเอี๋ยง", zh: "滎陽" }, // Cao Cao beaten by Xu Rong · ? Thai name to verify
+  changsha: { at: [112.95, 28.2], th: "เตียงสา", zh: "長沙" }, // Sun Jian's base · ? Thai name to verify
+  xianshan: { at: [112.15, 31.98], th: "เขาเหียนสัน", zh: "峴山" }, // where Sun Jian died · ? Thai name to verify
 } satisfies Record<string, Place>;
 
 export type PlaceKey = keyof typeof PLACES;

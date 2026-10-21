@@ -20,6 +20,7 @@ const { values, positionals } = parseArgs({
     concurrency: { type: "string", default: "6" },
     gl: { type: "string", default: "vulkan" },
     loudness: { type: "boolean", default: false },
+    timeout: { type: "string", default: "120000" }, // ms per frame/start; ANGLE with many tabs needs more than the 30 s default
   },
 });
 const jobs = positionals.map((p) => {
@@ -37,7 +38,7 @@ console.log(`bundled in ${sec(t0)} s · ${jobs.length} files, ${values.parallel}
 
 const render = async ({ id, out }) => {
   const t = Date.now();
-  const composition = await selectComposition({ serveUrl, id });
+  const composition = await selectComposition({ serveUrl, id, timeoutInMilliseconds: Number(values.timeout), chromiumOptions: { gl: values.gl } });
   mkdirSync(dirname(out), { recursive: true });
   let last = -10;
   await renderMedia({
@@ -50,6 +51,7 @@ const render = async ({ id, out }) => {
     overwrite: true,
     concurrency: Number(values.concurrency),
     chromiumOptions: { gl: values.gl },
+    timeoutInMilliseconds: Number(values.timeout),
     onProgress: ({ progress }) => {
       const pct = Math.floor(progress * 100);
       if (pct >= last + 25) console.log(`  ${id.padEnd(10)} ${pct}%`), (last = pct);

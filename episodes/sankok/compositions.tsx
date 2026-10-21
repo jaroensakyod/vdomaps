@@ -11,6 +11,16 @@ import * as ep04 from "./ep04/Ep";
 import m04 from "./ep04/meta.json";
 import * as ep05 from "./ep05/Ep";
 import m05 from "./ep05/meta.json";
+import * as ep06 from "./ep06/Ep";
+import m06 from "./ep06/meta.json";
+import * as ep07 from "./ep07/Ep";
+import m07 from "./ep07/meta.json";
+import * as ep08 from "./ep08/Ep";
+import m08 from "./ep08/meta.json";
+import * as ep09 from "./ep09/Ep";
+import m09 from "./ep09/meta.json";
+import * as ep10 from "./ep10/Ep";
+import m10 from "./ep10/meta.json";
 import { episodeFrames, type EpisodeMeta, type Variant } from "./kit/Frame";
 import { SeriesThumb, type ThumbData } from "./kit/Thumb";
 
@@ -19,7 +29,10 @@ import { SeriesThumb, type ThumbData } from "./kit/Thumb";
 // Add each new episode module + its meta.json to this list. In src/Root.tsx: <SankokCompositions />.
 type EpModule = { EP: EpisodeMeta; BEATS: Beat[]; THUMB: number; Ep: ComponentType<{ variant: Variant }> };
 type Meta = { question: string[] };
-const EPISODES: [EpModule, Meta][] = [[ep01, m01], [ep02, m02], [ep03, m03], [ep04, m04], [ep05, m05]];
+const EPISODES: [EpModule, Meta][] = [
+  [ep01, m01], [ep02, m02], [ep03, m03], [ep04, m04], [ep05, m05],
+  [ep06, m06], [ep07, m07], [ep08, m08], [ep09, m09], [ep10, m10],
+];
 
 // Remotion passes props as JSON, so the episode component cannot travel in props: one wrapper per episode instead.
 const THUMBS = EPISODES.map(([{ Ep }]) => (p: ThumbData) => <SeriesThumb {...p} Ep={Ep} />);

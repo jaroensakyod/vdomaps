@@ -8,9 +8,9 @@ import { Fire, Smoke } from "../../../components/Figures";
 const INK = "#2a1b0e";
 const SKIN = "#e2b48a";
 
-export type Head = "topknot" | "turban" | "official" | "eunuch" | "helmet" | "child" | "prince";
+export type Head = "topknot" | "turban" | "official" | "eunuch" | "helmet" | "child" | "prince" | "lady" | "plume";
 export type HanPose = "stand" | "walk" | "raise" | "hunch" | "flee" | "whip" | "tied" | "laugh" | "bow" | "sit" | "crouch";
-export type Hold = "none" | "torch" | "spear" | "hoe" | "bowl" | "bundle" | "scroll" | "whip" | "flag" | "point";
+export type Hold = "none" | "torch" | "spear" | "hoe" | "bowl" | "bundle" | "scroll" | "whip" | "flag" | "point" | "sword" | "halberd" | "cup";
 export type Beard = "none" | "short" | "long" | "white" | "bushy";
 
 export const HanFigure = ({
@@ -109,6 +109,23 @@ export const HanFigure = ({
           <rect x={-5} y={-16} width={10} height={4} rx={1.5} fill="#8a3324" />
           <rect x={-5} y={9} width={10} height={4} rx={1.5} fill="#8a3324" />
         </g>
+      ) : hold === "sword" ? (
+        <g>
+          <rect x={-1.6} y={-44} width={3.2} height={40} fill="#d7dbe0" stroke={INK} strokeWidth={0.9} />
+          <path d="M-1.6 -44 L0 -50 L1.6 -44 Z" fill="#d7dbe0" stroke={INK} strokeWidth={0.9} />
+          {[-36, -28, -20, -12].map((y) => <circle key={y} cx={0} cy={y} r={0.9} fill="#c9a03c" />)}
+          <rect x={-7} y={-5} width={14} height={3.5} rx={1} fill="#c9a03c" stroke={INK} strokeWidth={0.9} />
+          <rect x={-2} y={-2} width={4} height={10} fill="#5a3b22" />
+        </g>
+      ) : hold === "halberd" ? (
+        <g>
+          <line x1={0} y1={34} x2={0} y2={-80} stroke="#6b4a2b" strokeWidth={3} strokeLinecap="round" />
+          <path d="M-3 -78 L0 -96 L3 -78 Z" fill="#b9bcc0" stroke={INK} strokeWidth={1.1} />
+          <path d="M2 -76 Q16 -80 18 -66 Q10 -70 2 -68 Z" fill="#b9bcc0" stroke={INK} strokeWidth={1.1} />
+          <path d="M-4 -66 Q0 -60 4 -66" stroke="#c9302c" strokeWidth={3} fill="none" />
+        </g>
+      ) : hold === "cup" ? (
+        <path d="M-6 -6 L6 -6 L4 2 L-4 2 Z" fill="#b0892c" stroke={INK} strokeWidth={1.1} />
       ) : hold === "whip" ? (
         <g>
           <line x1={0} y1={4} x2={0} y2={-16} stroke="#5a3b22" strokeWidth={3} strokeLinecap="round" />
@@ -164,6 +181,22 @@ export const HanFigure = ({
         <path d="M-11 -2 L-13 8 L-8 6 Z" fill="#6b5a44" stroke={INK} strokeWidth={1} />
         <line x1={0} y1={-17} x2={0} y2={-25} stroke={INK} strokeWidth={1.4} />
         <path d="M0 -25 Q-6 -30 -9 -24" stroke="#a8382a" strokeWidth={3} fill="none" />
+      </g>
+    ) : head === "lady" ? (
+      <g>
+        <path d="M-10 2 Q-12 -14 0 -13 Q11 -13 10 -2 Q6 -9 -2 -8 Q-7 -6 -10 2 Z" fill="#1d1712" />
+        <ellipse cx={-2} cy={-17} rx={8} ry={6} fill="#1d1712" />
+        <ellipse cx={-9} cy={-12} rx={4} ry={5} fill="#1d1712" />
+        <line x1={-10} y1={-20} x2={6} y2={-24} stroke="#d4a93a" strokeWidth={1.6} />
+        <circle cx={6} cy={-24} r={1.8} fill="#c9302c" />
+        <path d="M-4 -21 q2 -4 5 -1" stroke="#d4a93a" strokeWidth={1.2} fill="none" />
+      </g>
+    ) : head === "plume" ? (
+      <g>
+        <path d="M-10 -2 Q-11 -14 0 -13 Q10 -13 10 -4 Q3 -8 -4 -7 Z" fill="#2b2118" />
+        <path d="M-7 -12 L7 -12 L5 -18 L-5 -18 Z" fill="#c9a03c" stroke={INK} strokeWidth={1} />
+        <path d={`M-3 -18 Q-14 -40 -30 ${-44 + Math.sin(frame * 0.15) * 3}`} stroke="#8a3b22" strokeWidth={2.4} fill="none" strokeLinecap="round" />
+        <path d={`M2 -18 Q-6 -44 -20 ${-52 + Math.sin(frame * 0.15 + 1) * 3}`} stroke="#8a3b22" strokeWidth={2.4} fill="none" strokeLinecap="round" />
       </g>
     ) : head === "prince" ? (
       <g>
@@ -460,6 +493,165 @@ export const WarDrum = ({ x, y, scale = 1 }: { x: number; y: number; scale?: num
   );
 };
 
+// Horse, side view facing right, galloping when `run`; a rider is a HanFigure drawn first at (x, y - 46·scale)
+// so the horse's body covers its legs. (x, y) = ground under the belly.
+export const Horse = ({ x, y, scale = 1, color = "#7a4a2a", run = true, flip = false, phase = 0 }: { x: number; y: number; scale?: number; color?: string; run?: boolean; flip?: boolean; phase?: number }) => {
+  const frame = useCurrentFrame();
+  const t = frame * 0.45 + phase;
+  const leg = (hx: number, hy: number, a: number, back: boolean) => (
+    <g transform={`translate(${hx},${hy}) rotate(${a})`} opacity={back ? 0.8 : 1}>
+      <path d="M-3 0 L3 0 L2.5 26 L-2.5 26 Z" fill={color} stroke={INK} strokeWidth={1.3} />
+      <rect x={-3.2} y={25} width={6.4} height={4} fill="#2a1b0e" />
+    </g>
+  );
+  const sw = (k: number) => (run ? Math.sin(t + k) * 28 : 0);
+  return (
+    <g transform={`translate(${x},${y - (run ? Math.abs(Math.sin(t)) * 3 : 0)}) scale(${flip ? -scale : scale},${scale})`}>
+      <ellipse cx={0} cy={30} rx={34} ry={4} fill="#000" opacity={0.2} />
+      {leg(-22, 0, sw(0), true)}
+      {leg(20, 0, sw(2), true)}
+      <path d="M-34 -4 Q-40 -10 -46 4 Q-42 -14 -34 -12 Z" fill="#2a1b0e" />
+      <ellipse cx={0} cy={-6} rx={34} ry={13} fill={color} stroke={INK} strokeWidth={1.6} />
+      <path d="M24 -12 Q34 -30 40 -38 L50 -34 Q46 -22 34 -6 Z" fill={color} stroke={INK} strokeWidth={1.6} />
+      <path d="M38 -40 L54 -32 Q56 -27 51 -26 L40 -30 Z" fill={color} stroke={INK} strokeWidth={1.4} />
+      <path d="M26 -14 Q32 -30 38 -40 Q30 -32 24 -18 Z" fill="#2a1b0e" />
+      <circle cx={46} cy={-33} r={1.4} fill={INK} />
+      <path d="M-10 -18 Q0 -22 10 -18 L8 -10 L-8 -10 Z" fill="#8a3324" stroke={INK} strokeWidth={1} />
+      {leg(-16, 2, -sw(1), false)}
+      {leg(24, 2, -sw(3), false)}
+    </g>
+  );
+};
+
+// Pig, side view (the household was about to slaughter one for their guest — no slaughter drawn).
+export const Pig = ({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`}>
+    <ellipse cx={0} cy={1} rx={22} ry={3} fill="#000" opacity={0.2} />
+    {[-12, -6, 8, 14].map((lx) => (
+      <rect key={lx} x={lx - 2.5} y={-8} width={5} height={9} fill="#d99a8a" stroke={INK} strokeWidth={1} />
+    ))}
+    <ellipse cx={0} cy={-14} rx={22} ry={12} fill="#e8b0a0" stroke={INK} strokeWidth={1.5} />
+    <ellipse cx={22} cy={-15} rx={7} ry={6} fill="#e8b0a0" stroke={INK} strokeWidth={1.3} />
+    <ellipse cx={28} cy={-14} rx={2.6} ry={3.2} fill="#d99a8a" stroke={INK} strokeWidth={1} />
+    <path d="M18 -22 L22 -28 L24 -20 Z" fill="#d99a8a" stroke={INK} strokeWidth={1} />
+    <circle cx={24} cy={-17} r={1.1} fill={INK} />
+    <path d="M-22 -16 q-6 -2 -4 -7 q2 4 -1 5" stroke={INK} strokeWidth={1.2} fill="none" />
+  </g>
+);
+
+// Country house: rammed-earth walls, thatched roof, a lit doorway. (x, y) = front centre on the ground.
+export const Farmhouse = ({ x, y, scale = 1, lit = 1 }: { x: number; y: number; scale?: number; lit?: number }) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`}>
+    <rect x={-80} y={-70} width={160} height={70} fill="#b99a6b" stroke={INK} strokeWidth={1.5} />
+    {[18, 36, 54].map((dy) => (
+      <line key={dy} x1={-80} y1={-dy} x2={80} y2={-dy} stroke="#8a6f48" strokeWidth={1} />
+    ))}
+    <rect x={-18} y={-50} width={36} height={50} fill="#2a1b0e" />
+    <rect x={-18} y={-50} width={36} height={50} fill="#ffb84a" opacity={0.55 * lit} />
+    <rect x={40} y={-52} width={24} height={18} fill="#2a1b0e" />
+    <rect x={40} y={-52} width={24} height={18} fill="#ffb84a" opacity={0.6 * lit} />
+    <path d="M-96 -66 L0 -112 L96 -66 Z" fill="#a8894a" stroke={INK} strokeWidth={1.5} strokeLinejoin="round" />
+    {Array.from({ length: 9 }, (_, i) => -80 + i * 20).map((tx) => (
+      <line key={tx} x1={tx * 0.2} y1={-108} x2={tx} y2={-70} stroke="#8a6f38" strokeWidth={1} />
+    ))}
+  </g>
+);
+
+// Round bronze mirror on a stand; `glint` 0–1 flashes the reflection (Dong Zhuo saw the sword in it).
+export const Mirror = ({ x, y, scale = 1, glint = 0 }: { x: number; y: number; scale?: number; glint?: number }) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`}>
+    <path d="M-4 0 L-2 -40 L2 -40 L4 0 Z" fill="#6b4a2b" stroke={INK} strokeWidth={1.2} />
+    <circle cx={0} cy={-58} r={22} fill="#b0892c" stroke={INK} strokeWidth={1.6} />
+    <circle cx={0} cy={-58} r={17} fill="#d9c07a" />
+    <path d="M-8 -66 L8 -50" stroke="#fff6c2" strokeWidth={3 + glint * 4} opacity={0.4 + glint * 0.6} strokeLinecap="round" />
+    {glint > 0 && <circle cx={0} cy={-58} r={30 + glint * 14} fill="#fff6c2" opacity={0.35 * glint} />}
+  </g>
+);
+
+// Arrows in flight from (x0, y0) toward (x1, y1); `p` 0–1 is how far along. Drawn as shafts with fletching.
+export const ArrowShot = ({ x0, y0, x1, y1, p, s }: { x0: number; y0: number; x1: number; y1: number; p: number; s: number }) => {
+  if (p <= 0 || p >= 1) return null;
+  const x = x0 + (x1 - x0) * p, y = y0 + (y1 - y0) * p - Math.sin(p * Math.PI) * 30 * s;
+  const a = (Math.atan2(y1 - y0 - Math.cos(p * Math.PI) * 30 * s * Math.PI * 0.5, x1 - x0) * 180) / Math.PI;
+  return (
+    <g transform={`translate(${x},${y}) rotate(${a}) scale(${s})`}>
+      <line x1={-26} y1={0} x2={8} y2={0} stroke="#3b2a1a" strokeWidth={2} />
+      <path d="M8 -3 L16 0 L8 3 Z" fill="#8f8a7e" />
+      <path d="M-26 0 L-32 -5 M-26 0 L-32 5 M-22 0 L-28 -5 M-22 0 L-28 5" stroke="#efe2bd" strokeWidth={1.6} />
+      <line x1={-60} y1={0} x2={-30} y2={0} stroke="#fff6dd" strokeWidth={1.2} opacity={0.4} />
+    </g>
+  );
+};
+
+// Wine cup with rising steam ("the wine was still warm"); `warm` 0–1 fades the steam.
+export const WineCup = ({ x, y, scale = 1, warm = 1 }: { x: number; y: number; scale?: number; warm?: number }) => {
+  const frame = useCurrentFrame();
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <path d="M-14 -20 L14 -20 L10 -4 L-10 -4 Z" fill="#b0892c" stroke={INK} strokeWidth={1.4} />
+      <rect x={-3} y={-4} width={6} height={4} fill="#8c6a3a" />
+      <ellipse cx={0} cy={0} rx={10} ry={2.5} fill="#8c6a3a" stroke={INK} strokeWidth={1} />
+      <ellipse cx={0} cy={-20} rx={14} ry={3} fill="#7a2a1a" stroke={INK} strokeWidth={1.2} />
+      {[0, 1, 2].map((i) => {
+        const a = ((frame * 1.2 + i * 20) % 60) / 60;
+        return <path key={i} d={`M${-6 + i * 6} -24 q${5 + i} ${-10} 0 ${-20} q-6 -10 0 -20`} transform={`translate(0,${-a * 14})`} stroke="#fff6dd" strokeWidth={2.2} fill="none" opacity={(1 - a) * 0.8 * warm} />;
+      })}
+    </g>
+  );
+};
+
+// Low banquet table with wine jars and dishes; (x, y) = front centre on the ground.
+export const FeastTable = ({ x, y, w, scale = 1 }: { x: number; y: number; w: number; scale?: number }) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`}>
+    <rect x={-w / 2} y={-22} width={w} height={8} rx={2} fill="#7a3a24" stroke={INK} strokeWidth={1.4} />
+    {[-w / 2 + 8, w / 2 - 14].map((lx) => (
+      <rect key={lx} x={lx} y={-14} width={6} height={14} fill="#5a2a1a" />
+    ))}
+    {Array.from({ length: Math.max(2, Math.floor(w / 40)) }, (_, i) => -w / 2 + 20 + i * 40).map((jx, i) => (
+      <g key={jx}>
+        {i % 2 ? (
+          <ellipse cx={jx} cy={-24} rx={9} ry={3} fill="#e6cf8a" stroke={INK} strokeWidth={1} />
+        ) : (
+          <path d={`M${jx - 7} -22 Q${jx - 10} -34 ${jx - 4} -38 L${jx + 4} -38 Q${jx + 10} -34 ${jx + 7} -22 Z`} fill="#8c6a3a" stroke={INK} strokeWidth={1.1} />
+        )}
+      </g>
+    ))}
+  </g>
+);
+
+// Burial mound with white mourning banners.
+export const Grave = ({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) => {
+  const frame = useCurrentFrame();
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <path d="M-60 0 Q0 -50 60 0 Z" fill="#8a7350" stroke={INK} strokeWidth={1.5} />
+      <rect x={-6} y={-46} width={12} height={20} fill="#c9bfa8" stroke={INK} strokeWidth={1.1} />
+      {[-70, 70].map((bx, i) => (
+        <g key={bx}>
+          <line x1={bx} y1={0} x2={bx} y2={-90} stroke="#6b4a2b" strokeWidth={2.5} />
+          <path d={`M${bx} -88 L${bx + 10} ${-88} L${bx + 12 + Math.sin(frame * 0.12 + i) * 4} -40 L${bx + 2} -42 Z`} fill="#f3efe4" stroke={INK} strokeWidth={1} />
+        </g>
+      ))}
+    </g>
+  );
+};
+
+// Dark bushes on a hillside (ambush cover).
+export const Bushes = ({ x0, x1, y, s, n = 6, seed = 4 }: { x0: number; x1: number; y: number; s: number; n?: number; seed?: number }) => (
+  <g>
+    {Array.from({ length: n }, (_, i) => {
+      const bx = x0 + ((x1 - x0) * (i + 0.5)) / n + (random(`bx${seed}${i}`) - 0.5) * 30 * s;
+      const r = (16 + random(`br${seed}${i}`) * 12) * s;
+      return (
+        <g key={i}>
+          <circle cx={bx} cy={y - r * 0.6} r={r} fill="#25301f" />
+          <circle cx={bx + r * 0.7} cy={y - r * 0.4} r={r * 0.75} fill="#2e3a26" />
+        </g>
+      );
+    })}
+  </g>
+);
+
 // Figure looks per cast key, matched to the painted portraits, so a character reads the same in every scene.
 type Look = Partial<Parameters<typeof HanFigure>[0]>;
 export const LOOK: Record<string, Look> = {
@@ -475,4 +667,16 @@ export const LOOK: Record<string, Look> = {
   prince: { robe: "#7a6428", shade: "#5a4a1c", head: "prince" },
   soldier: { robe: "#6b5236", shade: "#4e3b26", head: "helmet" },
   official: { robe: "#3d4f6b", shade: "#2c3a50", head: "official" },
+  lvbu: { robe: "#8c2f4f", shade: "#6a2038", head: "plume" },
+  sunjian: { robe: "#a8382a", shade: "#7a2518", head: "helmet", beard: "short" },
+  sunce: { robe: "#8a3324", shade: "#66241a" },
+  sunquan: { robe: "#9c3426", shade: "#7a2518", head: "child" },
+  wangyun: { robe: "#3d4f6b", shade: "#2c3a50", head: "official", beard: "white" },
+  diaochan: { robe: "#d9a0a8", shade: "#b77a84", head: "lady", skin: "#efc9a4" },
+  huaxiong: { robe: "#3a3a40", shade: "#26262c", head: "helmet", beard: "bushy", stout: true },
+  lvboshe: { robe: "#8a6a3c", shade: "#6a502c", beard: "white" },
+  yuanshao: { robe: "#7a2a24", shade: "#5a1c18", head: "official", beard: "long" },
+  yuanshu: { robe: "#5a3a6e", shade: "#422a52", head: "official", beard: "short" },
+  liubiao: { robe: "#4a6a4a", shade: "#365036", head: "official", beard: "short" },
+  huangzu: { robe: "#4a5a3a", shade: "#36422a", head: "helmet", beard: "short" },
 };

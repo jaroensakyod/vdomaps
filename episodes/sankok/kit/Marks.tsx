@@ -18,7 +18,8 @@ export const Flames = ({ points, start, stagger = 6, outAt, end, size = 1 }: { p
         const on = start + i * stagger;
         const off = outAt === undefined ? Infinity : outAt + i * stagger;
         if (frame < on || frame > off + 12 || (end !== undefined && frame > end) || !isVisible(cam, p)) return null;
-        const k = interpolate(frame, [on, on + 12, off, off + 12], [0, 1, 1, 0], clamp);
+        // no outAt: fade in and stay (interpolate needs finite input ranges)
+        const k = outAt === undefined ? interpolate(frame, [on, on + 12], [0, 1], clamp) : interpolate(frame, [on, on + 12, off, off + 12], [0, 1, 1, 0], clamp);
         const xy = projection(p);
         if (!xy) return null;
         return (

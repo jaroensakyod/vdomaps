@@ -14,4 +14,5 @@ const y = [...stderr.matchAll(/YAVG=([\d.]+)/g)].map((m) => +m[1]);
 const bad = [];
 for (let i = 1; i < y.length - 1; i++) if (Math.abs(y[i] - y[i - 1]) > jump && Math.abs(y[i + 1] - y[i - 1]) < jump / 2) bad.push(i);
 console.log(`${file}: ${y.length} frames, ${bad.length} glitch frame(s)${bad.length ? ": " + bad.join(" ") : ""}`);
-process.exit(bad.length ? 1 : 0);
+if (y.length < 3) console.log(`  ✗ no frames read — the file is missing or empty`);
+process.exit(bad.length || y.length < 3 ? 1 : 0);
