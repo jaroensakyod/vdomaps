@@ -12,10 +12,16 @@
 // where each paragraph starts and the file is cut in the silence between them (snapped to the quietest stretch). An episode of 11 beats with a
 // narrator and 2 characters = 3 requests instead of 11. If Whisper cannot place the cuts cleanly (match < 75 % or
 // paragraphs overlapping), that voice falls back to one request per beat.
+//
+// Daily cap: when a model says to wait hours, the script moves on to TTS_FALLBACK (default
+// gemini-3.8-flash-lite-tts, same voices, own quota) and marks those beats with "model" in timing.json.
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 
-const [slug, defaultVoice = "Charon", model = "gemini-3.8-flash-tts"] = process.argv.slice(2);
+const [slug, defaultVoice = "Charon", firstModel = "gemini-3.8-flash-tts"] = process.argv.slice(2);
+// Daily cap on one model → carry on with the next (each TTS model has its own quota). TTS_FALLBACK="" turns it off.
+const models = [firstModel, ...(process.env.TTS_FALLBACK ?? "gemini-3.8-flash-lite-tts").split(",").filter((m) => m && m !== firstModel)];
+let model = models[0];
 const key = process.env.GEMINI_API_KEY;
 if (!slug || !key) throw new Error("usage: GEMINI_API_KEY=... node scripts/tts-gemini.mjs <slug> [voice] [model]");
 const epDir = `src/episodes/${slug}`;
@@ -46,7 +52,14 @@ const speak = async (text, voice, out) => {
     if (json.error?.code !== 429 || attempt >= 8) break;
     const hint = JSON.stringify(json.error.details ?? []).match(/"retryDelay":"(\d+)s"/);
     const wait = (hint ? Number(hint[1]) : 30) + 2;
-    if (wait > 300) throw new Error(`daily TTS quota used up (the API asks to wait ${(wait / 3600).toFixed(1)} h) — try again later`);
+    if (wait > 300) {
+      const next = models[models.indexOf(model) + 1];
+      if (!next) throw new Error(`daily TTS quota used up on ${models.join(", ")} (the API asks to wait ${(wait / 3600).toFixed(1)} h) — try again later`);
+      console.log(`  ⚠ daily quota used up on ${model} — switching to ${next}`);
+      model = next;
+      attempt = 0;
+      continue;
+    }
     console.log(`  rate limited, retrying in ${wait} s`);
     await new Promise((r) => setTimeout(r, wait * 1000));
   }
@@ -71,7 +84,7 @@ const finish = (src, beat, range) => {
     "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse" +
       (speed !== 1 ? `,atempo=${speed}` : ""),
     "-ar", "48000", file]);
-  return { id: beat.id, file: file.replace("public/", ""), sec: duration(file), voice: voiceFor(beat), text: beat.text, ...(speed !== 1 ? { speed } : {}) };
+  return { id: beat.id, file: file.replace("public/", ""), sec: duration(file), voice: voiceFor(beat), text: beat.text, ...(speed !== 1 ? { speed } : {}), ...(model !== models[0] ? { model } : {}) };
 };
 
 // Which beats need new audio.
@@ -148,3 +161,5 @@ else {
 const out = beats.map((b) => timing.get(b.id));
 writeFileSync(`${epDir}/timing.json`, JSON.stringify(out, null, 2));
 console.log("total", out.reduce((a, b) => a + b.sec, 0).toFixed(1), "s ·", requests, "TTS requests");
+const other = out.filter((t) => t.model);
+if (other.length) console.log(`⚠ ${other.length} beat(s) made on a fallback model (${[...new Set(other.map((t) => t.model))].join(", ")}): ${other.map((t) => t.id).join(", ")} — listen for a change in the voice`);

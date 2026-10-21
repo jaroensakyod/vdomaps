@@ -19,7 +19,10 @@
   Whisper and cuts in the nearest silence (`whisper-lib.mjs`: `silences` + `snapToSilence`; Whisper alone runs
   30–80 ms late and clips the next word). Offline test on eps 2/4/5 (29 beats glued with 0.35–0.7 s gaps): every
   cut inside its gap. ~3 requests per episode. Falls back to one request per beat for a voice if the match is
-  < 75 % or paragraphs overlap. On the daily cap the script stops with a message instead of waiting hours.
+  < 75 % or paragraphs overlap. On the daily cap the script switches to `TTS_FALLBACK` (default `gemini-3.8-flash-lite-tts`: same voices, own
+  quota, 99 % match on the ep 1 hook like 3.8 Flash) and tags those beats `"model"` in timing.json; it stops only
+  when every model is capped. Prices (Oct 2026, per 1M audio tokens, 25 tokens = 1 s): 3.8 Flash $9, 3.8 Flash
+  Lite $6, 2.5 Pro / 3.1 Flash $20 — a 75 s episode is under $0.02 on any of them.
 - Send **plain text only**. An English style instruction in the prompt is read aloud or derails the output.
 - Write numbers and abbreviations as Thai words in `text` ("สองร้อยแปด", "คริสต์ศักราช"); put the digit form in
   `caption` for subtitles.
