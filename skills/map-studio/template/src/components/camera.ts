@@ -23,12 +23,16 @@ export const camAt = (keys: CamKey[], frame: number): Cam => {
   return keys[keys.length - 1].cam;
 };
 
+const CLIP_MARGIN = 120; // px: wider than any stroke, so clip edges never show
+
 export const projectionFor = (cam: Cam, width: number, height: number): GeoProjection =>
   geoOrthographic()
     .rotate([-cam.lon, -cam.lat])
     .scale(cam.scale)
     .translate([width / 2, height / 2])
     .clipAngle(90)
+    // Cut paths just outside the frame: Chrome then paints only what is on screen (far fewer path segments).
+    .clipExtent([[-CLIP_MARGIN, -CLIP_MARGIN], [width + CLIP_MARGIN, height + CLIP_MARGIN]])
     .precision(0.3);
 
 // Whole globe on screen, `fill` = radius as a fraction of the short side.

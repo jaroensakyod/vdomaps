@@ -17,6 +17,7 @@ export const InsetPanel = ({
   sky = ["#1d3557", "#e07a5f"],
   font,
   accent = "#ff3b30",
+  top,
   children,
 }: {
   id: string;
@@ -27,6 +28,8 @@ export const InsetPanel = ({
   sky?: [string, string];
   font: string;
   accent?: string;
+  /** 9:16 only: panel top as a fraction of the height, to clear cards (default: just below the pin) */
+  top?: number;
   children: (g: InsetGeom) => ReactNode;
 }) => {
   const frame = useCurrentFrame();
@@ -39,7 +42,7 @@ export const InsetPanel = ({
   const W = vertical ? width - 100 * s : 780 * s;
   const H = vertical ? 380 * s : 420 * s;
   const x = vertical ? 50 * s : width - W - 40 * s;
-  const y = vertical ? Math.min(Math.max(p[1] + 60 * s, 660 * s), height * 0.695 - H) : Math.min(Math.max(p[1] - H / 2, 150 * s), height - H - 150 * s);
+  const y = vertical && top !== undefined ? height * top : vertical ? Math.min(Math.max(p[1] + 60 * s, 660 * s), height * 0.695 - H) : Math.min(Math.max(p[1] - H / 2, 150 * s), height - H - 150 * s);
   const ground = y + H - 46 * s;
   const sc = (vertical ? 1.55 : 1.5) * s;
   const lx = vertical ? Math.min(Math.max(p[0], x + 30 * s), x + W - 30 * s) : x;

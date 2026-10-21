@@ -5,18 +5,20 @@ import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
-import { CharacterCard, NovelStamp, SideCard, StatCard, TitleCard } from "../kit/Cards";
+import { CharacterCard, NovelStamp, PortraitCard, SideCard, StatCard, TitleCard } from "../kit/Cards";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Tint } from "../kit/Marks";
 import { at as place } from "../kit/places";
 import { Badge, C, fade, fonts, InkLabel, PaperMap, useUnit } from "../kit/theme";
 import beatsText from "./beats.json";
 import timing from "./timing.json";
+import { Insets } from "./Insets";
 
 // ตอนที่ 5 · ทหารสามพันยึดเมืองหลวง (ค.ศ. 189)
 export const EP: EpisodeMeta = { n: 5, title: "ทหารสามพันยึดเมืองหลวง", next: "ดาบเจ็ดดาว", nextQ: ["ดาบเล่มเดียว", "ฆ่าตั๋งโต๊ะได้ไหม?"], ask: "ถ้าเป็นลิโป้ จะทรยศเต๊งหงวนไหม?" };
 export const BEATS = buildBeats(timing, beatsText);
-const { B, at } = timeline(BEATS);
+const TL = timeline(BEATS);
+const { B, at } = TL;
 export const THUMB = at("trick", 0.4); // thumbnail frame
 
 const LY = place("luoyang");
@@ -113,10 +115,12 @@ export const Ep = ({ variant }: { variant: Variant }) => {
             <Badge at={[LY[0] + 0.25, LY[1] - 0.14]} name="ลิโป้" sub="ฝ่ายตั๋งโต๊ะ" color={C.dong} start={at("betray", 0.5)} above={false} />
           </g>
           <Badge at={[LY[0] - 0.25, LY[1] - 0.14]} name="โจโฉ" color={C.wei} start={at("cliff", 0.25)} above={false} />
+          <Insets {...TL} />
         </MapFrame>
       }
       overlay={
         <>
+          <PortraitCard who="dongzhuo" from={B.dong.start} to={B.dong.end + 6} />
           <Tint color="#1d2340" opacity={night} />
           <Tint color="#3a1d3c" opacity={dark} />
           <TitleCard kicker="สามก๊ก · ตอนที่ 5" lines={["ทหารแค่ 3,000 คน", "ยึดเมืองหลวงได้ยังไง?"]} from={4} to={B.hook.end} />
@@ -131,7 +135,6 @@ export const Ep = ({ variant }: { variant: Variant }) => {
               { label: "ตามบันทึก", text: "ตั๋งโต๊ะยุให้ลิโป้ฆ่าเต๊งหงวนจริง", color: C.wu, at: B.betray.start + 10, source: "จดหมายเหตุสามก๊ก · ภาคลิโป้" },
             ]}
           />
-          <CharacterCard who="dongzhuo" from={B.dong.start} to={B.puppet.start} />
           <CharacterCard who="emperor" from={B.puppet.start + 10} to={B.power.start} role="ฮ่องเต้วัย 8 ขวบ" />
           <Power />
           <Sword />

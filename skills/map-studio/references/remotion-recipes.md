@@ -72,6 +72,14 @@ All components referenced here are in `template/src/components/`. Read their sou
   (PSNR 42 dB). More concurrency did not help with vulkan. No working Vulkan driver → remove the line or `--gl=angle`.
   Intel UHD (i3-N305, 90 frames of the Red Cliffs battle): software 74 s, angle 45 s, **vulkan 38 s** (PSNR 46.7 dB
   vs software); concurrency 25 %, 50 % and 100 % all within 2 s.
+- **Where render time goes** (RTX 2060, 600 frames 9:16, concurrency 8): blank frame 16.9 s (capture alone ≈ 60 fps),
+  map only 42.6 s, projecting the map in JS without drawing 22 s. The cost is Chrome **painting long SVG paths**,
+  not d3 and not encoding (x264 = 2.8 s per 300 frames; NVENC 1.5 s and no faster overall; JPEG quality 60 no faster).
+- **Clip paths to the frame:** `projectionFor` in `camera.ts` sets `clipExtent` 120 px outside the frame, so
+  off-screen coastline is never handed to Chrome. Same pixels (PSNR ∞), episode render 39 s → 28.5 s per 600 frames.
+- **Batches:** `npm run render:batch -- --loudness S02fb=out/ep02-fb.mp4 …` bundles once and runs 3 renders side by
+  side at concurrency 6 (one render leaves the GPU ~70 % idle). 4 × 75 s episodes in 5:17 min incl. loudness,
+  ~79 s each (was ~3:06 each one at a time). 2 side by side: 1.4×, 3 side by side: 1.6× over one render.
 - **Never run full-frame SVG noise filters (feTurbulence) per frame** — a 1-minute video went from minutes to
   well over 25 minutes. Render textures once to PNG with a 1-frame composition (`npx remotion still … --image-format=png`)
   and overlay them with `<Img>`.

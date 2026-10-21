@@ -1,5 +1,5 @@
 // Places across the whole series, [lon, lat]. All approximate — ancient sites are often disputed or lost;
-// say "โดยประมาณ" on screen. Thai names follow kit/glossary.md. Add places here as episodes need them.
+// are approximate (said in the description, not on screen). Thai names follow kit/glossary.md. Add places here as episodes need them.
 type LL = [number, number];
 export type Place = { at: LL; th: string; zh: string };
 

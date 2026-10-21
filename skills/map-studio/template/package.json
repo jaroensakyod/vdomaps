@@ -15,6 +15,8 @@
     "thumb": "node scripts/thumb.mjs",
     "sfx": "node scripts/sfx.mjs",
     "loudness": "node scripts/loudness.mjs",
+    "render:batch": "node scripts/render-batch.mjs",
+    "image": "node scripts/image-gemini.mjs",
     "imagery": "node scripts/fetch-imagery.mjs",
     "dem": "node scripts/fetch-dem.mjs",
     "osm": "node scripts/fetch-osm.mjs",

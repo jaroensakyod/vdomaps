@@ -5,18 +5,20 @@ import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
-import { CharacterCard, Seal, SideCard, StatCard, TitleCard } from "../kit/Cards";
+import { CharacterCard, PortraitCard, Seal, SideCard, StatCard, TitleCard } from "../kit/Cards";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Flames, Tint } from "../kit/Marks";
 import { at as place } from "../kit/places";
 import { Badge, C, clamp, fade, fonts, InkLabel, PaperMap, useUnit } from "../kit/theme";
 import beatsText from "./beats.json";
 import timing from "./timing.json";
+import { Insets } from "./Insets";
 
 // ตอนที่ 4 · ประตูวังเปื้อนเลือด (ค.ศ. 189)
 export const EP: EpisodeMeta = { n: 4, title: "ประตูวังเปื้อนเลือด", next: "ทหารสามพันยึดเมืองหลวง", nextQ: ["ทหารแค่ 3,000 คน", "ยึดเมืองหลวงได้ยังไง?"], ask: "ถ้าเป็นโฮจิ๋น จะฟังคำเตือนของโจโฉไหม?" };
 export const BEATS = buildBeats(timing, beatsText);
-const { B, at } = timeline(BEATS);
+const TL = timeline(BEATS);
+const { B, at } = TL;
 export const THUMB = at("massacre", 0.8); // thumbnail frame
 
 const LY = place("luoyang");
@@ -108,10 +110,13 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <InkLabel at={RIVER} text="แม่น้ำหวงโห" start={at("river", 0.5)} dy={-30} dot={false} color={C.river} size={1.1} />
           <Arrow points={[[111.75, 34.75], [112.15, 34.8], BEIMANG]} start={at("meet", 0.4)} end={at("meet", 0.95)} color={C.dong} width={22} />
           <Badge at={BEIMANG} name="ตั๋งโต๊ะ" color={C.dong} start={at("meet", 0.75)} />
+          <Insets {...TL} />
         </MapFrame>
       }
       overlay={
         <>
+          <PortraitCard who="caocao" from={B.cao.start} to={B.cao.end + 6} />
+          <PortraitCard who="zhangrang" from={B.zhangrang.start} to={B.zhangrang.end + 6} />
           <Tint color="#b0302a" opacity={blood} />
           <TitleCard kicker="สามก๊ก · ตอนที่ 4" lines={["ฆ่าทุกคนที่ไม่มีหนวด", "ในวังฮ่องเต้?"]} from={4} to={B.hook.end} />
           <CharacterCard who="hejin" from={B.hejin.start + 6} to={B.summon.start + 10} />

@@ -3,7 +3,7 @@ import { region } from "../../../components/Region";
 import { SHU_222, WEI_208, WEI_222, WU_208, WU_222 } from "../../redcliffs/geo";
 import { C } from "./theme";
 
-// Spheres of control by year for the scoreboard map. Hand-drawn, rough, always shown as "เขตโดยประมาณ".
+// Spheres of control by year for the scoreboard map. Hand-drawn, rough, approximate (said in the description).
 // Each era lists the sides in play; add eras as the batches reach them (200, 214, 263 still to come).
 export type Side = { key: string; name: string; color: string; area: Feature<Polygon>; label: [number, number] };
 export type Era = { year: number; title: string; sides: Side[] };

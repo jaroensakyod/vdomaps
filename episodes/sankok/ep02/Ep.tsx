@@ -5,18 +5,20 @@ import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
-import { NovelStamp, Seal, SideCard, TitleCard } from "../kit/Cards";
+import { NovelStamp, PortraitCard, Seal, SideCard, TitleCard } from "../kit/Cards";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Blossom } from "../kit/Marks";
 import { at as place } from "../kit/places";
 import { Badge, C, fade, InkLabel, PaperMap, useUnit } from "../kit/theme";
 import beatsText from "./beats.json";
 import timing from "./timing.json";
+import { Insets } from "./Insets";
 
 // ตอนที่ 2 · สวนท้อที่ไม่มีอยู่จริง (ค.ศ. 184)
 export const EP: EpisodeMeta = { n: 2, title: "สวนท้อที่ไม่มีอยู่จริง", next: "ผู้นำกบฏตายเพราะโรค", nextQ: ["ผู้นำกบฏหลายแสนคน", "ไม่ได้ตายในสนามรบ?"], ask: "เล่าปี่เฆี่ยนขุนนาง ทำถูกหรือผิด?" };
 export const BEATS = buildBeats(timing, beatsText);
-const { B, at } = timeline(BEATS);
+const TL = timeline(BEATS);
+const { B, at } = TL;
 export const THUMB = at("twist", 0.8); // thumbnail frame
 
 const ZHUO_AT = place("zhuo");
@@ -92,9 +94,9 @@ export const Ep = ({ variant }: { variant: Variant }) => {
         <MapFrame cam={cam}>
           <PaperMap />
           <Blossom at={[ZHUO_AT[0], ZHUO_AT[1] + 0.12]} start={0} end={B.war.start + 10} />
-          <InkLabel at={ZHUO_AT} text="โต๊ะกุ๋น · โดยประมาณ" start={0} end={B.war.start + 20} dy={48} />
+          <InkLabel at={ZHUO_AT} text="โต๊ะกุ๋น" start={0} end={B.war.start + 20} dy={48} />
           <Arrow points={[ZHUO_AT, [115.6, 39.0], ANXI]} start={B.war.start + 10} end={B.war.end} color={C.shu} width={16} opacity={1 - gone} />
-          <InkLabel at={[ANXI[0] + 1.25, ANXI[1] + 0.12]} text="อันฮี · โดยประมาณ" start={at("war", 0.7)} end={B.cliff.start + 20} dot={false} />
+          <InkLabel at={[ANXI[0] + 1.25, ANXI[1] + 0.12]} text="อันฮี" start={at("war", 0.7)} end={B.cliff.start + 20} dot={false} />
           <g opacity={1 - gone}>
             <Badge at={three(0, 0)} name="เล่าปี่" color={C.shu} start={0} />
             <Badge at={three(0.62, -0.24)} name="เตียวหุย" color={C.shu} start={6} above={false} />
@@ -102,10 +104,12 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           </g>
           <Arrow points={[ANXI, [114.5, 38.75], [114.0, 39.1]]} start={at("flee", 0.4)} end={B.flee.end} color={C.shu} width={14} variant="dashed" opacity={1 - fade(frame, B.cliff.start, B.cliff.start + 20)} />
           <InkLabel at={place("julu")} text="เตียวก๊ก · กิลก" start={B.cliff.start + 30} color={C.yellow} size={1.2} />
+          <Insets {...TL} />
         </MapFrame>
       }
       overlay={
         <>
+          <PortraitCard who="liubei" from={B.oath.start} to={B.oath.end + 6} />
           <NovelStamp
             at={B.novel.start}
             end={B.war.start + 6}

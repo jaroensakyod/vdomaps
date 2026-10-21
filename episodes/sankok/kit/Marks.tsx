@@ -6,7 +6,7 @@ import { C, clamp, fade } from "./theme";
 
 type LL = [number, number];
 
-// Map-layer marks (inside <MapFrame>). Everything is approximate on screen; pair with "โดยประมาณ".
+// Map-layer marks (inside <MapFrame>). Everything is approximate (the description says so; nothing on screen).
 
 // Fires that light one by one (`stagger` frames apart) and, with `outAt`, go out one by one too.
 export const Flames = ({ points, start, stagger = 6, outAt, end, size = 1 }: { points: LL[]; start: number; stagger?: number; outAt?: number; end?: number; size?: number }) => {

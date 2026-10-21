@@ -25,8 +25,15 @@ export const timeline = (beats: Beat[]) => {
     if (!B[id]) throw new Error(`no beat "${id}"`);
     return Math.round(B[id].start + B[id].len * k);
   };
-  return { B, at };
+  // word(id, w) = the frame where Whisper heard word `w` (n-th occurrence) in that beat; falls back to the beat start.
+  const word = (id: string, w: string, n = 0) => {
+    const hit = (B[id]?.words ?? []).filter((x) => x.w === w)[n];
+    return hit ? Math.round(B[id].start + hit.s * LAYOUT.fps) : at(id);
+  };
+  return { B, at, word };
 };
+
+export type Timeline = ReturnType<typeof timeline>;
 
 // Speaker name above the subtitle while a character's line plays.
 const SpeakerTag = ({ who, start, len }: { who: string; start: number; len: number }) => {
@@ -127,7 +134,7 @@ export const EpisodeFrame = ({ ep, beats, variant, map, overlay, sounds }: { ep:
           <Caption key={b.id} text={b.text} spoken={b.spoken} words={b.words} start={b.start} len={b.len} font={fonts.body} color="#fff6dd" stroke="#2a1b0e" />
         ),
       )}
-      <Credit text={ep.credit ?? "แผนที่: Natural Earth · ตำแหน่งและเขตแดนโดยประมาณ"} />
+      {ep.credit && <Credit text={ep.credit} /> /* map source + "approximate" go in the description, not on screen */}
       {variant !== "thumb" && <Brand />}
       {variant === "fb" && <PartBadge n={ep.n} />}
       {variant === "fb" && <NextCard ep={ep} from={last.end + 4} />}

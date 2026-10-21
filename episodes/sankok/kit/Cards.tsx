@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
-import { AbsoluteFill, Easing, interpolate, spring, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame } from "remotion";
 import { person } from "./cast";
 import { C, card, clamp, fade, fonts, useUnit } from "./theme";
+
+const portrait = (img: string) => staticFile(`portraits/sankok/${img}.jpg`);
 
 // Overlay cards shared by every episode. 16:9 puts cards on the right; 9:16 in the upper third, clear of the
 // top UI band and the captions at 70% height.
@@ -64,12 +66,40 @@ export const CharacterCard = ({ who, from, to, role }: { who: string; from: numb
   const k = spring({ frame: frame - from, fps, config: { damping: 14 } });
   return (
     <div style={{ position: "absolute", left: vertical ? width / 2 : 70 * s, top: vertical ? height * 0.57 : undefined, bottom: vertical ? undefined : 170 * s, transform: `${vertical ? "translateX(-50%) " : ""}translateY(${(1 - k) * 30 * s}px)`, opacity: o, ...card(s), fontFamily: fonts.body, display: "flex", alignItems: "center", gap: 18 * s, padding: `${10 * s}px ${28 * s}px ${10 * s}px ${12 * s}px`, borderLeft: `${14 * s}px solid ${p.color}`, whiteSpace: "nowrap" }}>
+      {p.img && <Img src={portrait(p.img)} style={{ width: 150 * s, height: 150 * s, objectFit: "cover", borderRadius: 10 * s, border: `${3 * s}px solid ${C.ink}` }} />}
       <div style={{ fontFamily: "'Microsoft YaHei', 'SimSun', serif", fontSize: 40 * s, color: p.color, writingMode: "vertical-rl", lineHeight: 1 }}>{p.zh}</div>
       <div>
         <div style={{ fontFamily: fonts.title, fontSize: 48 * s, lineHeight: 1.3 }}>{p.name}</div>
         <div style={{ fontSize: 26 * s, lineHeight: 1.4, opacity: 0.8 }}>{role ?? p.role}</div>
       </div>
     </div>
+  );
+};
+
+// Large painted portrait while a character speaks: slow push-in, name plate, "ภาพประกอบ" (AI art) label.
+// 9:16: upper middle, above the speaker tag; 16:9: left side.
+export const PortraitCard = ({ who, from, to }: { who: string; from: number; to: number }) => {
+  const frame = useCurrentFrame();
+  const { s, fps, height, vertical } = useUnit();
+  const p = person(who);
+  const o = fade(frame, from, from + 6, to - 8, to);
+  if (o <= 0 || !p.img) return null;
+  const k = spring({ frame: frame - from, fps, config: { damping: 13 } });
+  const zoom = interpolate(frame, [from, to], [1, 1.08], clamp);
+  const size = (vertical ? 400 : 440) * s;
+  return (
+    <AbsoluteFill style={{ alignItems: vertical ? "center" : "flex-start", justifyContent: "flex-start", padding: vertical ? `${height * 0.2}px 0 0` : `${110 * s}px 0 0 ${70 * s}px`, opacity: o }}>
+      <div style={{ ...card(s), padding: 10 * s, transform: `scale(${0.85 + 0.15 * k}) rotate(${-1.5 * k}deg)`, position: "relative" }}>
+        <div style={{ width: size, height: size, overflow: "hidden", borderRadius: 6 * s, border: `${2 * s}px solid ${C.ink}` }}>
+          <Img src={portrait(p.img)} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${zoom})` }} />
+        </div>
+        <div style={{ position: "absolute", left: 20 * s, top: 20 * s, background: "rgba(42,27,14,0.7)", color: "#fff6dd", fontFamily: fonts.body, fontSize: 16 * s, lineHeight: 1.4, padding: `${1 * s}px ${10 * s}px`, borderRadius: 6 * s }}>ภาพประกอบ</div>
+        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: 14 * s, paddingTop: 6 * s, fontFamily: fonts.body }}>
+          <span style={{ fontFamily: fonts.title, fontSize: 44 * s, lineHeight: 1.3, color: C.ink, borderBottom: `${5 * s}px solid ${p.color}` }}>{p.name}</span>
+          <span style={{ fontFamily: "'Microsoft YaHei', 'SimSun', serif", fontSize: 30 * s, opacity: 0.75 }}>{p.zh}</span>
+        </div>
+      </div>
+    </AbsoluteFill>
   );
 };
 

@@ -14,11 +14,13 @@ import { EraMap, YearBadge } from "../kit/Scoreboard";
 import { Badge, C, fonts, InkLabel, PaperMap, useUnit } from "../kit/theme";
 import beatsText from "./beats.json";
 import timing from "./timing.json";
+import { Insets } from "./Insets";
 
 // ตอนที่ 3 · ผู้นำกบฏตายเพราะโรค (ค.ศ. 184–189)
 export const EP: EpisodeMeta = { n: 3, title: "ผู้นำกบฏตายเพราะโรค", next: "ประตูวังเปื้อนเลือด", nextQ: ["ฆ่าทุกคนที่ไม่มีหนวด", "ในวังฮ่องเต้?"], ask: "โจโฉคือวีรบุรุษ หรือกังฉิน?" };
 export const BEATS = buildBeats(timing, beatsText);
-const { B, at } = timeline(BEATS);
+const TL = timeline(BEATS);
+const { B, at } = TL;
 export const THUMB = at("head", 0.35); // thumbnail frame
 
 const GUANGZONG = bbox([[113.6, 36.2], [116.6, 38.2]]);
@@ -99,7 +101,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <PaperMap />
           <EraMap from={184} start={B.head.start + 20} end={B.cao.start + 30} opacity={0.65} />
           <Badge at={place("guangzong")} name="เตียวก๊ก" sub="ป่วยตาย" color={C.yellow} start={B.ill.start} end={at("head", 0.4)} />
-          <InkLabel at={place("guangzong")} text="กองจง · โดยประมาณ" start={4} end={B.head.end} dy={48} />
+          <InkLabel at={place("guangzong")} text="กองจง" start={4} end={B.head.end} dy={48} />
           <Flames points={YELLOW_TURBAN_RISINGS.map((r) => r.at)} start={-200} stagger={0} outAt={at("head", 0.5)} />
           <Flags items={WARLORDS} start={B.cost.start + 15} stagger={Math.round((B.governors.end - B.cost.start - 15) / WARLORDS.length)} end={B.cao.start + 25} />
           <Badge at={YINGCHUAN} name="โจโฉ" sub="ปราบโจรที่เองฉวน" color={C.wei} start={at("cao", 0.4)} end={B.emperor.start + 10} />
@@ -107,6 +109,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <InkLabel at={luoyang} text="ลกเอี๋ยง · เมืองหลวง" start={B.emperor.start + 25} dy={48} size={1.1} />
           <Badge at={[luoyang[0] - 0.45, luoyang[1] + 0.25]} name="แม่ทัพ" sub="โฮจิ๋น" color={C.han} start={at("cliff", 0.2)} />
           <Badge at={[luoyang[0] + 0.45, luoyang[1] + 0.25]} name="ขันที" sub="สิบขันที" color={C.dong} start={at("cliff", 0.35)} />
+          <Insets {...TL} />
         </MapFrame>
       }
       overlay={

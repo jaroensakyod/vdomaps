@@ -35,7 +35,6 @@ export const YearBadge = ({ year, title, start, end }: { year: number; title?: s
     <div style={{ position: "absolute", left: "50%", top: vertical ? height * 0.2 : 40 * s, transform: `translateX(-50%) scale(${0.9 + 0.1 * k})`, opacity: o, ...card(s), padding: `${6 * s}px ${30 * s}px`, textAlign: "center", fontFamily: fonts.body, whiteSpace: "nowrap" }}>
       <span style={{ fontFamily: fonts.title, fontSize: 44 * s, lineHeight: 1.35 }}>ค.ศ. {year}</span>
       {title && <span style={{ fontSize: 28 * s, marginLeft: 16 * s, opacity: 0.8 }}>{title}</span>}
-      <div style={{ fontSize: 18 * s, opacity: interpolate(frame, [start + 20, start + 30], [0, 0.65], clamp), lineHeight: 1.3 }}>เขตอำนาจโดยประมาณ</div>
     </div>
   );
 };
