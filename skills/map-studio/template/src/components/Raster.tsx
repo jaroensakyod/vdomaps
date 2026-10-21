@@ -112,6 +112,9 @@ export const Raster = ({ layers, cell = 2.5 }: { layers: RasterLayer[]; cell?: n
     ctx.arc(tx, ty, r, 0, Math.PI * 2);
     ctx.clip();
     layers.forEach((layer, li) => {
+      // Fade a layer by opacity, but keep it in the list: `loaded` is indexed by position, so the list must not
+      // change length between frames (a filtered list made loaded[li] undefined).
+      if ((layer.opacity ?? 1) <= 0 || !loaded[li]) return;
       const { meta, img } = loaded[li];
       const [w, s, e, n] = meta.bbox;
       const nx = Math.max(2, Math.ceil((e - w) / cell));

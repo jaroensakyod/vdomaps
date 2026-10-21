@@ -15,6 +15,7 @@ export const Caption = ({
   stroke = "#1b130b",
   spoken,
   words,
+  top = 0.7,
 }: {
   text: string;
   start: number;
@@ -24,6 +25,8 @@ export const Caption = ({
   stroke?: string;
   spoken?: string;
   words?: Word[];
+  /** 9:16 only: caption top as a fraction of the height (default 0.7) */
+  top?: number;
 }) => {
   const frame = useCurrentFrame();
   const { width, height, fps } = useVideoConfig();
@@ -41,7 +44,7 @@ export const Caption = ({
           position: "absolute",
           left: 0,
           right: 0,
-          top: vertical ? height * 0.7 : undefined,
+          top: vertical ? height * top : undefined,
           bottom: vertical ? undefined : 64 * s,
           textAlign: "center",
           fontFamily: font,

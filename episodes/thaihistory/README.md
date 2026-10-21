@@ -11,7 +11,7 @@
 | `ep01/sources.md` | ข้อเท็จจริงทุกข้อ พร้อมแหล่งอ้างอิงและระดับความแน่นอน (ตรวจแล้ว 21 ต.ค. 2569) |
 | `ep01/beats.json` | `text` คือข้อความที่ให้ TTS อ่าน ส่วน `caption` คือข้อความที่ขึ้นจอ ทั้งสองต้องแบ่งช่องว่างเป็นคำจำนวนเท่ากัน และมี `card` สำหรับการ์ด |
 | `ep01/timing.json` | เสียงจาก Gemini 3.8 Flash Lite (Charon) ทำให้ช้าลงเหลือ 0.95 เท่า มีเวลารายคำจาก Whisper และปรับด้วย `snap-words` แล้ว |
-| `news/` | **สไตล์ที่อนุมัติแล้ว** ได้แก่ `Period.tsx` (ทหารพม่า กำแพงใบเสมา ปรางค์ เจดีย์ ค่าย ซาก) และ `Open10.tsx` (ช่วงเปิด 17 วินาที 6 ฉาก) |
+| `news/` | **ตอนเต็มสไตล์ข่าว (อนุมัติแล้ว)**: `Ep.tsx` = คอมโพสิชัน `THNews` ทั้งคลิป 9:57 · `kit.tsx` = เวลา/หมุด/การ์ด/กรอบภาพประกอบ/ควิซ · `ch0`–`ch8` = 9 ช่วง แต่ละช่วงเปลี่ยนภาพตามคำพากย์ (`wf(beat, "คำ")`) · `Period*.tsx` = ตัวละครและฉากยุคอยุธยา (ทหารไทย/พม่า/จีน ชาวบ้าน พระ ช้าง ม้า กำแพงใบเสมา ปรางค์ วัง ค่าย เรือ ฯลฯ) |
 | `kit/`, `StyleFrames.tsx`, `ep01/Ep.tsx` | เวอร์ชันแรกที่เป็นแผนที่กระดาษการ์ตูน **ผู้ใช้ไม่ผ่าน** เก็บไว้ดูเป็นตัวอย่างเท่านั้น |
 | `th-rivers.mjs` | สร้างไฟล์แม่น้ำภาคกลางและคลองรอบเกาะจากข้อมูล OSM |
 
@@ -24,14 +24,16 @@ node th-rivers.mjs
 node scripts/fetch-imagery.mjs bluemarble sea 88 2 112 28 7500
 TIME=2025-01-05 node scripts/fetch-imagery.mjs hls plainhls 100.0 13.6 101.4 15.3 4096
 TIME=2025-01-20 node scripts/fetch-imagery.mjs hls isle 100.46 14.24 100.68 14.48 2400
+TIME=2025-01-10 node scripts/fetch-imagery.mjs hls banghls 100.1 14.4 101.0 15.6 3000
+node scripts/fetch-imagery.mjs bluemarble world
 ```
 
 ## เรนเดอร์
 
 ```bash
-npx remotion render THNews10 out/th/news10.mp4 --gl=angle
-node scripts/check-glitch.mjs out/th/news10.mp4
-node scripts/loudness.mjs out/th/news10.mp4
+npx remotion render THNews out/th/full.mp4 --gl=angle
+node scripts/check-glitch.mjs out/th/full.mp4
+node scripts/loudness.mjs out/th/full.mp4
 ```
 
-ขั้นต่อไปคือทำทั้งคลิปในสไตล์ `news/` โดยเปลี่ยนภาพทุก 3–4 วินาทีตามคำพากย์ เริ่มจากช่วง "อาวุธลับของอยุธยา"
+เพิ่มช่วงใหม่: เขียน `chN.tsx` ตามสัญญา `Chapter` ใน `kit.tsx` แล้วใส่ใน `CHAPTERS` ของ `news/Ep.tsx` · ตรวจด้วยภาพนิ่งทุก ~3 วิ ก่อนเรนเดอร์

@@ -7,7 +7,7 @@
       "title": "คืนกรุงแตก"
     },
     {
-      "beat": "island",
+      "beat": "go",
       "title": "อาวุธลับของอยุธยา"
     },
     {
@@ -49,8 +49,8 @@
     "ประชุมพงศาวดาร ภาคที่ 65 (พระราชพงศาวดารกรุงธนบุรี)"
   ],
   "credits": [
-    "แผนที่: © OpenStreetMap contributors (ODbL), Natural Earth (public domain)",
-    "ตำแหน่ง เส้นทางทัพ และค่าย เป็นตำแหน่งโดยประมาณ"
+    "แผนที่: ภาพดาวเทียม NASA HLS (Sentinel-2) และ NASA Blue Marble · แม่น้ำ © OpenStreetMap contributors (ODbL) · Natural Earth",
+    "ตำแหน่ง เส้นทางทัพ และค่าย เป็นตำแหน่งโดยประมาณ · ภาพประกอบวาดขึ้นใหม่ ไม่ใช่ภาพจริง"
   ],
   "music": [
     "เสียงเอฟเฟกต์สังเคราะห์ด้วยโค้ด",

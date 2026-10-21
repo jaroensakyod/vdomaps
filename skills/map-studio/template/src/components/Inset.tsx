@@ -18,6 +18,7 @@ export const InsetPanel = ({
   font,
   accent = "#ff3b30",
   top,
+  panelHeight,
   children,
 }: {
   id: string;
@@ -30,6 +31,8 @@ export const InsetPanel = ({
   accent?: string;
   /** 9:16 only: panel top as a fraction of the height, to clear cards (default: just below the pin) */
   top?: number;
+  /** 9:16 only: panel height in px at 1080 (default 380) */
+  panelHeight?: number;
   children: (g: InsetGeom) => ReactNode;
 }) => {
   const frame = useCurrentFrame();
@@ -40,7 +43,7 @@ export const InsetPanel = ({
   if (!p) return null;
   const vertical = height > width;
   const W = vertical ? width - 100 * s : 780 * s;
-  const H = vertical ? 380 * s : 420 * s;
+  const H = vertical ? (panelHeight ?? 380) * s : 420 * s;
   const x = vertical ? 50 * s : width - W - 40 * s;
   const y = vertical && top !== undefined ? height * top : vertical ? Math.min(Math.max(p[1] + 60 * s, 660 * s), height * 0.695 - H) : Math.min(Math.max(p[1] - H / 2, 150 * s), height - H - 150 * s);
   const ground = y + H - 46 * s;
