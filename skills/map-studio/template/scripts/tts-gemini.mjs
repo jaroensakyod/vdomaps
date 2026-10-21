@@ -6,8 +6,14 @@
 // regenerates beats whose text, voice or speed changed (FORCE=1 regenerates all); reused beats keep their word timing.
 // "speed" on a beat (e.g. 1.15 for an angry line, 0.92 for a heavy one) changes its tempo without changing pitch.
 // Send plain text only: an English style instruction in the prompt gets read aloud. Write numbers as Thai words.
+//
+// BATCH=1: one request per voice instead of one per beat (the TTS models allow only ~100 requests a day, ~10 a
+// minute). All beats of a voice are read in one go, one paragraph each; Whisper (scripts/whisper-lib.mjs) finds
+// where each paragraph starts and the file is cut in the silence between them (snapped to the quietest stretch). An episode of 11 beats with a
+// narrator and 2 characters = 3 requests instead of 11. If Whisper cannot place the cuts cleanly (match < 75 % or
+// paragraphs overlapping), that voice falls back to one request per beat.
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 
 const [slug, defaultVoice = "Charon", model = "gemini-3.8-flash-tts"] = process.argv.slice(2);
 const key = process.env.GEMINI_API_KEY;
@@ -20,53 +26,125 @@ const before = existsSync(`${epDir}/timing.json`) ? JSON.parse(readFileSync(`${e
 const voiceFor = (b) => b.voice ?? (b.speaker ? voices[b.speaker] : undefined) ?? voices.narrator ?? defaultVoice;
 const dir = `public/audio/${slug}`;
 mkdirSync(dir, { recursive: true });
+let requests = 0;
 
-const timing = [];
+// One Gemini TTS request → 48 kHz WAV at `out` (untrimmed).
+const speak = async (text, voice, out) => {
+  // Rate-limited keys: on 429, wait the delay the API suggests (or 30 s) and retry — unless it is the daily cap.
+  let json;
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text }] }],
+        generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } } },
+      }),
+    });
+    requests++;
+    json = await res.json();
+    if (json.error?.code !== 429 || attempt >= 8) break;
+    const hint = JSON.stringify(json.error.details ?? []).match(/"retryDelay":"(\d+)s"/);
+    const wait = (hint ? Number(hint[1]) : 30) + 2;
+    if (wait > 300) throw new Error(`daily TTS quota used up (the API asks to wait ${(wait / 3600).toFixed(1)} h) — try again later`);
+    console.log(`  rate limited, retrying in ${wait} s`);
+    await new Promise((r) => setTimeout(r, wait * 1000));
+  }
+  const part = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
+  if (!part) throw new Error(`TTS failed: ${JSON.stringify(json).slice(0, 300)}`);
+  const raw = `${out}.raw`;
+  writeFileSync(raw, Buffer.from(part.inlineData.data, "base64"));
+  // Raw PCM models return audio/l16 at 24 kHz.
+  const input = part.inlineData.mimeType.includes("wav") ? ["-i", raw] : ["-f", "s16le", "-ar", "24000", "-ac", "1", "-i", raw];
+  execFileSync("ffmpeg", ["-v", "error", "-y", ...input, "-ar", "48000", out]);
+  rmSync(raw);
+};
+
+const duration = (f) => Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f]).toString());
+
+// Trim leading/trailing silence (+ tempo change) into the beat's final file; `range` cuts a slice of a long take.
+const finish = (src, beat, range) => {
+  const file = `${dir}/${beat.id.replace(/[^\w-]/g, "_")}.wav`;
+  const speed = beat.speed ?? 1;
+  const cut = range ? ["-ss", range[0].toFixed(3), "-to", range[1].toFixed(3)] : [];
+  execFileSync("ffmpeg", ["-v", "error", "-y", ...cut, "-i", src, "-af",
+    "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse" +
+      (speed !== 1 ? `,atempo=${speed}` : ""),
+    "-ar", "48000", file]);
+  return { id: beat.id, file: file.replace("public/", ""), sec: duration(file), voice: voiceFor(beat), text: beat.text, ...(speed !== 1 ? { speed } : {}) };
+};
+
+// Which beats need new audio.
+const timing = new Map();
+const todo = [];
 for (const beat of beats) {
   const voice = voiceFor(beat);
   if (beat.speaker && !beat.voice && !voices[beat.speaker]) console.warn(`⚠ ${beat.id}: no voice for speaker "${beat.speaker}" in voices.json, using ${voice}`);
   const old = before.find((t) => t.id === beat.id);
-  const speed = beat.speed ?? 1;
-  if (old && !process.env.FORCE && old.text === beat.text && old.voice === voice && (old.speed ?? 1) === speed && existsSync(`public/${old.file}`)) {
-    timing.push(old);
+  if (old && !process.env.FORCE && old.text === beat.text && old.voice === voice && (old.speed ?? 1) === (beat.speed ?? 1) && existsSync(`public/${old.file}`)) {
+    timing.set(beat.id, old);
     console.log(beat.id.padEnd(10), old.sec.toFixed(2), voice, "(unchanged)");
-    continue;
-  }
-  const file = `${dir}/${beat.id.replace(/[^\w-]/g, "_")}.wav`;
-  {
-    // Free-tier keys are rate-limited per minute: on 429, wait the delay the API suggests (or 30 s) and retry.
-    let json;
-    for (let attempt = 1; ; attempt++) {
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: beat.text }] }],
-          generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } } },
-        }),
-      });
-      json = await res.json();
-      if (json.error?.code !== 429 || attempt >= 8) break;
-      const hint = JSON.stringify(json.error.details ?? []).match(/"retryDelay":"(\d+)s"/);
-      const wait = (hint ? Number(hint[1]) : 30) + 2;
-      console.log(`  ${beat.id}: rate limited, retrying in ${wait} s`);
-      await new Promise((r) => setTimeout(r, wait * 1000));
-    }
-    const part = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
-    if (!part) throw new Error(`${beat.id}: ${JSON.stringify(json).slice(0, 300)}`);
-    const buf = Buffer.from(part.inlineData.data, "base64");
-    const raw = `${file}.raw`;
-    writeFileSync(raw, buf);
-    // Normalise to 48 kHz WAV and trim leading/trailing silence; raw PCM models return audio/l16.
-    const input = part.inlineData.mimeType.includes("wav") ? ["-i", raw] : ["-f", "s16le", "-ar", "24000", "-ac", "1", "-i", raw];
-    execFileSync("ffmpeg", ["-v", "error", "-y", ...input, "-af",
-      "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse" +
-        (speed !== 1 ? `,atempo=${speed}` : ""),
-      "-ar", "48000", file]);
-  }
-  const sec = Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", file]).toString());
-  timing.push({ id: beat.id, file: file.replace("public/", ""), sec, voice, text: beat.text, ...(speed !== 1 ? { speed } : {}) });
-  console.log(beat.id.padEnd(10), sec.toFixed(2), voice);
+  } else todo.push(beat);
 }
-writeFileSync(`${epDir}/timing.json`, JSON.stringify(timing, null, 2));
-console.log("total", timing.reduce((a, b) => a + b.sec, 0).toFixed(1), "s");
+
+const perBeat = async (list) => {
+  for (const beat of list) {
+    const take = `${dir}/_take-${beat.id}.wav`;
+    await speak(beat.text, voiceFor(beat), take);
+    const t = finish(take, beat);
+    rmSync(take);
+    timing.set(beat.id, t);
+    console.log(beat.id.padEnd(10), t.sec.toFixed(2), t.voice);
+  }
+};
+
+if (!process.env.BATCH) await perBeat(todo);
+else {
+  const { bare, charTimes, silences, snapToSilence, whisper } = await import("./whisper-lib.mjs");
+  const groups = new Map();
+  for (const b of todo) groups.set(voiceFor(b), [...(groups.get(voiceFor(b)) ?? []), b]);
+  for (const [voice, list] of groups) {
+    if (list.length === 1) {
+      await perBeat(list);
+      continue;
+    }
+    const take = `${dir}/_take-${voice}.wav`;
+    await speak(list.map((b) => b.text).join("\n\n"), voice, take);
+    const total = duration(take);
+    const wav16 = `${take}.16k.wav`;
+    execFileSync("ffmpeg", ["-v", "error", "-y", "-i", take, "-ar", "16000", "-ac", "1", wav16]);
+    const json = (await whisper([wav16])).get(wav16);
+    const chars = list.map((b) => [...bare(b.text)]);
+    const { times, score } = charTimes(chars.flat(), json, total);
+    // Beat k spans its first char's start to its last char's end; cut halfway through the gap to the next one.
+    let pos = 0;
+    const spans = chars.map((c) => {
+      const span = [times[pos].s, times[pos + c.length - 1].e];
+      pos += c.length;
+      return span;
+    });
+    const overlap = spans.some((sp, k) => k && sp[0] < spans[k - 1][1] - 0.05);
+    console.log(`${voice}: ${list.length} beats in 1 request, ${total.toFixed(1)} s, match ${(score * 100).toFixed(0)}%${overlap ? ", paragraphs overlap" : ""}`);
+    if (score < 0.75 || overlap) {
+      console.log(`  ⚠ cannot cut ${voice} cleanly — one request per beat instead`);
+      rmSync(take), rmSync(wav16, { force: true }), rmSync(`${wav16}.json`, { force: true });
+      await perBeat(list);
+      continue;
+    }
+    // Whisper runs a little late, so each cut moves into the nearest real silence of the take.
+    const quiet = silences(take);
+    const cuts = spans.slice(1).map((sp, k) => snapToSilence((spans[k][1] + sp[0]) / 2, quiet));
+    list.forEach((beat, k) => {
+      const from = k ? cuts[k - 1] : 0;
+      const to = k < list.length - 1 ? cuts[k] : total;
+      const t = finish(take, beat, [from, to]);
+      timing.set(beat.id, t);
+      console.log(beat.id.padEnd(10), t.sec.toFixed(2), voice, `(${from.toFixed(2)}–${to.toFixed(2)} s of the take)`);
+    });
+    rmSync(take), rmSync(wav16, { force: true }), rmSync(`${wav16}.json`, { force: true });
+  }
+}
+
+const out = beats.map((b) => timing.get(b.id));
+writeFileSync(`${epDir}/timing.json`, JSON.stringify(out, null, 2));
+console.log("total", out.reduce((a, b) => a + b.sec, 0).toFixed(1), "s ·", requests, "TTS requests");

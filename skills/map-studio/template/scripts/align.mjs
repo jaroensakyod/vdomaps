@@ -11,65 +11,18 @@
 // No NVIDIA GPU: point WHISPER_BIN at the official BLAS build (whisper-blas-bin-x64.zip) — still one call, all threads.
 // The script text is kept; Whisper only lends its timing. Thai tokens are sub-word (and sometimes split
 // mid-character), so script and transcript are aligned character by character with an edit-distance path.
-import { downloadWhisperModel, installWhisperCpp, transcribe } from "@remotion/install-whisper-cpp";
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { availableParallelism, tmpdir } from "node:os";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
+import { bare, charTimes, language, whisper } from "./whisper-lib.mjs";
 
 const [slug] = process.argv.slice(2);
 if (!slug) throw new Error("usage: node scripts/align.mjs <slug>");
-const model = process.env.WHISPER_MODEL ?? "large-v3";
-const version = process.env.WHISPER_VERSION ?? "1.5.5";
-const language = process.env.WHISPER_LANG ?? "th";
-const whisperPath = process.env.WHISPER_DIR ?? "whisper.cpp";
-
 const dir = `src/episodes/${slug}`;
 const beats = JSON.parse(readFileSync(`${dir}/beats.json`, "utf8"));
 const timingFile = `${dir}/timing.json`;
 const timing = JSON.parse(readFileSync(timingFile, "utf8"));
-
-const gpuBin = process.env.WHISPER_BIN ?? ["whisper-cuda/build/bin/whisper-cli.exe", "whisper-cuda/build/bin/whisper-cli"].find((p) => existsSync(p));
-if (!gpuBin) await installWhisperCpp({ to: whisperPath, version, printOutput: false });
-await downloadWhisperModel({ model, folder: whisperPath, printOutput: true });
-console.log(gpuBin ? `whisper: prebuilt ${gpuBin}` : `whisper: Remotion CPU build ${version}`);
-
-const bare = (s) => s.replace(/\s+/g, "");
-const norm = (c) => c.toLowerCase();
-
-// Edit-distance alignment: for each script char, the index of the transcript char it lines up with (or -1).
-const alignChars = (a, b) => {
-  const n = a.length, m = b.length;
-  const d = Array.from({ length: n + 1 }, (_, i) => Int32Array.from({ length: m + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0)));
-  for (let i = 1; i <= n; i++)
-    for (let j = 1; j <= m; j++)
-      d[i][j] = Math.min(d[i - 1][j - 1] + (norm(a[i - 1]) === norm(b[j - 1]) ? 0 : 1), d[i - 1][j] + 1, d[i][j - 1] + 1);
-  const map = new Array(n).fill(-1);
-  let matches = 0;
-  for (let i = n, j = m; i > 0 && j > 0; ) {
-    const same = norm(a[i - 1]) === norm(b[j - 1]);
-    if (d[i][j] === d[i - 1][j - 1] + (same ? 0 : 1)) {
-      map[i - 1] = j - 1;
-      if (same) matches++;
-      i--, j--;
-    } else if (d[i][j] === d[i - 1][j] + 1) i--;
-    else j--;
-  }
-  return { map, score: n ? matches / n : 1 };
-};
-
-// Transcript as characters, each with [s, e] seconds spread evenly across its token.
-const transcriptChars = (json) => {
-  const out = [];
-  for (const item of json.transcription)
-    for (const t of item.tokens ?? []) {
-      if (t.text.startsWith("[_")) continue;
-      const chars = [...bare(t.text)];
-      const s = t.offsets.from / 1000, e = t.offsets.to / 1000;
-      chars.forEach((c, k) => out.push({ c, s: s + ((e - s) * k) / chars.length, e: s + ((e - s) * (k + 1)) / chars.length }));
-    }
-  return out;
-};
 
 const segmenter = new Intl.Segmenter(language, { granularity: "word" });
 const words = (text) => {
@@ -93,37 +46,11 @@ const todo = timing
   });
 for (const { t, wav16 } of todo) execFileSync("ffmpeg", ["-v", "error", "-y", "-i", `public/${t.file}`, "-ar", "16000", "-ac", "1", wav16]);
 
-// One transcript per beat: the GPU build in a single call (it writes <wav>.json), else the CPU build per beat.
-// -nfa: flash attention would switch DTW token timestamps off.
-const results = new Map();
-if (gpuBin && todo.length) {
-  const model_ = path.join(whisperPath, `ggml-${model}.bin`);
-  const files = todo.flatMap(({ wav16 }) => ["-f", wav16]);
-  execFileSync(gpuBin, ["-m", model_, "-t", String(availableParallelism()), "-l", language, "-dtw", model.replace(/-/g, "."), "-nfa", "-ojf", "-np", ...files], { stdio: ["ignore", "ignore", "pipe"] }); // its log only shows if it fails
-  for (const { wav16 } of todo) results.set(wav16, JSON.parse(readFileSync(`${wav16}.json`, "utf8")));
-} else
-  for (const { wav16 } of todo)
-    results.set(wav16, await transcribe({ inputPath: wav16, whisperPath, whisperCppVersion: version, model, tokenLevelTimestamps: true, language, printOutput: false }));
+const results = await whisper(todo.map(({ wav16 }) => wav16));
 
 for (const { t, i, wav16 } of todo) {
   const spoken = (beats.find((b) => b.id === t.id) ?? beats[i]).text;
-  const json = results.get(wav16);
-  const hyp = transcriptChars(json);
-  const script = [...bare(spoken)];
-  const { map, score } = alignChars(script, hyp.map((h) => h.c));
-
-  // Unmatched script chars get times interpolated between their matched neighbours.
-  const times = map.map((j) => (j >= 0 ? { s: hyp[j].s, e: hyp[j].e } : null));
-  for (let k = 0; k < times.length; k++) {
-    if (times[k]) continue;
-    let p = k - 1, q = k + 1;
-    while (q < times.length && !times[q]) q++;
-    const from = p >= 0 ? times[p].e : 0, to = q < times.length ? times[q].s : t.sec;
-    const span = q - p - 1;
-    for (let r = k; r < q; r++) times[r] = { s: from + ((to - from) * (r - k)) / span, e: from + ((to - from) * (r - k + 1)) / span };
-    k = q - 1;
-  }
-
+  const { times, score, heard } = charTimes([...bare(spoken)], results.get(wav16), t.sec);
   let pos = 0, last = 0;
   t.words = words(spoken).map((w) => {
     const n = [...bare(w)].length;
@@ -133,7 +60,6 @@ for (const { t, i, wav16 } of todo) {
     last = e;
     return { w, s: +s.toFixed(3), e: +Math.min(e, t.sec).toFixed(3) };
   });
-  const heard = hyp.map((h) => h.c).join("");
   console.log(`${t.id.padEnd(12)} match ${(score * 100).toFixed(0).padStart(3)}%  ${t.words.length} words`);
   if (score < 0.7) console.log(`  ⚠ VO may not match the script — heard: ${heard}`);
 }

@@ -13,6 +13,13 @@
 - `GEMINI_API_KEY=... node scripts/tts-gemini.mjs <slug> [voice] [model]` reads `src/episodes/<slug>/beats.json`
   (`[{id, text, caption?}]`), writes `public/audio/<slug>/NN.wav` + `timing.json`. Default model
   `gemini-3.8-flash-tts`, voice `Charon` (calm male narrator). List models: `GET /v1beta/models` and look for `tts`.
+- **Quota:** the TTS models allow ~10 requests a minute and ~100 a day per project, even with billing on (the
+  limit follows the project's usage tier). One request per beat ≈ 11 per episode ≈ 9 episodes a day.
+  `BATCH=1` sends each voice's beats in **one** request (one paragraph per beat), finds the paragraphs with
+  Whisper and cuts in the nearest silence (`whisper-lib.mjs`: `silences` + `snapToSilence`; Whisper alone runs
+  30–80 ms late and clips the next word). Offline test on eps 2/4/5 (29 beats glued with 0.35–0.7 s gaps): every
+  cut inside its gap. ~3 requests per episode. Falls back to one request per beat for a voice if the match is
+  < 75 % or paragraphs overlap. On the daily cap the script stops with a message instead of waiting hours.
 - Send **plain text only**. An English style instruction in the prompt is read aloud or derails the output.
 - Write numbers and abbreviations as Thai words in `text` ("สองร้อยแปด", "คริสต์ศักราช"); put the digit form in
   `caption` for subtitles.
