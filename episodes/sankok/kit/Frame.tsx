@@ -4,6 +4,7 @@ import { Caption } from "../../../components/Caption";
 import type { Beat } from "../../../components/subs.mjs";
 import { LAYOUT } from "../../../components/subs.mjs";
 import { person } from "./cast";
+import { LayoutProvider, type Layout } from "./Layout";
 import { C, card, CHANNEL, fade, fonts, PaperTexture, useUnit } from "./theme";
 
 export const TOTAL_EPISODES = 60;
@@ -110,9 +111,10 @@ const Credit = ({ text }: { text: string }) => {
 // One episode: paper background, every VO beat as its own audio clip, the map/overlays passed as children,
 // texture, captions (character lines in quotes with a speaker tag), credit, and the fb-only badge and end card.
 // `map` sits under the paper texture, `overlay` above it.
-export const EpisodeFrame = ({ ep, beats, variant, map, overlay, sounds }: { ep: EpisodeMeta; beats: Beat[]; variant: Variant; map: ReactNode; overlay?: ReactNode; sounds?: ReactNode }) => {
+export const EpisodeFrame = ({ ep, beats, variant, map, overlay, sounds, layout = "v1" }: { ep: EpisodeMeta; beats: Beat[]; variant: Variant; map: ReactNode; overlay?: ReactNode; sounds?: ReactNode; layout?: Layout }) => {
   const last = beats[beats.length - 1];
   return (
+    <LayoutProvider layout={layout}>
     <AbsoluteFill style={{ background: C.paper }}>
       {beats.map((b) => (
         <Sequence key={b.id} from={b.start} durationInFrames={b.len + LAYOUT.gap}>
@@ -139,5 +141,6 @@ export const EpisodeFrame = ({ ep, beats, variant, map, overlay, sounds }: { ep:
       {variant === "fb" && <PartBadge n={ep.n} />}
       {variant === "fb" && <NextCard ep={ep} from={last.end + 4} />}
     </AbsoluteFill>
+    </LayoutProvider>
   );
 };

@@ -1,13 +1,14 @@
 import type { ReactNode } from "react";
 import { InsetPanel, type InsetGeom } from "../../../components/Inset";
+import { V2 } from "./Layout";
 import { C, fonts } from "./theme";
 
 // House standard (SKILL.md, 21 Oct 2026): a new picture every 3–4 s, cued on the spoken word. A Shot list is one
 // illustration panel after another in the series' ink-on-paper style; each starts on its cue frame and the outgoing
 // one stays 14 frames past the next one's start, so the map never blinks through between panels.
 export const OVERLAP = 14;
-// 9:16: the panel slot between the title / stamp cards (top 20 %) and the character cards (57 %).
-export const SLOT = 0.37;
+// 9:16: the panel sits at the bottom, just above the captions (layout v2, kit/Layout.tsx).
+export const SLOT = V2.panel;
 
 export type Shot = {
   id: string;

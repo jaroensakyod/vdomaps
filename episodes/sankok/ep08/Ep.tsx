@@ -1,11 +1,11 @@
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { Arrow } from "../../../components/Arrow";
 import { camAt, camForFeature } from "../../../components/camera";
-import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
 import { CharacterCard, PortraitCard, Seal, SideCard, StatCard, TitleCard } from "../kit/Cards";
+import { SankokMap } from "../kit/Layout";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Flames, Tint } from "../kit/Marks";
 import { at as place } from "../kit/places";
@@ -88,6 +88,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
 
   return (
     <EpisodeFrame
+      layout="v2"
       ep={EP}
       beats={BEATS}
       variant={variant}
@@ -107,7 +108,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
         </>
       }
       map={
-        <MapFrame cam={cam}>
+        <SankokMap cam={cam}>
           <PaperMap />
           <Flames points={BLAZE} start={-12} stagger={2} outAt={B.march.start + 20} size={1.2} />
           <InkLabel at={LY} text="ลกเอี๋ยง" start={0} dy={60} size={1.3} />
@@ -120,7 +121,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <Badge at={[LY[0] + 0.22, LY[1] + 0.14]} name="ซุนเกี๋ยน" color={C.wu} start={at("sunjian", 0.5)} />
           <Arrow points={[LY, [112.6, 33.0], place("nanyang")]} start={at("cliff", 0.15)} end={at("cliff", 0.5)} color={C.wu} width={18} variant="dashed" />
           <Insets {...TL} />
-        </MapFrame>
+        </SankokMap>
       }
       overlay={
         <>

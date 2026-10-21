@@ -1,11 +1,11 @@
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import { Arrow } from "../../../components/Arrow";
 import { camAt, camForFeature } from "../../../components/camera";
-import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
 import { CharacterCard, NovelStamp, PortraitCard, Seal, SideCard, StatCard, TitleCard } from "../kit/Cards";
+import { SankokMap } from "../kit/Layout";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Flags, Flames } from "../kit/Marks";
 import { at as place } from "../kit/places";
@@ -74,6 +74,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
 
   return (
     <EpisodeFrame
+      layout="v2"
       ep={EP}
       beats={BEATS}
       variant={variant}
@@ -94,7 +95,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
         </>
       }
       map={
-        <MapFrame cam={cam}>
+        <SankokMap cam={cam}>
           <PaperMap />
           <EraMap from={190} start={B.count.start} end={B.drink.start + 10} opacity={0.75} />
           <Flags items={CAMPS.map((p) => ({ at: p, color: C.yuan }))} start={-20} stagger={2} end={B.record.start} />
@@ -109,7 +110,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <Badge at={[112.9 + (112.55 - 112.9) * sunK, 33.2 + (34.4 - 33.2) * sunK]} name="ซุนเกี๋ยน" color={C.wu} start={B.sun.start} above={false} />
           <Flames points={[LY, [LY[0] + 0.08, LY[1] + 0.05], [LY[0] - 0.08, LY[1] - 0.04]]} start={at("cliff", 0.35)} stagger={4} />
           <Insets {...TL} />
-        </MapFrame>
+        </SankokMap>
       }
       overlay={
         <>

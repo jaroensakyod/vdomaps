@@ -84,7 +84,7 @@ export const Insets = ({ B, word }: Timeline) => (
       // wangyun: his portrait is the picture
       { id: "arrive", at: B.kill.start, anchor: CA, ...tab("gate", [{ who: "dongzhuo", x: 0.2, walk: 1.4 }, { who: "soldier", x: 0.08, walk: 1.4, robe: "#3d3f5c" }], "เข้าวังตามนัด") },
       { id: "gate", at: word("kill", "แทง"), anchor: CA, until: B.navel.start + 8, sky: ["#d6bf8f", "#c9a46a"], draw: (g) => <Gate g={g} strike={word("kill", "แทง")} /> },
-      { id: "lamp", at: word("navel", "ไฟ"), anchor: CA, top: 0.42, until: B.cliff.start + 8, ...tab("night", [{ who: "soldier", x: 0.3, hold: "torch" }, { who: "soldier", x: 0.72, hold: "spear", flip: true }], "ไฟลุกสว่างอยู่หลายวัน") },
+      { id: "lamp", at: word("navel", "ไฟ"), anchor: CA, until: B.cliff.start + 8, ...tab("night", [{ who: "soldier", x: 0.3, hold: "torch" }, { who: "soldier", x: 0.72, hold: "spear", flip: true }], "ไฟลุกสว่างอยู่หลายวัน") },
       { id: "hero", at: B.cliff.start, anchor: CA, ...tab("palace", [{ who: "lvbu", x: 0.45, pose: "raise", hold: "halberd", size: 1.15 }], "ลิโป้กลายเป็นวีรบุรุษ") },
       { id: "revenge", at: word("cliff", "ยก"), anchor: [106.2, 35.6], ...tab("road", [{ who: "soldier", x: 0.2, ride: true, walk: 2.4, robe: "#3d3f5c" }, { who: "soldier", x: 0.05, walk: 2.4, robe: "#3d3f5c", flag: { text: "董", color: "#3d3f5c" } }], "ลูกน้องตั๋งโต๊ะกลับมาล้างแค้น") },
       { id: "run", at: word("cliff", "หนี"), anchor: CA, until: B.cliff.end + 30, ...tab("road", [{ who: "lvbu", x: 0.7, ride: true, walk: -2.6, flip: true }], "ลิโป้จะหนีไปพึ่งใคร?") },

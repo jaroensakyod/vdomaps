@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame } from "remotion";
 import { person } from "./cast";
+import { useLayout, V2 } from "./Layout";
 import { C, card, clamp, fade, fonts, useUnit } from "./theme";
 
 const portrait = (img: string) => staticFile(`portraits/sankok/${img}.jpg`);
@@ -61,11 +62,12 @@ export const CharacterCard = ({ who, from, to, role }: { who: string; from: numb
   const frame = useCurrentFrame();
   const { s, fps, width, height, vertical } = useUnit();
   const p = person(who);
+  const cardTop = useLayout() === "v2" ? V2.card : 0.57;
   const o = fade(frame, from, from + 6, to - 8, to);
   if (o <= 0) return null;
   const k = spring({ frame: frame - from, fps, config: { damping: 14 } });
   return (
-    <div style={{ position: "absolute", left: vertical ? width / 2 : 70 * s, top: vertical ? height * 0.57 : undefined, bottom: vertical ? undefined : 170 * s, transform: `${vertical ? "translateX(-50%) " : ""}translateY(${(1 - k) * 30 * s}px)`, opacity: o, ...card(s), fontFamily: fonts.body, display: "flex", alignItems: "center", gap: 18 * s, padding: `${10 * s}px ${28 * s}px ${10 * s}px ${12 * s}px`, borderLeft: `${14 * s}px solid ${p.color}`, whiteSpace: "nowrap" }}>
+    <div style={{ position: "absolute", left: vertical ? width / 2 : 70 * s, top: vertical ? height * cardTop : undefined, bottom: vertical ? undefined : 170 * s, transform: `${vertical ? "translateX(-50%) " : ""}translateY(${(1 - k) * 30 * s}px)`, opacity: o, ...card(s), fontFamily: fonts.body, display: "flex", alignItems: "center", gap: 18 * s, padding: `${10 * s}px ${28 * s}px ${10 * s}px ${12 * s}px`, borderLeft: `${14 * s}px solid ${p.color}`, whiteSpace: "nowrap" }}>
       {p.img && <Img src={portrait(p.img)} style={{ width: 150 * s, height: 150 * s, objectFit: "cover", borderRadius: 10 * s, border: `${3 * s}px solid ${C.ink}` }} />}
       <div style={{ fontFamily: "'Microsoft YaHei', 'SimSun', serif", fontSize: 40 * s, color: p.color, writingMode: "vertical-rl", lineHeight: 1 }}>{p.zh}</div>
       <div>

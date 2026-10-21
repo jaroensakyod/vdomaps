@@ -17,12 +17,12 @@ export const useMap = () => {
 
 // One SVG for the whole map; every layer inside reads the projection for the current camera.
 // `s` is the size unit: 1 at 1080 px short side. Use it for every stroke width and font size.
-export const MapFrame = ({ cam, children }: { cam: Cam; children: ReactNode }) => {
+export const MapFrame = ({ cam, children, focusY = 0.5 }: { cam: Cam; children: ReactNode; focusY?: number }) => {
   const { width, height } = useVideoConfig();
   const value = useMemo(() => {
-    const projection = projectionFor(cam, width, height);
+    const projection = projectionFor(cam, width, height, focusY);
     return { cam, projection, path: geoPath(projection), s: Math.min(width, height) / 1080, width, height };
-  }, [cam.lon, cam.lat, cam.scale, width, height]);
+  }, [cam.lon, cam.lat, cam.scale, width, height, focusY]);
   return (
     <Ctx.Provider value={value}>
       <svg width={width} height={height} style={{ position: "absolute", inset: 0, fontFamily: style.font }}>

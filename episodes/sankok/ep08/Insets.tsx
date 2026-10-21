@@ -67,7 +67,7 @@ export const Insets = ({ B, word }: Timeline) => (
       { id: "ruins", at: word("sunjian", "ซาก"), anchor: LY, ...tab("fire", [{ who: "sunjian", x: 0.3, size: 1.1 }, { who: "soldier", x: 0.15, robe: "#a8382a", flag: { text: "孫", color: "#a8382a" } }], "ซุนเกี๋ยนบุกถึงซากเมือง", { burn: 0.35 }) },
       { id: "mend", at: word("sunjian", "ซ่อม"), anchor: LY, ...tab("tomb", [{ who: "soldier", x: 0.4, hold: "hoe", robe: "#a8382a" }, { who: "soldier", x: 0.86, hold: "hoe", robe: "#a8382a", flip: true }], "สั่งซ่อมสุสานที่ถูกขุด") },
       { id: "well", at: B.well.start, anchor: LY, ...tab("well", [{ who: "soldier", x: 0.2, hold: "point", robe: "#a8382a" }, { who: "soldier", x: 0.34, robe: "#a8382a" }], "แสงห้าสีจากบ่อน้ำร้าง") },
-      { id: "seal", at: word("seal", "พบ"), anchor: LY, top: 0.42, until: B.doubt.start + 8, ...tab("seal", [], "ตราหยกประจำแผ่นดิน") },
+      { id: "seal", at: word("seal", "พบ"), anchor: LY, until: B.doubt.start + 8, ...tab("seal", [], "ตราหยกประจำแผ่นดิน") },
       // doubt: the doubt card carries the picture
       { id: "south", at: word("cliff", "หัน"), anchor: place("nanyang"), ...tab("road", [{ who: "sunjian", x: 0.3, ride: true, walk: 2 }], "เก็บตราหยก แล้วกลับลงใต้") },
       { id: "archers", at: word("cliff", "ลูก"), anchor: place("xianshan"), until: B.cliff.end + 30, ...tab("hill", [{ who: "soldier", x: 0.66, robe: "#36422a", flip: true, size: 0.75, dy: -70 }, { who: "soldier", x: 0.8, robe: "#36422a", flip: true, size: 0.75, dy: -80 }], "ลูกธนูดอกหนึ่งรออยู่") },
