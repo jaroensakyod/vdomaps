@@ -75,7 +75,7 @@ const Ears = () => {
 
 // Illustrated insets (word-cued). "ภาพประกอบ" = drawn illustration, not a record of a real scene.
 // why: inside the palace eunuchs sit on the wealth · outside the wall farmers starve (appear on "นอก").
-const PalaceVsFields = ({ g, outside }: { g: InsetGeom; outside: number }) => {
+export const PalaceVsFields = ({ g, outside }: { g: InsetGeom; outside: number }) => {
   const k = usePopIn(outside);
   const half = g.x + g.W / 2;
   const sc = g.sc;
@@ -108,7 +108,7 @@ const PalaceVsFields = ({ g, outside }: { g: InsetGeom; outside: number }) => {
 
 // spread: Yellow Turbans with torches, hoes and spears storm a county office; it catches fire on "เผา",
 // and the magistrate runs off with his bundle on "ขุนนาง".
-const RebelsBurn = ({ g, start, fire, flee }: { g: InsetGeom; start: number; fire: number; flee: number }) => {
+export const RebelsBurn = ({ g, start, fire, flee }: { g: InsetGeom; start: number; fire: number; flee: number }) => {
   const burn = interpolate(g.frame, [fire, fire + 40], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const march = Math.min(g.frame - start, 60) * 0.6 * g.s;
   const run = Math.max(0, g.frame - flee) * 4.5 * g.s;

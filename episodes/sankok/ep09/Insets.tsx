@@ -12,7 +12,7 @@ const MID = 0.37;
 
 // hook / night: Sun Jian rides alone below a moonlit hill; archers hidden in the bushes loose their arrows on
 // `shoot`. The panel ends before any arrow lands.
-const Ambush = ({ g, start, shoot }: { g: InsetGeom; start: number; shoot: number }) => {
+export const Ambush = ({ g, start, shoot }: { g: InsetGeom; start: number; shoot: number }) => {
   const ride = Math.min(Math.max(g.frame - start, 0), 160) * 1.1 * g.s;
   const hx = g.x + g.W * 0.18 + ride;
   const feet = g.ground + 26 * g.s;
@@ -36,7 +36,7 @@ const Ambush = ({ g, start, shoot }: { g: InsetGeom; start: number; shoot: numbe
 };
 
 // sons: Sun Ce (16) and Sun Quan (9) at their father's grave, white mourning banners.
-const Sons = ({ g }: { g: InsetGeom }) => {
+export const Sons = ({ g }: { g: InsetGeom }) => {
   const feet = g.ground + 28 * g.s;
   return (
     <g>

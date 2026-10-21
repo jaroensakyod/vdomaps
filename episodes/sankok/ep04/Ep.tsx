@@ -1,11 +1,11 @@
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { Arrow } from "../../../components/Arrow";
 import { camAt, camForFeature } from "../../../components/camera";
-import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
 import { CharacterCard, PortraitCard, Seal, SideCard, StatCard, TitleCard } from "../kit/Cards";
+import { SankokMap } from "../kit/Layout";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Flames, Tint } from "../kit/Marks";
 import { at as place } from "../kit/places";
@@ -69,18 +69,19 @@ export const Ep = ({ variant }: { variant: Variant }) => {
     frame,
   );
   const blood = (f: number) =>
-    0.35 * fade(f, B.zhangrang.start, B.zhangrang.start + 10, B.massacre.end - 10, B.massacre.end + 10) + 0.25 * fade(f, 0, 6, at("hook", 0.8), B.hook.end);
+    0.35 * fade(f, B.zhangrang.start, B.zhangrang.start + 10, B.massacre.end - 10, B.massacre.end + 10) + 0.25 * fade(f, 0, 6, at("hookq", 0.8), B.hookq.end);
   const summonOut = 1 - fade(frame, B.caolaugh.start, B.caolaugh.start + 20);
   const dead = Math.round(interpolate(frame, [at("massacre", 0.45), at("massacre", 0.9)], [0, 2000], clamp));
 
   return (
     <EpisodeFrame
+      layout="v2"
       ep={EP}
       beats={BEATS}
       variant={variant}
       sounds={
         <>
-          <Sfx src={SFX.hit} at={2} volume={0.4} />
+          <Sfx src={SFX.hit} at={0} volume={0.5} />
           <Sfx src={SFX.whoosh} at={B.summon.start} />
           <Sfx src={SFX.whoosh} at={B.caolaugh.start} />
           <Sfx src={SFX.hit} at={B.zhangrang.end} volume={0.5} />
@@ -94,7 +95,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
         </>
       }
       map={
-        <MapFrame cam={cam}>
+        <SankokMap cam={cam}>
           <PaperMap />
           <InkLabel at={LY} text="ลกเอี๋ยง" start={0} end={B.summon.start + 10} dy={60} size={1.3} />
           <Flames points={PALACE} start={0} stagger={4} outAt={B.hook.end} />
@@ -111,16 +112,16 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <Arrow points={[[111.75, 34.75], [112.15, 34.8], BEIMANG]} start={at("meet", 0.4)} end={at("meet", 0.95)} color={C.dong} width={22} />
           <Badge at={BEIMANG} name="ตั๋งโต๊ะ" color={C.dong} start={at("meet", 0.75)} />
           <Insets {...TL} />
-        </MapFrame>
+        </SankokMap>
       }
       overlay={
         <>
           <PortraitCard who="caocao" from={B.cao.start} to={B.cao.end + 6} />
           <PortraitCard who="zhangrang" from={B.zhangrang.start} to={B.zhangrang.end + 6} />
           <Tint color="#b0302a" opacity={blood} />
-          <TitleCard kicker="สามก๊ก · ตอนที่ 4" lines={["ฆ่าทุกคนที่ไม่มีหนวด", "ในวังฮ่องเต้?"]} from={4} to={B.hook.end} />
+          <TitleCard kicker="สามก๊ก · ตอนที่ 4" lines={["ใครไม่มีหนวด", "ถูกฆ่าทั้งวัง"]} from={0} to={B.hookq.end} />
           <CharacterCard who="hejin" from={B.hejin.start + 6} to={B.summon.start + 10} />
-          <CharacterCard who="zhangrang" from={B.trap.start + 10} to={B.zhangrang.start} />
+          <CharacterCard who="zhangrang" from={B.trap.start + 10} to={B.zhangrang.start + 10} />
           <StatCard label="ขันทีที่ถูกฆ่า" value={`${dead.toLocaleString("th-TH")}${dead >= 2000 ? "+" : ""}`} sub="ภายในคืนเดียว · โฮ่วฮั่นซู" from={at("massacre", 0.4)} to={B.river.start + 10} color={C.wu} />
           <CharacterCard who="dongzhuo" from={at("meet", 0.7)} to={B.test.start} />
           <TestCard />

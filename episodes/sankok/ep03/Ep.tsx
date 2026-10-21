@@ -1,12 +1,12 @@
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import { Arrow } from "../../../components/Arrow";
 import { camAt, camForFeature } from "../../../components/camera";
-import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
 import { CharacterCard, SideCard, TitleCard } from "../kit/Cards";
 import { ERAS, YELLOW_TURBAN_RISINGS } from "../kit/eras";
+import { SankokMap } from "../kit/Layout";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Flags, Flames } from "../kit/Marks";
 import { at as place } from "../kit/places";
@@ -81,11 +81,13 @@ export const Ep = ({ variant }: { variant: Variant }) => {
 
   return (
     <EpisodeFrame
+      layout="v2"
       ep={EP}
       beats={BEATS}
       variant={variant}
       sounds={
         <>
+          <Sfx src={SFX.hit} at={0} volume={0.5} />
           <Sfx src={SFX.swell} at={0} volume={0.25} />
           <Sfx src={SFX.hit} at={at("ill", 0.3)} volume={0.4} />
           <Sfx src={SFX.whoosh} at={B.head.start + 4} />
@@ -97,7 +99,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
         </>
       }
       map={
-        <MapFrame cam={cam}>
+        <SankokMap cam={cam}>
           <PaperMap />
           <EraMap from={184} start={B.head.start + 20} end={B.cao.start + 30} opacity={0.65} />
           <Badge at={place("guangzong")} name="เตียวก๊ก" sub="ป่วยตาย" color={C.yellow} start={B.ill.start} end={at("head", 0.4)} />
@@ -110,11 +112,12 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <Badge at={[luoyang[0] - 0.45, luoyang[1] + 0.25]} name="แม่ทัพ" sub="โฮจิ๋น" color={C.han} start={at("cliff", 0.2)} />
           <Badge at={[luoyang[0] + 0.45, luoyang[1] + 0.25]} name="ขันที" sub="สิบขันที" color={C.dong} start={at("cliff", 0.35)} />
           <Insets {...TL} />
-        </MapFrame>
+        </SankokMap>
       }
       overlay={
         <>
-          <TitleCard kicker="สามก๊ก · ตอนที่ 3" lines={["ผู้นำกบฏหลายแสนคน", "ไม่ได้ตายในสนามรบ?"]} from={4} to={B.hook.end} />
+          <TitleCard kicker="สามก๊ก · ตอนที่ 3" lines={["ผู้นำกบฏหลายแสนคน", "ไม่ได้ตายในสนามรบ"]} from={0} to={B.hookq.end} />
+          <CharacterCard who="zhangjiao" from={-6} to={B.hookq.end + 4} role="ผู้นำกบฏ มีคนตามหลายแสน" />
           <CharacterCard who="huangfusong" from={B.head.start + 6} to={B.head.end} />
           <Governors />
           <CharacterCard who="caocao" from={at("cao", 0.35)} to={B.seer.start} role="นายทหารร่างเล็ก อายุราว 30" />

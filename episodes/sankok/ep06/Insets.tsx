@@ -14,7 +14,7 @@ const MID = 0.37;
 
 // hook → mirror (novel): Dong Zhuo dozes with his back turned, Lü Bu on guard; Cao Cao comes up with the sword.
 // On "เงา" the mirror flashes, Dong turns, and Cao kneels offering the sword as a gift.
-const Chamber = ({ g, from, lvbuOut, glint, kneel }: { g: InsetGeom; from: number; lvbuOut: number; glint: number; kneel: number }) => {
+export const Chamber = ({ g, from, lvbuOut, glint, kneel }: { g: InsetGeom; from: number; lvbuOut: number; glint: number; kneel: number }) => {
   const f = g.frame;
   const step = Math.min(Math.max(f - from, 0), 90) * 0.9 * g.s;
   const lb = 1 - interpolate(f, [lvbuOut, lvbuOut + 10], [0, 1], clamp);
@@ -45,7 +45,7 @@ const Chamber = ({ g, from, lvbuOut, glint, kneel }: { g: InsetGeom; from: numbe
 
 // inn → kill → quote: night at Lü Boshe's house; knives being sharpened out back. Cao Cao draws his sword in the
 // doorway on "ชัก"; on "หมู" the pig tied up behind the house shows what the knives were for. Nobody is drawn hurt.
-const Inn = ({ g, draw, pig }: { g: InsetGeom; draw: number; pig: number }) => {
+export const Inn = ({ g, draw, pig }: { g: InsetGeom; draw: number; pig: number }) => {
   const p = usePopIn(pig);
   const feet = g.ground + 26 * g.s;
   return (
@@ -66,7 +66,7 @@ const Inn = ({ g, draw, pig }: { g: InsetGeom; draw: number; pig: number }) => {
 };
 
 // Shot 1 (hook): close-up — the seven-star sword slides out of a dark-red sleeve.
-const Sleeve = ({ g, from }: { g: InsetGeom; from: number }) => {
+export const Sleeve = ({ g, from }: { g: InsetGeom; from: number }) => {
   const k = interpolate(g.frame, [from, from + 40], [0, 1], clamp);
   const cx = g.x + g.W * 0.5, cy = g.y + g.H * 0.55;
   const S = g.s * 1.6;
@@ -92,7 +92,7 @@ const Sleeve = ({ g, from }: { g: InsetGeom; from: number }) => {
 };
 
 // Shot 2 (hookq, on "ลิ"): Dong Zhuo on his couch with Lü Bu standing guard at his side, halberd up.
-const Guard = ({ g }: { g: InsetGeom }) => {
+export const Guard = ({ g }: { g: InsetGeom }) => {
   const feet = g.ground + 28 * g.s;
   return (
     <g>
@@ -110,7 +110,7 @@ const Guard = ({ g }: { g: InsetGeom }) => {
 };
 
 // Shot 3 (novel, on "ยืม"): Wang Yun hands Cao Cao the sword in his study at night.
-const Lend = ({ g, from }: { g: InsetGeom; from: number }) => {
+export const Lend = ({ g, from }: { g: InsetGeom; from: number }) => {
   const feet = g.ground + 28 * g.s;
   const give = interpolate(g.frame, [from + 10, from + 40], [0, 1], clamp);
   return (

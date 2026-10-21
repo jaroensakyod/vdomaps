@@ -10,7 +10,7 @@ import { C, fonts } from "../kit/theme";
 const MID = 0.37;
 
 // hook / burn: Luoyang's walls and gate tower in flames, smoke over the city.
-const Blaze = ({ g }: { g: InsetGeom }) => (
+export const Blaze = ({ g }: { g: InsetGeom }) => (
   <g>
     <rect x={g.x} y={g.ground + 6 * g.s} width={g.W} height={g.H} fill="#3a2416" />
     <CityGate x0={g.x - 20 * g.s} x1={g.x + g.W + 20 * g.s} cx={g.cx} y={g.ground + 6 * g.s} s={g.s * 1.2} />
@@ -27,7 +27,7 @@ const Blaze = ({ g }: { g: InsetGeom }) => (
 );
 
 // march: townspeople with bundles walk west, soldiers with spears drive them on. Nobody is drawn hurt.
-const March = ({ g, start }: { g: InsetGeom; start: number }) => {
+export const March = ({ g, start }: { g: InsetGeom; start: number }) => {
   const t = g.frame - start;
   const drift = (t * 0.8 * g.s) % (g.W * 0.2);
   const feet = g.ground + 26 * g.s;

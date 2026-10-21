@@ -12,7 +12,7 @@ const MID = 0.37;
 
 // hook → halberd (novel): Diaochan between Lü Bu and Dong Zhuo, Wang Yun watching from the side.
 // On "ขว้าง" Dong Zhuo hurls a short halberd at Lü Bu, who ducks; it sticks in the pillar behind him.
-const Triangle = ({ g, throwAt }: { g: InsetGeom; throwAt: number }) => {
+export const Triangle = ({ g, throwAt }: { g: InsetGeom; throwAt: number }) => {
   const feet = g.ground + 28 * g.s;
   const p = interpolate(g.frame, [throwAt, throwAt + 12], [0, 1], clamp);
   const duck = interpolate(g.frame, [throwAt + 2, throwAt + 8, throwAt + 30, throwAt + 40], [0, 1, 1, 0], clamp);
@@ -39,7 +39,7 @@ const Triangle = ({ g, throwAt }: { g: InsetGeom; throwAt: number }) => {
 };
 
 // kill: the palace gate at Chang'an; Lü Bu and the guards raise their halberds — Dong Zhuo's carriage stands empty.
-const Gate = ({ g, strike }: { g: InsetGeom; strike: number }) => {
+export const Gate = ({ g, strike }: { g: InsetGeom; strike: number }) => {
   const up = g.frame >= strike;
   const feet = g.ground + 28 * g.s;
   return (

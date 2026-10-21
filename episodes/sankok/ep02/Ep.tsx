@@ -1,11 +1,11 @@
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import { Arrow } from "../../../components/Arrow";
 import { camAt, camForFeature } from "../../../components/camera";
-import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
 import { NovelStamp, PortraitCard, Seal, SideCard, TitleCard } from "../kit/Cards";
+import { SankokMap } from "../kit/Layout";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Blossom } from "../kit/Marks";
 import { at as place } from "../kit/places";
@@ -75,11 +75,13 @@ export const Ep = ({ variant }: { variant: Variant }) => {
 
   return (
     <EpisodeFrame
+      layout="v2"
       ep={EP}
       beats={BEATS}
       variant={variant}
       sounds={
         <>
+          <Sfx src={SFX.hit} at={0} volume={0.5} />
           <Sfx src={SFX.swell} at={0} volume={0.25} />
           <Sfx src={SFX.hit} at={B.novel.start} volume={0.5} />
           <Sfx src={SFX.whoosh} at={B.war.start} />
@@ -91,7 +93,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
         </>
       }
       map={
-        <MapFrame cam={cam}>
+        <SankokMap cam={cam}>
           <PaperMap />
           <Blossom at={[ZHUO_AT[0], ZHUO_AT[1] + 0.12]} start={0} end={B.war.start + 10} />
           <InkLabel at={ZHUO_AT} text="โต๊ะกุ๋น" start={0} end={B.war.start + 20} dy={48} />
@@ -105,7 +107,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           <Arrow points={[ANXI, [114.5, 38.75], [114.0, 39.1]]} start={at("flee", 0.4)} end={B.flee.end} color={C.shu} width={14} variant="dashed" opacity={1 - fade(frame, B.cliff.start, B.cliff.start + 20)} />
           <InkLabel at={place("julu")} text="เตียวก๊ก · กิลก" start={B.cliff.start + 30} color={C.yellow} size={1.2} />
           <Insets {...TL} />
-        </MapFrame>
+        </SankokMap>
       }
       overlay={
         <>
@@ -118,7 +120,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
               { label: "ตามบันทึก", text: "นอนเตียงเดียวกัน รักกันเหมือนพี่น้อง", color: C.wu, at: at("record", 0.35), source: "จดหมายเหตุสามก๊ก · ภาคกวนอู" },
             ]}
           />
-          <TitleCard kicker="สามก๊ก · ตอนที่ 2" lines={["คนใจดีที่สุดในสามก๊ก", "เฆี่ยนขุนนาง 200 ที?"]} from={4} to={B.hook.end} />
+          <TitleCard kicker="สามก๊ก · ตอนที่ 2" lines={["คนใจดีที่สุด", "เฆี่ยนขุนนาง 200 ที"]} from={0} to={B.hookq.end} />
           <Inspector />
           <Dismissal />
           <NovelStamp

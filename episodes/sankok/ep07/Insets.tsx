@@ -12,7 +12,7 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const MID = 0.37;
 
 // drink: the allied lords at a banquet, cups raised, banners behind — nobody marching.
-const Banquet = ({ g }: { g: InsetGeom }) => {
+export const Banquet = ({ g }: { g: InsetGeom }) => {
   const feet = g.ground + 28 * g.s;
   const lords = ["yuanshao", "yuanshu", "official", "official", "official"];
   const robes = [undefined, undefined, "#5a6b4a", "#6b3a2a", "#3d4f6b"];
@@ -36,7 +36,7 @@ const Banquet = ({ g }: { g: InsetGeom }) => {
 
 // guanyu → warm (novel): a cup poured and steaming on the table; Guan Yu rides out and walks back in with Hua
 // Xiong's plumed helmet on "ถือ" — the steam still rising.
-const Warm = ({ g, back }: { g: InsetGeom; back: number }) => {
+export const Warm = ({ g, back }: { g: InsetGeom; back: number }) => {
   const k = usePopIn(back);
   const feet = g.ground + 28 * g.s;
   const walkIn = interpolate(g.frame, [back, back + 40], [g.W * 0.25, 0], clamp);

@@ -22,6 +22,8 @@ import m09 from "./ep09/meta.json";
 import * as ep10 from "./ep10/Ep";
 import m10 from "./ep10/meta.json";
 import { episodeFrames, type EpisodeMeta, type Variant } from "./kit/Frame";
+import * as long01 from "./long01/Ep";
+import l01 from "./long01/meta.json";
 import { SeriesThumb, type ThumbData } from "./kit/Thumb";
 
 // Every series episode, registered four times:
@@ -37,10 +39,15 @@ const EPISODES: [EpModule, Meta][] = [
 // Remotion passes props as JSON, so the episode component cannot travel in props: one wrapper per episode instead.
 const THUMBS = EPISODES.map(([{ Ep }]) => (p: ThumbData) => <SeriesThumb {...p} Ep={Ep} />);
 
+const L01Thumb = (p: ThumbData) => <SeriesThumb {...p} Ep={long01.Ep} />;
+
 const id = (n: number) => `S${String(n).padStart(2, "0")}`;
 
 export const SankokCompositions = () => (
   <>
+    {/* long cuts for YouTube (16:9): their own script and timeline, not joins of the shorts */}
+    <Composition id="L01" component={long01.Ep} defaultProps={{ variant: "yt" as Variant }} durationInFrames={episodeFrames(long01.BEATS, "yt") + 48} fps={30} width={1920} height={1080} />
+    <Composition id="L01thumb" component={L01Thumb} defaultProps={{ n: 0, lines: [l01.question[0], l01.question[1]] as [string, string], frame: long01.THUMB, kicker: l01.kicker }} durationInFrames={episodeFrames(long01.BEATS, "yt") + 48} fps={30} width={1280} height={720} />
     {EPISODES.map(([{ EP, BEATS, Ep }]) => (
       <Composition key={`${EP.n}fb`} id={`${id(EP.n)}fb`} component={Ep} defaultProps={{ variant: "fb" as Variant }} durationInFrames={episodeFrames(BEATS, "fb")} fps={30} width={1080} height={1920} />
     ))}

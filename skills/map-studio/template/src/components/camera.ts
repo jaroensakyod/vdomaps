@@ -25,12 +25,13 @@ export const camAt = (keys: CamKey[], frame: number): Cam => {
 
 const CLIP_MARGIN = 120; // px: wider than any stroke, so clip edges never show
 
-// focusY: where the camera centre sits on screen (0.5 = middle); raise it when a panel covers the lower part.
-export const projectionFor = (cam: Cam, width: number, height: number, focusY = 0.5): GeoProjection =>
+// focusY / focusX: where the camera centre sits on screen (0.5 = middle); move it away from a panel that covers
+// part of the frame (lower part on phones, right side on 16:9).
+export const projectionFor = (cam: Cam, width: number, height: number, focusY = 0.5, focusX = 0.5): GeoProjection =>
   geoOrthographic()
     .rotate([-cam.lon, -cam.lat])
     .scale(cam.scale)
-    .translate([width / 2, height * focusY])
+    .translate([width * focusX, height * focusY])
     .clipAngle(90)
     // Cut paths just outside the frame: Chrome then paints only what is on screen (far fewer path segments).
     .clipExtent([[-CLIP_MARGIN, -CLIP_MARGIN], [width + CLIP_MARGIN, height + CLIP_MARGIN]])

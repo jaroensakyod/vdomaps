@@ -4,12 +4,14 @@ import { InsetPanel, type InsetGeom } from "../../../components/Inset";
 import type { Timeline } from "../kit/Frame";
 import { at as place } from "../kit/places";
 import { HanFigure, LOOK, ThroneRoom } from "../kit/Scenes";
+import { Shots } from "../kit/Shots";
+import { tab } from "../kit/Tableau";
 import { C, fonts } from "../kit/theme";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // seer → prophecy → laugh: the old judge of men sits on his mat and points; Cao Cao laughs on "หัวเราะ".
-const Reading = ({ g, laugh }: { g: InsetGeom; laugh: number }) => (
+export const Reading = ({ g, laugh }: { g: InsetGeom; laugh: number }) => (
   <g>
     <rect x={g.x} y={g.y} width={g.W} height={g.H} fill="#d9c39a" />
     {[0.2, 0.8].map((fx) => (
@@ -37,7 +39,7 @@ const Reading = ({ g, laugh }: { g: InsetGeom; laugh: number }) => (
 
 // emperor → cliff: the empty throne, two princes either side, a "?" on "เลือก"; on cliff the general (He Jin)
 // and the chief eunuch step in from the edges.
-const EmptyThrone = ({ g, ask, rivals }: { g: InsetGeom; ask: number; rivals: number }) => {
+export const EmptyThrone = ({ g, ask, rivals }: { g: InsetGeom; ask: number; rivals: number }) => {
   const q = g.frame < ask ? 0 : spring({ frame: g.frame - ask, fps: 30, config: { damping: 9 } });
   const k = usePopIn(rivals);
   const feet = g.ground + 30 * g.s;
@@ -60,13 +62,26 @@ const EmptyThrone = ({ g, ask, rivals }: { g: InsetGeom; ask: number; rivals: nu
   );
 };
 
+const LY = place("luoyang");
+const GZ = place("guangzong");
+const NOVEL = "ภาพประกอบ";
+
 export const Insets = ({ B, word }: Timeline) => (
-  <>
-    <InsetPanel id="seer" anchor={place("luoyang")} label="ภาพประกอบ" start={B.seer.start} end={B.laugh.end + 6} sky={["#d9c39a", "#d9c39a"]} font={fonts.body} accent={C.wu} top={0.42}>
-      {(g) => <Reading g={g} laugh={word("laugh", "หัวเราะ")} />}
-    </InsetPanel>
-    <InsetPanel id="throne" anchor={place("luoyang")} label="ภาพประกอบ" start={B.emperor.start + 10} end={B.cliff.end + 6} sky={["#6e2a1f", "#6e2a1f"]} font={fonts.body} accent={C.wu}>
-      {(g) => <EmptyThrone g={g} ask={word("emperor", "เลือก")} rivals={B.cliff.start} />}
-    </InsetPanel>
-  </>
+  <Shots
+    items={[
+      { id: "leader", at: -8, anchor: GZ, ...tab("field", [{ who: "zhangjiao", x: 0.5, pose: "raise", size: 1.2 }, { who: "rebel", x: 0.2 }, { who: "rebel", x: 0.32 }, { who: "rebel", x: 0.72, flip: true }, { who: "rebel", x: 0.84, flip: true }], "ผู้นำกบฏหลายแสนคน") },
+      { id: "how", at: word("hookq", "ตาย"), anchor: GZ, ...tab("study", [{ who: "zhangjiao", x: 0.45, pose: "hunch", size: 1.1 }], "เขาตายยังไง?") },
+      { id: "ill", at: word("ill", "ป่วย"), anchor: GZ, ...tab("night", [{ who: "zhangjiao", x: 0.4, pose: "sit" }, { who: "rebel", x: 0.66, hold: "bowl", flip: true }], "ป่วยตาย ก่อนเมืองแตก") },
+      { id: "dig", at: word("head", "ขุด"), anchor: GZ, ...tab("tomb", [{ who: "huangfusong", x: 0.22, hold: "point" }, { who: "soldier", x: 0.42, pose: "hunch", hold: "hoe" }, { who: "soldier", x: 0.84, pose: "hunch", hold: "hoe", flip: true }], "แม่ทัพหลวงขุดศพขึ้นมา") },
+      { id: "rout", at: word("head", "กบฏ"), anchor: GZ, until: B.cost.start + 8, ...tab("field", [{ who: "rebel", x: 0.3, pose: "flee", walk: 2.4 }, { who: "rebel", x: 0.46, pose: "flee", walk: 2.4 }, { who: "soldier", x: 0.12, walk: 2, hold: "spear", robe: "#9a7b2f" }], "กบฏแตกพ่ายในปีเดียว") },
+      { id: "cost", at: word("cost", "ยอม"), anchor: LY, ...tab("throne", [{ who: "official", x: 0.25, pose: "bow" }, { who: "official", x: 0.75, pose: "bow", flip: true, robe: "#6b3a2a" }], "ยอมให้เจ้าเมืองตั้งทัพเอง") },
+      { id: "lords", at: word("governors", "ภาษี"), anchor: LY, until: B.cao.start + 8, ...tab("camp", [{ who: "yuanshao", x: 0.3 }, { who: "soldier", x: 0.5, flag: { text: "袁", color: "#7a5230" } }, { who: "official", x: 0.72, robe: "#5a6b4a", flip: true }], "คุมทั้งทัพ ทั้งภาษี") },
+      { id: "small", at: word("cao", "ร่าง"), anchor: LY, until: B.seer.start + 8, ...tab("camp", [{ who: "soldier", x: 0.3, size: 1.15, hold: "spear" }, { who: "caocao", x: 0.5, size: 0.85 }, { who: "soldier", x: 0.7, size: 1.15, hold: "spear", flip: true }], "ชายร่างเล็ก ชื่อโจโฉ") },
+      { id: "reading", at: B.seer.start, anchor: LY, sky: ["#d9c39a", "#d9c39a"], draw: (g) => <Reading g={g} laugh={1e9} /> },
+      { id: "laugh", at: word("laugh", "หัวเราะ"), anchor: LY, sky: ["#d9c39a", "#d9c39a"], until: B.emperor.start + 8, draw: (g) => <Reading g={g} laugh={word("laugh", "หัวเราะ")} /> },
+      { id: "throne", at: word("emperor", "สวรรคต"), anchor: LY, label: NOVEL, sky: ["#6e2a1f", "#6e2a1f"], draw: (g) => <EmptyThrone g={g} ask={word("emperor", "เลือก")} rivals={1e9} /> },
+      { id: "rivals", at: B.cliff.start, anchor: LY, sky: ["#6e2a1f", "#6e2a1f"], draw: (g) => <EmptyThrone g={g} ask={-1} rivals={B.cliff.start} /> },
+      { id: "gate", at: word("cliff", "ประตู"), anchor: LY, until: B.cliff.end + 30, ...tab("gate", [{ who: "soldier", x: 0.3, hold: "torch" }, { who: "soldier", x: 0.84, hold: "torch", flip: true }], "ใครจะลงมือก่อน?") },
+    ]}
+  />
 );

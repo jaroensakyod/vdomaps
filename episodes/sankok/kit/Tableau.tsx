@@ -1,15 +1,15 @@
 import { interpolate } from "remotion";
 import { Fire, Smoke } from "../../../components/Figures";
 import type { InsetGeom } from "../../../components/Inset";
-import { Bushes, CityGate, DryField, Farmhouse, Grave, HanFigure, Horse, LOOK, OfficeGate, ThroneRoom, type HanPose, type Hold } from "./Scenes";
+import { Bushes, CityGate, DryField, Farmhouse, Grave, HanFigure, Horse, LOOK, OfficeGate, ThroneRoom, type HanPose, type Head, type Hold } from "./Scenes";
 import { C, fonts } from "./theme";
 
 // A scene as data, for the "new picture every 3–4 s" cadence: a backdrop, a few figures, an optional caption.
 // Figures: `who` = a LOOK key (cast portraits' colours), x = 0–1 across the panel, `walk` px per frame
 // (positive = right), `size` multiplies the default figure scale (1.3 — readable on a phone).
 export type Backdrop = "palace" | "throne" | "study" | "night" | "field" | "camp" | "city" | "road" | "hill" | "house" | "gate" | "fire" | "tomb" | "well" | "seal";
-export type Fig = { who: string; x: number; pose?: HanPose; hold?: Hold; flip?: boolean; size?: number; walk?: number; ride?: boolean; dy?: number; robe?: string; from?: number; flag?: { text: string; color: string } };
-// who: "horse" = a riderless horse.
+export type Fig = { who: string; x: number; pose?: HanPose; hold?: Hold; flip?: boolean; size?: number; walk?: number; ride?: boolean; dy?: number; robe?: string; from?: number; flag?: { text: string; color: string }; head?: Head };
+// who: "horse" = a riderless horse (robe = its coat colour).
 export type TableauProps = { g: InsetGeom; from: number; bg: Backdrop; figs: Fig[]; caption?: string; captionColor?: string; burn?: number };
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -181,8 +181,8 @@ export const Tableau = ({ g, from, bg, figs, caption, captionColor, burn }: Tabl
         const x = g.x + g.W * f.x + (f.walk ?? 0) * t * g.s;
         const y = feet + (f.dy ?? 0) * g.s;
         const look = LOOK[f.who] ?? {};
-        if (f.who === "horse") return <Horse key={i} x={x} y={y - 37 * sc} scale={sc * 1.3} color="#6b3a22" flip={f.flip} run={!!f.walk} />;
-        const fig = <HanFigure x={f.ride ? x + 2 * sc : x} y={f.ride ? y - 46 * sc : y} scale={sc} {...look} {...(f.robe ? { robe: f.robe } : {})} pose={f.pose ?? (f.walk && !f.ride ? "walk" : "stand")} hold={f.hold ?? (f.flag ? "flag" : "none")} flag={f.flag} flip={f.flip} phase={i * 1.3} />;
+        if (f.who === "horse") return <Horse key={i} x={x} y={y - 37 * sc} scale={sc * 1.3} color={f.robe ?? "#6b3a22"} flip={f.flip} run={!!f.walk} />;
+        const fig = <HanFigure x={f.ride ? x + 2 * sc : x} y={f.ride ? y - 46 * sc : y} scale={sc} {...look} {...(f.robe ? { robe: f.robe } : {})} {...(f.head ? { head: f.head } : {})} pose={f.pose ?? (f.walk && !f.ride ? "walk" : "stand")} hold={f.hold ?? (f.flag ? "flag" : "none")} flag={f.flag} flip={f.flip} phase={i * 1.3} />;
         return (
           <g key={i} opacity={f.from !== undefined ? interpolate(g.frame, [f.from, f.from + 8], [0, 1], clamp) : 1}>
             {fig}

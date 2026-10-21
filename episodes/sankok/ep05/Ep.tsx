@@ -1,11 +1,11 @@
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import { Arrow } from "../../../components/Arrow";
 import { camAt, camForFeature } from "../../../components/camera";
-import { MapFrame } from "../../../components/Map";
 import { bbox } from "../../../components/Region";
 import { SFX, Sfx } from "../../../components/Sound";
 import { buildBeats } from "../../../components/subs.mjs";
 import { CharacterCard, NovelStamp, PortraitCard, SideCard, StatCard, TitleCard } from "../kit/Cards";
+import { SankokMap } from "../kit/Layout";
 import { EpisodeFrame, timeline, type EpisodeMeta, type Variant } from "../kit/Frame";
 import { Tint } from "../kit/Marks";
 import { at as place } from "../kit/places";
@@ -76,11 +76,13 @@ export const Ep = ({ variant }: { variant: Variant }) => {
 
   return (
     <EpisodeFrame
+      layout="v2"
       ep={EP}
       beats={BEATS}
       variant={variant}
       sounds={
         <>
+          <Sfx src={SFX.hit} at={0} volume={0.5} />
           <Sfx src={SFX.swell} at={0} volume={0.25} />
           {cyc.map((c) => (
             <Sfx key={c.dawn} src={SFX.hit} at={c.dawn} volume={0.3} />
@@ -95,7 +97,7 @@ export const Ep = ({ variant }: { variant: Variant }) => {
         </>
       }
       map={
-        <MapFrame cam={cam}>
+        <SankokMap cam={cam}>
           <PaperMap />
           <InkLabel at={LY} text="ลกเอี๋ยง" start={0} dy={60} size={1.3} />
           {cyc.map((c) => (
@@ -116,14 +118,15 @@ export const Ep = ({ variant }: { variant: Variant }) => {
           </g>
           <Badge at={[LY[0] - 0.25, LY[1] - 0.14]} name="โจโฉ" color={C.wei} start={at("cliff", 0.25)} above={false} />
           <Insets {...TL} />
-        </MapFrame>
+        </SankokMap>
       }
       overlay={
         <>
           <PortraitCard who="dongzhuo" from={B.dong.start} to={B.dong.end + 6} />
           <Tint color="#1d2340" opacity={night} />
           <Tint color="#3a1d3c" opacity={dark} />
-          <TitleCard kicker="สามก๊ก · ตอนที่ 5" lines={["ทหารแค่ 3,000 คน", "ยึดเมืองหลวงได้ยังไง?"]} from={4} to={B.hook.end} />
+          <TitleCard kicker="สามก๊ก · ตอนที่ 5" lines={["ทหารแค่ 3,000", "ยึดทั้งเมืองหลวง"]} from={0} to={B.hookq.end} />
+          <CharacterCard who="dongzhuo" from={-6} to={B.hookq.end + 4} role="มีทหารแค่ 3,000 คน" />
           <StatCard label="ทัพที่คนในเมืองเห็น" value={seen === 0 ? "3,000" : `${(3000 * (seen + 1)).toLocaleString("th-TH")}${seen === 3 ? "+" : ""}`} sub={seen === 0 ? "ทหารจริงของตั๋งโต๊ะ" : `วันที่ ${seen} · ทหารจริงยังเท่าเดิม`} from={B.trick.start} to={B.fear.start + 10} color={C.dong} />
           <CharacterCard who="dingyuan" from={at("fear", 0.6)} to={B.lvbu.start} />
           <CharacterCard who="lvbu" from={B.lvbu.start + 10} to={B.horse.start} />

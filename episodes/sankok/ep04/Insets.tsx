@@ -4,13 +4,15 @@ import { InsetPanel, type InsetGeom } from "../../../components/Inset";
 import type { Timeline } from "../kit/Frame";
 import { at as place } from "../kit/places";
 import { Fireflies, HanFigure, LOOK, OfficeGate, River } from "../kit/Scenes";
+import { Shots } from "../kit/Shots";
+import { tab } from "../kit/Tableau";
 import { C, fonts } from "../kit/theme";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const RIVERBANK: [number, number] = [112.6, 34.95]; // Yellow River north of Luoyang, approximate
 
 // massacre: Yuan Shao's soldiers storm the palace gate with spears; eunuchs run out the far side.
-const Storm = ({ g, start }: { g: InsetGeom; start: number }) => {
+export const Storm = ({ g, start }: { g: InsetGeom; start: number }) => {
   const t = g.frame - start;
   const charge = Math.min(t, 90) * 1.6 * g.s;
   const run = t * 3.4 * g.s;
@@ -30,7 +32,7 @@ const Storm = ({ g, start }: { g: InsetGeom; start: number }) => {
 
 // river → meet: night on the Yellow River bank, the two boys walk hand in hand under fireflies (novel detail);
 // on "เจอ" torches and banners of Dong Zhuo's army come out of the dark, Dong Zhuo himself on "ตั๋ง".
-const Riverbank = ({ g, start, army, dong }: { g: InsetGeom; start: number; army: number; dong: number }) => {
+export const Riverbank = ({ g, start, army, dong }: { g: InsetGeom; start: number; army: number; dong: number }) => {
   const walk = Math.min(g.frame - start, 200) * 0.9 * g.s;
   const a = usePopIn(army);
   const d = usePopIn(dong);
@@ -56,13 +58,26 @@ const Riverbank = ({ g, start, army, dong }: { g: InsetGeom; start: number; army
   );
 };
 
+const LY = place("luoyang");
+const NIGHT: [string, string] = ["#0e1626", "#24324a"];
+
 export const Insets = ({ B, word }: Timeline) => (
-  <>
-    <InsetPanel id="storm" anchor={place("luoyang")} label="ภาพประกอบ" start={word("massacre", "อ้วน")} end={B.river.start + 6} sky={["#e2c79a", "#c9a46a"]} font={fonts.body} accent={C.wu}>
-      {(g) => <Storm g={g} start={word("massacre", "อ้วน")} />}
-    </InsetPanel>
-    <InsetPanel id="river" anchor={RIVERBANK} label="ภาพประกอบ" start={B.river.start + 8} end={B.test.start + 4} sky={["#0e1626", "#24324a"]} font={fonts.body} accent={C.wu} top={0.22}>
-      {(g) => <Riverbank g={g} start={B.river.start + 8} army={word("meet", "เจอ")} dong={word("meet", "ตั๋ง")} />}
-    </InsetPanel>
-  </>
+  <Shots
+    items={[
+      { id: "storm-open", at: -8, anchor: LY, sky: ["#e2c79a", "#c9a46a"], draw: (g, a) => <Storm g={g} start={a} /> },
+      { id: "beard", at: word("hookq", "หนวด"), anchor: LY, ...tab("palace", [{ who: "soldier", x: 0.3, hold: "spear" }, { who: "zhangrang", x: 0.62, pose: "raise", flip: true }], "ใครไม่มีหนวด ถูกฆ่า") },
+      { id: "hejin", at: word("hejin", "ล้าง"), anchor: LY, ...tab("palace", [{ who: "hejin", x: 0.3, pose: "raise", hold: "sword" }, { who: "zhangrang", x: 0.62, pose: "hunch", flip: true }, { who: "official", x: 0.8, pose: "hunch", flip: true, head: "eunuch", robe: "#7a2518" }], "อยากล้างบางขันทีให้หมด") },
+      { id: "summon", at: word("summon", "เรียก"), anchor: LY, ...tab("road", [{ who: "soldier", x: 0.2, ride: true, walk: 3, robe: "#9a7b2f" }], "เรียกขุนศึกเข้าเมืองหลวง") },
+      { id: "laugh", at: B.caolaugh.start, anchor: LY, until: B.cao.start + 4, ...tab("palace", [{ who: "caocao", x: 0.45, pose: "laugh", size: 1.1 }], "โจโฉหัวเราะ") },
+      // cao: Cao Cao's portrait is the picture
+      { id: "trap", at: word("trap", "หลอก"), anchor: LY, until: B.zhangrang.start + 4, ...tab("palace", [{ who: "hejin", x: 0.15, walk: 1.2 }, { who: "zhangrang", x: 0.82, flip: true }], "เข้าวังเพียงลำพัง") },
+      // zhangrang: his portrait is the picture
+      { id: "storm", at: word("massacre", "อ้วน"), anchor: LY, sky: ["#e2c79a", "#c9a46a"], draw: (g, a) => <Storm g={g} start={a} /> },
+      { id: "flee", at: word("massacre", "ขันที"), anchor: LY, until: B.river.start + 8, ...tab("palace", [{ who: "zhangrang", x: 0.3, pose: "flee", walk: 3 }, { who: "zhangrang", x: 0.45, pose: "flee", walk: 3, robe: "#3d4f6b" }, { who: "soldier", x: 0.1, walk: 2.6, hold: "spear" }], "ขันทีตายกว่าสองพันคน") },
+      { id: "night-run", at: B.river.start, anchor: RIVERBANK, ...tab("night", [{ who: "zhangrang", x: 0.7, walk: -1.6, flip: true }, { who: "prince", x: 0.82, walk: -1.6, flip: true, size: 0.8 }, { who: "emperor", x: 0.92, walk: -1.6, flip: true, size: 0.65 }], "หนีออกจากวังกลางดึก") },
+      { id: "river", at: word("river", "ริม"), anchor: RIVERBANK, sky: NIGHT, until: B.test.start + 8, draw: (g, a) => <Riverbank g={g} start={a} army={word("meet", "เจอ")} dong={word("meet", "ตั๋ง")} /> },
+      { id: "test", at: word("test", "ร้องไห้"), anchor: RIVERBANK, ...tab("night", [{ who: "dongzhuo", x: 0.72, ride: true, flip: true }, { who: "prince", x: 0.28, pose: "hunch", size: 0.8 }, { who: "emperor", x: 0.42, size: 0.65 }], "องค์น้องตอบได้ฉะฉาน") },
+      { id: "smile", at: word("cliff", "ยิ้ม"), anchor: LY, until: B.cliff.end + 30, ...tab("throne", [{ who: "dongzhuo", x: 0.62, pose: "laugh", flip: true, size: 1.1 }, { who: "emperor", x: 0.36, size: 0.65 }], "ทำไมอยากได้ฮ่องเต้องค์ใหม่?") },
+    ]}
+  />
 );
