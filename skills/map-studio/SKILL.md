@@ -85,7 +85,7 @@ map changes with the story:
    - AI images (Gemini) are only for portraits of people; everything that moves is drawn in code.
    Finished videos (ประวัติศาสตร์บนแผนที่ ep01–ep03 and earlier work) keep their v1 panels; do not refit them.
 8. **Realistic sound** (set by the user on 22 Oct 2026): story events use recorded effects from the house library
-   (`sfx/library.json`, `npm run sfx-lib`, `lib("id")`, `<Bed>`). Free sources only: Mixkit and Pixabay
+   (`sfx/library.json`, `npm run sfx-lib`, `<Hit id at>` placed by each file's measured transient, `<Bed>`). Free sources only: Mixkit and Pixabay
    (commercial OK, no credit), Freesound CC0. The raw files are never committed. Every illustrated event sounds
    on its frame, every scene has an ambience bed, and narration always wins. Synthetic `SFX.*` sounds are for UI
    moments only. Rules, sources and the catalogue: `references/sound.md`; reference mix: `episodes/lab/WW1Battle.tsx`.

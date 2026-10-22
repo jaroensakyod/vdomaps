@@ -2,7 +2,8 @@ import { Fragment } from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import type { InsetGeom } from "../../components/Inset";
 import { COSTUME, Fighter, PAL, PaperGrain } from "../../components/Scene";
-import { Bed, lib, Sfx } from "../../components/Sound";
+import { Bed, bedFrom, Hit, levelAt, sfxInfo } from "../../components/Sound";
+const sfxHit = (id: string) => sfxInfo(id)?.hit ?? 0;
 import { font } from "../thaihistory/news/kit";
 
 // Lab: a 20-s WW1 attack-and-defence scene in house style v2, colour. One live side-view world (attackers from the
@@ -23,6 +24,17 @@ const BLASTS: [number, number, number][] = [
   [300, 1640, 1], [345, 1770, 1.2], [400, 1100, 1], [465, 1700, 1.2], [490, 1860, 2.3],
 ];
 const BIG = 490;
+
+// One event schedule drives both picture and sound (SYNC RULE, references/sound.md).
+const RIFLE: [number, number][] = [0, 1, 2, 3].flatMap((i) => Array.from({ length: 10 }, (_, k) => [140 + i * 11 + k * 40, i] as [number, number])).filter(([f]) => f < 520);
+const MG_PLAYS = [150, 390];
+// The gun is firing whenever its sound is in a loud burst; a round is drawn every 2 frames inside a burst.
+const mgFiring = (f: number) => MG_PLAYS.some((s) => levelAt("mg_ww1", s, f) > 0.6);
+const MG_SHOTS = Array.from({ length: 600 }, (_, f) => f).filter((f) => f % 2 === 0 && mgFiring(f));
+const TANK_GUN = [330, 450];
+const PLANE1_CROSS = 283; // p1 passes the middle of the wide shot
+const PLANE2_CROSS = 491;
+const since = (list: number[], f: number) => { let d = 1e9; for (const x of list) if (x <= f) d = Math.min(d, f - x); return d; };
 
 // ---------- world pieces ----------
 const Explosion = ({ x, size, age }: { x: number; size: number; age: number }) => {
@@ -167,7 +179,7 @@ const World = ({ frame }: { frame: number }) => {
       {frame >= 140 && frame < 430 && Array.from({ length: 4 }, (_, i) => ((frame + i * 3) % 12 < 6 ? <line key={i} x1={p1 - 200 + i * 40} y1={380} x2={p1 - 170 + i * 40} y2={360} stroke="#ffe08a" strokeWidth={4} /> : null))}
       <Plane x={p2} y={260} flip frame={frame} color="#2a4fa8" mark="roundel" />
       {/* tank */}
-      <Tank x={tankX} frame={frame} gunAt={[330, 450]} />
+      <Tank x={tankX} frame={frame} gunAt={TANK_GUN} />
       {/* attackers */}
       {men.filter((m) => frame >= m.start).map((m) => (
         <Fighter key={m.i} x={m.x} y={m.y} scale={m.sc} mode={m.at ? "attack" : "run"} costume={COSTUME.ww1khaki} weapon="rifle" phase={m.i * 1.7} />
@@ -176,8 +188,8 @@ const World = ({ frame }: { frame: number }) => {
       {BLASTS.map(([f, x, size]) => <Explosion key={f} x={x} size={size} age={frame - f} />)}
       {/* defenders' trench (right): men behind a sandbag parapet, machine gun, tracers */}
       {[1920, 2010, 2100, 2190].map((x, i) => {
-        const c = (frame + i * 11) % 40;
-        return <Fighter key={i} x={x} y={GROUND + 52} scale={1.6} flip mode="aim" costume={COSTUME.ww1grey} weapon="rifle" phase={i} flash={frame > 130 && c < 4 ? 1 - c / 4 : 0} />;
+        const d = since(RIFLE.filter(([, who]) => who === i).map(([f]) => f), frame);
+        return <Fighter key={i} x={x} y={GROUND + 52} scale={1.6} flip mode="aim" costume={COSTUME.ww1grey} weapon="rifle" phase={i} flash={d < 4 ? 1 - d / 4 : 0} />;
       })}
       <rect x={1800} y={GROUND - 6} width={700} height={70} fill="#77603f" />
       {Array.from({ length: 3 }, (_, row) => Array.from({ length: 14 }, (_, i) => <ellipse key={`${row}-${i}`} cx={1830 + i * 44 + (row % 2) * 22} cy={GROUND - 4 - row * 24} rx={26} ry={14} fill={["#b49a64", "#a68c58", "#c2a874"][(i + row) % 3]} stroke={PAL.ink} strokeWidth={2.4} />))}
@@ -185,10 +197,9 @@ const World = ({ frame }: { frame: number }) => {
         <path d="M-10 0 L-30 40 M10 0 L30 40" stroke="#2a2a2a" strokeWidth={6} />
         <rect x={-60} y={-22} width={90} height={24} rx={6} fill="#3a3e36" stroke={PAL.ink} strokeWidth={3} />
         <rect x={-110} y={-15} width={54} height={8} fill="#2a2a2a" />
-        {frame > 150 && frame < 540 && frame % 4 < 2 && <circle cx={-116} cy={-11} r={16} fill="#ffd25a" opacity={0.9} />}
+        {since(MG_SHOTS, frame) < 2 && <circle cx={-116} cy={-11} r={16} fill="#ffd25a" opacity={0.9} />}
       </g>
-      {frame > 150 && frame < 540 && Array.from({ length: 7 }, (_, k) => {
-        const born = frame - (frame % 3) - k * 3;
+      {MG_SHOTS.filter((b) => b <= frame && frame - b < 14).map((born, k) => {
         const d = (frame - born) * 70;
         const tx = 1770 - d;
         const ty = GROUND - 89 + (rnd(born) - 0.5) * 30 + d * 0.02;
@@ -233,25 +244,24 @@ export const WW1Battle = () => {
   return (
     <AbsoluteFill style={{ background: "#0a0b10" }}>
       {/* recorded house-library sound: beds under everything, one-shots on the frame of each event */}
-      <Bed id="explosions_distant" from={0} to={600} volume={0.35} />
-      <Bed id="wind" from={0} to={600} volume={0.18} />
+      <Bed id="explosions_distant" from={0} to={600} volume={0.3} />
+      <Bed id="wind" from={0} to={600} volume={0.16} />
       {BLASTS.map(([f, x, size]) => (
         <Fragment key={f}>
-          {f > 30 && <Sfx src={lib("shell_incoming")} at={f - 16} volume={0.35} />}
-          <Sfx src={lib(size > 2 ? "explosion_big" : x < 1000 ? "explosion_far" : "explosion_mid")} at={f} volume={size > 2 ? 0.95 : x < 1000 ? 0.5 : 0.7} />
+          {f > 30 && <Hit id="shell_incoming" at={f} volume={0.35} />}
+          <Hit id={size > 2 ? "explosion_big" : x < 1000 ? "explosion_far" : "explosion_mid"} at={f} volume={size > 2 ? 0.95 : x < 1000 ? 0.5 : 0.7} />
         </Fragment>
       ))}
-      <Sfx src={lib("explosion_debris")} at={BIG + 4} volume={0.55} />
-      <Sfx src={lib("whistle_officer")} at={96} volume={0.6} />
-      <Sfx src={lib("battle_cry")} at={112} volume={0.6} />
-      <Sfx src={lib("mg_ww1")} at={150} volume={0.4} />
-      <Sfx src={lib("mg_ww1")} at={390} volume={0.45} />
-      {[140, 175, 205, 250, 285, 330, 360, 420, 455].map((f) => <Sfx key={f} src={lib("rifle_ww1")} at={f} volume={0.3} />)}
+      <Hit id="explosion_debris" at={BIG + 6} volume={0.5} />
+      <Hit id="whistle_officer" at={98} volume={0.6} />
+      <Hit id="battle_cry" at={112} volume={0.6} />
+      {MG_PLAYS.map((s) => <Hit key={s} id="mg_ww1" at={s + (sfxHit("mg_ww1"))} volume={0.42} />)}
+      {RIFLE.map(([f, i], k) => <Hit key={f} id={k % 3 === 2 ? "rifle_echo" : "rifle_ww1"} at={f} volume={0.18 + (i % 2) * 0.08} />)}
       <Bed id="tank_move" from={190} to={560} volume={0.4} />
-      {[330, 450].map((f) => <Sfx key={f} src={lib("cannon")} at={f} volume={0.55} />)}
-      <Bed id="plane_vintage" from={140} to={430} volume={0.4} />
-      <Bed id="plane_prop_loop" from={380} to={600} volume={0.3} />
-      <Sfx src={lib("war_horn_drums")} at={512} volume={0.5} />
+      {TANK_GUN.map((f) => <Hit key={f} id="cannon" at={f} volume={0.6} />)}
+      <Bed id="plane_vintage" from={bedFrom("plane_vintage", PLANE1_CROSS)} to={440} volume={0.45} />
+      <Bed id="plane_prop_loop" from={bedFrom("plane_prop_loop", PLANE2_CROSS)} to={600} volume={0.3} />
+      <Hit id="war_horn_drums" at={515} volume={0.5} />
       <svg width={W} height={1920} viewBox={`0 0 ${W} 1920`}>
         <View id="wide" x={30} y={190} w={W - 60} h={760} cx={wideX} cy={830} zoom={wideZ} shake={hit * 4} label="สมรภูมิ" />
         <View id="trench" x={30} y={980} w={W - 60} h={820} cx={camX} cy={GROUND - 150} zoom={camZ} shake={hit * 9 + big * 18} label="ในสนามเพลาะ" />

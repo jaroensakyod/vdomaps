@@ -30,6 +30,26 @@ const loudestStart = (f, len) => {
   return best;
 };
 
+// Timing of a processed file, for syncing with pictures: loudness envelope at 30 fps (dB, one value per video
+// frame), `hit` = the frame where the main transient starts (first frame within 6 dB of the peak, after a rise),
+// `peak` = loudest frame. Sounds are placed so their `hit` lands on the picture's event frame.
+const timingOf = (f) => {
+  const pcm = spawnSync("ffmpeg", ["-v", "error", "-i", f, "-f", "f32le", "-ac", "1", "-ar", "48000", "-"], { maxBuffer: 256 << 20 }).stdout;
+  const x = new Float32Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 4));
+  const env = [];
+  for (let i = 0; i < x.length; i += 1600) {
+    let s = 0;
+    const n = Math.min(1600, x.length - i);
+    for (let j = 0; j < n; j++) s += x[i + j] * x[i + j];
+    env.push(Math.max(-60, Math.round(10 * Math.log10(s / n + 1e-12))));
+  }
+  const max = Math.max(...env);
+  const peak = env.indexOf(max);
+  let hit = peak;
+  while (hit > 0 && env[hit - 1] >= max - 6) hit--;
+  return { env, hit, peak };
+};
+
 const index = [];
 for (const it of lib.items) {
   const dst = `${out}/${it.id}.mp3`;
@@ -58,7 +78,9 @@ for (const it of lib.items) {
     ff(["-ss", String(start), "-t", String(cut), "-i", src, "-af", filters.join(","), "-ar", "48000", "-ac", "2", "-b:a", "192k", dst]);
   }
   const d = dur(dst);
-  index.push({ id: it.id, cat: it.cat, kind: it.kind, sec: +d.toFixed(2), title: it.title });
-  console.log(`${it.id.padEnd(20)} ${it.kind.padEnd(4)} ${d.toFixed(1).padStart(5)} s  ${it.title}`);
+  const { env, hit, peak } = timingOf(dst);
+  index.push({ id: it.id, cat: it.cat, kind: it.kind, align: it.align ?? "hit", frames: env.length, hit, peak, env });
+  console.log(`${it.id.padEnd(20)} ${it.kind.padEnd(4)} ${d.toFixed(1).padStart(5)} s  hit f${String(hit).padEnd(4)} peak f${String(peak).padEnd(4)} ${it.title}`);
 }
-if (!only.length) writeFileSync(`${out}/index.json`, JSON.stringify(index, null, 1));
+// Timing table for the components (numbers only, safe to commit): src/components/sfx-index.json.
+if (!only.length) writeFileSync("src/components/sfx-index.json", JSON.stringify(Object.fromEntries(index.map(({ id, ...r }) => [id, r]))));

@@ -33,12 +33,32 @@ Never: BBC Sound Effects (personal/educational licence only), YouTube rips, game
    signal, and prefer recordings whose title names the exact thing ("Gewehr 98 rifle shot", not "gun sfx").
 5. Tell the user which new sounds were added so they can spot-check by ear.
 
+## Sync rule (picture and sound share one schedule)
+
+Raw recordings rarely start on the bang: the Gewehr 98 shot cracks 0.7 s into its file, the debris rain 0.8 s,
+a fly-by is loudest 5 s in. So `npm run sfx-lib` measures every file (30 fps loudness envelope, `hit` = start of
+the main transient, `peak` = loudest frame) into `src/components/sfx-index.json`, and scenes place sounds by
+those numbers:
+
+- **`<Hit id at>` for every one-shot** — the transient lands exactly on `at`. Never `<Sfx src={lib(...)}>` with a
+  hand-guessed offset. Lead-ins (`"align": "end"` in the library, e.g. `shell_incoming`) end on `at` instead.
+- **One schedule drives both sides.** Keep the event frames in one constant (`RIFLE = [[frame, who], …]`,
+  `TANK_GUN = [330, 450]`) and use it for the muzzle flash, the shake *and* the `<Hit>`. Never time flashes with
+  `frame % n` and sounds with a separate list.
+- **Continuous sounds drive the picture.** Machine guns, engines, crowds: start the sound, then draw from it —
+  `levelAt(id, start, frame)` (0–1) for bursts and glows, `onsets(id, start)` for distinct strikes. The gun fires
+  on screen exactly while its burst is loud.
+- **Fly-bys and swells:** `<Bed from={bedFrom(id, peakFrame)}>` so the loudest moment lands when the plane
+  crosses the middle of the frame, the crowd roars, the wave breaks.
+- Check: every event frame in the schedule has its `<Hit>`; nothing in the mix plays on a frame with no event
+  on screen (except beds).
+
 ## Using sounds in a scene
 
 ```tsx
-import { Bed, lib, Sfx, voiceSpans } from "../../components/Sound";
+import { Bed, Hit, voiceSpans } from "../../components/Sound";
 <Bed id="rain_heavy" from={B.storm.start} to={B.calm.start} volume={0.25} voice={voiceSpans(BEATS)} />
-<Sfx src={lib("sword_clash")} at={wf("duel", "ฟัน")} volume={0.5} />
+<Hit id="sword_clash" at={wf("duel", "ฟัน")} volume={0.5} />
 ```
 
 - **Every illustrated event gets its sound on the same frame** as the picture (the impact frame, the muzzle

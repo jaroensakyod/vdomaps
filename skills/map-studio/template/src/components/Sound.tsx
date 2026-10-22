@@ -1,4 +1,5 @@
 import { Html5Audio, interpolate, Sequence, staticFile } from "remotion";
+import IDX from "./sfx-index.json";
 
 // Synthesised effects from `npm run sfx` (no licence needed). Paths are relative to public/.
 export const SFX = {
@@ -13,6 +14,41 @@ export const SFX = {
 // Recorded effects from the house library (sfx/library.json → `npm run sfx-lib` → public/sfx/lib/<id>.mp3).
 // e.g. <Sfx src={lib("explosion_big")} at={f} volume={0.6} />. Pick ids from references/sound.md.
 export const lib = (id: string) => `sfx/lib/${id}.mp3`;
+
+// Timing of each library sound (written by `npm run sfx-lib`): 30 fps loudness envelope in dB, `hit` = frame
+// where the main transient starts, `peak` = loudest frame, `align` = "hit" (default) or "end" (lead-ins such
+// as an incoming shell whose whistle should END on the impact).
+type SfxTiming = { align: string; frames: number; hit: number; peak: number; env: number[] };
+export const sfxInfo = (id: string): SfxTiming | undefined => (IDX as Record<string, SfxTiming>)[id];
+
+// SYNC RULE: place library sounds with <Hit>, not <Sfx>. The sound's transient lands exactly on `at`, the frame
+// where the picture shows the event (muzzle flash, impact, clash). Raw files often start with a lead-in.
+export const Hit = ({ id, at, volume = 0.5 }: { id: string; at: number; volume?: number }) => {
+  const t = sfxInfo(id);
+  const start = t ? (t.align === "end" ? at - t.frames : at - t.hit) : at;
+  return <Sfx src={lib(id)} at={start} volume={volume} />;
+};
+
+// Frames (absolute) where a sound started at `start` has a transient: each burst of a machine gun, each
+// footstep, each thunder crack. Drive the matching picture (flash, tracer, shake) from these frames.
+export const onsets = (id: string, start: number, rise = 6, gap = 2) => {
+  const t = sfxInfo(id);
+  if (!t) return [];
+  const out: number[] = [];
+  for (let i = 1; i < t.env.length; i++) if (t.env[i] - t.env[i - 1] >= rise && (!out.length || i + start - out[out.length - 1] > gap)) out.push(start + i);
+  return out;
+};
+
+// Loudness 0–1 of a sound started at `start`, at `frame` — for glows, shakes, engine vibration.
+export const levelAt = (id: string, start: number, frame: number, floorDb = -40) => {
+  const t = sfxInfo(id);
+  const i = frame - start;
+  if (!t || i < 0 || i >= t.env.length) return 0;
+  return Math.max(0, Math.min(1, (t.env[i] - floorDb) / (t.env[t.peak] - floorDb)));
+};
+
+// Start frame for a bed whose loudest moment (a fly-by, a cheer) must land on `peakAt`.
+export const bedFrom = (id: string, peakAt: number) => peakAt - (sfxInfo(id)?.peak ?? 0);
 
 // Ambience bed (rain, crowd, gunfire, engines): loops from `from` to `to` with fades, ducked under VO spans.
 export const Bed = ({ id, from, to, volume = 0.25, fade = 20, voice = [], duck = 0.45 }: { id: string; from: number; to: number; volume?: number; fade?: number; voice?: [number, number][]; duck?: number }) => (
