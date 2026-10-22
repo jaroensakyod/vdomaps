@@ -1,7 +1,7 @@
 import { loadFont } from "@remotion/google-fonts/Kanit";
 import type { FeatureCollection, MultiLineString } from "geojson";
 import type { ReactNode } from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { camForFeature, projectionFor, type Cam } from "../../../components/camera";
 import { InsetPanel, type InsetGeom } from "../../../components/Inset";
 import { useMap } from "../../../components/Map";
@@ -150,7 +150,7 @@ export const TopBar = ({ chapter, year }: { chapter: string; year: string }) => 
 };
 
 // One card per shot: [frame, tag, headline, stat?, statLabel?, color?]. The card stays; text swaps on each shot.
-export type Head = { f: number; tag: string; head: string; stat?: string | ((frame: number) => string); label?: string; color?: string; chips?: { text: string; f: number }[] };
+export type Head = { f: number; tag: string; head: string; stat?: string | ((frame: number) => string); label?: string; color?: string; chips?: { text: string; f: number }[]; portrait?: string };
 export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to: number }) => {
   const frame = useCurrentFrame();
   const { width, height, fps } = useVideoConfig();
@@ -167,6 +167,13 @@ export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to:
   const stat = typeof h.stat === "function" ? h.stat(frame) : h.stat;
   return (
     <div style={{ position: "absolute", left: 50 * s, right: 50 * s, top: height * 0.1, transform: `translateX(${(1 - k) * -60 * s}px)`, opacity: k * o, fontFamily: font, color: "#fff", background: "rgba(8,14,26,0.86)", borderLeft: `${8 * s}px solid ${color}`, borderRadius: 14 * s, padding: `${18 * s}px ${30 * s}px`, boxShadow: `0 ${10 * s}px ${30 * s}px rgba(0,0,0,0.5)`, lineHeight: 1.4 }}>
+      {h.portrait && (
+        // AI-drawn portrait (style A, episodes/thaihistory/portraits.json): always labelled ภาพประกอบ
+        <div style={{ float: "left", position: "relative", width: 190 * s, height: 190 * s, marginRight: 24 * s, transform: `scale(${0.8 + 0.2 * swap})`, opacity: swap }}>
+          <Img src={staticFile(`portraits/thaihistory/${h.portrait}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 14 * s, border: `${4 * s}px solid ${color}` }} />
+          <span style={{ position: "absolute", left: 8 * s, bottom: 8 * s, background: "rgba(8,14,26,0.75)", fontSize: 16 * s, padding: `0 ${8 * s}px`, borderRadius: 6 * s }}>ภาพประกอบ</span>
+        </div>
+      )}
       <span style={{ background: "rgba(255,255,255,0.14)", padding: `${2 * s}px ${14 * s}px`, borderRadius: 30 * s, fontSize: 26 * s, fontWeight: 700 }}>{h.tag}</span>
       <div style={{ fontSize: 54 * s, fontWeight: 900, marginTop: 6 * s, transform: `translateY(${(1 - swap) * 14 * s}px)`, opacity: swap }}>{h.head}</div>
       {stat && (
@@ -185,6 +192,7 @@ export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to:
           })}
         </div>
       )}
+      {h.portrait && <div style={{ clear: "both" }} />}
     </div>
   );
 };
