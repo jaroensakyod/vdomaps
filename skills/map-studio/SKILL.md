@@ -81,6 +81,13 @@ map changes with the story:
    - **Look:** ink outlines (`PAL.ink`, 1.4–2.2 px × s) and a mural palette (ochre, indigo, muted green, chalk,
      gilt). Channels may change the palette and costumes, not the method.
    - **Variety:** at most 2 uses of the same scene per episode; build a specific scene for each story beat.
+   - **Flashes never strobe:** lightning, explosions, sirens and screen flashes rise over ≥2 frames and fade over
+     ≥10; alternating lights (police red/blue) cross-fade with a sine, never swap colour every few frames; no
+     double-flicker lightning, no 1-frame flashes, no `frame % n` blinking on large areas. These trip
+     `check-glitch` and read as flicker (found in the rain test: a realistic double lightning flash was flagged).
+   - **Composition (9:16):** hold the ground/water line at ~2/3 of the screen at every zoom
+     (`cy = ground − k / zoom`), keep the action in the middle third, and fill the bottom with a near foreground
+     layer (people, grass, umbrellas, a wave) moving fastest. Empty ground or sea in the bottom half is a defect.
    - Special scenes may use nang yai shadow puppets (`ShadowPanel` in the same file), 1–2 per episode at most.
    - AI images (Gemini) are only for portraits of people; everything that moves is drawn in code.
    Finished videos (ประวัติศาสตร์บนแผนที่ ep01–ep03 and earlier work) keep their v1 panels; do not refit them.
