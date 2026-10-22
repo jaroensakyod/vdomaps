@@ -6,3 +6,6 @@ whisper.cpp/
 .env.*
 *.key
 public/audio/
+
+# SFX library: licences forbid redistributing the raw files (see skills/map-studio/template/sfx/library.json)
+**/public/sfx/lib/

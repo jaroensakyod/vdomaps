@@ -38,7 +38,7 @@ export const limb = (x: number, y: number, a1: number, l1: number, a2: number, l
 };
 
 // Head styles cover most stories: short-cropped, head-wrap with tail, helmet, topknot, crown point.
-export type Head = "short" | "wrap" | "helmet" | "topknot" | "crown";
+export type Head = "short" | "wrap" | "helmet" | "topknot" | "crown" | "brodie";
 export type Costume = { jacket: string; sash: string; pants: string; head: Head; headColor?: string; skin?: string };
 export const COSTUME: Record<string, Costume> = {
   siam: { jacket: PAL.indigo, sash: PAL.ochre, pants: "#3a2a22", head: "short" },
@@ -46,24 +46,33 @@ export const COSTUME: Record<string, Costume> = {
   qing: { jacket: "#3a5a8a", sash: PAL.gilt, pants: "#2a2a2a", head: "helmet", headColor: "#c9302c" },
   lanna: { jacket: "#2a3a2a", sash: "#3fbf6a", pants: "#2a2420", head: "topknot" },
   europe: { jacket: "#2f4f86", sash: "#efe6d0", pants: "#efe6d0", head: "helmet", headColor: "#1b1d24", skin: "#e0b08a" },
+  ww1khaki: { jacket: "#8a7a4a", sash: "#5a4a2a", pants: "#7a6a3e", head: "brodie", headColor: "#5f5a3a", skin: "#e0b08a" },
+  ww1grey: { jacket: "#6d725c", sash: "#3a3a32", pants: "#5a5e4c", head: "helmet", headColor: "#4a4e44", skin: "#e0b08a" },
+  ww1blue: { jacket: "#5a78a8", sash: "#2a3a5a", pants: "#4a6290", head: "brodie", headColor: "#4a6290", skin: "#e0b08a" },
 };
 
-// Jointed soldier: "walk" (leg/arm cycle + bob), "attack" (spear thrusts), "stand" (breathing).
-export const Fighter = ({ x, y, scale, flip = false, phase = 0, mode = "walk", costume = COSTUME.siam, weapon = "spear" }: { x: number; y: number; scale: number; flip?: boolean; phase?: number; mode?: "walk" | "attack" | "stand"; costume?: Costume; weapon?: "spear" | "none" }) => {
+// Jointed soldier: "walk" (leg/arm cycle + bob), "run" (faster, leaning), "attack" (thrusts), "aim" (weapon level,
+// still), "stand" (breathing). weapon "rifle" is a short gun with bayonet; `flash` (0–1) draws a muzzle flash at its tip.
+export const Fighter = ({ x, y, scale, flip = false, phase = 0, mode = "walk", costume = COSTUME.siam, weapon = "spear", flash = 0 }: { x: number; y: number; scale: number; flip?: boolean; phase?: number; mode?: "walk" | "run" | "attack" | "aim" | "stand"; costume?: Costume; weapon?: "spear" | "rifle" | "none"; flash?: number }) => {
   const frame = useCurrentFrame();
-  const t = frame * 0.28 + phase;
-  const w = mode === "walk" ? 1 : 0;
-  const bob = mode === "walk" ? -Math.abs(Math.sin(t)) * 3 : Math.sin(frame * 0.08 + phase) * 0.8;
+  const run = mode === "run";
+  const t = frame * (run ? 0.45 : 0.28) + phase;
+  const w = mode === "walk" || run ? (run ? 1.35 : 1) : 0;
+  const bob = w ? -Math.abs(Math.sin(t)) * (run ? 6 : 3) : Math.sin(frame * 0.08 + phase) * 0.8;
+  const lean = run ? 12 : 0;
   const strike = mode === "attack" ? (Math.sin(frame * 0.22 + phase) + 1) / 2 : 0;
   const { jacket, sash, pants, head, headColor = PAL.chalk, skin = PAL.skin } = costume;
   const r = Math.PI / 180;
-  const arm = limb(6, -98, mode === "attack" ? -60 - strike * 50 : -25 + Math.sin(t) * 15 * w, 20, mode === "attack" ? -40 + strike * 30 : -50, 18, jacket, 7);
+  const aim = mode === "aim";
+  const arm = limb(6, -98, mode === "attack" ? -60 - strike * 50 : aim ? -85 : run ? -70 : -25 + Math.sin(t) * 15 * w, 20, mode === "attack" ? -40 + strike * 30 : aim ? -5 : run ? -20 : -50, 18, jacket, 7);
   const [hx, hy] = arm.end;
-  const ang = mode === "attack" ? 95 - strike * 15 : 168;
+  const ang = mode === "attack" ? 95 - strike * 15 : aim ? 92 : run ? 110 : 168;
+  const len = weapon === "rifle" ? 46 : 70;
+  const tip: [number, number] = [hx + Math.sin(ang * r) * (len + 14), hy + Math.cos(ang * r) * (len + 14)];
   return (
     <g transform={`translate(${x},${y}) scale(${flip ? -scale : scale},${scale})`}>
       <ellipse cx={0} cy={2} rx={20} ry={4} fill="#000" opacity={0.28} />
-      <g transform={`translate(0,${bob})`}>
+      <g transform={`translate(0,${bob}) rotate(${lean},0,-60)`}>
         {limb(-3, -60, Math.sin(t) * 28 * w, 30, -Math.max(0, Math.cos(t)) * 40 * w, 30, pants, 9).el}
         {limb(3, -60, -Math.sin(t) * 28 * w, 30, -Math.max(0, -Math.cos(t)) * 40 * w, 30, pants, 9).el}
         {limb(-6, -98, 20 + Math.sin(t) * 20 * w, 20, -30, 18, jacket, 7).el}
@@ -81,12 +90,14 @@ export const Fighter = ({ x, y, scale, flip = false, phase = 0, mode = "walk", c
           {head === "helmet" && <path d="M-11 -1 Q-11 -16 0 -16 Q11 -16 11 -1 Z M-2 -16 L0 -24 L2 -16 Z" fill={headColor} stroke={PAL.ink} strokeWidth={1.6} />}
           {head === "topknot" && <path d="M-9.5 -2 Q-10 -13 0 -13 Q10 -13 9.5 -2 Z M-4 -12 Q0 -22 4 -12 Z" fill="#1f1712" />}
           {head === "crown" && <path d="M-10 -3 L0 -30 L10 -3 Z" fill={PAL.gilt} stroke={PAL.ink} strokeWidth={1.4} />}
+          {head === "brodie" && <path d="M-17 -4 Q-14 -6 -9 -6 Q-8 -17 0 -17 Q8 -17 9 -6 Q14 -6 17 -4 Q0 -1 -17 -4 Z" fill={headColor} stroke={PAL.ink} strokeWidth={1.6} />}
           <circle cx={5} cy={0} r={1.4} fill={PAL.ink} />
         </g>
-        {weapon === "spear" && (
+        {weapon !== "none" && (
           <g>
-            <line x1={hx - Math.sin(ang * r) * 30} y1={hy - Math.cos(ang * r) * 30} x2={hx + Math.sin(ang * r) * 70} y2={hy + Math.cos(ang * r) * 70} stroke="#5a3a1f" strokeWidth={3} />
-            <path d={`M${hx + Math.sin(ang * r) * 70} ${hy + Math.cos(ang * r) * 70} l${Math.sin((ang - 8) * r) * 14} ${Math.cos((ang - 8) * r) * 14} l${Math.sin((ang + 8) * r) * -2} ${Math.cos((ang + 8) * r) * -2} Z`} fill="#cfd3d6" stroke={PAL.ink} strokeWidth={1.2} />
+            <line x1={hx - Math.sin(ang * r) * 30} y1={hy - Math.cos(ang * r) * 30} x2={hx + Math.sin(ang * r) * len} y2={hy + Math.cos(ang * r) * len} stroke={weapon === "rifle" ? "#3a2a1a" : "#5a3a1f"} strokeWidth={weapon === "rifle" ? 5 : 3} strokeLinecap="round" />
+            <path d={`M${hx + Math.sin(ang * r) * len} ${hy + Math.cos(ang * r) * len} l${Math.sin((ang - 8) * r) * 14} ${Math.cos((ang - 8) * r) * 14} l${Math.sin((ang + 8) * r) * -2} ${Math.cos((ang + 8) * r) * -2} Z`} fill="#cfd3d6" stroke={PAL.ink} strokeWidth={1.2} />
+            {flash > 0 && <g transform={`translate(${tip[0]},${tip[1]})`} opacity={flash}><circle r={14 * flash} fill="#ffd25a" /><circle r={7 * flash} fill="#fff8d8" /></g>}
           </g>
         )}
         {arm.el}

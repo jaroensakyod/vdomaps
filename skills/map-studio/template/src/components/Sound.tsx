@@ -10,6 +10,26 @@ export const SFX = {
   swell: "sfx/swell.wav", // title cards
 } as const;
 
+// Recorded effects from the house library (sfx/library.json → `npm run sfx-lib` → public/sfx/lib/<id>.mp3).
+// e.g. <Sfx src={lib("explosion_big")} at={f} volume={0.6} />. Pick ids from references/sound.md.
+export const lib = (id: string) => `sfx/lib/${id}.mp3`;
+
+// Ambience bed (rain, crowd, gunfire, engines): loops from `from` to `to` with fades, ducked under VO spans.
+export const Bed = ({ id, from, to, volume = 0.25, fade = 20, voice = [], duck = 0.45 }: { id: string; from: number; to: number; volume?: number; fade?: number; voice?: [number, number][]; duck?: number }) => (
+  <Sequence from={from} durationInFrames={to - from} layout="none">
+    <Html5Audio
+      src={staticFile(lib(id))}
+      loop
+      volume={(f) => {
+        const t = f + from;
+        let d = 1;
+        for (const [a, b] of voice) d = Math.min(d, 1 - interpolate(t, [a - 8, a, b, b + 8], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) * (1 - duck));
+        return volume * d * interpolate(f, [0, fade, to - from - fade, to - from], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+      }}
+    />
+  </Sequence>
+);
+
 // One effect at a frame. Keep effects 6–10 dB under the VO (volume 0.3–0.5).
 export const Sfx = ({ src, at, volume = 0.4 }: { src: string; at: number; volume?: number }) => (
   <Sequence from={at} layout="none">

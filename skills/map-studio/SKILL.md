@@ -19,6 +19,7 @@ current step needs:
 | `references/remotion-recipes.md` | Writing scenes. Camera, projections, drawing, performance, Thai text. |
 | `references/pacing.md` | Writing the script. Shorts and long-form structures, hooks, retention. |
 | `references/audio.md` | Voice-over, word timing with Whisper, music + SFX, loudness, subtitles, description, thumbnail. |
+| `references/sound.md` | Sound-effect library: free sources, licences, adding sounds, mixing rules, catalogue by story need. |
 
 ## Hard rules
 
@@ -83,6 +84,11 @@ map changes with the story:
    - Special scenes may use nang yai shadow puppets (`ShadowPanel` in the same file), 1–2 per episode at most.
    - AI images (Gemini) are only for portraits of people; everything that moves is drawn in code.
    Finished videos (ประวัติศาสตร์บนแผนที่ ep01–ep03 and earlier work) keep their v1 panels; do not refit them.
+8. **Realistic sound** (set by the user on 22 Oct 2026): story events use recorded effects from the house library
+   (`sfx/library.json`, `npm run sfx-lib`, `lib("id")`, `<Bed>`). Free sources only: Mixkit and Pixabay
+   (commercial OK, no credit), Freesound CC0. The raw files are never committed. Every illustrated event sounds
+   on its frame, every scene has an ambience bed, and narration always wins. Synthetic `SFX.*` sounds are for UI
+   moments only. Rules, sources and the catalogue: `references/sound.md`; reference mix: `episodes/lab/WW1Battle.tsx`.
 
 ## First run on a new machine
 

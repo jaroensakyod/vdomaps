@@ -21,7 +21,8 @@
     "dem": "node scripts/fetch-dem.mjs",
     "osm": "node scripts/fetch-osm.mjs",
     "rivers": "node scripts/fetch-rivers.mjs",
-    "history": "node scripts/fetch-history.mjs"
+    "history": "node scripts/fetch-history.mjs",
+    "sfx-lib": "node scripts/sfx-lib.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.537",
