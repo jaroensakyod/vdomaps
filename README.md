@@ -12,6 +12,7 @@ Agent Skill + โปรเจกต์ Remotion สำหรับทำคล�
 | [`skills/map-studio/`](skills/map-studio) | ตัว skill: `SKILL.md` (กฎ + ขั้นตอน), `references/` (workflow, 32 สไตล์, แหล่งข้อมูล + สัญญาอนุญาต, เทคนิค Remotion, จังหวะเล่าเรื่อง, เสียง) และ `template/` โปรเจกต์ Remotion พร้อมคอมโพเนนต์ |
 | [`episodes/redcliffs/`](episodes/redcliffs) | ตอนตัวอย่าง "สามก๊ก ตอนที่ 1: ศึกผาแดง" ยาว 1 นาที สไตล์แผนที่กระดาษโบราณ พากย์ด้วย Gemini TTS |
 | [`docs/PROCESS.md`](docs/PROCESS.md) | กระบวนการทำทั้งหมด ตั้งแต่ตั้งเครื่องจนเรนเดอร์ และบทเรียนที่เจอระหว่างทำ |
+| [`course/`](course) | ชุดสอนคลาส 1 ชั่วโมง: ตัวติดตั้ง Windows/Mac บรรทัดเดียว, ไฟล์ `.env` ใส่ Gemini key, คู่มือนักเรียน, คำสั่งให้ Claude |
 
 ## ติดตั้ง skill
 

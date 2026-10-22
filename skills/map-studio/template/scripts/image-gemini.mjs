@@ -2,6 +2,7 @@
 // jobs.json = { "style": "...shared prompt...", "aspect": "1:1", "items": { "<id>": "<subject prompt>" | { "prompt", "aspect" } } }
 // Writes <out dir>/<id>.jpg (ffmpeg converts the PNG the API returns). Existing files are kept unless FORCE=1;
 // ONLY=id1,id2 limits the run. Every generated image is AI art: label it on screen ("ภาพประกอบ").
+import "./env.mjs";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 

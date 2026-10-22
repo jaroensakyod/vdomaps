@@ -15,6 +15,7 @@
 //
 // Daily cap: when a model says to wait hours, the script moves on to TTS_FALLBACK (default
 // gemini-3.8-flash-lite-tts, same voices, own quota) and marks those beats with "model" in timing.json.
+import "./env.mjs";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 

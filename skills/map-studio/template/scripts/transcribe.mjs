@@ -1,4 +1,5 @@
 // Transcribe a VO file with Gemini to check what the TTS actually said. Usage: GEMINI_API_KEY=... node scripts/transcribe.mjs file.wav [model]
+import "./env.mjs";
 import { readFileSync } from "node:fs";
 const [file, model = "gemini-3.8-flash"] = process.argv.slice(2);
 const data = readFileSync(file).toString("base64");

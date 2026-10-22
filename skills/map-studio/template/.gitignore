@@ -3,3 +3,6 @@ out
 whisper.cpp
 whisper-cuda
 public/raster/
+.env
+.env.*
+!.env.example

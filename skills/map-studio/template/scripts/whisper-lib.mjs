@@ -1,5 +1,6 @@
 // Shared Whisper helpers for align.mjs and tts-gemini.mjs (batch split): run whisper.cpp on 16 kHz WAVs and line
 // the transcript up with the script character by character. See align.mjs for the env variables.
+import "./env.mjs";
 import { downloadWhisperModel, installWhisperCpp, transcribe } from "@remotion/install-whisper-cpp";
 import { execFileSync, spawnSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
