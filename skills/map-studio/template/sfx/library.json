@@ -563,6 +563,86 @@
       "page": "https://pixabay.com/sound-effects/horror-powerful-cannon-shot-02-487887/",
       "url": "https://cdn.pixabay.com/download/audio/2026/02/20/audio_bdc6365fca.mp3",
       "title": "Powerful cannon shot"
+    },
+    {
+      "id": "power_glitch",
+      "cat": "ui",
+      "kind": "shot",
+      "src": "mixkit",
+      "mixkit": 2594,
+      "title": "Electric buzz glitch"
+    },
+    {
+      "id": "electric_switch",
+      "cat": "places",
+      "kind": "shot",
+      "src": "mixkit",
+      "mixkit": 1808,
+      "title": "Electric switch"
+    },
+    {
+      "id": "server_hum",
+      "cat": "places",
+      "kind": "bed",
+      "src": "mixkit",
+      "mixkit": 2132,
+      "title": "Low electricity humming"
+    },
+    {
+      "id": "keyboard_typing",
+      "cat": "people",
+      "kind": "bed",
+      "src": "mixkit",
+      "mixkit": 2531,
+      "title": "Typing on a laptop keyboard"
+    },
+    {
+      "id": "alarm_facility",
+      "cat": "places",
+      "kind": "bed",
+      "src": "mixkit",
+      "mixkit": 999,
+      "title": "Facility alarm sound"
+    },
+    {
+      "id": "airport_crowd",
+      "cat": "places",
+      "kind": "bed",
+      "src": "mixkit",
+      "mixkit": 1567,
+      "title": "People in airport ambience"
+    },
+    {
+      "id": "jet_flyover",
+      "cat": "places",
+      "kind": "shot",
+      "src": "mixkit",
+      "mixkit": 1580,
+      "title": "Fast jet engine flying over"
+    },
+    {
+      "id": "helicopter",
+      "cat": "war",
+      "kind": "bed",
+      "src": "mixkit",
+      "mixkit": 2700,
+      "title": "Helicopter flying in the sky"
+    },
+    {
+      "id": "prison_door",
+      "cat": "places",
+      "kind": "shot",
+      "src": "mixkit",
+      "mixkit": 201,
+      "title": "Prison metal door close"
+    },
+    {
+      "id": "applause_conference",
+      "cat": "people",
+      "kind": "shot",
+      "src": "mixkit",
+      "mixkit": 476,
+      "title": "Conference audience clapping strongly"
     }
   ]
 }

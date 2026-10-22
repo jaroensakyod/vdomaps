@@ -89,6 +89,9 @@ import { Bed, Hit, voiceSpans } from "../../components/Sound";
 | Weather | bed `rain_light`, bed `rain_heavy`, bed `storm`, `thunder_close`, `thunder_rumble`, bed `wind`, bed `wind_storm` |
 | Fire, burning city | bed `fire_big`, bed `fire_crackle` |
 | Sea, ships, jungle | bed `sea_rough`, bed `ship_sailing`, bed `ship_creak`, `ship_bell`, `splash`, `splash_big` (cannonball into the sea), bed `jungle_rain` |
+| Cyber, offices, control rooms | `power_glitch` (screen dies), `electric_switch`, bed `server_hum`, bed `keyboard_typing`, bed `alarm_facility` |
+| Airports, aircraft | bed `airport_crowd`, `jet_flyover` (place with its peak), bed `helicopter` |
+| Politics, courts, prisons | `applause_conference` (vote passes), `prison_door` (release / arrest) |
 | Sea battle, timber | `cannon_heavy`, `cannon_old`, `wood_hit`, `wood_break`, `mast_fall` (mast / timber crashing down) |
 
 Missing something (a Thai temple bell, a steam train, a market)? Add it with the steps above before using a

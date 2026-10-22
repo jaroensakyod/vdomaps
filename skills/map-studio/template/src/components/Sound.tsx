@@ -60,7 +60,8 @@ export const Bed = ({ id, from, to, volume = 0.25, fade = 20, voice = [], duck =
         const t = f + from;
         let d = 1;
         for (const [a, b] of voice) d = Math.min(d, 1 - interpolate(t, [a - 8, a, b, b + 8], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) * (1 - duck));
-        return volume * d * interpolate(f, [0, fade, to - from - fade, to - from], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+        const fd = Math.max(1, Math.min(fade, (to - from) / 2 - 1)); // short beds: fades must not overlap
+        return volume * d * interpolate(f, [0, fd, to - from - fd, to - from], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
       }}
     />
   </Sequence>
