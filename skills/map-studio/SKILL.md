@@ -64,6 +64,25 @@ map changes with the story:
    `node scripts/check-glitch.mjs out/<file>.mp4` must report 0 glitch frames before delivery.
 5. Show a ~10–15 s test in the final look before building a whole video.
 6. Map/imagery credits go in the video description, not on screen (OSM's ODbL still requires the description credit).
+7. **Illustration style v2** (set by the user on 22 Oct 2026, approved from `out/thaihistory/style-test.mp4`): every
+   new illustration panel is built with `src/components/Scene.tsx` — never flat cut-outs sliding across one
+   background. Reference panel: `SiegeV2` in `episodes/thaihistory/ep03/IconTest.tsx`. A panel has:
+   - **Depth:** wrap the content in `<Depth>` (slow push-in + pan for the panel's life). At least three layers
+     moving at different speeds: far `Ridge` (pan × 0.2), mid `Ridge`/buildings (× 0.5–0.7), foreground `Grass`
+     (× 1.6).
+   - **Light:** sky gradient + `Glow` (sun, moon or fire), a mist band, warm light; `PaperGrain` and vignette
+     come with `Depth`.
+   - **Living figures:** jointed `Fighter`s with a walk cycle, attack or breathing pose, ground shadows,
+     fluttering `Banner`s and head-cloth. Pick the side with a `COSTUME` preset (siam, burma, qing, lanna, europe)
+     or a new preset for the story.
+   - **Action with impact:** shots and blows use `Shot` (flash, smoke, arc, dust); pass `impactAt(frame, hits)`
+     to `Depth` for the shake and white flash, and put an SFX hit on the same frame.
+   - **Look:** ink outlines (`PAL.ink`, 1.4–2.2 px × s) and a mural palette (ochre, indigo, muted green, chalk,
+     gilt). Channels may change the palette and costumes, not the method.
+   - **Variety:** at most 2 uses of the same scene per episode; build a specific scene for each story beat.
+   - Special scenes may use nang yai shadow puppets (`ShadowPanel` in the same file), 1–2 per episode at most.
+   - AI images (Gemini) are only for portraits of people; everything that moves is drawn in code.
+   Finished videos (ประวัติศาสตร์บนแผนที่ ep01–ep03 and earlier work) keep their v1 panels; do not refit them.
 
 ## First run on a new machine
 
