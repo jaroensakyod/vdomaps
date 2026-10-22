@@ -1,0 +1,48 @@
+{
+  "title": "400,000 Marched Into Russia. 10,000 Came Back. Where Did Napoleon's Army Go?",
+  "summary": "In June 1812 Napoleon crossed the Neman with the biggest army Europe had ever seen. Six months later only a few thousand stumbled back. Follow the Grande Armée on the map with Minard's famous band, from Kovno to Moscow and back, and find out why it was not just the winter that destroyed it.",
+  "chapters": [
+    { "beat": "hook", "title": "400,000 in, 10,000 out" },
+    { "beat": "toulon", "title": "Who was Napoleon?" },
+    { "beat": "blockade", "title": "Why invade Russia?" },
+    { "beat": "gather", "title": "The Grande Armée" },
+    { "beat": "cross", "title": "Crossing the Neman" },
+    { "beat": "smolensk", "title": "Smolensk to Borodino" },
+    { "beat": "enter", "title": "Empty Moscow" },
+    { "beat": "malo", "title": "Retreat in the snow" },
+    { "beat": "answer", "title": "The answer" }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/French_invasion_of_Russia",
+    "https://en.wikipedia.org/wiki/Battle_of_Borodino",
+    "https://en.wikipedia.org/wiki/Battle_of_Berezina",
+    "https://en.wikipedia.org/wiki/Fire_of_Moscow_(1812)",
+    "https://en.wikipedia.org/wiki/Grande_Arm%C3%A9e",
+    "https://en.wikipedia.org/wiki/Continental_System",
+    "https://www.nam.ac.uk/explore/emperors-samovars",
+    "https://www.worldhistory.org/article/2274/battle-of-borodino/",
+    "https://www.napoleon-empire.org/en/battles/campaign-russia-1812-day-by-day.php",
+    "https://en.wikipedia.org/wiki/Charles_Joseph_Minard"
+  ],
+  "credits": [
+    "Maps: NASA Blue Marble imagery (public domain) · Rivers: Natural Earth (public domain)",
+    "Army route, troop numbers and temperatures after Charles Joseph Minard (1869), via the HistData R package (M. Friendly)",
+    "Routes, borders and battle positions are approximate · Illustrations are drawn for this video, not real images"
+  ],
+  "music": [
+    "Sound effects synthesised in code",
+    "Narration: Google Gemini TTS (AI voice)"
+  ],
+  "note": "Every frame is drawn with code on open map data. Numbers are sourced; where historians disagree we say a range.\nIf you were Napoleon, when would you have turned back? Tell me in the comments.",
+  "tags": [
+    "Napoleon",
+    "Napoleon invades Russia",
+    "1812",
+    "Grande Armée",
+    "Minard map",
+    "Borodino",
+    "Berezina",
+    "history on the map",
+    "military history"
+  ]
+}

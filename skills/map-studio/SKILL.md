@@ -45,6 +45,7 @@ map changes with the story:
 | ประวัติศาสตร์บนแผนที่ (`episodes/thaihistory`) | News look (rule 1) | yes |
 | แผนที่ข่าวโลกรายวัน (`episodes/worldnews`) | News look (rule 1) | yes |
 | สามก๊กบนแผนที่ (`episodes/sankok`) | **Keeps its parchment paper map** (S13, `kit/theme.ts`) | yes — the storytelling and scene cadence are the new standard: a new illustrated panel / map event every 3–4 s on the spoken word, panels in the series' ink-on-paper style |
+| History on the Map, English (`episodes/worldhistory`) | News look (rule 1), English kit `kit/news.tsx`, label "Illustration" | yes |
 | Anything new | News look unless the story asks for another style (ask at the style gate) | yes |
 
 1. **News look** (`episodes/worldnews`, `episodes/thaihistory/news`): real imagery as the base map — NASA Blue

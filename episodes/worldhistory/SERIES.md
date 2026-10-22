@@ -23,15 +23,15 @@ and stories like Napoleon 1812 or D-Day have been done many times. We win on:
 ## Format
 | Item | Rule |
 |---|---|
-| Main video | **16:9 (1920×1080) YouTube long-form, ~10 min** (~70 spoken beats, 8–9 chapters) |
-| Shorts | 2–3 vertical **9:16** cuts per episode, 30–60 s each (max 3 min), for Shorts / Reels / TikTok, ending with "full story on the channel" |
+| Main video | **9:16 (1080×1920) vertical long-form, ~10 min** (~70 spoken beats, 8–9 chapters), same as the Thai history channel (user's choice, 21 Oct 2026) |
+| Shorts | 2–3 cuts of 30–60 s per episode from the same 9:16 render, for Shorts / Reels / TikTok, ending with "full story on the channel" |
 | Long stories | Split into **2–3 parts** of ~10 min. Each part has its own question and answers it; end on a question that leads into the next part ("So why did the army stop at…?"). Never end mid-event |
 | Structure | One question for the whole video → 8–9 chapters walking toward the answer → close with the answer + a comment prompt · a re-hook every ~1 min (sub-question, shocking number, quiz) |
 | Hook | Shock line ≤ 8 words + a strong image on frame 0 (no logo, no intro) · later parts open with a fresh hook, not "Last time…" (recap ≤ 20 s, after the hook) |
-| Title + thumbnail | Title ≤ 60 chars, curiosity + number ("400,000 Marched In. 10,000 Came Back.") · thumbnail: the map + one huge number or 2–3 words, 1280×720 |
+| Title + thumbnail | Title ≤ 60 chars, curiosity + number ("400,000 Marched In. 10,000 Came Back.") · thumbnail: the map + one huge number or 2–3 words, 1080×1920 |
 | Look | **News look**, House standard rule 1 in `skills/map-studio/SKILL.md`; illustration label reads **"Illustration"** |
 | Cadence | New picture every 3–4 s, cued on the spoken word (`wf(beat, "word")`) · ~180 visual changes per 10 min, 60–70 of them illustrated scenes |
-| Code layout | Same as `episodes/thaihistory/news/`: `Ep.tsx` + `ch0`…`ch8.tsx` on the `Chapter` contract in `kit.tsx`, but laid out for landscape (the Thai kit is 9:16: cards, captions and panels need a 16:9 layout) |
+| Code layout | Same as `episodes/thaihistory/news/`: `Ep.tsx` + `ch0`…`ch8.tsx` on the `Chapter` contract in `kit.tsx`; the Thai kit's 9:16 layout (card 10–27 %, map, panel 56–74 %, captions 76 %) carries over as is |
 | Voice | Gemini TTS, one English narrator, calm documentary tone, fixed for the channel (record the choice in `voices.json`) |
 | Names | Standard English spellings (Borodino, Berezina, Genghis Khan, Khwarazm); keep them in `glossary.md` so they stay consistent across episodes |
 | Captions | Burned-in word-timed English captions + an uploaded `.srt` |
@@ -56,7 +56,6 @@ story (not a template with names swapped). Disclose AI voice in the upload setti
 ## Build once, use in every episode
 `episodes/worldhistory/kit/`
 - `theme.ts` side colours (attacker = red, defender = blue, neutral = gold) + channel colour
-- `Layout.tsx` 16:9 news layout: card positions, caption band, panel slots; plus a 9:16 variant for Shorts
 - `Army.tsx` **Minard army line**: a band as thick as the troop count, following the route and thinning at each
   data point. The channel's signature; works for any march
 - `Counter.tsx` troop counter riding on the army's head, counting down/up
@@ -124,15 +123,15 @@ lon/lat points + troop counts.
 1. `sources.md`: facts + sources + confidence levels
 2. `script.md` + `beats.json` (`text` for TTS / `caption` on screen, same tokens) → **user approves the script**
 3. TTS → `align` → `node scripts/snap-words.mjs <slug>` → `timing.json`
-4. 10–15 s test in the final 16:9 look first (House standard rule 5) → **user approves**
+4. 10–15 s test in the final 9:16 look first (House standard rule 5) → **user approves**
 5. Build `ch0`…`ch8.tsx`, check a still every ~3 s (later parts: folders `epNN-2`, `epNN-3`)
 6. Render `--gl=angle` → `check-glitch.mjs` must report 0 → `loudness.mjs`
-7. Cut 2–3 Shorts in 9:16
+7. Cut 2–3 Shorts (30–60 s) from the render
 8. Description (summary, chapter timestamps, sources, map/data credits) + `.srt` + thumbnail
 
 ## First tasks (checklist)
 - [ ] Pick the channel name (draft: "History on the Map" / "Maps of History"; check it's free on YouTube) and the narrator voice
-- [ ] Build `kit/Layout.tsx` (16:9) and `kit/Army.tsx` (Minard line); test with the Napoleon data as a still
+- [ ] Build `kit/Army.tsx` (Minard line); test with the Napoleon data as a still
 - [ ] Test whether TTS reads digits well in English; settle the `text`/`caption` number rule above
 - [ ] Write `ep01/sources.md` + `ep01/script.md` for Napoleon
 - [ ] 10–15 s hook test

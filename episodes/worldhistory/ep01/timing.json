@@ -1,0 +1,8407 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/wh01/hook.wav",
+    "sec": 4.459563,
+    "voice": "Sadaltager",
+    "text": "Four-hundred-thousand men marched into Russia. Barely ten-thousand came back.",
+    "words": [
+      {
+        "w": "Four-",
+        "s": 0,
+        "e": 0.018
+      },
+      {
+        "w": "hundred-",
+        "s": 0.018,
+        "e": 0.046
+      },
+      {
+        "w": "thousand",
+        "s": 0.046,
+        "e": 1.33
+      },
+      {
+        "w": "men",
+        "s": 1.33,
+        "e": 1.47
+      },
+      {
+        "w": "marched",
+        "s": 1.55,
+        "e": 2
+      },
+      {
+        "w": "into",
+        "s": 2,
+        "e": 2.23
+      },
+      {
+        "w": "Russia.",
+        "s": 2.733,
+        "e": 2.79
+      },
+      {
+        "w": "Barely",
+        "s": 2.79,
+        "e": 3.07
+      },
+      {
+        "w": "ten-",
+        "s": 3.07,
+        "e": 3.07
+      },
+      {
+        "w": "thousand",
+        "s": 3.07,
+        "e": 3.81
+      },
+      {
+        "w": "came",
+        "s": 3.95,
+        "e": 4.08
+      },
+      {
+        "w": "back.",
+        "s": 4.08,
+        "e": 4.43
+      }
+    ]
+  },
+  {
+    "id": "june",
+    "file": "audio/wh01/june.wav",
+    "sec": 6.441896,
+    "voice": "Sadaltager",
+    "text": "June eighteen-twelve. The biggest army Europe had ever seen crossed a river on the edge of the Russian Empire.",
+    "words": [
+      {
+        "w": "June",
+        "s": 0.28,
+        "e": 0.348
+      },
+      {
+        "w": "eighteen-",
+        "s": 0.348,
+        "e": 0.37
+      },
+      {
+        "w": "twelve.",
+        "s": 0.37,
+        "e": 1.52
+      },
+      {
+        "w": "The",
+        "s": 1.58,
+        "e": 1.76
+      },
+      {
+        "w": "biggest",
+        "s": 1.76,
+        "e": 2.31
+      },
+      {
+        "w": "army",
+        "s": 2.31,
+        "e": 2.56
+      },
+      {
+        "w": "Europe",
+        "s": 2.63,
+        "e": 3.09
+      },
+      {
+        "w": "had",
+        "s": 3.301,
+        "e": 3.34
+      },
+      {
+        "w": "ever",
+        "s": 3.34,
+        "e": 3.66
+      },
+      {
+        "w": "seen",
+        "s": 3.66,
+        "e": 3.87
+      },
+      {
+        "w": "crossed",
+        "s": 4.04,
+        "e": 4.38
+      },
+      {
+        "w": "a",
+        "s": 4.38,
+        "e": 4.43
+      },
+      {
+        "w": "river",
+        "s": 4.43,
+        "e": 4.72
+      },
+      {
+        "w": "on",
+        "s": 4.72,
+        "e": 4.84
+      },
+      {
+        "w": "the",
+        "s": 4.84,
+        "e": 5.02
+      },
+      {
+        "w": "edge",
+        "s": 5.02,
+        "e": 5.28
+      },
+      {
+        "w": "of",
+        "s": 5.28,
+        "e": 5.52
+      },
+      {
+        "w": "the",
+        "s": 5.52,
+        "e": 5.66
+      },
+      {
+        "w": "Russian",
+        "s": 5.67,
+        "e": 6.01
+      },
+      {
+        "w": "Empire.",
+        "s": 6.01,
+        "e": 6.39
+      }
+    ]
+  },
+  {
+    "id": "dec",
+    "file": "audio/wh01/dec.wav",
+    "sec": 7.040104,
+    "voice": "Sadaltager",
+    "text": "Six months later, the survivors stumbled back across the same river. Ragged, frozen, a few hundred at a time.",
+    "words": [
+      {
+        "w": "Six",
+        "s": 0.05,
+        "e": 0.19
+      },
+      {
+        "w": "months",
+        "s": 0.24,
+        "e": 0.66
+      },
+      {
+        "w": "later,",
+        "s": 0.66,
+        "e": 1.18
+      },
+      {
+        "w": "the",
+        "s": 1.22,
+        "e": 1.35
+      },
+      {
+        "w": "survivors",
+        "s": 1.35,
+        "e": 1.86
+      },
+      {
+        "w": "stumbled",
+        "s": 1.95,
+        "e": 2.35
+      },
+      {
+        "w": "back",
+        "s": 2.35,
+        "e": 2.6
+      },
+      {
+        "w": "across",
+        "s": 2.6,
+        "e": 3.02
+      },
+      {
+        "w": "the",
+        "s": 3.1,
+        "e": 3.24
+      },
+      {
+        "w": "same",
+        "s": 3.26,
+        "e": 3.46
+      },
+      {
+        "w": "river.",
+        "s": 3.46,
+        "e": 4.14
+      },
+      {
+        "w": "Ragged,",
+        "s": 4.19,
+        "e": 4.598
+      },
+      {
+        "w": "frozen,",
+        "s": 4.951,
+        "e": 5.37
+      },
+      {
+        "w": "a",
+        "s": 5.817,
+        "e": 5.817
+      },
+      {
+        "w": "few",
+        "s": 5.817,
+        "e": 5.817
+      },
+      {
+        "w": "hundred",
+        "s": 5.817,
+        "e": 6.21
+      },
+      {
+        "w": "at",
+        "s": 6.22,
+        "e": 6.36
+      },
+      {
+        "w": "a",
+        "s": 6.37,
+        "e": 6.44
+      },
+      {
+        "w": "time.",
+        "s": 6.44,
+        "e": 7.04
+      }
+    ]
+  },
+  {
+    "id": "question",
+    "file": "audio/wh01/question.wav",
+    "sec": 5.689208,
+    "voice": "Sadaltager",
+    "text": "So here is today's question. Where did Europe's greatest army go? And no, it wasn't just the winter.",
+    "words": [
+      {
+        "w": "So",
+        "s": 0.07,
+        "e": 0.15
+      },
+      {
+        "w": "here",
+        "s": 0.15,
+        "e": 0.44
+      },
+      {
+        "w": "is",
+        "s": 0.44,
+        "e": 0.58
+      },
+      {
+        "w": "today's",
+        "s": 0.58,
+        "e": 1.09
+      },
+      {
+        "w": "question.",
+        "s": 1.09,
+        "e": 1.72
+      },
+      {
+        "w": "Where",
+        "s": 1.79,
+        "e": 2.09
+      },
+      {
+        "w": "did",
+        "s": 2.09,
+        "e": 2.31
+      },
+      {
+        "w": "Europe's",
+        "s": 2.31,
+        "e": 2.91
+      },
+      {
+        "w": "greatest",
+        "s": 2.91,
+        "e": 3.51
+      },
+      {
+        "w": "army",
+        "s": 3.51,
+        "e": 3.694
+      },
+      {
+        "w": "go?",
+        "s": 4.217,
+        "e": 4.217
+      },
+      {
+        "w": "And",
+        "s": 4.27,
+        "e": 4.37
+      },
+      {
+        "w": "no,",
+        "s": 4.37,
+        "e": 4.59
+      },
+      {
+        "w": "it",
+        "s": 4.59,
+        "e": 4.7
+      },
+      {
+        "w": "wasn't",
+        "s": 4.7,
+        "e": 5.03
+      },
+      {
+        "w": "just",
+        "s": 5.03,
+        "e": 5.25
+      },
+      {
+        "w": "the",
+        "s": 5.25,
+        "e": 5.41
+      },
+      {
+        "w": "winter.",
+        "s": 5.41,
+        "e": 5.689
+      }
+    ]
+  },
+  {
+    "id": "go",
+    "file": "audio/wh01/go.wav",
+    "sec": 1.052458,
+    "voice": "Sadaltager",
+    "text": "Let's follow it on the map.",
+    "words": [
+      {
+        "w": "Let's",
+        "s": 0.01,
+        "e": 0.28
+      },
+      {
+        "w": "follow",
+        "s": 0.28,
+        "e": 0.62
+      },
+      {
+        "w": "it",
+        "s": 0.62,
+        "e": 0.72
+      },
+      {
+        "w": "on",
+        "s": 0.73,
+        "e": 0.83
+      },
+      {
+        "w": "the",
+        "s": 0.84,
+        "e": 0.94
+      },
+      {
+        "w": "map.",
+        "s": 1.02,
+        "e": 1.05
+      }
+    ]
+  },
+  {
+    "id": "toulon",
+    "file": "audio/wh01/toulon.wav",
+    "sec": 9.150438,
+    "voice": "Sadaltager",
+    "text": "First, the man. In seventeen-ninety-three, a twenty-four-year-old artillery officer named Napoleon Bonaparte helped take the port of Toulon back from the British.",
+    "words": [
+      {
+        "w": "First,",
+        "s": 0.33,
+        "e": 0.78
+      },
+      {
+        "w": "the",
+        "s": 0.78,
+        "e": 1.1
+      },
+      {
+        "w": "man.",
+        "s": 1.727,
+        "e": 1.8
+      },
+      {
+        "w": "In",
+        "s": 1.8,
+        "e": 1.8
+      },
+      {
+        "w": "seventeen-",
+        "s": 1.8,
+        "e": 1.8
+      },
+      {
+        "w": "ninety-",
+        "s": 1.8,
+        "e": 2.088
+      },
+      {
+        "w": "three,",
+        "s": 2.088,
+        "e": 2.8
+      },
+      {
+        "w": "a",
+        "s": 2.8,
+        "e": 2.85
+      },
+      {
+        "w": "twenty-",
+        "s": 2.85,
+        "e": 2.85
+      },
+      {
+        "w": "four-",
+        "s": 2.85,
+        "e": 3.31
+      },
+      {
+        "w": "year-",
+        "s": 3.52,
+        "e": 3.63
+      },
+      {
+        "w": "old",
+        "s": 3.63,
+        "e": 3.82
+      },
+      {
+        "w": "artillery",
+        "s": 3.82,
+        "e": 4.3
+      },
+      {
+        "w": "officer",
+        "s": 4.42,
+        "e": 4.9
+      },
+      {
+        "w": "named",
+        "s": 4.9,
+        "e": 5.34
+      },
+      {
+        "w": "Napoleon",
+        "s": 5.34,
+        "e": 5.91
+      },
+      {
+        "w": "Bonaparte",
+        "s": 5.99,
+        "e": 6.569
+      },
+      {
+        "w": "helped",
+        "s": 6.93,
+        "e": 7.08
+      },
+      {
+        "w": "take",
+        "s": 7.16,
+        "e": 7.27
+      },
+      {
+        "w": "the",
+        "s": 7.35,
+        "e": 7.36
+      },
+      {
+        "w": "port",
+        "s": 7.43,
+        "e": 7.62
+      },
+      {
+        "w": "of",
+        "s": 7.62,
+        "e": 7.7
+      },
+      {
+        "w": "Toulon",
+        "s": 7.7,
+        "e": 8
+      },
+      {
+        "w": "back",
+        "s": 8.03,
+        "e": 8.21
+      },
+      {
+        "w": "from",
+        "s": 8.21,
+        "e": 8.29
+      },
+      {
+        "w": "the",
+        "s": 8.43,
+        "e": 8.58
+      },
+      {
+        "w": "British.",
+        "s": 8.58,
+        "e": 8.99
+      }
+    ]
+  },
+  {
+    "id": "rise",
+    "file": "audio/wh01/rise.wav",
+    "sec": 5.826167,
+    "voice": "Sadaltager",
+    "text": "Six years later he seized power in Paris. In eighteen-oh-four, he crowned himself Emperor of the French.",
+    "words": [
+      {
+        "w": "Six",
+        "s": 0.16,
+        "e": 0.21
+      },
+      {
+        "w": "years",
+        "s": 0.21,
+        "e": 0.55
+      },
+      {
+        "w": "later",
+        "s": 0.62,
+        "e": 0.91
+      },
+      {
+        "w": "he",
+        "s": 1.05,
+        "e": 1.18
+      },
+      {
+        "w": "seized",
+        "s": 1.19,
+        "e": 1.61
+      },
+      {
+        "w": "power",
+        "s": 1.61,
+        "e": 1.89
+      },
+      {
+        "w": "in",
+        "s": 1.96,
+        "e": 2.1
+      },
+      {
+        "w": "Paris.",
+        "s": 2.1,
+        "e": 2.394
+      },
+      {
+        "w": "In",
+        "s": 2.729,
+        "e": 2.729
+      },
+      {
+        "w": "eighteen-",
+        "s": 2.729,
+        "e": 2.729
+      },
+      {
+        "w": "oh-",
+        "s": 2.729,
+        "e": 2.78
+      },
+      {
+        "w": "four,",
+        "s": 2.78,
+        "e": 3.48
+      },
+      {
+        "w": "he",
+        "s": 3.48,
+        "e": 3.53
+      },
+      {
+        "w": "crowned",
+        "s": 3.6,
+        "e": 3.94
+      },
+      {
+        "w": "himself",
+        "s": 4.05,
+        "e": 4.4
+      },
+      {
+        "w": "Emperor",
+        "s": 4.609,
+        "e": 4.92
+      },
+      {
+        "w": "of",
+        "s": 4.92,
+        "e": 4.99
+      },
+      {
+        "w": "the",
+        "s": 5.32,
+        "e": 5.32
+      },
+      {
+        "w": "French.",
+        "s": 5.32,
+        "e": 5.8
+      }
+    ]
+  },
+  {
+    "id": "wins",
+    "file": "audio/wh01/wins.wav",
+    "sec": 6.195208,
+    "voice": "Sadaltager",
+    "text": "Then he beat almost everyone. Austria at Austerlitz. Prussia at Jena. Russia at Friedland.",
+    "words": [
+      {
+        "w": "Then",
+        "s": 0.03,
+        "e": 0.31
+      },
+      {
+        "w": "he",
+        "s": 0.35,
+        "e": 0.47
+      },
+      {
+        "w": "beat",
+        "s": 0.49,
+        "e": 0.82
+      },
+      {
+        "w": "almost",
+        "s": 0.82,
+        "e": 1.3
+      },
+      {
+        "w": "everyone.",
+        "s": 1.3,
+        "e": 2.07
+      },
+      {
+        "w": "Austria",
+        "s": 2.07,
+        "e": 2.2
+      },
+      {
+        "w": "at",
+        "s": 2.3,
+        "e": 2.32
+      },
+      {
+        "w": "Austerlitz.",
+        "s": 2.32,
+        "e": 3.71
+      },
+      {
+        "w": "Prussia",
+        "s": 3.71,
+        "e": 4.36
+      },
+      {
+        "w": "at",
+        "s": 4.37,
+        "e": 4.56
+      },
+      {
+        "w": "Jena.",
+        "s": 4.56,
+        "e": 5.02
+      },
+      {
+        "w": "Russia",
+        "s": 5.04,
+        "e": 5.4
+      },
+      {
+        "w": "at",
+        "s": 5.4,
+        "e": 5.6
+      },
+      {
+        "w": "Friedland.",
+        "s": 5.6,
+        "e": 6.16
+      }
+    ]
+  },
+  {
+    "id": "empire",
+    "file": "audio/wh01/empire.wav",
+    "sec": 6.131229,
+    "voice": "Sadaltager",
+    "text": "By eighteen-ten, France ruled from Spain to the Baltic, and most of the rest of Europe was its ally or its puppet.",
+    "words": [
+      {
+        "w": "By",
+        "s": 0,
+        "e": 0.14
+      },
+      {
+        "w": "eighteen-",
+        "s": 0.14,
+        "e": 0.355
+      },
+      {
+        "w": "ten,",
+        "s": 0.355,
+        "e": 1.14
+      },
+      {
+        "w": "France",
+        "s": 1.14,
+        "e": 1.57
+      },
+      {
+        "w": "ruled",
+        "s": 1.57,
+        "e": 1.93
+      },
+      {
+        "w": "from",
+        "s": 1.93,
+        "e": 2.21
+      },
+      {
+        "w": "Spain",
+        "s": 2.21,
+        "e": 2.57
+      },
+      {
+        "w": "to",
+        "s": 2.57,
+        "e": 2.7
+      },
+      {
+        "w": "the",
+        "s": 2.71,
+        "e": 2.86
+      },
+      {
+        "w": "Baltic,",
+        "s": 2.92,
+        "e": 3.4
+      },
+      {
+        "w": "and",
+        "s": 3.4,
+        "e": 3.54
+      },
+      {
+        "w": "most",
+        "s": 3.54,
+        "e": 3.68
+      },
+      {
+        "w": "of",
+        "s": 3.73,
+        "e": 3.82
+      },
+      {
+        "w": "the",
+        "s": 3.82,
+        "e": 3.96
+      },
+      {
+        "w": "rest",
+        "s": 3.96,
+        "e": 4.15
+      },
+      {
+        "w": "of",
+        "s": 4.15,
+        "e": 4.18
+      },
+      {
+        "w": "Europe",
+        "s": 4.53,
+        "e": 4.56
+      },
+      {
+        "w": "was",
+        "s": 4.56,
+        "e": 4.77
+      },
+      {
+        "w": "its",
+        "s": 4.82,
+        "e": 5.04
+      },
+      {
+        "w": "ally",
+        "s": 5.04,
+        "e": 5.44
+      },
+      {
+        "w": "or",
+        "s": 5.44,
+        "e": 5.56
+      },
+      {
+        "w": "its",
+        "s": 5.56,
+        "e": 5.74
+      },
+      {
+        "w": "puppet.",
+        "s": 5.74,
+        "e": 6.131
+      }
+    ]
+  },
+  {
+    "id": "quiz1",
+    "file": "audio/wh01/quiz1.wav",
+    "sec": 5.397458,
+    "voice": "Sadaltager",
+    "text": "Quick quiz. Which of these did Napoleon never conquer? Austria, Prussia, or Britain?",
+    "words": [
+      {
+        "w": "Quick",
+        "s": 0.25,
+        "e": 0.35
+      },
+      {
+        "w": "quiz.",
+        "s": 0.42,
+        "e": 1
+      },
+      {
+        "w": "Which",
+        "s": 1.06,
+        "e": 1.28
+      },
+      {
+        "w": "of",
+        "s": 1.28,
+        "e": 1.39
+      },
+      {
+        "w": "these",
+        "s": 1.39,
+        "e": 1.66
+      },
+      {
+        "w": "did",
+        "s": 1.66,
+        "e": 1.84
+      },
+      {
+        "w": "Napoleon",
+        "s": 1.84,
+        "e": 2.31
+      },
+      {
+        "w": "never",
+        "s": 2.42,
+        "e": 2.66
+      },
+      {
+        "w": "conquer?",
+        "s": 2.68,
+        "e": 3.21
+      },
+      {
+        "w": "Austria,",
+        "s": 3.69,
+        "e": 4.14
+      },
+      {
+        "w": "Prussia,",
+        "s": 4.38,
+        "e": 4.79
+      },
+      {
+        "w": "or",
+        "s": 4.98,
+        "e": 5.1
+      },
+      {
+        "w": "Britain?",
+        "s": 5.15,
+        "e": 5.28
+      }
+    ]
+  },
+  {
+    "id": "quizans1",
+    "file": "audio/wh01/quizans1.wav",
+    "sec": 7.034813,
+    "voice": "Sadaltager",
+    "text": "Britain. Behind the Royal Navy, it was the one enemy he could not reach. And that is how Russia gets dragged into this story.",
+    "words": [
+      {
+        "w": "Britain.",
+        "s": 0,
+        "e": 1
+      },
+      {
+        "w": "Behind",
+        "s": 1,
+        "e": 1.25
+      },
+      {
+        "w": "the",
+        "s": 1.29,
+        "e": 1.3
+      },
+      {
+        "w": "Royal",
+        "s": 1.69,
+        "e": 1.69
+      },
+      {
+        "w": "Navy,",
+        "s": 1.942,
+        "e": 2
+      },
+      {
+        "w": "it",
+        "s": 2,
+        "e": 2.13
+      },
+      {
+        "w": "was",
+        "s": 2.13,
+        "e": 2.31
+      },
+      {
+        "w": "the",
+        "s": 2.32,
+        "e": 2.51
+      },
+      {
+        "w": "one",
+        "s": 2.51,
+        "e": 2.64
+      },
+      {
+        "w": "enemy",
+        "s": 2.94,
+        "e": 3.04
+      },
+      {
+        "w": "he",
+        "s": 3.04,
+        "e": 3.11
+      },
+      {
+        "w": "could",
+        "s": 3.19,
+        "e": 3.44
+      },
+      {
+        "w": "not",
+        "s": 3.44,
+        "e": 3.62
+      },
+      {
+        "w": "reach.",
+        "s": 3.63,
+        "e": 4.68
+      },
+      {
+        "w": "And",
+        "s": 4.68,
+        "e": 4.79
+      },
+      {
+        "w": "that",
+        "s": 4.84,
+        "e": 4.93
+      },
+      {
+        "w": "is",
+        "s": 5.15,
+        "e": 5.15
+      },
+      {
+        "w": "how",
+        "s": 5.31,
+        "e": 5.31
+      },
+      {
+        "w": "Russia",
+        "s": 5.42,
+        "e": 5.62
+      },
+      {
+        "w": "gets",
+        "s": 5.62,
+        "e": 5.83
+      },
+      {
+        "w": "dragged",
+        "s": 5.83,
+        "e": 6.19
+      },
+      {
+        "w": "into",
+        "s": 6.19,
+        "e": 6.32
+      },
+      {
+        "w": "this",
+        "s": 6.62,
+        "e": 6.62
+      },
+      {
+        "w": "story.",
+        "s": 6.62,
+        "e": 7.035
+      }
+    ]
+  },
+  {
+    "id": "blockade",
+    "file": "audio/wh01/blockade.wav",
+    "sec": 6.324292,
+    "voice": "Sadaltager",
+    "text": "In eighteen-oh-six, Napoleon tried to beat Britain with money instead of guns. He banned all of Europe from trading with it.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "eighteen-",
+        "s": 0,
+        "e": 0.134
+      },
+      {
+        "w": "oh-",
+        "s": 0.236,
+        "e": 0.357
+      },
+      {
+        "w": "six,",
+        "s": 0.357,
+        "e": 0.88
+      },
+      {
+        "w": "Napoleon",
+        "s": 0.88,
+        "e": 1.32
+      },
+      {
+        "w": "tried",
+        "s": 1.32,
+        "e": 1.6
+      },
+      {
+        "w": "to",
+        "s": 1.6,
+        "e": 1.71
+      },
+      {
+        "w": "beat",
+        "s": 1.71,
+        "e": 1.93
+      },
+      {
+        "w": "Britain",
+        "s": 2.152,
+        "e": 2.36
+      },
+      {
+        "w": "with",
+        "s": 2.36,
+        "e": 2.61
+      },
+      {
+        "w": "money",
+        "s": 2.7,
+        "e": 3
+      },
+      {
+        "w": "instead",
+        "s": 3,
+        "e": 3.59
+      },
+      {
+        "w": "of",
+        "s": 3.64,
+        "e": 3.79
+      },
+      {
+        "w": "guns.",
+        "s": 3.79,
+        "e": 4.5
+      },
+      {
+        "w": "He",
+        "s": 4.5,
+        "e": 4.59
+      },
+      {
+        "w": "banned",
+        "s": 4.73,
+        "e": 4.86
+      },
+      {
+        "w": "all",
+        "s": 4.86,
+        "e": 4.98
+      },
+      {
+        "w": "of",
+        "s": 5.03,
+        "e": 5.08
+      },
+      {
+        "w": "Europe",
+        "s": 5.08,
+        "e": 5.35
+      },
+      {
+        "w": "from",
+        "s": 5.35,
+        "e": 5.53
+      },
+      {
+        "w": "trading",
+        "s": 5.53,
+        "e": 5.85
+      },
+      {
+        "w": "with",
+        "s": 5.85,
+        "e": 5.97
+      },
+      {
+        "w": "it.",
+        "s": 6.03,
+        "e": 6.3
+      }
+    ]
+  },
+  {
+    "id": "tilsit",
+    "file": "audio/wh01/tilsit.wav",
+    "sec": 7.499125,
+    "voice": "Sadaltager",
+    "text": "In eighteen-oh-seven, after his defeat at Friedland, Tsar Alexander the First made peace on a raft in the middle of a river, and agreed to join the ban.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "eighteen-",
+        "s": 0.206,
+        "e": 0.206
+      },
+      {
+        "w": "oh-",
+        "s": 0.206,
+        "e": 0.206
+      },
+      {
+        "w": "seven,",
+        "s": 0.192,
+        "e": 1
+      },
+      {
+        "w": "after",
+        "s": 1,
+        "e": 1.25
+      },
+      {
+        "w": "his",
+        "s": 1.34,
+        "e": 1.46
+      },
+      {
+        "w": "defeat",
+        "s": 1.54,
+        "e": 1.88
+      },
+      {
+        "w": "at",
+        "s": 1.88,
+        "e": 1.92
+      },
+      {
+        "w": "Friedland,",
+        "s": 2.08,
+        "e": 2.7
+      },
+      {
+        "w": "Tsar",
+        "s": 2.77,
+        "e": 2.88
+      },
+      {
+        "w": "Alexander",
+        "s": 2.88,
+        "e": 3.74
+      },
+      {
+        "w": "the",
+        "s": 3.74,
+        "e": 3.74
+      },
+      {
+        "w": "First",
+        "s": 3.74,
+        "e": 3.92
+      },
+      {
+        "w": "made",
+        "s": 3.92,
+        "e": 4.05
+      },
+      {
+        "w": "peace",
+        "s": 4.05,
+        "e": 4.32
+      },
+      {
+        "w": "on",
+        "s": 4.32,
+        "e": 4.48
+      },
+      {
+        "w": "a",
+        "s": 4.48,
+        "e": 4.56
+      },
+      {
+        "w": "raft",
+        "s": 4.57,
+        "e": 4.94
+      },
+      {
+        "w": "in",
+        "s": 5.04,
+        "e": 5.04
+      },
+      {
+        "w": "the",
+        "s": 5.04,
+        "e": 5.2
+      },
+      {
+        "w": "middle",
+        "s": 5.2,
+        "e": 5.44
+      },
+      {
+        "w": "of",
+        "s": 5.5,
+        "e": 5.53
+      },
+      {
+        "w": "a",
+        "s": 5.6,
+        "e": 5.6
+      },
+      {
+        "w": "river,",
+        "s": 5.65,
+        "e": 5.89
+      },
+      {
+        "w": "and",
+        "s": 6.331,
+        "e": 6.331
+      },
+      {
+        "w": "agreed",
+        "s": 6.331,
+        "e": 6.4
+      },
+      {
+        "w": "to",
+        "s": 6.4,
+        "e": 6.51
+      },
+      {
+        "w": "join",
+        "s": 6.51,
+        "e": 6.69
+      },
+      {
+        "w": "the",
+        "s": 6.78,
+        "e": 6.9
+      },
+      {
+        "w": "ban.",
+        "s": 6.98,
+        "e": 7.36
+      }
+    ]
+  },
+  {
+    "id": "hurt",
+    "file": "audio/wh01/hurt.wav",
+    "sec": 5.682396,
+    "voice": "Sadaltager",
+    "text": "But Russia lived on selling grain, timber and hemp to Britain. The ban was strangling its economy.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0,
+        "e": 0.2
+      },
+      {
+        "w": "Russia",
+        "s": 0.2,
+        "e": 0.63
+      },
+      {
+        "w": "lived",
+        "s": 0.64,
+        "e": 0.93
+      },
+      {
+        "w": "on",
+        "s": 0.99,
+        "e": 1.14
+      },
+      {
+        "w": "selling",
+        "s": 1.14,
+        "e": 1.68
+      },
+      {
+        "w": "grain,",
+        "s": 1.68,
+        "e": 2.36
+      },
+      {
+        "w": "timber",
+        "s": 2.36,
+        "e": 2.8
+      },
+      {
+        "w": "and",
+        "s": 2.9,
+        "e": 3.06
+      },
+      {
+        "w": "hemp",
+        "s": 3.06,
+        "e": 3.28
+      },
+      {
+        "w": "to",
+        "s": 3.28,
+        "e": 3.46
+      },
+      {
+        "w": "Britain.",
+        "s": 3.46,
+        "e": 4.14
+      },
+      {
+        "w": "The",
+        "s": 4.14,
+        "e": 4.21
+      },
+      {
+        "w": "ban",
+        "s": 4.32,
+        "e": 4.42
+      },
+      {
+        "w": "was",
+        "s": 4.42,
+        "e": 4.55
+      },
+      {
+        "w": "strangling",
+        "s": 4.61,
+        "e": 5.03
+      },
+      {
+        "w": "its",
+        "s": 5.03,
+        "e": 5.16
+      },
+      {
+        "w": "economy.",
+        "s": 5.17,
+        "e": 5.68
+      }
+    ]
+  },
+  {
+    "id": "ukase",
+    "file": "audio/wh01/ukase.wav",
+    "sec": 8.175063,
+    "voice": "Sadaltager",
+    "text": "On the last day of eighteen-ten, Alexander opened his ports to neutral ships and slapped taxes on French goods. In practice, he had walked out.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0.01,
+        "e": 0.14
+      },
+      {
+        "w": "the",
+        "s": 0.14,
+        "e": 0.36
+      },
+      {
+        "w": "last",
+        "s": 0.36,
+        "e": 0.65
+      },
+      {
+        "w": "day",
+        "s": 0.65,
+        "e": 0.87
+      },
+      {
+        "w": "of",
+        "s": 0.87,
+        "e": 0.95
+      },
+      {
+        "w": "eighteen-",
+        "s": 0.95,
+        "e": 1.225
+      },
+      {
+        "w": "ten,",
+        "s": 1.225,
+        "e": 2.05
+      },
+      {
+        "w": "Alexander",
+        "s": 2.05,
+        "e": 2.58
+      },
+      {
+        "w": "opened",
+        "s": 2.58,
+        "e": 2.92
+      },
+      {
+        "w": "his",
+        "s": 2.92,
+        "e": 2.98
+      },
+      {
+        "w": "ports",
+        "s": 3.1,
+        "e": 3.35
+      },
+      {
+        "w": "to",
+        "s": 3.39,
+        "e": 3.52
+      },
+      {
+        "w": "neutral",
+        "s": 3.52,
+        "e": 4.03
+      },
+      {
+        "w": "ships",
+        "s": 4.03,
+        "e": 4.194
+      },
+      {
+        "w": "and",
+        "s": 4.534,
+        "e": 4.6
+      },
+      {
+        "w": "slapped",
+        "s": 4.6,
+        "e": 4.87
+      },
+      {
+        "w": "taxes",
+        "s": 5.32,
+        "e": 5.52
+      },
+      {
+        "w": "on",
+        "s": 5.52,
+        "e": 5.67
+      },
+      {
+        "w": "French",
+        "s": 5.67,
+        "e": 6.06
+      },
+      {
+        "w": "goods.",
+        "s": 6.13,
+        "e": 6.72
+      },
+      {
+        "w": "In",
+        "s": 6.73,
+        "e": 6.83
+      },
+      {
+        "w": "practice,",
+        "s": 6.83,
+        "e": 7.389
+      },
+      {
+        "w": "he",
+        "s": 7.604,
+        "e": 7.604
+      },
+      {
+        "w": "had",
+        "s": 7.604,
+        "e": 7.67
+      },
+      {
+        "w": "walked",
+        "s": 7.74,
+        "e": 8.01
+      },
+      {
+        "w": "out.",
+        "s": 8.01,
+        "e": 8.175
+      }
+    ]
+  },
+  {
+    "id": "poland",
+    "file": "audio/wh01/poland.wav",
+    "sec": 6.641292,
+    "voice": "Sadaltager",
+    "text": "And then there was Poland. Napoleon had built a Polish state right on Russia's border. The Tsar saw a knife at his throat.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0,
+        "e": 0.2
+      },
+      {
+        "w": "then",
+        "s": 0.2,
+        "e": 0.47
+      },
+      {
+        "w": "there",
+        "s": 0.47,
+        "e": 0.8
+      },
+      {
+        "w": "was",
+        "s": 0.82,
+        "e": 0.94
+      },
+      {
+        "w": "Poland.",
+        "s": 1.429,
+        "e": 1.53
+      },
+      {
+        "w": "Napoleon",
+        "s": 1.58,
+        "e": 1.96
+      },
+      {
+        "w": "had",
+        "s": 1.96,
+        "e": 2.06
+      },
+      {
+        "w": "built",
+        "s": 2.11,
+        "e": 2.34
+      },
+      {
+        "w": "a",
+        "s": 2.43,
+        "e": 2.43
+      },
+      {
+        "w": "Polish",
+        "s": 2.51,
+        "e": 2.84
+      },
+      {
+        "w": "state",
+        "s": 2.85,
+        "e": 3.09
+      },
+      {
+        "w": "right",
+        "s": 3.26,
+        "e": 3.49
+      },
+      {
+        "w": "on",
+        "s": 3.56,
+        "e": 3.66
+      },
+      {
+        "w": "Russia's",
+        "s": 3.66,
+        "e": 4.05
+      },
+      {
+        "w": "border.",
+        "s": 4.12,
+        "e": 4.96
+      },
+      {
+        "w": "The",
+        "s": 4.96,
+        "e": 5.12
+      },
+      {
+        "w": "Tsar",
+        "s": 5.12,
+        "e": 5.32
+      },
+      {
+        "w": "saw",
+        "s": 5.32,
+        "e": 5.43
+      },
+      {
+        "w": "a",
+        "s": 5.5,
+        "e": 5.5
+      },
+      {
+        "w": "knife",
+        "s": 5.53,
+        "e": 5.79
+      },
+      {
+        "w": "at",
+        "s": 5.79,
+        "e": 5.89
+      },
+      {
+        "w": "his",
+        "s": 5.89,
+        "e": 6.05
+      },
+      {
+        "w": "throat.",
+        "s": 6.05,
+        "e": 6.56
+      }
+    ]
+  },
+  {
+    "id": "decide",
+    "file": "audio/wh01/decide.wav",
+    "sec": 7.926667,
+    "voice": "Sadaltager",
+    "text": "So Napoleon made his decision. March into Russia, win one big battle, and force the Tsar back into line. A short war.",
+    "words": [
+      {
+        "w": "So",
+        "s": 0.14,
+        "e": 0.14
+      },
+      {
+        "w": "Napoleon",
+        "s": 0.716,
+        "e": 0.87
+      },
+      {
+        "w": "made",
+        "s": 0.87,
+        "e": 1.16
+      },
+      {
+        "w": "his",
+        "s": 1.16,
+        "e": 1.38
+      },
+      {
+        "w": "decision.",
+        "s": 1.38,
+        "e": 2.8
+      },
+      {
+        "w": "March",
+        "s": 2.94,
+        "e": 3.12
+      },
+      {
+        "w": "into",
+        "s": 3.12,
+        "e": 3.15
+      },
+      {
+        "w": "Russia,",
+        "s": 3.76,
+        "e": 3.87
+      },
+      {
+        "w": "win",
+        "s": 3.87,
+        "e": 4.06
+      },
+      {
+        "w": "one",
+        "s": 4.06,
+        "e": 4.23
+      },
+      {
+        "w": "big",
+        "s": 4.29,
+        "e": 4.43
+      },
+      {
+        "w": "battle,",
+        "s": 4.43,
+        "e": 4.95
+      },
+      {
+        "w": "and",
+        "s": 5.1,
+        "e": 5.18
+      },
+      {
+        "w": "force",
+        "s": 5.4,
+        "e": 5.47
+      },
+      {
+        "w": "the",
+        "s": 5.47,
+        "e": 5.59
+      },
+      {
+        "w": "Tsar",
+        "s": 5.65,
+        "e": 5.88
+      },
+      {
+        "w": "back",
+        "s": 5.88,
+        "e": 6.12
+      },
+      {
+        "w": "into",
+        "s": 6.12,
+        "e": 6.3
+      },
+      {
+        "w": "line.",
+        "s": 7.164,
+        "e": 7.164
+      },
+      {
+        "w": "A",
+        "s": 7.164,
+        "e": 7.164
+      },
+      {
+        "w": "short",
+        "s": 7.164,
+        "e": 7.54
+      },
+      {
+        "w": "war.",
+        "s": 7.54,
+        "e": 7.92
+      }
+    ]
+  },
+  {
+    "id": "gather",
+    "file": "audio/wh01/gather.wav",
+    "sec": 4.562313,
+    "voice": "Sadaltager",
+    "text": "To do it, he gathered the largest army Europe had ever assembled. The Grande Armée.",
+    "words": [
+      {
+        "w": "To",
+        "s": 0.08,
+        "e": 0.12
+      },
+      {
+        "w": "do",
+        "s": 0.19,
+        "e": 0.37
+      },
+      {
+        "w": "it,",
+        "s": 0.777,
+        "e": 0.777
+      },
+      {
+        "w": "he",
+        "s": 0.78,
+        "e": 0.86
+      },
+      {
+        "w": "gathered",
+        "s": 0.86,
+        "e": 1.27
+      },
+      {
+        "w": "the",
+        "s": 1.27,
+        "e": 1.42
+      },
+      {
+        "w": "largest",
+        "s": 1.42,
+        "e": 1.78
+      },
+      {
+        "w": "army",
+        "s": 1.78,
+        "e": 2
+      },
+      {
+        "w": "Europe",
+        "s": 2,
+        "e": 2.31
+      },
+      {
+        "w": "had",
+        "s": 2.32,
+        "e": 2.44
+      },
+      {
+        "w": "ever",
+        "s": 2.56,
+        "e": 2.83
+      },
+      {
+        "w": "assembled.",
+        "s": 2.83,
+        "e": 3.6
+      },
+      {
+        "w": "The",
+        "s": 3.7,
+        "e": 3.76
+      },
+      {
+        "w": "Grande",
+        "s": 3.82,
+        "e": 4.08
+      },
+      {
+        "w": "Armée.",
+        "s": 4.08,
+        "e": 4.5
+      }
+    ]
+  },
+  {
+    "id": "numbers",
+    "file": "audio/wh01/numbers.wav",
+    "sec": 6.068938,
+    "voice": "Sadaltager",
+    "text": "About four-hundred-fifty-thousand men in the first wave. Around six-hundred-thousand in all, once the reinforcements came up.",
+    "words": [
+      {
+        "w": "About",
+        "s": 0.26,
+        "e": 0.288
+      },
+      {
+        "w": "four-",
+        "s": 0.288,
+        "e": 0.302
+      },
+      {
+        "w": "hundred-",
+        "s": 0.302,
+        "e": 0.316
+      },
+      {
+        "w": "fifty-",
+        "s": 0.316,
+        "e": 0.316
+      },
+      {
+        "w": "thousand",
+        "s": 0.316,
+        "e": 1.64
+      },
+      {
+        "w": "men",
+        "s": 1.64,
+        "e": 1.84
+      },
+      {
+        "w": "in",
+        "s": 1.84,
+        "e": 1.97
+      },
+      {
+        "w": "the",
+        "s": 1.97,
+        "e": 2.07
+      },
+      {
+        "w": "first",
+        "s": 2.18,
+        "e": 2.5
+      },
+      {
+        "w": "wave.",
+        "s": 2.5,
+        "e": 2.9
+      },
+      {
+        "w": "Around",
+        "s": 3.14,
+        "e": 3.18
+      },
+      {
+        "w": "six-",
+        "s": 3.18,
+        "e": 3.18
+      },
+      {
+        "w": "hundred-",
+        "s": 3.18,
+        "e": 3.22
+      },
+      {
+        "w": "thousand",
+        "s": 3.22,
+        "e": 4.29
+      },
+      {
+        "w": "in",
+        "s": 4.3,
+        "e": 4.46
+      },
+      {
+        "w": "all,",
+        "s": 4.46,
+        "e": 4.76
+      },
+      {
+        "w": "once",
+        "s": 4.76,
+        "e": 4.89
+      },
+      {
+        "w": "the",
+        "s": 4.89,
+        "e": 5
+      },
+      {
+        "w": "reinforcements",
+        "s": 5,
+        "e": 5.67
+      },
+      {
+        "w": "came",
+        "s": 5.72,
+        "e": 5.88
+      },
+      {
+        "w": "up.",
+        "s": 5.88,
+        "e": 6
+      }
+    ]
+  },
+  {
+    "id": "nations",
+    "file": "audio/wh01/nations.wav",
+    "sec": 7.459521,
+    "voice": "Sadaltager",
+    "text": "Only about half of them were French. Poles, Germans, Italians, Austrians, Prussians, Swiss. A whole continent in one army.",
+    "words": [
+      {
+        "w": "Only",
+        "s": 0,
+        "e": 0.22
+      },
+      {
+        "w": "about",
+        "s": 0.24,
+        "e": 0.54
+      },
+      {
+        "w": "half",
+        "s": 0.54,
+        "e": 0.76
+      },
+      {
+        "w": "of",
+        "s": 0.78,
+        "e": 0.9
+      },
+      {
+        "w": "them",
+        "s": 0.9,
+        "e": 1.14
+      },
+      {
+        "w": "were",
+        "s": 1.14,
+        "e": 1.35
+      },
+      {
+        "w": "French.",
+        "s": 1.893,
+        "e": 1.893
+      },
+      {
+        "w": "Poles,",
+        "s": 1.893,
+        "e": 2.29
+      },
+      {
+        "w": "Germans,",
+        "s": 2.29,
+        "e": 2.93
+      },
+      {
+        "w": "Italians,",
+        "s": 2.93,
+        "e": 3.66
+      },
+      {
+        "w": "Austrians,",
+        "s": 3.69,
+        "e": 4.32
+      },
+      {
+        "w": "Prussians,",
+        "s": 4.32,
+        "e": 5
+      },
+      {
+        "w": "Swiss.",
+        "s": 5,
+        "e": 5.409
+      },
+      {
+        "w": "A",
+        "s": 5.909,
+        "e": 5.909
+      },
+      {
+        "w": "whole",
+        "s": 5.89,
+        "e": 6.08
+      },
+      {
+        "w": "continent",
+        "s": 6.18,
+        "e": 6.71
+      },
+      {
+        "w": "in",
+        "s": 6.71,
+        "e": 6.83
+      },
+      {
+        "w": "one",
+        "s": 6.83,
+        "e": 7
+      },
+      {
+        "w": "army.",
+        "s": 7,
+        "e": 7.4
+      }
+    ]
+  },
+  {
+    "id": "poles",
+    "file": "audio/wh01/poles.wav",
+    "sec": 6.374708,
+    "voice": "Sadaltager",
+    "text": "The Poles alone sent close to one-hundred-thousand men. They hoped Napoleon would give them back their country.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.01,
+        "e": 0.25
+      },
+      {
+        "w": "Poles",
+        "s": 0.25,
+        "e": 0.65
+      },
+      {
+        "w": "alone",
+        "s": 0.65,
+        "e": 1.08
+      },
+      {
+        "w": "sent",
+        "s": 1.08,
+        "e": 1.42
+      },
+      {
+        "w": "close",
+        "s": 1.42,
+        "e": 1.84
+      },
+      {
+        "w": "to",
+        "s": 1.84,
+        "e": 1.925
+      },
+      {
+        "w": "one-",
+        "s": 1.925,
+        "e": 2.01
+      },
+      {
+        "w": "hundred-",
+        "s": 2.01,
+        "e": 2.01
+      },
+      {
+        "w": "thousand",
+        "s": 2.01,
+        "e": 3.26
+      },
+      {
+        "w": "men.",
+        "s": 4.075,
+        "e": 4.08
+      },
+      {
+        "w": "They",
+        "s": 4.09,
+        "e": 4.14
+      },
+      {
+        "w": "hoped",
+        "s": 4.3,
+        "e": 4.51
+      },
+      {
+        "w": "Napoleon",
+        "s": 4.51,
+        "e": 4.9
+      },
+      {
+        "w": "would",
+        "s": 4.9,
+        "e": 5.14
+      },
+      {
+        "w": "give",
+        "s": 5.14,
+        "e": 5.32
+      },
+      {
+        "w": "them",
+        "s": 5.33,
+        "e": 5.52
+      },
+      {
+        "w": "back",
+        "s": 5.52,
+        "e": 5.65
+      },
+      {
+        "w": "their",
+        "s": 5.71,
+        "e": 5.95
+      },
+      {
+        "w": "country.",
+        "s": 5.95,
+        "e": 6.375
+      }
+    ]
+  },
+  {
+    "id": "horses",
+    "file": "audio/wh01/horses.wav",
+    "sec": 4.077417,
+    "voice": "Sadaltager",
+    "text": "It took up to two-hundred-thousand horses and about one-thousand-three-hundred cannon.",
+    "words": [
+      {
+        "w": "It",
+        "s": 0,
+        "e": 0.12
+      },
+      {
+        "w": "took",
+        "s": 0.24,
+        "e": 0.36
+      },
+      {
+        "w": "up",
+        "s": 0.36,
+        "e": 0.47
+      },
+      {
+        "w": "to",
+        "s": 0.47,
+        "e": 0.48
+      },
+      {
+        "w": "two-",
+        "s": 0.48,
+        "e": 0.548
+      },
+      {
+        "w": "hundred-",
+        "s": 0.548,
+        "e": 0.612
+      },
+      {
+        "w": "thousand",
+        "s": 0.612,
+        "e": 1.77
+      },
+      {
+        "w": "horses",
+        "s": 1.77,
+        "e": 2.08
+      },
+      {
+        "w": "and",
+        "s": 2.407,
+        "e": 2.407
+      },
+      {
+        "w": "about",
+        "s": 2.4,
+        "e": 2.5
+      },
+      {
+        "w": "one-",
+        "s": 2.5,
+        "e": 2.5
+      },
+      {
+        "w": "thousand-",
+        "s": 2.5,
+        "e": 2.6
+      },
+      {
+        "w": "three-",
+        "s": 2.6,
+        "e": 2.657
+      },
+      {
+        "w": "hundred",
+        "s": 2.657,
+        "e": 3.53
+      },
+      {
+        "w": "cannon.",
+        "s": 3.53,
+        "e": 4
+      }
+    ]
+  },
+  {
+    "id": "supply",
+    "file": "audio/wh01/supply.wav",
+    "sec": 5.674,
+    "voice": "Sadaltager",
+    "text": "The problem was food. An army this size eats a mountain every day, and Russia's roads were dirt tracks.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.11,
+        "e": 0.21
+      },
+      {
+        "w": "problem",
+        "s": 0.21,
+        "e": 0.7
+      },
+      {
+        "w": "was",
+        "s": 0.7,
+        "e": 0.84
+      },
+      {
+        "w": "food.",
+        "s": 1.432,
+        "e": 1.44
+      },
+      {
+        "w": "An",
+        "s": 1.44,
+        "e": 1.58
+      },
+      {
+        "w": "army",
+        "s": 1.58,
+        "e": 1.87
+      },
+      {
+        "w": "this",
+        "s": 1.87,
+        "e": 2.16
+      },
+      {
+        "w": "size",
+        "s": 2.16,
+        "e": 2.29
+      },
+      {
+        "w": "eats",
+        "s": 2.62,
+        "e": 2.74
+      },
+      {
+        "w": "a",
+        "s": 2.81,
+        "e": 2.81
+      },
+      {
+        "w": "mountain",
+        "s": 2.87,
+        "e": 3.39
+      },
+      {
+        "w": "every",
+        "s": 3.39,
+        "e": 3.624
+      },
+      {
+        "w": "day,",
+        "s": 4.032,
+        "e": 4.04
+      },
+      {
+        "w": "and",
+        "s": 4.04,
+        "e": 4.19
+      },
+      {
+        "w": "Russia's",
+        "s": 4.19,
+        "e": 4.57
+      },
+      {
+        "w": "roads",
+        "s": 4.57,
+        "e": 4.84
+      },
+      {
+        "w": "were",
+        "s": 4.84,
+        "e": 5.04
+      },
+      {
+        "w": "dirt",
+        "s": 5.04,
+        "e": 5.24
+      },
+      {
+        "w": "tracks.",
+        "s": 5.47,
+        "e": 5.674
+      }
+    ]
+  },
+  {
+    "id": "plan",
+    "file": "audio/wh01/plan.wav",
+    "sec": 3.899438,
+    "voice": "Sadaltager",
+    "text": "Napoleon brought supplies for a few weeks. He was sure the war would be over by then.",
+    "words": [
+      {
+        "w": "Napoleon",
+        "s": 0,
+        "e": 0.51
+      },
+      {
+        "w": "brought",
+        "s": 0.51,
+        "e": 0.95
+      },
+      {
+        "w": "supplies",
+        "s": 0.95,
+        "e": 1.45
+      },
+      {
+        "w": "for",
+        "s": 1.45,
+        "e": 1.65
+      },
+      {
+        "w": "a",
+        "s": 1.65,
+        "e": 1.69
+      },
+      {
+        "w": "few",
+        "s": 1.71,
+        "e": 1.9
+      },
+      {
+        "w": "weeks.",
+        "s": 2.261,
+        "e": 2.261
+      },
+      {
+        "w": "He",
+        "s": 2.26,
+        "e": 2.29
+      },
+      {
+        "w": "was",
+        "s": 2.39,
+        "e": 2.54
+      },
+      {
+        "w": "sure",
+        "s": 2.54,
+        "e": 2.76
+      },
+      {
+        "w": "the",
+        "s": 2.76,
+        "e": 2.93
+      },
+      {
+        "w": "war",
+        "s": 2.93,
+        "e": 2.99
+      },
+      {
+        "w": "would",
+        "s": 3.11,
+        "e": 3.37
+      },
+      {
+        "w": "be",
+        "s": 3.45,
+        "e": 3.49
+      },
+      {
+        "w": "over",
+        "s": 3.49,
+        "e": 3.64
+      },
+      {
+        "w": "by",
+        "s": 3.71,
+        "e": 3.81
+      },
+      {
+        "w": "then.",
+        "s": 3.82,
+        "e": 3.899
+      }
+    ]
+  },
+  {
+    "id": "cross",
+    "file": "audio/wh01/cross.wav",
+    "sec": 6.074188,
+    "voice": "Sadaltager",
+    "text": "On the twenty-fourth of June eighteen-twelve, the army crossed the Neman river at Kovno, today's Kaunas in Lithuania.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "the",
+        "s": 0.371,
+        "e": 0.371
+      },
+      {
+        "w": "twenty-",
+        "s": 0.371,
+        "e": 0.371
+      },
+      {
+        "w": "fourth",
+        "s": 0.363,
+        "e": 0.91
+      },
+      {
+        "w": "of",
+        "s": 0.91,
+        "e": 1.05
+      },
+      {
+        "w": "June",
+        "s": 1.05,
+        "e": 1.26
+      },
+      {
+        "w": "eighteen-",
+        "s": 1.26,
+        "e": 1.33
+      },
+      {
+        "w": "twelve,",
+        "s": 1.33,
+        "e": 2.32
+      },
+      {
+        "w": "the",
+        "s": 2.45,
+        "e": 2.47
+      },
+      {
+        "w": "army",
+        "s": 2.47,
+        "e": 2.67
+      },
+      {
+        "w": "crossed",
+        "s": 2.67,
+        "e": 2.96
+      },
+      {
+        "w": "the",
+        "s": 3.05,
+        "e": 3.18
+      },
+      {
+        "w": "Neman",
+        "s": 3.18,
+        "e": 3.43
+      },
+      {
+        "w": "river",
+        "s": 3.43,
+        "e": 3.7
+      },
+      {
+        "w": "at",
+        "s": 3.72,
+        "e": 3.89
+      },
+      {
+        "w": "Kovno,",
+        "s": 3.89,
+        "e": 4.4
+      },
+      {
+        "w": "today's",
+        "s": 4.57,
+        "e": 4.84
+      },
+      {
+        "w": "Kaunas",
+        "s": 4.91,
+        "e": 5.36
+      },
+      {
+        "w": "in",
+        "s": 5.36,
+        "e": 5.54
+      },
+      {
+        "w": "Lithuania.",
+        "s": 5.54,
+        "e": 6.04
+      }
+    ]
+  },
+  {
+    "id": "minard",
+    "file": "audio/wh01/minard.wav",
+    "sec": 8.049104,
+    "voice": "Sadaltager",
+    "text": "Now watch this line. Its width is the number of men. This is how a French engineer, Charles Minard, drew this campaign in eighteen-sixty-nine.",
+    "words": [
+      {
+        "w": "Now",
+        "s": 0.25,
+        "e": 0.25
+      },
+      {
+        "w": "watch",
+        "s": 0.28,
+        "e": 0.6
+      },
+      {
+        "w": "this",
+        "s": 0.66,
+        "e": 0.99
+      },
+      {
+        "w": "line.",
+        "s": 0.99,
+        "e": 1.7
+      },
+      {
+        "w": "Its",
+        "s": 1.73,
+        "e": 1.9
+      },
+      {
+        "w": "width",
+        "s": 1.9,
+        "e": 2.09
+      },
+      {
+        "w": "is",
+        "s": 2.23,
+        "e": 2.32
+      },
+      {
+        "w": "the",
+        "s": 2.39,
+        "e": 2.5
+      },
+      {
+        "w": "number",
+        "s": 2.5,
+        "e": 2.86
+      },
+      {
+        "w": "of",
+        "s": 2.86,
+        "e": 2.97
+      },
+      {
+        "w": "men.",
+        "s": 3.831,
+        "e": 3.831
+      },
+      {
+        "w": "This",
+        "s": 3.831,
+        "e": 3.831
+      },
+      {
+        "w": "is",
+        "s": 3.831,
+        "e": 3.831
+      },
+      {
+        "w": "how",
+        "s": 3.831,
+        "e": 3.84
+      },
+      {
+        "w": "a",
+        "s": 3.84,
+        "e": 3.91
+      },
+      {
+        "w": "French",
+        "s": 3.91,
+        "e": 4.31
+      },
+      {
+        "w": "engineer,",
+        "s": 4.31,
+        "e": 5
+      },
+      {
+        "w": "Charles",
+        "s": 5.02,
+        "e": 5.605
+      },
+      {
+        "w": "Minard,",
+        "s": 5.605,
+        "e": 6.16
+      },
+      {
+        "w": "drew",
+        "s": 6.16,
+        "e": 6.25
+      },
+      {
+        "w": "this",
+        "s": 6.27,
+        "e": 6.34
+      },
+      {
+        "w": "campaign",
+        "s": 6.99,
+        "e": 6.99
+      },
+      {
+        "w": "in",
+        "s": 6.99,
+        "e": 6.99
+      },
+      {
+        "w": "eighteen-",
+        "s": 6.99,
+        "e": 7.046
+      },
+      {
+        "w": "sixty-",
+        "s": 7.046,
+        "e": 7.08
+      },
+      {
+        "w": "nine.",
+        "s": 7.08,
+        "e": 8
+      }
+    ]
+  },
+  {
+    "id": "refuse",
+    "file": "audio/wh01/refuse.wav",
+    "sec": 6.779333,
+    "voice": "Sadaltager",
+    "text": "Napoleon wanted a battle. The Russians refused to give him one. Their two armies kept pulling back, deeper and deeper.",
+    "words": [
+      {
+        "w": "Napoleon",
+        "s": 0.39,
+        "e": 0.76
+      },
+      {
+        "w": "wanted",
+        "s": 0.76,
+        "e": 1.3
+      },
+      {
+        "w": "a",
+        "s": 1.38,
+        "e": 1.42
+      },
+      {
+        "w": "battle.",
+        "s": 1.42,
+        "e": 2.11
+      },
+      {
+        "w": "The",
+        "s": 2.11,
+        "e": 2.27
+      },
+      {
+        "w": "Russians",
+        "s": 2.27,
+        "e": 2.71
+      },
+      {
+        "w": "refused",
+        "s": 2.71,
+        "e": 3.08
+      },
+      {
+        "w": "to",
+        "s": 3.14,
+        "e": 3.2
+      },
+      {
+        "w": "give",
+        "s": 3.21,
+        "e": 3.43
+      },
+      {
+        "w": "him",
+        "s": 3.43,
+        "e": 3.59
+      },
+      {
+        "w": "one.",
+        "s": 4.19,
+        "e": 4.24
+      },
+      {
+        "w": "Their",
+        "s": 4.24,
+        "e": 4.51
+      },
+      {
+        "w": "two",
+        "s": 4.57,
+        "e": 4.67
+      },
+      {
+        "w": "armies",
+        "s": 4.79,
+        "e": 4.99
+      },
+      {
+        "w": "kept",
+        "s": 4.99,
+        "e": 5.16
+      },
+      {
+        "w": "pulling",
+        "s": 5.2,
+        "e": 5.54
+      },
+      {
+        "w": "back,",
+        "s": 5.96,
+        "e": 5.96
+      },
+      {
+        "w": "deeper",
+        "s": 5.96,
+        "e": 5.96
+      },
+      {
+        "w": "and",
+        "s": 6.33,
+        "e": 6.37
+      },
+      {
+        "w": "deeper.",
+        "s": 6.37,
+        "e": 6.779
+      }
+    ]
+  },
+  {
+    "id": "vilna",
+    "file": "audio/wh01/vilna.wav",
+    "sec": 5.226271,
+    "voice": "Sadaltager",
+    "text": "Four days after crossing, he took Vilna without a fight. The Russians had already left.",
+    "words": [
+      {
+        "w": "Four",
+        "s": 0.29,
+        "e": 0.29
+      },
+      {
+        "w": "days",
+        "s": 0.29,
+        "e": 0.58
+      },
+      {
+        "w": "after",
+        "s": 0.58,
+        "e": 0.89
+      },
+      {
+        "w": "crossing,",
+        "s": 0.99,
+        "e": 1.58
+      },
+      {
+        "w": "he",
+        "s": 1.8,
+        "e": 1.84
+      },
+      {
+        "w": "took",
+        "s": 1.84,
+        "e": 2.11
+      },
+      {
+        "w": "Vilna",
+        "s": 2.19,
+        "e": 2.48
+      },
+      {
+        "w": "without",
+        "s": 2.48,
+        "e": 2.94
+      },
+      {
+        "w": "a",
+        "s": 3.07,
+        "e": 3.09
+      },
+      {
+        "w": "fight.",
+        "s": 3.09,
+        "e": 3.293
+      },
+      {
+        "w": "The",
+        "s": 3.885,
+        "e": 3.97
+      },
+      {
+        "w": "Russians",
+        "s": 4.15,
+        "e": 4.4
+      },
+      {
+        "w": "had",
+        "s": 4.4,
+        "e": 4.55
+      },
+      {
+        "w": "already",
+        "s": 4.55,
+        "e": 4.89
+      },
+      {
+        "w": "left.",
+        "s": 4.89,
+        "e": 5.226
+      }
+    ]
+  },
+  {
+    "id": "scorch",
+    "file": "audio/wh01/scorch.wav",
+    "sec": 3.701833,
+    "voice": "Sadaltager",
+    "text": "As they went, they burned crops, villages, and anything the French could eat.",
+    "words": [
+      {
+        "w": "As",
+        "s": 0,
+        "e": 0.13
+      },
+      {
+        "w": "they",
+        "s": 0.16,
+        "e": 0.39
+      },
+      {
+        "w": "went,",
+        "s": 0.39,
+        "e": 0.78
+      },
+      {
+        "w": "they",
+        "s": 0.78,
+        "e": 1.01
+      },
+      {
+        "w": "burned",
+        "s": 1.08,
+        "e": 1.35
+      },
+      {
+        "w": "crops,",
+        "s": 1.43,
+        "e": 1.88
+      },
+      {
+        "w": "villages,",
+        "s": 1.88,
+        "e": 2.48
+      },
+      {
+        "w": "and",
+        "s": 2.51,
+        "e": 2.56
+      },
+      {
+        "w": "anything",
+        "s": 2.64,
+        "e": 3.03
+      },
+      {
+        "w": "the",
+        "s": 3.04,
+        "e": 3.07
+      },
+      {
+        "w": "French",
+        "s": 3.18,
+        "e": 3.32
+      },
+      {
+        "w": "could",
+        "s": 3.32,
+        "e": 3.48
+      },
+      {
+        "w": "eat.",
+        "s": 3.48,
+        "e": 3.68
+      }
+    ]
+  },
+  {
+    "id": "heat",
+    "file": "audio/wh01/heat.wav",
+    "sec": 8.05525,
+    "voice": "Sadaltager",
+    "text": "Then came the weather. Summer storms that turned roads to mud, then scorching heat, dust, and bad water.",
+    "words": [
+      {
+        "w": "Then",
+        "s": 0.02,
+        "e": 0.35
+      },
+      {
+        "w": "came",
+        "s": 0.42,
+        "e": 0.82
+      },
+      {
+        "w": "the",
+        "s": 0.82,
+        "e": 1.11
+      },
+      {
+        "w": "weather.",
+        "s": 1.878,
+        "e": 1.9
+      },
+      {
+        "w": "Summer",
+        "s": 1.91,
+        "e": 2.53
+      },
+      {
+        "w": "storms",
+        "s": 2.53,
+        "e": 3.07
+      },
+      {
+        "w": "that",
+        "s": 3.6,
+        "e": 3.6
+      },
+      {
+        "w": "turned",
+        "s": 3.79,
+        "e": 4.24
+      },
+      {
+        "w": "roads",
+        "s": 4.24,
+        "e": 4.432
+      },
+      {
+        "w": "to",
+        "s": 5.305,
+        "e": 5.305
+      },
+      {
+        "w": "mud,",
+        "s": 5.305,
+        "e": 5.32
+      },
+      {
+        "w": "then",
+        "s": 5.34,
+        "e": 5.61
+      },
+      {
+        "w": "scorching",
+        "s": 5.61,
+        "e": 6.26
+      },
+      {
+        "w": "heat,",
+        "s": 6.718,
+        "e": 6.718
+      },
+      {
+        "w": "dust,",
+        "s": 6.718,
+        "e": 7.16
+      },
+      {
+        "w": "and",
+        "s": 7.21,
+        "e": 7.39
+      },
+      {
+        "w": "bad",
+        "s": 7.39,
+        "e": 7.62
+      },
+      {
+        "w": "water.",
+        "s": 7.62,
+        "e": 8.055
+      }
+    ]
+  },
+  {
+    "id": "disease",
+    "file": "audio/wh01/disease.wav",
+    "sec": 6.179375,
+    "voice": "Sadaltager",
+    "text": "Typhus and dysentery spread through the ranks. Horses died by the thousands in the first weeks.",
+    "words": [
+      {
+        "w": "Typhus",
+        "s": 0,
+        "e": 0.51
+      },
+      {
+        "w": "and",
+        "s": 0.51,
+        "e": 0.72
+      },
+      {
+        "w": "dysentery",
+        "s": 0.8,
+        "e": 1.41
+      },
+      {
+        "w": "spread",
+        "s": 1.67,
+        "e": 2.03
+      },
+      {
+        "w": "through",
+        "s": 2.09,
+        "e": 2.68
+      },
+      {
+        "w": "the",
+        "s": 3.47,
+        "e": 3.47
+      },
+      {
+        "w": "ranks.",
+        "s": 3.47,
+        "e": 3.47
+      },
+      {
+        "w": "Horses",
+        "s": 3.46,
+        "e": 3.86
+      },
+      {
+        "w": "died",
+        "s": 3.997,
+        "e": 4.14
+      },
+      {
+        "w": "by",
+        "s": 4.14,
+        "e": 4.28
+      },
+      {
+        "w": "the",
+        "s": 4.28,
+        "e": 4.48
+      },
+      {
+        "w": "thousands",
+        "s": 4.48,
+        "e": 4.86
+      },
+      {
+        "w": "in",
+        "s": 5.346,
+        "e": 5.346
+      },
+      {
+        "w": "the",
+        "s": 5.346,
+        "e": 5.45
+      },
+      {
+        "w": "first",
+        "s": 5.46,
+        "e": 5.79
+      },
+      {
+        "w": "weeks.",
+        "s": 5.8,
+        "e": 6.179
+      }
+    ]
+  },
+  {
+    "id": "melt",
+    "file": "audio/wh01/melt.wav",
+    "sec": 7.508563,
+    "voice": "Sadaltager",
+    "text": "Men deserted, fell behind, or simply dropped. In the first month alone, about one-hundred-thousand were gone.",
+    "words": [
+      {
+        "w": "Men",
+        "s": 0.01,
+        "e": 0.27
+      },
+      {
+        "w": "deserted,",
+        "s": 0.27,
+        "e": 1.18
+      },
+      {
+        "w": "fell",
+        "s": 1.22,
+        "e": 1.5
+      },
+      {
+        "w": "behind,",
+        "s": 1.55,
+        "e": 2.24
+      },
+      {
+        "w": "or",
+        "s": 2.343,
+        "e": 2.527
+      },
+      {
+        "w": "simply",
+        "s": 2.62,
+        "e": 3.13
+      },
+      {
+        "w": "dropped.",
+        "s": 3.948,
+        "e": 3.948
+      },
+      {
+        "w": "In",
+        "s": 3.93,
+        "e": 4.07
+      },
+      {
+        "w": "the",
+        "s": 4.07,
+        "e": 4.25
+      },
+      {
+        "w": "first",
+        "s": 4.29,
+        "e": 4.66
+      },
+      {
+        "w": "month",
+        "s": 4.67,
+        "e": 4.83
+      },
+      {
+        "w": "alone,",
+        "s": 5.14,
+        "e": 5.6
+      },
+      {
+        "w": "about",
+        "s": 5.6,
+        "e": 5.696
+      },
+      {
+        "w": "one-",
+        "s": 5.696,
+        "e": 5.744
+      },
+      {
+        "w": "hundred-",
+        "s": 5.744,
+        "e": 5.792
+      },
+      {
+        "w": "thousand",
+        "s": 5.792,
+        "e": 6.92
+      },
+      {
+        "w": "were",
+        "s": 7.01,
+        "e": 7.09
+      },
+      {
+        "w": "gone.",
+        "s": 7.09,
+        "e": 7.509
+      }
+    ]
+  },
+  {
+    "id": "vitebsk",
+    "file": "audio/wh01/vitebsk.wav",
+    "sec": 7.667542,
+    "voice": "Sadaltager",
+    "text": "At Vitebsk, in late July, Napoleon stopped for two weeks, hoping the Russians would finally come and fight. They never did.",
+    "words": [
+      {
+        "w": "At",
+        "s": 0.17,
+        "e": 0.17
+      },
+      {
+        "w": "Vitebsk,",
+        "s": 0.17,
+        "e": 0.92
+      },
+      {
+        "w": "in",
+        "s": 0.97,
+        "e": 1.1
+      },
+      {
+        "w": "late",
+        "s": 1.1,
+        "e": 1.43
+      },
+      {
+        "w": "July,",
+        "s": 1.44,
+        "e": 2
+      },
+      {
+        "w": "Napoleon",
+        "s": 2.06,
+        "e": 2.56
+      },
+      {
+        "w": "stopped",
+        "s": 2.56,
+        "e": 2.95
+      },
+      {
+        "w": "for",
+        "s": 3.07,
+        "e": 3.26
+      },
+      {
+        "w": "two",
+        "s": 3.31,
+        "e": 3.47
+      },
+      {
+        "w": "weeks,",
+        "s": 3.47,
+        "e": 3.93
+      },
+      {
+        "w": "hoping",
+        "s": 4.07,
+        "e": 4.24
+      },
+      {
+        "w": "the",
+        "s": 4.24,
+        "e": 4.39
+      },
+      {
+        "w": "Russians",
+        "s": 4.39,
+        "e": 4.79
+      },
+      {
+        "w": "would",
+        "s": 4.79,
+        "e": 4.95
+      },
+      {
+        "w": "finally",
+        "s": 4.96,
+        "e": 5.48
+      },
+      {
+        "w": "come",
+        "s": 5.48,
+        "e": 5.84
+      },
+      {
+        "w": "and",
+        "s": 5.84,
+        "e": 6.04
+      },
+      {
+        "w": "fight.",
+        "s": 6.1,
+        "e": 6.433
+      },
+      {
+        "w": "They",
+        "s": 7.097,
+        "e": 7.13
+      },
+      {
+        "w": "never",
+        "s": 7.13,
+        "e": 7.47
+      },
+      {
+        "w": "did.",
+        "s": 7.47,
+        "e": 7.668
+      }
+    ]
+  },
+  {
+    "id": "thin",
+    "file": "audio/wh01/thin.wav",
+    "sec": 5.121125,
+    "voice": "Sadaltager",
+    "text": "Look at the line. It's already a third thinner, and the real fighting hasn't even started.",
+    "words": [
+      {
+        "w": "Look",
+        "s": 0,
+        "e": 0.39
+      },
+      {
+        "w": "at",
+        "s": 0.39,
+        "e": 0.58
+      },
+      {
+        "w": "the",
+        "s": 1.296,
+        "e": 1.296
+      },
+      {
+        "w": "line.",
+        "s": 1.28,
+        "e": 1.44
+      },
+      {
+        "w": "It's",
+        "s": 1.44,
+        "e": 1.76
+      },
+      {
+        "w": "already",
+        "s": 1.76,
+        "e": 2.31
+      },
+      {
+        "w": "a",
+        "s": 2.41,
+        "e": 2.41
+      },
+      {
+        "w": "third",
+        "s": 2.48,
+        "e": 2.71
+      },
+      {
+        "w": "thinner,",
+        "s": 3.39,
+        "e": 3.44
+      },
+      {
+        "w": "and",
+        "s": 3.44,
+        "e": 3.52
+      },
+      {
+        "w": "the",
+        "s": 3.52,
+        "e": 3.6
+      },
+      {
+        "w": "real",
+        "s": 3.6,
+        "e": 3.75
+      },
+      {
+        "w": "fighting",
+        "s": 3.89,
+        "e": 4.17
+      },
+      {
+        "w": "hasn't",
+        "s": 4.24,
+        "e": 4.48
+      },
+      {
+        "w": "even",
+        "s": 4.48,
+        "e": 4.68
+      },
+      {
+        "w": "started.",
+        "s": 4.68,
+        "e": 5.12
+      }
+    ]
+  },
+  {
+    "id": "smolensk",
+    "file": "audio/wh01/smolensk.wav",
+    "sec": 7.277417,
+    "voice": "Sadaltager",
+    "text": "In mid-August, at Smolensk, the French finally caught the Russians. The city burned, and the Russians slipped away again.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.16
+      },
+      {
+        "w": "mid-",
+        "s": 0.16,
+        "e": 0.47
+      },
+      {
+        "w": "August,",
+        "s": 0.5,
+        "e": 1.11
+      },
+      {
+        "w": "at",
+        "s": 1.13,
+        "e": 1.29
+      },
+      {
+        "w": "Smolensk,",
+        "s": 1.29,
+        "e": 2.03
+      },
+      {
+        "w": "the",
+        "s": 2.12,
+        "e": 2.17
+      },
+      {
+        "w": "French",
+        "s": 2.17,
+        "e": 2.34
+      },
+      {
+        "w": "finally",
+        "s": 2.47,
+        "e": 2.87
+      },
+      {
+        "w": "caught",
+        "s": 2.88,
+        "e": 3.49
+      },
+      {
+        "w": "the",
+        "s": 3.49,
+        "e": 3.72
+      },
+      {
+        "w": "Russians.",
+        "s": 4.663,
+        "e": 4.663
+      },
+      {
+        "w": "The",
+        "s": 4.663,
+        "e": 4.89
+      },
+      {
+        "w": "city",
+        "s": 4.89,
+        "e": 5.22
+      },
+      {
+        "w": "burned,",
+        "s": 5.22,
+        "e": 5.8
+      },
+      {
+        "w": "and",
+        "s": 5.8,
+        "e": 5.93
+      },
+      {
+        "w": "the",
+        "s": 5.93,
+        "e": 6.06
+      },
+      {
+        "w": "Russians",
+        "s": 6.06,
+        "e": 6.22
+      },
+      {
+        "w": "slipped",
+        "s": 6.63,
+        "e": 6.68
+      },
+      {
+        "w": "away",
+        "s": 6.76,
+        "e": 6.89
+      },
+      {
+        "w": "again.",
+        "s": 6.89,
+        "e": 7.277
+      }
+    ]
+  },
+  {
+    "id": "smolosses",
+    "file": "audio/wh01/smolosses.wav",
+    "sec": 5.771854,
+    "voice": "Sadaltager",
+    "text": "In three days of fighting, around ten-thousand French and twelve-thousand Russians were killed or wounded.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0.13,
+        "e": 0.13
+      },
+      {
+        "w": "three",
+        "s": 0.22,
+        "e": 0.46
+      },
+      {
+        "w": "days",
+        "s": 0.46,
+        "e": 0.73
+      },
+      {
+        "w": "of",
+        "s": 0.73,
+        "e": 0.86
+      },
+      {
+        "w": "fighting,",
+        "s": 0.86,
+        "e": 1.42
+      },
+      {
+        "w": "around",
+        "s": 1.68,
+        "e": 1.88
+      },
+      {
+        "w": "ten-",
+        "s": 1.88,
+        "e": 1.88
+      },
+      {
+        "w": "thousand",
+        "s": 1.88,
+        "e": 2.78
+      },
+      {
+        "w": "French",
+        "s": 2.78,
+        "e": 3.02
+      },
+      {
+        "w": "and",
+        "s": 3.294,
+        "e": 3.294
+      },
+      {
+        "w": "twelve-",
+        "s": 3.294,
+        "e": 3.294
+      },
+      {
+        "w": "thousand",
+        "s": 3.279,
+        "e": 4.1
+      },
+      {
+        "w": "Russians",
+        "s": 4.1,
+        "e": 4.56
+      },
+      {
+        "w": "were",
+        "s": 4.56,
+        "e": 4.72
+      },
+      {
+        "w": "killed",
+        "s": 4.72,
+        "e": 5
+      },
+      {
+        "w": "or",
+        "s": 5,
+        "e": 5.12
+      },
+      {
+        "w": "wounded.",
+        "s": 5.16,
+        "e": 5.76
+      }
+    ]
+  },
+  {
+    "id": "choice",
+    "file": "audio/wh01/choice.wav",
+    "sec": 6.068854,
+    "voice": "Sadaltager",
+    "text": "Napoleon had a choice. Stop for the winter, or push on to Moscow. He pushed on.",
+    "words": [
+      {
+        "w": "Napoleon",
+        "s": 0,
+        "e": 0.84
+      },
+      {
+        "w": "had",
+        "s": 0.84,
+        "e": 1.17
+      },
+      {
+        "w": "a",
+        "s": 1.958,
+        "e": 1.958
+      },
+      {
+        "w": "choice.",
+        "s": 1.958,
+        "e": 1.958
+      },
+      {
+        "w": "Stop",
+        "s": 1.958,
+        "e": 2.26
+      },
+      {
+        "w": "for",
+        "s": 2.26,
+        "e": 2.5
+      },
+      {
+        "w": "the",
+        "s": 2.5,
+        "e": 2.76
+      },
+      {
+        "w": "winter,",
+        "s": 3.34,
+        "e": 3.34
+      },
+      {
+        "w": "or",
+        "s": 3.34,
+        "e": 3.52
+      },
+      {
+        "w": "push",
+        "s": 3.88,
+        "e": 3.94
+      },
+      {
+        "w": "on",
+        "s": 3.98,
+        "e": 4.11
+      },
+      {
+        "w": "to",
+        "s": 4.27,
+        "e": 4.41
+      },
+      {
+        "w": "Moscow.",
+        "s": 5.498,
+        "e": 5.498
+      },
+      {
+        "w": "He",
+        "s": 5.498,
+        "e": 5.55
+      },
+      {
+        "w": "pushed",
+        "s": 5.63,
+        "e": 5.94
+      },
+      {
+        "w": "on.",
+        "s": 5.94,
+        "e": 6.069
+      }
+    ]
+  },
+  {
+    "id": "kutuzov",
+    "file": "audio/wh01/kutuzov.wav",
+    "sec": 8.284146,
+    "voice": "Sadaltager",
+    "text": "In Russia, people were furious about the endless retreat. The Tsar gave command to an old, one-eyed general. Mikhail Kutuzov.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.12
+      },
+      {
+        "w": "Russia,",
+        "s": 0.13,
+        "e": 0.67
+      },
+      {
+        "w": "people",
+        "s": 0.82,
+        "e": 1.08
+      },
+      {
+        "w": "were",
+        "s": 1.08,
+        "e": 1.35
+      },
+      {
+        "w": "furious",
+        "s": 1.35,
+        "e": 1.84
+      },
+      {
+        "w": "about",
+        "s": 1.86,
+        "e": 2.29
+      },
+      {
+        "w": "the",
+        "s": 2.29,
+        "e": 2.55
+      },
+      {
+        "w": "endless",
+        "s": 2.55,
+        "e": 3.05
+      },
+      {
+        "w": "retreat.",
+        "s": 3.76,
+        "e": 3.78
+      },
+      {
+        "w": "The",
+        "s": 3.78,
+        "e": 4.01
+      },
+      {
+        "w": "Tsar",
+        "s": 4.01,
+        "e": 4.27
+      },
+      {
+        "w": "gave",
+        "s": 4.6,
+        "e": 4.62
+      },
+      {
+        "w": "command",
+        "s": 4.62,
+        "e": 5.16
+      },
+      {
+        "w": "to",
+        "s": 5.16,
+        "e": 5.31
+      },
+      {
+        "w": "an",
+        "s": 5.31,
+        "e": 5.44
+      },
+      {
+        "w": "old,",
+        "s": 5.45,
+        "e": 5.69
+      },
+      {
+        "w": "one-",
+        "s": 5.69,
+        "e": 5.99
+      },
+      {
+        "w": "eyed",
+        "s": 5.99,
+        "e": 6.289
+      },
+      {
+        "w": "general.",
+        "s": 7.144,
+        "e": 7.144
+      },
+      {
+        "w": "Mikhail",
+        "s": 7.16,
+        "e": 7.49
+      },
+      {
+        "w": "Kutuzov.",
+        "s": 7.49,
+        "e": 8
+      }
+    ]
+  },
+  {
+    "id": "stand",
+    "file": "audio/wh01/stand.wav",
+    "sec": 7.216688,
+    "voice": "Sadaltager",
+    "text": "And Kutuzov finally turned to fight. At a village called Borodino, about one-hundred-twenty kilometres west of Moscow.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0,
+        "e": 0.29
+      },
+      {
+        "w": "Kutuzov",
+        "s": 0.29,
+        "e": 0.96
+      },
+      {
+        "w": "finally",
+        "s": 1.01,
+        "e": 1.64
+      },
+      {
+        "w": "turned",
+        "s": 1.64,
+        "e": 2.16
+      },
+      {
+        "w": "to",
+        "s": 2.973,
+        "e": 2.973
+      },
+      {
+        "w": "fight.",
+        "s": 2.97,
+        "e": 2.98
+      },
+      {
+        "w": "At",
+        "s": 2.98,
+        "e": 3.12
+      },
+      {
+        "w": "a",
+        "s": 3.12,
+        "e": 3.17
+      },
+      {
+        "w": "village",
+        "s": 3.2,
+        "e": 3.52
+      },
+      {
+        "w": "called",
+        "s": 3.98,
+        "e": 4.14
+      },
+      {
+        "w": "Borodino,",
+        "s": 4.14,
+        "e": 4.76
+      },
+      {
+        "w": "about",
+        "s": 4.76,
+        "e": 4.896
+      },
+      {
+        "w": "one-",
+        "s": 4.896,
+        "e": 4.964
+      },
+      {
+        "w": "hundred-",
+        "s": 4.964,
+        "e": 5.032
+      },
+      {
+        "w": "twenty",
+        "s": 5.032,
+        "e": 5.3
+      },
+      {
+        "w": "kilometres",
+        "s": 5.77,
+        "e": 6.38
+      },
+      {
+        "w": "west",
+        "s": 6.38,
+        "e": 6.58
+      },
+      {
+        "w": "of",
+        "s": 6.7,
+        "e": 6.79
+      },
+      {
+        "w": "Moscow.",
+        "s": 6.79,
+        "e": 7.217
+      }
+    ]
+  },
+  {
+    "id": "sides",
+    "file": "audio/wh01/sides.wav",
+    "sec": 11.453542,
+    "voice": "Sadaltager",
+    "text": "The seventh of September eighteen-twelve. About one-hundred-thirty-thousand French and allies, against more than one-hundred-twenty-thousand Russians, and over one-thousand-two-hundred cannon between them.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.01,
+        "e": 0.183
+      },
+      {
+        "w": "seventh",
+        "s": 0.183,
+        "e": 0.7
+      },
+      {
+        "w": "of",
+        "s": 0.73,
+        "e": 0.9
+      },
+      {
+        "w": "September",
+        "s": 1.387,
+        "e": 1.71
+      },
+      {
+        "w": "eighteen-",
+        "s": 1.71,
+        "e": 1.71
+      },
+      {
+        "w": "twelve.",
+        "s": 1.71,
+        "e": 3.04
+      },
+      {
+        "w": "About",
+        "s": 3.05,
+        "e": 3.182
+      },
+      {
+        "w": "one-",
+        "s": 3.182,
+        "e": 3.248
+      },
+      {
+        "w": "hundred-",
+        "s": 3.248,
+        "e": 3.314
+      },
+      {
+        "w": "thirty-",
+        "s": 3.314,
+        "e": 3.314
+      },
+      {
+        "w": "thousand",
+        "s": 3.314,
+        "e": 4.75
+      },
+      {
+        "w": "French",
+        "s": 4.75,
+        "e": 5.09
+      },
+      {
+        "w": "and",
+        "s": 5.09,
+        "e": 5.21
+      },
+      {
+        "w": "allies,",
+        "s": 5.21,
+        "e": 5.81
+      },
+      {
+        "w": "against",
+        "s": 5.81,
+        "e": 6.29
+      },
+      {
+        "w": "more",
+        "s": 6.29,
+        "e": 6.59
+      },
+      {
+        "w": "than",
+        "s": 6.59,
+        "e": 6.732
+      },
+      {
+        "w": "one-",
+        "s": 6.732,
+        "e": 6.732
+      },
+      {
+        "w": "hundred-",
+        "s": 6.732,
+        "e": 6.732
+      },
+      {
+        "w": "twenty-",
+        "s": 6.732,
+        "e": 7.08
+      },
+      {
+        "w": "thousand",
+        "s": 7.08,
+        "e": 7.94
+      },
+      {
+        "w": "Russians,",
+        "s": 8.915,
+        "e": 8.93
+      },
+      {
+        "w": "and",
+        "s": 8.93,
+        "e": 9.12
+      },
+      {
+        "w": "over",
+        "s": 9.12,
+        "e": 9.35
+      },
+      {
+        "w": "one-",
+        "s": 9.35,
+        "e": 9.356
+      },
+      {
+        "w": "thousand-",
+        "s": 9.356,
+        "e": 9.371
+      },
+      {
+        "w": "two-",
+        "s": 9.371,
+        "e": 9.377
+      },
+      {
+        "w": "hundred",
+        "s": 9.377,
+        "e": 10.33
+      },
+      {
+        "w": "cannon",
+        "s": 10.33,
+        "e": 10.72
+      },
+      {
+        "w": "between",
+        "s": 10.72,
+        "e": 11.05
+      },
+      {
+        "w": "them.",
+        "s": 11.21,
+        "e": 11.454
+      }
+    ]
+  },
+  {
+    "id": "battle",
+    "file": "audio/wh01/battle.wav",
+    "sec": 5.971479,
+    "voice": "Sadaltager",
+    "text": "They fought from dawn until dark, over Russian earthworks: the flèches, and the Great Redoubt.",
+    "words": [
+      {
+        "w": "They",
+        "s": 0,
+        "e": 0.33
+      },
+      {
+        "w": "fought",
+        "s": 0.443,
+        "e": 0.83
+      },
+      {
+        "w": "from",
+        "s": 0.83,
+        "e": 1.16
+      },
+      {
+        "w": "dawn",
+        "s": 1.16,
+        "e": 1.48
+      },
+      {
+        "w": "until",
+        "s": 1.48,
+        "e": 1.73
+      },
+      {
+        "w": "dark,",
+        "s": 2.26,
+        "e": 2.43
+      },
+      {
+        "w": "over",
+        "s": 2.43,
+        "e": 2.73
+      },
+      {
+        "w": "Russian",
+        "s": 2.73,
+        "e": 3.25
+      },
+      {
+        "w": "earthworks:",
+        "s": 3.25,
+        "e": 4.16
+      },
+      {
+        "w": "the",
+        "s": 4.16,
+        "e": 4.41
+      },
+      {
+        "w": "flèches,",
+        "s": 4.41,
+        "e": 5.12
+      },
+      {
+        "w": "and",
+        "s": 5.12,
+        "e": 5.2
+      },
+      {
+        "w": "the",
+        "s": 5.2,
+        "e": 5.27
+      },
+      {
+        "w": "Great",
+        "s": 5.28,
+        "e": 5.48
+      },
+      {
+        "w": "Redoubt.",
+        "s": 5.57,
+        "e": 5.95
+      }
+    ]
+  },
+  {
+    "id": "losses",
+    "file": "audio/wh01/losses.wav",
+    "sec": 6.938708,
+    "voice": "Sadaltager",
+    "text": "By nightfall, more than seventy-thousand men were dead or wounded. The bloodiest single day of the Napoleonic Wars.",
+    "words": [
+      {
+        "w": "By",
+        "s": 0,
+        "e": 0.12
+      },
+      {
+        "w": "nightfall,",
+        "s": 0.12,
+        "e": 0.78
+      },
+      {
+        "w": "more",
+        "s": 0.88,
+        "e": 1.02
+      },
+      {
+        "w": "than",
+        "s": 1.02,
+        "e": 1.2
+      },
+      {
+        "w": "seventy-",
+        "s": 1.2,
+        "e": 1.26
+      },
+      {
+        "w": "thousand",
+        "s": 1.26,
+        "e": 2.29
+      },
+      {
+        "w": "men",
+        "s": 2.29,
+        "e": 2.5
+      },
+      {
+        "w": "were",
+        "s": 2.52,
+        "e": 2.92
+      },
+      {
+        "w": "dead",
+        "s": 2.93,
+        "e": 3.34
+      },
+      {
+        "w": "or",
+        "s": 3.34,
+        "e": 3.54
+      },
+      {
+        "w": "wounded.",
+        "s": 4.29,
+        "e": 4.32
+      },
+      {
+        "w": "The",
+        "s": 4.32,
+        "e": 4.51
+      },
+      {
+        "w": "bloodiest",
+        "s": 4.51,
+        "e": 4.89
+      },
+      {
+        "w": "single",
+        "s": 5.2,
+        "e": 5.46
+      },
+      {
+        "w": "day",
+        "s": 5.46,
+        "e": 5.65
+      },
+      {
+        "w": "of",
+        "s": 5.65,
+        "e": 5.78
+      },
+      {
+        "w": "the",
+        "s": 5.78,
+        "e": 5.97
+      },
+      {
+        "w": "Napoleonic",
+        "s": 5.97,
+        "e": 6.6
+      },
+      {
+        "w": "Wars.",
+        "s": 6.6,
+        "e": 6.939
+      }
+    ]
+  },
+  {
+    "id": "guard",
+    "file": "audio/wh01/guard.wav",
+    "sec": 7.649104,
+    "voice": "Sadaltager",
+    "text": "Napoleon refused to send in his Imperial Guard, his last reserve. The Russian army survived, and pulled back in order.",
+    "words": [
+      {
+        "w": "Napoleon",
+        "s": 0,
+        "e": 0.45
+      },
+      {
+        "w": "refused",
+        "s": 0.7,
+        "e": 1.11
+      },
+      {
+        "w": "to",
+        "s": 1.11,
+        "e": 1.25
+      },
+      {
+        "w": "send",
+        "s": 1.25,
+        "e": 1.54
+      },
+      {
+        "w": "in",
+        "s": 1.54,
+        "e": 1.68
+      },
+      {
+        "w": "his",
+        "s": 1.68,
+        "e": 1.9
+      },
+      {
+        "w": "Imperial",
+        "s": 1.9,
+        "e": 2.48
+      },
+      {
+        "w": "Guard,",
+        "s": 2.48,
+        "e": 3.06
+      },
+      {
+        "w": "his",
+        "s": 3.1,
+        "e": 3.26
+      },
+      {
+        "w": "last",
+        "s": 3.26,
+        "e": 3.48
+      },
+      {
+        "w": "reserve.",
+        "s": 3.52,
+        "e": 4.92
+      },
+      {
+        "w": "The",
+        "s": 4.92,
+        "e": 5.14
+      },
+      {
+        "w": "Russian",
+        "s": 5.14,
+        "e": 5.66
+      },
+      {
+        "w": "army",
+        "s": 5.66,
+        "e": 5.95
+      },
+      {
+        "w": "survived,",
+        "s": 5.95,
+        "e": 6.169
+      },
+      {
+        "w": "and",
+        "s": 6.586,
+        "e": 6.71
+      },
+      {
+        "w": "pulled",
+        "s": 6.71,
+        "e": 7.02
+      },
+      {
+        "w": "back",
+        "s": 7.02,
+        "e": 7.22
+      },
+      {
+        "w": "in",
+        "s": 7.22,
+        "e": 7.31
+      },
+      {
+        "w": "order.",
+        "s": 7.32,
+        "e": 7.6
+      }
+    ]
+  },
+  {
+    "id": "pyrrhic",
+    "file": "audio/wh01/pyrrhic.wav",
+    "sec": 4.322,
+    "voice": "Sadaltager",
+    "text": "The French held the field. But it was not the knockout blow Napoleon needed.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0,
+        "e": 0.24
+      },
+      {
+        "w": "French",
+        "s": 0.24,
+        "e": 0.7
+      },
+      {
+        "w": "held",
+        "s": 0.81,
+        "e": 1.03
+      },
+      {
+        "w": "the",
+        "s": 1.829,
+        "e": 1.829
+      },
+      {
+        "w": "field.",
+        "s": 1.829,
+        "e": 1.84
+      },
+      {
+        "w": "But",
+        "s": 1.84,
+        "e": 2
+      },
+      {
+        "w": "it",
+        "s": 2,
+        "e": 2.11
+      },
+      {
+        "w": "was",
+        "s": 2.11,
+        "e": 2.27
+      },
+      {
+        "w": "not",
+        "s": 2.27,
+        "e": 2.41
+      },
+      {
+        "w": "the",
+        "s": 2.51,
+        "e": 2.59
+      },
+      {
+        "w": "knockout",
+        "s": 2.59,
+        "e": 2.99
+      },
+      {
+        "w": "blow",
+        "s": 3.07,
+        "e": 3.28
+      },
+      {
+        "w": "Napoleon",
+        "s": 3.28,
+        "e": 3.92
+      },
+      {
+        "w": "needed.",
+        "s": 3.92,
+        "e": 4.31
+      }
+    ]
+  },
+  {
+    "id": "quiz2",
+    "file": "audio/wh01/quiz2.wav",
+    "sec": 7.896625,
+    "voice": "Sadaltager",
+    "text": "Quiz time. After Borodino, what did Kutuzov do? Attack again, defend Moscow, or give Moscow up?",
+    "words": [
+      {
+        "w": "Quiz",
+        "s": 0,
+        "e": 0.19
+      },
+      {
+        "w": "time.",
+        "s": 0.23,
+        "e": 1.12
+      },
+      {
+        "w": "After",
+        "s": 1.12,
+        "e": 1.5
+      },
+      {
+        "w": "Borodino,",
+        "s": 1.5,
+        "e": 2.26
+      },
+      {
+        "w": "what",
+        "s": 2.26,
+        "e": 2.66
+      },
+      {
+        "w": "did",
+        "s": 2.66,
+        "e": 2.95
+      },
+      {
+        "w": "Kutuzov",
+        "s": 2.95,
+        "e": 3.53
+      },
+      {
+        "w": "do?",
+        "s": 4.175,
+        "e": 4.175
+      },
+      {
+        "w": "Attack",
+        "s": 4.16,
+        "e": 4.62
+      },
+      {
+        "w": "again,",
+        "s": 4.62,
+        "e": 4.874
+      },
+      {
+        "w": "defend",
+        "s": 5.421,
+        "e": 5.86
+      },
+      {
+        "w": "Moscow,",
+        "s": 5.86,
+        "e": 6.369
+      },
+      {
+        "w": "or",
+        "s": 6.675,
+        "e": 6.8
+      },
+      {
+        "w": "give",
+        "s": 6.8,
+        "e": 7.1
+      },
+      {
+        "w": "Moscow",
+        "s": 7.15,
+        "e": 7.15
+      },
+      {
+        "w": "up?",
+        "s": 7.76,
+        "e": 7.897
+      }
+    ]
+  },
+  {
+    "id": "quizans2",
+    "file": "audio/wh01/quizans2.wav",
+    "sec": 5.71425,
+    "voice": "Sadaltager",
+    "text": "He gave it up. Without a fight. To save its army, Russia abandoned its ancient capital.",
+    "words": [
+      {
+        "w": "He",
+        "s": 0.01,
+        "e": 0.2
+      },
+      {
+        "w": "gave",
+        "s": 0.2,
+        "e": 0.45
+      },
+      {
+        "w": "it",
+        "s": 0.981,
+        "e": 0.981
+      },
+      {
+        "w": "up.",
+        "s": 0.97,
+        "e": 1
+      },
+      {
+        "w": "Without",
+        "s": 1,
+        "e": 1.55
+      },
+      {
+        "w": "a",
+        "s": 2.057,
+        "e": 2.057
+      },
+      {
+        "w": "fight.",
+        "s": 2.11,
+        "e": 2.18
+      },
+      {
+        "w": "To",
+        "s": 2.19,
+        "e": 2.35
+      },
+      {
+        "w": "save",
+        "s": 2.35,
+        "e": 2.63
+      },
+      {
+        "w": "its",
+        "s": 2.96,
+        "e": 2.96
+      },
+      {
+        "w": "army,",
+        "s": 3.454,
+        "e": 3.51
+      },
+      {
+        "w": "Russia",
+        "s": 3.51,
+        "e": 3.81
+      },
+      {
+        "w": "abandoned",
+        "s": 4.29,
+        "e": 4.44
+      },
+      {
+        "w": "its",
+        "s": 4.852,
+        "e": 4.852
+      },
+      {
+        "w": "ancient",
+        "s": 4.852,
+        "e": 5
+      },
+      {
+        "w": "capital.",
+        "s": 5.09,
+        "e": 5.68
+      }
+    ]
+  },
+  {
+    "id": "enter",
+    "file": "audio/wh01/enter.wav",
+    "sec": 7.633646,
+    "voice": "Sadaltager",
+    "text": "On the fourteenth of September, Napoleon reached Moscow. He waited for the city's leaders to bring him the keys. Nobody came.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0,
+        "e": 0.15
+      },
+      {
+        "w": "the",
+        "s": 0.46,
+        "e": 0.46
+      },
+      {
+        "w": "fourteenth",
+        "s": 0.46,
+        "e": 0.99
+      },
+      {
+        "w": "of",
+        "s": 0.99,
+        "e": 1.13
+      },
+      {
+        "w": "September,",
+        "s": 1.13,
+        "e": 2
+      },
+      {
+        "w": "Napoleon",
+        "s": 2.03,
+        "e": 2.57
+      },
+      {
+        "w": "reached",
+        "s": 2.57,
+        "e": 3.07
+      },
+      {
+        "w": "Moscow.",
+        "s": 3.07,
+        "e": 4.02
+      },
+      {
+        "w": "He",
+        "s": 4.02,
+        "e": 4.11
+      },
+      {
+        "w": "waited",
+        "s": 4.16,
+        "e": 4.33
+      },
+      {
+        "w": "for",
+        "s": 4.47,
+        "e": 4.53
+      },
+      {
+        "w": "the",
+        "s": 4.53,
+        "e": 4.61
+      },
+      {
+        "w": "city's",
+        "s": 4.71,
+        "e": 4.95
+      },
+      {
+        "w": "leaders",
+        "s": 4.95,
+        "e": 5.32
+      },
+      {
+        "w": "to",
+        "s": 5.32,
+        "e": 5.49
+      },
+      {
+        "w": "bring",
+        "s": 5.49,
+        "e": 5.72
+      },
+      {
+        "w": "him",
+        "s": 6.04,
+        "e": 6.11
+      },
+      {
+        "w": "the",
+        "s": 6.24,
+        "e": 6.4
+      },
+      {
+        "w": "keys.",
+        "s": 6.996,
+        "e": 7.08
+      },
+      {
+        "w": "Nobody",
+        "s": 7.08,
+        "e": 7.33
+      },
+      {
+        "w": "came.",
+        "s": 7.5,
+        "e": 7.634
+      }
+    ]
+  },
+  {
+    "id": "empty",
+    "file": "audio/wh01/empty.wav",
+    "sec": 4.293563,
+    "voice": "Sadaltager",
+    "text": "Of a city of two-hundred-seventy-thousand people, almost everyone had left.",
+    "words": [
+      {
+        "w": "Of",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "a",
+        "s": 0.23,
+        "e": 0.24
+      },
+      {
+        "w": "city",
+        "s": 0.24,
+        "e": 0.56
+      },
+      {
+        "w": "of",
+        "s": 0.56,
+        "e": 0.69
+      },
+      {
+        "w": "two-",
+        "s": 0.69,
+        "e": 0.694
+      },
+      {
+        "w": "hundred-",
+        "s": 0.694,
+        "e": 0.701
+      },
+      {
+        "w": "seventy-",
+        "s": 0.701,
+        "e": 0.709
+      },
+      {
+        "w": "thousand",
+        "s": 0.709,
+        "e": 2.25
+      },
+      {
+        "w": "people,",
+        "s": 2.32,
+        "e": 2.91
+      },
+      {
+        "w": "almost",
+        "s": 3.04,
+        "e": 3.24
+      },
+      {
+        "w": "everyone",
+        "s": 3.28,
+        "e": 3.72
+      },
+      {
+        "w": "had",
+        "s": 3.72,
+        "e": 3.9
+      },
+      {
+        "w": "left.",
+        "s": 3.9,
+        "e": 4.28
+      }
+    ]
+  },
+  {
+    "id": "fire",
+    "file": "audio/wh01/fire.wav",
+    "sec": 7.186438,
+    "voice": "Sadaltager",
+    "text": "That night, fires broke out. For four days Moscow burned. About three quarters of the city was destroyed.",
+    "words": [
+      {
+        "w": "That",
+        "s": 0.29,
+        "e": 0.36
+      },
+      {
+        "w": "night,",
+        "s": 0.36,
+        "e": 0.99
+      },
+      {
+        "w": "fires",
+        "s": 0.99,
+        "e": 1.44
+      },
+      {
+        "w": "broke",
+        "s": 1.44,
+        "e": 1.78
+      },
+      {
+        "w": "out.",
+        "s": 2.649,
+        "e": 2.649
+      },
+      {
+        "w": "For",
+        "s": 2.75,
+        "e": 2.75
+      },
+      {
+        "w": "four",
+        "s": 2.78,
+        "e": 3.11
+      },
+      {
+        "w": "days",
+        "s": 3.11,
+        "e": 3.16
+      },
+      {
+        "w": "Moscow",
+        "s": 3.64,
+        "e": 4.16
+      },
+      {
+        "w": "burned.",
+        "s": 4.16,
+        "e": 5
+      },
+      {
+        "w": "About",
+        "s": 5.25,
+        "e": 5.25
+      },
+      {
+        "w": "three",
+        "s": 5.3,
+        "e": 5.5
+      },
+      {
+        "w": "quarters",
+        "s": 5.55,
+        "e": 5.68
+      },
+      {
+        "w": "of",
+        "s": 5.99,
+        "e": 6.05
+      },
+      {
+        "w": "the",
+        "s": 6.05,
+        "e": 6.2
+      },
+      {
+        "w": "city",
+        "s": 6.387,
+        "e": 6.39
+      },
+      {
+        "w": "was",
+        "s": 6.4,
+        "e": 6.51
+      },
+      {
+        "w": "destroyed.",
+        "s": 6.56,
+        "e": 7.186
+      }
+    ]
+  },
+  {
+    "id": "who",
+    "file": "audio/wh01/who.wav",
+    "sec": 7.757833,
+    "voice": "Sadaltager",
+    "text": "Who started it? Most historians blame the Russians themselves, probably on the orders of the governor, Rostopchin. It's still debated.",
+    "words": [
+      {
+        "w": "Who",
+        "s": 0,
+        "e": 0.02
+      },
+      {
+        "w": "started",
+        "s": 0.02,
+        "e": 0.55
+      },
+      {
+        "w": "it?",
+        "s": 1.305,
+        "e": 1.48
+      },
+      {
+        "w": "Most",
+        "s": 1.48,
+        "e": 1.68
+      },
+      {
+        "w": "historians",
+        "s": 1.73,
+        "e": 2.21
+      },
+      {
+        "w": "blame",
+        "s": 2.21,
+        "e": 2.47
+      },
+      {
+        "w": "the",
+        "s": 2.47,
+        "e": 2.64
+      },
+      {
+        "w": "Russians",
+        "s": 2.64,
+        "e": 3.04
+      },
+      {
+        "w": "themselves,",
+        "s": 3.04,
+        "e": 3.92
+      },
+      {
+        "w": "probably",
+        "s": 4.07,
+        "e": 4.37
+      },
+      {
+        "w": "on",
+        "s": 4.37,
+        "e": 4.47
+      },
+      {
+        "w": "the",
+        "s": 4.48,
+        "e": 4.66
+      },
+      {
+        "w": "orders",
+        "s": 4.66,
+        "e": 4.96
+      },
+      {
+        "w": "of",
+        "s": 4.96,
+        "e": 5.05
+      },
+      {
+        "w": "the",
+        "s": 5.05,
+        "e": 5.19
+      },
+      {
+        "w": "governor,",
+        "s": 5.21,
+        "e": 5.65
+      },
+      {
+        "w": "Rostopchin.",
+        "s": 5.77,
+        "e": 6.396
+      },
+      {
+        "w": "It's",
+        "s": 7.023,
+        "e": 7.04
+      },
+      {
+        "w": "still",
+        "s": 7.04,
+        "e": 7.32
+      },
+      {
+        "w": "debated.",
+        "s": 7.32,
+        "e": 7.68
+      }
+    ]
+  },
+  {
+    "id": "letters",
+    "file": "audio/wh01/letters.wav",
+    "sec": 5.735667,
+    "voice": "Sadaltager",
+    "text": "Napoleon sat in the Kremlin and wrote to the Tsar, offering peace. Alexander never answered.",
+    "words": [
+      {
+        "w": "Napoleon",
+        "s": 0.36,
+        "e": 0.61
+      },
+      {
+        "w": "sat",
+        "s": 0.61,
+        "e": 0.83
+      },
+      {
+        "w": "in",
+        "s": 0.83,
+        "e": 0.98
+      },
+      {
+        "w": "the",
+        "s": 0.98,
+        "e": 1.2
+      },
+      {
+        "w": "Kremlin",
+        "s": 1.2,
+        "e": 1.76
+      },
+      {
+        "w": "and",
+        "s": 1.76,
+        "e": 1.9
+      },
+      {
+        "w": "wrote",
+        "s": 1.91,
+        "e": 2.1
+      },
+      {
+        "w": "to",
+        "s": 2.19,
+        "e": 2.29
+      },
+      {
+        "w": "the",
+        "s": 2.3,
+        "e": 2.51
+      },
+      {
+        "w": "Tsar,",
+        "s": 2.51,
+        "e": 2.83
+      },
+      {
+        "w": "offering",
+        "s": 2.9,
+        "e": 3.44
+      },
+      {
+        "w": "peace.",
+        "s": 3.44,
+        "e": 4.13
+      },
+      {
+        "w": "Alexander",
+        "s": 4.52,
+        "e": 4.79
+      },
+      {
+        "w": "never",
+        "s": 4.79,
+        "e": 5.14
+      },
+      {
+        "w": "answered.",
+        "s": 5.14,
+        "e": 5.72
+      }
+    ]
+  },
+  {
+    "id": "wait",
+    "file": "audio/wh01/wait.wav",
+    "sec": 8.008063,
+    "voice": "Sadaltager",
+    "text": "For five weeks the Emperor waited in a burned city, as autumn turned cold. His army looted, drank, and fell apart.",
+    "words": [
+      {
+        "w": "For",
+        "s": 0.22,
+        "e": 0.22
+      },
+      {
+        "w": "five",
+        "s": 0.32,
+        "e": 0.51
+      },
+      {
+        "w": "weeks",
+        "s": 0.51,
+        "e": 0.88
+      },
+      {
+        "w": "the",
+        "s": 1.05,
+        "e": 1.22
+      },
+      {
+        "w": "Emperor",
+        "s": 1.22,
+        "e": 1.63
+      },
+      {
+        "w": "waited",
+        "s": 1.63,
+        "e": 2
+      },
+      {
+        "w": "in",
+        "s": 2,
+        "e": 2.13
+      },
+      {
+        "w": "a",
+        "s": 2.23,
+        "e": 2.28
+      },
+      {
+        "w": "burned",
+        "s": 2.28,
+        "e": 2.85
+      },
+      {
+        "w": "city,",
+        "s": 2.85,
+        "e": 3.326
+      },
+      {
+        "w": "as",
+        "s": 3.679,
+        "e": 3.679
+      },
+      {
+        "w": "autumn",
+        "s": 3.679,
+        "e": 4.01
+      },
+      {
+        "w": "turned",
+        "s": 4.01,
+        "e": 4.59
+      },
+      {
+        "w": "cold.",
+        "s": 4.59,
+        "e": 4.849
+      },
+      {
+        "w": "His",
+        "s": 5.43,
+        "e": 5.43
+      },
+      {
+        "w": "army",
+        "s": 5.43,
+        "e": 5.62
+      },
+      {
+        "w": "looted,",
+        "s": 5.62,
+        "e": 6.3
+      },
+      {
+        "w": "drank,",
+        "s": 6.551,
+        "e": 6.9
+      },
+      {
+        "w": "and",
+        "s": 7.419,
+        "e": 7.419
+      },
+      {
+        "w": "fell",
+        "s": 7.419,
+        "e": 7.42
+      },
+      {
+        "w": "apart.",
+        "s": 7.53,
+        "e": 7.98
+      }
+    ]
+  },
+  {
+    "id": "tarutino",
+    "file": "audio/wh01/tarutino.wav",
+    "sec": 10.137708,
+    "voice": "Sadaltager",
+    "text": "On the eighteenth of October, Kutuzov struck a French outpost south of Moscow, at Tarutino. Napoleon finally understood. There would be no peace.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0.11,
+        "e": 0.11
+      },
+      {
+        "w": "the",
+        "s": 0.21,
+        "e": 0.233
+      },
+      {
+        "w": "eighteenth",
+        "s": 0.233,
+        "e": 0.72
+      },
+      {
+        "w": "of",
+        "s": 0.72,
+        "e": 0.8
+      },
+      {
+        "w": "October,",
+        "s": 0.85,
+        "e": 1.31
+      },
+      {
+        "w": "Kutuzov",
+        "s": 1.742,
+        "e": 2.03
+      },
+      {
+        "w": "struck",
+        "s": 2.03,
+        "e": 2.54
+      },
+      {
+        "w": "a",
+        "s": 2.61,
+        "e": 2.62
+      },
+      {
+        "w": "French",
+        "s": 2.67,
+        "e": 3.07
+      },
+      {
+        "w": "outpost",
+        "s": 3.07,
+        "e": 3.6
+      },
+      {
+        "w": "south",
+        "s": 3.6,
+        "e": 3.97
+      },
+      {
+        "w": "of",
+        "s": 4.04,
+        "e": 4.08
+      },
+      {
+        "w": "Moscow,",
+        "s": 4.08,
+        "e": 4.96
+      },
+      {
+        "w": "at",
+        "s": 4.96,
+        "e": 4.99
+      },
+      {
+        "w": "Tarutino.",
+        "s": 4.99,
+        "e": 5.76
+      },
+      {
+        "w": "Napoleon",
+        "s": 6.615,
+        "e": 6.615
+      },
+      {
+        "w": "finally",
+        "s": 6.69,
+        "e": 7.02
+      },
+      {
+        "w": "understood.",
+        "s": 7.311,
+        "e": 8.24
+      },
+      {
+        "w": "There",
+        "s": 9.09,
+        "e": 9.09
+      },
+      {
+        "w": "would",
+        "s": 9.09,
+        "e": 9.09
+      },
+      {
+        "w": "be",
+        "s": 9.15,
+        "e": 9.21
+      },
+      {
+        "w": "no",
+        "s": 9.35,
+        "e": 9.46
+      },
+      {
+        "w": "peace.",
+        "s": 9.46,
+        "e": 9.92
+      }
+    ]
+  },
+  {
+    "id": "leave",
+    "file": "audio/wh01/leave.wav",
+    "sec": 7.812729,
+    "voice": "Sadaltager",
+    "text": "On the nineteenth of October, he finally ordered the retreat. About one-hundred-thousand men marched out, dragging carts full of loot.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0.03,
+        "e": 0.11
+      },
+      {
+        "w": "the",
+        "s": 0.11,
+        "e": 0.223
+      },
+      {
+        "w": "nineteenth",
+        "s": 0.223,
+        "e": 0.73
+      },
+      {
+        "w": "of",
+        "s": 0.73,
+        "e": 0.77
+      },
+      {
+        "w": "October,",
+        "s": 0.86,
+        "e": 1.4
+      },
+      {
+        "w": "he",
+        "s": 1.47,
+        "e": 1.53
+      },
+      {
+        "w": "finally",
+        "s": 1.65,
+        "e": 2.01
+      },
+      {
+        "w": "ordered",
+        "s": 2.07,
+        "e": 2.56
+      },
+      {
+        "w": "the",
+        "s": 2.56,
+        "e": 2.77
+      },
+      {
+        "w": "retreat.",
+        "s": 3.571,
+        "e": 3.571
+      },
+      {
+        "w": "About",
+        "s": 3.571,
+        "e": 3.674
+      },
+      {
+        "w": "one-",
+        "s": 3.674,
+        "e": 3.736
+      },
+      {
+        "w": "hundred-",
+        "s": 3.736,
+        "e": 3.798
+      },
+      {
+        "w": "thousand",
+        "s": 3.798,
+        "e": 5.23
+      },
+      {
+        "w": "men",
+        "s": 5.23,
+        "e": 5.43
+      },
+      {
+        "w": "marched",
+        "s": 5.43,
+        "e": 5.87
+      },
+      {
+        "w": "out,",
+        "s": 6.227,
+        "e": 6.227
+      },
+      {
+        "w": "dragging",
+        "s": 6.227,
+        "e": 6.71
+      },
+      {
+        "w": "carts",
+        "s": 6.71,
+        "e": 7.02
+      },
+      {
+        "w": "full",
+        "s": 7.318,
+        "e": 7.318
+      },
+      {
+        "w": "of",
+        "s": 7.31,
+        "e": 7.32
+      },
+      {
+        "w": "loot.",
+        "s": 7.63,
+        "e": 7.813
+      }
+    ]
+  },
+  {
+    "id": "kremlin",
+    "file": "audio/wh01/kremlin.wav",
+    "sec": 4.194938,
+    "voice": "Sadaltager",
+    "text": "Behind them, on Napoleon's orders, the rearguard blew up parts of the Kremlin.",
+    "words": [
+      {
+        "w": "Behind",
+        "s": 0.07,
+        "e": 0.39
+      },
+      {
+        "w": "them,",
+        "s": 0.39,
+        "e": 0.66
+      },
+      {
+        "w": "on",
+        "s": 0.84,
+        "e": 0.91
+      },
+      {
+        "w": "Napoleon's",
+        "s": 0.91,
+        "e": 1.56
+      },
+      {
+        "w": "orders,",
+        "s": 1.56,
+        "e": 2.12
+      },
+      {
+        "w": "the",
+        "s": 2.16,
+        "e": 2.32
+      },
+      {
+        "w": "rearguard",
+        "s": 2.32,
+        "e": 2.91
+      },
+      {
+        "w": "blew",
+        "s": 2.91,
+        "e": 3.17
+      },
+      {
+        "w": "up",
+        "s": 3.363,
+        "e": 3.363
+      },
+      {
+        "w": "parts",
+        "s": 3.36,
+        "e": 3.52
+      },
+      {
+        "w": "of",
+        "s": 3.58,
+        "e": 3.67
+      },
+      {
+        "w": "the",
+        "s": 3.67,
+        "e": 3.79
+      },
+      {
+        "w": "Kremlin.",
+        "s": 3.84,
+        "e": 4.19
+      }
+    ]
+  },
+  {
+    "id": "malo",
+    "file": "audio/wh01/malo.wav",
+    "sec": 6.949438,
+    "voice": "Sadaltager",
+    "text": "He tried to go home by a new road, south, through untouched farmland. At Maloyaroslavets, the Russians blocked the way.",
+    "words": [
+      {
+        "w": "He",
+        "s": 0.07,
+        "e": 0.13
+      },
+      {
+        "w": "tried",
+        "s": 0.24,
+        "e": 0.49
+      },
+      {
+        "w": "to",
+        "s": 0.49,
+        "e": 0.62
+      },
+      {
+        "w": "go",
+        "s": 0.63,
+        "e": 0.77
+      },
+      {
+        "w": "home",
+        "s": 0.77,
+        "e": 1.05
+      },
+      {
+        "w": "by",
+        "s": 1.05,
+        "e": 1.19
+      },
+      {
+        "w": "a",
+        "s": 1.19,
+        "e": 1.26
+      },
+      {
+        "w": "new",
+        "s": 1.26,
+        "e": 1.47
+      },
+      {
+        "w": "road,",
+        "s": 1.47,
+        "e": 1.94
+      },
+      {
+        "w": "south,",
+        "s": 1.95,
+        "e": 2.51
+      },
+      {
+        "w": "through",
+        "s": 2.56,
+        "e": 2.89
+      },
+      {
+        "w": "untouched",
+        "s": 2.92,
+        "e": 3.42
+      },
+      {
+        "w": "farmland.",
+        "s": 3.42,
+        "e": 3.788
+      },
+      {
+        "w": "At",
+        "s": 4.354,
+        "e": 4.354
+      },
+      {
+        "w": "Maloyaroslavets,",
+        "s": 4.354,
+        "e": 5.14
+      },
+      {
+        "w": "the",
+        "s": 5.14,
+        "e": 5.31
+      },
+      {
+        "w": "Russians",
+        "s": 5.31,
+        "e": 5.68
+      },
+      {
+        "w": "blocked",
+        "s": 6.03,
+        "e": 6.19
+      },
+      {
+        "w": "the",
+        "s": 6.19,
+        "e": 6.31
+      },
+      {
+        "w": "way.",
+        "s": 6.53,
+        "e": 6.74
+      }
+    ]
+  },
+  {
+    "id": "oldroad",
+    "file": "audio/wh01/oldroad.wav",
+    "sec": 5.059229,
+    "voice": "Sadaltager",
+    "text": "So the army turned back onto the road it came in on. The road it had already stripped bare.",
+    "words": [
+      {
+        "w": "So",
+        "s": 0,
+        "e": 0.07
+      },
+      {
+        "w": "the",
+        "s": 0.2,
+        "e": 0.31
+      },
+      {
+        "w": "army",
+        "s": 0.31,
+        "e": 0.56
+      },
+      {
+        "w": "turned",
+        "s": 0.56,
+        "e": 0.94
+      },
+      {
+        "w": "back",
+        "s": 0.94,
+        "e": 1.19
+      },
+      {
+        "w": "onto",
+        "s": 1.19,
+        "e": 1.44
+      },
+      {
+        "w": "the",
+        "s": 1.44,
+        "e": 1.63
+      },
+      {
+        "w": "road",
+        "s": 1.63,
+        "e": 1.92
+      },
+      {
+        "w": "it",
+        "s": 1.92,
+        "e": 2.13
+      },
+      {
+        "w": "came",
+        "s": 2.13,
+        "e": 2.57
+      },
+      {
+        "w": "in",
+        "s": 3.228,
+        "e": 3.228
+      },
+      {
+        "w": "on.",
+        "s": 3.228,
+        "e": 3.228
+      },
+      {
+        "w": "The",
+        "s": 3.22,
+        "e": 3.29
+      },
+      {
+        "w": "road",
+        "s": 3.29,
+        "e": 3.49
+      },
+      {
+        "w": "it",
+        "s": 3.49,
+        "e": 3.58
+      },
+      {
+        "w": "had",
+        "s": 3.58,
+        "e": 3.74
+      },
+      {
+        "w": "already",
+        "s": 3.74,
+        "e": 4.09
+      },
+      {
+        "w": "stripped",
+        "s": 4.09,
+        "e": 4.49
+      },
+      {
+        "w": "bare.",
+        "s": 4.49,
+        "e": 4.88
+      }
+    ]
+  },
+  {
+    "id": "vyazma",
+    "file": "audio/wh01/vyazma.wav",
+    "sec": 7.489583,
+    "voice": "Sadaltager",
+    "text": "At Vyazma, on the third of November, Russian troops caught the rearguard and mauled it. The retreat became a running fight.",
+    "words": [
+      {
+        "w": "At",
+        "s": 0.04,
+        "e": 0.04
+      },
+      {
+        "w": "Vyazma,",
+        "s": 0.262,
+        "e": 0.73
+      },
+      {
+        "w": "on",
+        "s": 0.73,
+        "e": 0.89
+      },
+      {
+        "w": "the",
+        "s": 1.139,
+        "e": 1.139
+      },
+      {
+        "w": "third",
+        "s": 1.139,
+        "e": 1.48
+      },
+      {
+        "w": "of",
+        "s": 1.48,
+        "e": 1.61
+      },
+      {
+        "w": "November,",
+        "s": 1.63,
+        "e": 2.3
+      },
+      {
+        "w": "Russian",
+        "s": 2.5,
+        "e": 2.78
+      },
+      {
+        "w": "troops",
+        "s": 2.78,
+        "e": 3.18
+      },
+      {
+        "w": "caught",
+        "s": 3.27,
+        "e": 3.48
+      },
+      {
+        "w": "the",
+        "s": 3.58,
+        "e": 3.66
+      },
+      {
+        "w": "rearguard",
+        "s": 3.66,
+        "e": 4.19
+      },
+      {
+        "w": "and",
+        "s": 4.33,
+        "e": 4.46
+      },
+      {
+        "w": "mauled",
+        "s": 4.46,
+        "e": 4.84
+      },
+      {
+        "w": "it.",
+        "s": 5.625,
+        "e": 5.625
+      },
+      {
+        "w": "The",
+        "s": 5.625,
+        "e": 5.625
+      },
+      {
+        "w": "retreat",
+        "s": 5.625,
+        "e": 5.93
+      },
+      {
+        "w": "became",
+        "s": 5.93,
+        "e": 6.4
+      },
+      {
+        "w": "a",
+        "s": 6.4,
+        "e": 6.47
+      },
+      {
+        "w": "running",
+        "s": 6.47,
+        "e": 7.01
+      },
+      {
+        "w": "fight.",
+        "s": 7.01,
+        "e": 7.44
+      }
+    ]
+  },
+  {
+    "id": "snow",
+    "file": "audio/wh01/snow.wav",
+    "sec": 7.101333,
+    "voice": "Sadaltager",
+    "text": "In early November, real winter arrived. On Minard's map, a second line appears at the bottom. The temperature.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.17
+      },
+      {
+        "w": "early",
+        "s": 0.35,
+        "e": 0.61
+      },
+      {
+        "w": "November,",
+        "s": 0.61,
+        "e": 1.48
+      },
+      {
+        "w": "real",
+        "s": 1.49,
+        "e": 1.83
+      },
+      {
+        "w": "winter",
+        "s": 1.83,
+        "e": 2.2
+      },
+      {
+        "w": "arrived.",
+        "s": 2.34,
+        "e": 3.56
+      },
+      {
+        "w": "On",
+        "s": 3.56,
+        "e": 3.69
+      },
+      {
+        "w": "Minard's",
+        "s": 3.89,
+        "e": 4.21
+      },
+      {
+        "w": "map,",
+        "s": 4.21,
+        "e": 4.56
+      },
+      {
+        "w": "a",
+        "s": 4.56,
+        "e": 4.59
+      },
+      {
+        "w": "second",
+        "s": 4.61,
+        "e": 4.74
+      },
+      {
+        "w": "line",
+        "s": 5.05,
+        "e": 5.24
+      },
+      {
+        "w": "appears",
+        "s": 5.24,
+        "e": 5.68
+      },
+      {
+        "w": "at",
+        "s": 5.68,
+        "e": 5.8
+      },
+      {
+        "w": "the",
+        "s": 5.9,
+        "e": 5.98
+      },
+      {
+        "w": "bottom.",
+        "s": 6.526,
+        "e": 6.526
+      },
+      {
+        "w": "The",
+        "s": 6.52,
+        "e": 6.61
+      },
+      {
+        "w": "temperature.",
+        "s": 7.02,
+        "e": 7.1
+      }
+    ]
+  },
+  {
+    "id": "horses2",
+    "file": "audio/wh01/horses2.wav",
+    "sec": 7.125563,
+    "voice": "Sadaltager",
+    "text": "The last horses died. Cannon and wagons were left in the snow. Without cavalry, nobody could scout or guard the column.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0,
+        "e": 0.24
+      },
+      {
+        "w": "last",
+        "s": 0.24,
+        "e": 0.53
+      },
+      {
+        "w": "horses",
+        "s": 0.58,
+        "e": 1.03
+      },
+      {
+        "w": "died.",
+        "s": 1.686,
+        "e": 1.686
+      },
+      {
+        "w": "Cannon",
+        "s": 1.686,
+        "e": 2.09
+      },
+      {
+        "w": "and",
+        "s": 2.09,
+        "e": 2.31
+      },
+      {
+        "w": "wagons",
+        "s": 2.31,
+        "e": 2.68
+      },
+      {
+        "w": "were",
+        "s": 2.75,
+        "e": 2.79
+      },
+      {
+        "w": "left",
+        "s": 3.32,
+        "e": 3.35
+      },
+      {
+        "w": "in",
+        "s": 3.38,
+        "e": 3.5
+      },
+      {
+        "w": "the",
+        "s": 4.331,
+        "e": 4.331
+      },
+      {
+        "w": "snow.",
+        "s": 4.331,
+        "e": 4.331
+      },
+      {
+        "w": "Without",
+        "s": 4.331,
+        "e": 4.6
+      },
+      {
+        "w": "cavalry,",
+        "s": 4.68,
+        "e": 5.15
+      },
+      {
+        "w": "nobody",
+        "s": 5.15,
+        "e": 5.39
+      },
+      {
+        "w": "could",
+        "s": 5.7,
+        "e": 5.86
+      },
+      {
+        "w": "scout",
+        "s": 6.02,
+        "e": 6.2
+      },
+      {
+        "w": "or",
+        "s": 6.2,
+        "e": 6.32
+      },
+      {
+        "w": "guard",
+        "s": 6.32,
+        "e": 6.58
+      },
+      {
+        "w": "the",
+        "s": 6.61,
+        "e": 6.79
+      },
+      {
+        "w": "column.",
+        "s": 6.79,
+        "e": 7.126
+      }
+    ]
+  },
+  {
+    "id": "cossacks",
+    "file": "audio/wh01/cossacks.wav",
+    "sec": 6.264771,
+    "voice": "Sadaltager",
+    "text": "Cossacks rode out of the forests, cut down stragglers, and vanished. Anyone who fell behind was lost.",
+    "words": [
+      {
+        "w": "Cossacks",
+        "s": 0,
+        "e": 0.58
+      },
+      {
+        "w": "rode",
+        "s": 0.6,
+        "e": 0.87
+      },
+      {
+        "w": "out",
+        "s": 0.87,
+        "e": 1.08
+      },
+      {
+        "w": "of",
+        "s": 1.08,
+        "e": 1.2
+      },
+      {
+        "w": "the",
+        "s": 1.34,
+        "e": 1.45
+      },
+      {
+        "w": "forests,",
+        "s": 1.45,
+        "e": 2.12
+      },
+      {
+        "w": "cut",
+        "s": 2.12,
+        "e": 2.17
+      },
+      {
+        "w": "down",
+        "s": 2.17,
+        "e": 2.4
+      },
+      {
+        "w": "stragglers,",
+        "s": 2.4,
+        "e": 2.97
+      },
+      {
+        "w": "and",
+        "s": 2.97,
+        "e": 3.14
+      },
+      {
+        "w": "vanished.",
+        "s": 3.14,
+        "e": 3.64
+      },
+      {
+        "w": "Anyone",
+        "s": 4.298,
+        "e": 4.298
+      },
+      {
+        "w": "who",
+        "s": 4.3,
+        "e": 4.46
+      },
+      {
+        "w": "fell",
+        "s": 4.46,
+        "e": 4.73
+      },
+      {
+        "w": "behind",
+        "s": 4.84,
+        "e": 5.37
+      },
+      {
+        "w": "was",
+        "s": 5.655,
+        "e": 5.655
+      },
+      {
+        "w": "lost.",
+        "s": 5.65,
+        "e": 6.265
+      }
+    ]
+  },
+  {
+    "id": "cold",
+    "file": "audio/wh01/cold.wav",
+    "sec": 8.118646,
+    "voice": "Sadaltager",
+    "text": "Men burned wagons for warmth and ate the horses that fell. By early December, nights dropped below minus thirty degrees.",
+    "words": [
+      {
+        "w": "Men",
+        "s": 0.25,
+        "e": 0.25
+      },
+      {
+        "w": "burned",
+        "s": 0.3,
+        "e": 0.74
+      },
+      {
+        "w": "wagons",
+        "s": 0.74,
+        "e": 1.23
+      },
+      {
+        "w": "for",
+        "s": 1.23,
+        "e": 1.48
+      },
+      {
+        "w": "warmth",
+        "s": 1.48,
+        "e": 1.98
+      },
+      {
+        "w": "and",
+        "s": 2.187,
+        "e": 2.23
+      },
+      {
+        "w": "ate",
+        "s": 2.23,
+        "e": 2.46
+      },
+      {
+        "w": "the",
+        "s": 2.46,
+        "e": 2.67
+      },
+      {
+        "w": "horses",
+        "s": 2.76,
+        "e": 3.16
+      },
+      {
+        "w": "that",
+        "s": 3.16,
+        "e": 3.47
+      },
+      {
+        "w": "fell.",
+        "s": 4.515,
+        "e": 4.515
+      },
+      {
+        "w": "By",
+        "s": 4.515,
+        "e": 4.515
+      },
+      {
+        "w": "early",
+        "s": 4.515,
+        "e": 4.57
+      },
+      {
+        "w": "December,",
+        "s": 4.62,
+        "e": 5.358
+      },
+      {
+        "w": "nights",
+        "s": 5.671,
+        "e": 5.88
+      },
+      {
+        "w": "dropped",
+        "s": 5.97,
+        "e": 6.5
+      },
+      {
+        "w": "below",
+        "s": 6.6,
+        "e": 6.89
+      },
+      {
+        "w": "minus",
+        "s": 6.89,
+        "e": 6.89
+      },
+      {
+        "w": "thirty",
+        "s": 6.89,
+        "e": 7.42
+      },
+      {
+        "w": "degrees.",
+        "s": 7.42,
+        "e": 8
+      }
+    ]
+  },
+  {
+    "id": "smolensk2",
+    "file": "audio/wh01/smolensk2.wav",
+    "sec": 7.087979,
+    "voice": "Sadaltager",
+    "text": "On the ninth of November, the army staggered back into Smolensk. Only about sixty-thousand men were still fit to fight.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0.14,
+        "e": 0.14
+      },
+      {
+        "w": "the",
+        "s": 0.22,
+        "e": 0.36
+      },
+      {
+        "w": "ninth",
+        "s": 0.36,
+        "e": 0.65
+      },
+      {
+        "w": "of",
+        "s": 0.73,
+        "e": 0.86
+      },
+      {
+        "w": "November,",
+        "s": 0.86,
+        "e": 1.62
+      },
+      {
+        "w": "the",
+        "s": 1.62,
+        "e": 1.71
+      },
+      {
+        "w": "army",
+        "s": 1.71,
+        "e": 2.02
+      },
+      {
+        "w": "staggered",
+        "s": 2.02,
+        "e": 2.69
+      },
+      {
+        "w": "back",
+        "s": 2.75,
+        "e": 3.03
+      },
+      {
+        "w": "into",
+        "s": 3.03,
+        "e": 3.33
+      },
+      {
+        "w": "Smolensk.",
+        "s": 3.33,
+        "e": 4
+      },
+      {
+        "w": "Only",
+        "s": 4.22,
+        "e": 4.25
+      },
+      {
+        "w": "about",
+        "s": 4.25,
+        "e": 4.498
+      },
+      {
+        "w": "sixty-",
+        "s": 4.498,
+        "e": 4.498
+      },
+      {
+        "w": "thousand",
+        "s": 4.498,
+        "e": 5.25
+      },
+      {
+        "w": "men",
+        "s": 5.62,
+        "e": 5.79
+      },
+      {
+        "w": "were",
+        "s": 5.79,
+        "e": 5.976
+      },
+      {
+        "w": "still",
+        "s": 6.135,
+        "e": 6.34
+      },
+      {
+        "w": "fit",
+        "s": 6.36,
+        "e": 6.51
+      },
+      {
+        "w": "to",
+        "s": 6.54,
+        "e": 6.65
+      },
+      {
+        "w": "fight.",
+        "s": 6.65,
+        "e": 7.088
+      }
+    ]
+  },
+  {
+    "id": "krasnoi",
+    "file": "audio/wh01/krasnoi.wav",
+    "sec": 5.956854,
+    "voice": "Sadaltager",
+    "text": "At Krasnoi, in mid-November, the Russians struck again. Marshal Ney's rearguard was almost wiped out.",
+    "words": [
+      {
+        "w": "At",
+        "s": 0,
+        "e": 0.07
+      },
+      {
+        "w": "Krasnoi,",
+        "s": 0.18,
+        "e": 0.75
+      },
+      {
+        "w": "in",
+        "s": 0.92,
+        "e": 1.04
+      },
+      {
+        "w": "mid-",
+        "s": 1.04,
+        "e": 1.34
+      },
+      {
+        "w": "November,",
+        "s": 1.34,
+        "e": 2.1
+      },
+      {
+        "w": "the",
+        "s": 2.1,
+        "e": 2.25
+      },
+      {
+        "w": "Russians",
+        "s": 2.25,
+        "e": 2.68
+      },
+      {
+        "w": "struck",
+        "s": 2.68,
+        "e": 3
+      },
+      {
+        "w": "again.",
+        "s": 3,
+        "e": 3.68
+      },
+      {
+        "w": "Marshal",
+        "s": 3.68,
+        "e": 4.06
+      },
+      {
+        "w": "Ney's",
+        "s": 4.06,
+        "e": 4.33
+      },
+      {
+        "w": "rearguard",
+        "s": 4.33,
+        "e": 4.83
+      },
+      {
+        "w": "was",
+        "s": 4.83,
+        "e": 5
+      },
+      {
+        "w": "almost",
+        "s": 5,
+        "e": 5.33
+      },
+      {
+        "w": "wiped",
+        "s": 5.33,
+        "e": 5.37
+      },
+      {
+        "w": "out.",
+        "s": 5.65,
+        "e": 5.957
+      }
+    ]
+  },
+  {
+    "id": "berezina",
+    "file": "audio/wh01/berezina.wav",
+    "sec": 5.713917,
+    "voice": "Sadaltager",
+    "text": "Then came the Berezina river. The bridge had been burned, and Russian armies were closing in from three sides.",
+    "words": [
+      {
+        "w": "Then",
+        "s": 0.01,
+        "e": 0.28
+      },
+      {
+        "w": "came",
+        "s": 0.33,
+        "e": 0.65
+      },
+      {
+        "w": "the",
+        "s": 0.66,
+        "e": 0.9
+      },
+      {
+        "w": "Berezina",
+        "s": 0.9,
+        "e": 1.5
+      },
+      {
+        "w": "river.",
+        "s": 2.147,
+        "e": 2.16
+      },
+      {
+        "w": "The",
+        "s": 2.17,
+        "e": 2.31
+      },
+      {
+        "w": "bridge",
+        "s": 2.31,
+        "e": 2.62
+      },
+      {
+        "w": "had",
+        "s": 2.62,
+        "e": 2.76
+      },
+      {
+        "w": "been",
+        "s": 2.77,
+        "e": 2.98
+      },
+      {
+        "w": "burned,",
+        "s": 2.98,
+        "e": 3.4
+      },
+      {
+        "w": "and",
+        "s": 3.4,
+        "e": 3.51
+      },
+      {
+        "w": "Russian",
+        "s": 3.54,
+        "e": 3.66
+      },
+      {
+        "w": "armies",
+        "s": 4.03,
+        "e": 4.12
+      },
+      {
+        "w": "were",
+        "s": 4.24,
+        "e": 4.24
+      },
+      {
+        "w": "closing",
+        "s": 4.31,
+        "e": 4.7
+      },
+      {
+        "w": "in",
+        "s": 4.7,
+        "e": 4.84
+      },
+      {
+        "w": "from",
+        "s": 4.84,
+        "e": 5
+      },
+      {
+        "w": "three",
+        "s": 5,
+        "e": 5.27
+      },
+      {
+        "w": "sides.",
+        "s": 5.27,
+        "e": 5.714
+      }
+    ]
+  },
+  {
+    "id": "eble",
+    "file": "audio/wh01/eble.wav",
+    "sec": 7.312646,
+    "voice": "Sadaltager",
+    "text": "French engineers under General Eblé stood in the freezing water for hours and built two bridges. Few of them lived to see the spring.",
+    "words": [
+      {
+        "w": "French",
+        "s": 0.29,
+        "e": 0.38
+      },
+      {
+        "w": "engineers",
+        "s": 0.38,
+        "e": 0.96
+      },
+      {
+        "w": "under",
+        "s": 0.96,
+        "e": 1.26
+      },
+      {
+        "w": "General",
+        "s": 1.32,
+        "e": 1.72
+      },
+      {
+        "w": "Eblé",
+        "s": 1.73,
+        "e": 2
+      },
+      {
+        "w": "stood",
+        "s": 2,
+        "e": 2.31
+      },
+      {
+        "w": "in",
+        "s": 2.34,
+        "e": 2.4
+      },
+      {
+        "w": "the",
+        "s": 2.4,
+        "e": 2.52
+      },
+      {
+        "w": "freezing",
+        "s": 2.66,
+        "e": 2.96
+      },
+      {
+        "w": "water",
+        "s": 2.96,
+        "e": 3.24
+      },
+      {
+        "w": "for",
+        "s": 3.24,
+        "e": 3.41
+      },
+      {
+        "w": "hours",
+        "s": 3.53,
+        "e": 3.95
+      },
+      {
+        "w": "and",
+        "s": 4.32,
+        "e": 4.32
+      },
+      {
+        "w": "built",
+        "s": 4.37,
+        "e": 4.71
+      },
+      {
+        "w": "two",
+        "s": 4.74,
+        "e": 4.96
+      },
+      {
+        "w": "bridges.",
+        "s": 4.96,
+        "e": 5.295
+      },
+      {
+        "w": "Few",
+        "s": 5.87,
+        "e": 5.95
+      },
+      {
+        "w": "of",
+        "s": 5.95,
+        "e": 6.05
+      },
+      {
+        "w": "them",
+        "s": 6.05,
+        "e": 6.22
+      },
+      {
+        "w": "lived",
+        "s": 6.29,
+        "e": 6.52
+      },
+      {
+        "w": "to",
+        "s": 6.52,
+        "e": 6.6
+      },
+      {
+        "w": "see",
+        "s": 6.74,
+        "e": 6.77
+      },
+      {
+        "w": "the",
+        "s": 6.77,
+        "e": 6.92
+      },
+      {
+        "w": "spring.",
+        "s": 6.92,
+        "e": 7.28
+      }
+    ]
+  },
+  {
+    "id": "crossing",
+    "file": "audio/wh01/crossing.wav",
+    "sec": 6.959479,
+    "voice": "Sadaltager",
+    "text": "For three days the army crossed. On the last morning the bridges were burned, and thousands of stragglers were left on the far bank.",
+    "words": [
+      {
+        "w": "For",
+        "s": 0.21,
+        "e": 0.21
+      },
+      {
+        "w": "three",
+        "s": 0.28,
+        "e": 0.56
+      },
+      {
+        "w": "days",
+        "s": 0.56,
+        "e": 0.84
+      },
+      {
+        "w": "the",
+        "s": 0.98,
+        "e": 1.19
+      },
+      {
+        "w": "army",
+        "s": 1.19,
+        "e": 1.46
+      },
+      {
+        "w": "crossed.",
+        "s": 1.48,
+        "e": 1.813
+      },
+      {
+        "w": "On",
+        "s": 2.26,
+        "e": 2.26
+      },
+      {
+        "w": "the",
+        "s": 2.27,
+        "e": 2.33
+      },
+      {
+        "w": "last",
+        "s": 2.33,
+        "e": 2.6
+      },
+      {
+        "w": "morning",
+        "s": 2.6,
+        "e": 3.07
+      },
+      {
+        "w": "the",
+        "s": 3.315,
+        "e": 3.39
+      },
+      {
+        "w": "bridges",
+        "s": 3.4,
+        "e": 3.74
+      },
+      {
+        "w": "were",
+        "s": 3.78,
+        "e": 3.81
+      },
+      {
+        "w": "burned,",
+        "s": 4.523,
+        "e": 4.523
+      },
+      {
+        "w": "and",
+        "s": 4.523,
+        "e": 4.56
+      },
+      {
+        "w": "thousands",
+        "s": 4.56,
+        "e": 5.03
+      },
+      {
+        "w": "of",
+        "s": 5.03,
+        "e": 5.05
+      },
+      {
+        "w": "stragglers",
+        "s": 5.31,
+        "e": 5.68
+      },
+      {
+        "w": "were",
+        "s": 5.68,
+        "e": 5.94
+      },
+      {
+        "w": "left",
+        "s": 5.94,
+        "e": 6.2
+      },
+      {
+        "w": "on",
+        "s": 6.2,
+        "e": 6.25
+      },
+      {
+        "w": "the",
+        "s": 6.51,
+        "e": 6.52
+      },
+      {
+        "w": "far",
+        "s": 6.52,
+        "e": 6.6
+      },
+      {
+        "w": "bank.",
+        "s": 6.71,
+        "e": 6.959
+      }
+    ]
+  },
+  {
+    "id": "napleave",
+    "file": "audio/wh01/napleave.wav",
+    "sec": 5.053375,
+    "voice": "Sadaltager",
+    "text": "On the fifth of December, Napoleon left his army and raced back to Paris in a sledge.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0.12,
+        "e": 0.12
+      },
+      {
+        "w": "the",
+        "s": 0.19,
+        "e": 0.3
+      },
+      {
+        "w": "fifth",
+        "s": 0.3,
+        "e": 0.55
+      },
+      {
+        "w": "of",
+        "s": 0.65,
+        "e": 0.72
+      },
+      {
+        "w": "December,",
+        "s": 0.72,
+        "e": 1.26
+      },
+      {
+        "w": "Napoleon",
+        "s": 1.48,
+        "e": 2.02
+      },
+      {
+        "w": "left",
+        "s": 2.02,
+        "e": 2.33
+      },
+      {
+        "w": "his",
+        "s": 2.37,
+        "e": 2.59
+      },
+      {
+        "w": "army",
+        "s": 2.59,
+        "e": 2.83
+      },
+      {
+        "w": "and",
+        "s": 3.08,
+        "e": 3.16
+      },
+      {
+        "w": "raced",
+        "s": 3.16,
+        "e": 3.52
+      },
+      {
+        "w": "back",
+        "s": 3.52,
+        "e": 3.75
+      },
+      {
+        "w": "to",
+        "s": 3.83,
+        "e": 3.96
+      },
+      {
+        "w": "Paris",
+        "s": 3.96,
+        "e": 4.33
+      },
+      {
+        "w": "in",
+        "s": 4.33,
+        "e": 4.48
+      },
+      {
+        "w": "a",
+        "s": 4.48,
+        "e": 4.55
+      },
+      {
+        "w": "sledge.",
+        "s": 4.55,
+        "e": 5.04
+      }
+    ]
+  },
+  {
+    "id": "back",
+    "file": "audio/wh01/back.wav",
+    "sec": 9.709896,
+    "voice": "Sadaltager",
+    "text": "In mid-December, the last of the main army crossed the Neman again. On Minard's map, a band of four-hundred-twenty-two-thousand men ends at ten-thousand.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.11
+      },
+      {
+        "w": "mid-",
+        "s": 0.25,
+        "e": 0.44
+      },
+      {
+        "w": "December,",
+        "s": 0.44,
+        "e": 1.1
+      },
+      {
+        "w": "the",
+        "s": 1.3,
+        "e": 1.38
+      },
+      {
+        "w": "last",
+        "s": 1.38,
+        "e": 1.61
+      },
+      {
+        "w": "of",
+        "s": 1.61,
+        "e": 1.72
+      },
+      {
+        "w": "the",
+        "s": 1.73,
+        "e": 1.91
+      },
+      {
+        "w": "main",
+        "s": 1.91,
+        "e": 2.14
+      },
+      {
+        "w": "army",
+        "s": 2.14,
+        "e": 2.4
+      },
+      {
+        "w": "crossed",
+        "s": 2.4,
+        "e": 2.73
+      },
+      {
+        "w": "the",
+        "s": 2.82,
+        "e": 2.89
+      },
+      {
+        "w": "Neman",
+        "s": 2.89,
+        "e": 3.18
+      },
+      {
+        "w": "again.",
+        "s": 3.18,
+        "e": 3.46
+      },
+      {
+        "w": "On",
+        "s": 4.6,
+        "e": 4.6
+      },
+      {
+        "w": "Minard's",
+        "s": 4.6,
+        "e": 4.86
+      },
+      {
+        "w": "map,",
+        "s": 4.86,
+        "e": 5.48
+      },
+      {
+        "w": "a",
+        "s": 5.62,
+        "e": 5.62
+      },
+      {
+        "w": "band",
+        "s": 5.71,
+        "e": 5.94
+      },
+      {
+        "w": "of",
+        "s": 5.94,
+        "e": 6.005
+      },
+      {
+        "w": "four-",
+        "s": 6.005,
+        "e": 6.077
+      },
+      {
+        "w": "hundred-",
+        "s": 6.077,
+        "e": 6.09
+      },
+      {
+        "w": "twenty-",
+        "s": 6.09,
+        "e": 6.102
+      },
+      {
+        "w": "two-",
+        "s": 6.102,
+        "e": 6.108
+      },
+      {
+        "w": "thousand",
+        "s": 6.108,
+        "e": 7.72
+      },
+      {
+        "w": "men",
+        "s": 7.72,
+        "e": 7.86
+      },
+      {
+        "w": "ends",
+        "s": 8.322,
+        "e": 8.322
+      },
+      {
+        "w": "at",
+        "s": 8.322,
+        "e": 8.36
+      },
+      {
+        "w": "ten-",
+        "s": 8.36,
+        "e": 8.36
+      },
+      {
+        "w": "thousand.",
+        "s": 8.36,
+        "e": 9.71
+      }
+    ]
+  },
+  {
+    "id": "flanks",
+    "file": "audio/wh01/flanks.wav",
+    "sec": 6.02,
+    "voice": "Sadaltager",
+    "text": "Counting the corps on the flanks, maybe one-hundred-thousand got out in all. But the Grande Armée was gone.",
+    "words": [
+      {
+        "w": "Counting",
+        "s": 0.28,
+        "e": 0.49
+      },
+      {
+        "w": "the",
+        "s": 0.49,
+        "e": 0.66
+      },
+      {
+        "w": "corps",
+        "s": 0.73,
+        "e": 0.98
+      },
+      {
+        "w": "on",
+        "s": 0.98,
+        "e": 1.1
+      },
+      {
+        "w": "the",
+        "s": 1.1,
+        "e": 1.14
+      },
+      {
+        "w": "flanks,",
+        "s": 1.28,
+        "e": 1.8
+      },
+      {
+        "w": "maybe",
+        "s": 1.92,
+        "e": 2.056
+      },
+      {
+        "w": "one-",
+        "s": 2.056,
+        "e": 2.056
+      },
+      {
+        "w": "hundred-",
+        "s": 2.056,
+        "e": 2.097
+      },
+      {
+        "w": "thousand",
+        "s": 2.097,
+        "e": 3.3
+      },
+      {
+        "w": "got",
+        "s": 3.3,
+        "e": 3.48
+      },
+      {
+        "w": "out",
+        "s": 3.48,
+        "e": 3.65
+      },
+      {
+        "w": "in",
+        "s": 3.66,
+        "e": 3.78
+      },
+      {
+        "w": "all.",
+        "s": 3.78,
+        "e": 3.905
+      },
+      {
+        "w": "But",
+        "s": 4.438,
+        "e": 4.438
+      },
+      {
+        "w": "the",
+        "s": 4.43,
+        "e": 4.59
+      },
+      {
+        "w": "Grande",
+        "s": 4.64,
+        "e": 5.03
+      },
+      {
+        "w": "Armée",
+        "s": 5.04,
+        "e": 5.31
+      },
+      {
+        "w": "was",
+        "s": 5.57,
+        "e": 5.68
+      },
+      {
+        "w": "gone.",
+        "s": 5.68,
+        "e": 6
+      }
+    ]
+  },
+  {
+    "id": "answer",
+    "file": "audio/wh01/answer.wav",
+    "sec": 1.995958,
+    "voice": "Sadaltager",
+    "text": "So, where did Europe's greatest army go?",
+    "words": [
+      {
+        "w": "So,",
+        "s": 0.04,
+        "e": 0.12
+      },
+      {
+        "w": "where",
+        "s": 0.12,
+        "e": 0.43
+      },
+      {
+        "w": "did",
+        "s": 0.43,
+        "e": 0.59
+      },
+      {
+        "w": "Europe's",
+        "s": 0.61,
+        "e": 1.1
+      },
+      {
+        "w": "greatest",
+        "s": 1.1,
+        "e": 1.6
+      },
+      {
+        "w": "army",
+        "s": 1.6,
+        "e": 1.85
+      },
+      {
+        "w": "go?",
+        "s": 1.85,
+        "e": 1.99
+      }
+    ]
+  },
+  {
+    "id": "notwinter",
+    "file": "audio/wh01/notwinter.wav",
+    "sec": 5.656313,
+    "voice": "Sadaltager",
+    "text": "Mostly not to the winter. Look at the line. Most of it had already vanished before the first snow fell.",
+    "words": [
+      {
+        "w": "Mostly",
+        "s": 0.02,
+        "e": 0.44
+      },
+      {
+        "w": "not",
+        "s": 0.44,
+        "e": 0.62
+      },
+      {
+        "w": "to",
+        "s": 0.69,
+        "e": 0.8
+      },
+      {
+        "w": "the",
+        "s": 0.8,
+        "e": 1
+      },
+      {
+        "w": "winter.",
+        "s": 1,
+        "e": 1.178
+      },
+      {
+        "w": "Look",
+        "s": 1.735,
+        "e": 1.95
+      },
+      {
+        "w": "at",
+        "s": 1.99,
+        "e": 2.09
+      },
+      {
+        "w": "the",
+        "s": 2.09,
+        "e": 2.28
+      },
+      {
+        "w": "line.",
+        "s": 2.745,
+        "e": 2.76
+      },
+      {
+        "w": "Most",
+        "s": 2.77,
+        "e": 3
+      },
+      {
+        "w": "of",
+        "s": 3,
+        "e": 3.12
+      },
+      {
+        "w": "it",
+        "s": 3.12,
+        "e": 3.24
+      },
+      {
+        "w": "had",
+        "s": 3.24,
+        "e": 3.38
+      },
+      {
+        "w": "already",
+        "s": 3.45,
+        "e": 3.82
+      },
+      {
+        "w": "vanished",
+        "s": 3.82,
+        "e": 3.93
+      },
+      {
+        "w": "before",
+        "s": 4.49,
+        "e": 4.66
+      },
+      {
+        "w": "the",
+        "s": 4.71,
+        "e": 4.84
+      },
+      {
+        "w": "first",
+        "s": 4.84,
+        "e": 5.05
+      },
+      {
+        "w": "snow",
+        "s": 5.05,
+        "e": 5.16
+      },
+      {
+        "w": "fell.",
+        "s": 5.54,
+        "e": 5.656
+      }
+    ]
+  },
+  {
+    "id": "causes",
+    "file": "audio/wh01/causes.wav",
+    "sec": 9.666292,
+    "voice": "Sadaltager",
+    "text": "It was distance. Supply. Disease. Heat. A Russian army that refused to fight on Napoleon's terms, and a country willing to burn its own land.",
+    "words": [
+      {
+        "w": "It",
+        "s": 0,
+        "e": 0.17
+      },
+      {
+        "w": "was",
+        "s": 0.17,
+        "e": 0.43
+      },
+      {
+        "w": "distance.",
+        "s": 0.43,
+        "e": 1.34
+      },
+      {
+        "w": "Supply.",
+        "s": 1.34,
+        "e": 2.4
+      },
+      {
+        "w": "Disease.",
+        "s": 2.4,
+        "e": 3.44
+      },
+      {
+        "w": "Heat.",
+        "s": 3.47,
+        "e": 4.42
+      },
+      {
+        "w": "A",
+        "s": 4.42,
+        "e": 4.47
+      },
+      {
+        "w": "Russian",
+        "s": 4.47,
+        "e": 4.88
+      },
+      {
+        "w": "army",
+        "s": 4.88,
+        "e": 5.11
+      },
+      {
+        "w": "that",
+        "s": 5.11,
+        "e": 5.29
+      },
+      {
+        "w": "refused",
+        "s": 5.72,
+        "e": 5.78
+      },
+      {
+        "w": "to",
+        "s": 5.78,
+        "e": 5.87
+      },
+      {
+        "w": "fight",
+        "s": 5.92,
+        "e": 6.16
+      },
+      {
+        "w": "on",
+        "s": 6.16,
+        "e": 6.24
+      },
+      {
+        "w": "Napoleon's",
+        "s": 6.28,
+        "e": 7
+      },
+      {
+        "w": "terms,",
+        "s": 7,
+        "e": 7.16
+      },
+      {
+        "w": "and",
+        "s": 7.497,
+        "e": 7.56
+      },
+      {
+        "w": "a",
+        "s": 7.56,
+        "e": 7.62
+      },
+      {
+        "w": "country",
+        "s": 7.62,
+        "e": 8.06
+      },
+      {
+        "w": "willing",
+        "s": 8.08,
+        "e": 8.24
+      },
+      {
+        "w": "to",
+        "s": 8.67,
+        "e": 8.69
+      },
+      {
+        "w": "burn",
+        "s": 8.69,
+        "e": 8.96
+      },
+      {
+        "w": "its",
+        "s": 8.96,
+        "e": 9.16
+      },
+      {
+        "w": "own",
+        "s": 9.16,
+        "e": 9.24
+      },
+      {
+        "w": "land.",
+        "s": 9.63,
+        "e": 9.666
+      }
+    ]
+  },
+  {
+    "id": "russia",
+    "file": "audio/wh01/russia.wav",
+    "sec": 4.618896,
+    "voice": "Sadaltager",
+    "text": "Russia paid a terrible price too. Hundreds of thousands of soldiers and civilians died.",
+    "words": [
+      {
+        "w": "Russia",
+        "s": 0,
+        "e": 0.41
+      },
+      {
+        "w": "paid",
+        "s": 0.41,
+        "e": 0.68
+      },
+      {
+        "w": "a",
+        "s": 0.68,
+        "e": 0.74
+      },
+      {
+        "w": "terrible",
+        "s": 0.74,
+        "e": 1.23
+      },
+      {
+        "w": "price",
+        "s": 1.29,
+        "e": 1.489
+      },
+      {
+        "w": "too.",
+        "s": 2.082,
+        "e": 2.082
+      },
+      {
+        "w": "Hundreds",
+        "s": 2.08,
+        "e": 2.48
+      },
+      {
+        "w": "of",
+        "s": 2.48,
+        "e": 2.58
+      },
+      {
+        "w": "thousands",
+        "s": 2.58,
+        "e": 2.99
+      },
+      {
+        "w": "of",
+        "s": 3.05,
+        "e": 3.13
+      },
+      {
+        "w": "soldiers",
+        "s": 3.13,
+        "e": 3.55
+      },
+      {
+        "w": "and",
+        "s": 3.55,
+        "e": 3.59
+      },
+      {
+        "w": "civilians",
+        "s": 4.16,
+        "e": 4.33
+      },
+      {
+        "w": "died.",
+        "s": 4.33,
+        "e": 4.619
+      }
+    ]
+  },
+  {
+    "id": "prisoners",
+    "file": "audio/wh01/prisoners.wav",
+    "sec": 3.408833,
+    "voice": "Sadaltager",
+    "text": "On the French side, around one-hundred-thousand men were taken prisoner.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0,
+        "e": 0.11
+      },
+      {
+        "w": "the",
+        "s": 0.11,
+        "e": 0.14
+      },
+      {
+        "w": "French",
+        "s": 0.27,
+        "e": 0.6
+      },
+      {
+        "w": "side,",
+        "s": 0.6,
+        "e": 0.94
+      },
+      {
+        "w": "around",
+        "s": 0.94,
+        "e": 1.047
+      },
+      {
+        "w": "one-",
+        "s": 1.047,
+        "e": 1.1
+      },
+      {
+        "w": "hundred-",
+        "s": 1.1,
+        "e": 1.265
+      },
+      {
+        "w": "thousand",
+        "s": 1.265,
+        "e": 2.38
+      },
+      {
+        "w": "men",
+        "s": 2.38,
+        "e": 2.57
+      },
+      {
+        "w": "were",
+        "s": 2.58,
+        "e": 2.78
+      },
+      {
+        "w": "taken",
+        "s": 2.78,
+        "e": 3.02
+      },
+      {
+        "w": "prisoner.",
+        "s": 3.03,
+        "e": 3.4
+      }
+    ]
+  },
+  {
+    "id": "tauroggen",
+    "file": "audio/wh01/tauroggen.wav",
+    "sec": 8.200438,
+    "voice": "Sadaltager",
+    "text": "Within weeks, his allies began to turn. On the thirtieth of December, the Prussian corps in his army made its own deal with the Russians.",
+    "words": [
+      {
+        "w": "Within",
+        "s": 0,
+        "e": 0.44
+      },
+      {
+        "w": "weeks,",
+        "s": 0.55,
+        "e": 1.19
+      },
+      {
+        "w": "his",
+        "s": 1.19,
+        "e": 1.47
+      },
+      {
+        "w": "allies",
+        "s": 1.47,
+        "e": 2
+      },
+      {
+        "w": "began",
+        "s": 2.02,
+        "e": 2.425
+      },
+      {
+        "w": "to",
+        "s": 3.361,
+        "e": 3.361
+      },
+      {
+        "w": "turn.",
+        "s": 3.361,
+        "e": 3.361
+      },
+      {
+        "w": "On",
+        "s": 3.36,
+        "e": 3.49
+      },
+      {
+        "w": "the",
+        "s": 3.49,
+        "e": 3.68
+      },
+      {
+        "w": "thirtieth",
+        "s": 3.68,
+        "e": 4.2
+      },
+      {
+        "w": "of",
+        "s": 4.32,
+        "e": 4.33
+      },
+      {
+        "w": "December,",
+        "s": 4.33,
+        "e": 4.89
+      },
+      {
+        "w": "the",
+        "s": 5.02,
+        "e": 5.14
+      },
+      {
+        "w": "Prussian",
+        "s": 5.14,
+        "e": 5.53
+      },
+      {
+        "w": "corps",
+        "s": 5.53,
+        "e": 5.81
+      },
+      {
+        "w": "in",
+        "s": 5.83,
+        "e": 5.88
+      },
+      {
+        "w": "his",
+        "s": 5.99,
+        "e": 6.17
+      },
+      {
+        "w": "army",
+        "s": 6.44,
+        "e": 6.48
+      },
+      {
+        "w": "made",
+        "s": 6.48,
+        "e": 6.72
+      },
+      {
+        "w": "its",
+        "s": 6.72,
+        "e": 6.9
+      },
+      {
+        "w": "own",
+        "s": 6.9,
+        "e": 7.08
+      },
+      {
+        "w": "deal",
+        "s": 7.08,
+        "e": 7.17
+      },
+      {
+        "w": "with",
+        "s": 7.44,
+        "e": 7.56
+      },
+      {
+        "w": "the",
+        "s": 7.56,
+        "e": 7.74
+      },
+      {
+        "w": "Russians.",
+        "s": 7.74,
+        "e": 8.2
+      }
+    ]
+  },
+  {
+    "id": "leipzig",
+    "file": "audio/wh01/leipzig.wav",
+    "sec": 8.522688,
+    "voice": "Sadaltager",
+    "text": "In October eighteen-thirteen, at Leipzig, more than half a million soldiers met in the largest battle of the Napoleonic Wars. Napoleon lost.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0.01,
+        "e": 0.15
+      },
+      {
+        "w": "October",
+        "s": 0.15,
+        "e": 0.529
+      },
+      {
+        "w": "eighteen-",
+        "s": 0.529,
+        "e": 0.604
+      },
+      {
+        "w": "thirteen,",
+        "s": 0.604,
+        "e": 1.76
+      },
+      {
+        "w": "at",
+        "s": 1.79,
+        "e": 1.97
+      },
+      {
+        "w": "Leipzig,",
+        "s": 1.97,
+        "e": 2.78
+      },
+      {
+        "w": "more",
+        "s": 2.78,
+        "e": 2.9
+      },
+      {
+        "w": "than",
+        "s": 2.9,
+        "e": 3
+      },
+      {
+        "w": "half",
+        "s": 3.09,
+        "e": 3.27
+      },
+      {
+        "w": "a",
+        "s": 3.35,
+        "e": 3.4
+      },
+      {
+        "w": "million",
+        "s": 3.4,
+        "e": 3.91
+      },
+      {
+        "w": "soldiers",
+        "s": 3.91,
+        "e": 4.44
+      },
+      {
+        "w": "met",
+        "s": 4.45,
+        "e": 4.63
+      },
+      {
+        "w": "in",
+        "s": 4.73,
+        "e": 4.81
+      },
+      {
+        "w": "the",
+        "s": 4.81,
+        "e": 5.03
+      },
+      {
+        "w": "largest",
+        "s": 5.03,
+        "e": 5.55
+      },
+      {
+        "w": "battle",
+        "s": 5.55,
+        "e": 5.89
+      },
+      {
+        "w": "of",
+        "s": 6.15,
+        "e": 6.15
+      },
+      {
+        "w": "the",
+        "s": 6.23,
+        "e": 6.37
+      },
+      {
+        "w": "Napoleonic",
+        "s": 6.37,
+        "e": 6.85
+      },
+      {
+        "w": "Wars.",
+        "s": 7.676,
+        "e": 7.68
+      },
+      {
+        "w": "Napoleon",
+        "s": 7.69,
+        "e": 8.523
+      },
+      {
+        "w": "lost.",
+        "s": 8.76,
+        "e": 8.523
+      }
+    ]
+  },
+  {
+    "id": "after",
+    "file": "audio/wh01/after.wav",
+    "sec": 8.066083,
+    "voice": "Sadaltager",
+    "text": "For Napoleon, it was the beginning of the end. In less than two years, his enemies were in Paris, and he was in exile on Elba.",
+    "words": [
+      {
+        "w": "For",
+        "s": 0.06,
+        "e": 0.23
+      },
+      {
+        "w": "Napoleon,",
+        "s": 0.23,
+        "e": 0.98
+      },
+      {
+        "w": "it",
+        "s": 1.02,
+        "e": 1.12
+      },
+      {
+        "w": "was",
+        "s": 1.18,
+        "e": 1.37
+      },
+      {
+        "w": "the",
+        "s": 1.37,
+        "e": 1.6
+      },
+      {
+        "w": "beginning",
+        "s": 1.6,
+        "e": 2.28
+      },
+      {
+        "w": "of",
+        "s": 2.942,
+        "e": 2.942
+      },
+      {
+        "w": "the",
+        "s": 2.942,
+        "e": 2.942
+      },
+      {
+        "w": "end.",
+        "s": 2.942,
+        "e": 2.942
+      },
+      {
+        "w": "In",
+        "s": 2.98,
+        "e": 3.03
+      },
+      {
+        "w": "less",
+        "s": 3.03,
+        "e": 3.26
+      },
+      {
+        "w": "than",
+        "s": 3.26,
+        "e": 3.49
+      },
+      {
+        "w": "two",
+        "s": 3.49,
+        "e": 3.66
+      },
+      {
+        "w": "years,",
+        "s": 3.66,
+        "e": 4.04
+      },
+      {
+        "w": "his",
+        "s": 4.1,
+        "e": 4.27
+      },
+      {
+        "w": "enemies",
+        "s": 4.27,
+        "e": 4.72
+      },
+      {
+        "w": "were",
+        "s": 4.72,
+        "e": 5.03
+      },
+      {
+        "w": "in",
+        "s": 5.03,
+        "e": 5.17
+      },
+      {
+        "w": "Paris,",
+        "s": 5.17,
+        "e": 5.561
+      },
+      {
+        "w": "and",
+        "s": 5.834,
+        "e": 5.97
+      },
+      {
+        "w": "he",
+        "s": 6.07,
+        "e": 6.17
+      },
+      {
+        "w": "was",
+        "s": 6.17,
+        "e": 6.43
+      },
+      {
+        "w": "in",
+        "s": 6.43,
+        "e": 6.5
+      },
+      {
+        "w": "exile",
+        "s": 6.65,
+        "e": 7.03
+      },
+      {
+        "w": "on",
+        "s": 7.05,
+        "e": 7.17
+      },
+      {
+        "w": "Elba.",
+        "s": 7.21,
+        "e": 7.87
+      }
+    ]
+  },
+  {
+    "id": "minard2",
+    "file": "audio/wh01/minard2.wav",
+    "sec": 9.297875,
+    "voice": "Sadaltager",
+    "text": "And the best picture of this disaster was drawn fifty-seven years later, by a retired French engineer. Some call it the best statistical graphic ever made.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0.17,
+        "e": 0.17
+      },
+      {
+        "w": "the",
+        "s": 0.22,
+        "e": 0.34
+      },
+      {
+        "w": "best",
+        "s": 0.34,
+        "e": 0.57
+      },
+      {
+        "w": "picture",
+        "s": 0.57,
+        "e": 0.98
+      },
+      {
+        "w": "of",
+        "s": 0.98,
+        "e": 1.08
+      },
+      {
+        "w": "this",
+        "s": 1.09,
+        "e": 1.23
+      },
+      {
+        "w": "disaster",
+        "s": 1.31,
+        "e": 1.84
+      },
+      {
+        "w": "was",
+        "s": 1.84,
+        "e": 1.97
+      },
+      {
+        "w": "drawn",
+        "s": 2.07,
+        "e": 2.36
+      },
+      {
+        "w": "fifty-",
+        "s": 2.36,
+        "e": 2.453
+      },
+      {
+        "w": "seven",
+        "s": 2.453,
+        "e": 2.92
+      },
+      {
+        "w": "years",
+        "s": 2.92,
+        "e": 3.31
+      },
+      {
+        "w": "later,",
+        "s": 3.31,
+        "e": 4.02
+      },
+      {
+        "w": "by",
+        "s": 4.02,
+        "e": 4.03
+      },
+      {
+        "w": "a",
+        "s": 4.09,
+        "e": 4.12
+      },
+      {
+        "w": "retired",
+        "s": 4.12,
+        "e": 4.8
+      },
+      {
+        "w": "French",
+        "s": 4.8,
+        "e": 5.12
+      },
+      {
+        "w": "engineer.",
+        "s": 5.12,
+        "e": 5.6
+      },
+      {
+        "w": "Some",
+        "s": 6.35,
+        "e": 6.35
+      },
+      {
+        "w": "call",
+        "s": 6.35,
+        "e": 6.35
+      },
+      {
+        "w": "it",
+        "s": 6.4,
+        "e": 6.4
+      },
+      {
+        "w": "the",
+        "s": 6.46,
+        "e": 6.63
+      },
+      {
+        "w": "best",
+        "s": 6.64,
+        "e": 6.87
+      },
+      {
+        "w": "statistical",
+        "s": 7.187,
+        "e": 7.85
+      },
+      {
+        "w": "graphic",
+        "s": 7.85,
+        "e": 8.42
+      },
+      {
+        "w": "ever",
+        "s": 8.42,
+        "e": 8.6
+      },
+      {
+        "w": "made.",
+        "s": 8.819,
+        "e": 9.12
+      }
+    ]
+  },
+  {
+    "id": "close",
+    "file": "audio/wh01/close.wav",
+    "sec": 5.093583,
+    "voice": "Sadaltager",
+    "text": "Now, your turn. If you were Napoleon, when would you have turned back? Tell me in the comments.",
+    "words": [
+      {
+        "w": "Now,",
+        "s": 0,
+        "e": 0.23
+      },
+      {
+        "w": "your",
+        "s": 0.23,
+        "e": 0.53
+      },
+      {
+        "w": "turn.",
+        "s": 0.53,
+        "e": 1.1
+      },
+      {
+        "w": "If",
+        "s": 1.1,
+        "e": 1.26
+      },
+      {
+        "w": "you",
+        "s": 1.26,
+        "e": 1.46
+      },
+      {
+        "w": "were",
+        "s": 1.53,
+        "e": 1.75
+      },
+      {
+        "w": "Napoleon,",
+        "s": 2.14,
+        "e": 2.7
+      },
+      {
+        "w": "when",
+        "s": 2.7,
+        "e": 2.83
+      },
+      {
+        "w": "would",
+        "s": 2.99,
+        "e": 3.2
+      },
+      {
+        "w": "you",
+        "s": 3.2,
+        "e": 3.35
+      },
+      {
+        "w": "have",
+        "s": 3.35,
+        "e": 3.4
+      },
+      {
+        "w": "turned",
+        "s": 4.225,
+        "e": 4.225
+      },
+      {
+        "w": "back?",
+        "s": 4.225,
+        "e": 4.27
+      },
+      {
+        "w": "Tell",
+        "s": 4.36,
+        "e": 4.49
+      },
+      {
+        "w": "me",
+        "s": 4.49,
+        "e": 4.55
+      },
+      {
+        "w": "in",
+        "s": 4.55,
+        "e": 4.61
+      },
+      {
+        "w": "the",
+        "s": 4.61,
+        "e": 4.71
+      },
+      {
+        "w": "comments.",
+        "s": 4.71,
+        "e": 5.01
+      }
+    ]
+  }
+]
