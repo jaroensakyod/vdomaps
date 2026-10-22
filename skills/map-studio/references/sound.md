@@ -88,7 +88,8 @@ import { Bed, Hit, voiceSpans } from "../../components/Sound";
 | Protest, riot, crowds | bed `crowd_protest` (chanting), bed `crowd_protest_march`, bed `crowd_riot`, bed `crowd_angry`, `crowd_cheer`, bed `crowd_panic`, bed `city_crowd` |
 | Weather | bed `rain_light`, bed `rain_heavy`, bed `storm`, `thunder_close`, `thunder_rumble`, bed `wind`, bed `wind_storm` |
 | Fire, burning city | bed `fire_big`, bed `fire_crackle` |
-| Sea, ships, jungle | bed `sea_rough`, bed `ship_sailing`, bed `jungle_rain` |
+| Sea, ships, jungle | bed `sea_rough`, bed `ship_sailing`, bed `ship_creak`, `ship_bell`, `splash`, `splash_big` (cannonball into the sea), bed `jungle_rain` |
+| Sea battle, timber | `cannon_heavy`, `cannon_old`, `wood_hit`, `wood_break`, `mast_fall` (mast / timber crashing down) |
 
 Missing something (a Thai temple bell, a steam train, a market)? Add it with the steps above before using a
 generic stand-in, and add the row here.

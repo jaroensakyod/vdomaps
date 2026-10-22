@@ -32,7 +32,16 @@ const tmp = file.replace(/(\.\w+)$/, ".loudnorm$1");
 const af = `loudnorm=I=${I}:TP=${TP}:LRA=${LRA}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`;
 execFileSync("ffmpeg", ["-v", "error", "-y", "-i", file, "-af", af, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", tmp]);
 renameSync(tmp, file);
-const after = measure(file);
+let after = measure(file);
 console.log(`→ ${after.input_i} LUFS, true peak ${after.input_tp} dBTP`);
+// Sharp transients (cannon, gunshots) can leave the true peak above TP after the linear gain: catch them with a
+// fast look-ahead limiter 0.5 dB under TP (true peak overshoots sample peak slightly). Loudness barely moves.
+if (Number(after.input_tp) > TP) {
+  const lim = Math.pow(10, (TP - 0.5) / 20).toFixed(3);
+  execFileSync("ffmpeg", ["-v", "error", "-y", "-i", file, "-af", `alimiter=limit=${lim}:attack=1:release=50:level=false`, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", tmp]);
+  renameSync(tmp, file);
+  after = measure(file);
+  console.log(`→ limited: ${after.input_i} LUFS, true peak ${after.input_tp} dBTP`);
+}
 // loudnorm stays linear only while the peak allows it; a mix with loud peaks can land short of the target.
 if (Math.abs(Number(after.input_i) - I) > 1) console.warn("⚠ more than 1 LU off target: lower the loudest SFX/music peaks in the mix and render again");
