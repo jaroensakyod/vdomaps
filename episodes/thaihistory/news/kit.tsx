@@ -171,7 +171,10 @@ export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to:
   if (!h.head) return null; // an empty head hands the top slot to a chapter overlay (quote, poll)
   const k = spring({ frame: frame - from, fps, config: { damping: 14 } });
   const o = interpolate(frame, [to - 8, to], [1, 0], clamp);
-  const swap = spring({ frame: frame - h.f, fps, config: { damping: 16 } });
+  const swapRaw = spring({ frame: frame - h.f, fps, config: { damping: 16 } });
+  // clear layout: new text starts at 70 % so the card never goes blank for a frame (with the panel tucked away
+  // during camera moves, that blank frame showed up as a brightness dip in check-glitch).
+  const swap = compact ? 0.7 + 0.3 * swapRaw : swapRaw;
   const color = h.color ?? RED;
   const stat = typeof h.stat === "function" ? h.stat(frame) : h.stat;
   return (

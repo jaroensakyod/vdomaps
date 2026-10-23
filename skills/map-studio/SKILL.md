@@ -63,6 +63,17 @@ map changes with the story:
 4. **No flicker:** consecutive panels overlap ~14 frames (outgoing `end` = incoming `start + 14`) so the map never
    blinks through. Final renders use `--gl=angle` (Vulkan occasionally composites a ghosted frame), then
    `node scripts/check-glitch.mjs out/<file>.mp4` must report 0 glitch frames before delivery.
+   Long videos (over ~2 min) render with `npm run render:chunks -- <Composition> out/<file>.mp4 --loudness --glitch`:
+   30-s segments rendered 3 at a time (muted), one soundtrack for the whole timeline, joined without re-encoding, then the
+   glitch check and −14 LUFS. A single render leaves the machine ~75 % idle (a 6:40 episode took ~45 min).
+   **Render safety** (23 Oct 2026, after FFmpeg crashed with 0xC0000142 at ~75 % of a 40-min render and nothing was
+   kept): `render-chunks` saves every 30-s segment as it finishes (`<out>.parts/`), retries a segment that dies
+   (`--retries 3`) and, when it still stops, **the same command run again resumes** from the saved segments — never
+   delete `<out>.parts/` by hand and never restart from zero. Start final renders as their own process (the app's
+   Terminal tab, or a background command) so a Claude restart or context compaction does not take them down; keep the
+   computer awake and do not run other renders or batches of stills at the same time; check `out/` has ~2 GB free
+   per 10-min episode. Before a full render, render the riskiest 5–10 s ranges (`--frames=a-b`) and run
+   `check-glitch` on them — a full re-render costs ~40 min, a range a minute.
 5. Show a ~10–15 s test in the final look before building a whole video.
 6. Map/imagery credits go in the video description, not on screen (OSM's ODbL still requires the description credit).
 7. **Illustration style v2** (set by the user on 22 Oct 2026, approved from `out/thaihistory/style-test.mp4`): every
@@ -104,8 +115,10 @@ map changes with the story:
    - **Map in the open band:** camera `scale × 0.8` and `<MapFrame focusY={0.444}>`, so the place being narrated sits
      between the head card and the panel (≈ 17–60 % of the height), not behind the panel.
    - **Panel tucked away while the camera moves:** `panelHideAt(keys, frame)` (`components/camera.ts`) slides the panel
-     down and out ~8 frames before any pan or zoom and brings it back once the map is still. Keep camera moves short
-     (~24 frames) and hold the view, so each sentence's picture still gets its time on screen.
+     down and out ~8 frames before any pan or zoom and brings it back once the map is still. Wrap the camera keys in
+     `holdAndMove(keys, 30)` (same file): slow drifts become "hold, then a move landing on the key" (30 frames, longer
+     for long pans and big zooms, max 120 — a 100× zoom in 30 frames tripped check-glitch). Without it ep05 hid its
+     panels 42 % of the time; with it 18 %, and every sentence kept its picture on screen for ≥ ~half its length.
    - Wiring (thaihistory news kit): `CLEAR` + `LayoutCtx` in `episodes/thaihistory/news/kit.tsx`; reference
      `episodes/thaihistory/ep05/Ep.tsx` (`Ep05Clear`). Other channel kits (worldnews, worldhistory, sankok, dhamma)
      take the same four pieces into their own Panel/HeadCard when their next episode is built.

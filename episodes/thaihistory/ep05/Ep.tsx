@@ -1,5 +1,5 @@
 import { AbsoluteFill, Html5Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { camAt, panelHideAt, projectionFor, type Cam } from "../../../components/camera";
+import { camAt, holdAndMove, panelHideAt, projectionFor, type Cam } from "../../../components/camera";
 import { Caption } from "../../../components/Caption";
 import type { FeatureCollection, MultiLineString } from "geojson";
 import { MapFrame, useMap } from "../../../components/Map";
@@ -59,7 +59,8 @@ const BigRivers = () => {
 export const Ep05 = ({ clear = false }: { clear?: boolean }) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
-  const keys = E5_CHAPTERS.flatMap((c) => c.cams(width, height)).sort((a, b) => a.frame - b.frame);
+  const authored = E5_CHAPTERS.flatMap((c) => c.cams(width, height)).sort((a, b) => a.frame - b.frame);
+  const keys = clear ? holdAndMove(authored, 30) : authored;
   const base = camAt(keys, frame);
   const cam = clear ? { ...base, scale: base.scale * CLEAR.camScale } : base;
   const hide = clear ? panelHideAt(keys, frame) : 0;
