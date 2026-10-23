@@ -1,6 +1,6 @@
 import { loadFont } from "@remotion/google-fonts/Kanit";
 import type { FeatureCollection, MultiLineString } from "geojson";
-import type { ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { camForFeature, projectionFor, type Cam } from "../../../components/camera";
 import { InsetPanel, type InsetGeom } from "../../../components/Inset";
@@ -17,6 +17,14 @@ export const font = loadFont("normal", { weights: ["400", "700", "900"], subsets
 export const RED = "#ff3b30";
 export const GOLD = "#ffc94a";
 export const BLUE = "#4fa3ff";
+// Layout options (default = the approved look). compact: smaller head card; panelScale: illustration box shrunk
+// about its bottom edge. Set by an episode with <LayoutCtx.Provider> to keep more of the map clear.
+// panelHide (0..1): how far the illustration panel is tucked away (the episode raises it while the camera moves).
+export const LayoutCtx = createContext({ compact: false, panelScale: 1, panelHide: 0 });
+// House-standard clear layout values: camera zoomed out and its focus raised into the band between the compact head
+// card and the shrunk panel. Episodes: cam.scale × camScale, <MapFrame focusY>, LayoutCtx { compact, panelScale,
+// panelHide: panelHideAt(keys, frame) } — see thaihistory/ep05/Ep.tsx (Ep05Clear).
+export const CLEAR = { camScale: 0.8, focusY: 0.444, panelScale: 0.8 };
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 export const LAYOUT = { lead: 3, gap: 16 };
@@ -154,7 +162,8 @@ export type Head = { f: number; tag: string; head: string; stat?: string | ((fra
 export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to: number }) => {
   const frame = useCurrentFrame();
   const { width, height, fps } = useVideoConfig();
-  const s = Math.min(width, height) / 1080;
+  const { compact } = useContext(LayoutCtx);
+  const s = (Math.min(width, height) / 1080) * (compact ? 0.72 : 1);
   if (frame < from || frame > to) return null;
   const list = heads.filter((h) => frame >= h.f);
   if (!list.length) return null;
@@ -166,7 +175,7 @@ export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to:
   const color = h.color ?? RED;
   const stat = typeof h.stat === "function" ? h.stat(frame) : h.stat;
   return (
-    <div style={{ position: "absolute", left: 50 * s, right: 50 * s, top: height * 0.1, transform: `translateX(${(1 - k) * -60 * s}px)`, opacity: k * o, fontFamily: font, color: "#fff", background: "rgba(8,14,26,0.86)", borderLeft: `${8 * s}px solid ${color}`, borderRadius: 14 * s, padding: `${18 * s}px ${30 * s}px`, boxShadow: `0 ${10 * s}px ${30 * s}px rgba(0,0,0,0.5)`, lineHeight: 1.4 }}>
+    <div style={{ position: "absolute", left: compact ? 40 : 50 * s, right: compact ? undefined : 50 * s, maxWidth: compact ? width * 0.82 : undefined, top: height * (compact ? 0.085 : 0.1), transform: `translateX(${(1 - k) * -60 * s}px)`, opacity: k * o, fontFamily: font, color: "#fff", background: "rgba(8,14,26,0.86)", borderLeft: `${8 * s}px solid ${color}`, borderRadius: 14 * s, padding: `${18 * s}px ${30 * s}px`, boxShadow: `0 ${10 * s}px ${30 * s}px rgba(0,0,0,0.5)`, lineHeight: 1.4 }}>
       {h.portrait && (
         // AI-drawn portrait (style A, episodes/thaihistory/portraits.json): always labelled ภาพประกอบ
         <div style={{ float: "left", position: "relative", width: 190 * s, height: 190 * s, marginRight: 24 * s, transform: `scale(${0.8 + 0.2 * swap})`, opacity: swap }}>
@@ -204,11 +213,18 @@ export const CAPTION_TOP = 0.765;
 
 // Standard illustration panel for this episode.
 // Consecutive panels must overlap: pass the next panel's start + 14 as `end`.
-export const Panel = ({ id, anchor, start, end, sky, accent = RED, children }: { id: string; anchor: [number, number]; start: number; end: number; sky: [string, string]; accent?: string; children: (g: InsetGeom) => ReactNode }) => (
-  <InsetPanel id={id} anchor={anchor} label="ภาพประกอบ" start={start} end={end} sky={sky} font={font} accent={accent} top={PANEL_TOP} panelHeight={PANEL_H}>
-    {children}
-  </InsetPanel>
-);
+export const Panel = ({ id, anchor, start, end, sky, accent = RED, children }: { id: string; anchor: [number, number]; start: number; end: number; sky: [string, string]; accent?: string; children: (g: InsetGeom) => ReactNode }) => {
+  const { panelScale, panelHide } = useContext(LayoutCtx);
+  const { height } = useVideoConfig();
+  if (panelHide >= 0.999) return null;
+  return (
+    <g opacity={1 - panelHide} transform={panelHide > 0 ? `translate(0,${panelHide * panelHide * height * 0.06})` : undefined}>
+    <InsetPanel id={id} anchor={anchor} label="ภาพประกอบ" start={start} end={end} sky={sky} font={font} accent={accent} top={PANEL_TOP} panelHeight={PANEL_H} boxScale={panelScale}>
+      {children}
+    </InsetPanel>
+    </g>
+  );
+};
 
 // Ayutthaya skyline: prangs and bell chedis, optionally burning.
 type G = { x: number; W: number; ground: number; s: number };

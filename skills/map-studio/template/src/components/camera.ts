@@ -67,3 +67,25 @@ export const camForFeature = (
 // True when a point is on the visible hemisphere (with a small margin so labels fade before the rim).
 export const isVisible = (cam: Cam, point: [number, number], margin = 0.08) =>
   geoDistance([cam.lon, cam.lat], point) < Math.PI / 2 - margin;
+
+// Camera speed at a frame: centre shift in screen px + zoom change (log scale). 0 when the map is still.
+export const camSpeed = (keys: CamKey[], f: number) => {
+  const a = camAt(keys, f);
+  const b = camAt(keys, f + 1);
+  const pxDeg = (a.scale * Math.PI) / 180;
+  const shift = Math.hypot((b.lon - a.lon) * Math.cos((a.lat * Math.PI) / 180), b.lat - a.lat) * pxDeg;
+  return shift + Math.abs(Math.log(b.scale / a.scale)) * 900;
+};
+
+// House standard "clear" layout (set 23 Oct 2026): how far (0..1) the illustration panel is tucked away at `frame`.
+// 1 while the camera moves (looking 8 frames ahead, so the panel is gone before the move starts), back to 0 once the
+// map has been still for a few frames; averaged over 8 frames so it slides instead of blinking.
+export const panelHideAt = (keys: CamKey[], frame: number, threshold = 1.2) => {
+  const moving = (f: number) => {
+    for (let d = -4; d <= 8; d++) if (camSpeed(keys, f + d) > threshold) return 1;
+    return 0;
+  };
+  let hide = 0;
+  for (let d = 0; d < 8; d++) hide += moving(frame - d);
+  return hide / 8;
+};

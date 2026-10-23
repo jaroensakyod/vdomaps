@@ -41,7 +41,7 @@ current step needs:
 Set by the user on 21 Oct 2026 after the Ayutthaya episode. One rule set for every channel; only the look of the
 map changes with the story:
 
-| Channel | Map look | Rules 2–6 below |
+| Channel | Map look | Rules 2–9 below |
 |---|---|---|
 | ประวัติศาสตร์บนแผนที่ (`episodes/thaihistory`) | News look (rule 1) | yes |
 | แผนที่ข่าวโลกรายวัน (`episodes/worldnews`) | News look (rule 1) | yes |
@@ -96,6 +96,20 @@ map changes with the story:
    (commercial OK, no credit), Freesound CC0. The raw files are never committed. Every illustrated event sounds
    on its frame, every scene has an ambience bed, and narration always wins. Synthetic `SFX.*` sounds are for UI
    moments only. Rules, sources and the catalogue: `references/sound.md`; reference mix: `episodes/lab/WW1Battle.tsx`.
+9. **Clear layout: the map is never covered** (set by the user on 23 Oct 2026 from the ep05 10-second tests,
+   `out/thaihistory/ep05/layout-test/`). Every new 9:16 episode on every channel:
+   - **Compact head card** (72 % size, top 8.5 %, ≤ 82 % of the width so the top-right of the map shows).
+   - **Panel shrunk to 80 %** about its bottom edge (`InsetPanel boxScale`); captions stay where they are and the
+     leader line still ends on the box.
+   - **Map in the open band:** camera `scale × 0.8` and `<MapFrame focusY={0.444}>`, so the place being narrated sits
+     between the head card and the panel (≈ 17–60 % of the height), not behind the panel.
+   - **Panel tucked away while the camera moves:** `panelHideAt(keys, frame)` (`components/camera.ts`) slides the panel
+     down and out ~8 frames before any pan or zoom and brings it back once the map is still. Keep camera moves short
+     (~24 frames) and hold the view, so each sentence's picture still gets its time on screen.
+   - Wiring (thaihistory news kit): `CLEAR` + `LayoutCtx` in `episodes/thaihistory/news/kit.tsx`; reference
+     `episodes/thaihistory/ep05/Ep.tsx` (`Ep05Clear`). Other channel kits (worldnews, worldhistory, sankok, dhamma)
+     take the same four pieces into their own Panel/HeadCard when their next episode is built.
+   Finished videos keep their layout; do not re-render them for this.
 
 ## First run on a new machine
 

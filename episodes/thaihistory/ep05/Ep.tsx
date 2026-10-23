@@ -1,5 +1,5 @@
 import { AbsoluteFill, Html5Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { camAt, projectionFor, type Cam } from "../../../components/camera";
+import { camAt, panelHideAt, projectionFor, type Cam } from "../../../components/camera";
 import { Caption } from "../../../components/Caption";
 import type { FeatureCollection, MultiLineString } from "geojson";
 import { MapFrame, useMap } from "../../../components/Map";
@@ -7,7 +7,7 @@ import { useJson } from "../../../components/useJson";
 import { Raster } from "../../../components/Raster";
 import { Sfx } from "../../../components/Sound";
 import { totalFrames } from "../../../components/subs.mjs";
-import { CAPTION_TOP, font, HeadCard, LAYOUT, Rivers, TopBar } from "../news/kit";
+import { CAPTION_TOP, CLEAR, font, HeadCard, LAYOUT, LayoutCtx, Rivers, TopBar } from "../news/kit";
 import { BEATS, type Chapter5 } from "./beatsKit";
 import { e5c0 } from "./ch0";
 import { e5c1 } from "./ch1";
@@ -53,11 +53,16 @@ const BigRivers = () => {
   );
 };
 
-export const Ep05 = () => {
+// clear = house-standard layout (23 Oct 2026, after this episode was delivered — Ep05 keeps the classic look,
+// Ep05Clear shows the new one): compact head card, panel shrunk to 80 % about its bottom edge and tucked away while
+// the camera moves, map zoomed out to 80 % with its focus moved up into the open band (≈17–60 % of the height).
+export const Ep05 = ({ clear = false }: { clear?: boolean }) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
   const keys = E5_CHAPTERS.flatMap((c) => c.cams(width, height)).sort((a, b) => a.frame - b.frame);
-  const cam = camAt(keys, frame);
+  const base = camAt(keys, frame);
+  const cam = clear ? { ...base, scale: base.scale * CLEAR.camScale } : base;
+  const hide = clear ? panelHideAt(keys, frame) : 0;
   // Tile opacity averaged over the last 10 frames: a fast zoom-out otherwise drops it in 2–3 frames (flicker).
   const tileOpacity = (bb: [number, number, number, number]) => {
     let sum = 0;
@@ -69,6 +74,7 @@ export const Ep05 = () => {
   const year = [...years].reverse().find(([f]) => frame >= f)?.[1] ?? years[0][1];
   const near = (c: Chapter5) => frame >= c.from - 30 && frame < c.to + 30;
   return (
+    <LayoutCtx.Provider value={clear ? { compact: true, panelScale: CLEAR.panelScale, panelHide: hide } : { compact: false, panelScale: 1, panelHide: 0 }}>
     <AbsoluteFill style={{ background: "#02060d" }}>
       {BEATS.map((b) => (
         <Sequence key={b.id} from={b.start} durationInFrames={b.len + LAYOUT.gap}>
@@ -77,7 +83,7 @@ export const Ep05 = () => {
       ))}
       {E5_CHAPTERS.flatMap((c) => c.sfx.map(([f, src, v], i) => <Sfx key={`${c.name}${i}`} src={src} at={Math.max(0, f)} volume={v * UI_GAIN} />))}
       {E5_CHAPTERS.map((c) => (c.Audio ? <c.Audio key={`a${c.name}`} /> : null))}
-      <MapFrame cam={cam}>
+      <MapFrame cam={cam} focusY={clear ? CLEAR.focusY : 0.5}>
         <Raster layers={[{ name: "world" }, { name: "sea2" }, ...TILES.map(([name, bb]) => ({ name, opacity: tileOpacity(bb) }))]} />
         <BigRivers />
         <Rivers />
@@ -91,5 +97,6 @@ export const Ep05 = () => {
         <Caption key={b.id} text={b.text} spoken={b.spoken} words={b.words} start={b.start} len={b.len} font={font} top={CAPTION_TOP} />
       ))}
     </AbsoluteFill>
+    </LayoutCtx.Provider>
   );
 };
