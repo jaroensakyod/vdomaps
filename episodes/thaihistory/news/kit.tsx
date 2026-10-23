@@ -150,7 +150,7 @@ export const TopBar = ({ chapter, year }: { chapter: string; year: string }) => 
 };
 
 // One card per shot: [frame, tag, headline, stat?, statLabel?, color?]. The card stays; text swaps on each shot.
-export type Head = { f: number; tag: string; head: string; stat?: string | ((frame: number) => string); label?: string; color?: string; chips?: { text: string; f: number }[]; portrait?: string };
+export type Head = { f: number; tag: string; head: string; stat?: string | ((frame: number) => string); label?: string; color?: string; chips?: { text: string; f: number }[]; portrait?: string; photo?: string };
 export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to: number }) => {
   const frame = useCurrentFrame();
   const { width, height, fps } = useVideoConfig();
@@ -171,7 +171,7 @@ export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to:
         // AI-drawn portrait (style A, episodes/thaihistory/portraits.json): always labelled ภาพประกอบ
         <div style={{ float: "left", position: "relative", width: 190 * s, height: 190 * s, marginRight: 24 * s, transform: `scale(${0.8 + 0.2 * swap})`, opacity: swap }}>
           <Img src={staticFile(h.portrait.includes("/") ? `portraits/${h.portrait}.jpg` : `portraits/thaihistory/${h.portrait}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 14 * s, border: `${4 * s}px solid ${color}` }} />
-          <span style={{ position: "absolute", left: 8 * s, bottom: 8 * s, background: "rgba(8,14,26,0.75)", fontSize: 16 * s, padding: `0 ${8 * s}px`, borderRadius: 6 * s }}>ภาพประกอบ</span>
+          <span style={{ position: "absolute", left: 8 * s, bottom: 8 * s, background: "rgba(8,14,26,0.75)", fontSize: 16 * s, padding: `0 ${8 * s}px`, borderRadius: 6 * s }}>{h.photo ?? "ภาพประกอบ"}</span>
         </div>
       )}
       <span style={{ background: "rgba(255,255,255,0.14)", padding: `${2 * s}px ${14 * s}px`, borderRadius: 30 * s, fontSize: 26 * s, fontWeight: 700 }}>{h.tag}</span>

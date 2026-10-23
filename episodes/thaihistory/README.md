@@ -15,6 +15,7 @@
 | `kit/`, `StyleFrames.tsx`, `ep01/Ep.tsx` | เวอร์ชันแรกที่เป็นแผนที่กระดาษการ์ตูน **ผู้ใช้ไม่ผ่าน** เก็บไว้ดูเป็นตัวอย่างเท่านั้น |
 | `th-rivers.mjs` | สร้างไฟล์แม่น้ำภาคกลางและคลองรอบเกาะจากข้อมูล OSM |
 | `ep04/` | **ตอน 4 จุดจบของพระเจ้าตาก** (10:51) ภาพประกอบสไตล์ v2 + เสียงจริงจากคลังเสียง · คอมโพสิชัน `Ep04` · `v2.tsx` = ชุดฉาก (วัง ปรางค์ พระ ขุนนาง เรือ ไฟ สมุดข่อย หนังใหญ่) · `ch0`–`ch8` = 9 ช่วง · `bkk-rivers.mjs` = คลองสมัยธนบุรีจาก OSM (`fetch-osm.mjs th-bkk 100.44 13.68 100.54 13.80 rivers`) · ภาพ HLS `bkkhls` (100.40 13.66 100.58 13.82, 2025-01-20) และ `plainhls` |
+| `ep05/` | **ตอน 5 สยามรอดได้อย่างไร (วันปิยมหาราช)** (10:13) ภาพประกอบสไตล์ v2 + เสียงจริงจากคลัง · คอมโพสิชัน `Ep05` และปก `Ep05Cover` · `beatsKit.tsx` = `Empire` ระบายสีอาณานิคม (อังกฤษแดง ฝรั่งเศสน้ำเงิน สยามทอง แนวโดยประมาณ) · `kit5.tsx` = เรือปืน ธง ทะเล อาคารตะวันตก โต๊ะแผนที่ · `ch0`–`ch8` = 9 ช่วง · ภาพบุคคลทั้งหมดเป็นภาพถ่ายสาธารณสมบัติจาก Wikimedia Commons (`portraits/`) ไม่ใช้ AI · ภาพ HLS `mouthhls` (100.44 13.36 100.70 13.80, 2025-01-20) · Blue Marble `sea2` (88 −8 112 28) · แม่น้ำ `searivers` |
 
 ## ข้อมูลที่ต้องดึงก่อน (ไม่ได้เก็บใน repo)
 
@@ -27,6 +28,9 @@ TIME=2025-01-05 node scripts/fetch-imagery.mjs hls plainhls 100.0 13.6 101.4 15.
 TIME=2025-01-20 node scripts/fetch-imagery.mjs hls isle 100.46 14.24 100.68 14.48 2400
 TIME=2025-01-10 node scripts/fetch-imagery.mjs hls banghls 100.1 14.4 101.0 15.6 3000
 node scripts/fetch-imagery.mjs bluemarble world
+TIME=2025-01-20 node scripts/fetch-imagery.mjs hls mouthhls 100.44 13.36 100.70 13.80 2400
+node scripts/fetch-imagery.mjs bluemarble sea2 88 -8 112 28 5400
+node scripts/fetch-rivers.mjs searivers 88 -2 112 28
 ```
 
 ## เรนเดอร์
