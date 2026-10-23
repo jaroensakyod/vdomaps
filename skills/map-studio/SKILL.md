@@ -73,7 +73,10 @@ map changes with the story:
    Terminal tab, or a background command) so a Claude restart or context compaction does not take them down; keep the
    computer awake and do not run other renders or batches of stills at the same time; check `out/` has ~2 GB free
    per 10-min episode. Before a full render, render the riskiest 5–10 s ranges (`--frames=a-b`) and run
-   `check-glitch` on them — a full re-render costs ~40 min, a range a minute.
+   `check-glitch` on them — a full re-render costs ~40 min, a range a minute. The risky ranges are always (a) explosions,
+   flashes and repeated impacts and (b) the story/chapter changes with the biggest zoom (close-up ↔ globe): give a
+   zoom-out from ~5× to the globe ≥ 28 frames (world news 23 Oct 2026: 18 frames made the polar ice pop in one frame,
+   flagged after the full render and cost a second render).
 5. Show a ~10–15 s test in the final look before building a whole video.
 6. Map/imagery credits go in the video description, not on screen (OSM's ODbL still requires the description credit).
 7. **Illustration style v2** (set by the user on 22 Oct 2026, approved from `out/thaihistory/style-test.mp4`): every
