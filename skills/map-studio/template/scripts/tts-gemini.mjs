@@ -40,16 +40,24 @@ const speak = async (text, voice, out) => {
   // Rate-limited keys: on 429, wait the delay the API suggests (or 30 s) and retry — unless it is the daily cap.
   let json;
   for (let attempt = 1; ; attempt++) {
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text }] }],
-        generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } } },
-      }),
-    });
-    requests++;
-    json = await res.json();
+    // A dropped connection mid-response ("fetch failed", "other side closed") is retried too, after 15 s.
+    try {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text }] }],
+          generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } } },
+        }),
+      });
+      requests++;
+      json = await res.json();
+    } catch (err) {
+      if (attempt >= 5) throw err;
+      console.log(`  connection dropped (${err.cause?.code ?? err.message}), retrying in 15 s`);
+      await new Promise((r) => setTimeout(r, 15000));
+      continue;
+    }
     if (json.error?.code !== 429 || attempt >= 8) break;
     const hint = JSON.stringify(json.error.details ?? []).match(/"retryDelay":"(\d+)s"/);
     const wait = (hint ? Number(hint[1]) : 30) + 2;
@@ -100,6 +108,13 @@ for (const beat of beats) {
     console.log(beat.id.padEnd(10), old.sec.toFixed(2), voice, "(unchanged)");
   } else todo.push(beat);
 }
+
+// Writes timing.json with every beat made so far (in script order).
+const save = () => {
+  const done = beats.map((b) => timing.get(b.id)).filter(Boolean);
+  writeFileSync(`${epDir}/timing.json`, JSON.stringify(done, null, 2));
+  return done;
+};
 
 const perBeat = async (list) => {
   for (const beat of list) {
@@ -157,9 +172,14 @@ else {
       await perBeat(list);
       continue;
     }
-    // Whisper runs a little late, so each cut moves into the nearest real silence of the take.
+    // Whisper runs a little late, so each cut moves into the nearest real silence of the take — unless that silence
+    // lies outside the gap between the two paragraphs (two cuts landing on one silence leave a beat empty).
     const quiet = silences(take);
-    const cuts = spans.slice(1).map((sp, k) => snapToSilence((spans[k][1] + sp[0]) / 2, quiet));
+    const cuts = spans.slice(1).map((sp, k) => {
+      const mid = (spans[k][1] + sp[0]) / 2;
+      const snapped = snapToSilence(mid, quiet);
+      return snapped > spans[k][0] + 0.2 && snapped < sp[1] - 0.2 ? snapped : mid;
+    });
     list.forEach((beat, k) => {
       const from = k ? cuts[k - 1] : 0;
       const to = k < list.length - 1 ? cuts[k] : total;
@@ -168,11 +188,11 @@ else {
       console.log(beat.id.padEnd(10), t.sec.toFixed(2), voice, `(${from.toFixed(2)}–${to.toFixed(2)} s of the take)`);
     });
     rmSync(take), rmSync(wav16, { force: true }), rmSync(`${wav16}.json`, { force: true });
+    save(); // a crash in a later chunk keeps the beats made so far (a re-run reuses them)
   }
 }
 
-const out = beats.map((b) => timing.get(b.id));
-writeFileSync(`${epDir}/timing.json`, JSON.stringify(out, null, 2));
+const out = save();
 console.log("total", out.reduce((a, b) => a + b.sec, 0).toFixed(1), "s ·", requests, "TTS requests");
 const other = out.filter((t) => t.model);
 if (other.length) console.log(`⚠ ${other.length} beat(s) made on a fallback model (${[...new Set(other.map((t) => t.model))].join(", ")}): ${other.map((t) => t.id).join(", ")} — listen for a change in the voice`);

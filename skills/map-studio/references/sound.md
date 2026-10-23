@@ -66,8 +66,11 @@ import { Bed, Hit, voiceSpans } from "../../components/Sound";
   ~15 frames before the impact.
 - **Each scene has a bed** that sets the place: rain, wind, sea, crowd, distant battle, fire. One or two beds at
   a time, never more. Beds fade in/out over ~20 frames at scene changes.
-- **Narration always wins.** Pass `voice={voiceSpans(BEATS)}` to beds (ducks to 45 % under VO). One-shots under
-  VO: volume 0.3–0.5; big hits in a pause: up to 0.9.
+- **Narration always wins.** Pass `voice={voiceSpans(BEATS)}` to beds. One-shots under VO: volume 0.3–0.5;
+  big hits in a pause: up to 0.9.
+- **Then mix it down** (user, 23 Oct 2026, ประวัติศาสตร์บนแผนที่ ep04: effects at those levels were a little loud and
+  sometimes masked the voice). Route the episode's `Bed`/`Hit` through a mix file like `episodes/thaihistory/ep04/mix.tsx`:
+  one-shots ×0.8, ×0.5 more when they land under VO; beds ×0.7 with `duck` 0.3; synthetic UI sounds ×0.7.
 - Vary repeated sounds: alternate `explosion_mid` / `explosion_far` / `explosion_big` by size and distance, and
   don't fire the same rifle sample more than ~once a second.
 - Distance = volume: far events 0.3–0.5, near 0.6–0.9.
