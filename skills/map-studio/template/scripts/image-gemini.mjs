@@ -1,8 +1,9 @@
 // Still images with Gemini (portraits, scene art). Usage: GEMINI_API_KEY=... node scripts/image-gemini.mjs <jobs.json> <out dir> [model]
 // jobs.json = { "style": "...shared prompt...", "aspect": "1:1", "items": { "<id>": "<subject prompt>" | { "prompt", "aspect" } } }
 // Writes <out dir>/<id>.jpg (ffmpeg converts the PNG the API returns). Existing files are kept unless FORCE=1;
-// ONLY=id1,id2 limits the run. Every generated image is AI art: label it on screen ("ภาพประกอบ").
+// ONLY=id1,id2 limits the run; EP=<slug> books the cost to that episode (else to the out dir). Every generated image is AI art: label it on screen ("ภาพประกอบ").
 import "./env.mjs";
+import { meter } from "./gemini-cost.mjs";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 
@@ -12,6 +13,7 @@ if (!jobsFile || !outDir || !key) throw new Error("usage: GEMINI_API_KEY=... nod
 const jobs = JSON.parse(readFileSync(jobsFile, "utf8"));
 const only = process.env.ONLY?.split(",");
 mkdirSync(outDir, { recursive: true });
+const cost = meter("image", process.env.EP ?? outDir);
 
 for (const [id, item] of Object.entries(jobs.items)) {
   if (only && !only.includes(id)) continue;
@@ -38,6 +40,7 @@ for (const [id, item] of Object.entries(jobs.items)) {
     console.log(`  ${id}: rate limited, retrying in ${wait} s`);
     await new Promise((r) => setTimeout(r, wait * 1000));
   }
+  if (json.usageMetadata) cost.add(model, json);
   const part = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
   if (!part) throw new Error(`${id}: ${JSON.stringify(json).slice(0, 400)}`);
   const tmp = `${out}.src`;

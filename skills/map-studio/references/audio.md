@@ -22,7 +22,13 @@
   < 75 % or paragraphs overlap. On the daily cap the script switches to `TTS_FALLBACK` (default `gemini-3.8-flash-lite-tts`: same voices, own
   quota, 99 % match on the ep 1 hook like 3.8 Flash) and tags those beats `"model"` in timing.json; it stops only
   when every model is capped. Prices (Oct 2026, per 1M audio tokens, 25 tokens = 1 s): 3.8 Flash $9, 3.8 Flash
-  Lite $6, 2.5 Pro / 3.1 Flash $20 — a 75 s episode is under $0.02 on any of them.
+  Lite $6, 2.5 Pro / 3.1 Flash $20 — a 75 s episode is under $0.02 on any of them. The 3.8 prices double on
+  1 Jan 2027. The table lives in `scripts/gemini-cost.mjs` (update it when Google changes prices).
+- **Cost meter:** `tts`, `transcribe` and `image` print tokens and cost (USD and baht, `THB_PER_USD`, default 33)
+  when they finish, including a run that stops on an error, and append one line to `costs.jsonl` (git-ignored).
+  `npm run cost` sums it per episode; `npm run cost -- <slug>` shows one episode. `transcribe` books to the slug in
+  `public/audio/<slug>/`, `image` to its out dir; `EP=<slug>` overrides both. Transcribe costs more than you
+  would guess: gemini-3.8-flash bills its thinking tokens as output (~$0.002 for a 5 s file).
 - Send **plain text only**. An English style instruction in the prompt is read aloud or derails the output.
 - Write numbers and abbreviations as Thai words in `text` ("สองร้อยแปด", "คริสต์ศักราช"); put the digit form in
   `caption` for subtitles.
