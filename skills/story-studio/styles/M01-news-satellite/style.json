@@ -1,0 +1,1 @@
+{ "id": "M01", "bg": ["#0b1830", "#02060d"], "accent": "#ff3b30", "stat": "#ff6b5f", "glow": "#ff8a80", "card": "rgba(8,14,26,0.86)", "border": "rgba(255,255,255,0.3)", "text": "#ffffff", "textStroke": "#06101f", "font": "Noto Sans Thai", "titleWeight": 900, "base": "raster/world.jpg (NASA Blue Marble)", "panelLabel": "ภาพประกอบ" }

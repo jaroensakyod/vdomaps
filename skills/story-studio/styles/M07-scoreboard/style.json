@@ -1,0 +1,1 @@
+{ "id": "M07", "bg": "#e6d4aa", "sea": "#c9b68c", "land": "#efe1bb", "ink": "#3b2a1a", "coast": "#5b4026", "river": "#4d7488", "lake": "#b7c4b1", "sides": ["#2f4f86", "#2f7a45", "#b0302a", "#9a7b2f", "#6b3f6e", "#7a5230", "#4a4a52"], "text": "#3b2a1a", "halo": "#efe1bb", "font": "Kanit", "titleFont": "Chonburi", "titleWeight": 400 }

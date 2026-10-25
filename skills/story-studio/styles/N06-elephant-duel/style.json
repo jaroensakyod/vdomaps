@@ -1,0 +1,1 @@
+{ "id": "N06", "bg": "#0a0b10", "sky": ["#3a4a7a", "#d88a5a", "#f6cf86"], "ground": ["#b8935a", "#7a5a32"], "hide": ["#8c8781", "#6c6762"], "sideA": "#b3261e", "sideB": "#e9e2cf", "trimA": "#d9a93a", "trimB": "#7a2a22", "ink": "#1a140f", "accent": "#d9a93a", "highlight": "#ffb35c", "text": "#ffffff", "font": "Kanit", "titleWeight": 900 }

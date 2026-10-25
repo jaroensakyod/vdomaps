@@ -9,3 +9,6 @@ public/audio/
 
 # SFX library: licences forbid redistributing the raw files (see skills/map-studio/template/sfx/library.json)
 **/public/sfx/lib/
+
+# Product builds (node course/pack.mjs)
+dist/

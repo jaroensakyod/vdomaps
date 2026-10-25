@@ -1,0 +1,1 @@
+{ "id": "M04", "bg": "#02060d", "card": "rgba(8,14,26,0.86)", "main": "#7fd4ff", "second": "#ffc94a", "accent": "#ff3b30", "blue": "#4fa3ff", "lit": "#fff3a6", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "imagery": { "layer": "hls", "metersPerPixel": 30, "minScreenKm": 4 } }

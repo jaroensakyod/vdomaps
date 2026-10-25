@@ -6,11 +6,15 @@
 # ลง Xcode Command Line Tools, Homebrew, git, Node.js, ffmpeg, Claude Code → โหลดชุด vdomaps
 # → สร้าง ~/maps/my-channel → npm install → เลือกโหมดการ์ดจอ → เรนเดอร์ภาพทดสอบ → เปิด .env ให้ใส่ Gemini API key
 # รันซ้ำได้ ไม่ลบงานเดิม (ทดสอบ: MAPS_DIR=โฟลเดอร์อื่น, VDOMAPS_SRC=ชุด vdomaps ในเครื่องแทนการ clone)
+# ชุดขาย Story Studio: ไฟล์นี้อยู่ข้างโฟลเดอร์ story-studio (จาก course/pack.mjs) → ใช้ชุดในโฟลเดอร์นั้น ไม่ clone
+# STORY_AGENT=1|2|3 (Claude Code / Codex / ทั้งสอง) ข้ามคำถามเลือกผู้ช่วย AI
 
 ROOT="${MAPS_DIR:-$HOME/maps}"
 PROJECT="$ROOT/my-channel"
 KIT="$PROJECT/.vdomaps"
 REPO="https://github.com/jaroensakyod/vdomaps"
+HERE=""; [ -n "${BASH_SOURCE[0]}" ] && [ -f "${BASH_SOURCE[0]}" ] && HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PRODUCT=""; [ -n "$HERE" ] && [ -f "$HERE/story-studio/SKILL.md" ] && PRODUCT=1
 
 step() { printf '\n\033[36m==> %s\033[0m\n' "$1"; }
 ok() { printf '    \033[32mOK\033[0m  %s\n' "$1"; }
@@ -44,24 +48,52 @@ done
 major=$(node -v | sed -E 's/^v([0-9]+).*/\1/')
 [ "$major" -ge 18 ] || { warn "Node $(node -v) เก่าเกินไป — รัน: brew upgrade node"; exit 1; }
 
-step "3/7 ลง Claude Code"
+step "3/7 เลือกผู้ช่วย AI แล้วติดตั้ง"
 export PATH="$HOME/.local/bin:$PATH"
-if has claude; then ok "Claude Code มีแล้ว"
-else
-  curl -fsSL https://claude.ai/install.sh | bash
-  if has claude; then ok "Claude Code ลงแล้ว"; else warn "ข้ามได้ ถ้าใช้แอป Claude Desktop (แท็บ Code) — โหลดที่ https://claude.ai/download"; fi
+AGENT="$STORY_AGENT"
+if [ -z "$AGENT" ]; then
+  echo "    ใช้ผู้ช่วย AI ตัวไหน?   1 = Claude Code   2 = Codex   3 = ทั้งสองตัว"
+  read -r -p "    พิมพ์ 1, 2 หรือ 3 แล้วกด Enter (ว่างไว้ = 1): " AGENT </dev/tty
+fi
+case "$AGENT" in 1|2|3) ;; *) AGENT=1 ;; esac
+if [ "$AGENT" != 2 ]; then
+  if has claude; then ok "Claude Code มีแล้ว"
+  else
+    curl -fsSL https://claude.ai/install.sh | bash
+    if has claude; then ok "Claude Code ลงแล้ว"; else warn "ข้ามได้ ถ้าใช้แอป Claude Desktop (แท็บ Code) — โหลดที่ https://claude.ai/download"; fi
+  fi
+fi
+if [ "$AGENT" != 1 ]; then
+  if has codex; then ok "Codex มีแล้ว"
+  else
+    brew install --cask codex >/dev/null 2>&1 || npm install -g @openai/codex --no-audit --no-fund
+    if has codex; then ok "Codex ลงแล้ว (ครั้งแรกพิมพ์ codex แล้วล็อกอินด้วยบัญชี ChatGPT)"; else warn "ลง Codex ไม่สำเร็จ — ใช้แอป Codex แทนได้ หรือรันตัวติดตั้งซ้ำ"; fi
+  fi
 fi
 
 step "4/7 โหลดชุด vdomaps ไปที่ $PROJECT แล้ว npm install (ครั้งแรก 2-5 นาที)"
 mkdir -p "$PROJECT"
-if [ -n "$VDOMAPS_SRC" ]; then KIT="$VDOMAPS_SRC"; ok "ใช้ชุดในเครื่อง $KIT"
-elif [ -d "$KIT/.git" ]; then git -C "$KIT" pull --ff-only && ok "อัปเดตชุดล่าสุดแล้ว"
-else git clone --depth 1 "$REPO" "$KIT" || { warn "โหลดไม่สำเร็จ — เช็กอินเทอร์เน็ตแล้วรันใหม่"; exit 1; }; ok "โหลดแล้ว"
+if [ -n "$PRODUCT" ]; then
+  KIT="$HERE/story-studio"
+  if [ ! -f "$PROJECT/package.json" ]; then cp -R "$KIT/template/." "$PROJECT/"; ok "สร้างโปรเจกต์จาก template แล้ว"
+  else ok "มีโปรเจกต์อยู่แล้ว (ไม่ทับงานเดิม)"; fi
+  # The skill lives inside the project: Claude Code finds it as a project skill, Codex reads it via AGENTS.md.
+  SKILL="$PROJECT/.claude/skills/story-studio"
+  rm -rf "$SKILL"; mkdir -p "$SKILL"
+  for f in "$KIT"/*; do [ "$(basename "$f")" = template ] || cp -R "$f" "$SKILL/"; done
+  ok "วาง skill story-studio ไว้ที่ .claude/skills/story-studio แล้ว"
+  for f in CLAUDE.md AGENTS.md; do [ -f "$PROJECT/$f" ] || cp "$HERE/project/$f" "$PROJECT/"; done
+  [ -f "$PROJECT/.env" ] || cp "$HERE/env.example" "$PROJECT/.env"
+else
+  if [ -n "$VDOMAPS_SRC" ]; then KIT="$VDOMAPS_SRC"; ok "ใช้ชุดในเครื่อง $KIT"
+  elif [ -d "$KIT/.git" ]; then git -C "$KIT" pull --ff-only && ok "อัปเดตชุดล่าสุดแล้ว"
+  else git clone --depth 1 "$REPO" "$KIT" || { warn "โหลดไม่สำเร็จ — เช็กอินเทอร์เน็ตแล้วรันใหม่"; exit 1; }; ok "โหลดแล้ว"
+  fi
+  if [ ! -f "$PROJECT/package.json" ]; then cp -R "$KIT/skills/map-studio/template/." "$PROJECT/"; ok "สร้างโปรเจกต์จาก template แล้ว"
+  else ok "มีโปรเจกต์อยู่แล้ว (ไม่ทับงานเดิม)"; fi
+  [ -f "$PROJECT/CLAUDE.md" ] || cp "$KIT/course/CLAUDE.md" "$PROJECT/"
+  [ -f "$PROJECT/.env" ] || cp "$KIT/course/env.example" "$PROJECT/.env"
 fi
-if [ ! -f "$PROJECT/package.json" ]; then cp -R "$KIT/skills/map-studio/template/." "$PROJECT/"; ok "สร้างโปรเจกต์จาก template แล้ว"
-else ok "มีโปรเจกต์อยู่แล้ว (ไม่ทับงานเดิม)"; fi
-[ -f "$PROJECT/CLAUDE.md" ] || cp "$KIT/course/CLAUDE.md" "$PROJECT/"
-[ -f "$PROJECT/.env" ] || cp "$KIT/course/env.example" "$PROJECT/.env"
 cd "$PROJECT" || exit 1
 npm install --no-audit --no-fund || { warn "npm install ไม่ผ่าน — ส่งภาพหน้าจอนี้ให้ครู"; exit 1; }
 ok "ลงแพ็กเกจแล้ว"
@@ -92,7 +124,11 @@ open -e "$PROJECT/.env"
 
 printf '\n\033[32m==================== เสร็จแล้ว ====================\033[0m\n'
 echo " โฟลเดอร์งานของคุณ: $PROJECT"
-echo " ต่อไป: เปิดแอป Claude → แท็บ Code → เลือกโฟลเดอร์นี้"
-echo "        (หรือพิมพ์ใน Terminal:  cd ~/maps/my-channel && claude )"
-echo " แล้วพิมพ์:  เช็กว่าเครื่องพร้อมทำคลิปแผนที่ไหม"
+if [ "$AGENT" != 2 ]; then
+  echo " ต่อไป: เปิดแอป Claude → แท็บ Code → เลือกโฟลเดอร์นี้"
+  echo "        (หรือพิมพ์ใน Terminal:  cd ~/maps/my-channel && claude )"
+fi
+[ "$AGENT" != 1 ] && echo " Codex: พิมพ์ใน Terminal  cd ~/maps/my-channel && codex   (หรือเปิดโฟลเดอร์นี้ในแอป Codex)"
+if [ -n "$PRODUCT" ]; then echo " แล้วพิมพ์:  เช็กว่าเครื่องพร้อมทำคลิปไหม  ·  รายการสไตล์: .claude/skills/story-studio/styles/INDEX.md"
+else echo " แล้วพิมพ์:  เช็กว่าเครื่องพร้อมทำคลิปแผนที่ไหม"; fi
 echo "==================================================="

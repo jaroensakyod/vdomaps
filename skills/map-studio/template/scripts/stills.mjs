@@ -1,10 +1,11 @@
-// node stills.mjs <composition> <out dir> <f1,f2,…|step> [scale] [cols] — bundle once, render stills, write <out dir>/sheet.jpg
+// node scripts/stills.mjs <composition> <out dir> <f1,f2,…|step> [scale] [cols] — bundle once, render stills, write <out dir>/sheet.jpg
 import { bundle } from "@remotion/bundler";
 import { renderStill, selectComposition } from "@remotion/renderer";
 import { execFileSync } from "node:child_process";
 import { mkdirSync, rmSync } from "node:fs";
 import path from "path";
-const root = "C:/maps/th";
+import { fileURLToPath } from "node:url";
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."); // the project, wherever it is installed
 const [id, out, list, scale = "0.3", cols = "5"] = process.argv.slice(2);
 const dir = path.join(root, out);
 rmSync(dir, { recursive: true, force: true });

@@ -1,0 +1,1 @@
+{ "id": "N08", "bg": "#0a0b10", "sky": ["#262f48", "#7a6070", "#e09a6a"], "sea": ["#3f6a78", "#2f5868", "#21485a", "#1a3d4c", "#173847"], "foam": "#e8f2f2", "smoke": "#efeae0", "hull": "#5a3a22", "sail": "#f0e8d2", "flagA": "#c0302a", "flagB": "#2a4fa8", "accent": "#d9a93a", "ink": "#1a140f", "highlight": "#ffb35c", "text": "#ffffff", "font": "Kanit", "titleWeight": 900 }

@@ -1,0 +1,1 @@
+{ "id": "N11", "bg": "#02060d", "card": "rgba(8,14,26,0.92)", "main": "#ffc94a", "second": "#4fa3ff", "right": "#3f8f4a", "wrong": "#ff3b30", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "maxChoices": 4 }

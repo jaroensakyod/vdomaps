@@ -1,0 +1,1 @@
+{ "id": "N09", "bg": "#02060d", "card": "#080e1a", "main": "#ffc94a", "second": "#3fbf6a", "accent": "#ff3b30", "sides": { "thai": "#ffc94a", "viet": "#3fa7d6", "china": "#c0186a", "europe": "#4fa3ff" }, "text": "#ffffff", "font": "Kanit", "titleWeight": 900 }

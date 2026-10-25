@@ -1,0 +1,1 @@
+{ "id": "N03", "bg": ["#0d1422", "#1b2233"], "outline": "#1b1d24", "main": "#b8322a", "second": "#9aa3ab", "enemy": "#c9b48a", "bronze": "#c9a24a", "toga": "#efe9da", "accent": ["#ff3b30", "#ffc94a", "#4fa3ff"], "card": "rgba(8,14,26,0.86)", "text": "#ffffff", "textStroke": "#0b0f18", "font": "Kanit", "titleWeight": 900 }

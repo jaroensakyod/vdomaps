@@ -1,0 +1,1 @@
+{ "id": "M05", "bg": "#02060d", "grade": "#04102a", "card": "rgba(8,14,26,0.86)", "main": "#5fd0ff", "second": "#ffc94a", "accent": "#ff6b5f", "era": { "river": "#5fd0ff", "old": "#ffc94a", "thon": "#58e08f", "rat": "#ff7ad9" }, "text": "#ffffff", "font": "Kanit", "titleWeight": 900 }

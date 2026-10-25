@@ -1,0 +1,1 @@
+{ "id": "M06", "bg": "#02060d", "advance": "#e3b77a", "advanceEdge": "#1b1d24", "retreat": "#15161b", "retreatEdge": "#f2f2f2", "gold": "#ffc94a", "ice": "#9fd4ff", "accent": "#ff3b30", "card": "rgba(8,14,26,0.86)", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "perMan": 0.000238, "base": ["raster/world.jpg", "raster/europe.jpg"], "rivers": "data/eu-rivers.json" }

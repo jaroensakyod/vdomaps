@@ -1,0 +1,1 @@
+{ "id": "M03", "bg": "#02060d", "main": "#ffc94a", "second": "#e05a3a", "accent": "#ff3b30", "agree": "#3fbf6a", "card": "#080e1a", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "imagery": ["world", "sea"], "data": ["nrs-rivers"], "layout": { "head": 0.1, "panel": 0.56, "caption": 0.765 } }
