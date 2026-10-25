@@ -1,85 +1,97 @@
-# N12 โพสต์เพจและปก 4:5 · Page Post and Cover
+# N12 แสตมป์ที่ระลึก · Commemorative Stamp Album
 
-![cover](cover-9x16.jpg)
+![cover](cover-4x5.jpg)
 
 **Fits:** commemoration days, anniversaries, "new clip coming" announcements, episode covers for a Facebook page ·
-**Formats:** 4:5 (1080×1350, composition `Style-N12-post`) · **Code:** `Demo.tsx` + `kit/Post.tsx`
+**Formats:** 4:5 (1080×1350, composition `Style-N12-post`) · **Code:** `Demo.tsx` + `kit/Stamp.tsx`
 
 ## Look
 
-A single 4:5 feed card. The base is dark NASA Blue Marble imagery under a navy tint, with the story's countries
-coloured flat (42 % fill, 3 px line) and the hero country glowing gold. Dark fades top (to ~40 %) and bottom keep
-the text readable. Top left: a red rounded date badge, a heavy three-line headline whose question ends in gold,
-and a sub line with years. Top right: an arched picture frame with a 7 px gold border and a gold glow (rounded top,
-square-ish bottom) — the page's own photo, or a code-drawn picture — with a small gold caption under it. Bottom: a
-gold "coming soon" chip on the left, the page name on the right with its second word in gold, and a faint credits
-line. Map labels are white Kanit 900 with a thick outline in the area's colour.
+The post is a page from a stamp collector's album with a commemorative issue mounted on it. A pale butter-cream
+album page with a faint quadrille grid and a thick + thin green ruled border; a page heading (kicker left in
+carmine, sheet name right in green) over a double rule. The post's picture is a **large perforated stamp**
+(640×760, tilted −1.6°): round perforation teeth, a paper margin, a solid deep-green frame with a fine guilloche
+and corner rosettes, lettering reversed out in paper colour ("ประเทศไทย / THAILAND", the title, the date), a
+denomination in a paper roundel with carmine numerals. Inside the frame the scene is **engraved**: only lines,
+tone from line weight and spacing — a sky of ruled ultramarine lines that thin toward a carmine sun of concentric
+rings and rays, wave-lines in deep green over a pale green underprint, a cross-hatched warship, hatched island and
+smoke. A **smaller carmine stamp** carries the map (coast drawn as engraved water-lines, land hatched, the place
+marked with a carmine ring), a **perforated carmine label** is the "coming soon" chip, clear **glassine mount
+strips** hold the stamps, and a **round postmark** with the date ring and five wavy cancel lines strikes the
+corner of the big stamp. Below, a printed caption: date line in carmine, a two-line headline (the question in
+carmine), a green sub line, page name and a small credits line.
 
 | Role | Hex |
 |---|---|
-| Background / fades | `#02060d` (map tint `#06112b` at 40 %) |
-| Hero, question word, frame | `#ffc94a` |
-| Date badge, side A | `#ff3b30` |
-| Side B | `#3d8bff` |
-| Text | `#ffffff` (chip text `#1a1200`, credits 55 % white) |
+| Album page | `#f3e6b4` (grid `#a8946a`, stamp paper `#f4eedd`) |
+| Main ink: frame, sea, sub line | `#1f5a45` deep green |
+| Second ink: sky, map sea, "อินโดจีน" side | `#22389a` ultramarine (underprint tint `#9eacd6`) |
+| Accent: sun, map stamp, label, question, date | `#b8243f` carmine |
+| Text, postmark | `#1c1f2b` |
 
-**Type:** Kanit 700/900. Headline 80 px 900 (line-height 1.2), badge 38 px 700, sub 38 px 700, chip 36 px 900,
-page name 32 px 900, caption 22 px 700, credits 17 px, map labels 40–64 px 900 with a 10 px stroke — at 1080 wide.
-**Line:** area outlines 3 px, hero 5 px + 22 px blurred glow, frame border 7 px, marker 4 px rings.
+**Type:** Fahkwang 400/600/700 (a flared, engraved-looking Thai display face). Headline 78 px 700, date line
+34 px, sub 32 px 600, page heading 30 px, stamp title 50 px, denomination 50 px, label 36 px, credits 17 px — at
+1080 wide. Thai numerals on the stamps and postmark.
+**Line:** engraved hatch only inside the stamps (0.4–3.6 px ruled lines, 35°/−40° hatch, cross-hatch for dark
+masses); 3 + 1 px frame rules; postmark 5/3 px with patchy ink; no flat colour areas inside the picture except the
+pale underprint tints.
 
-## Motion signature
+## Motion signature (slide-stack)
 
-A post is a still; the demo shows how it animates when used as a video cover or a 5–10 s teaser:
+A post is a still; the demo shows how it animates as a video cover or a 5–10 s teaser:
 
-- Card fades in over 14 frames; badge slides in from the left, headline rises 24 px, sub, then frame and footer
-  follow on springs (damping 16), 8 frames apart.
-- Very slow push-in on the map (scale +4 % over 10 s); the hero glow breathes (0.75 ± 0.25).
-- The place marker ring pulses every 2 s; labels fade in at ~1.5 s.
-- The picture inside the arch moves gently (smoke, bobbing, water glints) — no cuts.
+- The page heading fades in; the big stamp slides up from below and straightens (spring, damping 15), the map
+  stamp slides in from the right with a 10° twist, then the carmine label — each ~12 frames apart.
+- Glassine mounts slide down over the stamps (frame 44).
+- The postmark strikes at frame 62: scale 1.35 → 1 in 6 frames with a `pop`, ink appears patchy.
+- The caption lines rise 26 px one after another (76, 84, 92), then the page name and credits.
+- Inside the big stamp the engraving lives: wave-lines drift, smoke puffs drift aft, the ship bobs 2 px, shell
+  splashes rise as engraved fountains, the sun's path flickers on the water. No cuts, no camera moves.
 
-## Scenes in the kit (`kit/Post.tsx`)
+## Scenes in the kit (`kit/Stamp.tsx`)
 
 | Component | Shows | Props |
 |---|---|---|
-| `PostCard` | The 4:5 card: background + dark fades + layers, centred and clipped in any frame | `background, children` |
-| `PostMap` | Raster map clipped to the card, `focusY` as a share of the card height | `cam, focusY, raster, tint` |
-| `Areas`, `Hero` | Coloured countries; gold glowing hero country | `ids, color` / `id, glow` |
-| `MapLabel`, `Spot` | Outlined map label; gold marker with a pulsing ring | `at, text, color, size, k` / `at, pulse` |
-| `Headline` | Red date badge, headline lines + gold question, sub line | `badge, lines, ask, sub, at` |
-| `ArchFrame` | Arched gold picture frame + caption; `photo` = file in `public/` (the page's own picture), else SVG children in a 330×420 box | `photo, caption, children, at` |
-| `Footer` | Gold chip, page name (two parts), credits line | `chip, brand, credit, at` |
-| `usePostBox` | Card geometry in the current frame (`s, left, top, w, h`) | — |
+| `AlbumPage` | The 4:5 album page (grid, border, fibre, grain) as one 1080×1350 SVG, centred in any frame | `children, html` |
+| `PageHead` | Kicker left, sheet name right, double rule | `kicker, right, k` |
+| `Stamp` | Perforated stamp paper laid on the page, slides in with `k` | `id, cx, cy, w, h, rot, k, from, tilt, teeth, pitch, children` |
+| `EngravedFrame` | Double frame line with corner rosettes | `x, y, w, h, color` |
+| `PictureWindow` | The picture area; `photo` = file in `public/` printed as a one-ink line-screen, else engraved SVG children | `id, x, y, w, h, photo, ink, children` |
+| `EngravedMap` | Coast as water-lines, hatched land, marked place, labels | `w, h, extent, areas, mark, labels` |
+| `Postmark` | Round cancel with date ring + wavy lines, strikes with `k` | `cx, cy, r, ring, date, year, waves, waveLen, rot, k` |
+| `Mount` | Glassine mount strip | `cx, y, w, h, rot, k` |
+| `Label` | Perforated carmine label (the chip) | `id, cx, cy, w, h, rot, k, lines` |
+| `Caption`, `Footer` | Printed caption block; page name + credits | `x, y, date, lines, ask, sub, k` / `brand, credit, k` |
+| `usePostBox`, `useIn` | Card geometry; entrance spring | — |
+
+Hatch patterns available inside the page: `n12hatchG` (green 35°), `n12hatchB` (ultramarine −40°), `n12cross`
+(dark cross-hatch), `n12guilloche`; filters `n12ink` (ink spread), `n12cancel`, `n12grain`.
 
 ## Build notes
 
 The demo is registered as `Style-N12-post` (1080×1350). For a real post, copy the demo into your episode folder,
-change the text and picture, and render one frame: `npx remotion still Style-N12-post out/post.jpg --frame=200`.
-The card also centres itself in any other frame size. Keep the headline to 2–3 lines and 8–12
-words, the question word always in gold. The picture in the arch must be the page's own photo (with its licence
-in the credits line) or a code drawing; never an AI image. Write the post caption in the same order: date line,
-2–3 short paragraphs (context, the question, "คลิปใหม่ เร็ว ๆ นี้" + follow), picture and map credits, 6–8
-hashtags.
+change the text, the engraved picture (or pass `photo`) and the map extent, and render one frame:
+`npx remotion still Style-N12-post out/post.jpg --frame=200`. Draw the picture as line work only: build tone with
+line weight/spacing and the hatch patterns, keep fills to the two pale underprint tints. Keep the headline to
+2 lines + the carmine question, 8–12 words. The stamp must say it is an illustration (the imprint line in the
+bottom margin and "ไม่ใช่แสตมป์จริง" in the credits) — never imitate a real issued stamp design. Caption order:
+date line, 2–3 short paragraphs (context, the question, "คลิปใหม่ เร็ว ๆ นี้" + follow), picture and map credits,
+6–8 hashtags.
 
 ## Data
 
-Not shipped — fetch the regional Blue Marble raster into `public/raster/`:
-
-```bash
-npm run imagery -- bluemarble sea 88 2 112 28 7500
-```
-
-Credit (on the card and in the caption): "ภาพดาวเทียม NASA Blue Marble" · borders: Natural Earth (via
-`world-atlas`). Modern borders used for old ones must say "เส้นเขตแดนโดยประมาณ".
+No rasters. The map stamp is drawn from Natural Earth 1:50m countries (`world-atlas`, bundled with the template).
+Modern borders used for old ones must say "เส้นเขตแดนโดยประมาณ".
 
 ## Don'ts
 
-- No AI portraits or AI pictures in the arch; a real photo only if the page owns it or it is public domain, credited.
-- No more than three colours on the map (hero gold + two sides); no busy legends.
-- Do not push text into the middle band — the map story sits between the top and bottom fades.
-- Do not shrink the headline below 70 px; the card must read at feed-thumbnail size.
+- No AI pictures; a real photo in `PictureWindow` only if the page owns it or it is public domain, credited.
+- Never copy a real stamp (its design, value, country emblem layout) — this is an invented commemorative design.
+- No flat colour fills or gradients inside the engraved picture (except the pale underprint); no glow effects.
+- At most three inks (green, ultramarine, carmine) plus the dark postmark ink.
+- Do not shrink the headline below 70 px; the post must read at feed-thumbnail size.
 
 ## Credits
 
-Imagery NASA Blue Marble (not copyrighted; credited). Borders Natural Earth (public domain). The warship in the demo
-is drawn in code. Sound (teaser only): template `SFX.swell`, `SFX.pop`, `SFX.whoosh`. Font: Kanit (SIL Open Font
-License).
+Borders Natural Earth (public domain). The stamps, warship and postmark are drawn in code. Sound (teaser only):
+template `SFX.swell`, `SFX.whoosh`, `SFX.pop`. Font: Fahkwang (SIL Open Font License).

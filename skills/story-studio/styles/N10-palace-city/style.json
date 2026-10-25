@@ -1,1 +1,2 @@
-{ "id": "N10", "bg": "#120c08", "ink": "#1a140f", "main": "#a8322a", "second": "#d9a93a", "accent": "#ffc94a", "paper": "#efe6d0", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "sceneSeconds": 3, "overlapFrames": 14 }
+{ "id": "N10", "bg": "#0c0806", "lacquer": "#15100c", "gold": "#d6a840", "goldPale": "#f4d98a", "gilt": "#e6cb74", "redLacquer": "#982517", "ink": "#24100a", "text": "#24100a", "goldText": "#f0cf74", "font": "Charm", "titleFont": "Srisakdi", "titleWeight": 700, "sceneSeconds": 2.7, "washFrames": 26, "overlapFrames": 26,
+  "signature": { "base": "lacquer", "palette": ["#0c0806", "#d6a840", "#e6cb74", "#982517", "#24100a"], "line": "incised", "type": "Charm 700", "motion": "wipe-reveal", "frame": "exhibit" } }

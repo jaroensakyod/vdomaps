@@ -1,21 +1,22 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { camAt } from "../../components/camera";
-import { Caption } from "../../components/Caption";
 import { MapFrame } from "../../components/Map";
 import { Raster } from "../../components/Raster";
 import { Sfx, SFX } from "../../components/Sound";
 import type { StyleDemo } from "../types";
-import { BG, BLUE, CAPTION_TOP, CityRing, clamp, font, GOLD, HeadCard, P, RED, Rivers, tileOpacity, TopBar, V, view, type Head } from "./kit/News";
-import { fmtKm, Pin, ScaleBar, screenKm } from "./kit/Pins";
+import { Mark, Note, PencilDefs, PencilRing, RiverTrace } from "./kit/Pencil";
+import { C, clamp, DataBlock, Dossier, FilmFrame, fmtKm, P, Print, screenKm, TapeCaption, tileOpacity, useLayout, V, view, type Head } from "./kit/Recon";
 
-// M04 HLS old city: one continuous dive from Southeast Asia (Blue Marble) through the central plain to 30 m NASA HLS
-// imagery of Ayutthaya island; the rivers round the island light up, then temples and forts get pins. 14 s.
-export const demo: StyleDemo = { id: "M04", name: "ซูมดาวเทียม 30 ม. ลงเมืองเก่า", frames: 420, cover: 372, sizes: ["9x16", "16x9"] };
+// M04 recon film: one continuous analyst zoom from Southeast Asia (Blue Marble) through the central plain to 30 m
+// NASA HLS imagery of Ayutthaya island, graded to grainy green-grey film on a light box. A typed dossier label
+// (with a "ลับ" stamp) counts the ground width down; on arrival the rivers are traced in grease pencil, then
+// temples and forts get numbered pencil circles. 14 s, 9:16 and 16:9.
+export const demo: StyleDemo = { id: "M04", name: "ฟิล์มลาดตระเวน", frames: 420, cover: 372, sizes: ["9x16", "16x9"] };
 
 const T = { dive: 24, plain: 130, island: 150, land: 235, glow: 238, pins: 262, end: 420 };
-// Tiles from coarse to sharp; each fades in only once it covers the whole screen.
 const TILES: [string, [number, number, number, number]][] = [["plainhls", [100.0, 13.6, 101.4, 15.3]], ["isle", [100.5, 14.3, 100.62, 14.4]]];
 const RIVERS = ["แม่น้ำเจ้าพระยา", "แม่น้ำลพบุรี", "แม่น้ำป่าสัก"];
+const SHOTS = [0, T.plain - 10, T.land - 12]; // a new frame number at each sharper tile
 
 const CAPS: [number, number, string][] = [
   [8, 120, "ภาพดาวเทียมจริง จากอวกาศ"],
@@ -26,9 +27,9 @@ const CAPS: [number, number, string][] = [
 export const Demo = () => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
-  const wide = width > height;
-  const lift = wide ? 0.02 : 0.03;
-  const close = wide ? 1.05 : 1.35;
+  const { vertical, s, img } = useLayout();
+  const lift = vertical ? 0.03 : 0.02;
+  const close = vertical ? 1.35 : 1.05;
   const cam = camAt(
     [
       { frame: 0, cam: view(V.region, width, height, 1, lift) },
@@ -40,35 +41,56 @@ export const Demo = () => {
     frame,
   );
   const km = screenKm(cam.scale, width);
+  const shot = SHOTS.filter((f) => frame >= f).length - 1;
+  const counter = String(14 + shot).padStart(3, "0");
+  const flash = SHOTS.slice(1).reduce((a, f) => Math.max(a, interpolate(frame, [f, f + 1, f + 5], [0, 0.85, 0], clamp)), 0);
   const heads: Head[] = [
-    { f: 6, tag: "ดาวเทียม NASA HLS", head: "ซูมลงเกาะเมืองเก่า", stat: fmtKm(km), label: "กม. กว้างทั้งจอ", color: BLUE },
-    { f: T.glow, tag: "เกาะเมืองอยุธยา", head: "แม่น้ำ 3 สายล้อมรอบ", stat: "30", label: "เมตร ต่อ 1 จุดภาพ", color: GOLD, chips: [{ text: "เจ้าพระยา", f: T.glow + 8 }, { text: "ลพบุรี", f: T.glow + 16 }, { text: "ป่าสัก", f: T.glow + 24 }] },
+    { f: 6, tag: `ภาพ ${counter}`, head: "ซูมลงเกาะเมืองเก่า", stat: fmtKm(km), label: "กว้าง|กม." },
+    { f: T.glow, tag: `ภาพ ${counter}`, head: "แม่น้ำ 3 สายล้อมรอบ", stat: "30", label: "ละเอียด|ม. ต่อจุดภาพ" },
   ];
-  const glow = interpolate(frame, [T.glow, T.glow + 16, T.pins + 40, T.pins + 70], [0, 1, 1, 0.35], clamp);
-  const ring = interpolate(frame, [T.island, T.island + 20, T.glow, T.glow + 16], [0, 1, 1, 0], clamp);
+  const trace = interpolate(frame, [T.glow, T.glow + 30], [0, 1], clamp);
+  const ring = interpolate(frame, [T.glow, T.glow + 12], [1, 0], clamp);
+  const hls = tileOpacity(cam, width, height, TILES[0][1]) > 0.5;
+  const kmPerPx = 6371 / cam.scale;
+  const steps = [0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000];
+  const target = 240 * s * kmPerPx;
+  const bar = steps.reduce((a, b) => (Math.abs(b - target) < Math.abs(a - target) ? b : a));
+  const focus = { focusX: vertical ? 0.5 : 0.63 };
   return (
-    <AbsoluteFill style={{ background: BG }}>
-      <Sfx src={SFX.swell} at={0} volume={0.25} />
-      <Sfx src={SFX.whoosh} at={T.dive - 6} volume={0.25} />
-      <Sfx src={SFX.whoosh} at={T.plain + 4} volume={0.25} />
-      <Sfx src={SFX.hit} at={T.glow} volume={0.3} />
-      {[0, 1, 2, 3, 4].map((i) => <Sfx key={i} src={SFX.pop} at={T.pins + i * 24} volume={0.25} />)}
-      <MapFrame cam={cam} focusX={wide ? 0.63 : 0.5}>
-        <Raster layers={[{ name: "world" }, { name: "sea" }, ...TILES.map(([name, bb]) => ({ name, opacity: tileOpacity(cam, width, height, bb) }))]} />
-        <Rivers hi={Object.fromEntries(RIVERS.map((r) => [r, glow]))} />
-        <CityRing k={ring} color={GOLD} />
-        <Pin at={P.sanphet} text="วัดพระศรีสรรเพชญ์" sub="วัดในวังหลวง" start={T.pins} color={GOLD} side="up" />
-        <Pin at={P.mahathat} text="วัดมหาธาตุ" start={T.pins + 24} color={GOLD} side="right" />
-        <Pin at={P.chaiwat} text="วัดไชยวัฒนาราม" start={T.pins + 48} color={BLUE} side="right" />
-        <Pin at={P.phet} text="ป้อมเพชร" sub="ปากน้ำ 2 สาย" start={T.pins + 72} color={RED} side="down" />
-        <Pin at={P.phanan} text="วัดพนัญเชิง" start={T.pins + 96} color={BLUE} side="right" size={0.9} />
-        <ScaleBar note={tileOpacity(cam, width, height, TILES[0][1]) > 0.5 ? "NASA HLS · 30 ม./จุดภาพ" : "NASA Blue Marble · ราว 350 ม./จุดภาพ"} start={10} />
-      </MapFrame>
-      <TopBar badge="M04 · ซูมดาวเทียม 30 ม. ลงเมืองเก่า" chip="ภาพ 20 ม.ค. 2568" />
-      <HeadCard heads={heads} from={heads[0].f} to={T.end + 20} />
-      {CAPS.map(([start, len, text]) => (
-        <Caption key={start} text={text} start={start} len={len} font={font} top={CAPTION_TOP} />
-      ))}
+    <AbsoluteFill style={{ background: C.base }}>
+      <Sfx src={SFX.swell} at={0} volume={0.2} />
+      {SHOTS.slice(1).map((f) => <Sfx key={f} src={SFX.tick} at={f} volume={0.45} />)}
+      <Sfx src={SFX.whoosh} at={T.dive - 6} volume={0.18} />
+      <Sfx src={SFX.whoosh} at={T.plain + 4} volume={0.18} />
+      <Sfx src={SFX.riser} at={T.glow - 30} volume={0.12} />
+      {[0, 1, 2, 3, 4].map((i) => <Sfx key={i} src={SFX.pop} at={T.pins + i * 24 + 2} volume={0.2} />)}
+      <Print>
+        <MapFrame cam={cam} {...focus}>
+          <Raster layers={[{ name: "world" }, { name: "sea" }, ...TILES.map(([name, bb]) => ({ name, opacity: tileOpacity(cam, width, height, bb) }))]} />
+        </MapFrame>
+      </Print>
+      <AbsoluteFill style={{ clipPath: `inset(${img.y}px ${width - img.x - img.w}px ${height - img.y - img.h}px ${img.x}px)` }}>
+        <MapFrame cam={cam} {...focus}>
+          <PencilDefs />
+          <PencilRing at={P.ayut} rx={130} ry={90} start={T.island} k={ring} />
+          <Note at={[P.ayut[0] + 0.06, P.ayut[1] + 0.07]} text="เป้าหมาย?" start={T.island + 14} color={C.red} size={42} rot={-6} />
+          <RiverTrace hi={Object.fromEntries(RIVERS.map((r) => [r, trace]))} />
+          <Note at={vertical ? [100.549, 14.331] : [100.537, 14.326]} text="เจ้าพระยา" start={T.glow + 14} size={34} rot={-12} />
+          <Note at={[100.552, 14.372]} text="ลพบุรี" start={T.glow + 20} size={34} rot={-3} />
+          <Note at={vertical ? [100.5875, 14.383] : [100.6, 14.37]} text="ป่าสัก" start={T.glow + 26} size={34} rot={80} />
+          <Mark at={P.sanphet} n={1} text="วัดพระศรีสรรเพชญ์" sub="วัดในวังหลวง" start={T.pins} side="up" />
+          <Mark at={P.mahathat} n={2} text="วัดมหาธาตุ" start={T.pins + 24} side="right" />
+          <Mark at={P.chaiwat} n={3} text="วัดไชยวัฒนาราม" start={T.pins + 48} side={vertical ? "down" : "left"} />
+          <Mark at={P.phet} n={4} text="ป้อมเพชร" sub="ปากน้ำ 2 สาย" start={T.pins + 72} side="down" color={C.red} />
+          <Mark at={P.phanan} n={5} text="วัดพนัญเชิง" start={T.pins + 96} side={vertical ? "left" : "right"} r={28} />
+          <Note at={[P.ayut[0] - 0.035, P.ayut[1] - 0.028]} text="ตำแหน่งโดยประมาณ" start={T.pins + 110} size={26} color="#eef3e6" rot={-2} />
+        </MapFrame>
+      </AbsoluteFill>
+      <AbsoluteFill style={{ background: "#f4f6ee", opacity: flash, mixBlendMode: "screen" }} />
+      <FilmFrame counter={counter} />
+      <Dossier heads={heads} end={T.end + 20} />
+      <DataBlock lines={["20 ม.ค. 2568 · 10:42", hls ? "NASA HLS · 30 ม./จุดภาพ" : "NASA BLUE MARBLE · 500 ม.", `ภาพ ${counter} · ม้วน 0417`]} scale={{ px: bar / kmPerPx, label: bar < 1 ? `${bar * 1000} ม.` : `${bar.toLocaleString("en-US")} กม.` }} />
+      {CAPS.map(([start, len, text]) => <TapeCaption key={start} text={text} start={start} len={len} />)}
     </AbsoluteFill>
   );
 };

@@ -1,115 +1,77 @@
-import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "remotion";
 import { Bed, Hit, Sfx, SFX } from "../../components/Sound";
 import type { StyleDemo } from "../types";
-import { GAUL, IBERIAN, LIBYAN, Mountains, ROMAN, Warrior } from "./kit/Ancient";
-import { BLUE, clamp, GOLD, HeadCard, Layers, Line, Page, Panel, RED, SKY, TopBar } from "./kit/Panel";
-import { Cavalry, Citizen, Column, General, HannibalOnElephant, Senator, Signum, Snow, Temple, Tree } from "./kit/Pieces";
+import { Column, Elephant, Mountain, Palmette, Senator, Standard, Warrior } from "./kit/Figures";
+import { C, clamp, Label, Line, On, Pot, Titles, useVase } from "./kit/Vase";
 
-// N03 flat ancient: two-tone Mediterranean figures with a thin dark outline, in news-style illustration panels.
-// Hannibal in three pictures: elephants over the snowy Alps, the Roman line breaks at Cannae, the Senate in
-// panic in the Forum. 15 s.
-export const demo: StyleDemo = { id: "N03", name: "ตัวละครแบนสองโทน ยุคโบราณ", frames: 450, cover: 240, sizes: ["9x16", "16x9"] };
+// N03 red-figure vase: Hannibal told round the belly of one black-glazed pot. Clay figures with fine black lines,
+// a key border above and below, the scenes side by side round the pot; the pot turns slowly while each scene is
+// told and swings round to the next. The Alps with the elephants, the Roman line broken at Cannae, the Senate in
+// alarm. 15 s.
+export const demo: StyleDemo = { id: "N03", name: "ภาพเขียนแดงบนไห", frames: 450, cover: 236, sizes: ["9x16", "16x9"] };
 
-const P1 = [0, 164], P2 = [150, 314], P3 = [300, 450];
 const CLASH = [200, 232, 264];
-const impact = (f: number) => Math.max(0, ...CLASH.map((b) => (f >= b && f < b + 8 ? 1 - (f - b) / 8 : 0)));
+const ease = { ...clamp, easing: Easing.inOut(Easing.cubic) };
 
 export const Demo = () => {
   const frame = useCurrentFrame();
+  // the turn of the pot (px along the circumference): slow drift inside a scene, a swing between scenes
+  const rot = interpolate(frame, [0, 148, 170, 298, 320, 450], [-170, 150, 1360, 1640, 2840, 3150], ease);
+  const knock = CLASH.reduce((k, c) => k + (frame >= c && frame < c + 10 ? Math.sin(((frame - c) / 10) * Math.PI * 2) * (1 - (frame - c) / 10) * 8 : 0), 0);
+  const z = useVase(rot + knock);
+  const y = z.bot - 8;
+  const fall = interpolate(frame, [250, 272], [0, 1], { ...clamp, easing: Easing.in(Easing.quad) });
+  const alarm = interpolate(frame, [330, 352], [0, 1], ease);
+
   return (
-    <AbsoluteFill>
+    <AbsoluteFill style={{ background: C.glaze }}>
       <Sfx src={SFX.swell} at={0} volume={0.3} />
-      <Bed id="wind_storm" from={0} to={160} volume={0.22} />
-      <Hit id="elephant" at={30} volume={0.35} />
-      <Hit id="war_horn" at={152} volume={0.3} />
-      <Bed id="sword_battle" from={160} to={306} volume={0.2} />
+      <Bed id="wind_storm" from={0} to={160} volume={0.2} />
+      <Hit id="elephant" at={40} volume={0.3} />
+      <Hit id="war_horn" at={160} volume={0.3} />
+      <Bed id="sword_battle" from={176} to={300} volume={0.18} />
       {CLASH.map((c) => <Hit key={c} id="sword_clash" at={c} volume={0.3} />)}
-      <Hit id="crowd_panic" at={300} volume={0.25} />
-      <Page />
+      <Hit id="crowd_panic" at={330} volume={0.25} />
 
-      {/* 1 — 218 BC: elephants over the Alps */}
-      <Panel id="a1" start={P1[0]} end={P1[1]} sky={SKY.winter} accent={GOLD}>
-        {(g) => {
-          const t = frame - P1[0];
-          return (
-            <Layers g={g} start={P1[0]} end={P1[1]}>
-              {(pan) => (
-                <g>
-                  <Mountains x={g.x + pan * 0.2 - 40 * g.s} W={g.W * 1.2} ground={g.ground - 40 * g.s} s={g.s * 1.6} snow={1} />
-                  <rect x={g.x} y={g.ground - 42 * g.s} width={g.W} height={g.H} fill="#e8eef2" />
-                  {[0.08, 0.9].map((tx, i) => <Tree key={tx} x={g.x + g.W * tx + pan * 0.6} y={g.ground - 30 * g.s} scale={g.sc * 0.7} snow={1} phase={i} />)}
-                  <Column x={g.x} y={g.ground - 20 * g.s} W={g.W} s={g.s} sc={g.sc * 0.8} order="wwwwww" kits={[LIBYAN, IBERIAN]} speed={1.4} t0={P1[0]} pose="trudge" cloak={1} />
-                  <HannibalOnElephant x={g.x + g.W * 0.3 + t * 1.2 * g.s + pan * 1.6} y={g.ground + 30 * g.s} scale={g.sc * 0.62} snow={0.8} />
-                  <Snow x={g.x} y={g.y} W={g.W} H={g.H} s={g.s * 1.4} n={80} />
-                </g>
-              )}
-            </Layers>
-          );
-        }}
-      </Panel>
+      <Pot z={z}>
+        {/* A — 218 BC: over the Alps */}
+        <On z={z} u={-20} y={y - 250} s={3.2}><Mountain w={260} h={120} peaks={4} /></On>
+        <On z={z} u={-430} y={y} s={5.4}><Warrior cloak pose="walk" device="scorpion" /></On>
+        <On z={z} u={-300} y={y} s={5.4}><Warrior cloak pose="walk" device="eye" /></On>
+        <On z={z} u={20} y={y} s={4.3}><Elephant snow={1} /></On>
+        <On z={z} u={420} y={y} s={5.4}><Warrior cloak pose="walk" device="star" /></On>
+        <On z={z} u={760} y={y - 300} s={5.4}><Palmette /></On>
 
-      {/* 2 — 216 BC: Cannae, the Roman line breaks */}
-      <Panel id="a2" start={P2[0]} end={P2[1]} sky={SKY.dawn} accent={RED}>
-        {(g) => {
-          const adv = interpolate(frame, [P2[0], P2[0] + 60], [0, 1], clamp);
-          const fall = interpolate(frame, [P2[0] + 100, P2[0] + 130], [0, 1], clamp);
-          const t = frame - P2[0];
-          return (
-            <Layers g={g} start={P2[0]} end={P2[1]} impact={impact(frame)}>
-              {(pan) => (
-                <g>
-                  <path d={`M${g.x} ${g.ground - 120 * g.s} Q${g.x + g.W * 0.3} ${g.ground - 200 * g.s} ${g.x + g.W * 0.6} ${g.ground - 130 * g.s} T${g.x + g.W} ${g.ground - 150 * g.s} L${g.x + g.W} ${g.ground} L${g.x} ${g.ground} Z`} fill="#b8a46a" />
-                  <rect x={g.x} y={g.ground - 60 * g.s} width={g.W} height={g.H} fill="#c9b07a" />
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <Warrior key={i} x={g.x + g.W * (0.08 + i * 0.09) + adv * 30 * g.s + pan * 0.9} y={g.ground + (10 - (i % 2) * 22) * g.s} scale={g.sc * 0.62} phase={i} kit={ROMAN} roman pose={adv < 1 ? "walk" : "stand"} />
-                  ))}
-                  <Signum x={g.x + g.W * 0.3 + pan * 0.9} y={g.ground - 10 * g.s} scale={g.sc * 0.7} fall={fall} />
-                  {Array.from({ length: 4 }, (_, i) => (
-                    <Warrior key={`c${i}`} x={g.x + g.W * (0.9 - i * 0.09) - adv * 50 * g.s + pan * 0.9} y={g.ground + (10 - (i % 2) * 22) * g.s} scale={g.sc * 0.62} phase={i * 2} kit={i % 2 ? GAUL : LIBYAN} flip pose={adv < 1 ? "charge" : "stand"} />
-                  ))}
-                  <Cavalry x={g.x - 100 * g.s + t * 4 * g.s + pan * 1.6} y={g.ground + 50 * g.s} scale={g.sc * 0.6} kit={IBERIAN} />
-                  <General x={g.x + g.W * 0.72 + pan * 1.6} y={g.ground + 34 * g.s} scale={g.sc * 0.74} flip point={adv} />
-                </g>
-              )}
-            </Layers>
-          );
-        }}
-      </Panel>
+        {/* B — 216 BC: Cannae, the Roman line breaks */}
+        <On z={z} u={1110} y={y} s={7.4}><Warrior shield="scutum" pose="stand" /></On>
+        <On z={z} u={1260} y={y} s={7.4}><Warrior shield="scutum" pose="walk" /></On>
+        <On z={z} u={1430} y={y - 10} s={5.6}><Standard fall={fall} /></On>
+        <On z={z} u={1480} y={y} s={6}><Warrior shield="scutum" pose="fallen" /></On>
+        <On z={z} u={1620} y={y} s={7.4} flip><Warrior pose="charge" device="scorpion" /></On>
+        <On z={z} u={1765} y={y} s={7.4} flip><Warrior pose="charge" device="star" /></On>
+        <On z={z} u={1910} y={y} s={7.4} flip><Warrior pose="walk" device="eye" /></On>
+        <On z={z} u={2250} y={y - 300} s={5.4}><Palmette /></On>
 
-      {/* 3 — Rome: panic in the Forum */}
-      <Panel id="a3" start={P3[0]} end={P3[1]} sky={SKY.summer} accent={BLUE}>
-        {(g) => {
-          const alarm = interpolate(frame, [P3[0] + 10, P3[0] + 30], [0, 1], clamp);
-          return (
-            <Layers g={g} start={P3[0]} end={P3[1]}>
-              {(pan) => (
-                <g>
-                  <Temple x={g.x + g.W * 0.12 + pan * 0.3} W={g.W * 0.76} ground={g.ground - 30 * g.s} s={g.s * 1.8} />
-                  <rect x={g.x} y={g.ground - 30 * g.s} width={g.W} height={g.H} fill="#d9cfb4" />
-                  {[0.12, 0.3, 0.72, 0.9].map((fx, i) => (
-                    <Citizen key={fx} x={g.x + g.W * fx + pan * 1.2} y={g.ground + (30 + (i % 2) * 20) * g.s} scale={g.sc * 0.62} phase={i} flip={fx > 0.5} raise={i % 2 ? alarm : 0} />
-                  ))}
-                  <Senator x={g.x + g.W * 0.5 + pan * 1.6} y={g.ground + 60 * g.s} scale={g.sc * 0.82} alarm={alarm} />
-                </g>
-              )}
-            </Layers>
-          );
-        }}
-      </Panel>
+        {/* C — Rome: the Senate in alarm */}
+        <On z={z} u={2700} y={y} s={6.8}><Column /></On>
+        <On z={z} u={2870} y={y} s={5.8}><Senator alarm={alarm} /></On>
+        <On z={z} u={3010} y={y} s={5.8} flip><Senator alarm={alarm * 0.6} /></On>
+        <On z={z} u={3150} y={y} s={5.8}><Senator alarm={alarm} /></On>
+        <On z={z} u={3320} y={y} s={6.8}><Column /></On>
+      </Pot>
 
-      <TopBar channel="N03" chapter="ตัวละครแบนสองโทน ยุคโบราณ" year="218–216 ปีก่อน ค.ศ." />
-      <HeadCard
-        from={4}
-        to={450}
+      <Titles
+        z={z}
         heads={[
-          { f: 4, tag: "218 ปีก่อน ค.ศ.", head: "ข้ามเทือกเขาแอลป์", stat: "37", label: "ช้างศึก", color: GOLD },
-          { f: 150, tag: "แคนเน · 216 ปีก่อน ค.ศ.", head: "โรมแตกในวันเดียว", stat: "50,000", label: "ทหารโรมัน", color: RED },
-          { f: 300, tag: "กรุงโรม", head: "สภาโรมันแตกตื่น", color: BLUE },
+          { f: 0, tag: "218 ปีก่อน ค.ศ.", head: "ข้ามเทือกเขาแอลป์", stat: "37", label: "ช้างศึก" },
+          { f: 160, tag: "แคนเน · 216 ปีก่อน ค.ศ.", head: "โรมแตกในวันเดียว", stat: "50,000", label: "ทหารโรมัน" },
+          { f: 310, tag: "กรุงโรม", head: "สภาโรมันแตกตื่น" },
         ]}
       />
-      <Line text="ฮันนิบาลพาช้างข้ามภูเขาหิมะ" start={8} end={156} />
-      <Line text="ทัพโรมันถูกล้อมจนแตกทั้งแนว" start={156} end={306} />
-      <Line text="ข่าวมาถึงโรม ทั้งเมืองตื่นตระหนก" start={306} end={450} />
+      <Line z={z} text="ฮันนิบาลพาช้างข้ามภูเขาหิมะ" start={8} end={156} />
+      <Line z={z} text="ทัพโรมันถูกล้อมจนแตกทั้งแนว" start={162} end={306} />
+      <Line z={z} text="ข่าวมาถึงโรม ทั้งเมืองตื่นตระหนก" start={312} end={450} />
+      <Label z={z} />
     </AbsoluteFill>
   );
 };

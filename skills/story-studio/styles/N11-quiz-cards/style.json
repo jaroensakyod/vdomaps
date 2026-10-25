@@ -1,1 +1,2 @@
-{ "id": "N11", "bg": "#02060d", "card": "rgba(8,14,26,0.92)", "main": "#ffc94a", "second": "#4fa3ff", "right": "#3f8f4a", "wrong": "#ff3b30", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "maxChoices": 4 }
+{ "id": "N11", "bg": "#07030f", "stage": "#07030f", "deep": "#140726", "pink": "#ff3fa6", "cyan": "#2ee8ff", "bulb": "#ffd23a", "right": "#3dff9a", "wrong": "#ff4d5e", "text": "#fff2fa", "font": "Mitr", "titleWeight": 600, "maxChoices": 4,
+  "signature": { "base": "stage", "palette": ["#07030f", "#ff3fa6", "#2ee8ff", "#ffd23a", "#fff2fa"], "line": "neon-tube", "type": "Mitr 600", "motion": "flicker", "frame": "broadcast" } }

@@ -1,1 +1,2 @@
-{ "id": "N07", "bg": "#0a0b10", "sky": ["#24305a", "#7a5a7a", "#f0a060"], "ground": ["#7a6244", "#3e2f1f"], "attackers": "#8a7a4a", "defenders": "#6d725c", "fire": ["#ff7a1a", "#ffd25a", "#fff6d8"], "tracer": "#ffe08a", "frame": "#d9a93a", "ink": "#1a140f", "highlight": "#ffb35c", "text": "#ffffff", "font": "Kanit", "titleWeight": 900 }
+{ "id": "N07", "bg": "#ece2c8", "paper": "#ece2c8", "paperShade": "#e2d5b4", "khaki": "#8c7b4e", "khakiLight": "#b9a774", "brick": "#b3402a", "ink": "#17130f", "text": "#17130f", "font": "Chonburi", "titleWeight": 400, "steppedOnTwos": true,
+  "signature": { "base": "poster-litho", "palette": ["#ece2c8", "#8c7b4e", "#b3402a", "#17130f", "#17130f"], "line": "none", "type": "Chonburi 400", "motion": "stepped-on-twos", "frame": "poster" } }

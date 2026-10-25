@@ -1,0 +1,2 @@
+{ "id": "N04", "bg": "#f3e9d4", "red": "#c8201e", "deep": "#97131a", "gold": "#dba63c", "orange": "#e8662a", "ink": "#7e1016", "shadow": "#5a2614", "text": "#7e1016", "font": "Athiti", "titleFont": "Charmonman", "titleWeight": 700,
+  "signature": { "base": "papercut", "palette": ["#f3e9d4", "#c8201e", "#97131a", "#dba63c", "#7e1016"], "line": "cut-edge", "type": "Charmonman 700", "motion": "unfold", "frame": "none" } }

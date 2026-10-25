@@ -15,6 +15,44 @@ map, `N01`–`N24` without. `styles/_template/` is the starting point for a new 
 
 A pack still being made may have only `STYLE.md`; `npm run style` then copies the guide to `project/styles/<id>/`.
 
+## Signature: six axes every pack declares
+
+`style.json` carries a `signature` block. `npm run distinct` needs every pair of packs to differ on at least 3 of
+the 6 axes **and** to look different on the rendered covers (look score ≥ 0.30). Use tokens from this vocabulary
+so that "different" means different, not a new word for the same thing:
+
+```json
+"signature": {
+  "base": "palm-leaf",
+  "palette": ["#3b2414", "#c99a5b", "#e8d3a6", "#1a0f08", "#9c2b1b"],
+  "line": "incised",
+  "type": "Srisakdi 700",
+  "motion": "slide-stack",
+  "frame": "manuscript"
+}
+```
+
+| Axis | Tokens (pick one; add a new one only when none fits, and add it here) |
+|---|---|
+| `base` | satellite, satellite-mono, drawn-map, parchment, paper-cream, palm-leaf, lacquer, felt-diorama, stage, sky-scene, film-bw, crt-screen, print-halftone, newsprint, ceramic, papercut, tracing-vellum, game-board, cloth-screen, mural-wall, woodblock, poster-litho, enamel-tin, dark-ui, stamp-album |
+| `palette` | 5 hex colours by role: background, main, second, accent, text |
+| `line` | none, hairline, ink-outline, bold-outline, carved, glow, engraved-hatch, brush, incised, halftone-dot, cut-edge, pencil, keyblock, neon-tube, scanline |
+| `type` | the Thai-capable font family first, then weight: Kanit, Noto Sans Thai, Sarabun, Prompt, Mitr, Chakra Petch, Taviraj, Trirong, Pridi, Chonburi, Srisakdi, Charm, Charmonman, Itim, Sriracha, Mali, Pattaya, Fahkwang, Kodchasan, Athiti, Niramit, Bai Jamjuree, K2D, Krub, KoHo, Thasadith, Noto Serif Thai, IBM Plex Sans Thai (all in `@remotion/google-fonts`, OFL) |
+| `motion` | slow-push, snappy-spring, stepped-on-twos, handheld, flicker, scroll-pan, slide-stack, unfold, pop-sticker, gate-weave, wipe-reveal, parallax-depth, tabletop-tilt, swing |
+| `frame` | news-card, illustration-panel, book-page, manuscript, stage, game-board, screen-ui, file-folder, poster, vase-band, newspaper-column, exhibit, broadcast, none |
+
+## Channel signature (a buyer's own look)
+
+A buyer must not end up with a channel that looks like the demo or like another buyer's. Before episode 1:
+
+1. Start from the chosen style. Propose **3 directions** that each change at least 3 axes (keep what makes the
+   style work: its mechanic, not its paint). Write each as a `signature` block.
+2. Render one still per direction to `out/look-a.jpg`, `out/look-b.jpg`, `out/look-c.jpg`.
+3. `npm run distinct -- --image out/look-a.jpg` (and b, c): each must pass against every pack, including the one
+   it came from. Drop or rework any that fail.
+4. Show the user the passing stills side by side; they pick one. Lock it: copy the signature into
+   `project/style.json` and keep the still as `project/look.jpg`. Every episode's stills are compared with it.
+
 ## Install into a project
 
 ```bash

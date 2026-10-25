@@ -1,62 +1,72 @@
-# M09 สารคดีภาษาอังกฤษ · English News-Look History
+# M09 ข่าวภาพยนตร์ยุค 40 · 1940s Cinema Newsreel
 
 ![cover](cover-9x16.jpg)
 
-**Fits:** English-language history and explainer shorts for an international channel — campaigns, journeys, wars,
-"how X happened" on a map · **Formats:** 9:16 · **Code:** `Demo.tsx` + `kit/news.tsx` + `kit/Art.tsx`
+**Fits:** English-language history shorts — campaigns, marches, expeditions, "how X crossed Y", anything that walks a
+route through a few places and a few numbers · **Formats:** 9:16 · **Code:** `Demo.tsx` + `kit/Newsreel.tsx`, `kit/Art.tsx`
+(plus template `Scene` `Ridge`/`Fighter`, `Caption`, `Raster`)
 
 ## Look
 
-A TV-news layout for history, in English. Satellite imagery (Blue Marble world + a sharper regional crop) with
-Natural Earth rivers as thin cyan lines that light up gold when named. A red channel badge in Oswald caps, the
-chapter name and a year chip ("218 BC") run across the top. One dark translucent head card with a coloured left
-bar holds the story: a small tag, an UPPERCASE Oswald headline and a huge Oswald number that counts up or down.
-Routes are dashed gold lines drawn live with an arrow head; places are pulsing red pins with white outlined names.
-Cartoon "Illustration" panels (template `Depth` parallax, `Ridge`, `Fighter`) sit low on the screen on a dashed
-leader line, and a quiz card with a 3-2-1 countdown closes the chapter. All on-screen text is English.
+A wartime cinema newsreel. Every frame is black-and-white film: grain that changes every frame, two or three
+vertical scratches that come and go, dust specks, an exposure flicker, a slight gate weave, a heavy vignette and
+the rounded corners of the projector gate. The map is a b/w animated map: imagery pushed to grey with flat light-grey
+land laid over it, a near-black sea, white coastlines and dashed black borders, rivers in thin white (the story's
+river thickens). The route is one bold white arrow with a black outline that grows along the march. Places are white
+dots in a black ring with Limelight capitals outlined in black. Numbers are "supers": a big Limelight figure and a
+spaced Playfair label between double rules on a dark band. Shots are separated by full-screen art-deco title cards:
+a slowly turning sunburst, stepped double-rule frame, an italic Playfair lead-in, big Limelight capitals, a spaced
+sub line. Illustrations are full-frame re-enactment shots (code-drawn figures, painted clouds and ridges, graded b/w) marked
+"ILLUSTRATION", with a super naming the place.
+The film ends on a deco "Quiz of the week" card. English everywhere; only the kicker is Thai (Trirong).
 
 | Role | Hex |
 |---|---|
-| Background | `#02060d` |
-| Accent red (badge, card bar, pins, panel frame) | `#ff3b30` (big number `#ff6b5f`) |
-| Gold (routes, highlighted rivers, quiz, second card colour) | `#ffc94a` / river glow `#fff3a6` |
-| Rivers | `#7fd4ff` at 55 % |
-| Card · text | `rgba(8,14,26,0.86)` · `#ffffff` (outline `#0b1020`) |
+| Film black / gate / sea | `#0e0e0e` |
+| Land (flat grey over imagery) | `#b9b6ae` at 62 % |
+| Mid grey (shots, ridges) | `#5a5a58` |
+| Arrow / coast / highlights | `#ffffff` |
+| Paper white (titles, supers, captions) | `#f2efe6` |
 
-**Type:** Oswald 700 for the badge (32 px, caps, +1 px tracking), card headline (60 px uppercase) and numbers (100 px);
-Inter 700/900 for tags (26 px), labels (30 px), pins (44 px), quiz options (42 px) and captions — at 1080 wide.
-**Line:** rivers 1.6–7 px by zoom; march line 5 px dashed 16/10 over a 14 px glow; pin ring 3 px; panel frame 3 px.
+**Type:** Limelight 400 (Latin display) — title 150 px, supers 168 px, places 46 px caps, quiz 76–82 px; Playfair
+Display 700/900 — lead-ins 46 px italic, labels 44–52 px spaced 8–10 px, captions 58 px with a black outline;
+kicker Trirong 700 30 px (Thai), at 1080. **Line:** bold-outline — arrow 22 px white inside 34 px black, head with
+6 px outline; coast 3.2 px white; borders 1.6 px black dashed 10/7.
 
 ## Motion signature
 
-- Camera moves between framed areas (`view(bbox, w, h, k, lift)`, lift 0.16 keeps the subject above the panel),
-  ease in-out, then a slow 4–6 % creep; no globe spins.
-- One head card per chapter slides in on a spring; every new shot swaps tag/headline/number with a 14 px rise.
-  Numbers are counters (`stat: (frame) => …`).
-- The march line draws on the narration; rivers glow up (0 → 1 in 10 frames) when they are named; pins fade in/out.
-- Panels chain every 3–4 s with a 14-frame overlap; each has three parallax layers, light and walking figures.
-- Quiz: card scales in, counts 3-2-1 with `SFX.tick`, the answer turns green with `SFX.hit`.
+- Gate weave + flicker on every frame (±2 px x, ±3 px y, brightness ±6 %), new grain and dust every frame,
+  scratches that live 6–15 frames: the film is never still.
+- Hard cuts between shots: map → deco title card (20–40 frames, sunburst turns, frame lines fade up in 14 frames)
+  → shot. No wipes, no slides.
+- On the map the camera reframes slowly between areas (ease in-out); the arrow grows along the route at story pace;
+  supers fade in 10 frames and count up/down.
+- Re-enactment shots push in 6 % over their length; figures keep their idle motion.
+- Sound: `SFX.hit` on each cut (a splice thump), house beds low (`army_marching`, `wind_storm`), `elephant` hit,
+  ticks + hit on the quiz reveal.
 
-## Scenes in the kit
+## Scenes in the kit (`kit/Newsreel.tsx`)
 
 | Component | Shows | Props |
 |---|---|---|
-| `TopBar` | Channel badge, chapter, year chip | `chapter, year, channel?` |
-| `HeadCard` | One card, text swaps per shot; empty `head` frees the slot | `heads: Head[], from, to` |
-| `Panel` | Template `InsetPanel` labelled "Illustration", fixed slot at 56 % | `id, anchor, start, end, sky, accent` |
-| `Pin` | Pulsing pin with outlined English name | `at, text, k, color, size, dy` |
-| `MarchLine` | Route drawn live along [lon, lat] points with arrow head | `pts, k, color` |
-| `Rivers` | Natural Earth rivers; named ones glow gold | `file, hi: { Rhône: 0..1 }` |
-| `QuizNews` | Question, options, 3-2-1 countdown, answer reveal | `title, question, options, answer, start, reveal, end` |
-| `view` | Camera framing a bbox with the subject lifted | `feature, w, h, k, lift` |
-| `kit/Art.tsx` | `Elephant`, `Raft`, `Water`, `Snow`, costumes `CARTHAGE`, `IBERIAN` for template `Fighter` | `x, y, scale, phase` |
+| `Film` | Wraps the whole frame: b/w grade, flicker, weave, grain, scratches, dust, vignette, gate | `children` |
+| `BWMap` | Grey imagery + flat land, white coast, dashed borders | `layers` (default `world`, `europe`) |
+| `Rivers` | Natural Earth rivers in white; `hi` thickens named rivers | `file, hi` |
+| `BoldArrow` | Bold white arrow with black outline along a lon/lat route | `pts, k` |
+| `Place` | White dot in a black ring + Limelight caps name | `at, text, k, size, dy` |
+| `TitleCard` | Full-screen deco card: lead-in, capitals, sub | `from, to, over, title, sub` |
+| `Super` | Big number + spaced label between double rules on a dark band | `from, to, value, label` |
+| `Shot` | Full-frame re-enactment, marked "ILLUSTRATION" | `from, to, sky, children(g)` |
+| `Quiz` | Deco quiz card with 3-2-1 and the answer boxed | `from, to, reveal, question, options, answer` |
+| `Kicker`, `view` | Thai kicker; camera on a bbox | `text` / `f, width, height, k, lift` |
+| `kit/Art.tsx` | Elephant, raft, water, snow, Carthaginian / Iberian costumes for `Fighter` | — |
 
 ## Build notes
 
-Layout (9:16): top bar at 4.5 %, card 10–27 %, map middle, panel 56–74 % (`PANEL_TOP`, `PANEL_H`), captions at 76.5 %
-(`CAPTION_TOP`), quiz at 31 %. Raster layers stack `world` under the regional crop (`europe`). In a long episode
-split the story into chapters, each with its own camera keys, heads, map overlays, panels and sounds, and cue
-them with Whisper word timing. Use your own channel name on the badge.
+Everything goes inside one `<Film>` so the grade and the damage cover maps, cards and captions alike. A story is a
+row of shots `{from, to}` that never overlap; cards sit between them (hard cuts). Keep a map shot 3–4 s, a card
+0.7–1.3 s, a re-enactment 2–3 s. Draw re-enactments in mid-greys with clear value contrast (the grade removes
+colour, so pick fills by lightness). Captions sit at 78 %. Cue supers and places on the spoken word.
 
 ## Data
 
@@ -71,13 +81,14 @@ npm run sfx && npm run sfx-lib                              # UI sounds + house 
 
 ## Don'ts
 
-- No Thai on screen (except the style kicker) — captions, cards, pins and panels are English.
+- No colour, ever — not even an accent. No neon, no glow, no dark-UI cards.
+- No Thai on screen except the kicker — titles, supers, places and captions are English.
 - Numbers from ancient sources are estimates: say "approx." / "about" and name the source in the description.
-- Panels always say "Illustration"; approximate routes are fine but don't draw them as surveyed lines.
-- Don't use the M01/M12 globe-hop camera here — this look frames areas and walks the story along a route.
+- Re-enactments always say "ILLUSTRATION"; approximate routes are fine but don't draw them as surveyed lines.
+- No smooth glossy moves: cuts between shots, only slow reframes inside a map shot.
 
 ## Credits
 
 Imagery: NASA Blue Marble · Rivers & lakes: Natural Earth · Borders: Natural Earth — in the video description.
-Illustrations drawn in code. Sound: template UI sounds and house library (Mixkit / Pixabay licences, no attribution
-needed). Fonts: Oswald, Inter (SIL Open Font License).
+Film look and illustrations drawn in code. Sound: template UI sounds and house library (Mixkit / Pixabay licences,
+no attribution needed). Fonts: Limelight, Playfair Display, Trirong (SIL Open Font License).

@@ -1,91 +1,92 @@
-# M10 ข่าวอากาศ แนวปะทะอากาศเย็น · Weather Front News
+# M10 พยากรณ์อากาศยุค 80 · 1980s TV Weather Board
 
 ![cover](cover-9x16.jpg)
 
-**Fits:** weather news, cold surges, monsoon onset, heat waves, haze and storm tracks explained on a real map ·
-**Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Weather.tsx`
+**Fits:** weather explainers — cold surges, monsoon onset, heat waves, storm tracks — told the way an old evening
+forecast did, with magnets on a board · **Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Retro.tsx`
 
 ## Look
 
-A TV weather-forecast look on NASA Blue Marble imagery. A translucent blue air mass covers everything north of a
-wavy cold-front line: a top-to-bottom blue gradient, drifting white cloud noise inside it, a wide soft ice-blue
-glow along its edge, and a crisp blue front line with small blue triangles pointing the way it moves. Short white
-wind streaks flow through the mass. A big blue "H" disc with widening dashed isobars marks the high. Cities are
-white pins with dark pill chips (☀/❄ icon, name, temperature) that turn from orange to blue and count down when
-the front passes. When the cold arrives the country outline glows ice blue. Dark navy news cards sit over the map:
-a blue "พยากรณ์อากาศ" tab, a day counter pill, a head card with a blue left bar, a cold→hot legend bar and a
-"ภาพจำลอง" tag.
+An evening forecast from a 1980s TV studio, recorded off air on VHS. The map is a painted studio board, not
+imagery: the sea is chroma-key blue with a soft studio light falling off to deep blue, the land is flat green with
+a thick white coastline and a hard navy drop shadow (the board has thickness), borders are thin dark green. Weather
+is put on by hand: chunky magnetic symbols slap onto the board — a blue rounded "H" tile with a white label, white
+cloud magnets, yellow sun discs with orange rays, white snowflake discs, number tiles (white with orange numbers
+while warm, blue with white numbers once the cold arrives) and black city name plates. Every magnet casts a hard
+offset shadow that shrinks as it lands. The cold air is a flat pale-blue print with white diagonal hatching north of
+a classic front line (white-edged blue line with big triangles); a fat blue wind arrow with a white rim shows the
+flow. The picture is soft and a little smeared: red channel bleeds 4 px to the right, scanlines over everything, a
+rolling tracking band, head-switching noise at the bottom, vignette. Type is bold rounded Kodchasan: an extruded
+yellow-and-red programme title, a white head strip with an orange tab, a big number on a blue magnet tile, and a
+bottom strip with an analogue clock (the hands run), the date and the "ภาพจำลอง" note.
 
 | Role | Hex |
 |---|---|
-| Background (under imagery) | `#02060d` |
-| Cold mass / front line | `#2f7bff` (fill top `#1a4fd0`, line `#2a6bff`) |
-| Ice glow, cold numbers | `#7fd4ff` |
-| Warm (before the front) | `#ff8a3d` (numbers `#ffb37a`) |
-| Cards | `rgba(8,14,26,0.86)` (`#080e1a`) |
-| Text | `#ffffff` |
+| Chroma-key sea (light → deep) | `#2f57f0` → `#1d3fd6` → `#132a9e` |
+| Land / border | `#7bbf4e` / `#3c6d24`, coast `#ffffff`, board shadow `#0b1a66` |
+| Cold: front, tiles, arrow / air | `#1d5cff` / `#bfe8ff` |
+| Warm: sun, tiles, tab | `#ffd23f` / `#ff6a2b` |
+| Plates, clock strip, text | `#141428` / `#ffffff` |
 
-**Type:** Kanit 400/700/900. Head 54 px 900, big number 84 px 900 `#7fd4ff`, tag 26 px 700, top tab 32 px 900,
-chips 26/30 px, kicker 30 px — sizes at 1080 on the short side (`s = min(w,h)/1080`). **Line:** front 5 px solid
-with a 14 px blurred glow and a 70 px soft inner edge; borders 1.2 px white at 35 %; isobars 2.4 px, every other
-one dashed 12/8.
+**Type:** Kodchasan 500/700 — title 92 px extruded (8 px red/ink stack), head 52 px on white, tab 28 px, big number
+84 px on a blue tile, city plates 32 px, number tiles 60 px, date 40 px, note 24 px, kicker 28 px, at 1080.
+**Line:** bold-outline — coast 9 px white, front 9 px blue on 17 px white, magnets 5–7 px white rims, wind arrow
+28 px blue on 44 px white.
 
 ## Motion signature
 
-- Slow camera: wide on the region for ~12 s, then one eased move down onto the country (`camAt`), never cuts.
-- The front sweeps south with an eased curve (`Easing.bezier(0.35, 0, 0.3, 1)`), its east side leading, two slow
-  sines make it ripple; cloud noise drifts SSW, wind streaks live 90 frames each.
-- Pins and the "H" spring in (damping 12–14); isobars widen ×1.9 over the clip.
-- Each city: the frame the front reaches it (`passAt`) starts a 45-frame count-down, chip turns orange → blue, a
-  `SFX.tick` on the same frame.
-- Head card swaps text with a spring slide (14 px up); the day counter steps 1 → 5.
-- A big curved `Arrow` shows the flow, fades out once the mass arrives; the country glow fades in over 50 frames.
+- Pop-sticker as magnets: every symbol slaps on (spring, damping 9, from 1.45× with a far shadow to 1× with a 6 px
+  shadow); when the front passes a city its sun and warm tile lift off (6 frames, up and fading) and a snowflake and
+  a blue tile slap on 8 frames later.
+- The front sweeps south slowly and evenly (ease in-out over 16 s); the camera drifts and reframes once, smoothly.
+- The head strip swaps with a sideways spring; the big number tile drops in rotated −6° and straightens.
+- VHS never stops: tracking band rolls down, head noise flickers, the picture jitters ±1 px.
+- Sound: `SFX.pop` for every magnet, `wind` / `wind_storm` beds, `SFX.whoosh` for the arrow, `SFX.hit` on the
+  country.
 
-## Scenes in the kit (`kit/Weather.tsx`)
+## Scenes in the kit (`kit/Retro.tsx`)
 
 | Component | Shows | Props |
 |---|---|---|
-| `ColdMass` | Air mass north of the front: gradient, cloud noise, glowing edge, triangles, wind streaks | `front, lon0, lon1, wind, fadeIn` |
-| `frontLat`, `passAt` | Front latitude at a lon/frame; frame the front reaches a point | `Front {from, to, lat0, lat1, tilt}` |
-| `HighPressure` | "H" disc, label, widening isobars | `at, label, grow` |
-| `CityTemp` | Pin + temperature chip that counts down at `pass` | `name, at, from, to, pass, show, off` |
-| `Chill` | Country fill + ice glow outline | `id` (ISO numeric), `from`, `color` |
-| `Borders` | Faint country borders | `ids` |
-| `WeatherScreen` | Kicker, top tab, day counter, head card, legend, "ภาพจำลอง" tag | `heads, kicker, bar, days, note` |
-| `view` | Camera on a bbox with the subject lifted above the cards | `f, width, height, k, lift` |
+| `VHS` | Wraps the frame: chroma bleed, soft focus, scanlines, tracking band, head noise, vignette | `children` |
+| `Board` | Studio board: chroma sea, flat land, white coast, hard shadow; `chill` fills countries ice blue | `chill: {id, k}[]` |
+| `ColdAir`, `frontLat`, `passAt` | Pale hatched cold air + classic front with triangles; front maths | `front, lon0, lon1, fadeIn` |
+| `Magnet`, `useSlap` | Any symbol at lon/lat that slaps on (and lifts off) with a hard shadow | `at, on, off, dx, dy, children` |
+| `HSymbol`, `Snowflake`, `SunSym`, `CloudSym`, `Tile` | Magnetic symbols, drawn round 0,0 | `s` (+ `label`, `r`, `text`, `cold`) |
+| `City` | Name plate + sun and warm tile, swapped for snowflake and blue tile when the front passes | `name, at, from, to, pass, dx, dy, size` |
+| `Screen`, `Extruded` | Title, head strip, big number tile, clock strip with "ภาพจำลอง" | `heads, title, date, note, kicker` |
+| `view` | Camera on a bbox, lifted | `f, width, height, k, lift` |
 
-For a heat wave flip the colours (mass `#ff8a3d`/`#d12f2f`, glow `#ffd27a`), for a storm swap the mass for a
-rotating spiral of the same cloud noise; keep the cards and chips.
+`WeatherHead` = `[frame, tag, headline, big number?]`.
 
 ## Build notes
 
-`MapFrame` + `Raster layers={[{ name: "world" }, { name: "sea" }]}` (the regional `sea` raster sits on the world
-one for sharper coasts). The mass is one path (front line + a line along lat 80) used as a fill and a `clipPath`;
-the cloud texture is a single `feTurbulence` rect inside the clip, moved by the frame. 16:9: cards keep the left
-45 %, the camera is shifted so the subject sits right (`shiftX` in `Demo.tsx`), and the mass spans a wider lon
-range so its ends stay off screen. Any value that is not real data must carry "ภาพจำลอง" on screen.
+Everything inside one `<VHS>`: `MapFrame` (`Board`, `ColdAir`, arrows, magnets, cities), then `Screen`. 9:16: title
+4.5 %, head strip 11.5 %, big tile above the clock strip, clock strip 6 % from the bottom (124 px). 16:9: the map is
+shifted right by 20 % of the width, head on the left, clock strip on the bottom edge. Place city magnets with
+`dx/dy` so tiles never overlap — the board must stay readable at phone size; no more than six cities on screen.
+For heat stories flip the logic: suns and orange tiles slap on, the air print turns warm.
 
 ## Data
 
-Not shipped — fetch into `public/raster/` before rendering:
+No imagery needed — the board is drawn from the template's Natural Earth borders (`world-atlas` countries-50m).
 
 ```bash
-npm run imagery -- bluemarble world                       # whole world, 8192 px
-npm run imagery -- bluemarble sea 88 2 112 28 7500         # SE Asia, sharper coasts
+npm run sfx && npm run sfx-lib     # UI sounds + house library (wind, wind_storm)
 ```
 
-Credit (description, and small on screen): "Imagery: NASA Blue Marble" · borders "Natural Earth". For real
-forecast fields use ERA5: "Contains modified Copernicus Climate Change Service information [year]".
+For real forecast fields use ERA5 and credit "Contains modified Copernicus Climate Change Service information [year]".
 
 ## Don'ts
 
-- Never present the simulated front or temperatures as a real forecast; keep the "ภาพจำลอง" tag on.
-- No hard cuts or fast zooms; the weather look is slow and smooth.
-- Do not cover the whole map with cards; the mass and the pins must stay readable.
+- Never present the simulated front or temperatures as a real forecast; keep the "ภาพจำลอง" note on screen.
+- No satellite imagery, no glow, no glass cards — it is a painted board with magnets.
+- Never a magnet without a hard shadow, never a symbol that fades in: they slap on.
 - No red/orange for cold or blue for heat; the colour logic is the point of the style.
+- Don't fake a real TV station's name or logo; the programme title is generic ("ข่าวอากาศ").
 
 ## Credits
 
-Imagery NASA Blue Marble (not copyrighted; credit it). Borders: Natural Earth via `world-atlas` (public domain).
-Sound: template UI sounds (`SFX.pop`, `SFX.tick`, `SFX.whoosh`, `SFX.riser`, `SFX.hit`, `SFX.swell`) and house
-library beds `wind`, `wind_storm` (`npm run sfx-lib`). Font: Kanit (SIL Open Font License).
+Borders: Natural Earth via `world-atlas` (public domain). Everything else drawn in code. Sound: template UI sounds
+(`SFX.pop`, `SFX.whoosh`, `SFX.riser`, `SFX.hit`, `SFX.swell`) and house library beds `wind`, `wind_storm`
+(`npm run sfx-lib`). Font: Kodchasan (SIL Open Font License).

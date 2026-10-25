@@ -1,1 +1,24 @@
-{ "id": "M06", "bg": "#02060d", "advance": "#e3b77a", "advanceEdge": "#1b1d24", "retreat": "#15161b", "retreatEdge": "#f2f2f2", "gold": "#ffc94a", "ice": "#9fd4ff", "accent": "#ff3b30", "card": "rgba(8,14,26,0.86)", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "perMan": 0.000238, "base": ["raster/world.jpg", "raster/europe.jpg"], "rivers": "data/eu-rivers.json" }
+{
+  "id": "M06",
+  "bg": "#f8f4ea",
+  "ink": "#21140b",
+  "advance": "#c9a46c",
+  "advanceEdge": "#21140b",
+  "retreat": "#21140b",
+  "sepia": "#8a5530", "titleGround": "#66290f",
+  "accent": "#a8432a",
+  "text": "#21140b",
+  "font": "Taviraj",
+  "titleWeight": 700,
+  "perMan": 0.000278,
+  "rivers": "data/eu-rivers.json",
+  "layout": { "title": 0.03, "map": 0.271, "graph": 0.575, "caption": 0.74 },
+  "signature": {
+    "base": "paper-cream",
+    "palette": ["#f8f4ea", "#c9a46c", "#66290f", "#a8432a", "#21140b"],
+    "line": "engraved-hatch",
+    "type": "Taviraj 700",
+    "motion": "wipe-reveal",
+    "frame": "exhibit"
+  }
+}

@@ -1,79 +1,75 @@
-# N03 ตัวละครแบนสองโทน ยุคโบราณ · Flat Two-Tone Ancient
+# N03 ภาพเขียนแดงบนไห · Red-Figure Vase
 
 ![cover](cover-9x16.jpg)
 
-**Fits:** the ancient Mediterranean — Rome and Carthage, Hannibal, Greece and Persia, Alexander, Egypt ·
-**Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Ancient.tsx`, `kit/Pieces.tsx`, `kit/Panel.tsx`
+**Fits:** the ancient Mediterranean — Rome and Carthage, Hannibal, Greece and Persia, Alexander, Troy, Greek myth ·
+**Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Vase.tsx`, `kit/Figures.tsx`
 
 ## Look
 
-The same flat news-look as N02, moved to antiquity. Figures are solid two-tone shapes (base + one darker side)
-with a thin, even dark navy outline: Romans in grey mail with big curved red shields and crested iron helmets,
-Libyans and Iberians with oval shields and spears, Gauls in green with blue shields, a grey war elephant with a
-red saddle cloth, generals in a bronze cuirass and long red cloak, citizens and senators in white togas.
-Backdrops stay graphic: snow-capped two-ridge mountains, conifers, rolling tan plains, a white temple front.
-Each picture lives in a rounded illustration panel with a bright accent border and "ภาพประกอบ" tag, below a dark
-head card with a coloured edge and a big number, on a deep navy page.
+The screen is a painted pot in the red-figure manner. The neck at the top is bare orange clay and carries the
+titles, painted in black glaze. Below it a row of black tongues, a key (meander) border, then the picture band:
+black glaze with a faint lustre, the figures left in the orange clay, every inner detail drawn with fine black
+relief lines (eyes, helmets, shield rims, drapery folds) and thinner dilute-brown lines for muscles and folds;
+hair solid black, snow and old men's hair in added white. Figures are in strict profile, striding, with large
+round shields carrying a black device (star, eye, scorpion) or tall curved Roman shields with a thunderbolt.
+Below the band a second key border and a row of rays. The band curves with the pot: borders and figures sag
+in the middle and squeeze into shadow at both sides, and a soft vertical sheen sits on the glaze.
 
 | Role | Hex |
 |---|---|
-| Background (page) | `#0d1422` → `#1b2233` |
-| Outline | `#1b1d24` |
-| Roman tunic / shield / mail | `#b8322a` / `#a8322a` / `#9aa3ab` |
-| Carthage side (Libyan tunic / shield) | `#c9b48a` / `#8a2a2a` · Iberian `#f0ebe0` · Gaul `#4f7a3a` / `#2f5a7a` |
-| Elephant / saddle | `#8d8a86` / `#7a2230` |
-| Accents | `#ff3b30` red · `#ffc94a` gold · `#4fa3ff` blue |
-| Text | `#ffffff` on `rgba(8,14,26,0.86)` cards |
+| Black glaze (band ground) | `#120b07` (body gradient to `#050302`) |
+| Clay (figures, neck, borders) | `#dc7438`, light `#ea9a5e` |
+| Relief line / glaze text | `#140a05` |
+| Dilute line | `#8a4320` |
+| Added white | `#efe3cc` |
+| Text on glaze | `#f0d2a8` |
 
-Skies: winter `#7a8a94 → #d8dee2`, dawn `#e8a868 → #f6dfb0`, summer `#8ab8de → #e8f0f2`. Skin `#e2b48e`
-(Libyan `#8a5a3a`). Toga `#efe9da`. Bronze `#c9a24a`.
-
-**Type:** Kanit 900 headlines (58 px) and stats (90 px), Kanit 700 tags / top bar (30 px), Kanit 900 subtitles
-60 px with a 12 px `#0b0f18` outline (at 1080 wide). **Line:** 1.5 units on figures (≈ 3 px at panel scale);
-panel border 4 px accent; 18 px corners.
+**Type:** Noto Serif Thai — kicker 28 px 600, wide letter-spacing; tag 30 px 400; headline 76 px 800 in black
+glaze on the clay neck; stat 96 px 800 in `#5a1e0c`; the spoken line 56 px 700 (sizes at 1080 wide). In 16:9 the
+headline and stat share one row and the spoken line sits on the clay foot. **Line:** 0.8 local units on figures
+(≈ 2–3 px), dilute 0.5; relief lines on every overlap of clay on clay.
 
 ## Motion signature
 
-- Inside a panel: slow push-in (+6 %), 60 px pan, parallax layers (mountains × 0.2, mid rank × 0.6–0.9,
-  front figures × 1.6).
-- Columns march endlessly across the panel (`Column` wraps); elephants sway with slow leg swings and a
-  swinging trunk; charges lean forward and speed up the leg cycle.
-- Standards fall (`Signum fall` 0→1), generals raise a pointing arm, senators throw an arm up in alarm.
-- Panels spring up 30 px, fade out over 14 frames, overlap 14 frames; the head card swaps per panel.
-- Clashes: 8-frame shake + white flash, a sword-clash hit on the same frame.
+- **The pot turns.** Everything lives at an arc position `u` round the pot; the camera is the rotation `rot`. While a
+  scene is told the pot drifts slowly (≈ 2 px/frame), then swings round ≈ 1200 px to the next scene in ~22
+  frames with an ease-in-out. Shapes compress and darken toward the sides as they turn away.
+- Figures barely move — this is a painting: arms rise (senators in alarm), a standard tips over, the fallen
+  soldier lies across the ground line.
+- Impacts: the pot is knocked — a short damped wobble of `rot` — with the clash SFX on the same frame.
+- Palmettes fill the gaps between scenes so the swing never shows an empty pot.
 
 ## Scenes in the kit
 
 | Component | Shows | Props |
 |---|---|---|
-| `Page`, `TopBar`, `HeadCard`, `Line`, `Panel`, `Layers` (`Panel.tsx`) | The news frame and the illustration panel | as N02 |
-| `Warrior` (`Ancient.tsx`) | Foot soldier: walk / stand / trudge / charge, `roman` scutum + sword, `cloak` | `x, y, scale, kit, roman, pose` |
-| `Elephant` | War elephant with mahout; `thin` ribs, `snow` | `x, y, scale, walk` |
-| `LIBYAN`, `IBERIAN`, `GAUL`, `ROMAN`, `Mountains` | Kit colour sets; snowy mountain backdrop | — |
-| `Column` (`Pieces.tsx`) | A marching column: "w" warrior, "e" elephant, "h" horse, "p" pack horse | `order, kits, speed, pose, loop` |
-| `HannibalOnElephant`, `General`, `Senator`, `Citizen` | Hannibal riding; commander pointing; senator in alarm; citizen | `point`, `alarm`, `raise` |
-| `Cavalry`, `Horse`, `PackLoad`, `Signum` | Light horseman; horse; pack; Roman standard that falls | `gait`, `fall` |
-| `Temple`, `CityWall`, `ArmyTent`, `Tree`, `Moon`, `Snow` | Sets and weather | — |
-
-The same pieces work small inside a map's `<InsetPanel>` — that is how the world-history channel uses them.
+| `useVase(rot)` (`Vase.tsx`) | Pot geometry: band top/bottom, radius, sag `e`, scale `s` | `rot` |
+| `Pot` | Glaze body, clay neck, tongues, key borders, rays, (16:9) clay foot, sheen | `z, children` |
+| `On` | Places a figure at arc position `u`, ground `y`, scale `s`, `flip` | — |
+| `Meander`, `Tongues` | Wrapped key border; tongues or rays | `z, y, h, rays` |
+| `Titles`, `Line`, `Label` | Neck titles with stat; spoken line; "ภาพประกอบ" inscription | — |
+| `Warrior` (`Figures.tsx`) | Soldier: walk / charge / stand / fallen; `round` shield with `device` or `scutum`; `cloak` | — |
+| `Elephant`, `Senator`, `Column`, `Mountain`, `Standard`, `Palmette` | War elephant with mahout and general; old man in alarm; Doric column; snowy peaks; Roman standard (`fall`); filler | — |
 
 ## Build notes
 
-All SVG. `Panel` gives `x, y, W, H, ground, cx, s, sc`; figures go at `g.sc × 0.5–0.8`, far ranks smaller and
-higher (`ground − 20…120 × g.s`). Two armies face each other with `flip` on one side. Draw back to front: sky,
-mountains/hills, ground band, back rank, effects, front rank, riders. New peoples = a new `Kit`
-(tunic, shade, shield, helmet, crest).
+All SVG. Figures are drawn 100 units tall, feet at 0, facing right, then placed with `<On z u y s>` — s ≈ 5–7.5
+in 9:16. Put scenes ~1500 px apart on the circumference and a `Palmette` between them; drive `rot` from one
+interpolate. Draw every clay shape with the `clay` style (fill + 0.8 line) so overlaps get their relief line.
+New peoples: give the `Warrior` a different shield device or helmet; new people: add a figure function in the
+same idiom (profile, almond eye, line folds).
 
 ## Don'ts
 
-- No gradients, textures or soft shading on figures — two tones and an outline only.
-- No gore; losses are numbers on the head card.
-- No photos, museum pictures or AI images.
-- Do not mix with the sepia Chinese figures (N04) in one scene.
-- Do not let a panel hold one picture longer than ~5 s.
+- No gradients or shading on figures — flat clay, black lines, dilute lines, added white only.
+- No three-quarter views or perspective; strict profile and one ground line.
+- No colours outside clay / black / dilute / white (no blue, no gold).
+- No copy of a real vase or a known painter's composition; no museum photos, no AI images.
+- No gore; losses are the stat on the neck.
 
 ## Credits
 
 None for pictures — everything is drawn in code. Sound: template `SFX.swell`; house library `wind_storm`,
-`elephant`, `war_horn`, `sword_battle`, `sword_clash`, `crowd_panic` (`npm run sfx-lib`). Font: Kanit (SIL Open
-Font License).
+`elephant`, `war_horn`, `sword_battle`, `sword_clash`, `crowd_panic` (`npm run sfx-lib`). Font: Noto Serif Thai
+(SIL Open Font License).

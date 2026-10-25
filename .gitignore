@@ -12,3 +12,7 @@ public/audio/
 
 # Product builds (node course/pack.mjs)
 dist/
+
+# Reference material bought from other sellers: never commit (proprietary, do not redistribute)
+Untitled folder-*.zip
+reference/

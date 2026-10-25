@@ -1,87 +1,79 @@
-# N10 ฉากวังและพระนคร · Palace and Capital Scenes
+# N10 ฉากวังและพระนคร · Gilt Lacquer Cabinet
 
 ![cover](cover-9x16.jpg)
 
-**Fits:** court history, capitals and coronations, palace coups, royal ceremonies, temple life, old riverside
-cities (Ayutthaya, Thonburi, early Bangkok) · **Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Palace.tsx`
+**Look name:** ลายรดน้ำ · Gilt Lacquer
+**Fits:** court history, capitals and coronations, palace coups, royal ceremonies, temple life, old riverside cities
+(Ayutthaya, Thonburi, early Bangkok) · **Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Lacquer.tsx`
 
 ## Look
 
-Illustrated scenes in the house style v2: flat colour shapes with dark ink outlines on a paper grain, inside a
-rounded panel with a thin gold (or red, for violence) border and a "ภาพประกอบ" chip. Every scene has depth — a
-sky gradient with a sun, moon or fire glow, far and mid ridges or back walls, a mist band, the subject in the middle
-and grass or waves in front — and everything breathes or moves. The set is a Thai court city: whitewashed walls
-with bai sema merlons and a gate, a Khmer-style prang with a gold tip, ordination/palace halls with stacked red
-roofs and gold chofa, stilted houses, long boats with rowers and the gilt royal barge with a canopy and tiered
-parasols, saffron-robed monks, kneeling and prostrate nobles, a king on a gilt throne under a halo, candles, a black
-samut khoi on a table, fire and smoke. The panel sits on a dark warm vignette with a gold kicker, a white title and
-a gold year chip above it and a one-line caption below.
+A Thai lacquer cabinet in the ลายรดน้ำ technique. The page is the cabinet's **gilt body**: pale gold leaf with a slow
+sheen, faint incised flower sprigs and fine scratches, black rules and **red lacquer friezes** carrying small gold
+kanok. In the middle sits the door: a **black lacquer panel** framed by a red lacquer band with kanok friezes on all
+four sides. Inside the panel every scene is **gold line-and-fill**: gold-leaf shapes (mottled, with a moving sheen)
+whose details are **incised black lines** (the resist lines of the craft) — Khmer corn-cob prang with tier lines,
+halls with two steep roof tiers, chofa and hang-hong, bai-sema walls with a gate, tiered parasols, the royal barge
+with its curling prow and pavilion, figures (king seated with a tall crown, nobles kneeling in wai, monks with
+bowls, scribes, warriors with spears) as gold silhouettes with incised costume lines, water as rows of gold wave
+scrolls, the moon and sun ringed with kanok rays, Thai clouds, and **fire drawn as kanok flame-leaves**. Falling-
+flower sprigs fill the black ground. Type is dark lacquer-brown on the gilt (title in Srisakdi, captions in Charm,
+red ❦ sprigs); under the caption a black plaque holds a pair of gold scrolls. The honest label "ภาพประกอบ" sits in a
+small gold-ruled box in the panel's top-right corner.
 
 | Role | Hex |
 |---|---|
-| Background (around the panel) | `#120c08` (centre `#2a1a10`) |
-| Ink outline | `#1a140f` |
-| Roofs / red | `#a8322a` |
-| Gilt | `#d9a93a` (UI gold `#ffc94a`) |
-| Chalk walls / text | `#efe6d0` / `#ffffff` |
+| Black lacquer (panel) · lacquer ground | `#0c0806` · `#15100c` |
+| Gold leaf (scenes) · pale gold (sparks, rays) | `#d6a840` (gradient `#9c7428 → #fbe7a6 → #a47a2a`) · `#f4d98a` |
+| Gilt page | `#e6cb74` (gradient `#d9bb62 → #fff4cc → #d4b25a`) |
+| Red lacquer (bands, friezes, kicker) | `#982517` |
+| Lacquer-brown ink (title, caption, incised lines) | `#24100a` (incised `#0c0806`) |
 
-Other PAL colours: indigo `#2b3a67`, green `#5b6e4a`, earth `#6b5236`, skin `#b9784e`, robe `#d9822b`. Skies per
-scene: night `#0a1430→#2a3a6a`, lamplight `#3a1a10→#8a4a22`, dawn `#e8a87a→#f8e0b8`, day `#8ab0c8→#f4e2b8`, attack
-`#120b1e→#5a2a1a`.
-
-**Type:** Kanit 700/900. Kicker 40 px 700 gold, title 76 px 900 (64 at 16:9), year chip 32 px 900, caption 50 px
-700 (44 at 16:9), panel chip 22 px 900 — at 1080 on the short side. **Line:** ink outlines 1.4–2.2 px (scaled with
-`g.s`), panel border 3 px.
+**Type:** Srisakdi 700 for the title (104 px; 64 px in two lines on 16:9), Charm 700 for everything else: kicker
+32 px red, year 34 px in a double-ruled cartouche, caption 54 px (44 px on 16:9), label 24 px. **Line:** incised
+lines 2.4 scene units (1.6 for faces and details), water scrolls 3.2, panel band 34 px, page rules 2–4 px.
 
 ## Motion signature
 
-- A new scene every ~2.7–3.5 s; scenes overlap 14 frames (outgoing `end` = incoming `start + 14`) and pop in on
-  a spring (damping 13), so the frame never flashes empty.
-- Inside each scene `Depth` pushes in +7 % and pans 40 px over its life; layers move at ×0.2 (far), ×0.5 (mid),
-  ×0.7 (near), ×1.6 (foreground grass/waves).
-- Figures are always alive: monks walk, rowers stroke, nobles breathe and bow, flames and candles flicker, smoke
-  rises, river ripples run.
-- Impacts (`hits`): 8-frame shake (6 px) and white flash, a light burst at the contact point, a library hit sound
-  on the same frame; the panel border turns red for violent scenes.
-- Caption swaps with a 16 px spring rise on each scene change.
+- **Wipe-reveal, water-washed:** each scene's gold is washed in from the top over 26 frames — a mask whose edge is
+  displaced by turbulence (wavy, wet), with a faint light band riding the edge. The next scene washes down over the
+  last (scenes overlap 26 frames), so the panel is never empty.
+- One scene every ~2.7 s (80 frames). Inside, a very slow push (+0.06 %/frame); the gold sheen drifts across all gold
+  (gradient stop moving with the frame); water scrolls drift sideways; flames flicker by scale and turn; boats bob.
+- Impacts (gate blows) shake the panel 10 px for 8 frames and burst a star of pale kanok.
+- Title and caption arrive with clean wipes (title top-down, caption from the centre out).
 
-## Scenes in the kit (`kit/Palace.tsx`)
+## Scenes in the kit (`kit/Lacquer.tsx`)
 
 | Component | Shows | Props |
 |---|---|---|
-| `V2` | One scene: framed `Stage` + `Depth` (push-in, pan, shake, warm light, grain) | `id, start, end, sky, accent, hits, warm` → `(g, pan, lt)` |
-| `Stage`, `useStage` | The framed panel without a map; geometry for 9:16 / 16:9 | `id, start, end, sky, accent, label` |
-| `Backdrop` | Sky glow, far/mid ridges, mist, ground | `g, pan, light, lightColor, far, mid, ground, mist, ridges` |
-| `River` | Water band with running ripples | `g, y, pan, color, night` |
-| `PalaceWall`, `Prang`, `Hall`, `House` | Merlon wall + gate (opens), prang, stacked-roof hall, stilted house (burns) | `x, y, w/h, s, …` |
-| `Boat`, `Parasol` | Long boat with rowers / gilt royal barge with canopy; tiered royal parasol | `x, y, w, s, n, dir, canopy, gilt` |
-| `Monk`, `Noble`, `King`, `Fighter` | Walking/sitting/kneeling monk; kneeling/prostrate noble; throne king; jointed soldier | `x, y, scale, mode, …` |
-| `Fire`, `Smoke`, `Candle` | Animated flames, smoke column, candle | `x, y, h/s` |
-| `Manuscript` | Black samut khoi open on a table, writing fades in | `x, y, w, s, lines, fade, dark` |
-| `Tree`, `Palisade`, `Banner`, `Grass` | Round/palm tree, spear palisade, flag, foreground tufts | — |
-| `ShadowStage`, `Puppet` | Nang yai cloth screen and perforated leather puppets (thai / plain / boatman) | `id, start, end` / `x, y, s, arm, kind` |
-| `C` | Costume presets: guard, rebel, villager, lao, viet, khmer + template siam/burma/qing… | — |
+| `LacquerPage` | Gilt page, incised sprigs, sheen, scratches, red friezes | `children` |
+| `PanelFrame` | Red lacquer band with kanok friezes and black rules around the panel | — |
+| `Scene` | One washed-in scene in the panel (scene units: H 1000, W by aspect, ground 800) | `id, start, end, hits, wash, children(lt, W)` |
+| `useLq`, `LqDefs` | Page geometry (panel, `SW`); gradients, leaf filter, patterns | — |
+| `Prang`, `Hall`, `Wall`, `Parasol` | Architecture | `x, y, h` / `x, y, w, glow` / `x, y, w, h, gateAt, gateOpen` / `x, y, h` |
+| `Figure` | Gold figure: `kneel`, `prostrate`, `stand`, `walk`, `run`, `attack`, `seated`, `row`, `write` | `x, y, s, pose, flip, crown, monk, spear, phase, frame` |
+| `Barge` | Royal barge with prow, pavilion, rowers | `x, y, w, frame, rowers, pavilion` |
+| `Water`, `Cloud`, `Moon`, `Stars` | Wave-scroll rows; Thai cloud; ringed moon; four-point stars | — |
+| `KanokFire`, `Candle`, `Book` | Kanok flames with sparks; candle with rays; samut khoi that fills with lines | — |
+| `Kanok`, `Flower`, `Scroll`, `KANOK` | Motifs: flame-leaf, four-petal sprig, ก้านขด spiral | — |
 
 ## Build notes
 
-One SVG for the whole frame; each scene is a `V2` with absolute `start`/`end` frames. In 9:16 the panel is
-980×820 from 22 % height and the drawing unit `g.s` is 1.25× the screen unit so the figures fill it; in 16:9 it
-is 1400×640 at 1×. Place everything by fractions of `g.W` and offsets in `g.s` from `g.ground`, add `pan × layer
-factor` to x. At most 2 uses of the same scene per episode — vary the sky, light and figures. Keep a library
-`<Bed>` under every scene (wind, city crowd, fire) and `<Hit>` for gongs and blows; synthetic `SFX` only for UI.
-On a map episode the same scenes drop into an inset panel tied to a place (swap `Stage` for the template
-`InsetPanel`).
+Scenes are drawn in scene units inside `Scene` (it supplies the gold `url(#sgold)` and the leaf filter); use only
+gold fills, black (`L.line`) incised strokes and black cut-outs — never another colour inside the panel. Keep ≤ 12
+figures per scene. Captions: one line, ≤ 28 characters. Sound: beds `wind`, `city_crowd`, `fire_crackle`,
+`crowd_angry` at 0.1–0.2; `gong` on the throne hall and the closing chimes; `war_drums` on the barge; `wood_hit` on
+gate blows — all under the voice.
 
 ## Don'ts
 
-- No flat cut-outs sliding over one background — every scene needs at least three moving layers and a light.
-- No real portraits or recognisable likenesses; the king is a generic figure.
-- No hard cuts between scenes; always the 14-frame overlap.
-- No photos or AI images; everything is drawn with the kit.
-- Do not drop the "ภาพประกอบ" chip.
+- No colour inside the panel besides gold and black; no gradients other than the gold leaf and its sheen.
+- No flat-cartoon outlines, rounded UI cards or sans-serif type; no "ภาพประกอบ" chip in red.
+- Do not copy a specific cabinet or manuscript; compose your own scenes from the motifs.
+- Royal figures stay respectful: seated, crowned, never caricatured or in violence.
 
 ## Credits
 
-None for pictures — everything is drawn in code. Sound: house library `gong`, `war_drums`, `wood_hit`, beds
-`wind`, `city_crowd`, `fire_crackle`, `crowd_angry` (`npm run sfx-lib`, licences in `sfx/library.json`) and template
-`SFX.swell`, `SFX.hit`. Font: Kanit (SIL Open Font License).
+None for pictures: everything is drawn in code, no map data. Sound: template UI sound `swell` and the house library
+(Pixabay / Mixkit licences, no attribution). Fonts: Charm, Srisakdi (SIL Open Font License).

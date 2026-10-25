@@ -1,1 +1,26 @@
-{ "id": "M09", "bg": "#02060d", "accent": "#ff3b30", "stat": "#ff6b5f", "gold": "#ffc94a", "river": "#7fd4ff", "riverHi": "#fff3a6", "card": "rgba(8,14,26,0.86)", "text": "#ffffff", "textStroke": "#0b1020", "font": "Inter", "display": "Oswald", "titleWeight": 700, "uppercaseHeads": true, "language": "en", "base": ["raster/world.jpg", "raster/europe.jpg"], "panelLabel": "Illustration", "layout": { "cardTop": 0.1, "panelTop": 0.56, "panelH": 350, "captionTop": 0.765 } }
+{
+  "id": "M09",
+  "bg": "#0e0e0e",
+  "land": "#b9b6ae",
+  "mid": "#5a5a58",
+  "arrow": "#ffffff",
+  "text": "#f2efe6",
+  "textStroke": "#000000",
+  "font": "Playfair Display",
+  "display": "Limelight",
+  "kickerFont": "Trirong",
+  "titleWeight": 400,
+  "language": "en",
+  "grade": "grayscale(1) contrast(1.28), flicker ±6 %, gate weave ±2/3 px, grain every frame",
+  "base": ["raster/world.jpg", "raster/europe.jpg"],
+  "panelLabel": "ILLUSTRATION",
+  "layout": { "superTop": 0.1, "captionTop": 0.78 },
+  "signature": {
+    "base": "film-bw",
+    "palette": ["#0e0e0e", "#b9b6ae", "#5a5a58", "#ffffff", "#f2efe6"],
+    "line": "bold-outline",
+    "type": "Trirong 700",
+    "motion": "gate-weave",
+    "frame": "none"
+  }
+}

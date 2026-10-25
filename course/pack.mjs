@@ -108,6 +108,12 @@ for (const f of walk(dest)) {
     if (/^\s*GEMINI_API_KEY\s*=\s*[^\s#]+/m.test(s)) problems.push(`GEMINI_API_KEY with a value: ${rel}`);
   }
 }
+// Every shipped style must look different from every other (rendered covers + declared signature axes).
+try {
+  execFileSync("node", [path.join(repo, "skills/map-studio/template/scripts/distinct.mjs"), "--from", path.join(dest, "story-studio/styles")], { encoding: "utf8" });
+} catch (e) {
+  problems.push(`styles too alike (npm run distinct):\n${String(e.stdout).split("\n").filter((l) => /FAIL|↔.*axes/.test(l) && /FAIL|^\s{2}[MN]/.test(l)).join("\n")}`);
+}
 if (problems.length) {
   console.error(`STOP — ${problems.length} problem(s):\n   ${problems.join("\n   ")}`);
   rmSync(dest, { recursive: true, force: true });

@@ -1,91 +1,84 @@
-# M07 กระดานคะแนนครองเมือง · City Scoreboard
+# M07 กระดานยึดเมือง · Territory Board Game
 
 ![cover](cover-9x16.jpg)
 
 **Fits:** warring states, civil wars, any story where "who holds what" changes several times (Three Kingdoms,
 Warring States, Wars of the Roses, Ayutthaya vs Burma city by city) · **Formats:** 9:16 / 16:9 ·
-**Code:** `Demo.tsx` + `kit/Parchment.tsx`, `kit/Scoreboard.tsx`, `kit/eras.ts`, `kit/places.ts`
+**Code:** `Demo.tsx` + `kit/Board.tsx`, `kit/eras.ts`, `kit/places.ts`
 
 ## Look
 
-An old parchment map — paper-tan sea, cream land, a soft ink coastline, thin blue-grey rivers (the big ones as a
-wider band) — under a grain-and-blotch paper texture with a brown vignette. Each side's area of control is a
-translucent wash in its colour with a soft glow edge and a dashed border, clipped to the coast; its name sits on
-the area in big Chonburi letters in the same colour. Cities are ink-outlined diamonds filled with the holder's
-colour. The scoreboard is the point: at each new moment the areas cross-fade, captured cities flip colour with
-a pop and a ring, a year chip at the top changes, and a paper tally card recounts how many cities each side holds.
+The story is a board game on a walnut table under a soft top light. The map is printed on a thick board (dark
+navy slab edge, glossy cream face, a navy/yellow checker border) as a grid of chunky square tiles: aqua sea tiles
+with little wave prints, sand tiles for unheld land, and every held tile in its side's bright printed colour, each
+tile with a soft drop shadow and a gloss strip. Side names are printed on the board in big white letters with a dark
+outline. Cities are wooden pawns standing on the board — holder colour, dark outline, a highlight, a soft shadow —
+with a white name tag. Above the board an era card ("การ์ดยุค · ตาที่ n", the year, the era title, a stripe per
+side) sits on its deck next to a white die. Below (right column on 16:9) a score track of numbered squares where
+each side's marker cylinder stands on the number of cities it holds. The kicker is a yellow pill, the headline big
+white Mitr with a hard dark drop. The whole board leans back a few degrees on the table.
 
 | Role | Hex |
 |---|---|
-| Background (paper / sea) | `#e6d4aa` / `#c9b68c` |
-| Land | `#efe1bb` |
-| Ink (coast, text, card borders) | `#3b2a1a` (coast `#5b4026`) |
-| Rivers / lakes | `#4d7488` / `#b7c4b1` |
-| Sides | `#2f4f86` blue · `#2f7a45` green · `#b0302a` red · `#9a7b2f` gold · `#6b3f6e` plum · `#7a5230` brown · `#4a4a52` grey |
+| Table (background) | `#2a1a10` |
+| Board face / edge print | `#fbf3df` / `#1d3557` + `#f4c430` |
+| Sea tile / unheld land tile | `#74d3e6` / `#f1dfb0` |
+| Outline ink | `#1d2433` |
+| Sides | `#2b47c9` blue · `#2fae5a` green · `#e2452f` red · `#f2b632` yellow · `#8e52c8` purple · `#f08a24` orange · `#7a7f8c` grey |
 
-**Type:** Chonburi 400 for titles, area names (≈75 px on 9:16) and the year (44 px × 1.3); Kanit 600/700 for
-labels (city names 26 px × 1.5 on the map), cards and kicker. All map text has a paper-coloured halo
-(`stroke #efe1bb`, paint-order stroke). **Line:** coast 1.6 px with a 7 px 15 % halo; area edge 3 px dashed
-14/9 + 10 px 25 % glow; card border 3 px ink (all at 1080, ×1.3 on 9:16 cards).
+**Type:** Mitr — headline 92 px 700 (60 on 16:9), side names 64 px 700, era year 76 px 700, era title 32 px 600,
+kicker 30 px 600, city tags 19 px 600, track numbers 18–24 px 700 — at 1080. **Line:** bold dark outlines on every
+piece (2–3 px), tiles 34 px with 3 px gaps and 5 px corner radius.
 
 ## Motion signature
 
-- The camera barely moves: one framing of the whole board with a +5 % slow push over the scene. Zoom to a city
-  only between scoreboard moments.
-- A new moment = 25-frame cross-fade of all areas; the area names pop in 10 frames later.
-- Captured cities flip 8 frames after the change: diamond springs (damping 8), a ring expands and fades in
-  24 frames. Cities that did not change hands stay still — the eye goes to the flips.
-- The year chip and tally card spring (damping 14–15) on each change; tally bars grow to the new count.
-- Sound: a whoosh 6 frames before the change, a gong (library `gong`) on the flips, war drums at the open, a
-  quiet wind bed.
+- **Tabletop tilt:** the board settles from a 12° lean to 7° at the open and leans back a little at each new era.
+- The opening deal: tiles drop in as a wave from west to east (spring), pawns pop onto their cities one by one.
+- A new era = a new card flips over the deck (rotateY spring) and the die tumbles and lands on the number of sides;
+  then the tiles that change hands flip over in a west → east wave (8 frames each, colour swaps at the edge-on
+  moment); 30 frames later the captured cities' pawns hop and land in the new colour; then the score markers hop
+  to their new squares.
+- Sound: wood knock on each new card and on the pawn hops, a whoosh on the flip wave, drums at the open.
 
 ## Scenes in the kit
 
 | Component | Shows | Props |
 |---|---|---|
-| `PaperMap` (`Parchment.tsx`) | Paper sea, land, coast, rivers + lakes; defines `clipPath#land` | `riverBoost`, `water` (JSON path) |
-| `PaperTexture` | Grain, blotches, vignette over the frame (live SVG noise) | — |
-| `Badge`, `InkLabel` | Leader banner pinned to a place; ink place name with halo | `at, name/text, start, end, color` |
-| `EraMap` (`Scoreboard.tsx`) | Every era's areas, cross-fading along a schedule | `steps: {year, at}[]`, `start` |
-| `CityMarks` | Holder-coloured city diamonds that flip at each step | `steps, cities, start` |
-| `YearBadge` | "ค.ศ. year + era title" chip, top centre | `steps, start` |
-| `Tally` | Paper card: cities held per side, bars + numbers | `steps, cities, title` |
-| `ERAS` (`eras.ts`), `CITIES` (`places.ts`) | The data: sides (name, colour, area ring, label point) per year; cities with holder per year | — |
+| `Table` (`Board.tsx`) | Walnut table, soft top light | — |
+| `GameBoard` | Board slab, checker border, tile map coloured by holder per step, side names; children drawn on the board | `steps, eras, bb, centre, start, cellPx` |
+| `useBoardLayout`, `useBoardProjection` | Boxes per format; the fixed projection of the printed map (`proj(lonlat)` → board px) | `bb` |
+| `Pawn` | Wooden pawn with name tag; `hop` 0→1 changes colour at the top | `x, y, color, from, hop, label` |
+| `ScoreTrack` | Numbered squares 0…n; one marker per side on its count | `n, sides: {key, color, count, at}` |
+| `EraCard`, `Die` | Era card flipping in from the deck; die tumbling to the number of sides | `steps, eras` |
+| `stepAt`, `fade` | Current step; 0→1 helper | — |
+| `ERAS` (`eras.ts`), `CITIES` (`places.ts`) | Sides (name, colour, area ring, label point) per year; cities with holder per year | — |
 
-For a new story, write new `ERAS` (one entry per moment, areas drawn as rough `[lon, lat]` rings) and `CITIES`
-(`held: { year: sideKey }`), then pass a `steps` schedule. Keep 2–4 sides per moment and 6–12 cities.
+For a new story write new `ERAS` (one entry per moment, areas as rough `[lon, lat]` rings) and `CITIES`
+(`held: { year: sideKey }`), set the board's bbox `BB` and pass a `steps` schedule. Keep 2–4 sides and 6–12 cities.
 
 ## Build notes
 
-One `<MapFrame>` (orthographic camera from `components/camera.ts`), layers in this order: `PaperMap` → `EraMap` →
-`CityMarks` / `Badge`, then `PaperTexture` above the map and the HTML cards above that. 9:16 cards are 1.3× and
-map text 1.5×. `PaperTexture` runs full-frame `feTurbulence` every frame: fine for stills and short clips; for a
-long video still it once (`npx remotion still` of a composition that renders only `PaperTexture`) to
-`public/paper-9x16.png` / `paper-16x9.png` and show the PNG with `<Img>` instead.
+Order: `Table` → tilted wrapper (`perspective` + `rotateX`) holding `GameBoard` with the pawns as children → title,
+`EraCard`, `Die`, `ScoreTrack`, credit. The tile grid (which tile is land, who holds it in each era) is computed once
+per format from the fixed projection with `geoContains` on Natural Earth 110 m land, so the board never moves on its
+own — only the tilt does. Smaller `cellPx` = finer map but more tiles (34 px ≈ 750 tiles on 9:16). 9:16 bands:
+title 3.6–15 %, era card 15–26 %, board 27–79 %, score track 86–91 %.
 
 ## Data
 
-Land comes from the `world-atlas` npm package (already in the template). Rivers and lakes are not shipped — fetch
-them once in the project (≈350 KB):
-
-```bash
-npm run rivers -- china-water 97 20 125 43        # → public/data/china-water.json (Natural Earth 1:10m)
-```
-
-For another region use the same command with its bbox (`<name> <west> <south> <east> <north>`) and pass
-`water="data/<name>.json"` to `PaperMap`; add that region's big river names to `MAIN` in `Parchment.tsx`.
+Land comes from the `world-atlas` npm package (already in the template); nothing to fetch. Sound:
+`npm run sfx && npm run sfx-lib` (`war_drums`, `wood_hit`).
 
 ## Don'ts
 
-- No satellite imagery or hillshade — the board must stay flat paper.
-- Never show areas as exact borders: always "แนวโดยประมาณ" on screen and in the description.
+- No parchment, no ink washes, no satellite imagery — it is a printed game board with plastic/wooden pieces.
+- Never present tile areas as exact borders: keep "เขตโดยประมาณ" on screen and in the description.
 - Do not change a side's colour mid-video; viewers learn them in the first 10 seconds.
-- Do not flip more than ~5 cities at once — the flips stop reading.
-- No camera moves during a cross-fade.
+- Do not flip more than ~5 cities at once; no camera moves — the board stays put on the table.
+- Do not copy a real game's board, logo, card frame or pieces.
 
 ## Credits
 
-Map: Natural Earth land (via `world-atlas`) and Natural Earth 1:10m rivers & lakes — public domain; credit line
-"แผนที่ Natural Earth" (description, optionally small on screen) + "เขตแดนโดยประมาณ". Sound: template `SFX.swell`,
-`SFX.whoosh`; house library `war_drums`, `gong`, `wind` (`npm run sfx-lib`). Fonts: Chonburi, Kanit (SIL Open Font
-License).
+Map: Natural Earth land (via `world-atlas`) — public domain; credit line "แผนที่ Natural Earth" + "เขตโดยประมาณ".
+Sound: template `SFX.swell`, `SFX.whoosh`, `SFX.tick`; house library `war_drums`, `wood_hit` (`npm run sfx-lib`).
+Font: Mitr (SIL Open Font License).

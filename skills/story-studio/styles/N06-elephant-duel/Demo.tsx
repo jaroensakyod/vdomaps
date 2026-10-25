@@ -1,83 +1,93 @@
-import { loadFont } from "@remotion/google-fonts/Kanit";
 import { Fragment } from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
-import type { InsetGeom } from "../../components/Inset";
-import { Banner, COSTUME, Fighter, PAL, PaperGrain } from "../../components/Scene";
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "remotion";
 import { Bed, Hit } from "../../components/Sound";
 import type { StyleDemo } from "../types";
-import { Arrows, BURMA_WHITE, clamp, DustPuffs, Elephant, FallingBanner, Field, G, SIAM_RED, since, Sparks } from "./kit/Duel";
+import { Age, Arrows, Banner, BURMA, clamp, Dust, Elephant, Flare, fonts, G, M, Rock, SIAM, Soldier, Tree, WallPaint } from "./kit/Mural";
 
-// N06 elephant duel: two armies, arrow volleys, the charge, two war elephants meeting head-on, ngao blows with
-// sparks and shake, the enemy banners fall, cheer, title. One full-screen world under one moving camera; one event
-// schedule drives picture and sound. 1080×1920, 20 s.
-export const demo: StyleDemo = { id: "N06", name: "ยุทธหัตถี", frames: 600, cover: 352, sizes: ["9x16"] };
+// N06 elephant duel as a Thai temple mural: the whole battle is painted along one long wall and the camera
+// dollies along it. Two armies, arrow volleys, the charge, the two war elephants meeting head-on, ngao blows
+// with gold flame-bursts, the enemy banners fall, cheer, title. One event schedule drives picture and sound.
+// 1080×1920, 20 s.
+export const demo: StyleDemo = { id: "N06", name: "จิตรกรรมฝาผนังยุทธหัตถี", frames: 600, cover: 300, sizes: ["9x16"] };
 
-const font = loadFont("normal", { weights: ["700", "900"], subsets: ["thai", "latin"] }).fontFamily;
 const W = 1080;
 
 // ---- the schedule (frames) ----
 const HORN = 18;
-const VOLLEY = 96; // arrows loosed
+const VOLLEY = 96;
 const ARROW_LAND = [124, 129, 134, 140];
-const CHARGE = 118; // infantry battle cry
+const CHARGE = 118;
 const TRUMPET = { siam: 196, burma: 230 };
-const CLASH = 300; // the two elephants meet
-const STRIKES = [332, 364, 396]; // ngao blows (sparks)
-const DECISIVE = 414; // the decisive blow; the opposing banners fall
+const CLASH = 300;
+const STRIKES = [332, 364, 396];
+const DECISIVE = 414;
 const CHEER = 446;
 const GONG = 520;
+const since = (f: number, list: number[]) => Math.min(...list.map((e) => (f >= e ? f - e : 999)));
+const ease = { ...clamp, easing: Easing.inOut(Easing.sin) };
 
 const World = ({ frame }: { frame: number }) => {
-  // the two great elephants close in, meet at CLASH, recoil a little on every blow
   const approach = interpolate(frame, [150, CLASH], [0, 1], { ...clamp, easing: (k) => k * k });
   const recoil = (side: 1 | -1) => STRIKES.reduce((r, f) => r + (frame >= f && frame < f + 12 ? Math.sin(((frame - f) / 12) * Math.PI) * 14 * side : 0), 0);
-  const sx = 520 + approach * 390 + recoil(-1);
-  const bx = 1880 - approach * 390 + recoil(1);
+  const sx = 880 + approach * 420 + recoil(-1);
+  const bx = 2320 - approach * 420 + recoil(1);
   const walking = frame >= 150 && frame < CLASH ? 1 : 0;
   const swingSiam = Math.max(0, ...[...STRIKES, DECISIVE].map((f) => (frame >= f - 10 && frame < f + 8 ? Math.sin(((frame - f + 10) / 18) * Math.PI) : 0)));
   const swingBurma = Math.max(0, ...STRIKES.map((f) => (frame >= f - 22 && frame < f - 6 ? Math.sin(((frame - f + 22) / 16) * Math.PI) : 0)));
   const tr = (f: number) => interpolate(frame, [f - 8, f, f + 40, f + 55], [0, 1, 1, 0], clamp);
   const fallen = interpolate(frame, [DECISIVE + 6, DECISIVE + 30], [0, 1], clamp);
-  const infantry = interpolate(frame, [CHARGE, CHARGE + 200], [0, 1], clamp);
-  const dust = Array.from({ length: 10 }, (_, i) => interpolate(frame, [150 + i * 12, 240 + i * 12], [0, 1], clamp) * (1 - interpolate(frame, [CLASH + 120, CLASH + 220], [0, 1], clamp)));
+  const adv = interpolate(frame, [CHARGE, CHARGE + 200], [0, 1], clamp);
+  const dust = (i: number) => interpolate(frame, [150 + i * 12, 240 + i * 12], [0, 1], clamp) * (1 - interpolate(frame, [CLASH + 120, CLASH + 220], [0, 1], clamp));
+  const blow = since(frame, [CLASH, ...STRIKES, DECISIVE]);
   return (
-    <g>
-      <Field />
-      <DustPuffs ks={dust} />
-      {/* two armies: lines of banners and infantry */}
-      {Array.from({ length: 9 }, (_, i) => <Banner key={`sb${i}`} x={60 + i * 55} y={G + 10} s={1.4} color={i % 2 ? SIAM_RED : PAL.gilt} />)}
-      {Array.from({ length: 9 }, (_, i) => <FallingBanner key={`bb${i}`} x={1900 + i * 55} y={G + 10} s={1.4} color={i % 2 ? BURMA_WHITE : "#7a2a22"} fall={interpolate(frame, [DECISIVE + 10 + i * 4, DECISIVE + 30 + i * 4], [0, 80], clamp)} />)}
-      {Array.from({ length: 10 }, (_, i) => (
-        <Fighter key={`si${i}`} x={140 + i * 46 + infantry * 260} y={G + 30 + (i % 2) * 16} scale={1.25} mode={frame > CHARGE ? (frame > CHEER ? "attack" : "run") : "stand"} costume={COSTUME.siam} phase={i} />
-      ))}
-      {Array.from({ length: 10 }, (_, i) => (
-        <Fighter key={`bi${i}`} x={2260 - i * 46 - infantry * 220 * (1 - fallen * 0.6)} y={G + 30 + (i % 2) * 16} scale={1.25} flip mode={frame > CHARGE ? "run" : "stand"} costume={COSTUME.burma} phase={i + 0.5} />
-      ))}
-      {/* arrow volleys both ways */}
-      <Arrows frame={frame} at={VOLLEY} x0={420} x1={1900} n={14} dir={1} seed={3} />
-      <Arrows frame={frame} at={VOLLEY + 6} x0={2000} x1={500} n={14} dir={-1} seed={11} />
+    <WallPaint>
+      {/* far rocks and trees (higher on the wall = further away) */}
+      <Rock x={-120} y={G - 20} s={1.7} />
+      <Rock x={3320} y={G - 20} s={1.7} color="#5a6f8a" dark={M.indigo} />
+      <Rock x={1600} y={860} s={1.0} color="#5a6f8a" dark={M.indigo} />
+      <Rock x={420} y={860} s={0.8} />
+      <Rock x={2780} y={860} s={0.8} />
+      <Tree x={1020} y={880} s={0.9} />
+      <Tree x={2200} y={880} s={0.9} />
+      <Tree x={150} y={1060} s={1.1} />
+      <Tree x={3080} y={1060} s={1.1} />
+      {/* banners: Siam left stand, the other side's fall after the decisive blow */}
+      {Array.from({ length: 8 }, (_, i) => <Banner key={`sb${i}`} x={250 + i * 82} y={1000} s={0.9} color={i % 2 ? M.red : M.gold} t={frame} />)}
+      {Array.from({ length: 8 }, (_, i) => <Banner key={`bb${i}`} x={2380 + i * 82} y={1000} s={0.9} color={i % 2 ? M.white : M.indigo} t={frame} fall={interpolate(frame, [DECISIVE + 10 + i * 4, DECISIVE + 30 + i * 4], [0, 78], clamp)} />)}
+      {/* two rows of infantry each side */}
+      {Array.from({ length: 8 }, (_, i) => <Soldier key={`sa${i}`} x={280 + i * 86 + adv * 380} y={1100} s={0.85} side={SIAM} t={frame + i * 5} run={frame > CHARGE && frame < CHEER} />)}
+      {Array.from({ length: 8 }, (_, i) => <Soldier key={`ba${i}`} x={2920 - i * 86 - adv * 360 * (1 - fallen * 0.4)} y={1100} s={0.85} side={BURMA} flip t={frame + i * 5} run={frame > CHARGE} />)}
+      <Arrows frame={frame} at={VOLLEY} x0={700} x1={2500} y={1000} n={14} seed={3} />
+      <Arrows frame={frame} at={VOLLEY + 6} x0={2500} x1={700} y={980} n={14} seed={11} />
+      {Array.from({ length: 7 }, (_, i) => <Soldier key={`sb${i}`} x={160 + i * 100 + adv * 340} y={1290} s={1.0} side={SIAM} t={frame + i * 7} run={frame > CHARGE && frame < CHEER} />)}
+      {Array.from({ length: 7 }, (_, i) => <Soldier key={`bb2${i}`} x={3040 - i * 100 - adv * 320 * (1 - fallen * 0.4)} y={1290} s={1.0} side={BURMA} flip t={frame + i * 7} run={frame > CHARGE} fallen={i < 3 ? fallen * (i % 2 ? 1 : 0) : 0} />)}
       {/* the duel */}
-      <Elephant x={bx} y={G + 70} s={1.25} flip walk={walking} trumpet={tr(TRUMPET.burma)} swing={swingBurma} cloth={BURMA_WHITE} trim="#7a2a22" crown={PAL.gilt} frame={frame} rider={fallen < 0.5} />
-      <Elephant x={sx} y={G + 80} s={1.3} walk={walking} trumpet={tr(TRUMPET.siam)} swing={swingSiam} cloth={SIAM_RED} trim={PAL.gilt} crown={PAL.gilt} frame={frame} />
-      <Sparks frame={frame} blows={[...STRIKES, DECISIVE]} x={(sx + bx) / 2} y={G - 420} />
-    </g>
+      {Array.from({ length: 8 }, (_, i) => <Dust key={`d${i}`} x={i < 4 ? sx - 150 + i * 50 : bx + 150 - (i - 4) * 50} y={G + 10} k={dust(i)} />)}
+      <Elephant x={bx} y={G} s={0.95} flip hide={M.hideB} cloth={M.indigo} walk={walking} trumpet={tr(TRUMPET.burma)} swing={swingBurma} t={frame} rider={fallen < 0.5} />
+      <Elephant x={sx} y={G + 20} s={1.0} hide={M.hideA} cloth={M.red} walk={walking} trumpet={tr(TRUMPET.siam)} swing={swingSiam} t={frame} />
+      {blow < 24 && <Flare x={(sx + bx) / 2} y={G - 470} k={blow / 24} s={frame >= DECISIVE ? 1.4 : 1} />}
+    </WallPaint>
   );
 };
 
 export const Demo = () => {
   const frame = useCurrentFrame();
-  // camera: wide on both armies → push in on the elephants → tight on the duel → pull back for the cheer
-  const cx = interpolate(frame, [0, 430, 600], [1200, 1200, 1100], clamp);
-  const zoom = interpolate(frame, [0, 150, 290, 420, 470, 600], [0.6, 0.7, 1.12, 1.22, 0.78, 0.72], clamp);
-  const cy = G - 330 / zoom; // keeps the elephants' feet at ~2/3 of the screen at every zoom
+  // the dolly: along the Siam line → in on the duel → back along the fallen banners → the whole wall for the title
+  const cx = interpolate(frame, [0, 120, 230, 300, 430, 500, 560, 600], [760, 900, 1180, 1600, 1600, 2060, 1600, 1600], ease);
+  const zoom = interpolate(frame, [0, 150, 290, 420, 470, 560, 600], [1.0, 1.0, 1.12, 1.2, 1.0, 0.94, 0.94], ease);
+  const cy = interpolate(zoom, [0.94, 1.2], [960, 1060]);
   const blow = since(frame, [CLASH, ...STRIKES, DECISIVE]);
-  const shake = blow < 10 ? (1 - blow / 10) * (frame >= DECISIVE ? 22 : 12) : 0;
+  const shake = blow < 10 ? (1 - blow / 10) * (frame >= DECISIVE ? 12 : 6) : 0;
   const fl = since(frame, [CLASH, DECISIVE]);
-  const flash = fl < 6 ? 1 - fl / 6 : 0;
-  const titleK = interpolate(frame, [GONG + 4, GONG + 24], [0, 1], clamp);
-  const g = { x: 0, y: 0, W, H: 1920, ground: 1920, cx: W / 2, s: 1, sc: 1, vertical: true, frame } as InsetGeom;
+  const flash = fl < 8 ? 1 - fl / 8 : 0;
+  const titleK = interpolate(frame, [GONG + 4, GONG + 26], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+  const lines: [string, number, number][] = [
+    ["สองทัพตั้งประจัญ ลูกเกาทัณฑ์ข้ามทุ่ง", 10, 190],
+    ["ช้างทรงสองเชือก วิ่งเข้าหากัน", 196, 324],
+    ["ฟันของ้าว ตัดสินศึกกลางหลังช้าง", 330, GONG - 8],
+  ];
   return (
-    <AbsoluteFill style={{ background: "#0a0b10" }}>
+    <AbsoluteFill style={{ background: M.plaster }}>
       {/* sound — every entry is an event in the schedule above */}
       <Bed id="war_drums" from={0} to={GONG} volume={0.35} />
       <Bed id="wind" from={0} to={600} volume={0.15} />
@@ -103,28 +113,41 @@ export const Demo = () => {
       <Hit id="battle_cry" at={CHEER + 6} volume={0.4} />
       <Hit id="gong" at={GONG} volume={0.6} />
       <svg width={W} height={1920} viewBox={`0 0 ${W} 1920`}>
-        <g transform={`translate(${W / 2 + Math.sin(frame * 2.3) * shake},${960 + Math.cos(frame * 3.1) * shake}) scale(${zoom}) translate(${-cx},${-cy})`}>
+        <g transform={`translate(${W / 2 + Math.sin(frame * 2.3) * shake},${960 + Math.cos(frame * 3.1) * shake * 0.5}) scale(${zoom}) translate(${-cx},${-cy})`}>
           <World frame={frame} />
+          <Age />
         </g>
-        {/* foreground layer: dark spear-bearers and grass close to the camera (fastest parallax) */}
-        <defs><filter id="yh-fgblur"><feGaussianBlur stdDeviation={2.5} /></filter></defs>
-        <g opacity={0.92} filter="url(#yh-fgblur)">
-          {Array.from({ length: 6 }, (_, i) => <Fighter key={i} x={((i * 230 - (cx - 1200) * 1.6 + 2400) % 1500) - 200} y={2010 + (i % 2) * 40} scale={3.4} flip={i % 2 === 1} mode="stand" costume={{ jacket: "#2a1d14", sash: "#3a2a1a", pants: "#1f1610", head: "short", skin: "#2a1d14" }} phase={i} />)}
-          {Array.from({ length: 22 }, (_, i) => { const gx = ((i * 61 - (cx - 1200) * 1.6 + 3000) % 1300) - 100; return <path key={`g${i}`} d={`M${gx} 1920 q8 -70 22 -110 q-4 50 14 110 Z`} fill="#2f2a18" />; })}
-        </g>
-        <rect x={0} y={0} width={W} height={1920} fill="#ffb060" opacity={0.07} />
-        <PaperGrain g={g} id="yh" />
-        {flash > 0 && <rect x={0} y={0} width={W} height={1920} fill="#fff4dc" opacity={flash * 0.5} />}
+        {/* lamp light falling on the wall from the left, darker corners */}
+        <defs>
+          <radialGradient id="n06-lamp" cx="0.35" cy="0.45" r="0.85">
+            <stop offset="0" stopColor="#fff2d0" stopOpacity={0.14} />
+            <stop offset="0.6" stopColor="#000" stopOpacity={0} />
+            <stop offset="1" stopColor="#1a0c04" stopOpacity={0.45} />
+          </radialGradient>
+        </defs>
+        <rect width={W} height={1920} fill="url(#n06-lamp)" />
+        {flash > 0 && <rect width={W} height={1920} fill="#f3d68a" opacity={flash * 0.35} />}
       </svg>
-      <div style={{ position: "absolute", top: 60, left: 0, right: 0, textAlign: "center", fontFamily: font, color: "#fff", opacity: interpolate(frame, [0, 15, GONG - 10, GONG], [0, 1, 1, 0], clamp) }}>
-        <div style={{ fontSize: 36, fontWeight: 700, color: PAL.gilt }}>N06 · ยุทธหัตถี</div>
-        <div style={{ fontSize: 66, fontWeight: 900 }}>ช้างศึก <span style={{ color: "#ffb35c" }}>ปะทะ</span> ช้างศึก</div>
+      <div style={{ position: "absolute", top: 70, left: 0, right: 0, textAlign: "center", color: M.white, opacity: interpolate(frame, [0, 15, GONG - 10, GONG], [0, 1, 1, 0], clamp) }}>
+        <div style={{ fontFamily: fonts.text, fontWeight: 700, fontSize: 38, letterSpacing: 2, color: M.goldLight }}>N06 · จิตรกรรมฝาผนังยุทธหัตถี</div>
+        <div style={{ fontFamily: fonts.deco, fontSize: 92, lineHeight: 1.35, textShadow: "0 3px 0 #0c0e18" }}>
+          ช้างศึก <span style={{ color: M.goldLight }}>ปะทะ</span> ช้างศึก
+        </div>
       </div>
+      {lines.map(([text, a, b]) => {
+        const k = interpolate(frame, [a, a + 10, b - 8, b], [0, 1, 1, 0], clamp);
+        return k > 0 ? (
+          <div key={text} style={{ position: "absolute", left: 40, right: 40, top: 1700, textAlign: "center", opacity: k, fontFamily: fonts.text, fontWeight: 700, fontSize: 60, color: M.white, textShadow: "0 3px 0 #4a160e" }}>
+            {text}
+          </div>
+        ) : null;
+      })}
+      <div style={{ position: "absolute", left: 0, right: 0, top: 1846, textAlign: "center", fontFamily: fonts.text, fontSize: 28, color: M.goldLight, opacity: 0.9 }}>ภาพประกอบ · วาดเลียนแบบจิตรกรรมไทย</div>
       {titleK > 0 && (
         <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
-          <div style={{ transform: `scale(${0.85 + titleK * 0.15})`, opacity: titleK, background: "rgba(8,14,26,0.88)", border: `5px solid ${PAL.gilt}`, borderRadius: 22, padding: "24px 56px", textAlign: "center", fontFamily: font, color: "#fff" }}>
-            <div style={{ fontSize: 110, fontWeight: 900 }}>ยุทธหัตถี</div>
-            <div style={{ fontSize: 44, fontWeight: 700, color: PAL.gilt }}>ชนช้างตัดสินศึก</div>
+          <div style={{ transform: `scaleX(${0.2 + titleK * 0.8})`, opacity: titleK, background: M.red, border: `6px double ${M.goldLight}`, outline: `3px solid ${M.ink}`, borderRadius: "48% 48% 12px 12px / 30% 30% 12px 12px", padding: "60px 70px 30px", textAlign: "center", boxShadow: "0 10px 30px rgba(30,10,4,0.5)" }}>
+            <div style={{ fontFamily: fonts.deco, fontSize: 126, color: M.goldLight, lineHeight: 1.3 }}>ยุทธหัตถี</div>
+            <div style={{ fontFamily: fonts.text, fontWeight: 700, fontSize: 46, color: M.white }}>ชนช้างตัดสินศึก</div>
           </div>
         </AbsoluteFill>
       )}

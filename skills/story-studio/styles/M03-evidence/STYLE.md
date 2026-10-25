@@ -1,100 +1,102 @@
-# M03 เล่าด้วยหลักฐานหลายฝ่าย · Evidence From Several Chronicles
+# M03 ใบลานหลักฐาน · Palm-Leaf Evidence
 
 ![cover](cover-9x16.jpg)
 
 **Fits:** disputed events, deaths and coups, battles each side tells differently, "what really happened" long-form
-history (10 min) or a 60 s short · **Formats:** 9:16 · **Code:** `Demo.tsx` + `kit/Map.tsx`, `kit/Cards.tsx`,
-`kit/Head.tsx`
+Thai history (10 min) or a 60 s short · **Formats:** 9:16 · **Code:** `Demo.tsx` + `kit/Leaf.tsx`,
+`kit/LeafMap.tsx`, `kit/Leaves.tsx`
 
 ## Look
 
-The news-style history map with the sources put on trial. NASA Blue Marble imagery fills the frame with Natural
-Earth rivers in cyan, approximate kingdom extents as glowing outlines with a 22 % pulsing fill (gold = Siam,
-red-orange = Burma), campaign arrows, a crossed-swords battle marker and glowing city dots; a disputed or proposed
-location gets a dashed rotating ring instead of a glow, plus a "(ตำแหน่งโดยประมาณ)" tag. A red top bar (badge,
-chapter, year chip) and a dark head card with a coloured left bar sit on top; the head card names the claim and
-carries a confidence chip (●●● หลักฐานตรงกัน / ●●○ ยังถกเถียง / ●○○ หลักฐานฝ่ายเดียว). In the illustration slot
-under the map, evidence cards show which source says what: one column per side with its claim in big type, A vs B
-with a stamp, a timeline of when each text was written. Captions sit at 76.5 %. Each side keeps one colour in the
-whole video, on the map and on the cards.
+A Thai palm-leaf manuscript (ใบลาน) laid out on its deep-teal silk wrapping cloth (ผ้าห่อคัมภีร์ — a woven diamond motif, a red-and-gold border band down each side) under a soft pool of light. Every card
+is a pale golden palm-leaf strip — fibre striations, darker burnt edges, age stains, ruled margin lines and drilled
+string holes. Text and line art are cut with a stylus and blackened with soot: dark strokes with a pale lip just
+below each cut. The map is incised across a bundle of four leaves laid side by side and tied by two red cords that
+show in the gaps and through the holes: the coast as a deep cut over a pale land tone, the sea as rows of small cut
+waves, rivers as fine cuts, little mountain glyphs along the ranges, the Burmese extent as red-lacquer hatching
+with a dotted cut edge, Siam as a dotted soot edge, the march as a red-lacquer line with a cut arrowhead, cities as
+drilled holes, the battle as crossed blades cut in a ring. Each chronicle is its own thin leaf that slides out of a
+pile at the right of the slot. Confidence is knots tied on a short red cord (3 = sides agree, 2 = disputed,
+1 = one side only); agreement and disputes are red lacquer seals pressed onto the leaves. Captions are cut into their own long leaf, and two loose leaves at the bottom carry the credits. Years on leaves are in Thai numerals.
 
 | Role | Hex |
 |---|---|
-| Background | `#02060d` |
-| Thai side / headline accent | `#ffc94a` |
-| Burmese side | `#e05a3a` |
-| Conflict / top bar | `#ff3b30` |
-| Agreement | `#3fbf6a` |
-| Cards | `rgba(8,14,26,0.92)` / text `#ffffff` |
+| Silk wrapping cloth (background) · border band | `#1d5650` · `#7a1f16` + gilt `#d9a441` |
+| Leaf body (pale golden straw) / light / edge | `#e0c590` / `#f6ead0` / `#c9b080` |
+| Soot ink (Thai side, all cut text) | `#1a0f08` |
+| Red lacquer (Burmese side, seals, cords) | `#9c2b1b` |
+| Umber ink (Dutch / notes) | `#5a3a1c` |
+| Caption | soot cut into its own leaf |
 
-Other sides: Europe `#4fa3ff`, Portuguese/Vietnam `#3fa7d6`, China `#c0186a`, Lanna `#3fbf6a`; rivers `#7fd4ff`.
+Other sides keep to the same earth inks: Portuguese `#6e5a1e` (olive ink); never bright UI colours.
 
-**Type:** Kanit 400/700/900. Head 54 px 900, stat 92 px 900, card title 30 px 900, claim 38–44 px 900, map labels
-24–36 px (700/900 with a 6 px dark outline), top bar 32/30 px, captions 50 px 700 — at 1080 wide. **Line:** zone
-outline 3 px + 10 px blurred glow, arrows 12 px, card borders 3 px, dashed rings 8/6.
+**Type:** Srisakdi 700 (decorative Thai) for headlines (60–70 px), source names (40 px), claims (58–62 px), map
+names (40–46 px) and timeline years; Charm 400/700 for kickers, tags, notes (23–32 px) and captions (54 px 700, cut into
+a caption leaf) — at 1080 wide. **Line:** coast cut 5 px, rivers 1.8–6 px, march 9 px, zone edge 3 px dotted
+1/9, every cut has a 1.6 px pale lip below; leaf edge 2.2 px dark brown; cords 7 px.
 
 ## Motion signature
 
-- Slow eased camera between bboxes (`camAt` + `view`), subject lifted above the card slot; one move per idea.
-- The map shows *where*, the card shows *who says what*: a new card or head on each spoken claim; columns flip
-  from "?" to the claim one by one on the word, each with `SFX.pop`.
-- Agreement gets a hit sound and turns the head card green with ●●●; disputes get a rotated stamp ("ยังถกเถียง")
-  slamming in from ×2.
-- Disputed places: the accepted site pops as a solid dot, the alternative as a dashed spinning ring, both labelled
-  with who proposed them; zones dim to 25 % while the close-up is on.
-- Timeline of the sources' dates closes a dispute: the event in red, each text a dot on the word, a shaded
-  "written later" zone.
+- **Slide-stack:** cards never fade or pop — a leaf slides out of the pile at the right (16 frames, ease-out
+  cubic), one leaf every 7 frames; a new head leaf slides in from the right while the old one slides out left.
+- The map bundle spreads into place at the open (leaves slide together over 18 frames), then the camera eases
+  between bboxes inside the bundle; one move per idea.
+- A source's leaf shows "?" until the narrator names it, then the claim word is cut in with a 1.5× settle.
+- Seals slam in from ×2.2 with a wood knock (`wood_hit`); knots on the confidence cord tie one by one.
+- Disputed places: the accepted site is a drilled ring, the alternative a slowly turning ring of drill marks in
+  red lacquer, with "(ตำแหน่งโดยประมาณ)" cut beside them; extents dim to 15 % while the close-up is on.
 
 ## Scenes in the kit
 
 | Component | Shows | Props |
 |---|---|---|
-| `view`, `PL`, `VW`, `ROUTES` | Camera on a bbox; demo places, views, route | `f, width, height, k, lift` |
-| `Zones`, `ZONES` | Approximate kingdom extents, pulsing | `k: {zone: 0–1}, colors` |
-| `BigRivers` | Natural Earth rivers (`public/data/nrs-rivers.json`) | `name` |
-| `CityDot`, `BattleMark`, `MapTag` | Glowing / dashed-disputed dot, crossed swords, outlined text tag | `at, start, end, …` |
-| `TopBar` | Red badge, chapter, year chip | `badge, chapter, year` |
-| `HeadCard`, `Confidence` | Head card with tag, headline, stat + "โดยประมาณ", chips, confidence chip | `heads: Head[]` (`sure`) |
-| `FourSources` | One column per side; "?" → what that side says (`say`), then the shared point | `sources, checks, bottom, agree, title, color` |
-| `Compare` | Source A vs B with glyphs and a stamp | `left, right, stamp` |
-| `Timeline` | When each text was written, with a "later" zone | `from, to, marks, zone` |
-| `Calendar`, `NotePage`, `Staircase`, `FlickerTable`, `Poll`, … | The rest of the N09 card set | see N09 |
-| `Subtitle` | Simple caption line (use the template `Caption` with Whisper timing in an episode) | `lines` |
+| `Table`, `Grain` (`Leaf.tsx`) | Teal silk cloth with weave motif, border bands, light pool; fine dust over all | `opacity` |
+| `Leaf` | One palm-leaf strip (fibres, stains, margins, holes); children are clipped to it | `x, y, w, h, seed, holes, margins` |
+| `Cut` | Incised soot text with a pale lip | `x, y, size, font, color, anchor` |
+| `CordRun`, `Knots`, `Seal`, `StackEdge`, `CoverBoard` | Cord through holes; confidence knots; lacquer seal; leaf pile; optional black-lacquer cover board (ไม้ประกับ) | see code |
+| `slideOut` | 0→1→0 slide factor for a leaf | `frame, start, end` |
+| `fitBox`, `focusOf` (`LeafMap.tsx`) | Camera fitting a bbox into the bundle box | `f, box, k` |
+| `LeafLand`, `Mountains` | Coast, sea waves, rivers; mountain glyphs | `rivers` |
+| `Zones`, `March`, `Hole`, `BattleCut`, `PlaceCut` | Extents, march line, drilled city / disputed site, battle, cut name | `at, start, end, …` |
+| `HeadLeaf` (`Leaves.tsx`) | Head leaf: kicker, tag, claim, knot cord (`sure`) | `heads, kicker, end` |
+| `SourceLeaves` | One leaf per source: "?" → what it says; seals on agreement | `sources, checks, agree` |
+| `CompareLeaves` | Two proposals on two leaves + a seal "ยังถกเถียง" | `left, right, stamp` |
+| `TimelineLeaf` | When each text was written; hatched "written later" stretch | `from, to, marks, zone` |
+| `Subtitle` | Captions cut into a long leaf, one phrase at a time | `lines, end` |
 
 ## Build notes
 
-Layers, bottom to top: `Raster` (world + regional `sea`; add an HLS close-up for zooms below ~1°), `BigRivers`,
-`Zones`, arrows, dots and tags inside one `MapFrame`; then HTML `TopBar`, `HeadCard`, cards and captions. Screen
-bands (9:16): head card 10–27 %, map 27–56 %, card/illustration slot 56–74 %, captions 76.5 %. In a full episode
-alternate the slot between v2 illustration panels (N10 kit) and evidence cards; keep one source list
-(`sources.md`) and label every claim with its source on screen. Everything placed by hand on the map (routes,
-extents, sites) is approximate — say so on the map tag or in the description.
+Layers, bottom to top: `Table` → cords → map leaves → `MapFrame` (clipped to the bundle) → head leaf → slot leaves →
+caption leaf → credit leaves → `Grain`. Screen bands (9:16, `BAND` in `Leaves.tsx`): head leaf 4.8–16.9 %, map bundle
+18.1–55.5 %, slot 57.2–75 %, caption leaf 76.5–83 %, credit leaves 88–95 %. Leaves keep a 84 px margin so the cloth shows
+round them. Keep at most 4 leaves in the slot. In a full
+episode alternate the slot between source leaves, compare leaves and the timeline leaf; keep one source list
+(`sources.md`) and cut the source name on every claim leaf. Everything placed by hand on the map (routes, extents,
+sites) is approximate — cut "(ตำแหน่งโดยประมาณ)" / "เขตโดยประมาณ" on the map. The `Grain` and `Table` filters run
+every frame; for a 10-minute render still them once to a PNG and show that instead.
 
 ## Data
 
-Not shipped — fetch into `public/` before rendering:
+Land comes from `world-atlas` (in the template). Rivers are not shipped — fetch into `public/` before rendering:
 
 ```bash
-npm run imagery -- bluemarble world
-npm run imagery -- bluemarble sea 88 2 112 28 7500
 npm run rivers -- nrs-rivers 94 9 106 22
+npm run sfx && npm run sfx-lib        # UI sounds + war_drums, elephant, sword_clash, wind, wood_hit
 ```
 
-Credits (description; small on screen when shown): "Imagery: NASA Blue Marble" · "Rivers & lakes: Natural Earth" ·
-borders "Natural Earth". For close-ups: `TIME=2025-01-05 npm run imagery -- hls <name> <w s e n> 3000` → "Imagery:
-NASA HLS (Sentinel-2)" (check the swath covers the whole bbox; combine two dates if it does not).
+Credits (description; small on the credit leaf): "แผนที่วาดจาก Natural Earth" (land, rivers — public domain).
 
 ## Don'ts
 
-- Never state one chronicle's version as fact; every claim names its source.
-- No confidence chip "high" unless independent sides agree.
-- No AI portraits on head cards; no photos of manuscripts.
-- Do not hide the map under cards — keep the middle band clear.
-- Do not draw exact borders for old kingdoms; extents are soft, approximate outlines.
+- No satellite imagery, no photos of real manuscripts, no AI portraits — everything is drawn leaf and cut.
+- No glowing lines, rounded UI cards or bright accent colours; every colour is leaf, soot, lacquer, gilt or the teal cloth.
+- Never state one chronicle's version as fact; every claim leaf names its source.
+- Three knots only when independent sides agree.
+- Do not draw exact borders for old kingdoms; extents stay dotted and approximate.
 
 ## Credits
 
-Imagery NASA Blue Marble; rivers and borders Natural Earth (public domain). Sound: house library `war_drums`,
-`elephant`, `sword_clash`, `wind` (`npm run sfx-lib`) and template UI sounds. Font: Kanit (SIL Open Font License).
-Facts in the demo follow the episode's checked list (Thai chronicles, Hmannan Yazawin, van Vliet 1640,
+Map drawn from Natural Earth land and rivers (public domain). Sound: house library `war_drums`, `elephant`,
+`sword_clash`, `wind`, `wood_hit` (`npm run sfx-lib`) and template UI sounds. Fonts: Srisakdi, Charm (SIL Open Font
+License). Facts in the demo follow the episode's checked list (Thai chronicles, Hmannan Yazawin, van Vliet 1640,
 Bocarro/Pimenta; Don Chedi identified 1913 / Phanom Thuan proposal).

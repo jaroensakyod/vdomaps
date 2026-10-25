@@ -1,1 +1,24 @@
-{ "id": "M01", "bg": ["#0b1830", "#02060d"], "accent": "#ff3b30", "stat": "#ff6b5f", "glow": "#ff8a80", "card": "rgba(8,14,26,0.86)", "border": "rgba(255,255,255,0.3)", "text": "#ffffff", "textStroke": "#06101f", "font": "Noto Sans Thai", "titleWeight": 900, "base": "raster/world.jpg (NASA Blue Marble)", "panelLabel": "ภาพประกอบ" }
+{
+  "id": "M01",
+  "bg": "#e9f2fa",
+  "sea": "#62acdf",
+  "card": "rgba(255,255,255,0.80)",
+  "main": "#0d2342",
+  "accent": "#009fb0",
+  "mist": "#5f7a96",
+  "text": "#0d2342",
+  "captionStroke": "#ffffff",
+  "font": "IBM Plex Sans Thai",
+  "titleWeight": 700,
+  "base": "raster/world.jpg (NASA Blue Marble), lifted: brightness 1.12 + sea screened #62acdf at 85 %",
+  "panelLabel": "ภาพประกอบ",
+  "layout": { "masthead": 0.05, "card": 0.135, "lens": 0.56, "lensR": 250, "caption": 0.745, "ticker": 0.085 },
+  "signature": {
+    "base": "satellite",
+    "palette": ["#e9f2fa", "#62acdf", "#ffffff", "#009fb0", "#0d2342"],
+    "line": "hairline",
+    "type": "IBM Plex Sans Thai 600",
+    "motion": "wipe-reveal",
+    "frame": "broadcast"
+  }
+}

@@ -49,7 +49,11 @@ sentences, and show results (stills, clip paths) instead of code.
    `npx remotion still Style-<id> out/<id>.jpg --frame=<cover>` as the reference look.
 4. If there is no `Demo.tsx`, build the scenes yourself from `STYLE.md`, then compare your first still with
    `cover-9x16.jpg` in the style folder and fix what differs before showing the user.
-5. Mixing styles is allowed (for example M02 map scenes with N06 battle panels): say which style each scene
+5. **Channel signature (before episode 1):** never ship the demo look as the user's channel. Propose 3 directions
+   that change at least 3 of the 6 signature axes, render one still each, run `npm run distinct -- --image <still>`
+   on each, show the passing ones and lock the user's pick in `project/style.json`. Procedure and vocabulary:
+   `references/style-packs.md` → "Signature" and "Channel signature".
+6. Mixing styles is allowed (for example M02 map scenes with N06 battle panels): say which style each scene
    comes from in the script table.
 
 ## Pipeline (details in `references/workflow.md`)

@@ -1,1 +1,23 @@
-{ "id": "M07", "bg": "#e6d4aa", "sea": "#c9b68c", "land": "#efe1bb", "ink": "#3b2a1a", "coast": "#5b4026", "river": "#4d7488", "lake": "#b7c4b1", "sides": ["#2f4f86", "#2f7a45", "#b0302a", "#9a7b2f", "#6b3f6e", "#7a5230", "#4a4a52"], "text": "#3b2a1a", "halo": "#efe1bb", "font": "Kanit", "titleFont": "Chonburi", "titleWeight": 400 }
+{
+  "id": "M07",
+  "bg": "#2a1a10",
+  "board": "#fbf3df",
+  "edge": "#1d3557",
+  "edgeAlt": "#f4c430",
+  "sea": "#74d3e6",
+  "sand": "#f1dfb0",
+  "ink": "#1d2433",
+  "sides": ["#2b47c9", "#2fae5a", "#e2452f", "#f2b632", "#8e52c8", "#f08a24", "#7a7f8c"],
+  "text": "#ffffff",
+  "font": "Mitr",
+  "titleWeight": 700,
+  "cellPx": 34,
+  "signature": {
+    "base": "game-board",
+    "palette": ["#2a1a10", "#74d3e6", "#f1dfb0", "#f4c430", "#1d2433"],
+    "line": "bold-outline",
+    "type": "Mitr 700",
+    "motion": "tabletop-tilt",
+    "frame": "game-board"
+  }
+}

@@ -1,89 +1,98 @@
-# M06 แถบกองทัพ Minard · Minard Army Band
+# M06 แผ่นภาพแกะทองแดง · Engraved Statistical Plate
 
 ![cover](cover-9x16.jpg)
 
 **Fits:** campaigns, marches, retreats, migrations, any journey where the number of people changes along the way ·
-**Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Army.tsx` + `kit/Minard.tsx` + `kit/data1812.ts`
+**Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/Plate.tsx`, `kit/Army.tsx`, `kit/data1812.ts`
 
 ## Look
 
-Charles Minard's 1869 chart brought to satellite imagery. An army is a ribbon along its route whose width is the
-number of men at each point: a tan band with a dark hairline edge (and a soft glow) going out, a near-black band
-with a white edge coming back, side detachments as their own thinner bands. A white dot rides the head of the band
-with a dark rounded counter box showing the men left right now. Under the retreat, Minard's temperature line is
-drawn in ice blue on a dark translucent panel, with drop lines from the band to each reading. Cities are pulsing
-pins with outlined Thai names, the target city burns with an orange glow, snow falls over the map in winter, and a
-dark head card (Kanit) carries the headline and one big number. A legend chip says "ความกว้างแถบ = จำนวนทหาร".
+A 19th-century statistical plate printed from copper on an ivory sheet — no imagery at all. The sheet has soft
+foxing and paper fibre, a pressed plate mark and an engraved border band of dense sepia diagonal hatching between two heavy rules. At the top (left column on
+16:9) a title cartouche: double rules with scrolled corners and a little laurel of strokes round a bistre ground on
+which everything is reserved in paper white — a letter-spaced kicker, the title, an italic sub-title, two fine rules,
+then the live figure: tag, headline and one big plate numeral that wipes in. The map sits in a neatline with degree ticks and italic longitude figures: land shaded with patchy
+engraved hatching, the coast water-lined with rings that fade outwards, rivers as fine double cuts (the named river
+inked heavier when it matters), small engraved forest marks, towns as small rings with italic names, the target
+city as a bold ring with an upright name. The army is a flat tan ribbon with a fine black edge and two engraved
+shade lines (out), a solid black ribbon (back); the width is the number of men. The figure riding the head of the
+band is an engraved italic numeral on a hairline leader. Below the map, an engraved temperature graph: ruled scale,
+dotted drop lines from the retreat band, the line drawn west with the army, dates in italic. The burning city is a
+burst of short vermilion rays; winter is small engraved snow stars. Captions are set in the plate's own type
+on a flat tan tint panel (a second litho stone) with a double rule; a legend inset sits in the corner of the map.
 
 | Role | Hex |
 |---|---|
-| Background · imagery | `#02060d` · NASA Blue Marble (world + Europe crop) |
-| Advance band | `#e3b77a` (edge `#1b1d24`) |
-| Retreat band | `#15161b` (edge `#f2f2f2`) |
-| Advance counter / highlights · pins | `#ffc94a` · `#ff3b30` |
-| Temperature line · retreat counter | `#9fd4ff` · `#e8edf2` |
+| Ivory sheet (background) | `#f8f4ea` |
+| Advance band (flat tan tint) | `#c9a46c` |
+| Copperplate brown-black ink (retreat band, lines, text) | `#21140b` |
+| Bistre title ground | `#66290f` (text on it `#f8f4ea`, italics `#e3c9a0`) |
+| Sepia (hatching, border band, small italics) | `#8a5530` |
+| Vermilion accent (burning city, coldest day, one figure) | `#a8432a` |
 
-**Type:** Kanit 700/900 — card head 54 px, number 88 px, tag 26 px, counter 44 px, pins 40 × 0.8–1 px, chart labels
-20–24 px, captions 58 px, at 1080 wide. **Line:** band width = men × 1/4200 px at 1080 (422,000 men ≈ 100 px), min 1.6 px;
-band edge 1.4 px (advance) / 2.6 px (retreat); temperature line 5 px with a 6 px glow; rivers 1.6–7 px cyan at 50 %.
+**Type:** Taviraj (serif Thai) — title 50 px 700 (40 on 16:9), live figure 64 px 700 (86 on 16:9), headline 40 px
+600, tags and sub-title 26 px italic, towns 32 px italic 600, target 38 px 700, graph labels 18–20 px italic,
+captions 52 px 600 — at 1080. **Line:** coast 1.8 px + water-lines every 11 px; rivers 1.4–4 px double; neatline
+2 px + 0.8 px; border band 22 px of 1.6 px diagonal hatching; band edge 1.3 px, shade lines 0.8 px; graph line 2.6 px; drop lines 0.7 px dotted.
 
 ## Motion signature
 
-- The camera frames the whole route and barely moves (a 4 % breathe in and out); the band does the moving.
-- The head of each band advances by `[frame, lon]` keys (`headAt`), so it is where the narrator is; detachments
-  march at the same share of their own route. The counter rides the head and rounds to 1,000.
-- Arrival: city pin pops (`SFX.pop`), the card swaps headline and number with a 14 px rise, the city burns (fire glow
-  + darker grade, 70 frames).
-- Retreat: black band crawls back, the temperature line draws westward with it, snow fades in, the coldest reading
-  gets a red ring and chip (−37 °C), last card lands with `SFX.hit` on the final number.
-- Sound beds: marching crowd on the advance, winter wind on the retreat; `<Hit id="fire_big">` on the burning city.
+- **Wipe-reveal:** the map prints itself left to right in the first second; every new figure in the cartouche
+  wipes in left to right (14 frames); the graph line and the bands draw on along their route. Nothing pops or
+  bounces.
+- The camera frames the whole route and barely moves (a 2 % breathe); the band does the moving, keyed to the
+  narration with `[frame, lon]`.
+- Arrival: the target town is inked in vermilion and the engraved rays flicker for ~70 frames.
+- Retreat: black band crawls back, the temperature line draws west with it, snow stars drift in, the coldest
+  reading gets a double vermilion ring and "−37°".
+- Sound: marching crowd on the advance, fire crackle at the city, winter wind on the retreat, soft ticks on towns.
 
 ## Scenes in the kit
 
 | Component | Shows | Props |
 |---|---|---|
-| `ArmyBand` (`kit/Army.tsx`) | Ribbon along `[lon, lat, men]` points, cut at progress `k` | `pts, k, color, edge, perMan, glow` |
-| `ArmyCounter` | Counter box riding the band head | `pts, k, color, font, dy, round` |
+| `Sheet` (`Plate.tsx`) | Ivory paper, foxing, plate mark, double border | — |
+| `usePlate`, `fitBox`, `focusOf` | Screen boxes per format; camera fitting `[w, s, e, n]` into the map box | — |
+| `Cartouche`, `Figure`, `Legend` | Title cartouche; live figure (`heads`); band legend | `box, kicker, title, sub` / `heads` |
+| `EngravedLand` | Relief hatching, water-lined coast, double-line rivers, forest marks | `rivers, forests, hi` |
+| `Neatline` | Map frame with degree ticks | `box` |
+| `Town`, `Burning`, `Snow` | Ring + italic name; vermilion rays; engraved snow | `at, text, k, big` / `k, box` |
+| `TempGraph` | Engraved temperature graph under the map | `k, upto, box, hot` |
+| `TintPanel`, `PlateCaption` | Tan tint panel for captions; the caption text in it | `text, start, len` |
 | `headAt`, `kAt`, `lonAt` | `[frame, lon]` keys → band progress / head longitude | `keys, pts, frame` |
-| `TempChart` | Minard's temperature line under the retreat, drawn to `upto` longitude | `k, upto, top, h, hot` |
-| `FireGlow` | Burning-city glow + dark grade | `at, k` |
-| `MapSnow` | Snow over the map | `k, n` |
-| `Pin` | Pulsing city pin with Thai name | `at, text, k, color, size, dy` |
-| `Rivers` | Natural Earth rivers, named ones glow gold | `hi: { Neman: 0..1 }` |
-| `HeadCard` | Dark card with tag, headline, number and the width legend | `heads, from, to, legend` |
-| `view` | Camera framing a bbox, subject lifted | `feature, w, h, k, lift` |
+| `ArmyBand`, `ArmyCounter` (`Army.tsx`) | Flat band along `[lon, lat, men]`; engraved figure at the head | `pts, k, color, perMan, shade` |
 | `kit/data1812.ts` | Minard's 1812 numbers: `ADVANCE`, `RETREAT`, `NORTH_*`, `FAR_*`, `CITY`, `TEMPS` | — |
 
 ## Build notes
 
-For a new story, write the route as `[lon, lat, men]` points (one per known count) — the band interpolates men
-between points — and key the head to the narration with `[frame, lon]`. Keep `perMan` fixed for the whole video so
-widths compare; pick it so the biggest force is ~100 px wide. 9:16: card at 10 %, band around 40 %, chart under the
-band (`top` = the route's southern edge + 30 px), captions at 78 %. 16:9: card 560 px on the left, the map shifted
-right with `MapFrame focusX={0.63}`, chart under the band, captions at the bottom. Routes are approximate — say so.
+One `MapFrame` (camera from `fitBox(ROUTE, map)`, focus from `focusOf(map)`), map layers inside a clip to the map
+box (it also carries the opening wipe): `EngravedLand` → `Burning` → bands → towns → counter → `Snow`; then
+`Neatline` and `TempGraph` outside the clip (the graph uses the projection so its longitudes line up with the band).
+HTML on top: `Cartouche` + `Figure`, the legend inset, `TintPanel` + captions, the credit line. 9:16 boxes: title
+3–26 %, map 27–55 %, graph 57.5–71.5 %, caption panel 74–86 %. 16:9: cartouche + caption panel in the left column,
+map and graph on the right. Keep `perMan` fixed for the whole video (biggest force ≈ 115 px). The paper and relief filters are static per
+frame; for a 10-minute video still `Sheet` once to a PNG.
 
 ## Data
 
-Not shipped — run once in the project (the Europe crop covers lon −12…45, lat 34…64; 4096 px is enough):
+Land from `world-atlas` (in the template). Rivers are not shipped — fetch once (Europe crop):
 
 ```bash
-npm run imagery -- bluemarble world                         # public/raster/world.jpg
-npm run imagery -- bluemarble europe -12 34 45 64 4096      # public/raster/europe.jpg
 npm run rivers -- eu-rivers -12 34 45 64                    # public/data/eu-rivers.json
-npm run sfx && npm run sfx-lib                              # UI sounds + house library (army_march_crowd, fire_big, wind_storm)
+npm run sfx && npm run sfx-lib                              # army_march_crowd, fire_crackle, wind_storm
 ```
 
 The 1812 numbers are in `kit/data1812.ts` (from Minard's chart via the HistData R package).
 
 ## Don'ts
 
-- Don't scale the band with the zoom — width is screen-constant so it always means the same number of men.
-- Don't use colours other than tan (out) and black (back) for the main army; other forces get their own colour.
-- Don't show two counters at once; hide the riding counter where the card shows a different total.
-- Don't present Minard's routes or counts as exact: he simplified both. Say "ตามแผนภาพของ Minard".
+- No satellite imagery, no glow, no dark cards — the whole frame is one printed sheet.
+- Don't copy the 1869 plate's layout or lettering; keep this composition (cartouche, neatline, graph below).
+- Don't scale the band with the zoom; don't use colours other than tan (out) and black (back) for the main army.
+- One vermilion accent at a time. Don't present Minard's routes or counts as exact: say "ตามแผนภาพของ Minard".
 
 ## Credits
 
 Data: Charles Joseph Minard (1869), via the HistData R package (M. Friendly; Minard.troops / cities / temp).
-Imagery: NASA Blue Marble · Rivers & lakes: Natural Earth — in the video description. Sound: template UI sounds and
-house library (Mixkit / Pixabay licences, no attribution needed). Font: Kanit (SIL Open Font License).
+Map drawn from Natural Earth land, rivers and lakes (public domain). Sound: template UI sounds and house library
+(Mixkit / Pixabay licences). Font: Taviraj (SIL Open Font License).

@@ -1,77 +1,82 @@
-# N08 เรือใบรบกลางทะเล · Sailing Warships in Battle
+# N08 เรือใบรบกลางทะเล · Woodblock Sea Battle
 
 ![cover](cover-9x16.jpg)
 
-**Fits:** sea battles of the age of sail (1500s–1860s), naval duels, a ship lost or a fleet broken ·
-**Formats:** 9:16 · **Code:** `Demo.tsx` + `kit/Naval.tsx`
+**Look name:** ภาพพิมพ์แกะไม้ · Woodblock Print
+**Fits:** naval battles of the age of sail (1500s–1860s), sea fights in Thai/Asian history, storms and voyages, any
+"two ships trade fire" moment · **Formats:** 9:16 · **Code:** `Demo.tsx` + `kit/Woodblock.tsx`
 
 ## Look
 
-Two three-masted warships broadside to broadside on a rolling dusk sea, seen side-on through one moving camera.
-A slate-blue sky warming to apricot at the horizon, a low sun glow, dark cloud banks drifting across. The sea is
-four layers of wave bands from pale teal far away to deep blue-green near the camera, each with a travelling
-dashed white foam crest, sun streaks on the water and a darkening gradient below. The ships have brown ink-outlined
-hulls with a gilt wale, a red stripe and six gun ports a side, cream billowing sails and coloured pennants (red for
-our side, blue for the enemy). Broadsides throw yellow muzzle flashes and big white powder smoke that drifts and
-lingers; shots fall as white splashes or leave scorched holes; the enemy mainmast is shot away and the deck burns
-under a dark smoke column. A foreground swell with spray crosses the bottom of the screen.
+A full-bleed woodblock print (inspired by the craft, not copying any print). A **black keyblock line** (4.5 px world,
+round joins, edges wobbled by the `carve` filter as if cut in cherry wood) holds **flat colour blocks**. The sky is
+washi paper with a **bokashi**: deep prussian at the top fading to bare paper, then a dusk-pink to vermilion band on
+the horizon, crossed by soft paper-coloured kasumi mist bands. The sea is rows of **curling stylised waves**: each wave
+a prussian-to-blue bokashi body with three light flow lines, a rope of paper foam along the lip and seven
+**claw-like foam fingers** curling forward, spray dots above; rows get bigger toward the camera and scroll sideways.
+Ships: brown hulls with vermilion and ochre wales, cream sails with seam lines, our flags vermilion, the enemy's ochre.
+Powder smoke rolls out as clusters of paper puffs with one outer keyblock outline and curled inner lines; muzzle
+flashes are vermilion spikes with an ochre heart; splashes are fountains of claw fingers; burning decks get
+vermilion flame tongues and a leaning column of sumi-grey billows. **Wood grain** streaks and washi fibres sit over
+the whole print (multiply). Title in a **cartouche** (pale box, double keyblock border) top left; the honest label
+"ภาพประกอบ" is a vermilion **seal** bottom right.
 
 | Role | Hex |
 |---|---|
-| Sky top → mid → horizon | `#262f48` → `#7a6070` → `#e09a6a` |
-| Sea far → near (+ foreground swell) | `#3f6a78` `#2f5868` `#21485a` `#1a3d4c` (+ `#173847`) |
-| Foam, splashes · powder smoke | `#e8f2f2` · `#efeae0` |
-| Hull · wale · sails | `#5a3a22` · gilt `#d9a93a` · `#f0e8d2` / `#e6dfcb` |
-| Our flag / enemy flag | `#c0302a` / `#2a4fa8` |
+| Washi paper | `#efe2c4` |
+| Prussian (sky top, wave bodies) · indigo · light blue (flow lines) · pale | `#1f3d6b` · `#28466f` · `#7fa6c0` · `#c9d8d6` |
+| Vermilion (our flags, flames, seal, verb) · ochre (enemy flags, wales) · dusk band | `#c4432b` · `#d9a441` · `#e9b48f` |
+| Hull · sail | `#6b4a2e` · `#f3ead3` |
+| Keyblock / text | `#1a1611` |
 
-**Type:** Kanit 700/900, white; kicker 36 px gilt `#d9a93a`, headline 66 px with the verb in `#ffb35c`; end card
-110 px on `rgba(8,14,26,0.88)` with a 5 px gilt border. **Line:** bold ink `#1a140f`, 4 px on hulls, 2.5 px on
-masts and sails (world px at zoom 1).
+**Type:** Thasadith 700. Cartouche kicker 34 px vermilion, a 2 px rule, headline 72 px keyblock with the verb in
+vermilion; seal 36 / 30 px paper on vermilion; end cartouche 140 px + 46 px vermilion sub. **Line:** keyblock
+4.5 px (hulls 5.4 px), detail lines 1.6–2.6 px, cartouche border 6 px + 2.2 px inner.
 
 ## Motion signature
 
-- Everything floats: both ships roll ±3° and heave ±10 px on offset sines; a hit jolts the ship 3°; the crippled
-  ship lists 7° over 5 s. Sails billow, pennants flutter, foam crests travel.
-- Broadsides ripple gun by gun 6 frames apart (never all at once): flash, the gun recoils, a ball flies on a low
-  arc (22 frames), powder smoke swells and drifts downwind for ~3.5 s.
-- Camera: wide on both ships (zoom 0.7) → push in on the enemy as its mainmast is hit (1.1) → hold on the fire →
-  pull back for the title (0.72). The waterline stays at ~2/3 of the screen (`cy = SEA − 330 / zoom`).
-- Impacts: 9 px shake on hull hits, 16 px from the mast hit on, a 6-frame warm flash on the mast hit, the mast
-  topples over 40 frames (eased) and lands with a big splash; fire grows on deck. An SFX hit on every event frame.
+- **Scroll-pan:** the camera slides sideways along the print like an unrolled sheet (cx 980 → 1500 → 1180) with only a
+  gentle push (zoom 0.8 → 0.92 on the mast hit); the waterline stays at the same height on screen.
+- Every wave row scrolls at its own speed (far 0.8 → front 3 px/frame) and its curls bob ± 12 %, so the sea pours past
+  in layers; the bokashi sky stays fixed to the screen.
+- Rippling broadsides: one port fires every 6 frames; each shot = vermilion spike + puff cluster that grows and drifts
+  for 150 frames, a black ball on an arc, then a claw splash or a splintered hull hole.
+- The mainmast hit: 14 px shake, the mast falls over 40 frames into a big splash, flames and a leaning smoke column
+  grow on deck. End: the cartouche grows to the centre with the title.
 
-## Scenes in the kit (`kit/Naval.tsx`)
+## Scenes in the kit (`kit/Woodblock.tsx`)
 
 | Component | Shows | Props |
 |---|---|---|
-| `Sky` | Gradient, sun glow, drifting cloud banks (world x −800…3200, sea level `SEA` = 1000) | `frame` |
-| `Waves` | One wave layer with optional travelling foam crest | `frame, base, amp, k, w, color, foam, ph` |
-| `Deep` | Darkening under the near waves + sun streaks | `frame` |
-| `Ship` | Three-masted warship: masts, sails, hull, 6 gun ports, damage, deck fire | `x, frame, flip, flag, sail, fires, roll, heave, mastFall, fire, hits` |
-| `Ball`, `PowderSmoke`, `Splash` | Cannonball arc, lingering gun smoke, water column | `frame, t, x0, x1` · `x, y, age, dir` · `x, age, big` |
-| `ShipSmoke` | Dark smoke column over a burning ship | `frame, from, x, k` |
-| `Fire`, `FireDefs` | Animated flames (copied from the template's `Figures` fire, own gradients) | `x, y, size, seed` |
-| `PORT`, `portX`, `GUNS`, `since` | Gun-port positions, frames since last event | — |
+| `PrintDefs` | Filters `carve`, `grainFx`, `washi`; gradients `skyBk`, `seaBk`, `waveBk` | — |
+| `Grain` | Wood grain + washi fibres over the whole print (multiply) | `w, h` |
+| `Sky`, `FarSea` | Kasumi mist bands; far sea with keyblock horizon and scalloped wavelets | `frame` |
+| `Curl`, `CurlRow` | One curling claw-foam wave; a scrolling row of them on a bokashi sea | `x, y, w, h, dir` / `frame, y, h, gap, speed, ph` |
+| `Ship` | Three-master: wales, sails with seams, running-out guns, hits, falling mast, flames | `x, frame, flip, flag, fires, roll, heave, mastFall, fire, hits` |
+| `PowderSmoke`, `Splash`, `Ball` | Outlined puff cluster + flash; claw fountain; cannonball arc | `x, y, age, dir` / `x, age, big` / `frame, t, x0, x1` |
+| `Flames`, `ShipSmoke` | Vermilion flame tongues; leaning sumi billow column | `x, y, size, frame, seed` / `frame, from, x, k` |
+| `Cartouche`, `Seal` | Title box with double border; vermilion "ภาพประกอบ" seal | `x, y, w, h, children` / `x, y, s, font` |
+| `P`, `SEA`, `GUNS`, `PORT`, `portX`, `since` | Palette; sea level; guns per side; port positions; frames since last event | — |
 
 ## Build notes
 
-Write the schedule first: per-gun firing frames (`A_FIRES[i]`, `B_FIRES[i]`), misses, hits, the mast hit and the
-mast landing. Balls, smoke, recoil and sound all read the same lists, so a gun is never heard without being seen.
-Layer order inside the world: sky → two far wave layers → smoke behind the far ship → far ship → near ship → balls
-→ powder smoke → splashes → near wave → `Deep` → nearest wave; then outside the camera transform the foreground
-swell and spray, a `#ffb060` wash at 6 % and `PaperGrain`. Sound in the demo: beds `sea_rough`, `wind_storm`,
-`ship_creak`, `fire_big` once the deck burns; hits `ship_bell` (open and close), alternating `cannon_heavy` /
-`cannon_old` per gun (our side louder), `splash_big` on misses, `wood_hit` + `wood_break` on hull hits,
-`mast_fall`, `crowd_cheer` from the winning crew.
+Draw the sky gradient as a full-page rect (page space), then the world inside `<g filter="url(#carve)">` → camera
+`<g transform>` (never `filter` and `transform` on the same element), then the cartouche, seal and `<Grain/>` last.
+Keep the schedule at the top (volleys, misses, hits, mast, cheer, title); flash, smoke, ball, splash and sound all
+come from the same lists. Sound mix: beds `sea_rough` 0.45, `wind_storm` 0.2, `ship_creak` 0.3; `cannon_heavy` /
+`cannon_old` alternating per gun (0.65 ours, 0.45 theirs); `splash_big` on misses; `wood_hit` + `wood_break` on hits;
+`mast_fall`, `fire_big` bed from the mast hit, `crowd_cheer`, `ship_bell` at start and title. With narration drop
+one-shots 6–10 dB under the voice.
 
 ## Don'ts
 
-- Do not fire a whole broadside on one frame — ripple it.
-- No still water: every ship and wave must keep moving, even in a held shot.
-- No real national ensigns unless the story needs them; plain coloured pennants read better at phone size.
-- No photos, paintings or real ship plans; everything is drawn in code.
+- No soft airbrush shading, glow or drop shadows: colour changes only by flat blocks and bokashi.
+- Do not build the frame around one giant wave or copy any known print's composition; keep rows of waves.
+- No dark screen background, rounded UI cards or sans-serif labels; the label is the seal.
+- No photos, no real naval ensigns; flags are plain colour pennants.
 
 ## Credits
 
-None for pictures — everything is drawn in code, no map data. Sound: recorded effects from the house library
-(`npm run sfx-lib`; Pixabay Content License and Mixkit Sound Effects Free License — free for commercial video, no
-attribution, files not redistributed). Font: Kanit (SIL Open Font License).
+None for pictures: everything is drawn in code, no map data. Sound: recorded effects from the house library
+(`npm run sfx-lib`; Pixabay Content License and Mixkit Sound Effects Free License, free for commercial video, no
+attribution, files not redistributed). Font: Thasadith (SIL Open Font License).

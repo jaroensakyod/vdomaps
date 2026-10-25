@@ -1,1 +1,23 @@
-{ "id": "M05", "bg": "#02060d", "grade": "#04102a", "card": "rgba(8,14,26,0.86)", "main": "#5fd0ff", "second": "#ffc94a", "accent": "#ff6b5f", "era": { "river": "#5fd0ff", "old": "#ffc94a", "thon": "#58e08f", "rat": "#ff7ad9" }, "text": "#ffffff", "font": "Kanit", "titleWeight": 900 }
+{
+  "id": "M05",
+  "bg": "#2a2a2c",
+  "vellum": "#fbf3e2",
+  "backlight": { "centre": "#fff7e6", "burn": "#f2902c", "edge": "#c0560f" },
+  "graphite": "#2b2b30",
+  "tape": "#e6d6a2",
+  "pencil": { "river": "#2f6fb5", "old": "#d9822b", "cut": "#c8323a", "thon": "#3c8d4a", "rat": "#7a4fb0" },
+  "text": "#2b2b30",
+  "captionStroke": "#f3efe2",
+  "font": "Itim",
+  "titleWeight": 400,
+  "base": "raster/world.jpg + raster/bkkhls.jpg in grayscale (brightness 0.75) under stacked vellum sheets",
+  "layout": { "head": 0.075, "titleBlock": 0.655, "caption": 0.79, "ruler": 0.875, "sheetInset": [120, 128, 136, 144, 152] },
+  "signature": {
+    "base": "tracing-vellum",
+    "palette": ["#a8987e", "#2f6fb5", "#f2902c", "#c8323a", "#2b2b30"],
+    "line": "pencil",
+    "type": "Itim 400",
+    "motion": "slide-stack",
+    "frame": "none"
+  }
+}

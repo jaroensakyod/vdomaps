@@ -1,1 +1,35 @@
-{ "id": "M11", "bg": "#e9dcbc", "land": "#f2e7c9", "coast": "#8a6a45", "water": "#7fb0c4", "bank": "#b08a5c", "ink": "#33261b", "card": "#f6edd6", "sides": { "ayut": "#2f5aa8", "burma": "#c0392b", "taksin": "#d39a1c", "village": "#3f8f4a", "china": "#7a4b9a" }, "text": "#33261b", "font": "Anuphan", "numberFont": "Mitr", "titleWeight": 700 }
+{
+  "id": "M11",
+  "bg": "#e9dcbc",
+  "land": "#f2e7c9",
+  "coast": "#8a6a45",
+  "water": "#7fb0c4",
+  "bank": "#b08a5c",
+  "ink": "#33261b",
+  "card": "#f6edd6",
+  "sides": {
+    "ayut": "#2f5aa8",
+    "burma": "#c0392b",
+    "taksin": "#d39a1c",
+    "village": "#3f8f4a",
+    "china": "#7a4b9a"
+  },
+  "text": "#33261b",
+  "font": "Anuphan",
+  "numberFont": "Mitr",
+  "titleWeight": 700,
+  "signature": {
+    "base": "drawn-map",
+    "palette": [
+      "#e9dcbc",
+      "#2f5aa8",
+      "#c0392b",
+      "#d39a1c",
+      "#33261b"
+    ],
+    "line": "bold-outline",
+    "type": "Anuphan 700",
+    "motion": "pop-sticker",
+    "frame": "none"
+  }
+}

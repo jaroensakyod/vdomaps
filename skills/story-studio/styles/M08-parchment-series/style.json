@@ -1,1 +1,38 @@
-{ "id": "M08", "bg": "#e6d4aa", "sea": "#c9b68c", "land": "#efe1bb", "ink": "#3b2a1a", "card": "rgba(239,225,187,0.94)", "accent": "#b0302a", "caption": "#fff6dd", "captionSpeaker": "#ffe9a8", "captionStroke": "#2a1b0e", "factions": ["#2f4f86", "#2f7a45", "#b0302a", "#6b3f6e", "#7a5230", "#9a7b2f"], "text": "#3b2a1a", "font": "Kanit", "titleFont": "Chonburi", "titleWeight": 400 }
+{
+  "id": "M08",
+  "bg": "#e6d4aa",
+  "sea": "#c9b68c",
+  "land": "#efe1bb",
+  "ink": "#3b2a1a",
+  "card": "rgba(239,225,187,0.94)",
+  "accent": "#b0302a",
+  "caption": "#fff6dd",
+  "captionSpeaker": "#ffe9a8",
+  "captionStroke": "#2a1b0e",
+  "factions": [
+    "#2f4f86",
+    "#2f7a45",
+    "#b0302a",
+    "#6b3f6e",
+    "#7a5230",
+    "#9a7b2f"
+  ],
+  "text": "#3b2a1a",
+  "font": "Kanit",
+  "titleFont": "Chonburi",
+  "titleWeight": 400,
+  "signature": {
+    "base": "parchment",
+    "palette": [
+      "#e6d4aa",
+      "#3b2a1a",
+      "#2f4f86",
+      "#b0302a",
+      "#fff6dd"
+    ],
+    "line": "ink-outline",
+    "type": "Chonburi 400",
+    "motion": "slow-push",
+    "frame": "book-page"
+  }
+}

@@ -1,1 +1,41 @@
-{ "id": "M12", "bg": ["#0b1830", "#02060d"], "accent": "#ff3b30", "stat": "#ff6b5f", "gold": "#ffc94a", "green": "#3fb950", "blue": "#4fa3ff", "card": "rgba(8,14,26,0.86)", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "base": "raster/world.jpg (NASA Blue Marble)", "layout": { "cardTop": 0.1, "panelTop": 0.56, "panelH": 350, "captionTop": 0.765 }, "panelLabel": "ภาพประกอบ" }
+{
+  "id": "M12",
+  "bg": "#0f7a4a",
+  "red": "#d7261e",
+  "yellow": "#f6c21a",
+  "sea": "#2a7fd0",
+  "land": "#f1e2b8",
+  "cream": "#f4ead2",
+  "blue": "#1f6fc5",
+  "ink": "#161311",
+  "text": "#f6c21a",
+  "captionStroke": "#161311",
+  "font": "Pattaya",
+  "numberFont": "Chonburi",
+  "titleWeight": 400,
+  "base": "painted map from world-atlas countries-50m (no imagery)",
+  "layout": {
+    "headSign": 0.09,
+    "headH": 360,
+    "mapFocusY": 0.42,
+    "sceneSign": 0.5,
+    "sceneH": 390,
+    "caption": 0.785,
+    "datePlate": 0.05
+  },
+  "panelLabel": "ภาพประกอบ",
+  "signature": {
+    "base": "enamel-tin",
+    "palette": [
+      "#0f7a4a",
+      "#d7261e",
+      "#f6c21a",
+      "#2a7fd0",
+      "#161311"
+    ],
+    "line": "brush",
+    "type": "Pattaya 400",
+    "motion": "swing",
+    "frame": "poster"
+  }
+}

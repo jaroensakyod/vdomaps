@@ -1,6 +1,6 @@
 import type { Feature, Polygon } from "geojson";
 import { region } from "../../../components/Region";
-import { C } from "./Parchment";
+import { C } from "./Board";
 
 // Spheres of control by year for the scoreboard map (Three Kingdoms China as the worked example).
 // Hand-drawn, rough, approximate — say so on screen ("แนวโดยประมาณ") and in the description.
@@ -64,7 +64,7 @@ export const ERAS: Record<number, Era> = {
     title: "สามก๊ก",
     sides: [
       { key: "wei", name: "วุย", color: C.wei, area: WEI_222, label: [108.4, 37.4] },
-      { key: "shu", name: "จ๊ก", color: C.shu, area: SHU_222, label: [102.8, 29.2] },
+      { key: "shu", name: "จ๊ก", color: C.shu, area: SHU_222, label: [103.2, 26.4] },
       { key: "wu", name: "ง่อ", color: C.wu, area: WU_222, label: [116.5, 27.5] },
     ],
   },

@@ -1,1 +1,34 @@
-{ "id": "M02", "bg": "#02060d", "card": "rgba(8,14,26,0.86)", "main": "#7fd4ff", "second": "#ffc94a", "accent": "#ff3b30", "blue": "#4fa3ff", "night": "#06112b", "text": "#ffffff", "captionStroke": "#1b130b", "font": "Kanit", "titleWeight": 900, "layout": { "card": 0.1, "panelTop": 0.56, "panelHeight": 350, "caption": 0.765 } }
+{
+  "id": "M02",
+  "bg": "#02060d",
+  "card": "rgba(8,14,26,0.86)",
+  "main": "#7fd4ff",
+  "second": "#ffc94a",
+  "accent": "#ff3b30",
+  "blue": "#4fa3ff",
+  "night": "#06112b",
+  "text": "#ffffff",
+  "captionStroke": "#1b130b",
+  "font": "Kanit",
+  "titleWeight": 900,
+  "layout": {
+    "card": 0.1,
+    "panelTop": 0.56,
+    "panelHeight": 350,
+    "caption": 0.765
+  },
+  "signature": {
+    "base": "satellite",
+    "palette": [
+      "#02060d",
+      "#7fd4ff",
+      "#ffc94a",
+      "#ff3b30",
+      "#ffffff"
+    ],
+    "line": "glow",
+    "type": "Kanit 900",
+    "motion": "slow-push",
+    "frame": "news-card"
+  }
+}

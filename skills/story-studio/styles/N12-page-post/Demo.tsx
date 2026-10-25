@@ -1,115 +1,200 @@
 import { interpolate, useCurrentFrame } from "remotion";
 import { Sfx, SFX } from "../../components/Sound";
 import type { StyleDemo } from "../types";
-import { Areas, ArchFrame, BLUE, clamp, font, Footer, GOLD, Headline, Hero, MapLabel, PostCard, PostMap, RED, Spot, usePostBox } from "./kit/Post";
+import { AlbumPage, BLUE, Caption, CARMINE, clamp, EngravedFrame, EngravedMap, Footer, GREEN, INK, Label, Mount, PageHead, PAPER, PictureWindow, Postmark, Stamp, useIn } from "./kit/Stamp";
 
-// N12 page post: a 4:5 anniversary post announcing the next clip (ยุทธนาวีเกาะช้าง, 17 ม.ค. 2484). Dark Blue
-// Marble map with the two sides coloured, a red date badge, headline with the question in gold, an arched gold
-// frame (here a code-drawn warship at dusk; pass `photo` for the page's own picture), gold chip + page name.
-// The 4:5 card is drawn centred in the 9:16 frame (4:5 is not a template StyleSize). 10 s.
-export const demo: StyleDemo = { id: "N12", name: "โพสต์เพจและปก 4:5", frames: 300, cover: 200, sizes: ["4x5"] };
+// N12 stamp album: a 4:5 anniversary post announcing the next clip (ยุทธนาวีเกาะช้าง, 17 ม.ค. 2484), drawn as a
+// commemorative stamp issue on a buff album page. Big stamp = the post's picture (here an engraved warship at
+// dusk in green + ultramarine + carmine; pass `photo` to PictureWindow for the page's own picture), small stamp =
+// the map, perforated carmine label = "coming soon", round postmark with the date ring, printed caption below.
+// 1080×1350 (`Style-N12-post`), 10 s.
+export const demo: StyleDemo = { id: "N12", name: "แสตมป์ที่ระลึก", frames: 300, cover: 200, sizes: ["4x5"] };
 
-const FRENCH = ["418", "116", "704"]; // Laos, Cambodia, Vietnam (French Indochina)
 const KOCHANG: [number, number] = [102.35, 12.05];
 
-// Code-drawn picture for the arch: a 1940s coastal-defence ship at dusk, smoke drifting, splashes around it.
+// Engraved picture, 560×470: line-ruled sky, sun in carmine rings, hatched island, wave-line sea, cross-hatched
+// ship with smoke and splashes. Only lines — the tone comes from line weight and spacing, as in intaglio.
+const PW = 560;
+const PH = 470;
+const HORIZON = 300;
 const Warship = ({ t }: { t: number }) => {
-  const bob = Math.sin(t * 0.08) * 3;
-  const hull = "#0c0a10";
+  const bob = Math.sin(t * 0.07) * 2;
+  const sun: [number, number] = [404, 262];
+  const sky = Array.from({ length: 75 }, (_, i) => {
+    const y = 2 + i * 4;
+    const wgt = 3.6 - (y / HORIZON) * 1.9; // heavy at the top, fine at the horizon = light at dusk
+    return { y, wgt };
+  });
+  const sea = Array.from({ length: 26 }, (_, i) => {
+    const y = HORIZON + 3 + Math.pow(i, 1.35) * 2.4;
+    const amp = 0.6 + i * 0.22;
+    const len = 9 + i * 1.6;
+    let d = `M-10 ${y}`;
+    for (let x = -10; x < PW + 20; x += len) d += ` q${len / 4} ${-amp} ${len / 2} 0 t${len / 2} 0`;
+    return { d, w: 1.6 + i * 0.17, shift: ((t * (0.25 + i * 0.03)) % len) - len };
+  });
   return (
     <g>
       <defs>
-        <linearGradient id="n12sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#1b2350" />
-          <stop offset="0.55" stopColor="#c2563a" />
-          <stop offset="0.8" stopColor="#ffb35c" />
-        </linearGradient>
-        <linearGradient id="n12sea" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#3a2a3a" />
-          <stop offset="1" stopColor="#0a0f1e" />
-        </linearGradient>
-        <radialGradient id="n12sun">
-          <stop offset="0" stopColor="#fff4c8" />
-          <stop offset="0.4" stopColor="#ffc94a" stopOpacity={0.8} />
-          <stop offset="1" stopColor="#ffc94a" stopOpacity={0} />
-        </radialGradient>
+        <radialGradient id="n12sunfade"><stop offset="0.33" stopColor="#000" /><stop offset="0.5" stopColor="#555" /><stop offset="1" stopColor="#fff" /></radialGradient>
+        <mask id="n12sunhole" maskUnits="userSpaceOnUse" x={0} y={0} width={PW} height={PH}>
+          <rect width={PW} height={PH} fill="#fff" />
+          <circle cx={sun[0]} cy={sun[1]} r={130} fill="url(#n12sunfade)" />
+        </mask>
+        <clipPath id="n12skyclip"><rect width={PW} height={HORIZON} /></clipPath>
       </defs>
-      <rect width={330} height={300} fill="url(#n12sky)" />
-      <circle cx={210} cy={250} r={90} fill="url(#n12sun)" />
-      <circle cx={210} cy={256} r={26} fill="#ffe7a0" />
-      {/* far island */}
-      <path d="M0 270 Q40 238 90 252 Q120 226 160 262 L160 280 L0 280 Z" fill="#2a1c2e" opacity={0.85} />
-      <rect y={272} width={330} height={150} fill="url(#n12sea)" />
-      {Array.from({ length: 9 }, (_, i) => <rect key={i} x={150 + Math.sin(i * 2.3 + t * 0.05) * 40} y={284 + i * 9} width={120 - i * 8} height={2.5} fill="#ffc94a" opacity={0.5 - i * 0.04} />)}
-      {/* smoke from the funnel */}
-      {Array.from({ length: 6 }, (_, i) => {
-        const a = ((t * 0.6 + i * 18) % 108) / 108;
-        return <circle key={i} cx={150 - a * 120} cy={192 - a * 60 + bob} r={10 + a * 26} fill="#2a2430" opacity={0.55 * (1 - a)} />;
-      })}
-      <g transform={`translate(0,${bob})`}>
-        {/* hull */}
-        <path d="M18 286 L40 306 L300 306 L318 280 L240 284 L60 284 Z" fill={hull} />
-        {/* superstructure, bridge, funnel, mast */}
-        <path d="M110 284 L110 262 L130 262 L130 244 L170 244 L170 262 L205 262 L205 284 Z" fill={hull} />
-        <rect x={140} y={206} width={16} height={40} fill={hull} />
-        <rect x={137} y={204} width={22} height={6} fill={hull} />
-        <rect x={177} y={180} width={4} height={66} fill={hull} />
-        <rect x={166} y={196} width={26} height={3} fill={hull} />
-        <path d="M179 180 L240 284" stroke={hull} strokeWidth={1.5} />
-        <path d="M179 180 L70 284" stroke={hull} strokeWidth={1.5} />
-        {/* turrets fore and aft with guns */}
-        <path d="M62 284 Q62 266 84 266 Q100 266 100 284 Z" fill={hull} />
-        <rect x={20} y={270} width={48} height={5} fill={hull} />
-        <path d="M222 284 Q222 266 244 266 Q260 266 260 284 Z" fill={hull} />
-        <rect x={256} y={270} width={50} height={5} fill={hull} />
-        {/* lit portholes */}
-        {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={70 + i * 26} cy={294} r={2} fill="#ffc94a" opacity={0.85} />)}
+      {/* sky: ruled lines, ultramarine */}
+      {/* pale ultramarine underprint tint, glowing toward the sun */}
+      <rect width={PW} height={HORIZON} fill="#9eacd6" />
+      <circle cx={sun[0]} cy={sun[1]} r={150} fill="#efd3c4" opacity={0.85} style={{ filter: "blur(30px)" }} />
+      <g mask="url(#n12sunhole)" clipPath="url(#n12skyclip)">
+        {sky.map(({ y, wgt }) => <line key={y} x1={0} x2={PW} y1={y} y2={y} stroke={BLUE} strokeWidth={Math.max(0.35, wgt)} />)}
+        {/* two cloud banks: denser cross-lines */}
+        <path d="M30 120 Q120 92 230 110 Q300 96 340 122 Q240 138 30 132 Z" fill="url(#n12hatchB)" stroke={BLUE} strokeWidth={1} />
+        <path d="M300 200 Q380 178 470 190 Q530 186 560 200 L560 214 Q430 222 300 212 Z" fill="url(#n12hatchB)" stroke={BLUE} strokeWidth={1} />
       </g>
-      {/* shell splashes */}
-      {[[60, 0], [270, 40]].map(([x, d]) => {
-        const a = ((t + d) % 80) / 80;
-        return <path key={x} d={`M${x - 8} 300 Q${x} ${300 - 60 * Math.sin(a * Math.PI)} ${x + 8} 300 Z`} fill="#e9eef8" opacity={0.75 * Math.sin(a * Math.PI)} />;
+      {/* sun: carmine rays + concentric rings */}
+      {Array.from({ length: 36 }, (_, i) => {
+        const a = (i / 36) * Math.PI * 2;
+        const r0 = 54, r1 = i % 2 ? 96 : 130;
+        return <line key={i} x1={sun[0] + Math.cos(a) * r0} y1={sun[1] + Math.sin(a) * r0} x2={sun[0] + Math.cos(a) * r1} y2={Math.min(HORIZON, sun[1] + Math.sin(a) * r1)} stroke={CARMINE} strokeWidth={0.9} opacity={sun[1] + Math.sin(a) * r0 > HORIZON ? 0 : 0.85} />;
+      })}
+      <clipPath id="n12sunclip"><rect width={PW} height={HORIZON} /></clipPath>
+      <g clipPath="url(#n12sunclip)">
+        {[8, 14, 20, 26, 32, 38].map((r) => <circle key={r} cx={sun[0]} cy={sun[1]} r={r} fill="none" stroke={CARMINE} strokeWidth={1.6} />)}
+      </g>
+      {/* far island, left: hatched green with a contour */}
+      <path d={`M0 ${HORIZON} L0 258 Q40 232 84 244 Q118 206 156 236 Q190 228 214 ${HORIZON} Z`} fill="url(#n12hatchG)" stroke={GREEN} strokeWidth={1.4} />
+      {/* sea: wave lines in deep green, heavier toward the viewer */}
+      <rect y={HORIZON} width={PW} height={PH - HORIZON} fill="#86ac98" />{/* pale green underprint tint (second plate) */}
+      {sea.map((l, i) => <path key={i} d={l.d} transform={`translate(${l.shift} 0)`} fill="none" stroke={GREEN} strokeWidth={l.w} />)}
+      {/* sun's path on the water: carmine dashes */}
+      {Array.from({ length: 12 }, (_, i) => {
+        const y = HORIZON + 6 + i * 11;
+        const half = 10 + i * 4;
+        const x0 = sun[0] + Math.sin(i * 1.7 + t * 0.05) * 8;
+        return <line key={i} x1={x0 - half} x2={x0 + half} y1={y} y2={y} stroke={CARMINE} strokeWidth={1.6} strokeDasharray="8 5" opacity={0.85 - i * 0.05} />;
+      })}
+      {/* smoke: hatched puffs drifting aft */}
+      {Array.from({ length: 6 }, (_, i) => {
+        const a = ((t * 0.5 + i * 20) % 120) / 120;
+        return <ellipse key={i} cx={238 - a * 200} cy={196 - a * 70 + bob} rx={18 + a * 40} ry={12 + a * 22} fill="url(#n12hatchG)" stroke={GREEN} strokeWidth={0.9} opacity={0.9 * (1 - a)} />;
+      })}
+      {/* the ship: cross-hatched silhouette, paper highlights on deck lines */}
+      <g transform={`translate(36 ${-90 + bob}) scale(1.45)`} strokeLinejoin="round">
+        <g fill="url(#n12cross)" stroke="#122a22" strokeWidth={1}>
+          <path d="M18 286 L40 306 L300 306 L318 280 L240 284 L60 284 Z" />
+          <path d="M110 284 L110 262 L130 262 L130 244 L170 244 L170 262 L205 262 L205 284 Z" />
+          <rect x={140} y={206} width={16} height={40} />
+          <rect x={137} y={204} width={22} height={6} />
+          <rect x={177} y={180} width={4} height={66} />
+          <rect x={166} y={196} width={26} height={3} />
+          <path d="M62 284 Q62 266 84 266 Q100 266 100 284 Z" />
+          <rect x={20} y={270} width={48} height={5} />
+          <path d="M222 284 Q222 266 244 266 Q260 266 260 284 Z" />
+          <rect x={256} y={270} width={50} height={5} />
+        </g>
+        <path d="M179 180 L240 284 M179 180 L70 284" stroke="#122a22" strokeWidth={0.8} />
+        <path d="M44 290 L296 290" stroke={PAPER} strokeWidth={0.9} />
+        <path d="M114 266 L200 266" stroke={PAPER} strokeWidth={0.7} />
+        {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={70 + i * 26} cy={297} r={1.6} fill={PAPER} />)}
+        {/* bow wave */}
+        <path d="M300 306 q10 -6 22 -2 M296 309 q14 -4 30 0" stroke={GREEN} strokeWidth={0.9} fill="none" />
+      </g>
+      {/* shell splashes: engraved fountains */}
+      {[[86, 0], [480, 40]].map(([x, d]) => {
+        const a = ((t + d) % 90) / 90;
+        const hgt = 70 * Math.sin(a * Math.PI);
+        return (
+          <g key={x} opacity={Math.sin(a * Math.PI)}>
+            {[-10, -5, 0, 5, 10].map((o) => <path key={o} d={`M${x + o * 0.6} ${HORIZON + 46} Q${x + o * 1.4} ${HORIZON + 46 - hgt} ${x + o * 2.2} ${HORIZON + 46 - hgt * 0.7}`} fill="none" stroke={BLUE} strokeWidth={1} />)}
+          </g>
+        );
       })}
     </g>
   );
 };
 
+// Main stamp face, 640×760.
+const SW = 640;
+const SH = 760;
+const MainFace = ({ t }: { t: number }) => (
+  <>
+    {/* solid deep-green frame printed in recess, lettering reversed out in paper colour */}
+    <rect x={24} y={24} width={SW - 48} height={SH - 48} fill={GREEN} />
+    <rect x={24} y={24} width={SW - 48} height={SH - 48} fill="url(#n12guilloche)" opacity={0.5} />
+    <EngravedFrame x={30} y={30} w={SW - 60} h={SH - 60} color={PAPER} />
+    <text x={54} y={84} fontSize={34} fontWeight={700} fill={PAPER} letterSpacing={2}>ประเทศไทย</text>
+    <text x={SW - 54} y={84} fontSize={24} fontWeight={600} fill={PAPER} textAnchor="end" letterSpacing={6}>THAILAND</text>
+    <PictureWindow id="n12main" x={40} y={100} w={PW} h={PH}>
+      <Warship t={t} />
+    </PictureWindow>
+    <rect x={40} y={100} width={PW} height={PH} fill="none" stroke={PAPER} strokeWidth={2} />
+    {/* bottom panel: title left, denomination right */}
+    <text x={54} y={642} fontSize={50} fontWeight={700} fill={PAPER}>ยุทธนาวีเกาะช้าง</text>
+    <text x={54} y={688} fontSize={27} fontWeight={600} fill={PAPER} opacity={0.9}>๑๗ มกราคม พุทธศักราช ๒๔๘๔</text>
+    <g transform={`translate(${SW - 52} 0)`}>
+      <circle cx={-62} cy={648} r={56} fill={PAPER} />
+      <circle cx={-62} cy={648} r={49} fill="none" stroke={CARMINE} strokeWidth={1.2} />
+      <text x={-62} y={664} fontSize={50} fontWeight={700} fill={CARMINE} textAnchor="middle">๒๕</text>
+      <text x={-62} y={688} fontSize={17} fontWeight={700} fill={CARMINE} textAnchor="middle">บาท</text>
+    </g>
+    {/* honest label, printed like the printer's imprint in the bottom margin */}
+    <text x={SW / 2} y={SH - 7} fontSize={13} fontWeight={600} fill={INK} opacity={0.8} textAnchor="middle" letterSpacing={1}>ภาพประกอบ · วาดลายเส้นด้วยโค้ด · เรือรบหลวงยุค ๒๔๘๐</text>
+  </>
+);
+
+// Map stamp face, 290×360.
+const MW = 290;
+const MH = 360;
+const MapFace = () => (
+  <>
+    <rect x={16} y={16} width={MW - 32} height={MH - 32} fill={CARMINE} />
+    <rect x={16} y={16} width={MW - 32} height={MH - 32} fill="url(#n12guilloche)" opacity={0.45} />
+    <EngravedFrame x={21} y={21} w={MW - 42} h={MH - 42} color={PAPER} />
+    <text x={MW / 2} y={64} fontSize={26} fontWeight={700} fill={PAPER} textAnchor="middle">อ่าวไทย ๒๔๘๔</text>
+    <g transform="translate(32 78)">
+      <EngravedMap w={MW - 64} h={212} extent={[[100.2, 10.6], [104.4, 14.4]]} mark={KOCHANG}
+        areas={[["764", GREEN, "n12hatchG"], ["116", BLUE, "n12hatchB"], ["704", BLUE, "n12hatchB"], ["418", BLUE, "n12hatchB"]]}
+        labels={[{ at: [101.3, 13.9], text: "ไทย", size: 22, color: GREEN }, { at: [103.6, 13.1], text: "อินโดจีน", size: 18, color: BLUE }, { at: [102.0, 11.55], text: "เกาะช้าง", size: 17, color: CARMINE }]} />
+      <rect width={MW - 64} height={212} fill="none" stroke={PAPER} strokeWidth={2} />
+    </g>
+    <text x={36} y={326} fontSize={20} fontWeight={600} fill={PAPER}>ไทย–ฝรั่งเศส</text>
+    <text x={MW - 36} y={328} fontSize={34} fontWeight={700} fill={PAPER} textAnchor="end">๓</text>
+  </>
+);
+
 export const Demo = () => {
   const frame = useCurrentFrame();
-  const { top, s } = usePostBox();
-  const push = interpolate(frame, [0, demo.frames], [2450, 2560], clamp);
-  const pulse = (frame % 60) / 60;
-  const glow = 0.75 + 0.25 * Math.sin(frame * 0.08);
-  const lab = interpolate(frame, [40, 60], [0, 1], clamp);
+  const head = interpolate(frame, [0, 12], [0, 1], clamp);
+  const big = useIn(6);
+  const small = useIn(20);
+  const label = useIn(32);
+  const mounts = useIn(44, 18);
+  const cancel = interpolate(frame, [62, 68], [0, 1], clamp);
+  const cap = [useIn(76), useIn(84), useIn(92)];
+  const foot = interpolate(frame, [100, 116], [0, 1], clamp);
   return (
     <>
-      <Sfx src={SFX.swell} at={0} volume={0.3} />
-      <Sfx src={SFX.pop} at={8} volume={0.25} />
-      <Sfx src={SFX.whoosh} at={18} volume={0.25} />
-      <Sfx src={SFX.pop} at={42} volume={0.25} />
-      <PostCard
-        background={
-          <PostMap cam={{ lon: 101.6, lat: 13.6, scale: push }} focusY={0.66}>
-            <Areas ids={FRENCH} color={BLUE} />
-            <Hero id="764" glow={glow} />
-            <Spot at={KOCHANG} pulse={pulse} />
-            <MapLabel at={[104.3, 19.4]} text="อินโดจีนฝรั่งเศส" color={BLUE} size={40} k={lab} />
-            <MapLabel at={[105.1, 12.9]} text="ฝรั่งเศส" color={BLUE} size={40} k={lab} />
-            <MapLabel at={[100.4, 15.5]} text="ไทย" color="#8a5a00" size={64} k={lab} />
-            <MapLabel at={[102.6, 11.3]} text="เกาะช้าง" color={RED} size={38} k={lab} />
-          </PostMap>
-        }
-      >
-        <ArchFrame caption={<>ภาพประกอบ<br />เรือรบหลวงยุค 2480</>}>
-          <Warship t={frame} />
-        </ArchFrame>
-        <Headline badge="17 มกราคม · ครบรอบ" lines={["ยุทธนาวี", "เกาะช้าง"]} ask="จบลงยังไง?" sub="ไทย–ฝรั่งเศส · พ.ศ. 2484" />
-        <Footer chip="คลิปใหม่ เร็ว ๆ นี้" brand={["ประวัติศาสตร์", "บนแผนที่"]} credit="ภาพดาวเทียม NASA Blue Marble · เส้นเขตแดนปัจจุบัน ใช้แทนเขตแดนเดิมโดยประมาณ · ภาพเรือวาดประกอบ" />
-      </PostCard>
-      {/* kicker in the band above the 4:5 card (only in the 9:16 demo) */}
-      {top > 60 * s && (
-        <div style={{ position: "absolute", top: top / 2 - 30 * s, left: 0, right: 0, textAlign: "center", fontFamily: font, color: GOLD, fontSize: 40 * s, fontWeight: 700, opacity: 0.85 }}>N12 · โพสต์เพจและปก 4:5</div>
-      )}
+      <Sfx src={SFX.swell} at={0} volume={0.22} />
+      <Sfx src={SFX.whoosh} at={6} volume={0.18} />
+      <Sfx src={SFX.whoosh} at={20} volume={0.15} />
+      <Sfx src={SFX.pop} at={64} volume={0.3} />
+      <AlbumPage>
+        <PageHead kicker="N12 · แสตมป์ที่ระลึก" right="ชุดที่ระลึก · แผ่นที่ ๑๗" k={head} />
+        <Stamp id="n12big" cx={390} cy={536} w={SW} h={SH} rot={-1.6} k={big}>
+          <MainFace t={frame} />
+        </Stamp>
+        <Stamp id="n12map" cx={880} cy={352} w={MW} h={MH} rot={3} k={small} from={[260, 60]} tilt={10}>
+          <MapFace />
+        </Stamp>
+        <Label id="n12soon" cx={878} cy={652} w={270} h={150} rot={-2.5} k={label} lines={["คลิปใหม่", "เร็ว ๆ นี้"]} />
+        <Mount cx={392} y={176} w={700} rot={-1.6} k={mounts} />
+        <Mount cx={880} y={182} w={330} h={48} rot={3} k={mounts} />
+        <Postmark cx={676} cy={858} r={98} rot={-9} k={cancel} ring="ครบรอบยุทธนาวีเกาะช้าง ✦ ตราด ✦ ครบรอบยุทธนาวีเกาะช้าง ✦" date="๑๗ ม.ค." year="ที่ระลึก" waveLen={290} />
+        <Caption x={70} y={1000} date="๑๗ มกราคม · ครบรอบ" lines={["ยุทธนาวีเกาะช้าง"]} ask="จบลงยังไง?" sub="ไทย–ฝรั่งเศส · พ.ศ. ๒๔๘๔" k={cap} />
+        <Footer brand={["ประวัติศาสตร์", "บนแผนที่"]} k={foot} credit="ภาพประกอบวาดด้วยโค้ด ไม่ใช่แสตมป์จริง · แผนที่ Natural Earth · เส้นเขตแดนปัจจุบัน ใช้แทนเขตแดนเดิมโดยประมาณ" />
+      </AlbumPage>
     </>
   );
 };

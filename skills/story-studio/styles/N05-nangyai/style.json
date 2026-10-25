@@ -1,1 +1,29 @@
-{ "id": "N05", "bg": "#050302", "cloth": ["#fff3cf", "#f2b25a", "#5a2a0c"], "skin": "#0e0805", "hole": "#ffe2a8", "border": "#8a1a14", "text": "#ffe2a8", "font": "Kanit", "titleWeight": 900 }
+{
+  "id": "N05",
+  "bg": "#050302",
+  "cloth": [
+    "#fff3cf",
+    "#f2b25a",
+    "#5a2a0c"
+  ],
+  "skin": "#0e0805",
+  "hole": "#ffe2a8",
+  "border": "#8a1a14",
+  "text": "#ffe2a8",
+  "font": "Kanit",
+  "titleWeight": 900,
+  "signature": {
+    "base": "cloth-screen",
+    "palette": [
+      "#050302",
+      "#f2b25a",
+      "#fff3cf",
+      "#8a1a14",
+      "#0e0805"
+    ],
+    "line": "carved",
+    "type": "Kanit 900",
+    "motion": "handheld",
+    "frame": "stage"
+  }
+}

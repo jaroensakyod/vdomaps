@@ -1,62 +1,78 @@
-# M04 ซูมดาวเทียม 30 ม. ลงเมืองเก่า · 30 m Satellite Close-up of an Old City
+# M04 ฟิล์มลาดตระเวน · Recon Film
 
 ![cover](cover-9x16.jpg)
 
-**Fits:** capitals, island cities, forts, "where exactly was it" moments, the opening dive of a history video ·
-**Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` + `kit/News.tsx`, `kit/Pins.tsx`, `kit/th-rivers.mjs`
+**Fits:** capitals, island cities, forts, "where exactly was it" moments, the opening dive of a history video, any
+"look what you can still see from above" story · **Formats:** 9:16 / 16:9 · **Code:** `Demo.tsx` +
+`kit/Recon.tsx`, `kit/Pencil.tsx`, `kit/th-rivers.mjs`
 
 ## Look
 
-One unbroken dive from space onto a real old city: Blue Marble over Southeast Asia, the 30 m NASA HLS mosaic of
-the plain, then a sharp HLS tile of the city itself, where rice fields, moats and the old street grid read as
-they really are. The rivers that made the city are thin glowing blue lines that light up pale gold as one set.
-Temples, palaces and forts get pins: a gold dot with a pulse ring, a short stem and a dark label card with a
-coloured edge and an optional sub-line. A dark head card at the top carries a live number — the width of the
-screen on the ground shrinking from thousands of km to a few km — and a scale bar with the imagery source sits
-bottom-right.
+A cold-war aerial reconnaissance print. The real imagery — NASA Blue Marble, then the 30 m NASA HLS mosaic, then a
+sharp HLS tile of the city — is graded to grainy green-grey monochrome: grayscale, hard contrast, a green-grey
+colour wash, lifted blacks, live film grain, dust specks, the odd hair scratch and a dark vignette. The print sits
+in a film frame on a light box: black film base, bright sprocket holes along both long edges, yellowish edge print
+with the roll and a frame counter that steps up (014 → 015 → 016) with a shutter flash each time a sharper tile
+comes in, fiducial crosses at the middle of each edge, a thin centre reticle and measuring ticks round the image.
+A typed dossier label (off-white paper, two strips of tape, slightly crooked) carries the shot: kicker, headline
+typed in letter by letter, and a live number — the ground width of the frame counting down — with a red
+rubber-stamped "ลับ". The analyst works on top in grease pencil: waxy wobbling strokes drawn on in real time, red
+loops round targets, yellow numbered circles with leader strokes and handwritten names, rivers traced in white.
+A burned-in data block (date, time, source, frame) and a black/white scale bar sit bottom left; captions are
+typed on paper tape.
 
 | Role | Hex |
 |---|---|
-| Background | `#02060d` |
-| Card / pin labels | `#080e1a` at 86 % |
-| Rivers (line / glow / lit) | `#7fd4ff` / `#4fc3ff` / `#fff3a6` |
-| Pins: palace & temples / far side / forts | `#ffc94a` / `#4fa3ff` / `#ff3b30` |
-| Text | `#ffffff` |
+| Film base (background) | `#0b0c0a` |
+| Emulsion mid tone (grade wash `#7d8f74`, lift `#1c2219`) | `#8f9a84` |
+| Silver highlight / light box / reticle | `#d8dccf` · `#eef3e6` |
+| Grease pencil red (targets, stamp) | `#d9342b` |
+| Grease pencil yellow (marks) · white (rivers) | `#f2d64b` · `#eef3e6` |
+| Dossier paper / typewriter ink | `#e9e3d0` / `#1b1c18` |
 
-**Type:** Kanit 700/900 at 1080 — head 54 px, live stat 92 px, pin label 34 px 900 + 24 px sub, scale bar 26 /
-20 px, captions 58 px. **Line:** rivers 2.5–7 px (capped so the imagery stays visible), pin stem 3 px, label edge
-2.5 px + 8 px colour bar, scale bar 10 px white/gold.
+**Type:** Chakra Petch 500–700 for everything typed (dossier head 54 px 700, live stat 84 px, kicker 24 px, data
+block 22 px, captions 54 px 600 on tape, edge print 17 px); Sriracha for the analyst's handwriting (names 40 px,
+numbers 28 px, notes 26–42 px, with a dark under-stroke) — at 1080. **Line:** grease pencil 4–7 px through a
+displacement + wax-texture filter (`#m04-wax`), circles overshoot their start by a tenth of a turn; ticks 1.6 px,
+fiducials 2.4 px.
 
 ## Motion signature
 
-- Continuous zoom, scale in log space (`camAt`): ~3,300 km → ~190 km → ~9 km of screen width in about 8 s.
-  Each sharper tile fades in only once it covers the whole screen.
-- The live stat in the head card counts the screen width down while zooming; the scale bar picks a round length
-  (50 m … 1,000 km) on every frame.
-- On arrival: a dashed gold ring on the city, then the rivers light up together (16 frames) with name chips.
-- Pins pop one by one, 24 frames apart, each with a pop sound; the camera keeps a slow 8 % push.
+- **Gate weave:** the print drifts 1–2 px in the gate and its brightness breathes; grain changes every frame.
+- One slow continuous analyst zoom (`camAt`, log scale): ~3,300 km → ~190 km → ~9 km of ground width in ~8 s; each
+  sharper tile fades in only once it covers the screen, and its arrival is a new frame number with a 5-frame
+  shutter flash and a click.
+- Dossier headlines type in over 16 frames with a blinking block cursor; the stamp thumps in at the open.
+- Pencil work is drawn on: a red loop on the city (16 frames), then the rivers traced together (30 frames) with
+  handwritten names, then numbered marks 24 frames apart — circle, leader stroke, name.
 
 ## Scenes in the kit
 
 | Component | Shows | Props |
 |---|---|---|
-| `Pin` | Dot + pulse + stem + label card on a lon/lat | `at, text, sub?, start, color, side, size` |
-| `ScaleBar` | Round-length scale bar + imagery note | `note, start` |
-| `screenKm`, `fmtKm` | Ground width of the screen for the live stat | `scale, width` |
-| `Rivers` | OSM rivers, thin glow; `hi` lights named rivers | `hi` |
-| `CityRing` | Dashed glowing ring on the city | `k, at, color` |
-| `HeadCard`, `TopBar` | Dark card per shot; badge + date chip | as M02 (`TopBar` takes `chip`) |
-| `view`, `tileOpacity` | Camera on a bbox; tile fade | `f, w, h, k, lift` |
+| `Print` (`Recon.tsx`) | Grades its children (the `Raster` MapFrame) to film: mono, tint, grain, dust, vignette, gate weave | children |
+| `FilmFrame` | Film base, sprocket holes, edge print + counter, fiducials, reticle, ticks | `counter, roll` |
+| `Dossier` | Typed label with live stat and "ลับ" stamp; `label` = "before\|after" the number | `heads, end` |
+| `DataBlock` | Burned-in data lines + scale bar | `lines, scale` |
+| `TapeCaption` | Caption typed on paper tape | `text, start, len, top` |
+| `useLayout`, `view`, `tileOpacity`, `screenKm`, `fmtKm`, `P`, `V` | Image window; camera; tile fade; ground width | — |
+| `PencilDefs` (`Pencil.tsx`) | The wax filter — once inside the overlay `MapFrame` | — |
+| `PencilRing` | Hand loop round a place, drawn on | `at, rx, ry, start, color, k` |
+| `Mark` | Numbered pencil circle + leader + handwritten name / sub | `at, n, text, sub, start, side, color` |
+| `RiverTrace` | OSM rivers traced in pencil, by name (0 → 1) | `hi` |
+| `Note` | Handwritten note on the print | `at, text, start, size, rot` |
 
-`P` holds approximate points on Ayutthaya island (Wat Phra Si Sanphet, Wat Mahathat, Wat Chaiwatthanaram,
-Wat Phanan Choeng, Phet fortress). On 16:9 the map is shifted right (`focusX 0.63`) to clear the card.
+`P` holds approximate points on Ayutthaya island (Wat Phra Si Sanphet, Wat Mahathat, Wat Chaiwatthanaram, Wat
+Phanan Choeng, Phet fortress). On 16:9 the map is shifted right (`focusX 0.63`) to clear the dossier label.
 
 ## Build notes
 
-Raster layers in order `world`, `sea`, `plainhls`, `isle`, the last two faded with `tileOpacity`. HLS is 30 m per
-pixel: fetching a small bbox wider than its native size (e.g. 2000 px over 0.12°) only smooths it — do not zoom
-past ~4 km of screen width or it turns to mush. Keep river lines thin at this range. For another city: fetch an
-HLS tile of ~0.1–0.2° around it, list its places in `P`, its view in `V`.
+Two `MapFrame`s with the same camera: the first inside `Print` holds only the `Raster` (so the grade never touches
+the pencil); the second, clipped to the image window, holds `PencilDefs` and all pencil marks. Then the shutter
+flash, `FilmFrame`, `Dossier`, `DataBlock`, captions. Raster layers in order `world`, `sea`, `plainhls`, `isle`,
+the last two faded with `tileOpacity`. HLS is 30 m per pixel — do not zoom past ~4 km of frame width. Not more than
+~6 marks on screen; pick each mark's `side` so its name stays inside the image window (9:16 and 16:9 differ). The
+grain and wax filters run every frame; that is fine for shorts, for a 10-minute video keep the pencil layer small.
 
 ## Data
 
@@ -75,16 +91,16 @@ node src/styles/M04/kit/th-rivers.mjs      # → public/data/th-plain.json, th-i
 npm run sfx
 ```
 
-Change the chip in `TopBar` to the day you fetched (the demo says "ภาพ 20 ม.ค. 2568").
+Change the date in the `DataBlock` lines to the day you fetched (the demo says "20 ม.ค. 2568").
 
 ## Don'ts
 
-- No Google / Esri / Mapbox imagery, no screenshots of map apps — NASA GIBS layers only.
-- Don't zoom past the 30 m resolution; don't sharpen or AI-upscale the tile.
-- Don't cover the city with thick glowing rivers or big rings at close range — the real imagery is the star.
-- Not more than ~6 pins on screen; points are approximate, say so in the description.
+- No colour imagery and no glowing lines: the print is always monochrome, only the pencil and the stamp have colour.
+- No Google / Esri / Mapbox imagery, no screenshots of map apps — NASA GIBS layers only; don't sharpen or AI-upscale.
+- Do not imitate a real agency's markings, seals or document numbers; the "ลับ" stamp and roll numbers are props.
+- Don't cover the city with pencil — a loop, the rivers and up to ~6 marks; points are approximate, say so.
 
 ## Credits
 
 Imagery: NASA Blue Marble · NASA HLS (Sentinel-2) — "Contains modified Copernicus Sentinel data 2025".
-Rivers: © OpenStreetMap contributors (ODbL). Sound: template UI sounds. Font: Kanit (SIL OFL).
+Rivers: © OpenStreetMap contributors (ODbL). Sound: template UI sounds. Fonts: Chakra Petch, Sriracha (SIL OFL).

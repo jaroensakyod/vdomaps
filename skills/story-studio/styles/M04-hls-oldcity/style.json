@@ -1,1 +1,23 @@
-{ "id": "M04", "bg": "#02060d", "card": "rgba(8,14,26,0.86)", "main": "#7fd4ff", "second": "#ffc94a", "accent": "#ff3b30", "blue": "#4fa3ff", "lit": "#fff3a6", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "imagery": { "layer": "hls", "metersPerPixel": 30, "minScreenKm": 4 } }
+{
+  "id": "M04",
+  "bg": "#0b0c0a",
+  "emulsion": "#8f9a84",
+  "silver": "#d8dccf",
+  "pencilRed": "#d9342b",
+  "pencilYellow": "#f2d64b",
+  "paper": "#e9e3d0",
+  "ink": "#1b1c18",
+  "font": "Chakra Petch",
+  "handFont": "Sriracha",
+  "titleWeight": 700,
+  "grade": { "grayscale": 1, "contrast": 1.55, "tint": "#7d8f74", "lift": "#1c2219", "grain": 0.55 },
+  "imagery": { "layer": "hls", "metersPerPixel": 30, "minScreenKm": 4 },
+  "signature": {
+    "base": "satellite-mono",
+    "palette": ["#0b0c0a", "#8f9a84", "#d8dccf", "#d9342b", "#1b1c18"],
+    "line": "pencil",
+    "type": "Chakra Petch 700",
+    "motion": "gate-weave",
+    "frame": "file-folder"
+  }
+}

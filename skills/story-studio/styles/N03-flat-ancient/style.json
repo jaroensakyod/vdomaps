@@ -1,1 +1,26 @@
-{ "id": "N03", "bg": ["#0d1422", "#1b2233"], "outline": "#1b1d24", "main": "#b8322a", "second": "#9aa3ab", "enemy": "#c9b48a", "bronze": "#c9a24a", "toga": "#efe9da", "accent": ["#ff3b30", "#ffc94a", "#4fa3ff"], "card": "rgba(8,14,26,0.86)", "text": "#ffffff", "textStroke": "#0b0f18", "font": "Kanit", "titleWeight": 900 }
+{
+  "id": "N03",
+  "bg": "#120b07",
+  "clay": "#c8652c",
+  "clayLight": "#df8a4c",
+  "line": "#140a05",
+  "dilute": "#8a4320",
+  "white": "#efe3cc",
+  "text": "#f0d2a8",
+  "font": "Noto Serif Thai",
+  "titleWeight": 800,
+  "signature": {
+    "base": "ceramic",
+    "palette": [
+      "#120b07",
+      "#dc7438",
+      "#8a4320",
+      "#efe3cc",
+      "#f0d2a8"
+    ],
+    "line": "hairline",
+    "type": "Noto Serif Thai 800",
+    "motion": "scroll-pan",
+    "frame": "vase-band"
+  }
+}

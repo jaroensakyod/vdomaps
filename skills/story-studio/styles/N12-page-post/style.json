@@ -1,1 +1,29 @@
-{ "id": "N12", "bg": "#02060d", "main": "#ffc94a", "second": "#3d8bff", "accent": "#ff3b30", "text": "#ffffff", "font": "Kanit", "titleWeight": 900, "size": [1080, 1350] }
+{
+  "id": "N12",
+  "bg": "#f3e6b4",
+  "paper": "#f4eedd",
+  "main": "#1f5a45",
+  "second": "#22389a",
+  "accent": "#b8243f",
+  "text": "#1c1f2b",
+  "font": "Fahkwang",
+  "titleWeight": 700,
+  "size": [
+    1080,
+    1350
+  ],
+  "signature": {
+    "base": "stamp-album",
+    "palette": [
+      "#f3e6b4",
+      "#1f5a45",
+      "#22389a",
+      "#b8243f",
+      "#1c1f2b"
+    ],
+    "line": "engraved-hatch",
+    "type": "Fahkwang 700",
+    "motion": "slide-stack",
+    "frame": "exhibit"
+  }
+}

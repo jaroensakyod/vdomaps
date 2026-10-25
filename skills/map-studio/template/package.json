@@ -25,7 +25,8 @@
     "sfx-lib": "node scripts/sfx-lib.mjs",
     "stills": "node scripts/stills.mjs",
     "style": "node scripts/style.mjs",
-    "gallery": "node scripts/gallery.mjs"
+    "gallery": "node scripts/gallery.mjs",
+    "distinct": "node scripts/distinct.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.537",

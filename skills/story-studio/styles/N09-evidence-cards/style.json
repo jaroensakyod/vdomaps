@@ -1,1 +1,30 @@
-{ "id": "N09", "bg": "#02060d", "card": "#080e1a", "main": "#ffc94a", "second": "#3fbf6a", "accent": "#ff3b30", "sides": { "thai": "#ffc94a", "viet": "#3fa7d6", "china": "#c0186a", "europe": "#4fa3ff" }, "text": "#ffffff", "font": "Kanit", "titleWeight": 900 }
+{
+  "id": "N09",
+  "bg": "#b9b8b0",
+  "paper": "#d8d4c9",
+  "clipping": "#e9e5da",
+  "clippingWarm": "#ece3cf",
+  "ink": "#1d1b18",
+  "grey": "#8a867d",
+  "bodyLine": "#9a958b",
+  "halftone": "#3a3733",
+  "pencil": "#c62a1f",
+  "text": "#1d1b18",
+  "font": "Taviraj",
+  "titleWeight": 800,
+  "handFont": "Sriracha",
+  "signature": {
+    "base": "newsprint",
+    "palette": [
+      "#b9b8b0",
+      "#1d1b18",
+      "#8a867d",
+      "#c62a1f",
+      "#1d1b18"
+    ],
+    "line": "halftone-dot",
+    "type": "Taviraj 800",
+    "motion": "slide-stack",
+    "frame": "newspaper-column"
+  }
+}
