@@ -1,0 +1,49 @@
+{
+  "title": "37 War Elephants Over the Alps: Why Did Hannibal Take the Hardest Road?",
+  "summary": "In 218 BC Hannibal marched an army and 37 war elephants from Spain to Italy, over the Pyrenees, across the Rhône and over the Alps in the first snow. Follow the march on real satellite maps as the army shrinks at every step, find out what really happened to the elephants, and see how the hardest road in the ancient world led to Cannae, and why it still was not enough to take Rome.",
+  "chapters": [
+    { "beat": "hook", "title": "37 elephants over the Alps" },
+    { "beat": "punic", "title": "A score to settle" },
+    { "beat": "seapower", "title": "The impossible road" },
+    { "beat": "ebro", "title": "Spain to the Rhône" },
+    { "beat": "climb", "title": "Into the Alps" },
+    { "beat": "landslide", "title": "The landslide" },
+    { "beat": "arrive", "title": "Italy" },
+    { "beat": "fabius", "title": "Cannae" },
+    { "beat": "answer", "title": "The answer" }
+  ],
+  "sources": [
+    "Polybius, Histories, Book 3 (Paton translation): https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/3*.html",
+    "Livy, Books 21–22 (Church & Brodribb): https://archive.org/stream/livybook2125seco00livy/livybook2125seco00livy_djvu.txt",
+    "https://en.wikipedia.org/wiki/Hannibal%27s_crossing_of_the_Alps",
+    "https://en.wikipedia.org/wiki/Second_Punic_War",
+    "https://en.wikipedia.org/wiki/Battle_of_the_Rh%C3%B4ne_Crossing",
+    "https://en.wikipedia.org/wiki/Battle_of_the_Trebia",
+    "https://en.wikipedia.org/wiki/Battle_of_Lake_Trasimene",
+    "https://en.wikipedia.org/wiki/Battle_of_Cannae",
+    "https://www.livius.org/articles/person/hannibal-3-barca/hannibal-in-the-alps",
+    "https://theconversation.com/how-ancient-horse-dung-bacteria-is-helping-us-determine-where-hannibal-crossed-the-alps-57135",
+    "https://www.worldhistory.org/battle_of_cannae/"
+  ],
+  "credits": [
+    "Maps: NASA Blue Marble imagery (public domain) · Rivers: Natural Earth (public domain) · Ancient places: Pleiades (CC BY 3.0)",
+    "Ancient troop numbers are Polybius's and Livy's figures; modern historians often think the large ones are inflated",
+    "The route and the Alpine pass are approximate: nobody knows exactly where Hannibal crossed · Illustrations are drawn for this video, not real images"
+  ],
+  "music": [
+    "Sound effects synthesised in code",
+    "Narration: Google Gemini TTS (AI voice)"
+  ],
+  "note": "Every frame is drawn with code on open map data. Where the ancient sources disagree, we tell you both.\nAfter Cannae, should Hannibal have marched straight on Rome? Tell me in the comments.",
+  "tags": [
+    "Hannibal",
+    "Hannibal crosses the Alps",
+    "Second Punic War",
+    "Carthage",
+    "Rome",
+    "Battle of Cannae",
+    "war elephants",
+    "ancient history",
+    "history on the map"
+  ]
+}

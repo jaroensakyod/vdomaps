@@ -1,0 +1,8262 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/wh02/hook.wav",
+    "sec": 3.859771,
+    "voice": "Sadaltager",
+    "text": "Thirty-seven war elephants. Over the Alps. In winter.",
+    "words": [
+      {
+        "w": "Thirty-",
+        "s": 0,
+        "e": 0.056
+      },
+      {
+        "w": "seven",
+        "s": 0.056,
+        "e": 0.66
+      },
+      {
+        "w": "war",
+        "s": 0.66,
+        "e": 0.99
+      },
+      {
+        "w": "elephants.",
+        "s": 0.99,
+        "e": 2.03
+      },
+      {
+        "w": "Over",
+        "s": 2.03,
+        "e": 2.37
+      },
+      {
+        "w": "the",
+        "s": 2.37,
+        "e": 2.62
+      },
+      {
+        "w": "Alps.",
+        "s": 2.71,
+        "e": 2.844
+      },
+      {
+        "w": "In",
+        "s": 3.306,
+        "e": 3.306
+      },
+      {
+        "w": "winter.",
+        "s": 3.3,
+        "e": 3.85
+      }
+    ]
+  },
+  {
+    "id": "march",
+    "file": "audio/wh02/march.wav",
+    "sec": 8.935771,
+    "voice": "Sadaltager",
+    "text": "In two-hundred-eighteen BC, a Carthaginian general marched an army from Spain into Italy, the long way round, over the highest mountains in Europe.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "two-",
+        "s": 0.327,
+        "e": 0.327
+      },
+      {
+        "w": "hundred-",
+        "s": 0.327,
+        "e": 0.327
+      },
+      {
+        "w": "eighteen",
+        "s": 0.327,
+        "e": 1.68
+      },
+      {
+        "w": "BC,",
+        "s": 2.098,
+        "e": 2.1
+      },
+      {
+        "w": "a",
+        "s": 2.1,
+        "e": 2.14
+      },
+      {
+        "w": "Carthaginian",
+        "s": 2.2,
+        "e": 2.77
+      },
+      {
+        "w": "general",
+        "s": 2.77,
+        "e": 3.2
+      },
+      {
+        "w": "marched",
+        "s": 3.2,
+        "e": 3.64
+      },
+      {
+        "w": "an",
+        "s": 3.64,
+        "e": 3.76
+      },
+      {
+        "w": "army",
+        "s": 3.76,
+        "e": 3.98
+      },
+      {
+        "w": "from",
+        "s": 4.07,
+        "e": 4.35
+      },
+      {
+        "w": "Spain",
+        "s": 4.35,
+        "e": 4.8
+      },
+      {
+        "w": "into",
+        "s": 4.8,
+        "e": 5.13
+      },
+      {
+        "w": "Italy,",
+        "s": 5.29,
+        "e": 6
+      },
+      {
+        "w": "the",
+        "s": 6.19,
+        "e": 6.28
+      },
+      {
+        "w": "long",
+        "s": 6.28,
+        "e": 6.6
+      },
+      {
+        "w": "way",
+        "s": 6.6,
+        "e": 6.8
+      },
+      {
+        "w": "round,",
+        "s": 6.8,
+        "e": 7.16
+      },
+      {
+        "w": "over",
+        "s": 7.484,
+        "e": 7.484
+      },
+      {
+        "w": "the",
+        "s": 7.484,
+        "e": 7.51
+      },
+      {
+        "w": "highest",
+        "s": 7.51,
+        "e": 7.87
+      },
+      {
+        "w": "mountains",
+        "s": 7.87,
+        "e": 8.33
+      },
+      {
+        "w": "in",
+        "s": 8.33,
+        "e": 8.43
+      },
+      {
+        "w": "Europe.",
+        "s": 8.43,
+        "e": 8.936
+      }
+    ]
+  },
+  {
+    "id": "nearly",
+    "file": "audio/wh02/nearly.wav",
+    "sec": 2.654875,
+    "voice": "Sadaltager",
+    "text": "Then he came within a whisker of destroying Rome.",
+    "words": [
+      {
+        "w": "Then",
+        "s": 0,
+        "e": 0.27
+      },
+      {
+        "w": "he",
+        "s": 0.27,
+        "e": 0.37
+      },
+      {
+        "w": "came",
+        "s": 0.42,
+        "e": 0.63
+      },
+      {
+        "w": "within",
+        "s": 0.71,
+        "e": 1.01
+      },
+      {
+        "w": "a",
+        "s": 1.07,
+        "e": 1.13
+      },
+      {
+        "w": "whisker",
+        "s": 1.13,
+        "e": 1.44
+      },
+      {
+        "w": "of",
+        "s": 1.65,
+        "e": 1.76
+      },
+      {
+        "w": "destroying",
+        "s": 1.8,
+        "e": 2.37
+      },
+      {
+        "w": "Rome.",
+        "s": 2.38,
+        "e": 2.64
+      }
+    ]
+  },
+  {
+    "id": "question",
+    "file": "audio/wh02/question.wav",
+    "sec": 5.97225,
+    "voice": "Sadaltager",
+    "text": "So here is today's question. Why did Hannibal take the hardest road in the ancient world? And did it work?",
+    "words": [
+      {
+        "w": "So",
+        "s": 0.01,
+        "e": 0.13
+      },
+      {
+        "w": "here",
+        "s": 0.22,
+        "e": 0.48
+      },
+      {
+        "w": "is",
+        "s": 0.48,
+        "e": 0.63
+      },
+      {
+        "w": "today's",
+        "s": 0.64,
+        "e": 1.149
+      },
+      {
+        "w": "question.",
+        "s": 1.895,
+        "e": 1.895
+      },
+      {
+        "w": "Why",
+        "s": 1.89,
+        "e": 2.01
+      },
+      {
+        "w": "did",
+        "s": 2.1,
+        "e": 2.24
+      },
+      {
+        "w": "Hannibal",
+        "s": 2.24,
+        "e": 2.69
+      },
+      {
+        "w": "take",
+        "s": 2.74,
+        "e": 3
+      },
+      {
+        "w": "the",
+        "s": 3,
+        "e": 3.1
+      },
+      {
+        "w": "hardest",
+        "s": 3.21,
+        "e": 3.6
+      },
+      {
+        "w": "road",
+        "s": 3.77,
+        "e": 3.9
+      },
+      {
+        "w": "in",
+        "s": 3.9,
+        "e": 3.97
+      },
+      {
+        "w": "the",
+        "s": 3.99,
+        "e": 4.12
+      },
+      {
+        "w": "ancient",
+        "s": 4.12,
+        "e": 4.39
+      },
+      {
+        "w": "world?",
+        "s": 4.44,
+        "e": 5.19
+      },
+      {
+        "w": "And",
+        "s": 5.19,
+        "e": 5.3
+      },
+      {
+        "w": "did",
+        "s": 5.486,
+        "e": 5.6
+      },
+      {
+        "w": "it",
+        "s": 5.6,
+        "e": 5.68
+      },
+      {
+        "w": "work?",
+        "s": 5.74,
+        "e": 5.972
+      }
+    ]
+  },
+  {
+    "id": "go",
+    "file": "audio/wh02/go.wav",
+    "sec": 0.959667,
+    "voice": "Sadaltager",
+    "text": "Let's follow him on the map.",
+    "words": [
+      {
+        "w": "Let's",
+        "s": 0.02,
+        "e": 0.17
+      },
+      {
+        "w": "follow",
+        "s": 0.25,
+        "e": 0.49
+      },
+      {
+        "w": "him",
+        "s": 0.49,
+        "e": 0.62
+      },
+      {
+        "w": "on",
+        "s": 0.62,
+        "e": 0.7
+      },
+      {
+        "w": "the",
+        "s": 0.71,
+        "e": 0.84
+      },
+      {
+        "w": "map.",
+        "s": 0.84,
+        "e": 0.95
+      }
+    ]
+  },
+  {
+    "id": "punic",
+    "file": "audio/wh02/punic.wav",
+    "sec": 5.760396,
+    "voice": "Sadaltager",
+    "text": "First, the grudge. Rome and Carthage were the two great powers of the western Mediterranean.",
+    "words": [
+      {
+        "w": "First,",
+        "s": 0.02,
+        "e": 0.86
+      },
+      {
+        "w": "the",
+        "s": 0.86,
+        "e": 1.12
+      },
+      {
+        "w": "grudge.",
+        "s": 2.092,
+        "e": 2.092
+      },
+      {
+        "w": "Rome",
+        "s": 2.092,
+        "e": 2.26
+      },
+      {
+        "w": "and",
+        "s": 2.3,
+        "e": 2.35
+      },
+      {
+        "w": "Carthage",
+        "s": 2.67,
+        "e": 2.99
+      },
+      {
+        "w": "were",
+        "s": 3,
+        "e": 3.16
+      },
+      {
+        "w": "the",
+        "s": 3.37,
+        "e": 3.37
+      },
+      {
+        "w": "two",
+        "s": 3.37,
+        "e": 3.53
+      },
+      {
+        "w": "great",
+        "s": 3.54,
+        "e": 3.79
+      },
+      {
+        "w": "powers",
+        "s": 4.12,
+        "e": 4.12
+      },
+      {
+        "w": "of",
+        "s": 4.13,
+        "e": 4.21
+      },
+      {
+        "w": "the",
+        "s": 4.21,
+        "e": 4.34
+      },
+      {
+        "w": "western",
+        "s": 4.34,
+        "e": 4.65
+      },
+      {
+        "w": "Mediterranean.",
+        "s": 4.65,
+        "e": 5.36
+      }
+    ]
+  },
+  {
+    "id": "firstwar",
+    "file": "audio/wh02/firstwar.wav",
+    "sec": 8.122188,
+    "voice": "Sadaltager",
+    "text": "From two-hundred-sixty-four to two-hundred-forty-one BC they fought the First Punic War, mostly at sea. Rome won, and Carthage lost Sicily.",
+    "words": [
+      {
+        "w": "From",
+        "s": 0.03,
+        "e": 0.39
+      },
+      {
+        "w": "two-",
+        "s": 0.39,
+        "e": 0.39
+      },
+      {
+        "w": "hundred-",
+        "s": 0.39,
+        "e": 0.39
+      },
+      {
+        "w": "sixty-",
+        "s": 0.39,
+        "e": 0.39
+      },
+      {
+        "w": "four",
+        "s": 0.39,
+        "e": 0.685
+      },
+      {
+        "w": "to",
+        "s": 0.685,
+        "e": 1.27
+      },
+      {
+        "w": "two-",
+        "s": 1.27,
+        "e": 1.29
+      },
+      {
+        "w": "hundred-",
+        "s": 1.29,
+        "e": 1.29
+      },
+      {
+        "w": "forty-",
+        "s": 1.29,
+        "e": 1.46
+      },
+      {
+        "w": "one",
+        "s": 1.46,
+        "e": 2.29
+      },
+      {
+        "w": "BC",
+        "s": 2.56,
+        "e": 2.56
+      },
+      {
+        "w": "they",
+        "s": 2.58,
+        "e": 2.64
+      },
+      {
+        "w": "fought",
+        "s": 2.72,
+        "e": 2.8
+      },
+      {
+        "w": "the",
+        "s": 2.9,
+        "e": 3.16
+      },
+      {
+        "w": "First",
+        "s": 3.16,
+        "e": 3.63
+      },
+      {
+        "w": "Punic",
+        "s": 3.63,
+        "e": 4.07
+      },
+      {
+        "w": "War,",
+        "s": 4.39,
+        "e": 4.49
+      },
+      {
+        "w": "mostly",
+        "s": 4.49,
+        "e": 4.79
+      },
+      {
+        "w": "at",
+        "s": 4.85,
+        "e": 4.96
+      },
+      {
+        "w": "sea.",
+        "s": 4.96,
+        "e": 5.88
+      },
+      {
+        "w": "Rome",
+        "s": 5.91,
+        "e": 6.15
+      },
+      {
+        "w": "won,",
+        "s": 6.15,
+        "e": 6.47
+      },
+      {
+        "w": "and",
+        "s": 6.779,
+        "e": 6.779
+      },
+      {
+        "w": "Carthage",
+        "s": 6.779,
+        "e": 7.19
+      },
+      {
+        "w": "lost",
+        "s": 7.34,
+        "e": 7.48
+      },
+      {
+        "w": "Sicily.",
+        "s": 7.48,
+        "e": 8.122
+      }
+    ]
+  },
+  {
+    "id": "indemnity",
+    "file": "audio/wh02/indemnity.wav",
+    "sec": 7.508438,
+    "voice": "Sadaltager",
+    "text": "Carthage had to pay three-thousand-two-hundred talents of silver. Then Rome grabbed Sardinia and Corsica as well, and demanded more.",
+    "words": [
+      {
+        "w": "Carthage",
+        "s": 0,
+        "e": 0.61
+      },
+      {
+        "w": "had",
+        "s": 0.61,
+        "e": 0.75
+      },
+      {
+        "w": "to",
+        "s": 0.85,
+        "e": 0.99
+      },
+      {
+        "w": "pay",
+        "s": 0.99,
+        "e": 1.22
+      },
+      {
+        "w": "three-",
+        "s": 1.22,
+        "e": 1.22
+      },
+      {
+        "w": "thousand-",
+        "s": 1.22,
+        "e": 1.22
+      },
+      {
+        "w": "two-",
+        "s": 1.22,
+        "e": 1.22
+      },
+      {
+        "w": "hundred",
+        "s": 1.22,
+        "e": 2.31
+      },
+      {
+        "w": "talents",
+        "s": 2.31,
+        "e": 2.86
+      },
+      {
+        "w": "of",
+        "s": 3.844,
+        "e": 3.844
+      },
+      {
+        "w": "silver.",
+        "s": 3.844,
+        "e": 3.844
+      },
+      {
+        "w": "Then",
+        "s": 3.844,
+        "e": 4.07
+      },
+      {
+        "w": "Rome",
+        "s": 4.07,
+        "e": 4.3
+      },
+      {
+        "w": "grabbed",
+        "s": 4.37,
+        "e": 4.82
+      },
+      {
+        "w": "Sardinia",
+        "s": 4.82,
+        "e": 5.37
+      },
+      {
+        "w": "and",
+        "s": 5.41,
+        "e": 5.52
+      },
+      {
+        "w": "Corsica",
+        "s": 5.6,
+        "e": 6.08
+      },
+      {
+        "w": "as",
+        "s": 6.08,
+        "e": 6.25
+      },
+      {
+        "w": "well,",
+        "s": 6.28,
+        "e": 6.446
+      },
+      {
+        "w": "and",
+        "s": 6.727,
+        "e": 6.82
+      },
+      {
+        "w": "demanded",
+        "s": 6.88,
+        "e": 7.3
+      },
+      {
+        "w": "more.",
+        "s": 7.3,
+        "e": 7.508
+      }
+    ]
+  },
+  {
+    "id": "unjust",
+    "file": "audio/wh02/unjust.wav",
+    "sec": 5.309521,
+    "voice": "Sadaltager",
+    "text": "Even Polybius, a Greek historian who admired Rome, called the grab of Sardinia unjust.",
+    "words": [
+      {
+        "w": "Even",
+        "s": 0.02,
+        "e": 0.22
+      },
+      {
+        "w": "Polybius,",
+        "s": 0.34,
+        "e": 0.84
+      },
+      {
+        "w": "a",
+        "s": 0.91,
+        "e": 0.92
+      },
+      {
+        "w": "Greek",
+        "s": 0.96,
+        "e": 1.25
+      },
+      {
+        "w": "historian",
+        "s": 1.25,
+        "e": 1.87
+      },
+      {
+        "w": "who",
+        "s": 1.88,
+        "e": 2.12
+      },
+      {
+        "w": "admired",
+        "s": 2.12,
+        "e": 2.69
+      },
+      {
+        "w": "Rome,",
+        "s": 3.052,
+        "e": 3.16
+      },
+      {
+        "w": "called",
+        "s": 3.16,
+        "e": 3.52
+      },
+      {
+        "w": "the",
+        "s": 3.52,
+        "e": 3.7
+      },
+      {
+        "w": "grab",
+        "s": 3.7,
+        "e": 3.94
+      },
+      {
+        "w": "of",
+        "s": 3.94,
+        "e": 4.06
+      },
+      {
+        "w": "Sardinia",
+        "s": 4.06,
+        "e": 4.56
+      },
+      {
+        "w": "unjust.",
+        "s": 4.71,
+        "e": 5.3
+      }
+    ]
+  },
+  {
+    "id": "hamilcar",
+    "file": "audio/wh02/hamilcar.wav",
+    "sec": 6.565583,
+    "voice": "Sadaltager",
+    "text": "A Carthaginian general, Hamilcar Barca, went west to Spain to build a new empire, rich in silver and soldiers.",
+    "words": [
+      {
+        "w": "A",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "Carthaginian",
+        "s": 0.445,
+        "e": 0.97
+      },
+      {
+        "w": "general,",
+        "s": 0.97,
+        "e": 1.65
+      },
+      {
+        "w": "Hamilcar",
+        "s": 1.68,
+        "e": 2.25
+      },
+      {
+        "w": "Barca,",
+        "s": 2.25,
+        "e": 2.79
+      },
+      {
+        "w": "went",
+        "s": 2.81,
+        "e": 3
+      },
+      {
+        "w": "west",
+        "s": 3.01,
+        "e": 3.19
+      },
+      {
+        "w": "to",
+        "s": 3.24,
+        "e": 3.37
+      },
+      {
+        "w": "Spain",
+        "s": 3.37,
+        "e": 3.69
+      },
+      {
+        "w": "to",
+        "s": 3.73,
+        "e": 3.8
+      },
+      {
+        "w": "build",
+        "s": 3.85,
+        "e": 4.09
+      },
+      {
+        "w": "a",
+        "s": 4.09,
+        "e": 4.14
+      },
+      {
+        "w": "new",
+        "s": 4.14,
+        "e": 4.32
+      },
+      {
+        "w": "empire,",
+        "s": 4.32,
+        "e": 5.1
+      },
+      {
+        "w": "rich",
+        "s": 5.16,
+        "e": 5.31
+      },
+      {
+        "w": "in",
+        "s": 5.32,
+        "e": 5.44
+      },
+      {
+        "w": "silver",
+        "s": 5.76,
+        "e": 5.87
+      },
+      {
+        "w": "and",
+        "s": 5.87,
+        "e": 6.05
+      },
+      {
+        "w": "soldiers.",
+        "s": 6.05,
+        "e": 6.56
+      }
+    ]
+  },
+  {
+    "id": "newcarthage",
+    "file": "audio/wh02/newcarthage.wav",
+    "sec": 6.152646,
+    "voice": "Sadaltager",
+    "text": "His son-in-law founded a new capital on the Spanish coast: New Carthage. Today, it is Cartagena.",
+    "words": [
+      {
+        "w": "His",
+        "s": 0,
+        "e": 0.18
+      },
+      {
+        "w": "son-",
+        "s": 0.19,
+        "e": 0.44
+      },
+      {
+        "w": "in-",
+        "s": 0.44,
+        "e": 0.59
+      },
+      {
+        "w": "law",
+        "s": 0.872,
+        "e": 0.872
+      },
+      {
+        "w": "founded",
+        "s": 0.88,
+        "e": 1.25
+      },
+      {
+        "w": "a",
+        "s": 1.25,
+        "e": 1.31
+      },
+      {
+        "w": "new",
+        "s": 1.31,
+        "e": 1.44
+      },
+      {
+        "w": "capital",
+        "s": 1.5,
+        "e": 1.98
+      },
+      {
+        "w": "on",
+        "s": 1.98,
+        "e": 2.14
+      },
+      {
+        "w": "the",
+        "s": 2.14,
+        "e": 2.38
+      },
+      {
+        "w": "Spanish",
+        "s": 2.38,
+        "e": 2.86
+      },
+      {
+        "w": "coast:",
+        "s": 3.36,
+        "e": 3.4
+      },
+      {
+        "w": "New",
+        "s": 3.4,
+        "e": 3.59
+      },
+      {
+        "w": "Carthage.",
+        "s": 3.65,
+        "e": 4.6
+      },
+      {
+        "w": "Today,",
+        "s": 4.6,
+        "e": 4.94
+      },
+      {
+        "w": "it",
+        "s": 5.253,
+        "e": 5.253
+      },
+      {
+        "w": "is",
+        "s": 5.253,
+        "e": 5.253
+      },
+      {
+        "w": "Cartagena.",
+        "s": 5.648,
+        "e": 6.11
+      }
+    ]
+  },
+  {
+    "id": "oath",
+    "file": "audio/wh02/oath.wav",
+    "sec": 6.425979,
+    "voice": "Sadaltager",
+    "text": "The story goes that he made his nine-year-old son swear never to be a friend of Rome. The boy's name was Hannibal.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.02,
+        "e": 0.09
+      },
+      {
+        "w": "story",
+        "s": 0.13,
+        "e": 0.36
+      },
+      {
+        "w": "goes",
+        "s": 0.36,
+        "e": 0.52
+      },
+      {
+        "w": "that",
+        "s": 0.61,
+        "e": 0.67
+      },
+      {
+        "w": "he",
+        "s": 0.73,
+        "e": 0.81
+      },
+      {
+        "w": "made",
+        "s": 0.81,
+        "e": 0.99
+      },
+      {
+        "w": "his",
+        "s": 0.99,
+        "e": 1.11
+      },
+      {
+        "w": "nine-",
+        "s": 1.11,
+        "e": 1.29
+      },
+      {
+        "w": "year-",
+        "s": 1.29,
+        "e": 1.51
+      },
+      {
+        "w": "old",
+        "s": 1.51,
+        "e": 1.68
+      },
+      {
+        "w": "son",
+        "s": 1.75,
+        "e": 2.06
+      },
+      {
+        "w": "swear",
+        "s": 2.06,
+        "e": 2.63
+      },
+      {
+        "w": "never",
+        "s": 2.63,
+        "e": 3.04
+      },
+      {
+        "w": "to",
+        "s": 3.1,
+        "e": 3.19
+      },
+      {
+        "w": "be",
+        "s": 3.19,
+        "e": 3.3
+      },
+      {
+        "w": "a",
+        "s": 3.3,
+        "e": 3.35
+      },
+      {
+        "w": "friend",
+        "s": 3.48,
+        "e": 3.66
+      },
+      {
+        "w": "of",
+        "s": 3.68,
+        "e": 4.06
+      },
+      {
+        "w": "Rome.",
+        "s": 4.838,
+        "e": 4.88
+      },
+      {
+        "w": "The",
+        "s": 4.9,
+        "e": 5.13
+      },
+      {
+        "w": "boy's",
+        "s": 5.13,
+        "e": 5.447
+      },
+      {
+        "w": "name",
+        "s": 5.92,
+        "e": 5.92
+      },
+      {
+        "w": "was",
+        "s": 5.92,
+        "e": 6.01
+      },
+      {
+        "w": "Hannibal.",
+        "s": 6.02,
+        "e": 6.426
+      }
+    ]
+  },
+  {
+    "id": "command",
+    "file": "audio/wh02/command.wav",
+    "sec": 5.033667,
+    "voice": "Sadaltager",
+    "text": "In two-hundred-twenty-one BC, Hannibal took command in Spain. He was about twenty-six.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "two-",
+        "s": 0.472,
+        "e": 0.472
+      },
+      {
+        "w": "hundred-",
+        "s": 0.472,
+        "e": 0.472
+      },
+      {
+        "w": "twenty-",
+        "s": 0.472,
+        "e": 0.472
+      },
+      {
+        "w": "one",
+        "s": 0.472,
+        "e": 0.93
+      },
+      {
+        "w": "BC,",
+        "s": 0.93,
+        "e": 1.27
+      },
+      {
+        "w": "Hannibal",
+        "s": 1.27,
+        "e": 1.94
+      },
+      {
+        "w": "took",
+        "s": 1.95,
+        "e": 2.28
+      },
+      {
+        "w": "command",
+        "s": 2.28,
+        "e": 2.84
+      },
+      {
+        "w": "in",
+        "s": 2.91,
+        "e": 3.05
+      },
+      {
+        "w": "Spain.",
+        "s": 3.73,
+        "e": 3.76
+      },
+      {
+        "w": "He",
+        "s": 3.8,
+        "e": 3.93
+      },
+      {
+        "w": "was",
+        "s": 3.93,
+        "e": 4.12
+      },
+      {
+        "w": "about",
+        "s": 4.442,
+        "e": 4.442
+      },
+      {
+        "w": "twenty-",
+        "s": 4.442,
+        "e": 4.442
+      },
+      {
+        "w": "six.",
+        "s": 4.44,
+        "e": 5.034
+      }
+    ]
+  },
+  {
+    "id": "saguntum",
+    "file": "audio/wh02/saguntum.wav",
+    "sec": 5.743292,
+    "voice": "Sadaltager",
+    "text": "Two years later he besieged Saguntum, a Spanish city allied to Rome. It fell after eight months.",
+    "words": [
+      {
+        "w": "Two",
+        "s": 0.05,
+        "e": 0.2
+      },
+      {
+        "w": "years",
+        "s": 0.2,
+        "e": 0.54
+      },
+      {
+        "w": "later",
+        "s": 0.761,
+        "e": 0.87
+      },
+      {
+        "w": "he",
+        "s": 1.01,
+        "e": 1.14
+      },
+      {
+        "w": "besieged",
+        "s": 1.14,
+        "e": 1.66
+      },
+      {
+        "w": "Saguntum,",
+        "s": 1.67,
+        "e": 2.35
+      },
+      {
+        "w": "a",
+        "s": 2.37,
+        "e": 2.42
+      },
+      {
+        "w": "Spanish",
+        "s": 2.42,
+        "e": 2.87
+      },
+      {
+        "w": "city",
+        "s": 2.87,
+        "e": 3.14
+      },
+      {
+        "w": "allied",
+        "s": 3.14,
+        "e": 3.51
+      },
+      {
+        "w": "to",
+        "s": 3.52,
+        "e": 3.74
+      },
+      {
+        "w": "Rome.",
+        "s": 3.74,
+        "e": 4.54
+      },
+      {
+        "w": "It",
+        "s": 4.59,
+        "e": 4.63
+      },
+      {
+        "w": "fell",
+        "s": 4.63,
+        "e": 4.81
+      },
+      {
+        "w": "after",
+        "s": 4.81,
+        "e": 5.04
+      },
+      {
+        "w": "eight",
+        "s": 5.04,
+        "e": 5.13
+      },
+      {
+        "w": "months.",
+        "s": 5.3,
+        "e": 5.72
+      }
+    ]
+  },
+  {
+    "id": "war",
+    "file": "audio/wh02/war.wav",
+    "sec": 3.542375,
+    "voice": "Sadaltager",
+    "text": "Rome declared war. The Second Punic War had begun.",
+    "words": [
+      {
+        "w": "Rome",
+        "s": 0.01,
+        "e": 0.31
+      },
+      {
+        "w": "declared",
+        "s": 0.41,
+        "e": 1.07
+      },
+      {
+        "w": "war.",
+        "s": 1.757,
+        "e": 1.76
+      },
+      {
+        "w": "The",
+        "s": 1.78,
+        "e": 1.97
+      },
+      {
+        "w": "Second",
+        "s": 1.97,
+        "e": 2.39
+      },
+      {
+        "w": "Punic",
+        "s": 2.39,
+        "e": 2.74
+      },
+      {
+        "w": "War",
+        "s": 3.157,
+        "e": 3.157
+      },
+      {
+        "w": "had",
+        "s": 3.16,
+        "e": 3.16
+      },
+      {
+        "w": "begun.",
+        "s": 3.51,
+        "e": 3.542
+      }
+    ]
+  },
+  {
+    "id": "seapower",
+    "file": "audio/wh02/seapower.wav",
+    "sec": 5.398333,
+    "voice": "Sadaltager",
+    "text": "Rome expected to fight in Spain and in Africa. After all, Rome now ruled the sea.",
+    "words": [
+      {
+        "w": "Rome",
+        "s": 0,
+        "e": 0.3
+      },
+      {
+        "w": "expected",
+        "s": 0.45,
+        "e": 0.89
+      },
+      {
+        "w": "to",
+        "s": 0.99,
+        "e": 1.05
+      },
+      {
+        "w": "fight",
+        "s": 1.06,
+        "e": 1.44
+      },
+      {
+        "w": "in",
+        "s": 1.44,
+        "e": 1.59
+      },
+      {
+        "w": "Spain",
+        "s": 1.59,
+        "e": 1.92
+      },
+      {
+        "w": "and",
+        "s": 2.16,
+        "e": 2.28
+      },
+      {
+        "w": "in",
+        "s": 2.28,
+        "e": 2.48
+      },
+      {
+        "w": "Africa.",
+        "s": 2.48,
+        "e": 3.21
+      },
+      {
+        "w": "After",
+        "s": 3.55,
+        "e": 3.76
+      },
+      {
+        "w": "all,",
+        "s": 3.76,
+        "e": 4.25
+      },
+      {
+        "w": "Rome",
+        "s": 4.25,
+        "e": 4.56
+      },
+      {
+        "w": "now",
+        "s": 4.56,
+        "e": 4.71
+      },
+      {
+        "w": "ruled",
+        "s": 4.71,
+        "e": 4.97
+      },
+      {
+        "w": "the",
+        "s": 4.97,
+        "e": 5.14
+      },
+      {
+        "w": "sea.",
+        "s": 5.14,
+        "e": 5.34
+      }
+    ]
+  },
+  {
+    "id": "consuls",
+    "file": "audio/wh02/consuls.wav",
+    "sec": 6.183083,
+    "voice": "Sadaltager",
+    "text": "One Roman army headed for Spain. Another gathered in Sicily, ready to sail for Carthage itself.",
+    "words": [
+      {
+        "w": "One",
+        "s": 0.02,
+        "e": 0.27
+      },
+      {
+        "w": "Roman",
+        "s": 0.27,
+        "e": 0.72
+      },
+      {
+        "w": "army",
+        "s": 0.72,
+        "e": 1.08
+      },
+      {
+        "w": "headed",
+        "s": 1.08,
+        "e": 1.62
+      },
+      {
+        "w": "for",
+        "s": 2.553,
+        "e": 2.553
+      },
+      {
+        "w": "Spain.",
+        "s": 2.553,
+        "e": 2.56
+      },
+      {
+        "w": "Another",
+        "s": 2.58,
+        "e": 3.016
+      },
+      {
+        "w": "gathered",
+        "s": 3.171,
+        "e": 3.7
+      },
+      {
+        "w": "in",
+        "s": 3.81,
+        "e": 3.87
+      },
+      {
+        "w": "Sicily,",
+        "s": 4.375,
+        "e": 4.375
+      },
+      {
+        "w": "ready",
+        "s": 4.4,
+        "e": 4.7
+      },
+      {
+        "w": "to",
+        "s": 4.7,
+        "e": 4.83
+      },
+      {
+        "w": "sail",
+        "s": 4.83,
+        "e": 5.09
+      },
+      {
+        "w": "for",
+        "s": 5.09,
+        "e": 5.21
+      },
+      {
+        "w": "Carthage",
+        "s": 5.27,
+        "e": 5.79
+      },
+      {
+        "w": "itself.",
+        "s": 5.79,
+        "e": 6.183
+      }
+    ]
+  },
+  {
+    "id": "landroute",
+    "file": "audio/wh02/landroute.wav",
+    "sec": 5.513229,
+    "voice": "Sadaltager",
+    "text": "Hannibal did the one thing nobody expected. He left the sea alone and went by land.",
+    "words": [
+      {
+        "w": "Hannibal",
+        "s": 0.29,
+        "e": 0.64
+      },
+      {
+        "w": "did",
+        "s": 0.7,
+        "e": 0.9
+      },
+      {
+        "w": "the",
+        "s": 0.9,
+        "e": 1.16
+      },
+      {
+        "w": "one",
+        "s": 1.16,
+        "e": 1.41
+      },
+      {
+        "w": "thing",
+        "s": 1.41,
+        "e": 1.83
+      },
+      {
+        "w": "nobody",
+        "s": 1.83,
+        "e": 2.32
+      },
+      {
+        "w": "expected.",
+        "s": 2.32,
+        "e": 3.17
+      },
+      {
+        "w": "He",
+        "s": 3.29,
+        "e": 3.3
+      },
+      {
+        "w": "left",
+        "s": 3.3,
+        "e": 3.5
+      },
+      {
+        "w": "the",
+        "s": 3.67,
+        "e": 3.77
+      },
+      {
+        "w": "sea",
+        "s": 3.8,
+        "e": 4
+      },
+      {
+        "w": "alone",
+        "s": 4,
+        "e": 4.34
+      },
+      {
+        "w": "and",
+        "s": 4.718,
+        "e": 4.718
+      },
+      {
+        "w": "went",
+        "s": 4.72,
+        "e": 4.99
+      },
+      {
+        "w": "by",
+        "s": 5.08,
+        "e": 5.16
+      },
+      {
+        "w": "land.",
+        "s": 5.16,
+        "e": 5.5
+      }
+    ]
+  },
+  {
+    "id": "distance",
+    "file": "audio/wh02/distance.wav",
+    "sec": 8.272083,
+    "voice": "Sadaltager",
+    "text": "Polybius puts the route at about one-thousand-six-hundred kilometres. Through Spain, over the Pyrenees, across Gaul, and over the Alps.",
+    "words": [
+      {
+        "w": "Polybius",
+        "s": 0.3,
+        "e": 0.61
+      },
+      {
+        "w": "puts",
+        "s": 0.61,
+        "e": 0.89
+      },
+      {
+        "w": "the",
+        "s": 1.05,
+        "e": 1.14
+      },
+      {
+        "w": "route",
+        "s": 1.15,
+        "e": 1.53
+      },
+      {
+        "w": "at",
+        "s": 1.53,
+        "e": 1.69
+      },
+      {
+        "w": "about",
+        "s": 1.69,
+        "e": 1.97
+      },
+      {
+        "w": "one-",
+        "s": 1.97,
+        "e": 1.97
+      },
+      {
+        "w": "thousand-",
+        "s": 1.97,
+        "e": 2.086
+      },
+      {
+        "w": "six-",
+        "s": 2.086,
+        "e": 2.109
+      },
+      {
+        "w": "hundred",
+        "s": 2.109,
+        "e": 3.13
+      },
+      {
+        "w": "kilometres.",
+        "s": 3.17,
+        "e": 4
+      },
+      {
+        "w": "Through",
+        "s": 4.3,
+        "e": 4.49
+      },
+      {
+        "w": "Spain,",
+        "s": 4.51,
+        "e": 4.948
+      },
+      {
+        "w": "over",
+        "s": 5.33,
+        "e": 5.33
+      },
+      {
+        "w": "the",
+        "s": 5.33,
+        "e": 5.49
+      },
+      {
+        "w": "Pyrenees,",
+        "s": 5.49,
+        "e": 6.088
+      },
+      {
+        "w": "across",
+        "s": 6.475,
+        "e": 6.82
+      },
+      {
+        "w": "Gaul,",
+        "s": 6.82,
+        "e": 7.108
+      },
+      {
+        "w": "and",
+        "s": 7.521,
+        "e": 7.521
+      },
+      {
+        "w": "over",
+        "s": 7.521,
+        "e": 7.66
+      },
+      {
+        "w": "the",
+        "s": 7.66,
+        "e": 7.71
+      },
+      {
+        "w": "Alps.",
+        "s": 7.8,
+        "e": 8.272
+      }
+    ]
+  },
+  {
+    "id": "quiz1",
+    "file": "audio/wh02/quiz1.wav",
+    "sec": 7.176667,
+    "voice": "Sadaltager",
+    "text": "Quick quiz. How long did the march from New Carthage to Italy take? Five weeks, five months, or a year?",
+    "words": [
+      {
+        "w": "Quick",
+        "s": 0,
+        "e": 0.43
+      },
+      {
+        "w": "quiz.",
+        "s": 1.086,
+        "e": 1.086
+      },
+      {
+        "w": "How",
+        "s": 1.08,
+        "e": 1.17
+      },
+      {
+        "w": "long",
+        "s": 1.24,
+        "e": 1.44
+      },
+      {
+        "w": "did",
+        "s": 1.44,
+        "e": 1.51
+      },
+      {
+        "w": "the",
+        "s": 1.77,
+        "e": 1.77
+      },
+      {
+        "w": "march",
+        "s": 1.8,
+        "e": 2.04
+      },
+      {
+        "w": "from",
+        "s": 2.18,
+        "e": 2.28
+      },
+      {
+        "w": "New",
+        "s": 2.28,
+        "e": 2.46
+      },
+      {
+        "w": "Carthage",
+        "s": 2.46,
+        "e": 2.94
+      },
+      {
+        "w": "to",
+        "s": 2.94,
+        "e": 3.19
+      },
+      {
+        "w": "Italy",
+        "s": 3.19,
+        "e": 3.753
+      },
+      {
+        "w": "take?",
+        "s": 4.707,
+        "e": 4.707
+      },
+      {
+        "w": "Five",
+        "s": 4.7,
+        "e": 5.09
+      },
+      {
+        "w": "weeks,",
+        "s": 5.09,
+        "e": 5.259
+      },
+      {
+        "w": "five",
+        "s": 5.901,
+        "e": 6.16
+      },
+      {
+        "w": "months,",
+        "s": 6.16,
+        "e": 6.8
+      },
+      {
+        "w": "or",
+        "s": 6.8,
+        "e": 6.89
+      },
+      {
+        "w": "a",
+        "s": 6.96,
+        "e": 7.04
+      },
+      {
+        "w": "year?",
+        "s": 7.04,
+        "e": 7.177
+      }
+    ]
+  },
+  {
+    "id": "quizans1",
+    "file": "audio/wh02/quizans1.wav",
+    "sec": 4.548333,
+    "voice": "Sadaltager",
+    "text": "Five months. About as long as Napoleon later spent getting to Moscow and back.",
+    "words": [
+      {
+        "w": "Five",
+        "s": 0.07,
+        "e": 0.39
+      },
+      {
+        "w": "months.",
+        "s": 0.44,
+        "e": 1.32
+      },
+      {
+        "w": "About",
+        "s": 1.35,
+        "e": 1.63
+      },
+      {
+        "w": "as",
+        "s": 1.68,
+        "e": 1.76
+      },
+      {
+        "w": "long",
+        "s": 1.76,
+        "e": 1.98
+      },
+      {
+        "w": "as",
+        "s": 2.03,
+        "e": 2.13
+      },
+      {
+        "w": "Napoleon",
+        "s": 2.13,
+        "e": 2.68
+      },
+      {
+        "w": "later",
+        "s": 2.68,
+        "e": 2.93
+      },
+      {
+        "w": "spent",
+        "s": 2.96,
+        "e": 3.21
+      },
+      {
+        "w": "getting",
+        "s": 3.25,
+        "e": 3.49
+      },
+      {
+        "w": "to",
+        "s": 3.54,
+        "e": 3.64
+      },
+      {
+        "w": "Moscow",
+        "s": 3.64,
+        "e": 4.08
+      },
+      {
+        "w": "and",
+        "s": 4.08,
+        "e": 4.17
+      },
+      {
+        "w": "back.",
+        "s": 4.18,
+        "e": 4.41
+      }
+    ]
+  },
+  {
+    "id": "army",
+    "file": "audio/wh02/army.wav",
+    "sec": 8.171271,
+    "voice": "Sadaltager",
+    "text": "Polybius says he crossed the Ebro with ninety-thousand foot soldiers and twelve-thousand horsemen. Modern historians think that is too many.",
+    "words": [
+      {
+        "w": "Polybius",
+        "s": 0.28,
+        "e": 0.59
+      },
+      {
+        "w": "says",
+        "s": 0.59,
+        "e": 0.88
+      },
+      {
+        "w": "he",
+        "s": 0.99,
+        "e": 1.04
+      },
+      {
+        "w": "crossed",
+        "s": 1.04,
+        "e": 1.54
+      },
+      {
+        "w": "the",
+        "s": 1.59,
+        "e": 1.77
+      },
+      {
+        "w": "Ebro",
+        "s": 1.8,
+        "e": 2.03
+      },
+      {
+        "w": "with",
+        "s": 2.34,
+        "e": 2.355
+      },
+      {
+        "w": "ninety-",
+        "s": 2.355,
+        "e": 2.37
+      },
+      {
+        "w": "thousand",
+        "s": 2.37,
+        "e": 3.28
+      },
+      {
+        "w": "foot",
+        "s": 3.28,
+        "e": 3.53
+      },
+      {
+        "w": "soldiers",
+        "s": 3.62,
+        "e": 4
+      },
+      {
+        "w": "and",
+        "s": 4.186,
+        "e": 4.27
+      },
+      {
+        "w": "twelve-",
+        "s": 4.27,
+        "e": 4.332
+      },
+      {
+        "w": "thousand",
+        "s": 4.332,
+        "e": 5.01
+      },
+      {
+        "w": "horsemen.",
+        "s": 5.04,
+        "e": 5.47
+      },
+      {
+        "w": "Modern",
+        "s": 6.5,
+        "e": 6.5
+      },
+      {
+        "w": "historians",
+        "s": 6.55,
+        "e": 7.1
+      },
+      {
+        "w": "think",
+        "s": 7.21,
+        "e": 7.37
+      },
+      {
+        "w": "that",
+        "s": 7.39,
+        "e": 7.6
+      },
+      {
+        "w": "is",
+        "s": 7.6,
+        "e": 7.72
+      },
+      {
+        "w": "too",
+        "s": 7.72,
+        "e": 7.88
+      },
+      {
+        "w": "many.",
+        "s": 7.88,
+        "e": 8.171
+      }
+    ]
+  },
+  {
+    "id": "elephants",
+    "file": "audio/wh02/elephants.wav",
+    "sec": 1.899854,
+    "voice": "Sadaltager",
+    "text": "And he brought thirty-seven war elephants.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0.03,
+        "e": 0.18
+      },
+      {
+        "w": "he",
+        "s": 0.18,
+        "e": 0.27
+      },
+      {
+        "w": "brought",
+        "s": 0.32,
+        "e": 0.606
+      },
+      {
+        "w": "thirty-",
+        "s": 0.606,
+        "e": 0.72
+      },
+      {
+        "w": "seven",
+        "s": 0.72,
+        "e": 1.08
+      },
+      {
+        "w": "war",
+        "s": 1.08,
+        "e": 1.26
+      },
+      {
+        "w": "elephants.",
+        "s": 1.26,
+        "e": 1.89
+      }
+    ]
+  },
+  {
+    "id": "ebro",
+    "file": "audio/wh02/ebro.wav",
+    "sec": 8.011896,
+    "voice": "Sadaltager",
+    "text": "North of the Ebro, the tribes fought him all the way. He left eleven-thousand men behind to hold the region, and sent about as many home.",
+    "words": [
+      {
+        "w": "North",
+        "s": 0.34,
+        "e": 0.34
+      },
+      {
+        "w": "of",
+        "s": 0.39,
+        "e": 0.47
+      },
+      {
+        "w": "the",
+        "s": 0.47,
+        "e": 0.67
+      },
+      {
+        "w": "Ebro,",
+        "s": 0.67,
+        "e": 1.07
+      },
+      {
+        "w": "the",
+        "s": 1.07,
+        "e": 1.22
+      },
+      {
+        "w": "tribes",
+        "s": 1.52,
+        "e": 1.68
+      },
+      {
+        "w": "fought",
+        "s": 1.68,
+        "e": 2.09
+      },
+      {
+        "w": "him",
+        "s": 2.09,
+        "e": 2.29
+      },
+      {
+        "w": "all",
+        "s": 2.29,
+        "e": 2.49
+      },
+      {
+        "w": "the",
+        "s": 2.49,
+        "e": 2.69
+      },
+      {
+        "w": "way.",
+        "s": 2.69,
+        "e": 2.899
+      },
+      {
+        "w": "He",
+        "s": 3.792,
+        "e": 3.792
+      },
+      {
+        "w": "left",
+        "s": 3.792,
+        "e": 3.792
+      },
+      {
+        "w": "eleven-",
+        "s": 3.792,
+        "e": 3.792
+      },
+      {
+        "w": "thousand",
+        "s": 3.792,
+        "e": 4.93
+      },
+      {
+        "w": "men",
+        "s": 4.93,
+        "e": 5.07
+      },
+      {
+        "w": "behind",
+        "s": 5.16,
+        "e": 5.66
+      },
+      {
+        "w": "to",
+        "s": 5.66,
+        "e": 5.74
+      },
+      {
+        "w": "hold",
+        "s": 5.76,
+        "e": 5.96
+      },
+      {
+        "w": "the",
+        "s": 5.96,
+        "e": 6.06
+      },
+      {
+        "w": "region,",
+        "s": 6.832,
+        "e": 6.832
+      },
+      {
+        "w": "and",
+        "s": 6.832,
+        "e": 6.832
+      },
+      {
+        "w": "sent",
+        "s": 6.95,
+        "e": 7.17
+      },
+      {
+        "w": "about",
+        "s": 7.34,
+        "e": 7.4
+      },
+      {
+        "w": "as",
+        "s": 7.4,
+        "e": 7.48
+      },
+      {
+        "w": "many",
+        "s": 7.48,
+        "e": 7.64
+      },
+      {
+        "w": "home.",
+        "s": 7.64,
+        "e": 7.93
+      }
+    ]
+  },
+  {
+    "id": "pyrenees",
+    "file": "audio/wh02/pyrenees.wav",
+    "sec": 5.200292,
+    "voice": "Sadaltager",
+    "text": "By the time he crossed the Pyrenees, Polybius counts about fifty-thousand foot and nine-thousand horse.",
+    "words": [
+      {
+        "w": "By",
+        "s": 0.07,
+        "e": 0.12
+      },
+      {
+        "w": "the",
+        "s": 0.12,
+        "e": 0.29
+      },
+      {
+        "w": "time",
+        "s": 0.31,
+        "e": 0.54
+      },
+      {
+        "w": "he",
+        "s": 0.54,
+        "e": 0.65
+      },
+      {
+        "w": "crossed",
+        "s": 0.67,
+        "e": 1.08
+      },
+      {
+        "w": "the",
+        "s": 1.08,
+        "e": 1.26
+      },
+      {
+        "w": "Pyrenees,",
+        "s": 1.26,
+        "e": 1.83
+      },
+      {
+        "w": "Polybius",
+        "s": 1.83,
+        "e": 2.16
+      },
+      {
+        "w": "counts",
+        "s": 2.16,
+        "e": 2.49
+      },
+      {
+        "w": "about",
+        "s": 2.58,
+        "e": 2.836
+      },
+      {
+        "w": "fifty-",
+        "s": 2.836,
+        "e": 2.836
+      },
+      {
+        "w": "thousand",
+        "s": 2.836,
+        "e": 3.75
+      },
+      {
+        "w": "foot",
+        "s": 4.155,
+        "e": 4.155
+      },
+      {
+        "w": "and",
+        "s": 4.155,
+        "e": 4.155
+      },
+      {
+        "w": "nine-",
+        "s": 4.155,
+        "e": 4.155
+      },
+      {
+        "w": "thousand",
+        "s": 4.135,
+        "e": 4.82
+      },
+      {
+        "w": "horse.",
+        "s": 4.82,
+        "e": 5.19
+      }
+    ]
+  },
+  {
+    "id": "rhone",
+    "file": "audio/wh02/rhone.wav",
+    "sec": 7.626104,
+    "voice": "Sadaltager",
+    "text": "In late September he reached the Rhône, a fast, wide river. On the far bank, a Gaulish tribe, the Volcae, was waiting.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.11
+      },
+      {
+        "w": "late",
+        "s": 0.24,
+        "e": 0.37
+      },
+      {
+        "w": "September",
+        "s": 0.37,
+        "e": 0.93
+      },
+      {
+        "w": "he",
+        "s": 0.93,
+        "e": 1.05
+      },
+      {
+        "w": "reached",
+        "s": 1.05,
+        "e": 1.48
+      },
+      {
+        "w": "the",
+        "s": 1.48,
+        "e": 1.66
+      },
+      {
+        "w": "Rhône,",
+        "s": 1.66,
+        "e": 1.889
+      },
+      {
+        "w": "a",
+        "s": 2.489,
+        "e": 2.489
+      },
+      {
+        "w": "fast,",
+        "s": 2.489,
+        "e": 2.81
+      },
+      {
+        "w": "wide",
+        "s": 2.91,
+        "e": 3.19
+      },
+      {
+        "w": "river.",
+        "s": 3.19,
+        "e": 3.572
+      },
+      {
+        "w": "On",
+        "s": 4.424,
+        "e": 4.424
+      },
+      {
+        "w": "the",
+        "s": 4.424,
+        "e": 4.424
+      },
+      {
+        "w": "far",
+        "s": 4.424,
+        "e": 4.53
+      },
+      {
+        "w": "bank,",
+        "s": 4.53,
+        "e": 4.93
+      },
+      {
+        "w": "a",
+        "s": 4.93,
+        "e": 4.93
+      },
+      {
+        "w": "Gaulish",
+        "s": 5.01,
+        "e": 5.36
+      },
+      {
+        "w": "tribe,",
+        "s": 5.45,
+        "e": 5.89
+      },
+      {
+        "w": "the",
+        "s": 6.543,
+        "e": 6.543
+      },
+      {
+        "w": "Volcae,",
+        "s": 6.543,
+        "e": 7.03
+      },
+      {
+        "w": "was",
+        "s": 7.03,
+        "e": 7.29
+      },
+      {
+        "w": "waiting.",
+        "s": 7.3,
+        "e": 7.626
+      }
+    ]
+  },
+  {
+    "id": "hanno",
+    "file": "audio/wh02/hanno.wav",
+    "sec": 6.939125,
+    "voice": "Sadaltager",
+    "text": "Hannibal sent a force upstream under an officer named Hanno. They crossed at night on rafts, and came down behind the Gauls.",
+    "words": [
+      {
+        "w": "Hannibal",
+        "s": 0.02,
+        "e": 0.49
+      },
+      {
+        "w": "sent",
+        "s": 0.52,
+        "e": 0.76
+      },
+      {
+        "w": "a",
+        "s": 0.78,
+        "e": 0.81
+      },
+      {
+        "w": "force",
+        "s": 0.92,
+        "e": 1.12
+      },
+      {
+        "w": "upstream",
+        "s": 1.17,
+        "e": 1.42
+      },
+      {
+        "w": "under",
+        "s": 1.73,
+        "e": 1.98
+      },
+      {
+        "w": "an",
+        "s": 2.01,
+        "e": 2.09
+      },
+      {
+        "w": "officer",
+        "s": 2.09,
+        "e": 2.48
+      },
+      {
+        "w": "named",
+        "s": 2.48,
+        "e": 2.65
+      },
+      {
+        "w": "Hanno.",
+        "s": 2.79,
+        "e": 3.9
+      },
+      {
+        "w": "They",
+        "s": 3.92,
+        "e": 4.15
+      },
+      {
+        "w": "crossed",
+        "s": 4.15,
+        "e": 4.59
+      },
+      {
+        "w": "at",
+        "s": 4.59,
+        "e": 4.71
+      },
+      {
+        "w": "night",
+        "s": 4.71,
+        "e": 5.02
+      },
+      {
+        "w": "on",
+        "s": 5.09,
+        "e": 5.14
+      },
+      {
+        "w": "rafts,",
+        "s": 5.14,
+        "e": 5.63
+      },
+      {
+        "w": "and",
+        "s": 5.63,
+        "e": 5.67
+      },
+      {
+        "w": "came",
+        "s": 5.67,
+        "e": 5.88
+      },
+      {
+        "w": "down",
+        "s": 5.91,
+        "e": 6.04
+      },
+      {
+        "w": "behind",
+        "s": 6.13,
+        "e": 6.48
+      },
+      {
+        "w": "the",
+        "s": 6.48,
+        "e": 6.55
+      },
+      {
+        "w": "Gauls.",
+        "s": 6.69,
+        "e": 6.939
+      }
+    ]
+  },
+  {
+    "id": "smoke",
+    "file": "audio/wh02/smoke.wav",
+    "sec": 6.707625,
+    "voice": "Sadaltager",
+    "text": "At a smoke signal, the main army crossed. Caught from both sides, the Gauls broke and ran.",
+    "words": [
+      {
+        "w": "At",
+        "s": 0,
+        "e": 0.13
+      },
+      {
+        "w": "a",
+        "s": 0.13,
+        "e": 0.19
+      },
+      {
+        "w": "smoke",
+        "s": 0.2,
+        "e": 0.52
+      },
+      {
+        "w": "signal,",
+        "s": 0.52,
+        "e": 1.08
+      },
+      {
+        "w": "the",
+        "s": 1.11,
+        "e": 1.39
+      },
+      {
+        "w": "main",
+        "s": 1.39,
+        "e": 1.77
+      },
+      {
+        "w": "army",
+        "s": 1.77,
+        "e": 2.15
+      },
+      {
+        "w": "crossed.",
+        "s": 2.988,
+        "e": 2.988
+      },
+      {
+        "w": "Caught",
+        "s": 2.988,
+        "e": 3.3
+      },
+      {
+        "w": "from",
+        "s": 3.3,
+        "e": 3.53
+      },
+      {
+        "w": "both",
+        "s": 3.53,
+        "e": 3.72
+      },
+      {
+        "w": "sides,",
+        "s": 4.218,
+        "e": 4.218
+      },
+      {
+        "w": "the",
+        "s": 4.218,
+        "e": 4.48
+      },
+      {
+        "w": "Gauls",
+        "s": 4.48,
+        "e": 4.95
+      },
+      {
+        "w": "broke",
+        "s": 4.95,
+        "e": 5.16
+      },
+      {
+        "w": "and",
+        "s": 6.421,
+        "e": 6.421
+      },
+      {
+        "w": "ran.",
+        "s": 6.421,
+        "e": 6.708
+      }
+    ]
+  },
+  {
+    "id": "rafts",
+    "file": "audio/wh02/rafts.wav",
+    "sec": 6.3165,
+    "voice": "Sadaltager",
+    "text": "Then the elephants. Hannibal's men built huge rafts and covered them with earth, so the animals thought they were still on land.",
+    "words": [
+      {
+        "w": "Then",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "the",
+        "s": 0,
+        "e": 0.29
+      },
+      {
+        "w": "elephants.",
+        "s": 0.33,
+        "e": 1.64
+      },
+      {
+        "w": "Hannibal's",
+        "s": 1.64,
+        "e": 2.11
+      },
+      {
+        "w": "men",
+        "s": 2.11,
+        "e": 2.24
+      },
+      {
+        "w": "built",
+        "s": 2.24,
+        "e": 2.25
+      },
+      {
+        "w": "huge",
+        "s": 2.63,
+        "e": 2.63
+      },
+      {
+        "w": "rafts",
+        "s": 2.69,
+        "e": 2.96
+      },
+      {
+        "w": "and",
+        "s": 3.01,
+        "e": 3.1
+      },
+      {
+        "w": "covered",
+        "s": 3.1,
+        "e": 3.44
+      },
+      {
+        "w": "them",
+        "s": 3.44,
+        "e": 3.56
+      },
+      {
+        "w": "with",
+        "s": 3.56,
+        "e": 3.75
+      },
+      {
+        "w": "earth,",
+        "s": 4.423,
+        "e": 4.47
+      },
+      {
+        "w": "so",
+        "s": 4.47,
+        "e": 4.59
+      },
+      {
+        "w": "the",
+        "s": 4.59,
+        "e": 4.77
+      },
+      {
+        "w": "animals",
+        "s": 4.81,
+        "e": 5.13
+      },
+      {
+        "w": "thought",
+        "s": 5.238,
+        "e": 5.31
+      },
+      {
+        "w": "they",
+        "s": 5.44,
+        "e": 5.44
+      },
+      {
+        "w": "were",
+        "s": 5.44,
+        "e": 5.63
+      },
+      {
+        "w": "still",
+        "s": 5.63,
+        "e": 5.84
+      },
+      {
+        "w": "on",
+        "s": 5.85,
+        "e": 5.95
+      },
+      {
+        "w": "land.",
+        "s": 5.95,
+        "e": 6.3
+      }
+    ]
+  },
+  {
+    "id": "panic",
+    "file": "audio/wh02/panic.wav",
+    "sec": 5.560813,
+    "voice": "Sadaltager",
+    "text": "Some elephants panicked and fell into the river. Their drivers drowned, but the elephants swam across.",
+    "words": [
+      {
+        "w": "Some",
+        "s": 0.09,
+        "e": 0.3
+      },
+      {
+        "w": "elephants",
+        "s": 0.3,
+        "e": 0.91
+      },
+      {
+        "w": "panicked",
+        "s": 1.306,
+        "e": 1.56
+      },
+      {
+        "w": "and",
+        "s": 1.56,
+        "e": 1.77
+      },
+      {
+        "w": "fell",
+        "s": 1.77,
+        "e": 2.07
+      },
+      {
+        "w": "into",
+        "s": 3.007,
+        "e": 3.007
+      },
+      {
+        "w": "the",
+        "s": 3.007,
+        "e": 3.007
+      },
+      {
+        "w": "river.",
+        "s": 3,
+        "e": 3.02
+      },
+      {
+        "w": "Their",
+        "s": 3.11,
+        "e": 3.32
+      },
+      {
+        "w": "drivers",
+        "s": 3.32,
+        "e": 3.74
+      },
+      {
+        "w": "drowned,",
+        "s": 4.272,
+        "e": 4.28
+      },
+      {
+        "w": "but",
+        "s": 4.32,
+        "e": 4.43
+      },
+      {
+        "w": "the",
+        "s": 4.52,
+        "e": 4.6
+      },
+      {
+        "w": "elephants",
+        "s": 4.6,
+        "e": 5.07
+      },
+      {
+        "w": "swam",
+        "s": 5.07,
+        "e": 5.2
+      },
+      {
+        "w": "across.",
+        "s": 5.6,
+        "e": 5.561
+      }
+    ]
+  },
+  {
+    "id": "scipio",
+    "file": "audio/wh02/scipio.wav",
+    "sec": 7.074271,
+    "voice": "Sadaltager",
+    "text": "Meanwhile, a Roman army under the consul Scipio had landed at Massilia to stop him. It reached his camp three days too late.",
+    "words": [
+      {
+        "w": "Meanwhile,",
+        "s": 0,
+        "e": 0.73
+      },
+      {
+        "w": "a",
+        "s": 0.73,
+        "e": 0.79
+      },
+      {
+        "w": "Roman",
+        "s": 0.79,
+        "e": 1.12
+      },
+      {
+        "w": "army",
+        "s": 1.12,
+        "e": 1.38
+      },
+      {
+        "w": "under",
+        "s": 1.38,
+        "e": 1.69
+      },
+      {
+        "w": "the",
+        "s": 1.76,
+        "e": 1.91
+      },
+      {
+        "w": "consul",
+        "s": 1.91,
+        "e": 2.24
+      },
+      {
+        "w": "Scipio",
+        "s": 2.3,
+        "e": 2.76
+      },
+      {
+        "w": "had",
+        "s": 2.76,
+        "e": 2.93
+      },
+      {
+        "w": "landed",
+        "s": 2.93,
+        "e": 3.26
+      },
+      {
+        "w": "at",
+        "s": 3.28,
+        "e": 3.38
+      },
+      {
+        "w": "Massilia",
+        "s": 3.38,
+        "e": 3.8
+      },
+      {
+        "w": "to",
+        "s": 3.87,
+        "e": 4
+      },
+      {
+        "w": "stop",
+        "s": 4,
+        "e": 4.24
+      },
+      {
+        "w": "him.",
+        "s": 4.33,
+        "e": 4.94
+      },
+      {
+        "w": "It",
+        "s": 4.95,
+        "e": 5.06
+      },
+      {
+        "w": "reached",
+        "s": 5.06,
+        "e": 5.48
+      },
+      {
+        "w": "his",
+        "s": 5.48,
+        "e": 5.67
+      },
+      {
+        "w": "camp",
+        "s": 5.67,
+        "e": 5.845
+      },
+      {
+        "w": "three",
+        "s": 6.046,
+        "e": 6.2
+      },
+      {
+        "w": "days",
+        "s": 6.2,
+        "e": 6.45
+      },
+      {
+        "w": "too",
+        "s": 6.45,
+        "e": 6.63
+      },
+      {
+        "w": "late.",
+        "s": 6.63,
+        "e": 7.074
+      }
+    ]
+  },
+  {
+    "id": "brother",
+    "file": "audio/wh02/brother.wav",
+    "sec": 6.710604,
+    "voice": "Sadaltager",
+    "text": "Scipio made a bold call. He sent his army on to Spain under his brother, and hurried back to Italy himself.",
+    "words": [
+      {
+        "w": "Scipio",
+        "s": 0,
+        "e": 0.61
+      },
+      {
+        "w": "made",
+        "s": 0.61,
+        "e": 1.03
+      },
+      {
+        "w": "a",
+        "s": 1.03,
+        "e": 1.1
+      },
+      {
+        "w": "bold",
+        "s": 1.17,
+        "e": 1.45
+      },
+      {
+        "w": "call.",
+        "s": 2.115,
+        "e": 2.14
+      },
+      {
+        "w": "He",
+        "s": 2.14,
+        "e": 2.24
+      },
+      {
+        "w": "sent",
+        "s": 2.24,
+        "e": 2.44
+      },
+      {
+        "w": "his",
+        "s": 2.44,
+        "e": 2.59
+      },
+      {
+        "w": "army",
+        "s": 2.59,
+        "e": 2.79
+      },
+      {
+        "w": "on",
+        "s": 2.83,
+        "e": 3
+      },
+      {
+        "w": "to",
+        "s": 3,
+        "e": 3.19
+      },
+      {
+        "w": "Spain",
+        "s": 3.19,
+        "e": 3.68
+      },
+      {
+        "w": "under",
+        "s": 3.71,
+        "e": 3.84
+      },
+      {
+        "w": "his",
+        "s": 3.84,
+        "e": 4
+      },
+      {
+        "w": "brother,",
+        "s": 4,
+        "e": 4.383
+      },
+      {
+        "w": "and",
+        "s": 5.082,
+        "e": 5.082
+      },
+      {
+        "w": "hurried",
+        "s": 5.082,
+        "e": 5.32
+      },
+      {
+        "w": "back",
+        "s": 5.32,
+        "e": 5.53
+      },
+      {
+        "w": "to",
+        "s": 5.64,
+        "e": 5.71
+      },
+      {
+        "w": "Italy",
+        "s": 5.79,
+        "e": 6.09
+      },
+      {
+        "w": "himself.",
+        "s": 6.274,
+        "e": 6.6
+      }
+    ]
+  },
+  {
+    "id": "turn",
+    "file": "audio/wh02/turn.wav",
+    "sec": 5.963958,
+    "voice": "Sadaltager",
+    "text": "Scipio could not believe it. Hannibal was not heading for Spain or the coast. He was heading for the Alps.",
+    "words": [
+      {
+        "w": "Scipio",
+        "s": 0,
+        "e": 0.33
+      },
+      {
+        "w": "could",
+        "s": 0.33,
+        "e": 0.62
+      },
+      {
+        "w": "not",
+        "s": 0.62,
+        "e": 0.79
+      },
+      {
+        "w": "believe",
+        "s": 0.79,
+        "e": 1.2
+      },
+      {
+        "w": "it.",
+        "s": 2.009,
+        "e": 2.009
+      },
+      {
+        "w": "Hannibal",
+        "s": 2.009,
+        "e": 2.06
+      },
+      {
+        "w": "was",
+        "s": 2.06,
+        "e": 2.25
+      },
+      {
+        "w": "not",
+        "s": 2.25,
+        "e": 2.45
+      },
+      {
+        "w": "heading",
+        "s": 2.45,
+        "e": 2.85
+      },
+      {
+        "w": "for",
+        "s": 3.12,
+        "e": 3.12
+      },
+      {
+        "w": "Spain",
+        "s": 3.44,
+        "e": 3.44
+      },
+      {
+        "w": "or",
+        "s": 3.55,
+        "e": 3.62
+      },
+      {
+        "w": "the",
+        "s": 3.62,
+        "e": 3.88
+      },
+      {
+        "w": "coast.",
+        "s": 3.88,
+        "e": 4.248
+      },
+      {
+        "w": "He",
+        "s": 4.653,
+        "e": 4.653
+      },
+      {
+        "w": "was",
+        "s": 4.653,
+        "e": 4.653
+      },
+      {
+        "w": "heading",
+        "s": 4.66,
+        "e": 5.09
+      },
+      {
+        "w": "for",
+        "s": 5.09,
+        "e": 5.25
+      },
+      {
+        "w": "the",
+        "s": 5.566,
+        "e": 5.566
+      },
+      {
+        "w": "Alps.",
+        "s": 5.566,
+        "e": 5.94
+      }
+    ]
+  },
+  {
+    "id": "climb",
+    "file": "audio/wh02/climb.wav",
+    "sec": 7.228958,
+    "voice": "Sadaltager",
+    "text": "Polybius says about thirty-eight-thousand foot and eight-thousand horse left the Rhône. Ahead of them were the Alps, in autumn.",
+    "words": [
+      {
+        "w": "Polybius",
+        "s": 0.1,
+        "e": 0.44
+      },
+      {
+        "w": "says",
+        "s": 0.44,
+        "e": 0.64
+      },
+      {
+        "w": "about",
+        "s": 0.66,
+        "e": 0.828
+      },
+      {
+        "w": "thirty-",
+        "s": 0.828,
+        "e": 0.828
+      },
+      {
+        "w": "eight-",
+        "s": 0.828,
+        "e": 0.828
+      },
+      {
+        "w": "thousand",
+        "s": 0.828,
+        "e": 1.83
+      },
+      {
+        "w": "foot",
+        "s": 1.97,
+        "e": 2.07
+      },
+      {
+        "w": "and",
+        "s": 2.606,
+        "e": 2.606
+      },
+      {
+        "w": "eight-",
+        "s": 2.606,
+        "e": 2.606
+      },
+      {
+        "w": "thousand",
+        "s": 2.606,
+        "e": 3.52
+      },
+      {
+        "w": "horse",
+        "s": 3.64,
+        "e": 3.94
+      },
+      {
+        "w": "left",
+        "s": 3.94,
+        "e": 4.094
+      },
+      {
+        "w": "the",
+        "s": 4.997,
+        "e": 4.997
+      },
+      {
+        "w": "Rhône.",
+        "s": 4.997,
+        "e": 4.997
+      },
+      {
+        "w": "Ahead",
+        "s": 5.05,
+        "e": 5.36
+      },
+      {
+        "w": "of",
+        "s": 5.36,
+        "e": 5.51
+      },
+      {
+        "w": "them",
+        "s": 5.51,
+        "e": 5.82
+      },
+      {
+        "w": "were",
+        "s": 5.82,
+        "e": 6.12
+      },
+      {
+        "w": "the",
+        "s": 6.13,
+        "e": 6.265
+      },
+      {
+        "w": "Alps,",
+        "s": 6.74,
+        "e": 6.74
+      },
+      {
+        "w": "in",
+        "s": 6.74,
+        "e": 6.81
+      },
+      {
+        "w": "autumn.",
+        "s": 6.95,
+        "e": 7.229
+      }
+    ]
+  },
+  {
+    "id": "height",
+    "file": "audio/wh02/height.wav",
+    "sec": 5.187021,
+    "voice": "Sadaltager",
+    "text": "The passes he was heading for are well over two-thousand metres high. One of them is almost three-thousand.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0,
+        "e": 0.17
+      },
+      {
+        "w": "passes",
+        "s": 0.17,
+        "e": 0.51
+      },
+      {
+        "w": "he",
+        "s": 0.53,
+        "e": 0.61
+      },
+      {
+        "w": "was",
+        "s": 0.62,
+        "e": 0.79
+      },
+      {
+        "w": "heading",
+        "s": 0.79,
+        "e": 1.18
+      },
+      {
+        "w": "for",
+        "s": 1.19,
+        "e": 1.4
+      },
+      {
+        "w": "are",
+        "s": 1.4,
+        "e": 1.56
+      },
+      {
+        "w": "well",
+        "s": 1.56,
+        "e": 1.77
+      },
+      {
+        "w": "over",
+        "s": 1.77,
+        "e": 1.98
+      },
+      {
+        "w": "two-",
+        "s": 1.98,
+        "e": 2.009
+      },
+      {
+        "w": "thousand",
+        "s": 2.009,
+        "e": 2.54
+      },
+      {
+        "w": "metres",
+        "s": 2.54,
+        "e": 2.77
+      },
+      {
+        "w": "high.",
+        "s": 2.79,
+        "e": 3.68
+      },
+      {
+        "w": "One",
+        "s": 3.68,
+        "e": 3.81
+      },
+      {
+        "w": "of",
+        "s": 3.81,
+        "e": 3.89
+      },
+      {
+        "w": "them",
+        "s": 3.89,
+        "e": 4.04
+      },
+      {
+        "w": "is",
+        "s": 4.06,
+        "e": 4.14
+      },
+      {
+        "w": "almost",
+        "s": 4.14,
+        "e": 4.348
+      },
+      {
+        "w": "three-",
+        "s": 4.348,
+        "e": 4.348
+      },
+      {
+        "w": "thousand.",
+        "s": 4.348,
+        "e": 5.18
+      }
+    ]
+  },
+  {
+    "id": "allobroges",
+    "file": "audio/wh02/allobroges.wav",
+    "sec": 5.213438,
+    "voice": "Sadaltager",
+    "text": "Mountain tribes, the Allobroges, held the heights above the track, ready to roll rocks down on the column.",
+    "words": [
+      {
+        "w": "Mountain",
+        "s": 0,
+        "e": 0.51
+      },
+      {
+        "w": "tribes,",
+        "s": 0.51,
+        "e": 1.01
+      },
+      {
+        "w": "the",
+        "s": 1.01,
+        "e": 1.2
+      },
+      {
+        "w": "Allobroges,",
+        "s": 1.2,
+        "e": 1.87
+      },
+      {
+        "w": "held",
+        "s": 1.87,
+        "e": 2.03
+      },
+      {
+        "w": "the",
+        "s": 2.03,
+        "e": 2.1
+      },
+      {
+        "w": "heights",
+        "s": 2.15,
+        "e": 2.44
+      },
+      {
+        "w": "above",
+        "s": 2.44,
+        "e": 2.71
+      },
+      {
+        "w": "the",
+        "s": 2.75,
+        "e": 2.92
+      },
+      {
+        "w": "track,",
+        "s": 2.92,
+        "e": 3.36
+      },
+      {
+        "w": "ready",
+        "s": 3.36,
+        "e": 3.63
+      },
+      {
+        "w": "to",
+        "s": 3.67,
+        "e": 3.78
+      },
+      {
+        "w": "roll",
+        "s": 3.79,
+        "e": 4
+      },
+      {
+        "w": "rocks",
+        "s": 4.04,
+        "e": 4.35
+      },
+      {
+        "w": "down",
+        "s": 4.35,
+        "e": 4.61
+      },
+      {
+        "w": "on",
+        "s": 4.62,
+        "e": 4.73
+      },
+      {
+        "w": "the",
+        "s": 4.73,
+        "e": 4.89
+      },
+      {
+        "w": "column.",
+        "s": 4.91,
+        "e": 5.21
+      }
+    ]
+  },
+  {
+    "id": "town",
+    "file": "audio/wh02/town.wav",
+    "sec": 2.926042,
+    "voice": "Sadaltager",
+    "text": "He even captured their town, and fed his army from its stores.",
+    "words": [
+      {
+        "w": "He",
+        "s": 0,
+        "e": 0.12
+      },
+      {
+        "w": "even",
+        "s": 0.12,
+        "e": 0.36
+      },
+      {
+        "w": "captured",
+        "s": 0.36,
+        "e": 0.84
+      },
+      {
+        "w": "their",
+        "s": 0.84,
+        "e": 1.14
+      },
+      {
+        "w": "town,",
+        "s": 1.404,
+        "e": 1.404
+      },
+      {
+        "w": "and",
+        "s": 1.4,
+        "e": 1.5
+      },
+      {
+        "w": "fed",
+        "s": 1.6,
+        "e": 1.76
+      },
+      {
+        "w": "his",
+        "s": 1.76,
+        "e": 1.94
+      },
+      {
+        "w": "army",
+        "s": 1.94,
+        "e": 2.17
+      },
+      {
+        "w": "from",
+        "s": 2.19,
+        "e": 2.4
+      },
+      {
+        "w": "its",
+        "s": 2.49,
+        "e": 2.6
+      },
+      {
+        "w": "stores.",
+        "s": 2.6,
+        "e": 2.92
+      }
+    ]
+  },
+  {
+    "id": "night",
+    "file": "audio/wh02/night.wav",
+    "sec": 5.356833,
+    "voice": "Sadaltager",
+    "text": "Hannibal waited for night, when the tribesmen went home to sleep, and quietly took the heights himself.",
+    "words": [
+      {
+        "w": "Hannibal",
+        "s": 0.03,
+        "e": 0.54
+      },
+      {
+        "w": "waited",
+        "s": 0.54,
+        "e": 0.95
+      },
+      {
+        "w": "for",
+        "s": 0.95,
+        "e": 1.1
+      },
+      {
+        "w": "night,",
+        "s": 1.51,
+        "e": 1.52
+      },
+      {
+        "w": "when",
+        "s": 1.52,
+        "e": 1.67
+      },
+      {
+        "w": "the",
+        "s": 1.71,
+        "e": 1.83
+      },
+      {
+        "w": "tribesmen",
+        "s": 1.83,
+        "e": 2.26
+      },
+      {
+        "w": "went",
+        "s": 2.26,
+        "e": 2.47
+      },
+      {
+        "w": "home",
+        "s": 2.47,
+        "e": 2.68
+      },
+      {
+        "w": "to",
+        "s": 2.68,
+        "e": 2.93
+      },
+      {
+        "w": "sleep,",
+        "s": 2.93,
+        "e": 3.56
+      },
+      {
+        "w": "and",
+        "s": 3.56,
+        "e": 3.72
+      },
+      {
+        "w": "quietly",
+        "s": 3.8,
+        "e": 4.19
+      },
+      {
+        "w": "took",
+        "s": 4.25,
+        "e": 4.37
+      },
+      {
+        "w": "the",
+        "s": 4.49,
+        "e": 4.56
+      },
+      {
+        "w": "heights",
+        "s": 4.56,
+        "e": 4.96
+      },
+      {
+        "w": "himself.",
+        "s": 4.99,
+        "e": 5.35
+      }
+    ]
+  },
+  {
+    "id": "gorge",
+    "file": "audio/wh02/gorge.wav",
+    "sec": 5.528333,
+    "voice": "Sadaltager",
+    "text": "Still, the attacks came. In the narrow gorges, horses and pack animals fell off the cliffs with their loads.",
+    "words": [
+      {
+        "w": "Still,",
+        "s": 0.04,
+        "e": 0.42
+      },
+      {
+        "w": "the",
+        "s": 0.42,
+        "e": 0.67
+      },
+      {
+        "w": "attacks",
+        "s": 0.67,
+        "e": 1.12
+      },
+      {
+        "w": "came.",
+        "s": 1.61,
+        "e": 1.64
+      },
+      {
+        "w": "In",
+        "s": 1.68,
+        "e": 1.7
+      },
+      {
+        "w": "the",
+        "s": 1.78,
+        "e": 1.9
+      },
+      {
+        "w": "narrow",
+        "s": 1.9,
+        "e": 2.18
+      },
+      {
+        "w": "gorges,",
+        "s": 2.21,
+        "e": 2.592
+      },
+      {
+        "w": "horses",
+        "s": 2.718,
+        "e": 2.76
+      },
+      {
+        "w": "and",
+        "s": 3.25,
+        "e": 3.38
+      },
+      {
+        "w": "pack",
+        "s": 3.38,
+        "e": 3.62
+      },
+      {
+        "w": "animals",
+        "s": 3.62,
+        "e": 4.03
+      },
+      {
+        "w": "fell",
+        "s": 4.03,
+        "e": 4.2
+      },
+      {
+        "w": "off",
+        "s": 4.35,
+        "e": 4.44
+      },
+      {
+        "w": "the",
+        "s": 4.44,
+        "e": 4.49
+      },
+      {
+        "w": "cliffs",
+        "s": 4.53,
+        "e": 4.87
+      },
+      {
+        "w": "with",
+        "s": 4.88,
+        "e": 4.97
+      },
+      {
+        "w": "their",
+        "s": 5.02,
+        "e": 5.13
+      },
+      {
+        "w": "loads.",
+        "s": 5.21,
+        "e": 5.52
+      }
+    ]
+  },
+  {
+    "id": "elephantshield",
+    "file": "audio/wh02/elephantshield.wav",
+    "sec": 4.775792,
+    "voice": "Sadaltager",
+    "text": "The tribes were terrified of the elephants. Wherever the elephants walked, nobody attacked.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.01,
+        "e": 0.2
+      },
+      {
+        "w": "tribes",
+        "s": 0.2,
+        "e": 0.61
+      },
+      {
+        "w": "were",
+        "s": 0.61,
+        "e": 0.84
+      },
+      {
+        "w": "terrified",
+        "s": 0.95,
+        "e": 1.48
+      },
+      {
+        "w": "of",
+        "s": 1.49,
+        "e": 1.62
+      },
+      {
+        "w": "the",
+        "s": 1.62,
+        "e": 1.8
+      },
+      {
+        "w": "elephants.",
+        "s": 1.81,
+        "e": 2.64
+      },
+      {
+        "w": "Wherever",
+        "s": 2.65,
+        "e": 3
+      },
+      {
+        "w": "the",
+        "s": 3.04,
+        "e": 3.18
+      },
+      {
+        "w": "elephants",
+        "s": 3.24,
+        "e": 3.64
+      },
+      {
+        "w": "walked,",
+        "s": 4.047,
+        "e": 4.047
+      },
+      {
+        "w": "nobody",
+        "s": 4.04,
+        "e": 4.28
+      },
+      {
+        "w": "attacked.",
+        "s": 4.38,
+        "e": 4.76
+      }
+    ]
+  },
+  {
+    "id": "snow",
+    "file": "audio/wh02/snow.wav",
+    "sec": 6.137313,
+    "voice": "Sadaltager",
+    "text": "After nine days they reached the top. Snow had already fallen. It was late October, maybe early November.",
+    "words": [
+      {
+        "w": "After",
+        "s": 0.24,
+        "e": 0.31
+      },
+      {
+        "w": "nine",
+        "s": 0.31,
+        "e": 0.51
+      },
+      {
+        "w": "days",
+        "s": 0.51,
+        "e": 0.75
+      },
+      {
+        "w": "they",
+        "s": 0.88,
+        "e": 1.1
+      },
+      {
+        "w": "reached",
+        "s": 1.17,
+        "e": 1.56
+      },
+      {
+        "w": "the",
+        "s": 1.63,
+        "e": 1.77
+      },
+      {
+        "w": "top.",
+        "s": 1.77,
+        "e": 2
+      },
+      {
+        "w": "Snow",
+        "s": 2.609,
+        "e": 2.609
+      },
+      {
+        "w": "had",
+        "s": 2.609,
+        "e": 2.7
+      },
+      {
+        "w": "already",
+        "s": 2.7,
+        "e": 3.39
+      },
+      {
+        "w": "fallen.",
+        "s": 3.39,
+        "e": 3.68
+      },
+      {
+        "w": "It",
+        "s": 4.046,
+        "e": 4.11
+      },
+      {
+        "w": "was",
+        "s": 4.24,
+        "e": 4.27
+      },
+      {
+        "w": "late",
+        "s": 4.27,
+        "e": 4.49
+      },
+      {
+        "w": "October,",
+        "s": 4.49,
+        "e": 4.858
+      },
+      {
+        "w": "maybe",
+        "s": 5.148,
+        "e": 5.27
+      },
+      {
+        "w": "early",
+        "s": 5.27,
+        "e": 5.54
+      },
+      {
+        "w": "November.",
+        "s": 5.54,
+        "e": 6
+      }
+    ]
+  },
+  {
+    "id": "rest",
+    "file": "audio/wh02/rest.wav",
+    "sec": 7.8465,
+    "voice": "Sadaltager",
+    "text": "The army rested there for two days. Men from Africa and Spain, who had never seen snow, stood freezing on the roof of Europe.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0,
+        "e": 0.25
+      },
+      {
+        "w": "army",
+        "s": 0.25,
+        "e": 0.53
+      },
+      {
+        "w": "rested",
+        "s": 0.56,
+        "e": 1.1
+      },
+      {
+        "w": "there",
+        "s": 1.1,
+        "e": 1.52
+      },
+      {
+        "w": "for",
+        "s": 2.562,
+        "e": 2.562
+      },
+      {
+        "w": "two",
+        "s": 2.562,
+        "e": 2.562
+      },
+      {
+        "w": "days.",
+        "s": 2.562,
+        "e": 2.66
+      },
+      {
+        "w": "Men",
+        "s": 2.66,
+        "e": 2.88
+      },
+      {
+        "w": "from",
+        "s": 2.88,
+        "e": 3.17
+      },
+      {
+        "w": "Africa",
+        "s": 3.17,
+        "e": 3.56
+      },
+      {
+        "w": "and",
+        "s": 3.65,
+        "e": 3.83
+      },
+      {
+        "w": "Spain,",
+        "s": 3.83,
+        "e": 4.154
+      },
+      {
+        "w": "who",
+        "s": 4.396,
+        "e": 4.57
+      },
+      {
+        "w": "had",
+        "s": 4.57,
+        "e": 4.78
+      },
+      {
+        "w": "never",
+        "s": 5.14,
+        "e": 5.14
+      },
+      {
+        "w": "seen",
+        "s": 5.22,
+        "e": 5.41
+      },
+      {
+        "w": "snow,",
+        "s": 5.836,
+        "e": 5.88
+      },
+      {
+        "w": "stood",
+        "s": 5.88,
+        "e": 5.91
+      },
+      {
+        "w": "freezing",
+        "s": 6,
+        "e": 6.607
+      },
+      {
+        "w": "on",
+        "s": 6.836,
+        "e": 6.836
+      },
+      {
+        "w": "the",
+        "s": 7.04,
+        "e": 7.04
+      },
+      {
+        "w": "roof",
+        "s": 7.05,
+        "e": 7.28
+      },
+      {
+        "w": "of",
+        "s": 7.28,
+        "e": 7.4
+      },
+      {
+        "w": "Europe.",
+        "s": 7.4,
+        "e": 7.82
+      }
+    ]
+  },
+  {
+    "id": "downhill",
+    "file": "audio/wh02/downhill.wav",
+    "sec": 2.400271,
+    "voice": "Sadaltager",
+    "text": "And the way down turned out to be worse than the way up.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0.01,
+        "e": 0.23
+      },
+      {
+        "w": "the",
+        "s": 0.23,
+        "e": 0.46
+      },
+      {
+        "w": "way",
+        "s": 0.46,
+        "e": 0.69
+      },
+      {
+        "w": "down",
+        "s": 0.985,
+        "e": 0.99
+      },
+      {
+        "w": "turned",
+        "s": 1.02,
+        "e": 1.24
+      },
+      {
+        "w": "out",
+        "s": 1.24,
+        "e": 1.37
+      },
+      {
+        "w": "to",
+        "s": 1.38,
+        "e": 1.47
+      },
+      {
+        "w": "be",
+        "s": 1.47,
+        "e": 1.56
+      },
+      {
+        "w": "worse",
+        "s": 1.56,
+        "e": 1.75
+      },
+      {
+        "w": "than",
+        "s": 1.85,
+        "e": 1.99
+      },
+      {
+        "w": "the",
+        "s": 1.99,
+        "e": 2.13
+      },
+      {
+        "w": "way",
+        "s": 2.13,
+        "e": 2.27
+      },
+      {
+        "w": "up.",
+        "s": 2.27,
+        "e": 2.4
+      }
+    ]
+  },
+  {
+    "id": "landslide",
+    "file": "audio/wh02/landslide.wav",
+    "sec": 6.929188,
+    "voice": "Sadaltager",
+    "text": "On the Italian side, a landslide had swept the track away. There was no path left. Just a sheer slope of ice and rock.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0.05,
+        "e": 0.11
+      },
+      {
+        "w": "the",
+        "s": 0.11,
+        "e": 0.26
+      },
+      {
+        "w": "Italian",
+        "s": 0.34,
+        "e": 0.64
+      },
+      {
+        "w": "side,",
+        "s": 0.65,
+        "e": 0.99
+      },
+      {
+        "w": "a",
+        "s": 0.99,
+        "e": 1.06
+      },
+      {
+        "w": "landslide",
+        "s": 1.06,
+        "e": 1.62
+      },
+      {
+        "w": "had",
+        "s": 1.62,
+        "e": 1.8
+      },
+      {
+        "w": "swept",
+        "s": 1.8,
+        "e": 2.08
+      },
+      {
+        "w": "the",
+        "s": 2.19,
+        "e": 2.29
+      },
+      {
+        "w": "track",
+        "s": 2.29,
+        "e": 2.59
+      },
+      {
+        "w": "away.",
+        "s": 2.59,
+        "e": 3.24
+      },
+      {
+        "w": "There",
+        "s": 3.29,
+        "e": 3.5
+      },
+      {
+        "w": "was",
+        "s": 3.58,
+        "e": 3.79
+      },
+      {
+        "w": "no",
+        "s": 3.79,
+        "e": 3.92
+      },
+      {
+        "w": "path",
+        "s": 3.92,
+        "e": 4.172
+      },
+      {
+        "w": "left.",
+        "s": 4.708,
+        "e": 4.708
+      },
+      {
+        "w": "Just",
+        "s": 4.708,
+        "e": 4.93
+      },
+      {
+        "w": "a",
+        "s": 4.93,
+        "e": 4.99
+      },
+      {
+        "w": "sheer",
+        "s": 5,
+        "e": 5.32
+      },
+      {
+        "w": "slope",
+        "s": 5.43,
+        "e": 5.76
+      },
+      {
+        "w": "of",
+        "s": 5.76,
+        "e": 5.908
+      },
+      {
+        "w": "ice",
+        "s": 6.011,
+        "e": 6.011
+      },
+      {
+        "w": "and",
+        "s": 6.53,
+        "e": 6.53
+      },
+      {
+        "w": "rock.",
+        "s": 6.54,
+        "e": 6.929
+      }
+    ]
+  },
+  {
+    "id": "dig",
+    "file": "audio/wh02/dig.wav",
+    "sec": 4.836458,
+    "voice": "Sadaltager",
+    "text": "The men dug a new track into the mountainside. The horses got through after one day.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.06,
+        "e": 0.23
+      },
+      {
+        "w": "men",
+        "s": 0.23,
+        "e": 0.42
+      },
+      {
+        "w": "dug",
+        "s": 0.48,
+        "e": 0.65
+      },
+      {
+        "w": "a",
+        "s": 0.7,
+        "e": 0.75
+      },
+      {
+        "w": "new",
+        "s": 0.76,
+        "e": 0.99
+      },
+      {
+        "w": "track",
+        "s": 0.99,
+        "e": 1.38
+      },
+      {
+        "w": "into",
+        "s": 1.38,
+        "e": 1.69
+      },
+      {
+        "w": "the",
+        "s": 1.69,
+        "e": 1.92
+      },
+      {
+        "w": "mountainside.",
+        "s": 1.92,
+        "e": 2.92
+      },
+      {
+        "w": "The",
+        "s": 2.98,
+        "e": 3.1
+      },
+      {
+        "w": "horses",
+        "s": 3.1,
+        "e": 3.47
+      },
+      {
+        "w": "got",
+        "s": 3.47,
+        "e": 3.65
+      },
+      {
+        "w": "through",
+        "s": 3.65,
+        "e": 4.08
+      },
+      {
+        "w": "after",
+        "s": 4.08,
+        "e": 4.34
+      },
+      {
+        "w": "one",
+        "s": 4.4,
+        "e": 4.58
+      },
+      {
+        "w": "day.",
+        "s": 4.58,
+        "e": 4.836
+      }
+    ]
+  },
+  {
+    "id": "starving",
+    "file": "audio/wh02/starving.wav",
+    "sec": 4.655417,
+    "voice": "Sadaltager",
+    "text": "The elephants waited three days, half-starved, before the road was wide enough.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.16,
+        "e": 0.24
+      },
+      {
+        "w": "elephants",
+        "s": 0.27,
+        "e": 0.95
+      },
+      {
+        "w": "waited",
+        "s": 0.95,
+        "e": 1.23
+      },
+      {
+        "w": "three",
+        "s": 1.47,
+        "e": 1.82
+      },
+      {
+        "w": "days,",
+        "s": 1.82,
+        "e": 2.29
+      },
+      {
+        "w": "half-",
+        "s": 2.33,
+        "e": 2.62
+      },
+      {
+        "w": "starved,",
+        "s": 2.62,
+        "e": 3.21
+      },
+      {
+        "w": "before",
+        "s": 3.21,
+        "e": 3.48
+      },
+      {
+        "w": "the",
+        "s": 3.48,
+        "e": 3.61
+      },
+      {
+        "w": "road",
+        "s": 3.61,
+        "e": 3.79
+      },
+      {
+        "w": "was",
+        "s": 3.79,
+        "e": 3.83
+      },
+      {
+        "w": "wide",
+        "s": 3.91,
+        "e": 4.09
+      },
+      {
+        "w": "enough.",
+        "s": 4.09,
+        "e": 4.52
+      }
+    ]
+  },
+  {
+    "id": "vinegar",
+    "file": "audio/wh02/vinegar.wav",
+    "sec": 7.496604,
+    "voice": "Sadaltager",
+    "text": "Livy, writing two-hundred years later, says they cracked the rock with fire and vinegar. Polybius, the older source, never mentions it.",
+    "words": [
+      {
+        "w": "Livy,",
+        "s": 0,
+        "e": 0.38
+      },
+      {
+        "w": "writing",
+        "s": 0.4,
+        "e": 0.77
+      },
+      {
+        "w": "two-",
+        "s": 0.906,
+        "e": 0.906
+      },
+      {
+        "w": "hundred",
+        "s": 0.906,
+        "e": 1.43
+      },
+      {
+        "w": "years",
+        "s": 1.43,
+        "e": 1.75
+      },
+      {
+        "w": "later,",
+        "s": 1.75,
+        "e": 2.15
+      },
+      {
+        "w": "says",
+        "s": 2.28,
+        "e": 2.49
+      },
+      {
+        "w": "they",
+        "s": 2.5,
+        "e": 2.63
+      },
+      {
+        "w": "cracked",
+        "s": 2.64,
+        "e": 2.97
+      },
+      {
+        "w": "the",
+        "s": 3.08,
+        "e": 3.23
+      },
+      {
+        "w": "rock",
+        "s": 3.23,
+        "e": 3.47
+      },
+      {
+        "w": "with",
+        "s": 3.54,
+        "e": 3.61
+      },
+      {
+        "w": "fire",
+        "s": 3.83,
+        "e": 4.14
+      },
+      {
+        "w": "and",
+        "s": 4.21,
+        "e": 4.35
+      },
+      {
+        "w": "vinegar.",
+        "s": 4.37,
+        "e": 4.797
+      },
+      {
+        "w": "Polybius,",
+        "s": 5.335,
+        "e": 5.58
+      },
+      {
+        "w": "the",
+        "s": 5.58,
+        "e": 5.74
+      },
+      {
+        "w": "older",
+        "s": 5.74,
+        "e": 6.02
+      },
+      {
+        "w": "source,",
+        "s": 6.02,
+        "e": 6.46
+      },
+      {
+        "w": "never",
+        "s": 6.859,
+        "e": 6.859
+      },
+      {
+        "w": "mentions",
+        "s": 6.859,
+        "e": 7.19
+      },
+      {
+        "w": "it.",
+        "s": 7.19,
+        "e": 7.497
+      }
+    ]
+  },
+  {
+    "id": "whichpass",
+    "file": "audio/wh02/whichpass.wav",
+    "sec": 5.727458,
+    "voice": "Sadaltager",
+    "text": "And which pass did they cross? Nobody knows. At least five passes have their supporters.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0,
+        "e": 0.24
+      },
+      {
+        "w": "which",
+        "s": 0.34,
+        "e": 0.65
+      },
+      {
+        "w": "pass",
+        "s": 0.65,
+        "e": 0.98
+      },
+      {
+        "w": "did",
+        "s": 0.98,
+        "e": 1.14
+      },
+      {
+        "w": "they",
+        "s": 1.14,
+        "e": 1.47
+      },
+      {
+        "w": "cross?",
+        "s": 1.47,
+        "e": 2.16
+      },
+      {
+        "w": "Nobody",
+        "s": 2.5,
+        "e": 2.62
+      },
+      {
+        "w": "knows.",
+        "s": 2.62,
+        "e": 2.856
+      },
+      {
+        "w": "At",
+        "s": 3.295,
+        "e": 3.37
+      },
+      {
+        "w": "least",
+        "s": 3.858,
+        "e": 3.858
+      },
+      {
+        "w": "five",
+        "s": 3.858,
+        "e": 3.91
+      },
+      {
+        "w": "passes",
+        "s": 4,
+        "e": 4.38
+      },
+      {
+        "w": "have",
+        "s": 4.38,
+        "e": 4.64
+      },
+      {
+        "w": "their",
+        "s": 4.66,
+        "e": 4.97
+      },
+      {
+        "w": "supporters.",
+        "s": 5.43,
+        "e": 5.727
+      }
+    ]
+  },
+  {
+    "id": "dung",
+    "file": "audio/wh02/dung.wav",
+    "sec": 9.346771,
+    "voice": "Sadaltager",
+    "text": "In twenty-sixteen, scientists found a layer of ancient horse dung below the Col de la Traversette, dated to around two-hundred BC. Interesting, but not proof.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.065
+      },
+      {
+        "w": "twenty-",
+        "s": 0.257,
+        "e": 0.257
+      },
+      {
+        "w": "sixteen,",
+        "s": 0.257,
+        "e": 1.07
+      },
+      {
+        "w": "scientists",
+        "s": 1.07,
+        "e": 1.66
+      },
+      {
+        "w": "found",
+        "s": 1.83,
+        "e": 2.06
+      },
+      {
+        "w": "a",
+        "s": 2.11,
+        "e": 2.13
+      },
+      {
+        "w": "layer",
+        "s": 2.13,
+        "e": 2.5
+      },
+      {
+        "w": "of",
+        "s": 2.5,
+        "e": 2.58
+      },
+      {
+        "w": "ancient",
+        "s": 2.74,
+        "e": 3.1
+      },
+      {
+        "w": "horse",
+        "s": 3.32,
+        "e": 3.65
+      },
+      {
+        "w": "dung",
+        "s": 3.65,
+        "e": 3.9
+      },
+      {
+        "w": "below",
+        "s": 4.16,
+        "e": 4.4
+      },
+      {
+        "w": "the",
+        "s": 4.4,
+        "e": 4.59
+      },
+      {
+        "w": "Col",
+        "s": 4.66,
+        "e": 4.88
+      },
+      {
+        "w": "de",
+        "s": 4.89,
+        "e": 5.06
+      },
+      {
+        "w": "la",
+        "s": 5.06,
+        "e": 5.23
+      },
+      {
+        "w": "Traversette,",
+        "s": 5.23,
+        "e": 6.08
+      },
+      {
+        "w": "dated",
+        "s": 6.33,
+        "e": 6.41
+      },
+      {
+        "w": "to",
+        "s": 6.43,
+        "e": 6.55
+      },
+      {
+        "w": "around",
+        "s": 6.55,
+        "e": 6.683
+      },
+      {
+        "w": "two-",
+        "s": 6.683,
+        "e": 6.75
+      },
+      {
+        "w": "hundred",
+        "s": 6.75,
+        "e": 7.53
+      },
+      {
+        "w": "BC.",
+        "s": 7.999,
+        "e": 7.999
+      },
+      {
+        "w": "Interesting,",
+        "s": 8.17,
+        "e": 8.466
+      },
+      {
+        "w": "but",
+        "s": 8.667,
+        "e": 8.69
+      },
+      {
+        "w": "not",
+        "s": 8.78,
+        "e": 8.92
+      },
+      {
+        "w": "proof.",
+        "s": 8.92,
+        "e": 9.347
+      }
+    ]
+  },
+  {
+    "id": "caveat",
+    "file": "audio/wh02/caveat.wav",
+    "sec": 5.994396,
+    "voice": "Sadaltager",
+    "text": "But that date could be sixty years off, and no Carthaginian objects were found there. The mystery is still open.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0.07,
+        "e": 0.17
+      },
+      {
+        "w": "that",
+        "s": 0.21,
+        "e": 0.41
+      },
+      {
+        "w": "date",
+        "s": 0.5,
+        "e": 0.61
+      },
+      {
+        "w": "could",
+        "s": 0.72,
+        "e": 0.98
+      },
+      {
+        "w": "be",
+        "s": 0.98,
+        "e": 1.1
+      },
+      {
+        "w": "sixty",
+        "s": 1.1,
+        "e": 1.48
+      },
+      {
+        "w": "years",
+        "s": 1.48,
+        "e": 1.72
+      },
+      {
+        "w": "off,",
+        "s": 2.089,
+        "e": 2.12
+      },
+      {
+        "w": "and",
+        "s": 2.12,
+        "e": 2.31
+      },
+      {
+        "w": "no",
+        "s": 2.31,
+        "e": 2.43
+      },
+      {
+        "w": "Carthaginian",
+        "s": 2.43,
+        "e": 3.17
+      },
+      {
+        "w": "objects",
+        "s": 3.17,
+        "e": 3.6
+      },
+      {
+        "w": "were",
+        "s": 3.68,
+        "e": 3.84
+      },
+      {
+        "w": "found",
+        "s": 3.84,
+        "e": 4.16
+      },
+      {
+        "w": "there.",
+        "s": 4.16,
+        "e": 4.74
+      },
+      {
+        "w": "The",
+        "s": 4.81,
+        "e": 4.91
+      },
+      {
+        "w": "mystery",
+        "s": 4.95,
+        "e": 5.32
+      },
+      {
+        "w": "is",
+        "s": 5.32,
+        "e": 5.36
+      },
+      {
+        "w": "still",
+        "s": 5.46,
+        "e": 5.72
+      },
+      {
+        "w": "open.",
+        "s": 5.72,
+        "e": 5.994
+      }
+    ]
+  },
+  {
+    "id": "energy",
+    "file": "audio/wh02/energy.wav",
+    "sec": 9.307146,
+    "voice": "Sadaltager",
+    "text": "A twenty-twenty-six study modelled how much energy each route would cost, and also picked the Traversette. Other historians are not convinced.",
+    "words": [
+      {
+        "w": "A",
+        "s": 0,
+        "e": 0.07
+      },
+      {
+        "w": "twenty-",
+        "s": 0.07,
+        "e": 0.237
+      },
+      {
+        "w": "twenty-",
+        "s": 0.237,
+        "e": 0.44
+      },
+      {
+        "w": "six",
+        "s": 0.44,
+        "e": 0.95
+      },
+      {
+        "w": "study",
+        "s": 0.95,
+        "e": 1.25
+      },
+      {
+        "w": "modelled",
+        "s": 1.34,
+        "e": 1.81
+      },
+      {
+        "w": "how",
+        "s": 1.83,
+        "e": 2.01
+      },
+      {
+        "w": "much",
+        "s": 2.06,
+        "e": 2.32
+      },
+      {
+        "w": "energy",
+        "s": 2.33,
+        "e": 2.74
+      },
+      {
+        "w": "each",
+        "s": 2.82,
+        "e": 3
+      },
+      {
+        "w": "route",
+        "s": 3.08,
+        "e": 3.28
+      },
+      {
+        "w": "would",
+        "s": 3.37,
+        "e": 3.51
+      },
+      {
+        "w": "cost,",
+        "s": 3.57,
+        "e": 4.24
+      },
+      {
+        "w": "and",
+        "s": 4.24,
+        "e": 4.35
+      },
+      {
+        "w": "also",
+        "s": 4.44,
+        "e": 4.7
+      },
+      {
+        "w": "picked",
+        "s": 4.7,
+        "e": 5.04
+      },
+      {
+        "w": "the",
+        "s": 5.04,
+        "e": 5.18
+      },
+      {
+        "w": "Traversette.",
+        "s": 5.29,
+        "e": 6.36
+      },
+      {
+        "w": "Other",
+        "s": 6.45,
+        "e": 6.71
+      },
+      {
+        "w": "historians",
+        "s": 6.74,
+        "e": 7.47
+      },
+      {
+        "w": "are",
+        "s": 7.54,
+        "e": 7.7
+      },
+      {
+        "w": "not",
+        "s": 7.7,
+        "e": 7.905
+      },
+      {
+        "w": "convinced.",
+        "s": 8.541,
+        "e": 9.307
+      }
+    ]
+  },
+  {
+    "id": "quiz2",
+    "file": "audio/wh02/quiz2.wav",
+    "sec": 5.459104,
+    "voice": "Sadaltager",
+    "text": "Quiz time. How many of the thirty-seven elephants made it over the Alps? None, about half, or most of them?",
+    "words": [
+      {
+        "w": "Quiz",
+        "s": 0,
+        "e": 0.022
+      },
+      {
+        "w": "time.",
+        "s": 0.022,
+        "e": 0.05
+      },
+      {
+        "w": "How",
+        "s": 0.05,
+        "e": 0.19
+      },
+      {
+        "w": "many",
+        "s": 0.19,
+        "e": 0.45
+      },
+      {
+        "w": "of",
+        "s": 0.45,
+        "e": 0.58
+      },
+      {
+        "w": "the",
+        "s": 0.58,
+        "e": 0.58
+      },
+      {
+        "w": "thirty-",
+        "s": 0.58,
+        "e": 0.707
+      },
+      {
+        "w": "seven",
+        "s": 0.707,
+        "e": 1.16
+      },
+      {
+        "w": "elephants",
+        "s": 1.16,
+        "e": 1.59
+      },
+      {
+        "w": "made",
+        "s": 1.78,
+        "e": 2.04
+      },
+      {
+        "w": "it",
+        "s": 2.04,
+        "e": 2.18
+      },
+      {
+        "w": "over",
+        "s": 2.18,
+        "e": 2.51
+      },
+      {
+        "w": "the",
+        "s": 2.51,
+        "e": 2.68
+      },
+      {
+        "w": "Alps?",
+        "s": 2.76,
+        "e": 3.35
+      },
+      {
+        "w": "None,",
+        "s": 3.41,
+        "e": 3.68
+      },
+      {
+        "w": "about",
+        "s": 3.959,
+        "e": 4.19
+      },
+      {
+        "w": "half,",
+        "s": 4.19,
+        "e": 4.49
+      },
+      {
+        "w": "or",
+        "s": 4.857,
+        "e": 4.857
+      },
+      {
+        "w": "most",
+        "s": 4.857,
+        "e": 4.94
+      },
+      {
+        "w": "of",
+        "s": 4.94,
+        "e": 5.03
+      },
+      {
+        "w": "them?",
+        "s": 5.13,
+        "e": 5.459
+      }
+    ]
+  },
+  {
+    "id": "quizans2",
+    "file": "audio/wh02/quizans2.wav",
+    "sec": 5.919333,
+    "voice": "Sadaltager",
+    "text": "Most of them. Despite the legend, the elephants survived the Alps. It was what came next that killed them.",
+    "words": [
+      {
+        "w": "Most",
+        "s": 0,
+        "e": 0.42
+      },
+      {
+        "w": "of",
+        "s": 0.925,
+        "e": 0.925
+      },
+      {
+        "w": "them.",
+        "s": 0.92,
+        "e": 1.18
+      },
+      {
+        "w": "Despite",
+        "s": 1.18,
+        "e": 1.58
+      },
+      {
+        "w": "the",
+        "s": 1.58,
+        "e": 1.67
+      },
+      {
+        "w": "legend,",
+        "s": 2.127,
+        "e": 2.24
+      },
+      {
+        "w": "the",
+        "s": 2.3,
+        "e": 2.39
+      },
+      {
+        "w": "elephants",
+        "s": 2.39,
+        "e": 2.88
+      },
+      {
+        "w": "survived",
+        "s": 2.88,
+        "e": 3.42
+      },
+      {
+        "w": "the",
+        "s": 3.46,
+        "e": 3.67
+      },
+      {
+        "w": "Alps.",
+        "s": 3.76,
+        "e": 4.2
+      },
+      {
+        "w": "It",
+        "s": 4.2,
+        "e": 4.32
+      },
+      {
+        "w": "was",
+        "s": 4.32,
+        "e": 4.48
+      },
+      {
+        "w": "what",
+        "s": 4.48,
+        "e": 4.69
+      },
+      {
+        "w": "came",
+        "s": 4.98,
+        "e": 4.98
+      },
+      {
+        "w": "next",
+        "s": 4.98,
+        "e": 5.22
+      },
+      {
+        "w": "that",
+        "s": 5.22,
+        "e": 5.46
+      },
+      {
+        "w": "killed",
+        "s": 5.46,
+        "e": 5.82
+      },
+      {
+        "w": "them.",
+        "s": 5.82,
+        "e": 5.919
+      }
+    ]
+  },
+  {
+    "id": "arrive",
+    "file": "audio/wh02/arrive.wav",
+    "sec": 9.052938,
+    "voice": "Sadaltager",
+    "text": "Hannibal reached the plains of northern Italy with twenty-thousand foot and six-thousand horse. We know, because he carved the numbers in bronze himself.",
+    "words": [
+      {
+        "w": "Hannibal",
+        "s": 0.03,
+        "e": 0.42
+      },
+      {
+        "w": "reached",
+        "s": 0.43,
+        "e": 0.8
+      },
+      {
+        "w": "the",
+        "s": 0.88,
+        "e": 1.01
+      },
+      {
+        "w": "plains",
+        "s": 1.01,
+        "e": 1.34
+      },
+      {
+        "w": "of",
+        "s": 1.38,
+        "e": 1.45
+      },
+      {
+        "w": "northern",
+        "s": 1.46,
+        "e": 1.91
+      },
+      {
+        "w": "Italy",
+        "s": 1.91,
+        "e": 2.23
+      },
+      {
+        "w": "with",
+        "s": 2.23,
+        "e": 2.285
+      },
+      {
+        "w": "twenty-",
+        "s": 2.5,
+        "e": 2.5
+      },
+      {
+        "w": "thousand",
+        "s": 2.5,
+        "e": 3.61
+      },
+      {
+        "w": "foot",
+        "s": 3.61,
+        "e": 3.9
+      },
+      {
+        "w": "and",
+        "s": 3.9,
+        "e": 4.08
+      },
+      {
+        "w": "six-",
+        "s": 4.08,
+        "e": 4.08
+      },
+      {
+        "w": "thousand",
+        "s": 4.08,
+        "e": 5.01
+      },
+      {
+        "w": "horse.",
+        "s": 5.01,
+        "e": 5.76
+      },
+      {
+        "w": "We",
+        "s": 5.78,
+        "e": 5.9
+      },
+      {
+        "w": "know,",
+        "s": 5.9,
+        "e": 6.165
+      },
+      {
+        "w": "because",
+        "s": 6.507,
+        "e": 6.66
+      },
+      {
+        "w": "he",
+        "s": 6.69,
+        "e": 6.81
+      },
+      {
+        "w": "carved",
+        "s": 6.81,
+        "e": 7.23
+      },
+      {
+        "w": "the",
+        "s": 7.23,
+        "e": 7.44
+      },
+      {
+        "w": "numbers",
+        "s": 7.44,
+        "e": 7.91
+      },
+      {
+        "w": "in",
+        "s": 7.97,
+        "e": 8.07
+      },
+      {
+        "w": "bronze",
+        "s": 8.07,
+        "e": 8.49
+      },
+      {
+        "w": "himself.",
+        "s": 8.49,
+        "e": 9
+      }
+    ]
+  },
+  {
+    "id": "half",
+    "file": "audio/wh02/half.wav",
+    "sec": 6.436375,
+    "voice": "Sadaltager",
+    "text": "In fifteen days in the Alps, he had lost about half the army that left the Rhône. Many deserted. Many died.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.14
+      },
+      {
+        "w": "fifteen",
+        "s": 0.26,
+        "e": 0.54
+      },
+      {
+        "w": "days",
+        "s": 0.67,
+        "e": 0.93
+      },
+      {
+        "w": "in",
+        "s": 0.97,
+        "e": 1.08
+      },
+      {
+        "w": "the",
+        "s": 1.08,
+        "e": 1.3
+      },
+      {
+        "w": "Alps,",
+        "s": 1.3,
+        "e": 1.76
+      },
+      {
+        "w": "he",
+        "s": 1.76,
+        "e": 1.89
+      },
+      {
+        "w": "had",
+        "s": 1.89,
+        "e": 2.09
+      },
+      {
+        "w": "lost",
+        "s": 2.09,
+        "e": 2.28
+      },
+      {
+        "w": "about",
+        "s": 2.38,
+        "e": 2.67
+      },
+      {
+        "w": "half",
+        "s": 2.74,
+        "e": 2.9
+      },
+      {
+        "w": "the",
+        "s": 3.03,
+        "e": 3.17
+      },
+      {
+        "w": "army",
+        "s": 3.17,
+        "e": 3.44
+      },
+      {
+        "w": "that",
+        "s": 3.51,
+        "e": 3.75
+      },
+      {
+        "w": "left",
+        "s": 3.922,
+        "e": 4
+      },
+      {
+        "w": "the",
+        "s": 4,
+        "e": 4.18
+      },
+      {
+        "w": "Rhône.",
+        "s": 4.698,
+        "e": 4.88
+      },
+      {
+        "w": "Many",
+        "s": 5.14,
+        "e": 5.18
+      },
+      {
+        "w": "deserted.",
+        "s": 5.18,
+        "e": 6.02
+      },
+      {
+        "w": "Many",
+        "s": 6.22,
+        "e": 6.22
+      },
+      {
+        "w": "died.",
+        "s": 6.28,
+        "e": 6.42
+      }
+    ]
+  },
+  {
+    "id": "ticinus",
+    "file": "audio/wh02/ticinus.wav",
+    "sec": 7.735938,
+    "voice": "Sadaltager",
+    "text": "Rome was stunned. In November, at the Ticinus river, Hannibal's cavalry routed the Romans. The consul Scipio was wounded.",
+    "words": [
+      {
+        "w": "Rome",
+        "s": 0.36,
+        "e": 0.42
+      },
+      {
+        "w": "was",
+        "s": 0.42,
+        "e": 0.74
+      },
+      {
+        "w": "stunned.",
+        "s": 0.74,
+        "e": 1.84
+      },
+      {
+        "w": "In",
+        "s": 1.84,
+        "e": 1.96
+      },
+      {
+        "w": "November,",
+        "s": 1.96,
+        "e": 2.45
+      },
+      {
+        "w": "at",
+        "s": 2.45,
+        "e": 2.57
+      },
+      {
+        "w": "the",
+        "s": 2.57,
+        "e": 2.7
+      },
+      {
+        "w": "Ticinus",
+        "s": 2.78,
+        "e": 3.17
+      },
+      {
+        "w": "river,",
+        "s": 3.17,
+        "e": 3.58
+      },
+      {
+        "w": "Hannibal's",
+        "s": 3.63,
+        "e": 4
+      },
+      {
+        "w": "cavalry",
+        "s": 4,
+        "e": 4.55
+      },
+      {
+        "w": "routed",
+        "s": 4.66,
+        "e": 5.01
+      },
+      {
+        "w": "the",
+        "s": 5.03,
+        "e": 5.21
+      },
+      {
+        "w": "Romans.",
+        "s": 5.22,
+        "e": 5.672
+      },
+      {
+        "w": "The",
+        "s": 6.052,
+        "e": 6.052
+      },
+      {
+        "w": "consul",
+        "s": 6.05,
+        "e": 6.34
+      },
+      {
+        "w": "Scipio",
+        "s": 6.34,
+        "e": 6.74
+      },
+      {
+        "w": "was",
+        "s": 6.74,
+        "e": 6.95
+      },
+      {
+        "w": "wounded.",
+        "s": 6.95,
+        "e": 7.65
+      }
+    ]
+  },
+  {
+    "id": "trebia",
+    "file": "audio/wh02/trebia.wav",
+    "sec": 8.608229,
+    "voice": "Sadaltager",
+    "text": "In December, at the Trebia, he lured about forty-thousand Romans across an icy river and ambushed them. Only about ten-thousand broke out.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.17
+      },
+      {
+        "w": "December,",
+        "s": 0.17,
+        "e": 0.94
+      },
+      {
+        "w": "at",
+        "s": 0.94,
+        "e": 1.04
+      },
+      {
+        "w": "the",
+        "s": 1.04,
+        "e": 1.3
+      },
+      {
+        "w": "Trebia,",
+        "s": 1.3,
+        "e": 1.97
+      },
+      {
+        "w": "he",
+        "s": 1.97,
+        "e": 2.1
+      },
+      {
+        "w": "lured",
+        "s": 2.1,
+        "e": 2.43
+      },
+      {
+        "w": "about",
+        "s": 2.46,
+        "e": 2.556
+      },
+      {
+        "w": "forty-",
+        "s": 2.556,
+        "e": 2.556
+      },
+      {
+        "w": "thousand",
+        "s": 2.556,
+        "e": 3.72
+      },
+      {
+        "w": "Romans",
+        "s": 3.72,
+        "e": 4.04
+      },
+      {
+        "w": "across",
+        "s": 4.08,
+        "e": 4.57
+      },
+      {
+        "w": "an",
+        "s": 4.57,
+        "e": 4.71
+      },
+      {
+        "w": "icy",
+        "s": 4.73,
+        "e": 4.95
+      },
+      {
+        "w": "river",
+        "s": 5.02,
+        "e": 5.148
+      },
+      {
+        "w": "and",
+        "s": 5.556,
+        "e": 5.556
+      },
+      {
+        "w": "ambushed",
+        "s": 5.95,
+        "e": 6.174
+      },
+      {
+        "w": "them.",
+        "s": 6.846,
+        "e": 6.86
+      },
+      {
+        "w": "Only",
+        "s": 6.86,
+        "e": 7.06
+      },
+      {
+        "w": "about",
+        "s": 7.08,
+        "e": 7.288
+      },
+      {
+        "w": "ten-",
+        "s": 7.487,
+        "e": 7.487
+      },
+      {
+        "w": "thousand",
+        "s": 7.487,
+        "e": 8.25
+      },
+      {
+        "w": "broke",
+        "s": 8.25,
+        "e": 8.3
+      },
+      {
+        "w": "out.",
+        "s": 8.68,
+        "e": 8.608
+      }
+    ]
+  },
+  {
+    "id": "mago",
+    "file": "audio/wh02/mago.wav",
+    "sec": 6.299313,
+    "voice": "Sadaltager",
+    "text": "His brother Mago had hidden two-thousand men in a stream bed. When the Romans had crossed, they struck from behind.",
+    "words": [
+      {
+        "w": "His",
+        "s": 0,
+        "e": 0.21
+      },
+      {
+        "w": "brother",
+        "s": 0.34,
+        "e": 0.7
+      },
+      {
+        "w": "Mago",
+        "s": 0.84,
+        "e": 1.11
+      },
+      {
+        "w": "had",
+        "s": 1.32,
+        "e": 1.42
+      },
+      {
+        "w": "hidden",
+        "s": 1.43,
+        "e": 1.7
+      },
+      {
+        "w": "two-",
+        "s": 1.7,
+        "e": 1.7
+      },
+      {
+        "w": "thousand",
+        "s": 1.7,
+        "e": 2.46
+      },
+      {
+        "w": "men",
+        "s": 2.46,
+        "e": 2.64
+      },
+      {
+        "w": "in",
+        "s": 2.64,
+        "e": 2.77
+      },
+      {
+        "w": "a",
+        "s": 2.79,
+        "e": 2.86
+      },
+      {
+        "w": "stream",
+        "s": 2.91,
+        "e": 3.28
+      },
+      {
+        "w": "bed.",
+        "s": 3.902,
+        "e": 3.902
+      },
+      {
+        "w": "When",
+        "s": 3.902,
+        "e": 4.03
+      },
+      {
+        "w": "the",
+        "s": 4.17,
+        "e": 4.24
+      },
+      {
+        "w": "Romans",
+        "s": 4.24,
+        "e": 4.58
+      },
+      {
+        "w": "had",
+        "s": 4.58,
+        "e": 4.75
+      },
+      {
+        "w": "crossed,",
+        "s": 4.75,
+        "e": 5.28
+      },
+      {
+        "w": "they",
+        "s": 5.39,
+        "e": 5.48
+      },
+      {
+        "w": "struck",
+        "s": 5.48,
+        "e": 5.79
+      },
+      {
+        "w": "from",
+        "s": 5.79,
+        "e": 5.99
+      },
+      {
+        "w": "behind.",
+        "s": 5.99,
+        "e": 6.299
+      }
+    ]
+  },
+  {
+    "id": "lastelephant",
+    "file": "audio/wh02/lastelephant.wav",
+    "sec": 2.799479,
+    "voice": "Sadaltager",
+    "text": "But the winter that followed killed every elephant but one.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0.08,
+        "e": 0.11
+      },
+      {
+        "w": "the",
+        "s": 0.18,
+        "e": 0.32
+      },
+      {
+        "w": "winter",
+        "s": 0.32,
+        "e": 0.64
+      },
+      {
+        "w": "that",
+        "s": 0.64,
+        "e": 0.85
+      },
+      {
+        "w": "followed",
+        "s": 0.85,
+        "e": 1.08
+      },
+      {
+        "w": "killed",
+        "s": 1.37,
+        "e": 1.62
+      },
+      {
+        "w": "every",
+        "s": 1.7,
+        "e": 1.94
+      },
+      {
+        "w": "elephant",
+        "s": 1.94,
+        "e": 2.37
+      },
+      {
+        "w": "but",
+        "s": 2.44,
+        "e": 2.55
+      },
+      {
+        "w": "one.",
+        "s": 2.57,
+        "e": 2.77
+      }
+    ]
+  },
+  {
+    "id": "eye",
+    "file": "audio/wh02/eye.wav",
+    "sec": 6.580333,
+    "voice": "Sadaltager",
+    "text": "In the spring, Hannibal rode that last elephant through flooded marshes. He caught an infection there, and lost the sight of one eye.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.12
+      },
+      {
+        "w": "the",
+        "s": 0.12,
+        "e": 0.22
+      },
+      {
+        "w": "spring,",
+        "s": 0.31,
+        "e": 0.8
+      },
+      {
+        "w": "Hannibal",
+        "s": 0.87,
+        "e": 1.28
+      },
+      {
+        "w": "rode",
+        "s": 1.28,
+        "e": 1.45
+      },
+      {
+        "w": "that",
+        "s": 1.52,
+        "e": 1.76
+      },
+      {
+        "w": "last",
+        "s": 1.76,
+        "e": 1.95
+      },
+      {
+        "w": "elephant",
+        "s": 2,
+        "e": 2.51
+      },
+      {
+        "w": "through",
+        "s": 2.56,
+        "e": 2.9
+      },
+      {
+        "w": "flooded",
+        "s": 2.9,
+        "e": 3.28
+      },
+      {
+        "w": "marshes.",
+        "s": 3.28,
+        "e": 4
+      },
+      {
+        "w": "He",
+        "s": 4,
+        "e": 4.11
+      },
+      {
+        "w": "caught",
+        "s": 4.11,
+        "e": 4.44
+      },
+      {
+        "w": "an",
+        "s": 4.44,
+        "e": 4.54
+      },
+      {
+        "w": "infection",
+        "s": 4.54,
+        "e": 5.05
+      },
+      {
+        "w": "there,",
+        "s": 5.327,
+        "e": 5.36
+      },
+      {
+        "w": "and",
+        "s": 5.36,
+        "e": 5.45
+      },
+      {
+        "w": "lost",
+        "s": 5.52,
+        "e": 5.67
+      },
+      {
+        "w": "the",
+        "s": 5.68,
+        "e": 5.82
+      },
+      {
+        "w": "sight",
+        "s": 5.82,
+        "e": 6
+      },
+      {
+        "w": "of",
+        "s": 6.08,
+        "e": 6.14
+      },
+      {
+        "w": "one",
+        "s": 6.14,
+        "e": 6.23
+      },
+      {
+        "w": "eye.",
+        "s": 6.33,
+        "e": 6.58
+      }
+    ]
+  },
+  {
+    "id": "trasimene",
+    "file": "audio/wh02/trasimene.wav",
+    "sec": 8.558438,
+    "voice": "Sadaltager",
+    "text": "In June two-hundred-seventeen BC, at Lake Trasimene, he hid his army in the hills. A Roman army marched along the shore, into the morning fog.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0.15,
+        "e": 0.21
+      },
+      {
+        "w": "June",
+        "s": 0.21,
+        "e": 0.313
+      },
+      {
+        "w": "two-",
+        "s": 0.313,
+        "e": 0.313
+      },
+      {
+        "w": "hundred-",
+        "s": 0.313,
+        "e": 0.517
+      },
+      {
+        "w": "seventeen",
+        "s": 0.517,
+        "e": 1.57
+      },
+      {
+        "w": "BC,",
+        "s": 1.57,
+        "e": 1.79
+      },
+      {
+        "w": "at",
+        "s": 2.206,
+        "e": 2.206
+      },
+      {
+        "w": "Lake",
+        "s": 2.2,
+        "e": 2.45
+      },
+      {
+        "w": "Trasimene,",
+        "s": 2.45,
+        "e": 3.032
+      },
+      {
+        "w": "he",
+        "s": 3.492,
+        "e": 3.492
+      },
+      {
+        "w": "hid",
+        "s": 3.49,
+        "e": 3.68
+      },
+      {
+        "w": "his",
+        "s": 3.68,
+        "e": 3.92
+      },
+      {
+        "w": "army",
+        "s": 3.92,
+        "e": 4.24
+      },
+      {
+        "w": "in",
+        "s": 4.24,
+        "e": 4.4
+      },
+      {
+        "w": "the",
+        "s": 4.4,
+        "e": 4.64
+      },
+      {
+        "w": "hills.",
+        "s": 4.64,
+        "e": 4.842
+      },
+      {
+        "w": "A",
+        "s": 5.432,
+        "e": 5.432
+      },
+      {
+        "w": "Roman",
+        "s": 5.47,
+        "e": 5.68
+      },
+      {
+        "w": "army",
+        "s": 5.68,
+        "e": 5.92
+      },
+      {
+        "w": "marched",
+        "s": 5.98,
+        "e": 6.39
+      },
+      {
+        "w": "along",
+        "s": 6.39,
+        "e": 6.7
+      },
+      {
+        "w": "the",
+        "s": 6.71,
+        "e": 6.9
+      },
+      {
+        "w": "shore,",
+        "s": 6.9,
+        "e": 7.256
+      },
+      {
+        "w": "into",
+        "s": 7.528,
+        "e": 7.528
+      },
+      {
+        "w": "the",
+        "s": 7.528,
+        "e": 7.67
+      },
+      {
+        "w": "morning",
+        "s": 7.67,
+        "e": 8.12
+      },
+      {
+        "w": "fog.",
+        "s": 8.12,
+        "e": 8.558
+      }
+    ]
+  },
+  {
+    "id": "trap",
+    "file": "audio/wh02/trap.wav",
+    "sec": 4.919021,
+    "voice": "Sadaltager",
+    "text": "About fifteen-thousand Romans were killed in a few hours, including the consul Flaminius.",
+    "words": [
+      {
+        "w": "About",
+        "s": 0,
+        "e": 0.176
+      },
+      {
+        "w": "fifteen-",
+        "s": 0.434,
+        "e": 0.434
+      },
+      {
+        "w": "thousand",
+        "s": 0.434,
+        "e": 1.32
+      },
+      {
+        "w": "Romans",
+        "s": 1.32,
+        "e": 1.68
+      },
+      {
+        "w": "were",
+        "s": 1.68,
+        "e": 1.86
+      },
+      {
+        "w": "killed",
+        "s": 2.01,
+        "e": 2.32
+      },
+      {
+        "w": "in",
+        "s": 2.32,
+        "e": 2.39
+      },
+      {
+        "w": "a",
+        "s": 2.53,
+        "e": 2.6
+      },
+      {
+        "w": "few",
+        "s": 2.6,
+        "e": 2.88
+      },
+      {
+        "w": "hours,",
+        "s": 2.88,
+        "e": 3.4
+      },
+      {
+        "w": "including",
+        "s": 3.4,
+        "e": 3.91
+      },
+      {
+        "w": "the",
+        "s": 3.91,
+        "e": 4.08
+      },
+      {
+        "w": "consul",
+        "s": 4.08,
+        "e": 4.4
+      },
+      {
+        "w": "Flaminius.",
+        "s": 4.41,
+        "e": 4.919
+      }
+    ]
+  },
+  {
+    "id": "fabius",
+    "file": "audio/wh02/fabius.wav",
+    "sec": 7.430792,
+    "voice": "Sadaltager",
+    "text": "Rome panicked. It gave power to Fabius Maximus, who refused to fight a battle at all. He just followed Hannibal and wore him down.",
+    "words": [
+      {
+        "w": "Rome",
+        "s": 0.14,
+        "e": 0.26
+      },
+      {
+        "w": "panicked.",
+        "s": 0.26,
+        "e": 0.797
+      },
+      {
+        "w": "It",
+        "s": 1.264,
+        "e": 1.264
+      },
+      {
+        "w": "gave",
+        "s": 1.26,
+        "e": 1.48
+      },
+      {
+        "w": "power",
+        "s": 1.58,
+        "e": 1.87
+      },
+      {
+        "w": "to",
+        "s": 1.93,
+        "e": 2.01
+      },
+      {
+        "w": "Fabius",
+        "s": 2.15,
+        "e": 2.57
+      },
+      {
+        "w": "Maximus,",
+        "s": 2.57,
+        "e": 3.29
+      },
+      {
+        "w": "who",
+        "s": 3.38,
+        "e": 3.43
+      },
+      {
+        "w": "refused",
+        "s": 3.43,
+        "e": 3.75
+      },
+      {
+        "w": "to",
+        "s": 3.75,
+        "e": 3.82
+      },
+      {
+        "w": "fight",
+        "s": 3.88,
+        "e": 3.93
+      },
+      {
+        "w": "a",
+        "s": 4.07,
+        "e": 4.11
+      },
+      {
+        "w": "battle",
+        "s": 4.11,
+        "e": 4.39
+      },
+      {
+        "w": "at",
+        "s": 4.39,
+        "e": 4.48
+      },
+      {
+        "w": "all.",
+        "s": 4.48,
+        "e": 4.79
+      },
+      {
+        "w": "He",
+        "s": 5.473,
+        "e": 5.473
+      },
+      {
+        "w": "just",
+        "s": 5.473,
+        "e": 5.473
+      },
+      {
+        "w": "followed",
+        "s": 5.5,
+        "e": 5.67
+      },
+      {
+        "w": "Hannibal",
+        "s": 5.875,
+        "e": 6.15
+      },
+      {
+        "w": "and",
+        "s": 6.15,
+        "e": 6.36
+      },
+      {
+        "w": "wore",
+        "s": 6.61,
+        "e": 6.61
+      },
+      {
+        "w": "him",
+        "s": 6.62,
+        "e": 6.8
+      },
+      {
+        "w": "down.",
+        "s": 6.8,
+        "e": 7.23
+      }
+    ]
+  },
+  {
+    "id": "impatient",
+    "file": "audio/wh02/impatient.wav",
+    "sec": 6.253979,
+    "voice": "Sadaltager",
+    "text": "Romans mocked him as the Delayer. By the next summer they wanted a real battle, and a big army to win it.",
+    "words": [
+      {
+        "w": "Romans",
+        "s": 0.01,
+        "e": 0.61
+      },
+      {
+        "w": "mocked",
+        "s": 0.61,
+        "e": 1.19
+      },
+      {
+        "w": "him",
+        "s": 1.25,
+        "e": 1.52
+      },
+      {
+        "w": "as",
+        "s": 1.52,
+        "e": 1.72
+      },
+      {
+        "w": "the",
+        "s": 3.029,
+        "e": 3.029
+      },
+      {
+        "w": "Delayer.",
+        "s": 3.029,
+        "e": 3.08
+      },
+      {
+        "w": "By",
+        "s": 3.09,
+        "e": 3.19
+      },
+      {
+        "w": "the",
+        "s": 3.19,
+        "e": 3.36
+      },
+      {
+        "w": "next",
+        "s": 3.36,
+        "e": 3.59
+      },
+      {
+        "w": "summer",
+        "s": 3.976,
+        "e": 3.976
+      },
+      {
+        "w": "they",
+        "s": 4.15,
+        "e": 4.27
+      },
+      {
+        "w": "wanted",
+        "s": 4.33,
+        "e": 4.64
+      },
+      {
+        "w": "a",
+        "s": 4.64,
+        "e": 4.69
+      },
+      {
+        "w": "real",
+        "s": 4.69,
+        "e": 4.85
+      },
+      {
+        "w": "battle,",
+        "s": 5.28,
+        "e": 5.28
+      },
+      {
+        "w": "and",
+        "s": 5.28,
+        "e": 5.46
+      },
+      {
+        "w": "a",
+        "s": 5.46,
+        "e": 5.52
+      },
+      {
+        "w": "big",
+        "s": 5.52,
+        "e": 5.7
+      },
+      {
+        "w": "army",
+        "s": 5.76,
+        "e": 5.96
+      },
+      {
+        "w": "to",
+        "s": 6.02,
+        "e": 6.02
+      },
+      {
+        "w": "win",
+        "s": 6.11,
+        "e": 6.11
+      },
+      {
+        "w": "it.",
+        "s": 6.11,
+        "e": 6.254
+      }
+    ]
+  },
+  {
+    "id": "cannae",
+    "file": "audio/wh02/cannae.wav",
+    "sec": 6.669063,
+    "voice": "Sadaltager",
+    "text": "On the second of August two-hundred-sixteen BC, at Cannae, about eighty-six-thousand Romans faced Hannibal's fifty-thousand.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0.02,
+        "e": 0.15
+      },
+      {
+        "w": "the",
+        "s": 0.15,
+        "e": 0.277
+      },
+      {
+        "w": "second",
+        "s": 0.277,
+        "e": 0.73
+      },
+      {
+        "w": "of",
+        "s": 0.73,
+        "e": 0.83
+      },
+      {
+        "w": "August",
+        "s": 1.04,
+        "e": 1.228
+      },
+      {
+        "w": "two-",
+        "s": 1.228,
+        "e": 1.311
+      },
+      {
+        "w": "hundred-",
+        "s": 1.311,
+        "e": 1.339
+      },
+      {
+        "w": "sixteen",
+        "s": 1.339,
+        "e": 2.015
+      },
+      {
+        "w": "BC,",
+        "s": 2.351,
+        "e": 2.51
+      },
+      {
+        "w": "at",
+        "s": 2.51,
+        "e": 2.7
+      },
+      {
+        "w": "Cannae,",
+        "s": 2.7,
+        "e": 3.4
+      },
+      {
+        "w": "about",
+        "s": 3.622,
+        "e": 3.656
+      },
+      {
+        "w": "eighty-",
+        "s": 3.656,
+        "e": 3.656
+      },
+      {
+        "w": "six-",
+        "s": 3.656,
+        "e": 3.656
+      },
+      {
+        "w": "thousand",
+        "s": 3.656,
+        "e": 4.79
+      },
+      {
+        "w": "Romans",
+        "s": 4.79,
+        "e": 5.12
+      },
+      {
+        "w": "faced",
+        "s": 5.26,
+        "e": 5.38
+      },
+      {
+        "w": "Hannibal's",
+        "s": 5.53,
+        "e": 5.81
+      },
+      {
+        "w": "fifty-",
+        "s": 5.81,
+        "e": 5.81
+      },
+      {
+        "w": "thousand.",
+        "s": 5.81,
+        "e": 6.66
+      }
+    ]
+  },
+  {
+    "id": "crescent",
+    "file": "audio/wh02/crescent.wav",
+    "sec": 6.089396,
+    "voice": "Sadaltager",
+    "text": "Hannibal put his weakest troops in the centre, bulging forward like a crescent, and his best African troops on the wings.",
+    "words": [
+      {
+        "w": "Hannibal",
+        "s": 0.01,
+        "e": 0.46
+      },
+      {
+        "w": "put",
+        "s": 0.46,
+        "e": 0.62
+      },
+      {
+        "w": "his",
+        "s": 0.63,
+        "e": 0.76
+      },
+      {
+        "w": "weakest",
+        "s": 0.83,
+        "e": 1.16
+      },
+      {
+        "w": "troops",
+        "s": 1.27,
+        "e": 1.55
+      },
+      {
+        "w": "in",
+        "s": 1.56,
+        "e": 1.67
+      },
+      {
+        "w": "the",
+        "s": 1.67,
+        "e": 1.79
+      },
+      {
+        "w": "centre,",
+        "s": 2.23,
+        "e": 2.31
+      },
+      {
+        "w": "bulging",
+        "s": 2.31,
+        "e": 2.53
+      },
+      {
+        "w": "forward",
+        "s": 2.65,
+        "e": 3
+      },
+      {
+        "w": "like",
+        "s": 3,
+        "e": 3.16
+      },
+      {
+        "w": "a",
+        "s": 3.24,
+        "e": 3.3
+      },
+      {
+        "w": "crescent,",
+        "s": 3.3,
+        "e": 3.8
+      },
+      {
+        "w": "and",
+        "s": 4.11,
+        "e": 4.3
+      },
+      {
+        "w": "his",
+        "s": 4.3,
+        "e": 4.47
+      },
+      {
+        "w": "best",
+        "s": 4.47,
+        "e": 4.6
+      },
+      {
+        "w": "African",
+        "s": 4.738,
+        "e": 5.12
+      },
+      {
+        "w": "troops",
+        "s": 5.12,
+        "e": 5.45
+      },
+      {
+        "w": "on",
+        "s": 5.53,
+        "e": 5.6
+      },
+      {
+        "w": "the",
+        "s": 5.6,
+        "e": 5.65
+      },
+      {
+        "w": "wings.",
+        "s": 5.78,
+        "e": 6.089
+      }
+    ]
+  },
+  {
+    "id": "giveway",
+    "file": "audio/wh02/giveway.wav",
+    "sec": 4.318583,
+    "voice": "Sadaltager",
+    "text": "The Romans smashed into the centre. It slowly gave way, and pulled them in.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.02,
+        "e": 0.21
+      },
+      {
+        "w": "Romans",
+        "s": 0.21,
+        "e": 0.62
+      },
+      {
+        "w": "smashed",
+        "s": 0.62,
+        "e": 1.14
+      },
+      {
+        "w": "into",
+        "s": 1.14,
+        "e": 1.42
+      },
+      {
+        "w": "the",
+        "s": 1.42,
+        "e": 1.6
+      },
+      {
+        "w": "centre.",
+        "s": 2.24,
+        "e": 2.3
+      },
+      {
+        "w": "It",
+        "s": 2.32,
+        "e": 2.47
+      },
+      {
+        "w": "slowly",
+        "s": 2.47,
+        "e": 3
+      },
+      {
+        "w": "gave",
+        "s": 3,
+        "e": 3.34
+      },
+      {
+        "w": "way,",
+        "s": 3.67,
+        "e": 3.67
+      },
+      {
+        "w": "and",
+        "s": 3.67,
+        "e": 3.75
+      },
+      {
+        "w": "pulled",
+        "s": 3.75,
+        "e": 3.9
+      },
+      {
+        "w": "them",
+        "s": 4.05,
+        "e": 4.08
+      },
+      {
+        "w": "in.",
+        "s": 4.08,
+        "e": 4.3
+      }
+    ]
+  },
+  {
+    "id": "close",
+    "file": "audio/wh02/close.wav",
+    "sec": 6.290604,
+    "voice": "Sadaltager",
+    "text": "Then the African wings turned inward, and Hannibal's cavalry came round behind. The Romans were surrounded.",
+    "words": [
+      {
+        "w": "Then",
+        "s": 0.28,
+        "e": 0.28
+      },
+      {
+        "w": "the",
+        "s": 0.28,
+        "e": 0.49
+      },
+      {
+        "w": "African",
+        "s": 0.49,
+        "e": 0.99
+      },
+      {
+        "w": "wings",
+        "s": 0.99,
+        "e": 1.31
+      },
+      {
+        "w": "turned",
+        "s": 1.37,
+        "e": 1.78
+      },
+      {
+        "w": "inward,",
+        "s": 1.78,
+        "e": 2.36
+      },
+      {
+        "w": "and",
+        "s": 2.51,
+        "e": 2.54
+      },
+      {
+        "w": "Hannibal's",
+        "s": 2.55,
+        "e": 3.08
+      },
+      {
+        "w": "cavalry",
+        "s": 3.14,
+        "e": 3.49
+      },
+      {
+        "w": "came",
+        "s": 3.56,
+        "e": 3.8
+      },
+      {
+        "w": "round",
+        "s": 3.8,
+        "e": 4.1
+      },
+      {
+        "w": "behind.",
+        "s": 4.1,
+        "e": 5.12
+      },
+      {
+        "w": "The",
+        "s": 5.12,
+        "e": 5.25
+      },
+      {
+        "w": "Romans",
+        "s": 5.4,
+        "e": 5.51
+      },
+      {
+        "w": "were",
+        "s": 5.51,
+        "e": 5.62
+      },
+      {
+        "w": "surrounded.",
+        "s": 5.69,
+        "e": 6.28
+      }
+    ]
+  },
+  {
+    "id": "cannaedead",
+    "file": "audio/wh02/cannaedead.wav",
+    "sec": 8.6925,
+    "voice": "Sadaltager",
+    "text": "Polybius says about seventy-thousand Romans died that day. Livy says about forty-eight-thousand. Either way, it was one of the worst defeats in history.",
+    "words": [
+      {
+        "w": "Polybius",
+        "s": 0.19,
+        "e": 0.5
+      },
+      {
+        "w": "says",
+        "s": 0.5,
+        "e": 0.75
+      },
+      {
+        "w": "about",
+        "s": 0.75,
+        "e": 0.95
+      },
+      {
+        "w": "seventy-",
+        "s": 0.95,
+        "e": 0.95
+      },
+      {
+        "w": "thousand",
+        "s": 0.95,
+        "e": 2.14
+      },
+      {
+        "w": "Romans",
+        "s": 2.14,
+        "e": 2.52
+      },
+      {
+        "w": "died",
+        "s": 2.52,
+        "e": 2.77
+      },
+      {
+        "w": "that",
+        "s": 2.77,
+        "e": 3
+      },
+      {
+        "w": "day.",
+        "s": 3.658,
+        "e": 3.658
+      },
+      {
+        "w": "Livy",
+        "s": 3.658,
+        "e": 3.73
+      },
+      {
+        "w": "says",
+        "s": 3.73,
+        "e": 3.97
+      },
+      {
+        "w": "about",
+        "s": 4.09,
+        "e": 4.338
+      },
+      {
+        "w": "forty-",
+        "s": 4.338,
+        "e": 4.338
+      },
+      {
+        "w": "eight-",
+        "s": 4.338,
+        "e": 4.338
+      },
+      {
+        "w": "thousand.",
+        "s": 4.338,
+        "e": 5.94
+      },
+      {
+        "w": "Either",
+        "s": 6.13,
+        "e": 6.37
+      },
+      {
+        "w": "way,",
+        "s": 6.37,
+        "e": 6.56
+      },
+      {
+        "w": "it",
+        "s": 6.944,
+        "e": 6.944
+      },
+      {
+        "w": "was",
+        "s": 6.944,
+        "e": 6.944
+      },
+      {
+        "w": "one",
+        "s": 7.07,
+        "e": 7.19
+      },
+      {
+        "w": "of",
+        "s": 7.19,
+        "e": 7.3
+      },
+      {
+        "w": "the",
+        "s": 7.3,
+        "e": 7.47
+      },
+      {
+        "w": "worst",
+        "s": 7.47,
+        "e": 7.76
+      },
+      {
+        "w": "defeats",
+        "s": 7.76,
+        "e": 8.16
+      },
+      {
+        "w": "in",
+        "s": 8.16,
+        "e": 8.27
+      },
+      {
+        "w": "history.",
+        "s": 8.27,
+        "e": 8.693
+      }
+    ]
+  },
+  {
+    "id": "paullus",
+    "file": "audio/wh02/paullus.wav",
+    "sec": 7.611625,
+    "voice": "Sadaltager",
+    "text": "One of the two consuls, Aemilius Paullus, died on the field. Rome had lost three armies in under two years.",
+    "words": [
+      {
+        "w": "One",
+        "s": 0.01,
+        "e": 0.22
+      },
+      {
+        "w": "of",
+        "s": 0.23,
+        "e": 0.38
+      },
+      {
+        "w": "the",
+        "s": 0.38,
+        "e": 0.55
+      },
+      {
+        "w": "two",
+        "s": 0.61,
+        "e": 0.84
+      },
+      {
+        "w": "consuls,",
+        "s": 0.84,
+        "e": 1.53
+      },
+      {
+        "w": "Aemilius",
+        "s": 1.53,
+        "e": 2.14
+      },
+      {
+        "w": "Paullus,",
+        "s": 2.14,
+        "e": 2.86
+      },
+      {
+        "w": "died",
+        "s": 2.86,
+        "e": 3.18
+      },
+      {
+        "w": "on",
+        "s": 3.18,
+        "e": 3.34
+      },
+      {
+        "w": "the",
+        "s": 3.34,
+        "e": 3.58
+      },
+      {
+        "w": "field.",
+        "s": 3.58,
+        "e": 4.56
+      },
+      {
+        "w": "Rome",
+        "s": 4.56,
+        "e": 4.85
+      },
+      {
+        "w": "had",
+        "s": 4.92,
+        "e": 5.11
+      },
+      {
+        "w": "lost",
+        "s": 5.17,
+        "e": 5.44
+      },
+      {
+        "w": "three",
+        "s": 5.44,
+        "e": 5.8
+      },
+      {
+        "w": "armies",
+        "s": 5.98,
+        "e": 6.274
+      },
+      {
+        "w": "in",
+        "s": 6.381,
+        "e": 6.381
+      },
+      {
+        "w": "under",
+        "s": 6.46,
+        "e": 6.85
+      },
+      {
+        "w": "two",
+        "s": 6.85,
+        "e": 6.97
+      },
+      {
+        "w": "years.",
+        "s": 7.41,
+        "e": 7.612
+      }
+    ]
+  },
+  {
+    "id": "maharbal",
+    "file": "audio/wh02/maharbal.wav",
+    "sec": 5.621438,
+    "voice": "Sadaltager",
+    "text": "Livy says one of Hannibal's officers told him: you know how to win a victory, Hannibal, but not how to use it.",
+    "words": [
+      {
+        "w": "Livy",
+        "s": 0.2,
+        "e": 0.26
+      },
+      {
+        "w": "says",
+        "s": 0.26,
+        "e": 0.52
+      },
+      {
+        "w": "one",
+        "s": 0.52,
+        "e": 0.71
+      },
+      {
+        "w": "of",
+        "s": 0.72,
+        "e": 0.85
+      },
+      {
+        "w": "Hannibal's",
+        "s": 0.85,
+        "e": 1.5
+      },
+      {
+        "w": "officers",
+        "s": 1.5,
+        "e": 2.01
+      },
+      {
+        "w": "told",
+        "s": 2.06,
+        "e": 2.29
+      },
+      {
+        "w": "him:",
+        "s": 2.793,
+        "e": 2.793
+      },
+      {
+        "w": "you",
+        "s": 2.793,
+        "e": 2.793
+      },
+      {
+        "w": "know",
+        "s": 2.79,
+        "e": 3
+      },
+      {
+        "w": "how",
+        "s": 3,
+        "e": 3.12
+      },
+      {
+        "w": "to",
+        "s": 3.12,
+        "e": 3.2
+      },
+      {
+        "w": "win",
+        "s": 3.2,
+        "e": 3.32
+      },
+      {
+        "w": "a",
+        "s": 3.32,
+        "e": 3.36
+      },
+      {
+        "w": "victory,",
+        "s": 3.36,
+        "e": 3.71
+      },
+      {
+        "w": "Hannibal,",
+        "s": 3.71,
+        "e": 4.36
+      },
+      {
+        "w": "but",
+        "s": 4.74,
+        "e": 4.74
+      },
+      {
+        "w": "not",
+        "s": 4.74,
+        "e": 4.92
+      },
+      {
+        "w": "how",
+        "s": 4.92,
+        "e": 5.14
+      },
+      {
+        "w": "to",
+        "s": 5.14,
+        "e": 5.28
+      },
+      {
+        "w": "use",
+        "s": 5.28,
+        "e": 5.5
+      },
+      {
+        "w": "it.",
+        "s": 5.5,
+        "e": 5.621
+      }
+    ]
+  },
+  {
+    "id": "answer",
+    "file": "audio/wh02/answer.wav",
+    "sec": 1.505021,
+    "voice": "Sadaltager",
+    "text": "So, did the hardest road work?",
+    "words": [
+      {
+        "w": "So,",
+        "s": 0.03,
+        "e": 0.23
+      },
+      {
+        "w": "did",
+        "s": 0.382,
+        "e": 0.42
+      },
+      {
+        "w": "the",
+        "s": 0.42,
+        "e": 0.55
+      },
+      {
+        "w": "hardest",
+        "s": 0.63,
+        "e": 1.03
+      },
+      {
+        "w": "road",
+        "s": 1.03,
+        "e": 1.27
+      },
+      {
+        "w": "work?",
+        "s": 1.27,
+        "e": 1.5
+      }
+    ]
+  },
+  {
+    "id": "worked",
+    "file": "audio/wh02/worked.wav",
+    "sec": 6.829333,
+    "voice": "Sadaltager",
+    "text": "As a surprise, yes. The Alps let Hannibal skip Rome's navy and land an army in Italy that nobody was ready for.",
+    "words": [
+      {
+        "w": "As",
+        "s": 0,
+        "e": 0.22
+      },
+      {
+        "w": "a",
+        "s": 0.33,
+        "e": 0.33
+      },
+      {
+        "w": "surprise,",
+        "s": 0.36,
+        "e": 1.43
+      },
+      {
+        "w": "yes.",
+        "s": 1.43,
+        "e": 1.78
+      },
+      {
+        "w": "The",
+        "s": 2.12,
+        "e": 2.19
+      },
+      {
+        "w": "Alps",
+        "s": 2.19,
+        "e": 2.43
+      },
+      {
+        "w": "let",
+        "s": 2.43,
+        "e": 2.62
+      },
+      {
+        "w": "Hannibal",
+        "s": 2.64,
+        "e": 3.09
+      },
+      {
+        "w": "skip",
+        "s": 3.17,
+        "e": 3.4
+      },
+      {
+        "w": "Rome's",
+        "s": 3.4,
+        "e": 3.78
+      },
+      {
+        "w": "navy",
+        "s": 3.78,
+        "e": 4.03
+      },
+      {
+        "w": "and",
+        "s": 4.33,
+        "e": 4.4
+      },
+      {
+        "w": "land",
+        "s": 4.4,
+        "e": 4.68
+      },
+      {
+        "w": "an",
+        "s": 4.68,
+        "e": 4.76
+      },
+      {
+        "w": "army",
+        "s": 4.76,
+        "e": 5
+      },
+      {
+        "w": "in",
+        "s": 5,
+        "e": 5.15
+      },
+      {
+        "w": "Italy",
+        "s": 5.16,
+        "e": 5.52
+      },
+      {
+        "w": "that",
+        "s": 5.52,
+        "e": 5.73
+      },
+      {
+        "w": "nobody",
+        "s": 5.79,
+        "e": 6.11
+      },
+      {
+        "w": "was",
+        "s": 6.11,
+        "e": 6.26
+      },
+      {
+        "w": "ready",
+        "s": 6.27,
+        "e": 6.55
+      },
+      {
+        "w": "for.",
+        "s": 6.65,
+        "e": 6.82
+      }
+    ]
+  },
+  {
+    "id": "butnot",
+    "file": "audio/wh02/butnot.wav",
+    "sec": 6.294354,
+    "voice": "Sadaltager",
+    "text": "But it came at a price. Half his army and almost all his elephants. And no siege engines to take Rome's walls.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0.01,
+        "e": 0.21
+      },
+      {
+        "w": "it",
+        "s": 0.27,
+        "e": 0.38
+      },
+      {
+        "w": "came",
+        "s": 0.38,
+        "e": 0.69
+      },
+      {
+        "w": "at",
+        "s": 0.69,
+        "e": 0.79
+      },
+      {
+        "w": "a",
+        "s": 1.373,
+        "e": 1.373
+      },
+      {
+        "w": "price.",
+        "s": 1.373,
+        "e": 1.373
+      },
+      {
+        "w": "Half",
+        "s": 1.373,
+        "e": 1.68
+      },
+      {
+        "w": "his",
+        "s": 1.68,
+        "e": 1.86
+      },
+      {
+        "w": "army",
+        "s": 1.95,
+        "e": 2.24
+      },
+      {
+        "w": "and",
+        "s": 2.5,
+        "e": 2.5
+      },
+      {
+        "w": "almost",
+        "s": 2.73,
+        "e": 2.9
+      },
+      {
+        "w": "all",
+        "s": 2.9,
+        "e": 3.1
+      },
+      {
+        "w": "his",
+        "s": 3.1,
+        "e": 3.3
+      },
+      {
+        "w": "elephants.",
+        "s": 3.3,
+        "e": 3.95
+      },
+      {
+        "w": "And",
+        "s": 3.95,
+        "e": 4.08
+      },
+      {
+        "w": "no",
+        "s": 4.15,
+        "e": 4.27
+      },
+      {
+        "w": "siege",
+        "s": 4.27,
+        "e": 4.61
+      },
+      {
+        "w": "engines",
+        "s": 4.61,
+        "e": 4.86
+      },
+      {
+        "w": "to",
+        "s": 5.04,
+        "e": 5.22
+      },
+      {
+        "w": "take",
+        "s": 5.34,
+        "e": 5.49
+      },
+      {
+        "w": "Rome's",
+        "s": 5.49,
+        "e": 5.89
+      },
+      {
+        "w": "walls.",
+        "s": 5.89,
+        "e": 6.294
+      }
+    ]
+  },
+  {
+    "id": "never",
+    "file": "audio/wh02/never.wav",
+    "sec": 7.331854,
+    "voice": "Sadaltager",
+    "text": "Hannibal never besieged Rome. Rome refused to surrender, raised new armies, and kept him busy in Italy for fifteen years.",
+    "words": [
+      {
+        "w": "Hannibal",
+        "s": 0.2,
+        "e": 0.62
+      },
+      {
+        "w": "never",
+        "s": 0.62,
+        "e": 1.02
+      },
+      {
+        "w": "besieged",
+        "s": 1.02,
+        "e": 1.553
+      },
+      {
+        "w": "Rome.",
+        "s": 2.157,
+        "e": 2.16
+      },
+      {
+        "w": "Rome",
+        "s": 2.17,
+        "e": 2.38
+      },
+      {
+        "w": "refused",
+        "s": 2.38,
+        "e": 2.71
+      },
+      {
+        "w": "to",
+        "s": 2.77,
+        "e": 2.88
+      },
+      {
+        "w": "surrender,",
+        "s": 2.88,
+        "e": 3.52
+      },
+      {
+        "w": "raised",
+        "s": 3.69,
+        "e": 3.94
+      },
+      {
+        "w": "new",
+        "s": 3.94,
+        "e": 4.19
+      },
+      {
+        "w": "armies,",
+        "s": 4.19,
+        "e": 4.82
+      },
+      {
+        "w": "and",
+        "s": 4.88,
+        "e": 4.97
+      },
+      {
+        "w": "kept",
+        "s": 5.02,
+        "e": 5.14
+      },
+      {
+        "w": "him",
+        "s": 5.23,
+        "e": 5.28
+      },
+      {
+        "w": "busy",
+        "s": 5.28,
+        "e": 5.6
+      },
+      {
+        "w": "in",
+        "s": 5.6,
+        "e": 5.75
+      },
+      {
+        "w": "Italy",
+        "s": 5.75,
+        "e": 6.11
+      },
+      {
+        "w": "for",
+        "s": 6.426,
+        "e": 6.426
+      },
+      {
+        "w": "fifteen",
+        "s": 6.426,
+        "e": 6.83
+      },
+      {
+        "w": "years.",
+        "s": 6.83,
+        "e": 7.24
+      }
+    ]
+  },
+  {
+    "id": "why",
+    "file": "audio/wh02/why.wav",
+    "sec": 5.973438,
+    "voice": "Sadaltager",
+    "text": "He had no siege engines, few reinforcements from home, and most of Rome's allies in central Italy stayed loyal.",
+    "words": [
+      {
+        "w": "He",
+        "s": 0.03,
+        "e": 0.12
+      },
+      {
+        "w": "had",
+        "s": 0.12,
+        "e": 0.28
+      },
+      {
+        "w": "no",
+        "s": 0.32,
+        "e": 0.43
+      },
+      {
+        "w": "siege",
+        "s": 0.44,
+        "e": 0.74
+      },
+      {
+        "w": "engines,",
+        "s": 0.74,
+        "e": 1.24
+      },
+      {
+        "w": "few",
+        "s": 1.43,
+        "e": 1.56
+      },
+      {
+        "w": "reinforcements",
+        "s": 1.56,
+        "e": 2.61
+      },
+      {
+        "w": "from",
+        "s": 2.61,
+        "e": 2.84
+      },
+      {
+        "w": "home,",
+        "s": 3.23,
+        "e": 3.24
+      },
+      {
+        "w": "and",
+        "s": 3.24,
+        "e": 3.38
+      },
+      {
+        "w": "most",
+        "s": 3.38,
+        "e": 3.7
+      },
+      {
+        "w": "of",
+        "s": 3.7,
+        "e": 3.71
+      },
+      {
+        "w": "Rome's",
+        "s": 3.76,
+        "e": 3.99
+      },
+      {
+        "w": "allies",
+        "s": 4,
+        "e": 4.43
+      },
+      {
+        "w": "in",
+        "s": 4.49,
+        "e": 4.56
+      },
+      {
+        "w": "central",
+        "s": 4.56,
+        "e": 4.92
+      },
+      {
+        "w": "Italy",
+        "s": 4.92,
+        "e": 5.31
+      },
+      {
+        "w": "stayed",
+        "s": 5.48,
+        "e": 5.68
+      },
+      {
+        "w": "loyal.",
+        "s": 5.69,
+        "e": 5.97
+      }
+    ]
+  },
+  {
+    "id": "zama",
+    "file": "audio/wh02/zama.wav",
+    "sec": 8.199542,
+    "voice": "Sadaltager",
+    "text": "In two-hundred-three BC Carthage called him home. A year later, at Zama, a Roman general named Scipio, the son of the consul at the Rhône, beat him.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.035
+      },
+      {
+        "w": "two-",
+        "s": 0.035,
+        "e": 0.035
+      },
+      {
+        "w": "hundred-",
+        "s": 0.035,
+        "e": 0.141
+      },
+      {
+        "w": "three",
+        "s": 0.141,
+        "e": 0.73
+      },
+      {
+        "w": "BC",
+        "s": 0.73,
+        "e": 0.79
+      },
+      {
+        "w": "Carthage",
+        "s": 1.06,
+        "e": 1.52
+      },
+      {
+        "w": "called",
+        "s": 1.52,
+        "e": 1.92
+      },
+      {
+        "w": "him",
+        "s": 1.92,
+        "e": 2.05
+      },
+      {
+        "w": "home.",
+        "s": 2.616,
+        "e": 2.66
+      },
+      {
+        "w": "A",
+        "s": 2.66,
+        "e": 2.73
+      },
+      {
+        "w": "year",
+        "s": 2.73,
+        "e": 3.01
+      },
+      {
+        "w": "later,",
+        "s": 3.1,
+        "e": 3.58
+      },
+      {
+        "w": "at",
+        "s": 3.58,
+        "e": 3.73
+      },
+      {
+        "w": "Zama,",
+        "s": 4.22,
+        "e": 4.24
+      },
+      {
+        "w": "a",
+        "s": 4.24,
+        "e": 4.29
+      },
+      {
+        "w": "Roman",
+        "s": 4.29,
+        "e": 4.57
+      },
+      {
+        "w": "general",
+        "s": 4.57,
+        "e": 4.71
+      },
+      {
+        "w": "named",
+        "s": 5.29,
+        "e": 5.43
+      },
+      {
+        "w": "Scipio,",
+        "s": 5.43,
+        "e": 5.98
+      },
+      {
+        "w": "the",
+        "s": 5.98,
+        "e": 6.18
+      },
+      {
+        "w": "son",
+        "s": 6.18,
+        "e": 6.33
+      },
+      {
+        "w": "of",
+        "s": 6.42,
+        "e": 6.51
+      },
+      {
+        "w": "the",
+        "s": 6.51,
+        "e": 6.71
+      },
+      {
+        "w": "consul",
+        "s": 6.71,
+        "e": 7.07
+      },
+      {
+        "w": "at",
+        "s": 7.11,
+        "e": 7.23
+      },
+      {
+        "w": "the",
+        "s": 7.29,
+        "e": 7.41
+      },
+      {
+        "w": "Rhône,",
+        "s": 7.955,
+        "e": 7.955
+      },
+      {
+        "w": "beat",
+        "s": 7.94,
+        "e": 8.03
+      },
+      {
+        "w": "him.",
+        "s": 8.27,
+        "e": 8.2
+      }
+    ]
+  },
+  {
+    "id": "death",
+    "file": "audio/wh02/death.wav",
+    "sec": 4.360333,
+    "voice": "Sadaltager",
+    "text": "Years later, in exile and about to be handed over to Rome, Hannibal took poison.",
+    "words": [
+      {
+        "w": "Years",
+        "s": 0.03,
+        "e": 0.43
+      },
+      {
+        "w": "later,",
+        "s": 0.43,
+        "e": 0.86
+      },
+      {
+        "w": "in",
+        "s": 0.86,
+        "e": 1.03
+      },
+      {
+        "w": "exile",
+        "s": 1.03,
+        "e": 1.29
+      },
+      {
+        "w": "and",
+        "s": 1.63,
+        "e": 1.63
+      },
+      {
+        "w": "about",
+        "s": 1.63,
+        "e": 1.89
+      },
+      {
+        "w": "to",
+        "s": 1.89,
+        "e": 1.91
+      },
+      {
+        "w": "be",
+        "s": 2.01,
+        "e": 2.12
+      },
+      {
+        "w": "handed",
+        "s": 2.12,
+        "e": 2.52
+      },
+      {
+        "w": "over",
+        "s": 2.52,
+        "e": 2.79
+      },
+      {
+        "w": "to",
+        "s": 2.79,
+        "e": 2.92
+      },
+      {
+        "w": "Rome,",
+        "s": 2.92,
+        "e": 3.41
+      },
+      {
+        "w": "Hannibal",
+        "s": 3.44,
+        "e": 3.74
+      },
+      {
+        "w": "took",
+        "s": 4.017,
+        "e": 4.017
+      },
+      {
+        "w": "poison.",
+        "s": 4.05,
+        "e": 4.36
+      }
+    ]
+  },
+  {
+    "id": "legacy",
+    "file": "audio/wh02/legacy.wav",
+    "sec": 8.024375,
+    "voice": "Sadaltager",
+    "text": "Rome won the war. But generals still study Cannae today, and the road over the Alps is still the most famous march in history.",
+    "words": [
+      {
+        "w": "Rome",
+        "s": 0.03,
+        "e": 0.36
+      },
+      {
+        "w": "won",
+        "s": 0.47,
+        "e": 0.8
+      },
+      {
+        "w": "the",
+        "s": 0.8,
+        "e": 1.03
+      },
+      {
+        "w": "war.",
+        "s": 1.733,
+        "e": 1.74
+      },
+      {
+        "w": "But",
+        "s": 1.8,
+        "e": 2.01
+      },
+      {
+        "w": "generals",
+        "s": 2.01,
+        "e": 2.65
+      },
+      {
+        "w": "still",
+        "s": 2.69,
+        "e": 3.02
+      },
+      {
+        "w": "study",
+        "s": 3.1,
+        "e": 3.52
+      },
+      {
+        "w": "Cannae",
+        "s": 3.52,
+        "e": 3.89
+      },
+      {
+        "w": "today,",
+        "s": 4.48,
+        "e": 4.55
+      },
+      {
+        "w": "and",
+        "s": 4.55,
+        "e": 4.67
+      },
+      {
+        "w": "the",
+        "s": 4.67,
+        "e": 4.79
+      },
+      {
+        "w": "road",
+        "s": 4.79,
+        "e": 4.96
+      },
+      {
+        "w": "over",
+        "s": 4.96,
+        "e": 5.11
+      },
+      {
+        "w": "the",
+        "s": 5.12,
+        "e": 5.22
+      },
+      {
+        "w": "Alps",
+        "s": 5.22,
+        "e": 5.56
+      },
+      {
+        "w": "is",
+        "s": 5.89,
+        "e": 5.92
+      },
+      {
+        "w": "still",
+        "s": 5.95,
+        "e": 6.24
+      },
+      {
+        "w": "the",
+        "s": 6.24,
+        "e": 6.42
+      },
+      {
+        "w": "most",
+        "s": 6.43,
+        "e": 6.612
+      },
+      {
+        "w": "famous",
+        "s": 6.723,
+        "e": 6.94
+      },
+      {
+        "w": "march",
+        "s": 7.13,
+        "e": 7.13
+      },
+      {
+        "w": "in",
+        "s": 7.41,
+        "e": 7.52
+      },
+      {
+        "w": "history.",
+        "s": 7.72,
+        "e": 8
+      }
+    ]
+  },
+  {
+    "id": "closeq",
+    "file": "audio/wh02/closeq.wav",
+    "sec": 5.472729,
+    "voice": "Sadaltager",
+    "text": "Now, your turn. After Cannae, should Hannibal have marched straight on Rome? Tell me in the comments.",
+    "words": [
+      {
+        "w": "Now,",
+        "s": 0.09,
+        "e": 0.27
+      },
+      {
+        "w": "your",
+        "s": 0.27,
+        "e": 0.55
+      },
+      {
+        "w": "turn.",
+        "s": 1.199,
+        "e": 1.2
+      },
+      {
+        "w": "After",
+        "s": 1.2,
+        "e": 1.52
+      },
+      {
+        "w": "Cannae,",
+        "s": 1.56,
+        "e": 1.94
+      },
+      {
+        "w": "should",
+        "s": 2.21,
+        "e": 2.38
+      },
+      {
+        "w": "Hannibal",
+        "s": 2.38,
+        "e": 2.8
+      },
+      {
+        "w": "have",
+        "s": 2.8,
+        "e": 2.94
+      },
+      {
+        "w": "marched",
+        "s": 2.95,
+        "e": 3.28
+      },
+      {
+        "w": "straight",
+        "s": 3.28,
+        "e": 3.85
+      },
+      {
+        "w": "on",
+        "s": 3.85,
+        "e": 3.99
+      },
+      {
+        "w": "Rome?",
+        "s": 4.65,
+        "e": 4.65
+      },
+      {
+        "w": "Tell",
+        "s": 4.65,
+        "e": 4.71
+      },
+      {
+        "w": "me",
+        "s": 4.71,
+        "e": 4.81
+      },
+      {
+        "w": "in",
+        "s": 4.81,
+        "e": 4.87
+      },
+      {
+        "w": "the",
+        "s": 4.94,
+        "e": 5.05
+      },
+      {
+        "w": "comments.",
+        "s": 5.05,
+        "e": 5.473
+      }
+    ]
+  }
+]
