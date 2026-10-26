@@ -1,0 +1,21 @@
+{
+  "id": "N16",
+  "bg": "#17213a",
+  "paper": "#b4d3e0",
+  "ink": "#2a2440",
+  "red": "#b3322b",
+  "housing": ["#6c7d76", "#4d5b55", "#1c2321"],
+  "tape": "#e8d98a",
+  "label": "#1f3f7a",
+  "text": "#2a2440",
+  "font": "K2D",
+  "titleWeight": 700,
+  "signature": {
+    "base": "teleprinter-roll",
+    "palette": ["#17213a", "#b4d3e0", "#4d5b55", "#e8d98a", "#2a2440"],
+    "line": "dot-matrix",
+    "type": "K2D 700",
+    "motion": "type-on",
+    "frame": "none"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "N14",
+  "bg": "#d9a521",
+  "paper": ["#fbf6e9", "#f1ead8", "#e2d7bc"],
+  "paint": ["#c8402a", "#d9a43a", "#3f7a4a", "#2f4f8a", "#e79a92"],
+  "ink": "#1c1712",
+  "cover": "#a8321f",
+  "text": "#5a1a10",
+  "font": "Sriracha",
+  "titleWeight": 400,
+  "signature": {
+    "base": "samut-khoi",
+    "palette": ["#d9a521", "#f1ead8", "#c8402a", "#d9a43a", "#1c1712"],
+    "line": "ink-outline",
+    "type": "Sriracha 400",
+    "motion": "unfold",
+    "frame": "book-page"
+  }
+}

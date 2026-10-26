@@ -1,0 +1,21 @@
+{
+  "id": "N28",
+  "bg": "#1d2125",
+  "paper": "#efe8d6",
+  "coat": "#d2cf86",
+  "exposed": "#6e7782",
+  "prussian": "#17428f",
+  "deep": "#0d2a63",
+  "ink": "#163a7c",
+  "text": "#e8eef8",
+  "font": "Trirong",
+  "titleWeight": 700,
+  "signature": {
+    "base": "cyanotype",
+    "palette": ["#1d2125", "#17428f", "#efe8d6", "#d2cf86", "#163a7c"],
+    "line": "photogram",
+    "type": "Trirong 700",
+    "motion": "develop",
+    "frame": "print-sheet"
+  }
+}

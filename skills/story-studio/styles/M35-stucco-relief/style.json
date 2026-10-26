@@ -1,0 +1,23 @@
+{
+  "id": "M35",
+  "bg": "#3db394",
+  "stucco": "#fbf5ea",
+  "field": "#3db394",
+  "tile": "#c45a2c",
+  "lacquer": "#7a2618",
+  "gilt": "#caa04c",
+  "sky": ["#e7845e", "#f3a565", "#f8cf86", "#fbe3a8"],
+  "incised": "#43372a",
+  "text": "#43372a",
+  "font": "Srisakdi",
+  "titleWeight": 700,
+  "water": "kit/ayutthaya.ts",
+  "signature": {
+    "base": "stucco-gable",
+    "palette": ["#3db394", "#fbf5ea", "#c45a2c", "#caa04c", "#43372a"],
+    "line": "embossed",
+    "type": "Srisakdi 700",
+    "motion": "light-rake",
+    "frame": "gable"
+  }
+}

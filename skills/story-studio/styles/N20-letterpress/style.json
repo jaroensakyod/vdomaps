@@ -1,0 +1,17 @@
+{
+  "id": "N20",
+  "bg": "#24211e",
+  "paper": "#efe8d8",
+  "inks": ["#1f3f99", "#ec5a24", "#1c1a18"],
+  "font": "Chonburi",
+  "captionFont": "Taviraj",
+  "titleWeight": 400,
+  "signature": {
+    "base": "letterpress",
+    "palette": ["#efe8d8", "#1f3f99", "#ec5a24", "#1c1a18", "#d9d0bc"],
+    "line": "deboss",
+    "type": "Chonburi 400",
+    "motion": "press-stroke",
+    "frame": "poster"
+  }
+}

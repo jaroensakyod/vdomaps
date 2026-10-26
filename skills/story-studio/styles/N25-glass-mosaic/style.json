@@ -1,0 +1,20 @@
+{
+  "id": "N25",
+  "bg": "#9cc9ea",
+  "sky": ["#5f9fd8", "#9cc9ea", "#d6ebf5"],
+  "glass": { "emerald": "#2cc58a", "ruby": "#8a161d", "sapphire": "#1b4a9c", "mirror": "#e6ecee" },
+  "gold": "#d9a63a",
+  "grout": "#0f3a1a",
+  "board": "#6e0f14",
+  "text": "#ffffff",
+  "font": "Charmonman",
+  "titleWeight": 700,
+  "signature": {
+    "base": "glass-mosaic",
+    "palette": ["#9cc9ea", "#2cc58a", "#8a161d", "#d9a63a", "#2a140c"],
+    "line": "gilt-stucco",
+    "type": "Charmonman 700",
+    "motion": "glint-sweep",
+    "frame": "gable"
+  }
+}

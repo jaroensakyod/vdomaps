@@ -1,0 +1,20 @@
+{
+  "id": "N22",
+  "bg": "#a3cdb9",
+  "wall": ["#c4e6d6", "#a3cdb9", "#7aa995"],
+  "brass": "#c8a35a",
+  "rain": "#7f9bb0",
+  "sign": { "board": "#f6f2e6", "border": "#1f3c6b" },
+  "lights": "#ffd37a",
+  "text": "#173f33",
+  "font": "Bai Jamjuree",
+  "titleWeight": 700,
+  "signature": {
+    "base": "window-glass",
+    "palette": ["#a3cdb9", "#c8a35a", "#1f3c6b", "#ffd37a", "#173f33"],
+    "line": "none",
+    "type": "Bai Jamjuree 700",
+    "motion": "parallax-depth",
+    "frame": "window"
+  }
+}

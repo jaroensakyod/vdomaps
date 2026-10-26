@@ -1,0 +1,6 @@
+{
+  "name": "story-studio-ebook",
+  "private": true,
+  "type": "module",
+  "dependencies": { "pptxgenjs": "3.12.0" }
+}

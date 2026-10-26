@@ -1,0 +1,21 @@
+{
+  "id": "M31",
+  "bg": "#5f6a35",
+  "stencil": "#f1ecd2",
+  "scope": "#03110a",
+  "phosphor": "#2fd35a",
+  "dbz": { "15": "#7be38a", "22": "#2fc04f", "28": "#13892f", "34": "#f5e12a", "40": "#f8b21c", "45": "#f5731a", "50": "#ef2b1b", "55": "#b8121a", "60": "#d23ad8" },
+  "text": "#c9f5d2",
+  "font": "Niramit",
+  "titleWeight": 700,
+  "sweepFrames": 90,
+  "rangeKm": 240,
+  "signature": {
+    "base": "radar-scope",
+    "palette": ["#5f6a35", "#2fd35a", "#f5e12a", "#ef2b1b", "#c9f5d2"],
+    "line": "glow",
+    "type": "Niramit 700",
+    "motion": "radar-sweep",
+    "frame": "instrument"
+  }
+}

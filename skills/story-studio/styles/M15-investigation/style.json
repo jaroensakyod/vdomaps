@@ -1,0 +1,24 @@
+{
+  "id": "M15",
+  "bg": "#b9773f",
+  "card": "#f6f1e3",
+  "yarn": "#c3262b",
+  "brass": "#c9a246",
+  "ink": "#2a2420",
+  "mapSea": "#d9e2e0",
+  "mapLand": "#efe6cf",
+  "text": "#2a2420",
+  "font": "Courier Prime, IBM Plex Sans Thai Looped",
+  "titleWeight": 700,
+  "yarnDraw": 22,
+  "yarnTighten": 26,
+  "layout": { "title": 0.03, "map": 0.183, "cards": 0.62, "caption": 0.866 },
+  "signature": {
+    "base": "corkboard",
+    "palette": ["#b9773f", "#f6f1e3", "#c9a246", "#c3262b", "#2a2420"],
+    "line": "yarn",
+    "type": "IBM Plex Sans Thai Looped 600",
+    "motion": "string-pull",
+    "frame": "pinboard"
+  }
+}

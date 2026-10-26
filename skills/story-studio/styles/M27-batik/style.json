@@ -1,0 +1,20 @@
+{
+  "id": "M27",
+  "bg": "#efe3c6",
+  "cream": "#efe3c6",
+  "indigo": "#1c3557",
+  "soga": "#7a4a22",
+  "red": "#9c2b23",
+  "wax": "#e8c66a",
+  "text": "#f3e8cc",
+  "font": "Niramit",
+  "titleWeight": 700,
+  "signature": {
+    "base": "batik-cloth",
+    "palette": ["#1c3557", "#7a4a22", "#efe3c6", "#9c2b23", "#f3e8cc"],
+    "line": "wax-resist",
+    "type": "Niramit 700",
+    "motion": "dye-bath",
+    "frame": "tumpal-band"
+  }
+}

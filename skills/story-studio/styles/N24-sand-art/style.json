@@ -1,0 +1,18 @@
+{
+  "id": "N24",
+  "bg": "#1a0e06",
+  "sand": "#3b1d09",
+  "halo": "#5a2c0e",
+  "glow": ["#fff3e2", "#ffdcb4", "#f5b07a", "#d97a48"],
+  "text": "#ffdcb4",
+  "font": "KoHo",
+  "titleWeight": 700,
+  "signature": {
+    "base": "sand-lightbox",
+    "palette": ["#3b1d09", "#fff3e2", "#f5b07a", "#d97a48", "#ffdcb4"],
+    "line": "swept",
+    "type": "KoHo 700",
+    "motion": "morph",
+    "frame": "none"
+  }
+}

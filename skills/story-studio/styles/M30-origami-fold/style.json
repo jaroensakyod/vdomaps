@@ -1,0 +1,23 @@
+{
+  "id": "M30",
+  "bg": "#1d2629",
+  "kami": "#a9d6cc",
+  "paper": "#f4efe4",
+  "paperBack": "#e6dfcf",
+  "indigo": "#28488f",
+  "teal": "#3f8a7e",
+  "vermilion": "#e8542f",
+  "gold": "#d9a533",
+  "text": "#1f2a44",
+  "font": "Krub",
+  "titleWeight": 700,
+  "sheet": { "cols": 3, "rows": 2, "restDeg": 7, "tiltDeg": 30 },
+  "signature": {
+    "base": "folded-paper",
+    "palette": ["#1d2629", "#a9d6cc", "#28488f", "#e8542f", "#1f2a44"],
+    "line": "crease",
+    "type": "Krub 700",
+    "motion": "unfold",
+    "frame": "none"
+  }
+}

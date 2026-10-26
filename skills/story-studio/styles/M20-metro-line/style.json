@@ -1,0 +1,19 @@
+{
+  "id": "M20",
+  "bg": "#ffffff",
+  "land": "#e6e6e1",
+  "water": "#f6f9fa",
+  "line": "#e2531d",
+  "other": ["#6a4c9c", "#178a5b"],
+  "text": "#1d1f24",
+  "font": "Prompt",
+  "titleWeight": 700,
+  "signature": {
+    "base": "transit-diagram",
+    "palette": ["#ffffff", "#e2531d", "#6a4c9c", "#178a5b", "#1d1f24"],
+    "line": "octilinear",
+    "type": "Prompt 700",
+    "motion": "track-follow",
+    "frame": "station-sign"
+  }
+}

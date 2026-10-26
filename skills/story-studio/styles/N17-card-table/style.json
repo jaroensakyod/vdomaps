@@ -1,0 +1,21 @@
+{
+  "id": "N17",
+  "bg": "#14513a",
+  "baize": ["#2f7d55", "#14513a", "#041611"],
+  "card": "#f3ead6",
+  "allied": "#d4a64a",
+  "hostile": "#b3262e",
+  "court": ["#b3262e", "#1f2f5c", "#2f5a3a", "#d4a64a"],
+  "rail": "#4a1f12",
+  "text": "#1c1410",
+  "font": "Pridi",
+  "titleWeight": 700,
+  "signature": {
+    "base": "card-table",
+    "palette": ["#14513a", "#f3ead6", "#b3262e", "#d4a64a", "#1c1410"],
+    "line": "ink-outline",
+    "type": "Pridi 700",
+    "motion": "flip-deal",
+    "frame": "none"
+  }
+}

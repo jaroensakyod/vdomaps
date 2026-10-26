@@ -1,0 +1,24 @@
+{
+  "id": "M13",
+  "bg": "#c2c7c5",
+  "board": "#0b0b0a",
+  "enamel": "#2f6553",
+  "tile": "#1b1b1a",
+  "led": "#ffb21e",
+  "ledOff": "#241804",
+  "text": "#efe8d4",
+  "accent": "#e8412c",
+  "font": "Bai Jamjuree",
+  "titleWeight": 700,
+  "ledPitch": 10,
+  "flapFrames": 5,
+  "layout": { "header": 0.03, "map": 0.235, "rows": 0.61, "caption": 0.852 },
+  "signature": {
+    "base": "departure-board",
+    "palette": ["#c2c7c5", "#ffb21e", "#0b0b0a", "#e8412c", "#efe8d4"],
+    "line": "dot-matrix",
+    "type": "Bai Jamjuree 700",
+    "motion": "split-flap",
+    "frame": "station-sign"
+  }
+}

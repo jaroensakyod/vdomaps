@@ -1,0 +1,23 @@
+{
+  "id": "N36",
+  "bg": "#ec4f8c",
+  "news": "#efe7d3",
+  "cyan": "#16a3c4",
+  "yellow": "#ffd23a",
+  "red": "#e23b2e",
+  "tape": "#efe0b4",
+  "ink": "#1b1a22",
+  "text": "#1b1a22",
+  "font": "Pattaya",
+  "ransomFonts": ["Pattaya", "Chonburi", "Mitr", "Sriracha", "Fahkwang", "Prompt"],
+  "bodyFont": "Prompt",
+  "titleWeight": 400,
+  "signature": {
+    "base": "magazine-collage",
+    "palette": ["#ec4f8c", "#efe7d3", "#16a3c4", "#ffd23a", "#1b1a22"],
+    "line": "torn-edge",
+    "type": "Pattaya 400",
+    "motion": "stepped-on-twos",
+    "frame": "none"
+  }
+}

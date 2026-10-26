@@ -1,0 +1,19 @@
+{
+  "id": "N15",
+  "bg": "#c9b58f",
+  "silk": ["#7a3a6e", "#3d1a3a", "#1f0a1e"],
+  "floss": ["#d9a441", "#5f9e7e", "#e58aa0", "#f4ead2", "#a9c3e8"],
+  "gold": "#d8b25a",
+  "wood": "#d2a56c",
+  "text": "#3d1a3a",
+  "font": "Athiti",
+  "titleWeight": 700,
+  "signature": {
+    "base": "silk-embroidery",
+    "palette": ["#c9b58f", "#3d1a3a", "#5f9e7e", "#d8b25a", "#f4ead2"],
+    "line": "stitch",
+    "type": "Athiti 700",
+    "motion": "stitch-in",
+    "frame": "hoop"
+  }
+}

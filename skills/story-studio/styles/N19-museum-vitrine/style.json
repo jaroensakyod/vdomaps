@@ -1,0 +1,21 @@
+{
+  "id": "N19",
+  "bg": "#1a252e",
+  "wallLit": "#34444f",
+  "plinth": "#ecebe6",
+  "glass": "#bcd7de",
+  "spot": "#ffe8c2",
+  "label": "#f6f3ec",
+  "accent": "#b5562c",
+  "text": "#1b1b1b",
+  "font": "Bai Jamjuree",
+  "titleWeight": 600,
+  "signature": {
+    "base": "vitrine",
+    "palette": ["#1a252e", "#ecebe6", "#d8ccb0", "#b5562c", "#1b1b1b"],
+    "line": "none",
+    "type": "Bai Jamjuree 600",
+    "motion": "turntable",
+    "frame": "exhibit"
+  }
+}

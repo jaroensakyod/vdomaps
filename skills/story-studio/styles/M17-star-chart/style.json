@@ -1,0 +1,24 @@
+{
+  "id": "M17",
+  "bg": "#ebdfc2",
+  "sky": "#0b1438",
+  "ink": "#2a2136",
+  "ochre": "#8c5f1c",
+  "deep": "#050920",
+  "gold": "#d9b45f",
+  "silver": "#b9c4dc",
+  "star": "#fff4d6",
+  "accent": "#e98f6f",
+  "text": "#f2e8cc",
+  "font": "Noto Serif Thai",
+  "titleWeight": 700,
+  "dial": { "from": 1440, "to": 1560 },
+  "signature": {
+    "base": "star-chart",
+    "palette": ["#ebdfc2", "#0b1438", "#d9b45f", "#e98f6f", "#2a2136"],
+    "line": "hairline",
+    "type": "Noto Serif Thai 700",
+    "motion": "dial-turn",
+    "frame": "dial-ring"
+  }
+}

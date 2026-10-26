@@ -1,0 +1,22 @@
+{
+  "id": "M19",
+  "bg": "#0d0a08",
+  "curtain": ["#2a1030", "#62285a", "#481d44"],
+  "beam": "#ffdf9e",
+  "screen": "#ece6d8",
+  "mark": "#e2412c",
+  "mount": "#f1ede3",
+  "text": "#f6ead0",
+  "font": "Krub",
+  "hand": "Sriracha",
+  "titleWeight": 700,
+  "grades": ["ekta", "koda", "now"],
+  "signature": {
+    "base": "projector-room",
+    "palette": ["#2a1030", "#ffdf9e", "#ece6d8", "#e2412c", "#f6ead0"],
+    "line": "pencil",
+    "type": "Sriracha 400",
+    "motion": "carousel-click",
+    "frame": "slide-mount"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "N21",
+  "bg": "#06030a",
+  "sky": ["#3a1a6e", "#b42f86", "#f2724a", "#ffc865"],
+  "skyNight": ["#120a33", "#4b1f78", "#b83a7c", "#f39a5a"],
+  "silhouette": "#06030a",
+  "sun": "#fff1c8",
+  "text": "#fff6ea",
+  "font": "Athiti",
+  "titleWeight": 300,
+  "signature": {
+    "base": "twilight-sky",
+    "palette": ["#3a1a6e", "#06030a", "#b42f86", "#ffc865", "#fff6ea"],
+    "line": "none",
+    "type": "Athiti 300",
+    "motion": "slow-push",
+    "frame": "none"
+  }
+}

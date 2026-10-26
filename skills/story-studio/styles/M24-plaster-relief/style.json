@@ -1,0 +1,21 @@
+{
+  "id": "M24",
+  "bg": "#141516",
+  "plaster": "#f3f1ec",
+  "shade": "#626873",
+  "paper": "#fbfaf6",
+  "units": { "red": "#c4361f", "blue": "#23408f" },
+  "text": "#f4f2ee",
+  "font": "K2D",
+  "titleWeight": 700,
+  "dem": "raster/kan-dem.json",
+  "light": { "azimuth": 300, "elevation": 18, "exaggeration": 3.4 },
+  "signature": {
+    "base": "plaster-model",
+    "palette": ["#141516", "#f3f1ec", "#23408f", "#c4361f", "#f4f2ee"],
+    "line": "none",
+    "type": "K2D 700",
+    "motion": "pointer-trace",
+    "frame": "none"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "N32",
+  "bg": "#c9b796",
+  "gold": [
+    "#f0cc5c",
+    "#e6c24c",
+    "#f6da70",
+    "#dcb440",
+    "#c99a35"
+  ],
+  "lapis": "#1b2c66",
+  "purple": "#6a2a5c",
+  "red": "#a3261d",
+  "green": "#3f7a3a",
+  "text": "#f6f1e6",
+  "inscription": "#7a1a12",
+  "font": "Noto Serif Thai",
+  "titleWeight": 800,
+  "signature": {
+    "base": "gold-mosaic",
+    "palette": [
+      "#e6c24c",
+      "#1b2c66",
+      "#6a2a5c",
+      "#a3261d",
+      "#f6f1e6"
+    ],
+    "line": "tessera",
+    "type": "Noto Serif Thai 800",
+    "motion": "tile-set",
+    "frame": "apse"
+  }
+}

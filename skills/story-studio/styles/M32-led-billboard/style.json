@@ -1,0 +1,26 @@
+{
+  "id": "M32",
+  "bg": "#1d2c68",
+  "sky": ["#0b1430", "#1d2c68", "#3e4083", "#8a4d6a", "#d0743f"],
+  "screen": ["#ff2d1a", "#ff6a00", "#ffa000"],
+  "ledBlue": ["#0a1fd8", "#0a78ff"],
+  "red": "#ff2a4a",
+  "cyan": "#22d3ff",
+  "yellow": "#ffd21f",
+  "violet": "#c43cff",
+  "text": "#f4f6ff",
+  "concrete": "#2a2b31",
+  "haze": "#ff9d5c",
+  "font": "Prompt",
+  "titleWeight": 800,
+  "panel": { "cols": 160, "rows": 200, "pitch": 6 },
+  "ticker": { "cols": 160, "rows": 13, "pitch": 6, "ledsPerFrame": 1.9 },
+  "signature": {
+    "base": "led-screen",
+    "palette": ["#1d2c68", "#ff6a00", "#0a78ff", "#ffd21f", "#f4f6ff"],
+    "line": "dot-matrix",
+    "type": "Prompt 800",
+    "motion": "ticker-crawl",
+    "frame": "billboard"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "N34",
+  "bg": "#0a0f15",
+  "panel": "#eef5fb",
+  "housing": "#c3c6c2",
+  "film": "#13212c",
+  "soft": "#5e7d94",
+  "bone": "#e6f2ff",
+  "grease": "#ffb02e",
+  "accent": "#8fd3ff",
+  "text": "#e6f2ff",
+  "font": "Chakra Petch",
+  "handFont": "Sriracha",
+  "titleWeight": 700,
+  "signature": {
+    "base": "xray-lightbox",
+    "palette": ["#0a0f15", "#13212c", "#eef5fb", "#ffb02e", "#e6f2ff"],
+    "line": "glow",
+    "type": "Chakra Petch 700",
+    "motion": "slide-clip",
+    "frame": "instrument"
+  }
+}

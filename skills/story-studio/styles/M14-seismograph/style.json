@@ -1,0 +1,23 @@
+{
+  "id": "M14",
+  "bg": "#25706b",
+  "paper": "#f4f6ef",
+  "gridMinor": "#b3d6be",
+  "gridMajor": "#4f9a70",
+  "ink": "#1b2735",
+  "accent": "#d62d20",
+  "chrome": "#c9ced1",
+  "text": "#1b2735",
+  "font": "IBM Plex Sans Thai",
+  "titleWeight": 700,
+  "drumSpeed": 2.4,
+  "layout": { "meters": 0.03, "map": 0.229, "drum": 0.657, "caption": 0.848 },
+  "signature": {
+    "base": "chart-paper",
+    "palette": ["#25706b", "#f4f6ef", "#4f9a70", "#d62d20", "#1b2735"],
+    "line": "hairline",
+    "type": "IBM Plex Sans Thai 700",
+    "motion": "plotter-draw",
+    "frame": "instrument"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "N27",
+  "bg": "#5a0a50",
+  "velvet": "#a8148c",
+  "sky": ["#f6ecb8", "#5fd0d0", "#1f9cc4"],
+  "sea": "#1f9c94",
+  "board": "#8a5530",
+  "puppeteer": "#0d0b0c",
+  "costume": { "red": "#b8202a", "green": "#1f6e4a", "gold": "#e6b44a" },
+  "text": "#fff0d6",
+  "font": "Krub",
+  "titleWeight": 700,
+  "signature": {
+    "base": "puppet-stage",
+    "palette": ["#a8148c", "#5fd0d0", "#b8202a", "#e6b44a", "#fff0d6"],
+    "line": "none",
+    "type": "Krub 700",
+    "motion": "rod-dance",
+    "frame": "proscenium"
+  }
+}

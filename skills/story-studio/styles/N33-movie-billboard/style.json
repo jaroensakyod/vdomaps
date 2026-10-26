@@ -1,0 +1,22 @@
+{
+  "id": "N33",
+  "bg": "#0a0f22",
+  "sky": ["#1d2f4f", "#4a4470", "#d9785a"],
+  "prime": "#efe6d2",
+  "skin": ["#ffd7a0", "#ec9d68", "#8b3a5e"],
+  "rim": "#58e2e6",
+  "sunset": ["#3b1450", "#b8235a", "#f2683a", "#ffc24a"],
+  "title": ["#fff6b0", "#ffd23a", "#d7262b"],
+  "bulb": "#fff0a8",
+  "text": "#2a0a10",
+  "font": "Chonburi",
+  "titleWeight": 400,
+  "signature": {
+    "base": "painted-billboard",
+    "palette": ["#0a0f22", "#ec9d68", "#b8235a", "#ffd23a", "#2a0a10"],
+    "line": "brush",
+    "type": "Chonburi 400",
+    "motion": "brush-in",
+    "frame": "poster"
+  }
+}

@@ -16,3 +16,7 @@ dist/
 # Reference material bought from other sellers: never commit (proprietary, do not redistribute)
 Untitled folder-*.zip
 reference/
+
+# E-book build output (node course/ebook/build.mjs)
+course/ebook/out/
+course/ebook/node_modules/

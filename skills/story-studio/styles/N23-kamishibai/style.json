@@ -1,0 +1,19 @@
+{
+  "id": "N23",
+  "bg": "#2a6aa8",
+  "wood": ["#8a5632", "#4e2d17"],
+  "gouache": { "vermilion": "#d4512e", "ochre": "#e2a63b", "viridian": "#2e7b67", "ultra": "#2b4a8e", "cream": "#f2e4c4", "skin": "#c9875a" },
+  "tag": "#efc35a",
+  "ink": "#2a211d",
+  "text": "#f6ead2",
+  "font": "Sriracha",
+  "titleWeight": 400,
+  "signature": {
+    "base": "gouache-card",
+    "palette": ["#2a6aa8", "#8a5632", "#2e7b67", "#d4512e", "#2a211d"],
+    "line": "brush",
+    "type": "Sriracha 400",
+    "motion": "slide-stack",
+    "frame": "stage"
+  }
+}

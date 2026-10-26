@@ -1,0 +1,33 @@
+{
+  "id": "N30",
+  "bg": "#16120f",
+  "size": "#efe3c6",
+  "paints": {
+    "violet": "#4a2a8c",
+    "teal": "#1f8f94",
+    "ochre": "#d8a03a",
+    "crimson": "#c8284a",
+    "turquoise": "#3c9a94",
+    "sky": "#6a8ad8",
+    "cream": "#f1e7cf",
+    "ink": "#14261f"
+  },
+  "label": "#d9b77e",
+  "text": "#2a1a12",
+  "font": "Charm",
+  "titleWeight": 700,
+  "signature": {
+    "base": "marbled-paper",
+    "palette": [
+      "#efe3c6",
+      "#4a2a8c",
+      "#1f8f94",
+      "#d8a03a",
+      "#2a1a12"
+    ],
+    "line": "combed",
+    "type": "Charm 700",
+    "motion": "comb-swirl",
+    "frame": "none"
+  }
+}

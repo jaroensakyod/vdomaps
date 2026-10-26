@@ -1,0 +1,22 @@
+{
+  "id": "M34",
+  "bg": "#21150f",
+  "paper": "#a9b5df",
+  "rule": "#6f80bf",
+  "margin": "#b0475a",
+  "ink": "#16204d",
+  "envelope": "#e2cfa3",
+  "wax": "#9c1c1f",
+  "text": "#16204d",
+  "font": "Charmonman",
+  "titleWeight": 700,
+  "land": "world-atlas/land-110m.json",
+  "signature": {
+    "base": "letter-paper",
+    "palette": ["#a9b5df", "#16204d", "#e2cfa3", "#9c1c1f", "#21150f"],
+    "line": "nib-ink",
+    "type": "Charmonman 700",
+    "motion": "handwrite",
+    "frame": "letter"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "M25",
+  "bg": "#3a1f28",
+  "bed": "#3a1f28",
+  "guide": "#e2b98a",
+  "land": ["#e6bb4e", "#e2b44a", "#eac158", "#dfb048", "#e6b950"],
+  "coastRow": "#b8743e",
+  "seaDeep": ["#16191c", "#1b1f23"],
+  "seaCrest": ["#7fd0bf", "#4fb7a8", "#38a093", "#2b8a82", "#22746f", "#1b615e", "#164f4e"],
+  "road": ["#a3301f", "#86251a", "#b53a24"],
+  "border": ["#2a2522", "#eadfc6", "#a8472d"],
+  "marble": "#f1ebdd",
+  "inlay": "#7a2418",
+  "text": "#7a2418",
+  "font": "Trirong",
+  "titleWeight": 800,
+  "cell": 10,
+  "signature": {
+    "base": "stone-mosaic",
+    "palette": ["#3a1f28", "#e6bb4e", "#2b8a82", "#a3301f", "#7a2418"],
+    "line": "tessera",
+    "type": "Trirong 800",
+    "motion": "tile-set",
+    "frame": "mosaic-border"
+  }
+}

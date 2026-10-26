@@ -1,0 +1,20 @@
+{
+  "id": "N18",
+  "bg": "#fbf6e6",
+  "ink": "#141210",
+  "flat": ["#e23b2e", "#6cc3ec", "#f6c623", "#3ea24f", "#3d8fc6", "#b8692e", "#f1c391"],
+  "panel": "#ffffff",
+  "narration": "#f6c623",
+  "lineWidth": 4,
+  "gutter": 22,
+  "font": "Mali",
+  "titleWeight": 700,
+  "signature": {
+    "base": "comic-page",
+    "palette": ["#fbf6e6", "#e23b2e", "#6cc3ec", "#f6c623", "#141210"],
+    "line": "clear-line",
+    "type": "Mali 700",
+    "motion": "slide-stack",
+    "frame": "comic-grid"
+  }
+}

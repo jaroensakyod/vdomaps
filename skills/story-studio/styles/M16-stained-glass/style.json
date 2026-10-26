@@ -1,0 +1,25 @@
+{
+  "id": "M16",
+  "bg": "#9a6e4c",
+  "lead": "#24211f",
+  "siam": "#f2b01e",
+  "france": "#2f6ae0",
+  "britain": "#d02a48",
+  "sea": ["#2f8f8a", "#3a9a90", "#277f80", "#46a39a", "#2c8790"],
+  "ground": ["#6e5a8a", "#7b6896", "#5f4f7a", "#86739e", "#68588a"],
+  "text": "#2a241c",
+  "font": "Pridi",
+  "titleWeight": 700,
+  "quarryCell": 74,
+  "crackFrames": 16,
+  "swapFrames": 14,
+  "layout": { "title": 0.02, "window": 0.104, "plaque": 0.69, "floor": 0.767 },
+  "signature": {
+    "base": "stained-glass",
+    "palette": ["#9a6e4c", "#f2b01e", "#2f6ae0", "#d02a48", "#24211f"],
+    "line": "lead-came",
+    "type": "Pridi 700",
+    "motion": "crack-swap",
+    "frame": "window"
+  }
+}

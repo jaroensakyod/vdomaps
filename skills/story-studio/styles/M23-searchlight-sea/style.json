@@ -1,0 +1,21 @@
+{
+  "id": "M23",
+  "bg": "#03060b",
+  "land": "#0b0d0f",
+  "litLand": "#a3b4c4", "litSea": "#4a6a90",
+  "light": "#cfe8ff",
+  "surf": "#f2f9ff",
+  "flare": "#ffae4a",
+  "text": "#e6f2ff",
+  "font": "Bai Jamjuree",
+  "titleWeight": 700,
+  "coast": "data/kochang-coast.geojson",
+  "signature": {
+    "base": "night-sea",
+    "palette": ["#03060b", "#cfe8ff", "#4a6a90", "#ffae4a", "#e6f2ff"],
+    "line": "glow",
+    "type": "Bai Jamjuree 700",
+    "motion": "searchlight-sweep",
+    "frame": "none"
+  }
+}

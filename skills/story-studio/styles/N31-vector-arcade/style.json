@@ -1,0 +1,43 @@
+{
+  "id": "N31",
+  "bg": "#f2b705",
+  "tube": "#020305",
+  "beam": {
+    "white": "#e8f7ff",
+    "cyan": "#5fd8ff",
+    "red": "#ff5146",
+    "green": "#7dffb0",
+    "amber": "#ffc24a"
+  },
+  "text": "#e8f7ff",
+  "font": "Chakra Petch",
+  "titleWeight": 700,
+  "signature": {
+    "base": "vector-crt",
+    "palette": [
+      "#020305",
+      "#5fd8ff",
+      "#e8f7ff",
+      "#ff5146",
+      "#ffc24a"
+    ],
+    "line": "vector-beam",
+    "type": "Chakra Petch 700",
+    "motion": "beam-trace",
+    "frame": "arcade-bezel"
+  },
+  "cabinet": {
+    "body": "#f2b705",
+    "stripes": [
+      "#f5b400",
+      "#f2781b",
+      "#d8341f",
+      "#8a1730"
+    ],
+    "bezel": [
+      "#3a0f5c",
+      "#c2366a",
+      "#f2781b"
+    ]
+  }
+}

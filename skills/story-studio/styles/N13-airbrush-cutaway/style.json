@@ -1,0 +1,19 @@
+{
+  "id": "N13",
+  "bg": "#1b1442",
+  "ground": ["#1b1442", "#2e2466", "#5e2f6e", "#b4504f", "#f0a05a"],
+  "rock": ["#8d6a3e", "#e3b878", "#b46f4f", "#9c8ea8", "#d35a3a"],
+  "glow": "#ff8a3d",
+  "cool": "#8fd3e8",
+  "text": "#fff6e8",
+  "font": "Bai Jamjuree",
+  "titleWeight": 700,
+  "signature": {
+    "base": "airbrush-poster",
+    "palette": ["#1b1442", "#c98b5a", "#5e2f6e", "#ff8a3d", "#fff6e8"],
+    "line": "glow",
+    "type": "Bai Jamjuree 700",
+    "motion": "wipe-reveal",
+    "frame": "poster"
+  }
+}

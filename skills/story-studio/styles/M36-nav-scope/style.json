@@ -1,0 +1,25 @@
+{
+  "id": "M36",
+  "bg": "#5a6e62",
+  "enamel": "#5a6e62",
+  "brass": "#c4974a",
+  "tube": "#0c0703",
+  "phosphor": "#ffb24a",
+  "phosphorHot": "#fff0c8",
+  "bakelite": "#3a1d10",
+  "card": "#ead9b4",
+  "pencil": "#e8a21c",
+  "text": "#2a1c08",
+  "font": "Niramit",
+  "handFont": "Itim",
+  "titleWeight": 700,
+  "land": "world-atlas/land-50m.json",
+  "signature": {
+    "base": "plot-scope",
+    "palette": ["#5a6e62", "#c4974a", "#0c0703", "#ffb24a", "#ead9b4"],
+    "line": "glow",
+    "type": "Niramit 700",
+    "motion": "trace-plot",
+    "frame": "instrument"
+  }
+}

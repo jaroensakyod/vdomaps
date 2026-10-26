@@ -1,0 +1,21 @@
+{
+  "id": "M18",
+  "bg": "#7f4e27",
+  "gap": "#2e1c0e",
+  "paint": "#1d1b18",
+  "blue": "#1f3a63",
+  "red": "#b8321f",
+  "label": "#e7d6a8",
+  "string": "#efe4c6",
+  "text": "#1d1b18",
+  "font": "Bai Jamjuree",
+  "titleWeight": 700,
+  "signature": {
+    "base": "wood-crate",
+    "palette": ["#7f4e27", "#1f3a63", "#e7d6a8", "#b8321f", "#1d1b18"],
+    "line": "stencil",
+    "type": "Bai Jamjuree 700",
+    "motion": "slide-stack",
+    "frame": "none"
+  }
+}

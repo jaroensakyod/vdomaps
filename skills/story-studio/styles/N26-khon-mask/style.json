@@ -1,0 +1,21 @@
+{
+  "id": "N26",
+  "bg": "#070407",
+  "silk": "#0c2a8c",
+  "gold": "#e8b84a",
+  "goldDeep": "#7a4f10",
+  "demon": "#1f8f4e",
+  "monkey": "#f2eee4",
+  "lip": "#c0182a",
+  "text": "#ffe7a6",
+  "font": "Chonburi",
+  "titleWeight": 400,
+  "signature": {
+    "base": "costume-brocade",
+    "palette": ["#070407", "#1f8f4e", "#f2eee4", "#e8b84a", "#ffe7a6"],
+    "line": "embossed",
+    "type": "Chonburi 400",
+    "motion": "turntable",
+    "frame": "stage"
+  }
+}

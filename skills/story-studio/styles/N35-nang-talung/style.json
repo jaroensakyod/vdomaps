@@ -1,0 +1,22 @@
+{
+  "id": "N35",
+  "bg": "#0c1220",
+  "screen": ["#ffffff", "#fbf8ef", "#e4dcc6"],
+  "lamp": "#fff1c2",
+  "border": "#1d3b8f",
+  "trim": "#c8202a",
+  "hide": "#2a140a",
+  "puppets": ["#d2552e", "#2f9a4a", "#f2b731", "#5a4fc8", "#d0342c"],
+  "fascia": "#1f5a34",
+  "text": "#fff2c4",
+  "font": "Itim",
+  "titleWeight": 400,
+  "signature": {
+    "base": "talung-screen",
+    "palette": ["#0c1220", "#fbf8ef", "#d2552e", "#2f9a4a", "#fff2c4"],
+    "line": "carved",
+    "type": "Itim 400",
+    "motion": "rod-jerk",
+    "frame": "stage"
+  }
+}

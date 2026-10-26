@@ -1,0 +1,23 @@
+{
+  "id": "M21",
+  "bg": "#4a2372",
+  "velvet": ["#6e3ca6", "#4a2372", "#14081f"],
+  "metal": {
+    "gold": ["#4a3008", "#b8892f", "#f0d27c", "#fff7d8"],
+    "silver": ["#2c3036", "#8f969f", "#dde1e6", "#ffffff"],
+    "bronze": ["#33190a", "#94552a", "#d99a62", "#ffe3c4"]
+  },
+  "brass": "#c9a24e",
+  "text": "#f2ead6",
+  "font": "Trirong",
+  "titleWeight": 800,
+  "light": { "azimuth": 225, "elevation": 38 },
+  "signature": {
+    "base": "struck-metal",
+    "palette": ["#4a2372", "#b8892f", "#8f969f", "#c9a24e", "#f2ead6"],
+    "line": "embossed",
+    "type": "Trirong 800",
+    "motion": "roll-flip",
+    "frame": "exhibit"
+  }
+}

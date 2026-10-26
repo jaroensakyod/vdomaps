@@ -1,0 +1,25 @@
+{
+  "id": "M28",
+  "bg": "#120c08",
+  "headBand": "#8e1b26",
+  "neighbours": "#5a3a6a",
+  "lac": "#9e1f2a",
+  "indigo": "#2b3d73",
+  "yellow": "#e0a72c",
+  "cream": "#f1e6cc",
+  "warp": "#cfc4ae",
+  "bamboo": "#e2c47e",
+  "text": "#1d1a2e",
+  "font": "Krub",
+  "titleWeight": 700,
+  "thread": { "warp": 6, "pick": 6, "bleed": 3.2 },
+  "rivers": "data/nrs-rivers.json",
+  "signature": {
+    "base": "ikat-weave",
+    "palette": ["#5a3a6a", "#9e1f2a", "#2b3d73", "#e0a72c", "#f1e6cc"],
+    "line": "thread-bleed",
+    "type": "Krub 700",
+    "motion": "weave-rows",
+    "frame": "loom"
+  }
+}

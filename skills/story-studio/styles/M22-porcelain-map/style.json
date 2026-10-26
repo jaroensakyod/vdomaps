@@ -1,0 +1,21 @@
+{
+  "id": "M22",
+  "bg": "#4a2216",
+  "glaze": "#f6f7f3",
+  "cobalt": "#1d3f8f",
+  "wash": "#6f8fcb",
+  "pale": "#b9c9e6",
+  "iron": "#7a4a22",
+  "text": "#16326f",
+  "font": "Charm",
+  "titleWeight": 700,
+  "land": "world-atlas land-50m",
+  "signature": {
+    "base": "porcelain-glaze",
+    "palette": ["#4a2216", "#1d3f8f", "#6f8fcb", "#7a4a22", "#16326f"],
+    "line": "brush",
+    "type": "Charm 700",
+    "motion": "turntable",
+    "frame": "exhibit"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "M33",
+  "bg": "#f6dc7c",
+  "wall": "#1a1210",
+  "ink": "#121010",
+  "red": "#c4211b",
+  "green": "#22783b",
+  "yellow": "#f1b712",
+  "cream": "#f6ead0",
+  "text": "#121010",
+  "font": "Chonburi",
+  "titleWeight": 400,
+  "land": "world-atlas/land-110m.json",
+  "signature": {
+    "base": "flash-sheet",
+    "palette": ["#f6dc7c", "#c4211b", "#22783b", "#f1b712", "#121010"],
+    "line": "bold-outline",
+    "type": "Chonburi 400",
+    "motion": "ink-in",
+    "frame": "poster"
+  }
+}
