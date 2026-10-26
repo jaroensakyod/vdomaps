@@ -131,6 +131,12 @@ const stylePage = (r) => {
 </section>`;
 };
 
+// ---- lesson clips on Drive (course/lessons.json): an edition gets its own clips and every lower edition's
+const LESSONS = JSON.parse(readFileSync(path.join(repo, "course/lessons.json"), "utf8")).lessons;
+const clipUrl = (l) => `https://drive.google.com/file/d/${l.id}/view`;
+const clipLink = (l) => `<a href="${clipUrl(l)}"><b>${l.code}</b> ${esc(l.title)}</a>`;
+const clipBox = (ls) => (ls.length ? `<div class="clips"><span>▶ คลิปสอน</span>${ls.map(clipLink).join("")}</div>` : "");
+
 // ---- chapters
 const chapters = readdirSync(path.join(here, "chapters"))
   .filter((f) => f.endsWith(".md"))
@@ -150,9 +156,11 @@ for (const tier of tiers) {
   const chs = chapters.filter((c) => c.tiers.includes(tier));
   const mosaic = mine.filter((_, i) => i % Math.max(1, Math.floor(mine.length / 12)) === 0).slice(0, 12).map((r) => cover(r.folder)).filter(Boolean);
   const toc = chs.map((c, i) => `<li><span>${i + 1}</span>${inline(c.title)}</li>`).join("");
+  const lessons = LESSONS.filter((l) => rank(l.tier) <= rank(tier));
   const body = chs
     .map((c, i) => {
-      let h = md(c.body).replace(/^<h1>(.*?)<\/h1>/, `<div class="chno">บทที่ ${i + 1}</div><h1>$1</h1>`);
+      const box = clipBox(lessons.filter((l) => l.chapters.includes(c.file.replace(/\.md$/, ""))));
+      let h = md(c.body).replace(/^<h1>(.*?)<\/h1>/, `<div class="chno">บทที่ ${i + 1}</div><h1>$1</h1>${box}`);
       h = h.replace(/<!-- styles:([MN]) -->/g, (_, k) => mine.filter((r) => r.id[0] === k).map(stylePage).join("\n"));
       return `<article class="chapter">${h}</article>`;
     })
@@ -172,6 +180,9 @@ for (const tier of tiers) {
 </section>
 <section class="toc"><h1>สารบัญ</h1><ol>${toc}</ol>
   <div class="tocstyles">สไตล์ในเล่มนี้ ${mine.length} แบบ: มีแผนที่ ${mine.filter((r) => r.id[0] === "M").length} · ไม่มีแผนที่ ${mine.filter((r) => r.id[0] === "N").length}</div></section>
+<section class="toc lessons"><h1>คลิปสอน ${lessons.length} คลิป</h1>
+  <p>ดูคู่กับบทในเล่มนี้ กดที่ชื่อคลิปเพื่อเปิดใน Google Drive (ทุกบทที่มีคลิปจะมีกล่อง ▶ คลิปสอน ใต้หัวบท)</p>
+  <ol>${lessons.map((l) => `<li><span>${l.code}</span><a href="${clipUrl(l)}">${esc(l.title)}</a></li>`).join("")}</ol></section>
 ${body}
 <section class="back"><div>Story Studio · ${ed.name}</div><div class="small">ภาพทุกภาพในเล่มวาดด้วยโค้ด ไม่มีภาพจาก AI สร้างรูป · ห้ามแจกหรือขายต่อ</div></section>
 </body></html>`;

@@ -1,0 +1,19 @@
+{
+  "_note": "Lesson clips on Google Drive (folder CourseClaudeAi/คลิปสอน). tier = lowest edition that gets the clip; chapters = e-book chapter files that show the link. Read by course/ebook/build.mjs and course/pack.mjs.",
+  "lessons": [
+    { "code": "B1", "title": "รู้จัก Story Studio", "tier": "basic", "id": "14-PN_ZC-zFv0j0egsfkZX1Q1prGbanGN", "chapters": ["01-intro"] },
+    { "code": "B2", "title": "ติดตั้งครั้งเดียว", "tier": "basic", "id": "1V-8W9OvrTvVAXJlz-ASHe1BCU7ysmBjT", "chapters": ["02-install"] },
+    { "code": "B3", "title": "คลิปแรกด้วย 4 คำสั่ง", "tier": "basic", "id": "1Q1dH1dYBfYcPNi3I_Czha1p8h3xY2DQJ", "chapters": ["03-workflow"] },
+    { "code": "B4", "title": "บทและ hook 3 วินาทีแรก", "tier": "basic", "id": "1Bkig_EEpm-KWCj9QyM1jm85pJpEDjVpU", "chapters": ["04-script"] },
+    { "code": "B5", "title": "ลายเซ็นช่อง", "tier": "basic", "id": "1WaSDm8aeQgVUoIx1Qg4IIyZHuasLNqTc", "chapters": ["05-signature"] },
+    { "code": "B6", "title": "เสียง ซับ และความซื่อตรง", "tier": "basic", "id": "1FyABKnNjoWCJwNPHS6svZApvolHEGRX9", "chapters": ["08-sound", "09-honesty"] },
+    { "code": "B7", "title": "ทัวร์ 24 สไตล์ + N37", "tier": "basic", "id": "1z_QTcRt0edfS6R43YbHGFf42uzqb2ai0", "chapters": ["06-styles-map", "07-styles-story"] },
+    { "code": "B8", "title": "แก้ปัญหาที่เจอบ่อย", "tier": "basic", "id": "1NcGdUstoTCjp5AMcYnA7Hy8R5XvYjkEW", "chapters": ["99-troubleshooting"] },
+    { "code": "P1", "title": "คลิปยาว 10 นาทีจากซอร์สเต็ม", "tier": "pro", "id": "1T9qUdVF4LLztLvhTqX75t9kA7wiznwGa", "chapters": ["10-longform"] },
+    { "code": "P2", "title": "ซีรีส์และหลักฐานหลายฝ่าย", "tier": "pro", "id": "1S4OHR869r3wMNz1VbW0fPtLYzEq8jLNA", "chapters": ["11-series"] },
+    { "code": "P3", "title": "ทัวร์ 24 สไตล์ระดับ Pro", "tier": "pro", "id": "1ZTOsynXfS9nzerqjf_Nljx2EFyvdK-Ez", "chapters": ["06-styles-map", "07-styles-story"] },
+    { "code": "P4", "title": "สติกแมน 8 แบบ", "tier": "pro", "id": "1aToPjPWFo0a-MczB2fzGDZwgcUhzv43r", "chapters": ["07-styles-story"] },
+    { "code": "X1", "title": "ทัวร์ 24 สไตล์ระดับ Premium", "tier": "premium", "id": "1Yi-gM3tMAC03esHz7-ClgxiFpAAGedgj", "chapters": ["06-styles-map", "07-styles-story"] },
+    { "code": "X2", "title": "เตรียมตัวก่อนนัดสอน", "tier": "premium", "id": "1vk2PpbgegQg8RNoPsvyVXDXcJrKBOr1h", "chapters": ["12-coaching"] }
+  ]
+}

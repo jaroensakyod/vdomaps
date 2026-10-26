@@ -47,7 +47,21 @@ const tierIndex = (s) =>
 const noPictures = (rel) => !/(^|\/)portraits(\/|\.json$|-[^/]*\.json$)/.test(rel) && !/\.(jpe?g|png|webp)$/i.test(rel);
 // The map book's 45 recipes (styles.md) are a separate product: leave them out and point the workflow at INDEX.md.
 const sharedRefs = (rel) => rel !== "styles.md";
+// Lesson clips on Drive (course/lessons.json): an edition lists its own clips and every lower edition's.
+const LESSONS = JSON.parse(readFileSync(path.join(repo, "course/lessons.json"), "utf8")).lessons.filter((l) => rank(l.tier) <= rank(tier));
+const lessonTable = [
+  `## คลิปสอน (${LESSONS.length} คลิป)`,
+  "",
+  "ดูคู่กับ e-book กดชื่อคลิปเพื่อเปิดใน Google Drive",
+  "",
+  "| บท | คลิป |",
+  "|---|---|",
+  ...LESSONS.map((l) => `| ${l.code} | [${l.title}](https://drive.google.com/file/d/${l.id}/view) |`),
+  "",
+  "",
+].join("\n");
 const PATCH = {
+  "README.md": (s) => s.replace(/^## ปัญหาที่เจอบ่อย/m, `${lessonTable}## ปัญหาที่เจอบ่อย`),
   "story-studio/references/workflow.md": (s) => s.replaceAll("`styles.md`", "`styles/INDEX.md`"),
   // The product .bat runs it with -File: Windows PowerShell 5.1 reads a BOM-less file as ANSI and breaks the Thai text.
   "install-windows.ps1": (s) => (s.startsWith("﻿") ? s : "﻿" + s),
