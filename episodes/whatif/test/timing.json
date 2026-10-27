@@ -1,0 +1,313 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/whatif/test/hook.wav",
+    "sec": 2.475583,
+    "voice": "Puck",
+    "text": "What if Russia never sold Alaska?",
+    "words": [
+      {
+        "w": "What",
+        "s": 0.02,
+        "e": 0.33
+      },
+      {
+        "w": "if",
+        "s": 0.33,
+        "e": 0.38
+      },
+      {
+        "w": "Russia",
+        "s": 0.56,
+        "e": 0.98
+      },
+      {
+        "w": "never",
+        "s": 0.98,
+        "e": 1.38
+      },
+      {
+        "w": "sold",
+        "s": 1.42,
+        "e": 1.71
+      },
+      {
+        "w": "Alaska?",
+        "s": 1.71,
+        "e": 2.43
+      }
+    ]
+  },
+  {
+    "id": "close",
+    "file": "audio/whatif/test/close.wav",
+    "sec": 6.352146,
+    "voice": "Puck",
+    "text": "Russian troops would be guarding the Canadian border. And Soviet missiles would sit on North American soil.",
+    "words": [
+      {
+        "w": "Russian",
+        "s": 0,
+        "e": 0.43
+      },
+      {
+        "w": "troops",
+        "s": 0.43,
+        "e": 0.8
+      },
+      {
+        "w": "would",
+        "s": 0.8,
+        "e": 1.03
+      },
+      {
+        "w": "be",
+        "s": 1.11,
+        "e": 1.23
+      },
+      {
+        "w": "guarding",
+        "s": 1.23,
+        "e": 1.76
+      },
+      {
+        "w": "the",
+        "s": 1.76,
+        "e": 1.96
+      },
+      {
+        "w": "Canadian",
+        "s": 2.04,
+        "e": 2.72
+      },
+      {
+        "w": "border.",
+        "s": 2.72,
+        "e": 2.848
+      },
+      {
+        "w": "And",
+        "s": 3.479,
+        "e": 3.63
+      },
+      {
+        "w": "Soviet",
+        "s": 3.63,
+        "e": 4.02
+      },
+      {
+        "w": "missiles",
+        "s": 4.02,
+        "e": 4.47
+      },
+      {
+        "w": "would",
+        "s": 4.595,
+        "e": 4.8
+      },
+      {
+        "w": "sit",
+        "s": 5.16,
+        "e": 5.16
+      },
+      {
+        "w": "on",
+        "s": 5.16,
+        "e": 5.2
+      },
+      {
+        "w": "North",
+        "s": 5.2,
+        "e": 5.48
+      },
+      {
+        "w": "American",
+        "s": 5.54,
+        "e": 6.06
+      },
+      {
+        "w": "soil.",
+        "s": 6.06,
+        "e": 6.352
+      }
+    ]
+  },
+  {
+    "id": "real",
+    "file": "audio/whatif/test/real.wav",
+    "sec": 7.270979,
+    "voice": "Puck",
+    "text": "But in the real world, in eighteen-sixty-seven, Russia sold it to the United States for just seven-point-two million-dollars.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0,
+        "e": 0.16
+      },
+      {
+        "w": "in",
+        "s": 0.16,
+        "e": 0.24
+      },
+      {
+        "w": "the",
+        "s": 0.27,
+        "e": 0.43
+      },
+      {
+        "w": "real",
+        "s": 0.43,
+        "e": 0.65
+      },
+      {
+        "w": "world,",
+        "s": 0.65,
+        "e": 1.06
+      },
+      {
+        "w": "in",
+        "s": 1.06,
+        "e": 1.06
+      },
+      {
+        "w": "eighteen-",
+        "s": 1.06,
+        "e": 1.36
+      },
+      {
+        "w": "sixty-",
+        "s": 1.36,
+        "e": 1.36
+      },
+      {
+        "w": "seven,",
+        "s": 1.36,
+        "e": 3.28
+      },
+      {
+        "w": "Russia",
+        "s": 3.28,
+        "e": 3.54
+      },
+      {
+        "w": "sold",
+        "s": 3.54,
+        "e": 3.79
+      },
+      {
+        "w": "it",
+        "s": 3.79,
+        "e": 3.91
+      },
+      {
+        "w": "to",
+        "s": 3.91,
+        "e": 4.01
+      },
+      {
+        "w": "the",
+        "s": 4.01,
+        "e": 4.15
+      },
+      {
+        "w": "United",
+        "s": 4.15,
+        "e": 4.44
+      },
+      {
+        "w": "States",
+        "s": 4.44,
+        "e": 4.61
+      },
+      {
+        "w": "for",
+        "s": 4.66,
+        "e": 4.86
+      },
+      {
+        "w": "just",
+        "s": 4.9,
+        "e": 5.025
+      },
+      {
+        "w": "seven-",
+        "s": 5.025,
+        "e": 5.088
+      },
+      {
+        "w": "point-",
+        "s": 5.088,
+        "e": 5.22
+      },
+      {
+        "w": "two",
+        "s": 5.22,
+        "e": 5.85
+      },
+      {
+        "w": "million-",
+        "s": 5.85,
+        "e": 6.35
+      },
+      {
+        "w": "dollars.",
+        "s": 6.35,
+        "e": 6.6
+      }
+    ]
+  },
+  {
+    "id": "size",
+    "file": "audio/whatif/test/size.wav",
+    "sec": 3.995563,
+    "voice": "Puck",
+    "text": "That's more land than Texas, California and Montana combined.",
+    "words": [
+      {
+        "w": "That's",
+        "s": 0,
+        "e": 0.39
+      },
+      {
+        "w": "more",
+        "s": 0.39,
+        "e": 0.65
+      },
+      {
+        "w": "land",
+        "s": 0.65,
+        "e": 0.9
+      },
+      {
+        "w": "than",
+        "s": 0.91,
+        "e": 1.17
+      },
+      {
+        "w": "Texas,",
+        "s": 1.17,
+        "e": 1.68
+      },
+      {
+        "w": "California",
+        "s": 1.68,
+        "e": 2.49
+      },
+      {
+        "w": "and",
+        "s": 2.63,
+        "e": 2.8
+      },
+      {
+        "w": "Montana",
+        "s": 2.84,
+        "e": 3.27
+      },
+      {
+        "w": "combined.",
+        "s": 3.27,
+        "e": 3.99
+      }
+    ]
+  }
+]

@@ -19,6 +19,8 @@ export const InsetPanel = ({
   accent = "#ff3b30",
   top,
   panelHeight,
+  panelWidth,
+  boxScale = 1,
   children,
 }: {
   id: string;
@@ -33,6 +35,10 @@ export const InsetPanel = ({
   top?: number;
   /** 9:16 only: panel height in px at 1080 (default 380) */
   panelHeight?: number;
+  /** 9:16 only: panel width in px at 1080, centred (default: full width minus 100) */
+  panelWidth?: number;
+  /** shrink the panel box about its bottom centre (the leader line still ends on the box) */
+  boxScale?: number;
   children: (g: InsetGeom) => ReactNode;
 }) => {
   const frame = useCurrentFrame();
@@ -42,14 +48,17 @@ export const InsetPanel = ({
   const p = projection(anchor);
   if (!p) return null;
   const vertical = height > width;
-  const W = vertical ? width - 100 * s : 780 * s;
+  const W = vertical ? (panelWidth !== undefined ? panelWidth * s : width - 100 * s) : 780 * s;
   const H = vertical ? (panelHeight ?? 380) * s : 420 * s;
-  const x = vertical ? 50 * s : width - W - 40 * s;
+  const x = vertical ? (width - W) / 2 : width - W - 40 * s;
   const y = vertical && top !== undefined ? height * top : vertical ? Math.min(Math.max(p[1] + 60 * s, 660 * s), height * 0.695 - H) : Math.min(Math.max(p[1] - H / 2, 150 * s), height - H - 150 * s);
   const ground = y + H - 46 * s;
   const sc = (vertical ? 1.55 : 1.5) * s;
-  const lx = vertical ? Math.min(Math.max(p[0], x + 30 * s), x + W - 30 * s) : x;
-  const ly = vertical ? y : Math.min(Math.max(p[1], y + 30 * s), y + H - 30 * s);
+  const bx = x + (W * (1 - boxScale)) / 2;
+  const by = y + H * (1 - boxScale);
+  const lx = vertical ? Math.min(Math.max(p[0], bx + 30 * s), bx + W * boxScale - 30 * s) : bx;
+  const ly = vertical ? by : Math.min(Math.max(p[1], by + 30 * s), by + H * boxScale - 30 * s);
+  const box = boxScale === 1 ? undefined : `translate(${x + W / 2},${y + H}) scale(${boxScale}) translate(${-(x + W / 2)},${-(y + H)})`;
   const clip = `inset-${id}`;
   return (
     <g opacity={Math.min(1, k)}>
@@ -64,6 +73,7 @@ export const InsetPanel = ({
         </linearGradient>
       </defs>
       <line x1={p[0]} y1={p[1]} x2={lx} y2={ly} stroke={accent} strokeWidth={3 * s} strokeDasharray={`${8 * s} ${6 * s}`} />
+      <g transform={box}>
       <g clipPath={`url(#${clip})`} transform={`translate(0,${(1 - Math.min(1, k)) * 30 * s})`}>
         <rect x={x} y={y} width={W} height={H} fill={`url(#${clip}-sky)`} />
         {children({ x, y, W, H, ground, cx: x + W / 2, s, sc, vertical, frame })}
@@ -73,6 +83,7 @@ export const InsetPanel = ({
       <text x={x + 38 * s} y={y + 42 * s} fontSize={22 * s} fontWeight={900} fill="#fff" fontFamily={font}>
         {label}
       </text>
+      </g>
     </g>
   );
 };

@@ -12,6 +12,9 @@ const version = process.env.WHISPER_VERSION ?? "1.5.5";
 export const language = process.env.WHISPER_LANG ?? "th";
 const whisperPath = process.env.WHISPER_DIR ?? "whisper.cpp";
 const gpuBin = process.env.WHISPER_BIN ?? ["whisper-cuda/build/bin/whisper-cli.exe", "whisper-cuda/build/bin/whisper-cli"].find((p) => existsSync(p));
+// CPU build installed by Remotion: also called once for ALL files, so the model loads once (per-file calls reloaded it
+// every beat — a 10-min episode took ~40 min on a laptop CPU).
+const cpuBin = () => [path.join(whisperPath, "main.exe"), path.join(whisperPath, "main")].find((p) => existsSync(p));
 
 export const bare = (s) => s.replace(/\s+/g, "");
 const norm = (c) => c.toLowerCase();
@@ -28,7 +31,11 @@ export const whisper = async (wavs) => {
     const files = wavs.flatMap((w) => ["-f", w]);
     execFileSync(gpuBin, ["-m", path.join(whisperPath, `ggml-${model}.bin`), "-t", String(availableParallelism()), "-l", language, "-dtw", model.replace(/-/g, "."), "-nfa", "-ojf", "-np", ...files], { stdio: ["ignore", "ignore", "pipe"] }); // its log only shows if it fails
     for (const w of wavs) out.set(w, JSON.parse(readFileSync(`${w}.json`, "utf8")));
-  } else for (const w of wavs) out.set(w, await transcribe({ inputPath: w, whisperPath, whisperCppVersion: version, model, tokenLevelTimestamps: true, language, printOutput: false }));
+  } else if (cpuBin()) {
+    const files = wavs.flatMap((w) => ["-f", path.resolve(w)]);
+    execFileSync(cpuBin(), ["-m", path.resolve(whisperPath, `ggml-${model}.bin`), "-t", String(availableParallelism()), "-l", language, "-dtw", model.replace(/-/g, "."), "-ojf", "-np", ...files], { stdio: ["ignore", "ignore", "pipe"] });
+    for (const w of wavs) out.set(w, JSON.parse(readFileSync(`${path.resolve(w)}.json`, "utf8")));
+  } else for (const w of wavs) out.set(w, await transcribe({ inputPath: path.resolve(w), whisperPath, whisperCppVersion: version, model, tokenLevelTimestamps: true, language, printOutput: false }));
   return out;
 };
 

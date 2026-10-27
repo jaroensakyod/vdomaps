@@ -115,8 +115,9 @@ const meta = { bbox: [w, s, e, n], width: W, height: H, credit: CREDIT };
 writeFileSync(`public/raster/${name}-hillshade.json`, JSON.stringify(meta, null, 2));
 writeFileSync(`public/raster/${name}-relief.json`, JSON.stringify(meta, null, 2));
 
-// Small elevation grid for isometric blocks, 3D, profiles or "highest point" labels.
-const gw = Math.min(200, W), gh = Math.max(1, Math.round((gw * H) / W));
+// Small elevation grid for isometric blocks, 3D, profiles or "highest point" labels (DEM_GRID=600 for a finer one, e.g.
+// a 3D terrain).
+const gw = Math.min(Number(process.env.DEM_GRID ?? 200), W), gh = Math.max(1, Math.round((gw * H) / W));
 const grid = [];
 for (let y = 0; y < gh; y++)
   for (let x = 0; x < gw; x++) grid.push(Math.round(elev[Math.floor(((y + 0.5) / gh) * H) * W + Math.floor(((x + 0.5) / gw) * W)]));

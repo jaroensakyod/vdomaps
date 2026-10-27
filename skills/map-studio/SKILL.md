@@ -41,7 +41,7 @@ current step needs:
 Set by the user on 21 Oct 2026 after the Ayutthaya episode. One rule set for every channel; only the look of the
 map changes with the story:
 
-| Channel | Map look | Rules 2–6 below |
+| Channel | Map look | Rules 2–9 below |
 |---|---|---|
 | ประวัติศาสตร์บนแผนที่ (`episodes/thaihistory`) | News look (rule 1) | yes |
 | แผนที่ข่าวโลกรายวัน (`episodes/worldnews`) | News look (rule 1) | yes |
@@ -63,6 +63,20 @@ map changes with the story:
 4. **No flicker:** consecutive panels overlap ~14 frames (outgoing `end` = incoming `start + 14`) so the map never
    blinks through. Final renders use `--gl=angle` (Vulkan occasionally composites a ghosted frame), then
    `node scripts/check-glitch.mjs out/<file>.mp4` must report 0 glitch frames before delivery.
+   Long videos (over ~2 min) render with `npm run render:chunks -- <Composition> out/<file>.mp4 --loudness --glitch`:
+   30-s segments rendered 3 at a time (muted), one soundtrack for the whole timeline, joined without re-encoding, then the
+   glitch check and −14 LUFS. A single render leaves the machine ~75 % idle (a 6:40 episode took ~45 min).
+   **Render safety** (23 Oct 2026, after FFmpeg crashed with 0xC0000142 at ~75 % of a 40-min render and nothing was
+   kept): `render-chunks` saves every 30-s segment as it finishes (`<out>.parts/`), retries a segment that dies
+   (`--retries 3`) and, when it still stops, **the same command run again resumes** from the saved segments — never
+   delete `<out>.parts/` by hand and never restart from zero. Start final renders as their own process (the app's
+   Terminal tab, or a background command) so a Claude restart or context compaction does not take them down; keep the
+   computer awake and do not run other renders or batches of stills at the same time; check `out/` has ~2 GB free
+   per 10-min episode. Before a full render, render the riskiest 5–10 s ranges (`--frames=a-b`) and run
+   `check-glitch` on them — a full re-render costs ~40 min, a range a minute. The risky ranges are always (a) explosions,
+   flashes and repeated impacts and (b) the story/chapter changes with the biggest zoom (close-up ↔ globe): give a
+   zoom-out from ~5× to the globe ≥ 28 frames (world news 23 Oct 2026: 18 frames made the polar ice pop in one frame,
+   flagged after the full render and cost a second render).
 5. Show a ~10–15 s test in the final look before building a whole video.
 6. Map/imagery credits go in the video description, not on screen (OSM's ODbL still requires the description credit).
 7. **Illustration style v2** (set by the user on 22 Oct 2026, approved from `out/thaihistory/style-test.mp4`): every
@@ -81,6 +95,13 @@ map changes with the story:
    - **Look:** ink outlines (`PAL.ink`, 1.4–2.2 px × s) and a mural palette (ochre, indigo, muted green, chalk,
      gilt). Channels may change the palette and costumes, not the method.
    - **Variety:** at most 2 uses of the same scene per episode; build a specific scene for each story beat.
+   - **Flashes never strobe:** lightning, explosions, sirens and screen flashes rise over ≥2 frames and fade over
+     ≥10; alternating lights (police red/blue) cross-fade with a sine, never swap colour every few frames; no
+     double-flicker lightning, no 1-frame flashes, no `frame % n` blinking on large areas. These trip
+     `check-glitch` and read as flicker (found in the rain test: a realistic double lightning flash was flagged).
+   - **Composition (9:16):** hold the ground/water line at ~2/3 of the screen at every zoom
+     (`cy = ground − k / zoom`), keep the action in the middle third, and fill the bottom with a near foreground
+     layer (people, grass, umbrellas, a wave) moving fastest. Empty ground or sea in the bottom half is a defect.
    - Special scenes may use nang yai shadow puppets (`ShadowPanel` in the same file), 1–2 per episode at most.
    - AI images (Gemini) are only for portraits of people; everything that moves is drawn in code.
    Finished videos (ประวัติศาสตร์บนแผนที่ ep01–ep03 and earlier work) keep their v1 panels; do not refit them.
@@ -89,6 +110,22 @@ map changes with the story:
    (commercial OK, no credit), Freesound CC0. The raw files are never committed. Every illustrated event sounds
    on its frame, every scene has an ambience bed, and narration always wins. Synthetic `SFX.*` sounds are for UI
    moments only. Rules, sources and the catalogue: `references/sound.md`; reference mix: `episodes/lab/WW1Battle.tsx`.
+9. **Clear layout: the map is never covered** (set by the user on 23 Oct 2026 from the ep05 10-second tests,
+   `out/thaihistory/ep05/layout-test/`). Every new 9:16 episode on every channel:
+   - **Compact head card** (72 % size, top 8.5 %, ≤ 82 % of the width so the top-right of the map shows).
+   - **Panel shrunk to 80 %** about its bottom edge (`InsetPanel boxScale`); captions stay where they are and the
+     leader line still ends on the box.
+   - **Map in the open band:** camera `scale × 0.8` and `<MapFrame focusY={0.444}>`, so the place being narrated sits
+     between the head card and the panel (≈ 17–60 % of the height), not behind the panel.
+   - **Panel tucked away while the camera moves:** `panelHideAt(keys, frame)` (`components/camera.ts`) slides the panel
+     down and out ~8 frames before any pan or zoom and brings it back once the map is still. Wrap the camera keys in
+     `holdAndMove(keys, 30)` (same file): slow drifts become "hold, then a move landing on the key" (30 frames, longer
+     for long pans and big zooms, max 120 — a 100× zoom in 30 frames tripped check-glitch). Without it ep05 hid its
+     panels 42 % of the time; with it 18 %, and every sentence kept its picture on screen for ≥ ~half its length.
+   - Wiring (thaihistory news kit): `CLEAR` + `LayoutCtx` in `episodes/thaihistory/news/kit.tsx`; reference
+     `episodes/thaihistory/ep05/Ep.tsx` (`Ep05Clear`). Other channel kits (worldnews, worldhistory, sankok, dhamma)
+     take the same four pieces into their own Panel/HeadCard when their next episode is built.
+   Finished videos keep their layout; do not re-render them for this.
 
 ## First run on a new machine
 

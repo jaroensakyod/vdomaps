@@ -1,154 +1,102 @@
 import { interpolate, useCurrentFrame } from "remotion";
+import { Arrow } from "../../../components/Arrow";
 import { PointLabel } from "../../../components/Labels";
-import { SFX } from "../../../components/Sound";
-import { clamp, GOLD, RED, view } from "../news/kit";
-import { chain, type ChapterN } from "../nrs/beats";
-import { C, Elephant, Parabaik } from "../nrs/kit";
-import { CityDot, MapTag } from "../nrs/map";
-import { PL, VW } from "../nrs/places";
-import { Backdrop, Candle, DuelSilhouetteScene, DutchScene, Fighter, Grass, LostRecordsScene, PAL, ScribeScene, V2 } from "../nrs/scenes";
-import { B, Bed, heads, Hit, wf } from "./beatsKit";
+import { clamp, view } from "../news/kit";
+import { CityDot } from "../ep05/beatsKit";
+import { B, BURMA_C, GOLD, RED, TAK_C, wp, type Chapter6 } from "./beatsKit";
+import { ApproxNote, Battle } from "./mapkit";
+import { Bed, Hit, SFX } from "./mix";
+import { PL, ROUTE, VW } from "./places";
+import { AfterSmokeScene, BurmeseBoatsScene, FordScene, TrenchScene, WaitCampScene } from "./scenes";
 
-// Episode 6, chapter 4 "หลักฐานเล่าไม่ตรงกัน" (beats warn → agree): the oldest Thai chronicle, van Vliet, the Burmese
-// Hmannan, the Portuguese reports and the Yodaya chronicle side by side — and the three things they all agree on.
+// Chapter 4 (crossing → ironic): across at Dan Kob Jae, the Burmese come again from Pak Nam Jo Lo, three volleys.
 const T = {
-  warn: B.warn.start,
-  pr: B.prasoet.start,
-  arm: wf("prasoet", "พระกร", 0.85),
-  vl: B.vliet.start,
-  fifty: wf("vliet", "ห้าสิบ", 0.35),
-  lance: wf("vliet", "หอก", 0.85),
-  bu: B.burma.start,
-  gun: wf("burma", "ปืน", 0.7),
-  noDuel: wf("burma", "ตัว", 0.9),
-  hold: B.hold.start,
-  pt: B.portugal.start,
-  merc: wf("portugal", "รับจ้าง", 0.75),
-  yo: B.yodaya.start,
-  kill: wf("yodaya", "สังหาร", 0.8),
-  agree: B.agree.start,
-  one: wf("agree", "จริง", 0.45),
-  two: wf("agree", "เอง", 0.7),
-  three: wf("agree", "ช้าง", 0.95),
+  crossing: B.crossing.start,
+  kob: wp("crossing", "กบ", 0.4),
+  prachin: wp("crossing", "ปราจีน", 0.7),
+  wait: B.wait.start,
+  cy: wp("wait", "เชียงเงิน", 0.6),
+  burma2: B.burma2.start,
+  jolo: wp("burma2", "โจ้", 0.4),
+  land: wp("burma2", "บก", 0.6),
+  boats: wp("burma2", "เรือ", 0.7),
+  trap: B.trap.start,
+  dig: wp("trap", "เพลาะ", 0.3),
+  hold: wp("trap", "ห้าม", 0.65),
+  volley: B.volley.start,
+  all: wp("volley", "พร้อม", 0.5),
+  ironic: B.ironic.start,
+  when: wp("ironic", "ตอนไหน", 0.9),
 };
-const END = B.dates.start;
+const END = B.coast.start;
+// Three volleys ≥ 22 frames apart (each flash rises 3 frames and fades 14 — no strobing).
+const V = [T.all, T.all + 24, T.all + 48];
 
-type Sc = { id: string; start: number; end: number };
-
-// At dusk the Burmese crown prince's elephant turns away from the fight; a rider behind holds the prince upright.
-const HoldScene = ({ id, start, end }: Sc) => (
-  <V2 id={id} anchor={PL.nongsarai} start={start} end={end} sky={["#3a2a4a", "#d07a4a"]} accent={RED} warm={0.1}>
-    {(g, pan, lt) => (
-      <g>
-        <Backdrop g={g} pan={pan} light={[0.2, 0.45]} lightColor={["#ff9a5a", "#ffe0a0"]} far="#4a3a4a" mid="#3a3030" ground="#3a2a1a" />
-        <Elephant x={g.x + g.W * 0.55 - lt * 0.3 * g.s + pan * 0.6} y={g.ground + 16 * g.s} s={g.s * 0.52} flip walk={0.6} cloth={PAL.chalk} trim="#7a2a22" riderCostume={C.burmaPrince} slump={0.35} umbrella />
-        {[0, 1, 2].map((i) => <Fighter key={i} x={g.x + g.W * (0.78 + i * 0.07) - lt * 0.3 * g.s + pan * 0.8} y={g.ground + 26 * g.s} scale={g.sc * 0.5} flip mode="walk" costume={C.burma} phase={i} />)}
-        <Grass g={g} shift={pan * 1.6} color="#2a2014" />
-      </g>
-    )}
-  </V2>
-);
-
-// Portuguese mercenaries with matchlocks march beside a Siamese war elephant.
-const PortoScene = ({ id, start, end }: Sc) => (
-  <V2 id={id} anchor={PL.ayut} start={start} end={end} sky={["#6f8fb8", "#f2c98a"]} accent={GOLD}>
-    {(g, pan, lt) => (
-      <g>
-        <Backdrop g={g} pan={pan} light={[0.85, 0.22]} />
-        <Elephant x={g.x + g.W * 0.7 + lt * 0.3 * g.s + pan * 0.5} y={g.ground + 8 * g.s} s={g.s * 0.42} walk={1} cloth={RED} trim={PAL.gilt} riderCostume={C.prince} />
-        {Array.from({ length: 5 }, (_, i) => <Fighter key={i} x={g.x + g.W * (0.08 + i * 0.09) + lt * 0.3 * g.s + pan * 0.7} y={g.ground + 22 * g.s} scale={g.sc * 0.58} mode="walk" costume={C.porto} weapon="rifle" phase={i} />)}
-        <Grass g={g} shift={pan * 1.6} />
-      </g>
-    )}
-  </V2>
-);
-
-// An Ayutthaya chronicle in Burmese script, open beside a painted page of two elephants (the Yodaya chronicle).
-const YodayaScene = ({ id, start, end }: Sc) => (
-  <V2 id={id} anchor={PL.pegu} start={start} end={end} sky={["#1a120c", "#3a2414"]} accent={GOLD} warm={0.1}>
-    {(g, pan) => (
-      <g>
-        <rect x={g.x} y={g.y} width={g.W} height={g.H} fill="#24180f" />
-        <rect x={g.x - 50 * g.s} y={g.ground - 40 * g.s} width={g.W + 100 * g.s} height={g.H} fill="#5a3a20" stroke={PAL.ink} strokeWidth={2 * g.s} />
-        <Parabaik x={g.x + g.W * 0.12 + pan * 0.5} y={g.ground - 44 * g.s} w={240 * g.s} s={g.s} />
-        <g transform={`translate(${g.x + g.W * 0.5 + pan * 0.6},${g.ground - 44 * g.s})`}>
-          <rect x={0} y={-150 * g.s} width={260 * g.s} height={150 * g.s} fill="#e9dcc0" stroke={PAL.ink} strokeWidth={2 * g.s} />
-          <Elephant x={70 * g.s} y={-20 * g.s} s={g.s * 0.22} cloth={RED} riderCostume={C.prince} />
-          <Elephant x={190 * g.s} y={-20 * g.s} s={g.s * 0.22} flip cloth={PAL.chalk} trim="#7a2a22" riderCostume={C.burmaPrince} />
-        </g>
-        <Candle x={g.x + g.W * 0.92 + pan * 0.6} y={g.ground - 40 * g.s} s={g.s * 1.4} />
-      </g>
-    )}
-  </V2>
-);
-
-export const e6c4: ChapterN = {
-  name: "หลักฐานเล่าไม่ตรงกัน",
-  from: B.warn.start,
+export const e6c4: Chapter6 = {
+  name: "ศึกปากน้ำโจ้โล้",
+  from: T.crossing,
   to: END,
   cams: (w, h) => [
-    { frame: T.warn, cam: view(VW.region, w, h, 0.9, 0.1) },
-    { frame: T.vl, cam: view(VW.central, w, h, 0.8, 0.1) },
-    { frame: T.bu, cam: view(VW.pegu, w, h, 0.9, 0.1) },
-    { frame: T.pt, cam: view(VW.region, w, h, 0.9, 0.1) },
-    { frame: T.yo, cam: view(VW.pegu, w, h, 0.9, 0.1) },
-    { frame: T.agree, cam: view(VW.suphan, w, h, 0.9, 0.1) },
+    { frame: T.crossing, cam: view(VW.prachin, w, h, 0.9, 0.06) },
+    { frame: T.burma2, cam: view(VW.prachin, w, h, 1.0, 0.06) },
+    { frame: T.trap, cam: view(VW.prachin, w, h, 1.15, 0.04) },
   ],
-  years: [[T.warn, "2135"]],
+  years: [[T.crossing, "2310"]],
   heads: [
-    ...heads(["warn"], { warn: { color: RED } }),
-    ...heads(["prasoet"], { prasoet: { stat: "ราว 2223", label: "ฉบับเก่าที่สุดของไทย" } }),
-    ...heads(["vliet"], { vliet: { stat: "ค.ศ. 1640", label: "เกือบ 50 ปีหลังศึก" } }),
-    ...heads(["burma", "hold"], { burma: { color: RED }, hold: { color: RED } }),
-    ...heads(["portugal", "yodaya"]),
-    ...heads(["agree"], { agree: { chips: [{ text: "① รบบนหลังช้างจริง", f: T.one }, { text: "② พระนเรศวรอยู่ในศึก", f: T.two }, { text: "③ พระมหาอุปราชาสิ้นพระชนม์", f: T.three }] } }),
+    { f: T.crossing, tag: "ด่านกบแจะ", head: "ข้ามเข้าเขตปราจีนบุรี", color: GOLD },
+    { f: T.wait, tag: "หยุดตั้งค่าย", head: "รอคนที่ตามมาทีหลัง", color: GOLD },
+    { f: T.cy, tag: "มาช้า", head: "พระเชียงเงินถูกลงโทษ", color: RED },
+    { f: T.burma2, tag: "ทัพพม่าระลอกใหม่", head: "จากปากน้ำโจ้โล้", color: RED, chips: [{ text: "ทางบก", f: T.land }, { text: "ทางเรือ", f: T.boats }] },
+    { f: T.trap, tag: "ตั้งรับ", head: "ห้ามยิง จนกว่าจะใกล้", color: GOLD },
+    { f: T.volley, tag: "ยิงพร้อมกัน", head: "ปืนทุกกระบอก", stat: (f: number) => `${Math.max(1, V.filter((v) => f >= v).length)}`, label: "/ 3 ชุด", color: RED },
+    { f: T.ironic, tag: "ชนะที่โจ้โล้", head: "รู้ว่าควรยิงตอนไหน", color: GOLD },
   ],
   Map: () => {
     const frame = useCurrentFrame();
-    const o = interpolate(frame, [T.agree, T.agree + 15], [0, 1], clamp);
+    const red = interpolate(frame, [T.ironic, T.ironic + 30], [1, 0.25], clamp);
     return (
       <>
-        <CityDot at={PL.ayut} color={GOLD} r={14} start={T.warn} />
-        <PointLabel at={PL.ayut} text="อยุธยา" start={T.vl} color={GOLD} size={0.8} />
-        <CityDot at={PL.pegu} color={RED} r={14} start={T.bu} />
-        <PointLabel at={PL.pegu} text="หงสาวดี" start={T.bu + 10} color={RED} size={0.8} />
-        <MapTag at={[99.0, 15.4]} text="ง้าว · หอก · ปืน ?" start={T.pt} end={T.agree} color={GOLD} size={40} />
-        <CityDot at={PL.nongsarai} color={GOLD} r={14 + o * 6} start={T.agree} />
-        <PointLabel at={PL.nongsarai} text="หนองสาหร่าย" start={T.agree + 6} color={GOLD} size={0.8} />
+        <Arrow points={ROUTE.prachin.slice(0, 3)} start={T.crossing} end={T.kob + 10} color={TAK_C} width={12} />
+        <PointLabel at={PL.kobjae} text="ด่านกบแจะ" start={T.kob} color={TAK_C} size={0.75} />
+        <Arrow points={ROUTE.prachin.slice(2)} start={T.prachin} end={T.wait} color={TAK_C} width={12} />
+        <CityDot at={PL.prachin} color={TAK_C} r={10} start={T.prachin} />
+        <PointLabel at={PL.prachin} text="ปราจีนบุรี" start={T.prachin} color={TAK_C} size={0.75} />
+        <CityDot at={PL.jolo} color={BURMA_C} r={12} start={T.jolo - 4} />
+        <PointLabel at={PL.jolo} text="ปากน้ำโจ้โล้" start={T.jolo} color={BURMA_C} size={0.8} />
+        <Arrow points={[PL.jolo, [101.3, 13.82], [101.34, 13.88]]} start={T.land} end={T.land + 30} color={BURMA_C} width={11} opacity={red} />
+        <Arrow points={[PL.jolo, [101.37, 13.78], [101.4, 13.86], [101.38, 13.89]]} start={T.boats} end={T.boats + 30} color={BURMA_C} width={11} variant="dashed" opacity={red} />
+        <Battle at={PL.battle} start={V[0]} end={END + 20} color={GOLD} size={1.2} />
       </>
     );
   },
-  Panels: () =>
-    chain(
-      [
-        [T.warn, (a, b) => <LostRecordsScene id="e6c4lost" start={a} end={b} />],
-        [T.pr, (a, b) => <ScribeScene id="e6c4khoi" book="khoi" at={PL.ayut} start={a} end={b} />],
-        [T.vl, (a, b) => <DutchScene id="e6c4dutch" start={a} end={b} />],
-        [T.bu, (a, b) => <ScribeScene id="e6c4para" start={a} end={b} />],
-        [T.hold, (a, b) => <HoldScene id="e6c4hold" start={a} end={b} />],
-        [T.pt, (a, b) => <PortoScene id="e6c4porto" start={a} end={b} />],
-        [T.yo, (a, b) => <YodayaScene id="e6c4yod" start={a} end={b} />],
-        [T.agree, (a, b) => <DuelSilhouetteScene id="e6c4agree" start={a} end={b} />],
-      ],
-      END,
-    ),
+  Panels: () => (
+    <>
+      <FordScene id="e6ford" anchor={PL.kobjae} start={T.crossing} end={T.wait + 14} />
+      <WaitCampScene id="e6wait" anchor={PL.battle} start={T.wait} end={T.burma2 + 14} />
+      <BurmeseBoatsScene id="e6boats" anchor={PL.jolo} start={T.burma2} end={T.trap + 14} />
+      <TrenchScene id="e6trench" anchor={PL.battle} start={T.trap} end={T.volley + 14} close={1} />
+      <TrenchScene id="e6volley" anchor={PL.battle} start={T.volley} end={T.ironic + 14} volleys={V} />
+      <AfterSmokeScene id="e6after" anchor={PL.battle} start={T.ironic} end={END + 14} />
+    </>
+  ),
+  Screen: () => <ApproxNote from={T.burma2} to={END} text="จุดรบโจ้โล้ = แนวโดยประมาณ (หลักฐานต่างกัน)" />,
   sfx: [
-    [T.arm, SFX.pop, 0.3],
-    [T.lance, SFX.pop, 0.3],
-    [T.gun, SFX.pop, 0.3],
-    [T.one, SFX.pop, 0.3],
-    [T.two, SFX.pop, 0.3],
-    [T.three, SFX.pop, 0.3],
+    [T.kob, SFX.pop, 0.25],
+    [T.land, SFX.pop, 0.25],
+    [T.boats, SFX.pop, 0.25],
+    [T.hold, SFX.tick, 0.3],
+    [T.when, SFX.hit, 0.3],
   ],
   Audio: () => (
     <>
-      <Bed id="fire_crackle" from={T.warn} to={T.hold} volume={0.15} />
-      <Hit id="ship_bell" at={T.vl + 10} volume={0.25} />
-      <Hit id="rifle_echo" at={T.gun} volume={0.35} />
-      <Bed id="wind" from={T.hold} to={T.pt} volume={0.18} />
-      <Bed id="army_marching" from={T.pt} to={T.yo} volume={0.15} />
-      <Hit id="elephant" at={T.agree + 20} volume={0.45} />
-      <Bed id="war_drums" from={T.agree} to={END} volume={0.2} />
+      <Bed id="ship_sailing" from={T.crossing} to={T.wait + 30} volume={0.14} />
+      <Hit id="splash" at={T.crossing + 20} volume={0.35} />
+      <Bed id="fire_crackle" from={T.wait} to={T.burma2 + 30} volume={0.14} />
+      <Bed id="war_drums" from={T.burma2} to={T.volley + 10} volume={0.16} />
+      <Bed id="army_march_crowd" from={T.trap} to={T.volley + 30} volume={0.14} />
+      {V.map((v) => <Hit key={v} id="rifle_echo" at={v} volume={0.8} />)}
+      {V.map((v) => <Hit key={`c${v}`} id="cannon_far" at={v + 2} volume={0.35} />)}
+      <Bed id="wind" from={T.ironic} to={END + 40} volume={0.16} />
     </>
   ),
 };

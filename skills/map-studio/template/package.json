@@ -16,6 +16,7 @@
     "sfx": "node scripts/sfx.mjs",
     "loudness": "node scripts/loudness.mjs",
     "render:batch": "node scripts/render-batch.mjs",
+    "render:chunks": "node scripts/render-chunks.mjs",
     "image": "node scripts/image-gemini.mjs",
     "imagery": "node scripts/fetch-imagery.mjs",
     "dem": "node scripts/fetch-dem.mjs",
@@ -26,7 +27,11 @@
     "stills": "node scripts/stills.mjs",
     "style": "node scripts/style.mjs",
     "gallery": "node scripts/gallery.mjs",
-    "distinct": "node scripts/distinct.mjs"
+    "distinct": "node scripts/distinct.mjs",
+    "cost": "node scripts/cost-report.mjs",
+    "mocap": "node scripts/mocap.mjs",
+    "flow-layers": "node scripts/flow-layers.mjs",
+    "flow-parts": "node scripts/flow-parts.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.537",
@@ -37,7 +42,8 @@
     "react-dom": "^19.1.0",
     "remotion": "4.0.537",
     "topojson-client": "^3.1.0",
-    "world-atlas": "^2.0.2"
+    "world-atlas": "^2.0.2",
+    "@huggingface/transformers": "3.7.6"
   },
   "devDependencies": {
     "@remotion/install-whisper-cpp": "4.0.537",
@@ -46,6 +52,7 @@
     "@types/react": "^19.1.0",
     "@types/topojson-client": "^3.1.5",
     "@types/topojson-specification": "^1.0.5",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@mediapipe/tasks-vision": "0.10.21"
   }
 }

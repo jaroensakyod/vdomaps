@@ -1,0 +1,6504 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/whatif/ep01/hook.wav",
+    "sec": 2.499146,
+    "voice": "Puck",
+    "text": "What if Russia never sold Alaska?",
+    "words": [
+      {
+        "w": "What",
+        "s": 0,
+        "e": 0.32
+      },
+      {
+        "w": "if",
+        "s": 0.44,
+        "e": 0.48
+      },
+      {
+        "w": "Russia",
+        "s": 0.49,
+        "e": 0.98
+      },
+      {
+        "w": "never",
+        "s": 0.98,
+        "e": 1.39
+      },
+      {
+        "w": "sold",
+        "s": 1.39,
+        "e": 1.72
+      },
+      {
+        "w": "Alaska?",
+        "s": 1.72,
+        "e": 2.48
+      }
+    ]
+  },
+  {
+    "id": "close",
+    "file": "audio/whatif/ep01/close.wav",
+    "sec": 5.949188,
+    "voice": "Puck",
+    "text": "Russian troops would be guarding the Canadian border. And Soviet missiles would sit on North American soil.",
+    "words": [
+      {
+        "w": "Russian",
+        "s": 0.02,
+        "e": 0.44
+      },
+      {
+        "w": "troops",
+        "s": 0.44,
+        "e": 0.81
+      },
+      {
+        "w": "would",
+        "s": 0.82,
+        "e": 1.14
+      },
+      {
+        "w": "be",
+        "s": 1.14,
+        "e": 1.26
+      },
+      {
+        "w": "guarding",
+        "s": 1.26,
+        "e": 1.77
+      },
+      {
+        "w": "the",
+        "s": 1.77,
+        "e": 1.96
+      },
+      {
+        "w": "Canadian",
+        "s": 1.96,
+        "e": 2.18
+      },
+      {
+        "w": "border.",
+        "s": 2.9,
+        "e": 2.9
+      },
+      {
+        "w": "And",
+        "s": 2.9,
+        "e": 3.16
+      },
+      {
+        "w": "Soviet",
+        "s": 3.22,
+        "e": 3.5
+      },
+      {
+        "w": "missiles",
+        "s": 3.55,
+        "e": 4.01
+      },
+      {
+        "w": "would",
+        "s": 4.01,
+        "e": 4.31
+      },
+      {
+        "w": "sit",
+        "s": 4.31,
+        "e": 4.46
+      },
+      {
+        "w": "on",
+        "s": 4.57,
+        "e": 4.64
+      },
+      {
+        "w": "North",
+        "s": 4.64,
+        "e": 4.96
+      },
+      {
+        "w": "American",
+        "s": 4.98,
+        "e": 5.55
+      },
+      {
+        "w": "soil.",
+        "s": 5.7,
+        "e": 5.94
+      }
+    ]
+  },
+  {
+    "id": "real",
+    "file": "audio/whatif/ep01/real.wav",
+    "sec": 5.496063,
+    "voice": "Puck",
+    "text": "But in the real world, in eighteen-sixty-seven, Russia sold it to the United States for just seven-point-two million-dollars.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0,
+        "e": 0.1
+      },
+      {
+        "w": "in",
+        "s": 0.17,
+        "e": 0.22
+      },
+      {
+        "w": "the",
+        "s": 0.22,
+        "e": 0.35
+      },
+      {
+        "w": "real",
+        "s": 0.35,
+        "e": 0.53
+      },
+      {
+        "w": "world,",
+        "s": 0.53,
+        "e": 0.83
+      },
+      {
+        "w": "in",
+        "s": 0.83,
+        "e": 0.87
+      },
+      {
+        "w": "eighteen-",
+        "s": 0.87,
+        "e": 0.99
+      },
+      {
+        "w": "sixty-",
+        "s": 0.99,
+        "e": 0.99
+      },
+      {
+        "w": "seven,",
+        "s": 0.99,
+        "e": 1.96
+      },
+      {
+        "w": "Russia",
+        "s": 1.96,
+        "e": 2.29
+      },
+      {
+        "w": "sold",
+        "s": 2.29,
+        "e": 2.5
+      },
+      {
+        "w": "it",
+        "s": 2.51,
+        "e": 2.61
+      },
+      {
+        "w": "to",
+        "s": 2.61,
+        "e": 2.7
+      },
+      {
+        "w": "the",
+        "s": 2.79,
+        "e": 2.89
+      },
+      {
+        "w": "United",
+        "s": 2.89,
+        "e": 3.22
+      },
+      {
+        "w": "States",
+        "s": 3.22,
+        "e": 3.54
+      },
+      {
+        "w": "for",
+        "s": 3.59,
+        "e": 3.73
+      },
+      {
+        "w": "just",
+        "s": 3.73,
+        "e": 3.835
+      },
+      {
+        "w": "seven-",
+        "s": 3.835,
+        "e": 3.888
+      },
+      {
+        "w": "point-",
+        "s": 3.888,
+        "e": 3.99
+      },
+      {
+        "w": "two",
+        "s": 3.99,
+        "e": 4.43
+      },
+      {
+        "w": "million-",
+        "s": 4.44,
+        "e": 4.8
+      },
+      {
+        "w": "dollars.",
+        "s": 4.8,
+        "e": 5
+      }
+    ]
+  },
+  {
+    "id": "size",
+    "file": "audio/whatif/ep01/size.wav",
+    "sec": 3.491583,
+    "voice": "Puck",
+    "text": "That's more land than Texas, California and Montana combined.",
+    "words": [
+      {
+        "w": "That's",
+        "s": 0,
+        "e": 0.31
+      },
+      {
+        "w": "more",
+        "s": 0.31,
+        "e": 0.52
+      },
+      {
+        "w": "land",
+        "s": 0.52,
+        "e": 0.65
+      },
+      {
+        "w": "than",
+        "s": 0.75,
+        "e": 0.94
+      },
+      {
+        "w": "Texas,",
+        "s": 0.94,
+        "e": 1.32
+      },
+      {
+        "w": "California",
+        "s": 1.32,
+        "e": 2.06
+      },
+      {
+        "w": "and",
+        "s": 2.17,
+        "e": 2.34
+      },
+      {
+        "w": "Montana",
+        "s": 2.34,
+        "e": 2.74
+      },
+      {
+        "w": "combined.",
+        "s": 2.952,
+        "e": 3.35
+      }
+    ]
+  },
+  {
+    "id": "question",
+    "file": "audio/whatif/ep01/question.wav",
+    "sec": 5.6865,
+    "voice": "Puck",
+    "text": "So why did Russia sell? And if it hadn't, what would the world look like today? Let's find out.",
+    "words": [
+      {
+        "w": "So",
+        "s": 0.06,
+        "e": 0.21
+      },
+      {
+        "w": "why",
+        "s": 0.552,
+        "e": 0.552
+      },
+      {
+        "w": "did",
+        "s": 0.57,
+        "e": 0.83
+      },
+      {
+        "w": "Russia",
+        "s": 0.83,
+        "e": 1.46
+      },
+      {
+        "w": "sell?",
+        "s": 1.46,
+        "e": 2.22
+      },
+      {
+        "w": "And",
+        "s": 2.28,
+        "e": 2.39
+      },
+      {
+        "w": "if",
+        "s": 2.39,
+        "e": 2.48
+      },
+      {
+        "w": "it",
+        "s": 2.61,
+        "e": 2.61
+      },
+      {
+        "w": "hadn't,",
+        "s": 2.77,
+        "e": 3.06
+      },
+      {
+        "w": "what",
+        "s": 3.348,
+        "e": 3.348
+      },
+      {
+        "w": "would",
+        "s": 3.348,
+        "e": 3.58
+      },
+      {
+        "w": "the",
+        "s": 3.58,
+        "e": 3.75
+      },
+      {
+        "w": "world",
+        "s": 3.75,
+        "e": 3.94
+      },
+      {
+        "w": "look",
+        "s": 4.05,
+        "e": 4.24
+      },
+      {
+        "w": "like",
+        "s": 5.228,
+        "e": 5.228
+      },
+      {
+        "w": "today?",
+        "s": 5.228,
+        "e": 5.228
+      },
+      {
+        "w": "Let's",
+        "s": 5.228,
+        "e": 5.27
+      },
+      {
+        "w": "find",
+        "s": 5.27,
+        "e": 5.35
+      },
+      {
+        "w": "out.",
+        "s": 5.55,
+        "e": 5.68
+      }
+    ]
+  },
+  {
+    "id": "strait",
+    "file": "audio/whatif/ep01/strait.wav",
+    "sec": 7.109938,
+    "voice": "Puck",
+    "text": "First, a geography lesson. Russia and America are neighbors. At its narrowest, the Bering Strait is only about fifty miles wide.",
+    "words": [
+      {
+        "w": "First,",
+        "s": 0.03,
+        "e": 0.29
+      },
+      {
+        "w": "a",
+        "s": 0.4,
+        "e": 0.4
+      },
+      {
+        "w": "geography",
+        "s": 0.4,
+        "e": 0.85
+      },
+      {
+        "w": "lesson.",
+        "s": 0.85,
+        "e": 1.33
+      },
+      {
+        "w": "Russia",
+        "s": 1.9,
+        "e": 1.9
+      },
+      {
+        "w": "and",
+        "s": 1.9,
+        "e": 1.9
+      },
+      {
+        "w": "America",
+        "s": 1.93,
+        "e": 2.32
+      },
+      {
+        "w": "are",
+        "s": 2.32,
+        "e": 2.5
+      },
+      {
+        "w": "neighbors.",
+        "s": 2.5,
+        "e": 3.27
+      },
+      {
+        "w": "At",
+        "s": 3.84,
+        "e": 3.84
+      },
+      {
+        "w": "its",
+        "s": 3.84,
+        "e": 3.84
+      },
+      {
+        "w": "narrowest,",
+        "s": 3.87,
+        "e": 4.65
+      },
+      {
+        "w": "the",
+        "s": 4.65,
+        "e": 4.73
+      },
+      {
+        "w": "Bering",
+        "s": 4.79,
+        "e": 5.07
+      },
+      {
+        "w": "Strait",
+        "s": 5.07,
+        "e": 5.22
+      },
+      {
+        "w": "is",
+        "s": 5.37,
+        "e": 5.49
+      },
+      {
+        "w": "only",
+        "s": 5.71,
+        "e": 5.71
+      },
+      {
+        "w": "about",
+        "s": 5.72,
+        "e": 6
+      },
+      {
+        "w": "fifty",
+        "s": 6,
+        "e": 6.34
+      },
+      {
+        "w": "miles",
+        "s": 6.34,
+        "e": 6.59
+      },
+      {
+        "w": "wide.",
+        "s": 6.65,
+        "e": 7.06
+      }
+    ]
+  },
+  {
+    "id": "diomede",
+    "file": "audio/whatif/ep01/diomede.wav",
+    "sec": 5.179021,
+    "voice": "Puck",
+    "text": "In the middle sit two islands. One is Russian, one is American. They're less than three miles apart.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0.01,
+        "e": 0.1
+      },
+      {
+        "w": "the",
+        "s": 0.1,
+        "e": 0.25
+      },
+      {
+        "w": "middle",
+        "s": 0.25,
+        "e": 0.54
+      },
+      {
+        "w": "sit",
+        "s": 0.741,
+        "e": 0.741
+      },
+      {
+        "w": "two",
+        "s": 0.74,
+        "e": 0.84
+      },
+      {
+        "w": "islands.",
+        "s": 0.87,
+        "e": 1.31
+      },
+      {
+        "w": "One",
+        "s": 1.82,
+        "e": 1.82
+      },
+      {
+        "w": "is",
+        "s": 1.82,
+        "e": 1.82
+      },
+      {
+        "w": "Russian,",
+        "s": 1.82,
+        "e": 2.38
+      },
+      {
+        "w": "one",
+        "s": 2.664,
+        "e": 2.664
+      },
+      {
+        "w": "is",
+        "s": 2.664,
+        "e": 2.664
+      },
+      {
+        "w": "American.",
+        "s": 2.664,
+        "e": 3.15
+      },
+      {
+        "w": "They're",
+        "s": 3.799,
+        "e": 3.799
+      },
+      {
+        "w": "less",
+        "s": 3.799,
+        "e": 3.93
+      },
+      {
+        "w": "than",
+        "s": 3.93,
+        "e": 4.14
+      },
+      {
+        "w": "three",
+        "s": 4.17,
+        "e": 4.51
+      },
+      {
+        "w": "miles",
+        "s": 4.51,
+        "e": 4.83
+      },
+      {
+        "w": "apart.",
+        "s": 4.83,
+        "e": 5.179
+      }
+    ]
+  },
+  {
+    "id": "bering",
+    "file": "audio/whatif/ep01/bering.wav",
+    "sec": 5.500688,
+    "voice": "Puck",
+    "text": "In seventeen-forty-one, a Danish captain working for the Tsar, Vitus Bering, sailed across and reached the coast of Alaska.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.035
+      },
+      {
+        "w": "seventeen-",
+        "s": 0.035,
+        "e": 0.077
+      },
+      {
+        "w": "forty-",
+        "s": 0.077,
+        "e": 0.275
+      },
+      {
+        "w": "one,",
+        "s": 0.275,
+        "e": 0.88
+      },
+      {
+        "w": "a",
+        "s": 0.88,
+        "e": 0.94
+      },
+      {
+        "w": "Danish",
+        "s": 0.94,
+        "e": 1.34
+      },
+      {
+        "w": "captain",
+        "s": 1.34,
+        "e": 1.82
+      },
+      {
+        "w": "working",
+        "s": 1.82,
+        "e": 2.16
+      },
+      {
+        "w": "for",
+        "s": 2.16,
+        "e": 2.3
+      },
+      {
+        "w": "the",
+        "s": 2.3,
+        "e": 2.44
+      },
+      {
+        "w": "Tsar,",
+        "s": 2.44,
+        "e": 2.69
+      },
+      {
+        "w": "Vitus",
+        "s": 2.83,
+        "e": 3.05
+      },
+      {
+        "w": "Bering,",
+        "s": 3.05,
+        "e": 3.49
+      },
+      {
+        "w": "sailed",
+        "s": 3.49,
+        "e": 3.77
+      },
+      {
+        "w": "across",
+        "s": 3.77,
+        "e": 4.05
+      },
+      {
+        "w": "and",
+        "s": 4.05,
+        "e": 4.18
+      },
+      {
+        "w": "reached",
+        "s": 4.18,
+        "e": 4.52
+      },
+      {
+        "w": "the",
+        "s": 4.52,
+        "e": 4.63
+      },
+      {
+        "w": "coast",
+        "s": 4.69,
+        "e": 4.91
+      },
+      {
+        "w": "of",
+        "s": 4.93,
+        "e": 5.01
+      },
+      {
+        "w": "Alaska.",
+        "s": 5.01,
+        "e": 5.41
+      }
+    ]
+  },
+  {
+    "id": "otter",
+    "file": "audio/whatif/ep01/otter.wav",
+    "sec": 5.194083,
+    "voice": "Puck",
+    "text": "His crew brought back sea otter pelts. The softest fur in the world, and China paid a fortune for it.",
+    "words": [
+      {
+        "w": "His",
+        "s": 0.01,
+        "e": 0.11
+      },
+      {
+        "w": "crew",
+        "s": 0.27,
+        "e": 0.44
+      },
+      {
+        "w": "brought",
+        "s": 0.44,
+        "e": 0.89
+      },
+      {
+        "w": "back",
+        "s": 0.89,
+        "e": 1.14
+      },
+      {
+        "w": "sea",
+        "s": 1.14,
+        "e": 1.33
+      },
+      {
+        "w": "otter",
+        "s": 1.33,
+        "e": 1.64
+      },
+      {
+        "w": "pelts.",
+        "s": 2.276,
+        "e": 2.276
+      },
+      {
+        "w": "The",
+        "s": 2.27,
+        "e": 2.4
+      },
+      {
+        "w": "softest",
+        "s": 2.4,
+        "e": 2.92
+      },
+      {
+        "w": "fur",
+        "s": 3.03,
+        "e": 3.19
+      },
+      {
+        "w": "in",
+        "s": 3.2,
+        "e": 3.29
+      },
+      {
+        "w": "the",
+        "s": 3.29,
+        "e": 3.41
+      },
+      {
+        "w": "world,",
+        "s": 3.42,
+        "e": 3.67
+      },
+      {
+        "w": "and",
+        "s": 3.67,
+        "e": 3.79
+      },
+      {
+        "w": "China",
+        "s": 3.8,
+        "e": 4.05
+      },
+      {
+        "w": "paid",
+        "s": 4.05,
+        "e": 4.24
+      },
+      {
+        "w": "a",
+        "s": 4.24,
+        "e": 4.32
+      },
+      {
+        "w": "fortune",
+        "s": 4.32,
+        "e": 4.92
+      },
+      {
+        "w": "for",
+        "s": 4.93,
+        "e": 5.19
+      },
+      {
+        "w": "it.",
+        "s": 5.19,
+        "e": 5.19
+      }
+    ]
+  },
+  {
+    "id": "rush",
+    "file": "audio/whatif/ep01/rush.wav",
+    "sec": 8.767708,
+    "voice": "Puck",
+    "text": "Word spread fast. Russian fur traders poured across the sea and hunted their way along the Aleutian Islands.",
+    "words": [
+      {
+        "w": "Word",
+        "s": 0.01,
+        "e": 0.25
+      },
+      {
+        "w": "spread",
+        "s": 0.26,
+        "e": 0.65
+      },
+      {
+        "w": "fast.",
+        "s": 0.82,
+        "e": 1.12
+      },
+      {
+        "w": "Russian",
+        "s": 1.9,
+        "e": 1.9
+      },
+      {
+        "w": "fur",
+        "s": 1.92,
+        "e": 2.07
+      },
+      {
+        "w": "traders",
+        "s": 2.07,
+        "e": 2.53
+      },
+      {
+        "w": "poured",
+        "s": 2.872,
+        "e": 3.08
+      },
+      {
+        "w": "across",
+        "s": 3.5,
+        "e": 3.5
+      },
+      {
+        "w": "the",
+        "s": 3.7,
+        "e": 3.7
+      },
+      {
+        "w": "sea",
+        "s": 3.78,
+        "e": 3.92
+      },
+      {
+        "w": "and",
+        "s": 3.95,
+        "e": 4.06
+      },
+      {
+        "w": "hunted",
+        "s": 4.06,
+        "e": 4.34
+      },
+      {
+        "w": "their",
+        "s": 4.34,
+        "e": 4.57
+      },
+      {
+        "w": "way",
+        "s": 4.57,
+        "e": 4.57
+      },
+      {
+        "w": "along",
+        "s": 4.74,
+        "e": 4.93
+      },
+      {
+        "w": "the",
+        "s": 4.93,
+        "e": 5.04
+      },
+      {
+        "w": "Aleutian",
+        "s": 5.09,
+        "e": 5.45
+      },
+      {
+        "w": "Islands.",
+        "s": 6.681,
+        "e": 8.72
+      }
+    ]
+  },
+  {
+    "id": "natives",
+    "file": "audio/whatif/ep01/natives.wav",
+    "sec": 7.312563,
+    "voice": "Puck",
+    "text": "The people who had lived there for thousands of years, like the Aleut and the Tlingit, were forced to hunt for them, and many times they fought back.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.01,
+        "e": 0.14
+      },
+      {
+        "w": "people",
+        "s": 0.14,
+        "e": 0.43
+      },
+      {
+        "w": "who",
+        "s": 0.43,
+        "e": 0.57
+      },
+      {
+        "w": "had",
+        "s": 0.57,
+        "e": 0.66
+      },
+      {
+        "w": "lived",
+        "s": 0.76,
+        "e": 0.88
+      },
+      {
+        "w": "there",
+        "s": 0.99,
+        "e": 1.06
+      },
+      {
+        "w": "for",
+        "s": 1.2,
+        "e": 1.33
+      },
+      {
+        "w": "thousands",
+        "s": 1.33,
+        "e": 1.75
+      },
+      {
+        "w": "of",
+        "s": 1.76,
+        "e": 1.85
+      },
+      {
+        "w": "years,",
+        "s": 1.85,
+        "e": 2.15
+      },
+      {
+        "w": "like",
+        "s": 2.17,
+        "e": 2.42
+      },
+      {
+        "w": "the",
+        "s": 2.579,
+        "e": 2.61
+      },
+      {
+        "w": "Aleut",
+        "s": 2.61,
+        "e": 2.93
+      },
+      {
+        "w": "and",
+        "s": 2.93,
+        "e": 3.12
+      },
+      {
+        "w": "the",
+        "s": 3.269,
+        "e": 3.31
+      },
+      {
+        "w": "Tlingit,",
+        "s": 3.31,
+        "e": 3.91
+      },
+      {
+        "w": "were",
+        "s": 4.374,
+        "e": 4.374
+      },
+      {
+        "w": "forced",
+        "s": 4.374,
+        "e": 4.56
+      },
+      {
+        "w": "to",
+        "s": 4.56,
+        "e": 4.68
+      },
+      {
+        "w": "hunt",
+        "s": 4.68,
+        "e": 4.88
+      },
+      {
+        "w": "for",
+        "s": 5,
+        "e": 5.11
+      },
+      {
+        "w": "them,",
+        "s": 5.11,
+        "e": 5.372
+      },
+      {
+        "w": "and",
+        "s": 5.824,
+        "e": 5.824
+      },
+      {
+        "w": "many",
+        "s": 5.824,
+        "e": 5.9
+      },
+      {
+        "w": "times",
+        "s": 5.9,
+        "e": 6.22
+      },
+      {
+        "w": "they",
+        "s": 6.22,
+        "e": 6.46
+      },
+      {
+        "w": "fought",
+        "s": 6.46,
+        "e": 6.84
+      },
+      {
+        "w": "back.",
+        "s": 6.84,
+        "e": 7.313
+      }
+    ]
+  },
+  {
+    "id": "company",
+    "file": "audio/whatif/ep01/company.wav",
+    "sec": 6.178938,
+    "voice": "Puck",
+    "text": "In seventeen-ninety-nine, the Tsar created the Russian-American Company, a private monopoly that ran the colony for the state.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "seventeen-",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "ninety-",
+        "s": 0,
+        "e": 0.13
+      },
+      {
+        "w": "nine,",
+        "s": 0.13,
+        "e": 0.98
+      },
+      {
+        "w": "the",
+        "s": 0.98,
+        "e": 1.03
+      },
+      {
+        "w": "Tsar",
+        "s": 1.05,
+        "e": 1.29
+      },
+      {
+        "w": "created",
+        "s": 1.29,
+        "e": 1.75
+      },
+      {
+        "w": "the",
+        "s": 1.75,
+        "e": 1.91
+      },
+      {
+        "w": "Russian-",
+        "s": 1.92,
+        "e": 2.3
+      },
+      {
+        "w": "American",
+        "s": 2.3,
+        "e": 2.74
+      },
+      {
+        "w": "Company,",
+        "s": 2.74,
+        "e": 3.24
+      },
+      {
+        "w": "a",
+        "s": 3.65,
+        "e": 3.65
+      },
+      {
+        "w": "private",
+        "s": 3.65,
+        "e": 3.78
+      },
+      {
+        "w": "monopoly",
+        "s": 3.8,
+        "e": 4.33
+      },
+      {
+        "w": "that",
+        "s": 4.33,
+        "e": 4.58
+      },
+      {
+        "w": "ran",
+        "s": 4.61,
+        "e": 4.8
+      },
+      {
+        "w": "the",
+        "s": 4.8,
+        "e": 4.95
+      },
+      {
+        "w": "colony",
+        "s": 5.03,
+        "e": 5.35
+      },
+      {
+        "w": "for",
+        "s": 5.4,
+        "e": 5.6
+      },
+      {
+        "w": "the",
+        "s": 5.6,
+        "e": 5.78
+      },
+      {
+        "w": "state.",
+        "s": 5.8,
+        "e": 6.179
+      }
+    ]
+  },
+  {
+    "id": "sitka",
+    "file": "audio/whatif/ep01/sitka.wav",
+    "sec": 6.146688,
+    "voice": "Puck",
+    "text": "Its capital was Sitka. Churches, a fort, a shipyard. By the eighteen-thirties, more than one-thousand people lived there.",
+    "words": [
+      {
+        "w": "Its",
+        "s": 0,
+        "e": 0.1
+      },
+      {
+        "w": "capital",
+        "s": 0.16,
+        "e": 0.49
+      },
+      {
+        "w": "was",
+        "s": 0.49,
+        "e": 0.63
+      },
+      {
+        "w": "Sitka.",
+        "s": 0.63,
+        "e": 0.99
+      },
+      {
+        "w": "Churches,",
+        "s": 1.489,
+        "e": 1.68
+      },
+      {
+        "w": "a",
+        "s": 1.76,
+        "e": 1.83
+      },
+      {
+        "w": "fort,",
+        "s": 1.83,
+        "e": 2.28
+      },
+      {
+        "w": "a",
+        "s": 2.29,
+        "e": 2.35
+      },
+      {
+        "w": "shipyard.",
+        "s": 2.35,
+        "e": 3.22
+      },
+      {
+        "w": "By",
+        "s": 3.749,
+        "e": 3.749
+      },
+      {
+        "w": "the",
+        "s": 3.749,
+        "e": 3.749
+      },
+      {
+        "w": "eighteen-",
+        "s": 3.749,
+        "e": 3.749
+      },
+      {
+        "w": "thirties,",
+        "s": 3.749,
+        "e": 4.14
+      },
+      {
+        "w": "more",
+        "s": 4.14,
+        "e": 4.32
+      },
+      {
+        "w": "than",
+        "s": 4.32,
+        "e": 4.463
+      },
+      {
+        "w": "one-",
+        "s": 4.463,
+        "e": 4.55
+      },
+      {
+        "w": "thousand",
+        "s": 4.55,
+        "e": 4.75
+      },
+      {
+        "w": "people",
+        "s": 5.2,
+        "e": 5.46
+      },
+      {
+        "w": "lived",
+        "s": 5.46,
+        "e": 5.69
+      },
+      {
+        "w": "there.",
+        "s": 5.7,
+        "e": 6.147
+      }
+    ]
+  },
+  {
+    "id": "ross",
+    "file": "audio/whatif/ep01/ross.wav",
+    "sec": 5.053063,
+    "voice": "Puck",
+    "text": "Russia even reached California. Fort Ross stood about ninety miles north of San Francisco.",
+    "words": [
+      {
+        "w": "Russia",
+        "s": 0,
+        "e": 0.44
+      },
+      {
+        "w": "even",
+        "s": 0.44,
+        "e": 0.72
+      },
+      {
+        "w": "reached",
+        "s": 0.72,
+        "e": 1.23
+      },
+      {
+        "w": "California.",
+        "s": 1.42,
+        "e": 1.768
+      },
+      {
+        "w": "Fort",
+        "s": 2.241,
+        "e": 2.43
+      },
+      {
+        "w": "Ross",
+        "s": 2.43,
+        "e": 2.64
+      },
+      {
+        "w": "stood",
+        "s": 2.68,
+        "e": 2.92
+      },
+      {
+        "w": "about",
+        "s": 2.96,
+        "e": 3.23
+      },
+      {
+        "w": "ninety",
+        "s": 3.23,
+        "e": 3.43
+      },
+      {
+        "w": "miles",
+        "s": 3.62,
+        "e": 3.88
+      },
+      {
+        "w": "north",
+        "s": 3.88,
+        "e": 3.97
+      },
+      {
+        "w": "of",
+        "s": 4.03,
+        "e": 4.28
+      },
+      {
+        "w": "San",
+        "s": 4.45,
+        "e": 4.45
+      },
+      {
+        "w": "Francisco.",
+        "s": 4.46,
+        "e": 5.053
+      }
+    ]
+  },
+  {
+    "id": "few",
+    "file": "audio/whatif/ep01/few.wav",
+    "sec": 4.164229,
+    "voice": "Puck",
+    "text": "But for all that land, there were never more than about eight-hundred Russians living there.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0,
+        "e": 0.1
+      },
+      {
+        "w": "for",
+        "s": 0.32,
+        "e": 0.4
+      },
+      {
+        "w": "all",
+        "s": 0.4,
+        "e": 0.6
+      },
+      {
+        "w": "that",
+        "s": 0.6,
+        "e": 0.87
+      },
+      {
+        "w": "land,",
+        "s": 0.87,
+        "e": 1.32
+      },
+      {
+        "w": "there",
+        "s": 1.33,
+        "e": 1.47
+      },
+      {
+        "w": "were",
+        "s": 1.48,
+        "e": 1.62
+      },
+      {
+        "w": "never",
+        "s": 1.62,
+        "e": 1.92
+      },
+      {
+        "w": "more",
+        "s": 1.92,
+        "e": 2.1
+      },
+      {
+        "w": "than",
+        "s": 2.14,
+        "e": 2.26
+      },
+      {
+        "w": "about",
+        "s": 2.26,
+        "e": 2.404
+      },
+      {
+        "w": "eight-",
+        "s": 2.624,
+        "e": 2.624
+      },
+      {
+        "w": "hundred",
+        "s": 2.624,
+        "e": 3.26
+      },
+      {
+        "w": "Russians",
+        "s": 3.32,
+        "e": 3.79
+      },
+      {
+        "w": "living",
+        "s": 3.79,
+        "e": 4.12
+      },
+      {
+        "w": "there.",
+        "s": 4.16,
+        "e": 4.16
+      }
+    ]
+  },
+  {
+    "id": "why",
+    "file": "audio/whatif/ep01/why.wav",
+    "sec": 2.512063,
+    "voice": "Puck",
+    "text": "So why sell? Three reasons.",
+    "words": [
+      {
+        "w": "So",
+        "s": 0.07,
+        "e": 0.27
+      },
+      {
+        "w": "why",
+        "s": 0.49,
+        "e": 0.76
+      },
+      {
+        "w": "sell?",
+        "s": 0.76,
+        "e": 1.78
+      },
+      {
+        "w": "Three",
+        "s": 1.91,
+        "e": 2.06
+      },
+      {
+        "w": "reasons.",
+        "s": 2.06,
+        "e": 2.512
+      }
+    ]
+  },
+  {
+    "id": "r1",
+    "file": "audio/whatif/ep01/r1.wav",
+    "sec": 3.940188,
+    "voice": "Puck",
+    "text": "One. The sea otters were almost gone. The money machine was running dry.",
+    "words": [
+      {
+        "w": "One.",
+        "s": 0,
+        "e": 0.154
+      },
+      {
+        "w": "The",
+        "s": 0.596,
+        "e": 0.596
+      },
+      {
+        "w": "sea",
+        "s": 0.58,
+        "e": 0.58
+      },
+      {
+        "w": "otters",
+        "s": 0.59,
+        "e": 0.89
+      },
+      {
+        "w": "were",
+        "s": 0.89,
+        "e": 1.1
+      },
+      {
+        "w": "almost",
+        "s": 1.1,
+        "e": 1.42
+      },
+      {
+        "w": "gone.",
+        "s": 1.42,
+        "e": 1.84
+      },
+      {
+        "w": "The",
+        "s": 2.28,
+        "e": 2.28
+      },
+      {
+        "w": "money",
+        "s": 2.28,
+        "e": 2.42
+      },
+      {
+        "w": "machine",
+        "s": 2.42,
+        "e": 2.95
+      },
+      {
+        "w": "was",
+        "s": 2.95,
+        "e": 3.17
+      },
+      {
+        "w": "running",
+        "s": 3.17,
+        "e": 3.69
+      },
+      {
+        "w": "dry.",
+        "s": 3.69,
+        "e": 3.94
+      }
+    ]
+  },
+  {
+    "id": "r2",
+    "file": "audio/whatif/ep01/r2.wav",
+    "sec": 5.911292,
+    "voice": "Puck",
+    "text": "Two. It was too far away. From Saint Petersburg, across Siberia, to Alaska could take months.",
+    "words": [
+      {
+        "w": "Two.",
+        "s": 0,
+        "e": 0.245
+      },
+      {
+        "w": "It",
+        "s": 0.527,
+        "e": 0.527
+      },
+      {
+        "w": "was",
+        "s": 0.54,
+        "e": 0.7
+      },
+      {
+        "w": "too",
+        "s": 0.7,
+        "e": 0.91
+      },
+      {
+        "w": "far",
+        "s": 0.91,
+        "e": 1.09
+      },
+      {
+        "w": "away.",
+        "s": 1.21,
+        "e": 1.61
+      },
+      {
+        "w": "From",
+        "s": 2.06,
+        "e": 2.06
+      },
+      {
+        "w": "Saint",
+        "s": 2.06,
+        "e": 2.23
+      },
+      {
+        "w": "Petersburg,",
+        "s": 2.6,
+        "e": 3.08
+      },
+      {
+        "w": "across",
+        "s": 3.08,
+        "e": 3.53
+      },
+      {
+        "w": "Siberia,",
+        "s": 3.53,
+        "e": 4.14
+      },
+      {
+        "w": "to",
+        "s": 4.14,
+        "e": 4.27
+      },
+      {
+        "w": "Alaska",
+        "s": 4.33,
+        "e": 4.76
+      },
+      {
+        "w": "could",
+        "s": 5.072,
+        "e": 5.11
+      },
+      {
+        "w": "take",
+        "s": 5.11,
+        "e": 5.33
+      },
+      {
+        "w": "months.",
+        "s": 5.33,
+        "e": 5.84
+      }
+    ]
+  },
+  {
+    "id": "r3",
+    "file": "audio/whatif/ep01/r3.wav",
+    "sec": 2.14325,
+    "voice": "Puck",
+    "text": "And three, the big one. Britain.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0.01,
+        "e": 0.09
+      },
+      {
+        "w": "three,",
+        "s": 0.21,
+        "e": 0.67
+      },
+      {
+        "w": "the",
+        "s": 0.84,
+        "e": 0.87
+      },
+      {
+        "w": "big",
+        "s": 0.87,
+        "e": 1.05
+      },
+      {
+        "w": "one.",
+        "s": 1.806,
+        "e": 1.806
+      },
+      {
+        "w": "Britain.",
+        "s": 1.8,
+        "e": 2.09
+      }
+    ]
+  },
+  {
+    "id": "crimea",
+    "file": "audio/whatif/ep01/crimea.wav",
+    "sec": 4.643521,
+    "voice": "Puck",
+    "text": "In eighteen-fifty-three, Russia went to war against Britain and France in Crimea. And lost.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0
+      },
+      {
+        "w": "eighteen-",
+        "s": 0,
+        "e": 0.111
+      },
+      {
+        "w": "fifty-",
+        "s": 0.111,
+        "e": 0.119
+      },
+      {
+        "w": "three,",
+        "s": 0.119,
+        "e": 0.87
+      },
+      {
+        "w": "Russia",
+        "s": 1.16,
+        "e": 1.32
+      },
+      {
+        "w": "went",
+        "s": 1.32,
+        "e": 1.54
+      },
+      {
+        "w": "to",
+        "s": 1.6,
+        "e": 1.68
+      },
+      {
+        "w": "war",
+        "s": 1.68,
+        "e": 1.88
+      },
+      {
+        "w": "against",
+        "s": 1.88,
+        "e": 2.14
+      },
+      {
+        "w": "Britain",
+        "s": 2.24,
+        "e": 2.42
+      },
+      {
+        "w": "and",
+        "s": 2.42,
+        "e": 2.56
+      },
+      {
+        "w": "France",
+        "s": 2.67,
+        "e": 2.88
+      },
+      {
+        "w": "in",
+        "s": 2.88,
+        "e": 2.99
+      },
+      {
+        "w": "Crimea.",
+        "s": 2.99,
+        "e": 3.34
+      },
+      {
+        "w": "And",
+        "s": 3.34,
+        "e": 3.47
+      },
+      {
+        "w": "lost.",
+        "s": 3.805,
+        "e": 4.56
+      }
+    ]
+  },
+  {
+    "id": "petro",
+    "file": "audio/whatif/ep01/petro.wav",
+    "sec": 6.466375,
+    "voice": "Puck",
+    "text": "During that war, an Anglo-French fleet sailed all the way to Russia's Pacific port on Kamchatka and attacked it.",
+    "words": [
+      {
+        "w": "During",
+        "s": 0.01,
+        "e": 0.37
+      },
+      {
+        "w": "that",
+        "s": 0.37,
+        "e": 0.61
+      },
+      {
+        "w": "war,",
+        "s": 0.61,
+        "e": 0.91
+      },
+      {
+        "w": "an",
+        "s": 0.91,
+        "e": 1.01
+      },
+      {
+        "w": "Anglo-",
+        "s": 1.09,
+        "e": 1.4
+      },
+      {
+        "w": "French",
+        "s": 1.4,
+        "e": 1.79
+      },
+      {
+        "w": "fleet",
+        "s": 1.79,
+        "e": 2.11
+      },
+      {
+        "w": "sailed",
+        "s": 2.18,
+        "e": 2.47
+      },
+      {
+        "w": "all",
+        "s": 2.64,
+        "e": 2.72
+      },
+      {
+        "w": "the",
+        "s": 2.72,
+        "e": 2.96
+      },
+      {
+        "w": "way",
+        "s": 2.96,
+        "e": 3.21
+      },
+      {
+        "w": "to",
+        "s": 3.22,
+        "e": 3.32
+      },
+      {
+        "w": "Russia's",
+        "s": 3.32,
+        "e": 3.73
+      },
+      {
+        "w": "Pacific",
+        "s": 3.82,
+        "e": 4.25
+      },
+      {
+        "w": "port",
+        "s": 4.51,
+        "e": 4.65
+      },
+      {
+        "w": "on",
+        "s": 4.75,
+        "e": 4.88
+      },
+      {
+        "w": "Kamchatka",
+        "s": 4.88,
+        "e": 5.62
+      },
+      {
+        "w": "and",
+        "s": 5.62,
+        "e": 5.76
+      },
+      {
+        "w": "attacked",
+        "s": 5.76,
+        "e": 6.15
+      },
+      {
+        "w": "it.",
+        "s": 6.27,
+        "e": 6.46
+      }
+    ]
+  },
+  {
+    "id": "fear",
+    "file": "audio/whatif/ep01/fear.wav",
+    "sec": 6.765625,
+    "voice": "Puck",
+    "text": "The lesson was clear. In the next war, Britain could march in from Canada and take Alaska, and Russia couldn't stop it.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.01,
+        "e": 0.24
+      },
+      {
+        "w": "lesson",
+        "s": 0.24,
+        "e": 0.66
+      },
+      {
+        "w": "was",
+        "s": 0.73,
+        "e": 0.97
+      },
+      {
+        "w": "clear.",
+        "s": 1.411,
+        "e": 1.48
+      },
+      {
+        "w": "In",
+        "s": 1.48,
+        "e": 1.61
+      },
+      {
+        "w": "the",
+        "s": 1.61,
+        "e": 1.81
+      },
+      {
+        "w": "next",
+        "s": 1.81,
+        "e": 2.08
+      },
+      {
+        "w": "war,",
+        "s": 2.485,
+        "e": 2.485
+      },
+      {
+        "w": "Britain",
+        "s": 2.49,
+        "e": 2.78
+      },
+      {
+        "w": "could",
+        "s": 2.83,
+        "e": 3.04
+      },
+      {
+        "w": "march",
+        "s": 3.04,
+        "e": 3.29
+      },
+      {
+        "w": "in",
+        "s": 3.29,
+        "e": 3.4
+      },
+      {
+        "w": "from",
+        "s": 3.4,
+        "e": 3.65
+      },
+      {
+        "w": "Canada",
+        "s": 3.65,
+        "e": 4.04
+      },
+      {
+        "w": "and",
+        "s": 4.04,
+        "e": 4.32
+      },
+      {
+        "w": "take",
+        "s": 4.32,
+        "e": 4.64
+      },
+      {
+        "w": "Alaska,",
+        "s": 4.64,
+        "e": 5.52
+      },
+      {
+        "w": "and",
+        "s": 5.53,
+        "e": 5.66
+      },
+      {
+        "w": "Russia",
+        "s": 5.66,
+        "e": 5.94
+      },
+      {
+        "w": "couldn't",
+        "s": 5.94,
+        "e": 6.29
+      },
+      {
+        "w": "stop",
+        "s": 6.29,
+        "e": 6.49
+      },
+      {
+        "w": "it.",
+        "s": 6.49,
+        "e": 6.76
+      }
+    ]
+  },
+  {
+    "id": "money",
+    "file": "audio/whatif/ep01/money.wav",
+    "sec": 4.748125,
+    "voice": "Puck",
+    "text": "And Russia was broke after the war. If you're going to lose it anyway, you might as well get paid.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0,
+        "e": 0.13
+      },
+      {
+        "w": "Russia",
+        "s": 0.17,
+        "e": 0.51
+      },
+      {
+        "w": "was",
+        "s": 0.51,
+        "e": 0.63
+      },
+      {
+        "w": "broke",
+        "s": 0.72,
+        "e": 0.96
+      },
+      {
+        "w": "after",
+        "s": 0.96,
+        "e": 1.24
+      },
+      {
+        "w": "the",
+        "s": 1.24,
+        "e": 1.41
+      },
+      {
+        "w": "war.",
+        "s": 1.41,
+        "e": 1.77
+      },
+      {
+        "w": "If",
+        "s": 2.38,
+        "e": 2.38
+      },
+      {
+        "w": "you're",
+        "s": 2.38,
+        "e": 2.38
+      },
+      {
+        "w": "going",
+        "s": 2.38,
+        "e": 2.43
+      },
+      {
+        "w": "to",
+        "s": 2.43,
+        "e": 2.53
+      },
+      {
+        "w": "lose",
+        "s": 2.53,
+        "e": 2.73
+      },
+      {
+        "w": "it",
+        "s": 2.73,
+        "e": 2.83
+      },
+      {
+        "w": "anyway,",
+        "s": 2.83,
+        "e": 3.28
+      },
+      {
+        "w": "you",
+        "s": 3.28,
+        "e": 3.42
+      },
+      {
+        "w": "might",
+        "s": 3.74,
+        "e": 3.74
+      },
+      {
+        "w": "as",
+        "s": 3.74,
+        "e": 3.85
+      },
+      {
+        "w": "well",
+        "s": 3.85,
+        "e": 4.07
+      },
+      {
+        "w": "get",
+        "s": 4.08,
+        "e": 4.12
+      },
+      {
+        "w": "paid.",
+        "s": 4.25,
+        "e": 4.7
+      }
+    ]
+  },
+  {
+    "id": "enemy",
+    "file": "audio/whatif/ep01/enemy.wav",
+    "sec": 6.0665,
+    "voice": "Puck",
+    "text": "Sell it to whom? To the enemy of your enemy. The United States, which had its own grudges against Britain.",
+    "words": [
+      {
+        "w": "Sell",
+        "s": 0,
+        "e": 0.15
+      },
+      {
+        "w": "it",
+        "s": 0.15,
+        "e": 0.22
+      },
+      {
+        "w": "to",
+        "s": 0.29,
+        "e": 0.3
+      },
+      {
+        "w": "whom?",
+        "s": 0.31,
+        "e": 0.6
+      },
+      {
+        "w": "To",
+        "s": 1.345,
+        "e": 1.345
+      },
+      {
+        "w": "the",
+        "s": 1.345,
+        "e": 1.345
+      },
+      {
+        "w": "enemy",
+        "s": 1.38,
+        "e": 1.92
+      },
+      {
+        "w": "of",
+        "s": 1.92,
+        "e": 2.04
+      },
+      {
+        "w": "your",
+        "s": 2.283,
+        "e": 2.32
+      },
+      {
+        "w": "enemy.",
+        "s": 2.32,
+        "e": 2.79
+      },
+      {
+        "w": "The",
+        "s": 3.377,
+        "e": 3.377
+      },
+      {
+        "w": "United",
+        "s": 3.41,
+        "e": 3.52
+      },
+      {
+        "w": "States,",
+        "s": 3.52,
+        "e": 4.18
+      },
+      {
+        "w": "which",
+        "s": 4.339,
+        "e": 4.45
+      },
+      {
+        "w": "had",
+        "s": 4.45,
+        "e": 4.61
+      },
+      {
+        "w": "its",
+        "s": 4.61,
+        "e": 4.76
+      },
+      {
+        "w": "own",
+        "s": 4.78,
+        "e": 4.93
+      },
+      {
+        "w": "grudges",
+        "s": 4.93,
+        "e": 5.34
+      },
+      {
+        "w": "against",
+        "s": 5.34,
+        "e": 5.66
+      },
+      {
+        "w": "Britain.",
+        "s": 5.66,
+        "e": 5.96
+      }
+    ]
+  },
+  {
+    "id": "civil",
+    "file": "audio/whatif/ep01/civil.wav",
+    "sec": 3.705292,
+    "voice": "Puck",
+    "text": "But the deal had to wait. America was busy fighting its own Civil War.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0,
+        "e": 0.18
+      },
+      {
+        "w": "the",
+        "s": 0.24,
+        "e": 0.38
+      },
+      {
+        "w": "deal",
+        "s": 0.38,
+        "e": 0.63
+      },
+      {
+        "w": "had",
+        "s": 0.63,
+        "e": 0.82
+      },
+      {
+        "w": "to",
+        "s": 0.82,
+        "e": 0.94
+      },
+      {
+        "w": "wait.",
+        "s": 1.436,
+        "e": 1.436
+      },
+      {
+        "w": "America",
+        "s": 1.42,
+        "e": 1.86
+      },
+      {
+        "w": "was",
+        "s": 1.86,
+        "e": 2.05
+      },
+      {
+        "w": "busy",
+        "s": 2.05,
+        "e": 2.3
+      },
+      {
+        "w": "fighting",
+        "s": 2.3,
+        "e": 2.42
+      },
+      {
+        "w": "its",
+        "s": 2.85,
+        "e": 3
+      },
+      {
+        "w": "own",
+        "s": 3,
+        "e": 3.17
+      },
+      {
+        "w": "Civil",
+        "s": 3.19,
+        "e": 3.44
+      },
+      {
+        "w": "War.",
+        "s": 3.53,
+        "e": 3.705
+      }
+    ]
+  },
+  {
+    "id": "seward",
+    "file": "audio/whatif/ep01/seward.wav",
+    "sec": 5.326521,
+    "voice": "Puck",
+    "text": "When the war ended, one American wanted Alaska badly. Secretary of State William Seward.",
+    "words": [
+      {
+        "w": "When",
+        "s": 0.01,
+        "e": 0.16
+      },
+      {
+        "w": "the",
+        "s": 0.16,
+        "e": 0.28
+      },
+      {
+        "w": "war",
+        "s": 0.28,
+        "e": 0.4
+      },
+      {
+        "w": "ended,",
+        "s": 0.4,
+        "e": 0.72
+      },
+      {
+        "w": "one",
+        "s": 0.72,
+        "e": 0.97
+      },
+      {
+        "w": "American",
+        "s": 0.97,
+        "e": 1.66
+      },
+      {
+        "w": "wanted",
+        "s": 1.66,
+        "e": 2.17
+      },
+      {
+        "w": "Alaska",
+        "s": 2.17,
+        "e": 2.54
+      },
+      {
+        "w": "badly.",
+        "s": 2.72,
+        "e": 3.22
+      },
+      {
+        "w": "Secretary",
+        "s": 3.55,
+        "e": 3.81
+      },
+      {
+        "w": "of",
+        "s": 3.81,
+        "e": 3.93
+      },
+      {
+        "w": "State",
+        "s": 3.93,
+        "e": 4.23
+      },
+      {
+        "w": "William",
+        "s": 4.23,
+        "e": 4.66
+      },
+      {
+        "w": "Seward.",
+        "s": 4.66,
+        "e": 5.24
+      }
+    ]
+  },
+  {
+    "id": "night",
+    "file": "audio/whatif/ep01/night.wav",
+    "sec": 5.832146,
+    "voice": "Puck",
+    "text": "The Russian minister came to his house one evening. Seward didn't wait for morning. He opened up the State Department that night.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.01,
+        "e": 0.13
+      },
+      {
+        "w": "Russian",
+        "s": 0.13,
+        "e": 0.44
+      },
+      {
+        "w": "minister",
+        "s": 0.44,
+        "e": 0.78
+      },
+      {
+        "w": "came",
+        "s": 0.8,
+        "e": 0.98
+      },
+      {
+        "w": "to",
+        "s": 0.98,
+        "e": 1.07
+      },
+      {
+        "w": "his",
+        "s": 1.07,
+        "e": 1.2
+      },
+      {
+        "w": "house",
+        "s": 1.2,
+        "e": 1.45
+      },
+      {
+        "w": "one",
+        "s": 1.47,
+        "e": 1.61
+      },
+      {
+        "w": "evening.",
+        "s": 1.61,
+        "e": 2.3
+      },
+      {
+        "w": "Seward",
+        "s": 2.31,
+        "e": 2.66
+      },
+      {
+        "w": "didn't",
+        "s": 2.66,
+        "e": 3
+      },
+      {
+        "w": "wait",
+        "s": 3.04,
+        "e": 3.23
+      },
+      {
+        "w": "for",
+        "s": 3.26,
+        "e": 3.44
+      },
+      {
+        "w": "morning.",
+        "s": 3.44,
+        "e": 4.08
+      },
+      {
+        "w": "He",
+        "s": 4.11,
+        "e": 4.22
+      },
+      {
+        "w": "opened",
+        "s": 4.22,
+        "e": 4.59
+      },
+      {
+        "w": "up",
+        "s": 4.59,
+        "e": 4.68
+      },
+      {
+        "w": "the",
+        "s": 4.71,
+        "e": 4.88
+      },
+      {
+        "w": "State",
+        "s": 4.9,
+        "e": 5.19
+      },
+      {
+        "w": "Department",
+        "s": 5.2,
+        "e": 5.77
+      },
+      {
+        "w": "that",
+        "s": 5.84,
+        "e": 5.832
+      },
+      {
+        "w": "night.",
+        "s": 5.84,
+        "e": 5.832
+      }
+    ]
+  },
+  {
+    "id": "sign",
+    "file": "audio/whatif/ep01/sign.wav",
+    "sec": 4.171458,
+    "voice": "Puck",
+    "text": "Before dawn on March thirtieth, eighteen-sixty-seven, the treaty was signed.",
+    "words": [
+      {
+        "w": "Before",
+        "s": 0,
+        "e": 0.46
+      },
+      {
+        "w": "dawn",
+        "s": 0.46,
+        "e": 0.63
+      },
+      {
+        "w": "on",
+        "s": 0.76,
+        "e": 0.91
+      },
+      {
+        "w": "March",
+        "s": 0.91,
+        "e": 1.214
+      },
+      {
+        "w": "thirtieth,",
+        "s": 1.214,
+        "e": 2.05
+      },
+      {
+        "w": "eighteen-",
+        "s": 2.05,
+        "e": 2.05
+      },
+      {
+        "w": "sixty-",
+        "s": 2.05,
+        "e": 2.05
+      },
+      {
+        "w": "seven,",
+        "s": 2.05,
+        "e": 3.06
+      },
+      {
+        "w": "the",
+        "s": 3.12,
+        "e": 3.25
+      },
+      {
+        "w": "treaty",
+        "s": 3.25,
+        "e": 3.54
+      },
+      {
+        "w": "was",
+        "s": 3.56,
+        "e": 3.7
+      },
+      {
+        "w": "signed.",
+        "s": 3.7,
+        "e": 4.16
+      }
+    ]
+  },
+  {
+    "id": "price",
+    "file": "audio/whatif/ep01/price.wav",
+    "sec": 4.336979,
+    "voice": "Puck",
+    "text": "The price: seven-point-two million-dollars. About two cents an acre.",
+    "words": [
+      {
+        "w": "The",
+        "s": 0.01,
+        "e": 0.2
+      },
+      {
+        "w": "price:",
+        "s": 0.2,
+        "e": 0.392
+      },
+      {
+        "w": "seven-",
+        "s": 0.839,
+        "e": 0.839
+      },
+      {
+        "w": "point-",
+        "s": 0.839,
+        "e": 0.839
+      },
+      {
+        "w": "two",
+        "s": 0.84,
+        "e": 1.34
+      },
+      {
+        "w": "million-",
+        "s": 1.34,
+        "e": 1.811
+      },
+      {
+        "w": "dollars.",
+        "s": 1.811,
+        "e": 2.01
+      },
+      {
+        "w": "About",
+        "s": 2.01,
+        "e": 2.54
+      },
+      {
+        "w": "two",
+        "s": 3.132,
+        "e": 3.132
+      },
+      {
+        "w": "cents",
+        "s": 3.13,
+        "e": 3.34
+      },
+      {
+        "w": "an",
+        "s": 3.48,
+        "e": 3.58
+      },
+      {
+        "w": "acre.",
+        "s": 3.58,
+        "e": 4.33
+      }
+    ]
+  },
+  {
+    "id": "folly",
+    "file": "audio/whatif/ep01/folly.wav",
+    "sec": 6.178438,
+    "voice": "Puck",
+    "text": "Critics called it Seward's Icebox. But here's the thing: most newspapers at the time actually supported the deal.",
+    "words": [
+      {
+        "w": "Critics",
+        "s": 0,
+        "e": 0.36
+      },
+      {
+        "w": "called",
+        "s": 0.36,
+        "e": 0.58
+      },
+      {
+        "w": "it",
+        "s": 0.66,
+        "e": 0.77
+      },
+      {
+        "w": "Seward's",
+        "s": 0.77,
+        "e": 1.18
+      },
+      {
+        "w": "Icebox.",
+        "s": 1.18,
+        "e": 1.63
+      },
+      {
+        "w": "But",
+        "s": 1.63,
+        "e": 1.77
+      },
+      {
+        "w": "here's",
+        "s": 2.187,
+        "e": 2.187
+      },
+      {
+        "w": "the",
+        "s": 2.24,
+        "e": 2.35
+      },
+      {
+        "w": "thing:",
+        "s": 2.35,
+        "e": 2.81
+      },
+      {
+        "w": "most",
+        "s": 3.32,
+        "e": 3.32
+      },
+      {
+        "w": "newspapers",
+        "s": 3.32,
+        "e": 3.76
+      },
+      {
+        "w": "at",
+        "s": 3.76,
+        "e": 3.89
+      },
+      {
+        "w": "the",
+        "s": 3.89,
+        "e": 4.09
+      },
+      {
+        "w": "time",
+        "s": 4.09,
+        "e": 4.33
+      },
+      {
+        "w": "actually",
+        "s": 4.35,
+        "e": 4.85
+      },
+      {
+        "w": "supported",
+        "s": 4.95,
+        "e": 5.34
+      },
+      {
+        "w": "the",
+        "s": 5.56,
+        "e": 5.68
+      },
+      {
+        "w": "deal.",
+        "s": 5.68,
+        "e": 6.13
+      }
+    ]
+  },
+  {
+    "id": "quiz1",
+    "file": "audio/whatif/ep01/quiz1.wav",
+    "sec": 6.117917,
+    "voice": "Puck",
+    "text": "Quick quiz. When the Senate voted on the treaty, how many senators voted no? Two, twelve, or twenty?",
+    "words": [
+      {
+        "w": "Quick",
+        "s": 0.03,
+        "e": 0.1
+      },
+      {
+        "w": "quiz.",
+        "s": 0.2,
+        "e": 0.46
+      },
+      {
+        "w": "When",
+        "s": 0.891,
+        "e": 0.891
+      },
+      {
+        "w": "the",
+        "s": 0.89,
+        "e": 0.95
+      },
+      {
+        "w": "Senate",
+        "s": 0.95,
+        "e": 1.37
+      },
+      {
+        "w": "voted",
+        "s": 1.37,
+        "e": 1.72
+      },
+      {
+        "w": "on",
+        "s": 1.72,
+        "e": 1.85
+      },
+      {
+        "w": "the",
+        "s": 1.85,
+        "e": 2.07
+      },
+      {
+        "w": "treaty,",
+        "s": 2.07,
+        "e": 2.34
+      },
+      {
+        "w": "how",
+        "s": 2.34,
+        "e": 2.54
+      },
+      {
+        "w": "many",
+        "s": 2.54,
+        "e": 2.81
+      },
+      {
+        "w": "senators",
+        "s": 2.81,
+        "e": 3.36
+      },
+      {
+        "w": "voted",
+        "s": 3.36,
+        "e": 3.7
+      },
+      {
+        "w": "no?",
+        "s": 3.7,
+        "e": 4.05
+      },
+      {
+        "w": "Two,",
+        "s": 4.618,
+        "e": 4.618
+      },
+      {
+        "w": "twelve,",
+        "s": 4.618,
+        "e": 5.05
+      },
+      {
+        "w": "or",
+        "s": 5.33,
+        "e": 5.33
+      },
+      {
+        "w": "twenty?",
+        "s": 5.33,
+        "e": 6.118
+      }
+    ]
+  },
+  {
+    "id": "quizans1",
+    "file": "audio/whatif/ep01/quizans1.wav",
+    "sec": 2.947542,
+    "voice": "Puck",
+    "text": "Just two. It passed thirty-seven to two.",
+    "words": [
+      {
+        "w": "Just",
+        "s": 0.05,
+        "e": 0.42
+      },
+      {
+        "w": "two.",
+        "s": 0.42,
+        "e": 1.06
+      },
+      {
+        "w": "It",
+        "s": 1.11,
+        "e": 1.23
+      },
+      {
+        "w": "passed",
+        "s": 1.23,
+        "e": 1.548
+      },
+      {
+        "w": "thirty-",
+        "s": 1.662,
+        "e": 1.985
+      },
+      {
+        "w": "seven",
+        "s": 1.985,
+        "e": 2.21
+      },
+      {
+        "w": "to",
+        "s": 2.29,
+        "e": 2.42
+      },
+      {
+        "w": "two.",
+        "s": 2.597,
+        "e": 2.94
+      }
+    ]
+  },
+  {
+    "id": "flag",
+    "file": "audio/whatif/ep01/flag.wav",
+    "sec": 5.921542,
+    "voice": "Puck",
+    "text": "On October eighteenth, eighteen-sixty-seven, in Sitka, the Russian flag came down and the American flag went up.",
+    "words": [
+      {
+        "w": "On",
+        "s": 0,
+        "e": 0.12
+      },
+      {
+        "w": "October",
+        "s": 0.12,
+        "e": 0.55
+      },
+      {
+        "w": "eighteenth,",
+        "s": 0.55,
+        "e": 1.04
+      },
+      {
+        "w": "eighteen-",
+        "s": 1.04,
+        "e": 1.04
+      },
+      {
+        "w": "sixty-",
+        "s": 1.04,
+        "e": 1.04
+      },
+      {
+        "w": "seven,",
+        "s": 1.04,
+        "e": 1.92
+      },
+      {
+        "w": "in",
+        "s": 1.92,
+        "e": 2.08
+      },
+      {
+        "w": "Sitka,",
+        "s": 2.18,
+        "e": 2.7
+      },
+      {
+        "w": "the",
+        "s": 2.7,
+        "e": 2.81
+      },
+      {
+        "w": "Russian",
+        "s": 2.95,
+        "e": 3.38
+      },
+      {
+        "w": "flag",
+        "s": 3.49,
+        "e": 3.68
+      },
+      {
+        "w": "came",
+        "s": 3.84,
+        "e": 3.98
+      },
+      {
+        "w": "down",
+        "s": 4.02,
+        "e": 4.3
+      },
+      {
+        "w": "and",
+        "s": 4.3,
+        "e": 4.48
+      },
+      {
+        "w": "the",
+        "s": 4.49,
+        "e": 4.68
+      },
+      {
+        "w": "American",
+        "s": 4.68,
+        "e": 5.07
+      },
+      {
+        "w": "flag",
+        "s": 5.19,
+        "e": 5.43
+      },
+      {
+        "w": "went",
+        "s": 5.47,
+        "e": 5.71
+      },
+      {
+        "w": "up.",
+        "s": 5.72,
+        "e": 5.92
+      }
+    ]
+  },
+  {
+    "id": "gold",
+    "file": "audio/whatif/ep01/gold.wav",
+    "sec": 5.826479,
+    "voice": "Puck",
+    "text": "Thirty years later, gold was found in the Klondike, and tens of thousands of Americans rushed north through Alaska.",
+    "words": [
+      {
+        "w": "Thirty",
+        "s": 0.01,
+        "e": 0.24
+      },
+      {
+        "w": "years",
+        "s": 0.24,
+        "e": 0.4
+      },
+      {
+        "w": "later,",
+        "s": 0.48,
+        "e": 0.74
+      },
+      {
+        "w": "gold",
+        "s": 0.74,
+        "e": 1.02
+      },
+      {
+        "w": "was",
+        "s": 1.02,
+        "e": 1.22
+      },
+      {
+        "w": "found",
+        "s": 1.22,
+        "e": 1.59
+      },
+      {
+        "w": "in",
+        "s": 1.59,
+        "e": 1.7
+      },
+      {
+        "w": "the",
+        "s": 1.7,
+        "e": 1.81
+      },
+      {
+        "w": "Klondike,",
+        "s": 1.87,
+        "e": 2.28
+      },
+      {
+        "w": "and",
+        "s": 2.33,
+        "e": 2.49
+      },
+      {
+        "w": "tens",
+        "s": 2.51,
+        "e": 2.88
+      },
+      {
+        "w": "of",
+        "s": 2.88,
+        "e": 3.04
+      },
+      {
+        "w": "thousands",
+        "s": 3.22,
+        "e": 3.76
+      },
+      {
+        "w": "of",
+        "s": 3.76,
+        "e": 3.9
+      },
+      {
+        "w": "Americans",
+        "s": 3.9,
+        "e": 4.43
+      },
+      {
+        "w": "rushed",
+        "s": 4.51,
+        "e": 4.83
+      },
+      {
+        "w": "north",
+        "s": 4.83,
+        "e": 5.1
+      },
+      {
+        "w": "through",
+        "s": 5.1,
+        "e": 5.48
+      },
+      {
+        "w": "Alaska.",
+        "s": 5.48,
+        "e": 5.82
+      }
+    ]
+  },
+  {
+    "id": "oil",
+    "file": "audio/whatif/ep01/oil.wav",
+    "sec": 9.354146,
+    "voice": "Puck",
+    "text": "And in nineteen-sixty-eight, oil at Prudhoe Bay. The biggest oil field in North America. Not a bad return on seven-point-two million-dollars.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0.02,
+        "e": 0.2
+      },
+      {
+        "w": "in",
+        "s": 0.2,
+        "e": 0.2
+      },
+      {
+        "w": "nineteen-",
+        "s": 0.2,
+        "e": 0.33
+      },
+      {
+        "w": "sixty-",
+        "s": 0.33,
+        "e": 0.33
+      },
+      {
+        "w": "eight,",
+        "s": 0.33,
+        "e": 1.3
+      },
+      {
+        "w": "oil",
+        "s": 1.3,
+        "e": 1.56
+      },
+      {
+        "w": "at",
+        "s": 1.966,
+        "e": 1.966
+      },
+      {
+        "w": "Prudhoe",
+        "s": 1.97,
+        "e": 2.5
+      },
+      {
+        "w": "Bay.",
+        "s": 2.74,
+        "e": 3.3
+      },
+      {
+        "w": "The",
+        "s": 3.78,
+        "e": 3.78
+      },
+      {
+        "w": "biggest",
+        "s": 3.83,
+        "e": 4.03
+      },
+      {
+        "w": "oil",
+        "s": 4.03,
+        "e": 4.24
+      },
+      {
+        "w": "field",
+        "s": 4.24,
+        "e": 4.6
+      },
+      {
+        "w": "in",
+        "s": 4.6,
+        "e": 4.65
+      },
+      {
+        "w": "North",
+        "s": 4.77,
+        "e": 5.1
+      },
+      {
+        "w": "America.",
+        "s": 5.1,
+        "e": 5.86
+      },
+      {
+        "w": "Not",
+        "s": 6.82,
+        "e": 6.82
+      },
+      {
+        "w": "a",
+        "s": 6.82,
+        "e": 6.82
+      },
+      {
+        "w": "bad",
+        "s": 6.82,
+        "e": 6.82
+      },
+      {
+        "w": "return",
+        "s": 6.82,
+        "e": 6.918
+      },
+      {
+        "w": "on",
+        "s": 6.918,
+        "e": 6.918
+      },
+      {
+        "w": "seven-",
+        "s": 6.918,
+        "e": 6.95
+      },
+      {
+        "w": "point-",
+        "s": 6.95,
+        "e": 7.2
+      },
+      {
+        "w": "two",
+        "s": 7.2,
+        "e": 7.95
+      },
+      {
+        "w": "million-",
+        "s": 7.95,
+        "e": 8.376
+      },
+      {
+        "w": "dollars.",
+        "s": 8.376,
+        "e": 8.86
+      }
+    ]
+  },
+  {
+    "id": "fork",
+    "file": "audio/whatif/ep01/fork.wav",
+    "sec": 7.730583,
+    "voice": "Puck",
+    "text": "But this deal almost didn't happen. If Seward hadn't been in office, if the Civil War had dragged on, or if the Tsar had changed his mind.",
+    "words": [
+      {
+        "w": "But",
+        "s": 0,
+        "e": 0.2
+      },
+      {
+        "w": "this",
+        "s": 0.27,
+        "e": 0.52
+      },
+      {
+        "w": "deal",
+        "s": 0.52,
+        "e": 0.8
+      },
+      {
+        "w": "almost",
+        "s": 0.88,
+        "e": 1.28
+      },
+      {
+        "w": "didn't",
+        "s": 1.35,
+        "e": 1.74
+      },
+      {
+        "w": "happen.",
+        "s": 2.263,
+        "e": 2.3
+      },
+      {
+        "w": "If",
+        "s": 2.3,
+        "e": 2.35
+      },
+      {
+        "w": "Seward",
+        "s": 2.41,
+        "e": 2.73
+      },
+      {
+        "w": "hadn't",
+        "s": 2.73,
+        "e": 3.05
+      },
+      {
+        "w": "been",
+        "s": 3.05,
+        "e": 3.11
+      },
+      {
+        "w": "in",
+        "s": 3.26,
+        "e": 3.38
+      },
+      {
+        "w": "office,",
+        "s": 3.38,
+        "e": 3.84
+      },
+      {
+        "w": "if",
+        "s": 3.84,
+        "e": 3.95
+      },
+      {
+        "w": "the",
+        "s": 3.95,
+        "e": 4.1
+      },
+      {
+        "w": "Civil",
+        "s": 4.1,
+        "e": 4.14
+      },
+      {
+        "w": "War",
+        "s": 4.56,
+        "e": 4.56
+      },
+      {
+        "w": "had",
+        "s": 4.57,
+        "e": 4.83
+      },
+      {
+        "w": "dragged",
+        "s": 4.83,
+        "e": 5.311
+      },
+      {
+        "w": "on,",
+        "s": 5.855,
+        "e": 5.855
+      },
+      {
+        "w": "or",
+        "s": 5.855,
+        "e": 6.06
+      },
+      {
+        "w": "if",
+        "s": 6.11,
+        "e": 6.15
+      },
+      {
+        "w": "the",
+        "s": 6.23,
+        "e": 6.35
+      },
+      {
+        "w": "Tsar",
+        "s": 6.35,
+        "e": 6.56
+      },
+      {
+        "w": "had",
+        "s": 6.56,
+        "e": 6.74
+      },
+      {
+        "w": "changed",
+        "s": 6.74,
+        "e": 7.15
+      },
+      {
+        "w": "his",
+        "s": 7.15,
+        "e": 7.32
+      },
+      {
+        "w": "mind.",
+        "s": 7.32,
+        "e": 7.71
+      }
+    ]
+  },
+  {
+    "id": "split",
+    "file": "audio/whatif/ep01/split.wav",
+    "sec": 3.378917,
+    "voice": "Puck",
+    "text": "So let's go back to eighteen-sixty-seven, and tear up that treaty.",
+    "words": [
+      {
+        "w": "So",
+        "s": 0.04,
+        "e": 0.12
+      },
+      {
+        "w": "let's",
+        "s": 0.12,
+        "e": 0.43
+      },
+      {
+        "w": "go",
+        "s": 0.43,
+        "e": 0.53
+      },
+      {
+        "w": "back",
+        "s": 0.57,
+        "e": 0.79
+      },
+      {
+        "w": "to",
+        "s": 0.88,
+        "e": 0.92
+      },
+      {
+        "w": "eighteen-",
+        "s": 0.92,
+        "e": 0.92
+      },
+      {
+        "w": "sixty-",
+        "s": 0.92,
+        "e": 0.92
+      },
+      {
+        "w": "seven,",
+        "s": 0.92,
+        "e": 1.74
+      },
+      {
+        "w": "and",
+        "s": 1.74,
+        "e": 1.96
+      },
+      {
+        "w": "tear",
+        "s": 2.09,
+        "e": 2.27
+      },
+      {
+        "w": "up",
+        "s": 2.46,
+        "e": 2.5
+      },
+      {
+        "w": "that",
+        "s": 2.5,
+        "e": 2.8
+      },
+      {
+        "w": "treaty.",
+        "s": 2.86,
+        "e": 3.37
+      }
+    ]
+  },
+  {
+    "id": "twoways",
+    "file": "audio/whatif/ep01/twoways.wav",
+    "sec": 4.065521,
+    "voice": "Puck",
+    "text": "From here, there are two paths. The most likely one. And the scariest one.",
+    "words": [
+      {
+        "w": "From",
+        "s": 0.04,
+        "e": 0.24
+      },
+      {
+        "w": "here,",
+        "s": 0.24,
+        "e": 0.59
+      },
+      {
+        "w": "there",
+        "s": 0.59,
+        "e": 0.86
+      },
+      {
+        "w": "are",
+        "s": 0.91,
+        "e": 1.06
+      },
+      {
+        "w": "two",
+        "s": 1.06,
+        "e": 1.24
+      },
+      {
+        "w": "paths.",
+        "s": 1.703,
+        "e": 1.703
+      },
+      {
+        "w": "The",
+        "s": 1.71,
+        "e": 1.8
+      },
+      {
+        "w": "most",
+        "s": 1.8,
+        "e": 1.86
+      },
+      {
+        "w": "likely",
+        "s": 1.96,
+        "e": 2.24
+      },
+      {
+        "w": "one.",
+        "s": 2.24,
+        "e": 3
+      },
+      {
+        "w": "And",
+        "s": 3,
+        "e": 3.14
+      },
+      {
+        "w": "the",
+        "s": 3.14,
+        "e": 3.36
+      },
+      {
+        "w": "scariest",
+        "s": 3.47,
+        "e": 4.04
+      },
+      {
+        "w": "one.",
+        "s": 4.05,
+        "e": 4.06
+      }
+    ]
+  },
+  {
+    "id": "a1",
+    "file": "audio/whatif/ep01/a1.wav",
+    "sec": 2.731604,
+    "voice": "Puck",
+    "text": "Path A. Russia's worst fear comes true.",
+    "words": [
+      {
+        "w": "Path",
+        "s": 0,
+        "e": 0.3
+      },
+      {
+        "w": "A.",
+        "s": 0.3,
+        "e": 0.42
+      },
+      {
+        "w": "Russia's",
+        "s": 1.089,
+        "e": 1.12
+      },
+      {
+        "w": "worst",
+        "s": 1.12,
+        "e": 1.49
+      },
+      {
+        "w": "fear",
+        "s": 1.5,
+        "e": 1.76
+      },
+      {
+        "w": "comes",
+        "s": 1.8,
+        "e": 2.12
+      },
+      {
+        "w": "true.",
+        "s": 2.22,
+        "e": 2.7
+      }
+    ]
+  },
+  {
+    "id": "a2",
+    "file": "audio/whatif/ep01/a2.wav",
+    "sec": 5.861375,
+    "voice": "Puck",
+    "text": "In that very same year, eighteen-sixty-seven, Canada was born as a country under the British Crown.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.17
+      },
+      {
+        "w": "that",
+        "s": 0.17,
+        "e": 0.51
+      },
+      {
+        "w": "very",
+        "s": 0.51,
+        "e": 0.85
+      },
+      {
+        "w": "same",
+        "s": 0.85,
+        "e": 1.19
+      },
+      {
+        "w": "year,",
+        "s": 1.19,
+        "e": 1.378
+      },
+      {
+        "w": "eighteen-",
+        "s": 1.761,
+        "e": 1.761
+      },
+      {
+        "w": "sixty-",
+        "s": 1.761,
+        "e": 1.761
+      },
+      {
+        "w": "seven,",
+        "s": 1.756,
+        "e": 2.95
+      },
+      {
+        "w": "Canada",
+        "s": 3.361,
+        "e": 3.77
+      },
+      {
+        "w": "was",
+        "s": 3.78,
+        "e": 3.91
+      },
+      {
+        "w": "born",
+        "s": 4,
+        "e": 4.22
+      },
+      {
+        "w": "as",
+        "s": 4.22,
+        "e": 4.36
+      },
+      {
+        "w": "a",
+        "s": 4.36,
+        "e": 4.44
+      },
+      {
+        "w": "country",
+        "s": 4.44,
+        "e": 5
+      },
+      {
+        "w": "under",
+        "s": 5,
+        "e": 5.17
+      },
+      {
+        "w": "the",
+        "s": 5.17,
+        "e": 5.26
+      },
+      {
+        "w": "British",
+        "s": 5.27,
+        "e": 5.51
+      },
+      {
+        "w": "Crown.",
+        "s": 5.51,
+        "e": 5.82
+      }
+    ]
+  },
+  {
+    "id": "a3",
+    "file": "audio/whatif/ep01/a3.wav",
+    "sec": 6.603667,
+    "voice": "Puck",
+    "text": "Many historians think that in the next war between Russia and Britain, Alaska would have fallen to the British within a few decades.",
+    "words": [
+      {
+        "w": "Many",
+        "s": 0,
+        "e": 0.26
+      },
+      {
+        "w": "historians",
+        "s": 0.26,
+        "e": 0.84
+      },
+      {
+        "w": "think",
+        "s": 0.93,
+        "e": 1.16
+      },
+      {
+        "w": "that",
+        "s": 1.24,
+        "e": 1.38
+      },
+      {
+        "w": "in",
+        "s": 1.38,
+        "e": 1.51
+      },
+      {
+        "w": "the",
+        "s": 1.51,
+        "e": 1.7
+      },
+      {
+        "w": "next",
+        "s": 1.7,
+        "e": 1.95
+      },
+      {
+        "w": "war",
+        "s": 1.95,
+        "e": 2.15
+      },
+      {
+        "w": "between",
+        "s": 2.16,
+        "e": 2.46
+      },
+      {
+        "w": "Russia",
+        "s": 2.46,
+        "e": 2.94
+      },
+      {
+        "w": "and",
+        "s": 2.94,
+        "e": 3.07
+      },
+      {
+        "w": "Britain,",
+        "s": 3.15,
+        "e": 3.439
+      },
+      {
+        "w": "Alaska",
+        "s": 3.87,
+        "e": 4.16
+      },
+      {
+        "w": "would",
+        "s": 4.16,
+        "e": 4.44
+      },
+      {
+        "w": "have",
+        "s": 4.44,
+        "e": 4.66
+      },
+      {
+        "w": "fallen",
+        "s": 4.66,
+        "e": 4.99
+      },
+      {
+        "w": "to",
+        "s": 4.99,
+        "e": 5.1
+      },
+      {
+        "w": "the",
+        "s": 5.1,
+        "e": 5.26
+      },
+      {
+        "w": "British",
+        "s": 5.26,
+        "e": 5.64
+      },
+      {
+        "w": "within",
+        "s": 5.64,
+        "e": 5.96
+      },
+      {
+        "w": "a",
+        "s": 5.97,
+        "e": 6.01
+      },
+      {
+        "w": "few",
+        "s": 6.02,
+        "e": 6.14
+      },
+      {
+        "w": "decades.",
+        "s": 6.18,
+        "e": 6.6
+      }
+    ]
+  },
+  {
+    "id": "a4",
+    "file": "audio/whatif/ep01/a4.wav",
+    "sec": 2.909,
+    "voice": "Puck",
+    "text": "And in the end, Alaska would simply become part of Canada.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0,
+        "e": 0.17
+      },
+      {
+        "w": "in",
+        "s": 0.2,
+        "e": 0.3
+      },
+      {
+        "w": "the",
+        "s": 0.3,
+        "e": 0.48
+      },
+      {
+        "w": "end,",
+        "s": 0.48,
+        "e": 0.77
+      },
+      {
+        "w": "Alaska",
+        "s": 0.82,
+        "e": 1.15
+      },
+      {
+        "w": "would",
+        "s": 1.15,
+        "e": 1.44
+      },
+      {
+        "w": "simply",
+        "s": 1.5,
+        "e": 1.85
+      },
+      {
+        "w": "become",
+        "s": 1.87,
+        "e": 2.16
+      },
+      {
+        "w": "part",
+        "s": 2.22,
+        "e": 2.36
+      },
+      {
+        "w": "of",
+        "s": 2.36,
+        "e": 2.42
+      },
+      {
+        "w": "Canada.",
+        "s": 2.6,
+        "e": 2.87
+      }
+    ]
+  },
+  {
+    "id": "a5",
+    "file": "audio/whatif/ep01/a5.wav",
+    "sec": 5.057417,
+    "voice": "Puck",
+    "text": "Canada would grow by about a sixth, and it would own both the Klondike gold road and Prudhoe Bay oil.",
+    "words": [
+      {
+        "w": "Canada",
+        "s": 0.05,
+        "e": 0.33
+      },
+      {
+        "w": "would",
+        "s": 0.34,
+        "e": 0.62
+      },
+      {
+        "w": "grow",
+        "s": 0.62,
+        "e": 0.84
+      },
+      {
+        "w": "by",
+        "s": 0.84,
+        "e": 0.94
+      },
+      {
+        "w": "about",
+        "s": 0.94,
+        "e": 1.22
+      },
+      {
+        "w": "a",
+        "s": 1.22,
+        "e": 1.28
+      },
+      {
+        "w": "sixth,",
+        "s": 1.28,
+        "e": 1.68
+      },
+      {
+        "w": "and",
+        "s": 1.85,
+        "e": 1.9
+      },
+      {
+        "w": "it",
+        "s": 1.9,
+        "e": 2.01
+      },
+      {
+        "w": "would",
+        "s": 2.04,
+        "e": 2.33
+      },
+      {
+        "w": "own",
+        "s": 2.33,
+        "e": 2.51
+      },
+      {
+        "w": "both",
+        "s": 2.713,
+        "e": 2.75
+      },
+      {
+        "w": "the",
+        "s": 2.76,
+        "e": 2.94
+      },
+      {
+        "w": "Klondike",
+        "s": 2.94,
+        "e": 3.42
+      },
+      {
+        "w": "gold",
+        "s": 3.42,
+        "e": 3.67
+      },
+      {
+        "w": "road",
+        "s": 3.67,
+        "e": 3.91
+      },
+      {
+        "w": "and",
+        "s": 3.93,
+        "e": 4.18
+      },
+      {
+        "w": "Prudhoe",
+        "s": 4.18,
+        "e": 4.55
+      },
+      {
+        "w": "Bay",
+        "s": 4.55,
+        "e": 4.71
+      },
+      {
+        "w": "oil.",
+        "s": 4.71,
+        "e": 5.03
+      }
+    ]
+  },
+  {
+    "id": "a6",
+    "file": "audio/whatif/ep01/a6.wav",
+    "sec": 7.966958,
+    "voice": "Puck",
+    "text": "America would have no Arctic coast at all. And in World War Two, there would be no northern route to fly nearly eight-thousand warplanes to the Soviets.",
+    "words": [
+      {
+        "w": "America",
+        "s": 0,
+        "e": 0.43
+      },
+      {
+        "w": "would",
+        "s": 0.43,
+        "e": 0.71
+      },
+      {
+        "w": "have",
+        "s": 0.74,
+        "e": 0.98
+      },
+      {
+        "w": "no",
+        "s": 0.98,
+        "e": 1.1
+      },
+      {
+        "w": "Arctic",
+        "s": 1.1,
+        "e": 1.38
+      },
+      {
+        "w": "coast",
+        "s": 1.47,
+        "e": 1.79
+      },
+      {
+        "w": "at",
+        "s": 1.8,
+        "e": 2.11
+      },
+      {
+        "w": "all.",
+        "s": 2.726,
+        "e": 2.726
+      },
+      {
+        "w": "And",
+        "s": 2.726,
+        "e": 2.89
+      },
+      {
+        "w": "in",
+        "s": 2.89,
+        "e": 2.94
+      },
+      {
+        "w": "World",
+        "s": 3.02,
+        "e": 3.34
+      },
+      {
+        "w": "War",
+        "s": 3.34,
+        "e": 3.53
+      },
+      {
+        "w": "Two,",
+        "s": 3.53,
+        "e": 3.81
+      },
+      {
+        "w": "there",
+        "s": 3.81,
+        "e": 3.94
+      },
+      {
+        "w": "would",
+        "s": 3.94,
+        "e": 4.08
+      },
+      {
+        "w": "be",
+        "s": 4.08,
+        "e": 4.24
+      },
+      {
+        "w": "no",
+        "s": 4.24,
+        "e": 4.37
+      },
+      {
+        "w": "northern",
+        "s": 4.37,
+        "e": 4.81
+      },
+      {
+        "w": "route",
+        "s": 4.89,
+        "e": 5.191
+      },
+      {
+        "w": "to",
+        "s": 5.303,
+        "e": 5.35
+      },
+      {
+        "w": "fly",
+        "s": 5.35,
+        "e": 5.48
+      },
+      {
+        "w": "nearly",
+        "s": 5.56,
+        "e": 5.84
+      },
+      {
+        "w": "eight-",
+        "s": 5.84,
+        "e": 5.84
+      },
+      {
+        "w": "thousand",
+        "s": 5.84,
+        "e": 6.6
+      },
+      {
+        "w": "warplanes",
+        "s": 6.6,
+        "e": 7.09
+      },
+      {
+        "w": "to",
+        "s": 7.09,
+        "e": 7.2
+      },
+      {
+        "w": "the",
+        "s": 7.2,
+        "e": 7.31
+      },
+      {
+        "w": "Soviets.",
+        "s": 7.74,
+        "e": 7.96
+      }
+    ]
+  },
+  {
+    "id": "a7",
+    "file": "audio/whatif/ep01/a7.wav",
+    "sec": 7.708021,
+    "voice": "Puck",
+    "text": "In the real world, Japan seized the Alaskan islands of Attu and Kiska in nineteen-forty-two. In Path A, that's Canada's fight.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0.02,
+        "e": 0.1
+      },
+      {
+        "w": "the",
+        "s": 0.1,
+        "e": 0.25
+      },
+      {
+        "w": "real",
+        "s": 0.25,
+        "e": 0.46
+      },
+      {
+        "w": "world,",
+        "s": 0.46,
+        "e": 0.84
+      },
+      {
+        "w": "Japan",
+        "s": 0.89,
+        "e": 1.14
+      },
+      {
+        "w": "seized",
+        "s": 1.14,
+        "e": 1.45
+      },
+      {
+        "w": "the",
+        "s": 1.53,
+        "e": 1.68
+      },
+      {
+        "w": "Alaskan",
+        "s": 1.68,
+        "e": 2.08
+      },
+      {
+        "w": "islands",
+        "s": 2.08,
+        "e": 2.51
+      },
+      {
+        "w": "of",
+        "s": 2.55,
+        "e": 2.7
+      },
+      {
+        "w": "Attu",
+        "s": 2.71,
+        "e": 3.08
+      },
+      {
+        "w": "and",
+        "s": 3.08,
+        "e": 3.34
+      },
+      {
+        "w": "Kiska",
+        "s": 3.41,
+        "e": 3.85
+      },
+      {
+        "w": "in",
+        "s": 3.85,
+        "e": 3.85
+      },
+      {
+        "w": "nineteen-",
+        "s": 3.85,
+        "e": 3.983
+      },
+      {
+        "w": "forty-",
+        "s": 3.983,
+        "e": 4.32
+      },
+      {
+        "w": "two.",
+        "s": 4.32,
+        "e": 5.54
+      },
+      {
+        "w": "In",
+        "s": 5.57,
+        "e": 5.69
+      },
+      {
+        "w": "Path",
+        "s": 5.69,
+        "e": 6
+      },
+      {
+        "w": "A,",
+        "s": 6,
+        "e": 6.16
+      },
+      {
+        "w": "that's",
+        "s": 6.713,
+        "e": 6.713
+      },
+      {
+        "w": "Canada's",
+        "s": 6.713,
+        "e": 7.29
+      },
+      {
+        "w": "fight.",
+        "s": 7.29,
+        "e": 7.708
+      }
+    ]
+  },
+  {
+    "id": "a8",
+    "file": "audio/whatif/ep01/a8.wav",
+    "sec": 6.528167,
+    "voice": "Puck",
+    "text": "Path A sounds quiet. But it changes one thing forever. America would no longer be Russia's neighbor.",
+    "words": [
+      {
+        "w": "Path",
+        "s": 0.04,
+        "e": 0.23
+      },
+      {
+        "w": "A",
+        "s": 0.23,
+        "e": 0.3
+      },
+      {
+        "w": "sounds",
+        "s": 0.3,
+        "e": 0.65
+      },
+      {
+        "w": "quiet.",
+        "s": 0.65,
+        "e": 1.05
+      },
+      {
+        "w": "But",
+        "s": 1.971,
+        "e": 1.971
+      },
+      {
+        "w": "it",
+        "s": 1.971,
+        "e": 1.971
+      },
+      {
+        "w": "changes",
+        "s": 1.971,
+        "e": 2.41
+      },
+      {
+        "w": "one",
+        "s": 2.41,
+        "e": 2.74
+      },
+      {
+        "w": "thing",
+        "s": 2.74,
+        "e": 3.3
+      },
+      {
+        "w": "forever.",
+        "s": 3.3,
+        "e": 4.22
+      },
+      {
+        "w": "America",
+        "s": 4.22,
+        "e": 4.71
+      },
+      {
+        "w": "would",
+        "s": 4.8,
+        "e": 5.13
+      },
+      {
+        "w": "no",
+        "s": 5.13,
+        "e": 5.28
+      },
+      {
+        "w": "longer",
+        "s": 5.28,
+        "e": 5.64
+      },
+      {
+        "w": "be",
+        "s": 5.75,
+        "e": 5.88
+      },
+      {
+        "w": "Russia's",
+        "s": 5.88,
+        "e": 6.49
+      },
+      {
+        "w": "neighbor.",
+        "s": 6.49,
+        "e": 6.528
+      }
+    ]
+  },
+  {
+    "id": "b1",
+    "file": "audio/whatif/ep01/b1.wav",
+    "sec": 5.831625,
+    "voice": "Puck",
+    "text": "Path B. Britain never comes, and Russia hangs on to Alaska, all the way to nineteen-seventeen.",
+    "words": [
+      {
+        "w": "Path",
+        "s": 0,
+        "e": 0.44
+      },
+      {
+        "w": "B.",
+        "s": 1.251,
+        "e": 1.251
+      },
+      {
+        "w": "Britain",
+        "s": 1.25,
+        "e": 1.77
+      },
+      {
+        "w": "never",
+        "s": 1.83,
+        "e": 2.15
+      },
+      {
+        "w": "comes,",
+        "s": 2.58,
+        "e": 2.6
+      },
+      {
+        "w": "and",
+        "s": 2.6,
+        "e": 2.75
+      },
+      {
+        "w": "Russia",
+        "s": 2.75,
+        "e": 3.04
+      },
+      {
+        "w": "hangs",
+        "s": 3.04,
+        "e": 3.28
+      },
+      {
+        "w": "on",
+        "s": 3.28,
+        "e": 3.38
+      },
+      {
+        "w": "to",
+        "s": 3.4,
+        "e": 3.6
+      },
+      {
+        "w": "Alaska,",
+        "s": 3.6,
+        "e": 4.21
+      },
+      {
+        "w": "all",
+        "s": 4.21,
+        "e": 4.41
+      },
+      {
+        "w": "the",
+        "s": 4.41,
+        "e": 4.62
+      },
+      {
+        "w": "way",
+        "s": 4.62,
+        "e": 4.83
+      },
+      {
+        "w": "to",
+        "s": 4.83,
+        "e": 4.96
+      },
+      {
+        "w": "nineteen-",
+        "s": 4.96,
+        "e": 4.966
+      },
+      {
+        "w": "seventeen.",
+        "s": 4.966,
+        "e": 5.83
+      }
+    ]
+  },
+  {
+    "id": "b2",
+    "file": "audio/whatif/ep01/b2.wav",
+    "sec": 3.960354,
+    "voice": "Puck",
+    "text": "That year, revolution. The Tsar is overthrown, and a civil war follows.",
+    "words": [
+      {
+        "w": "That",
+        "s": 0,
+        "e": 0.27
+      },
+      {
+        "w": "year,",
+        "s": 0.27,
+        "e": 0.67
+      },
+      {
+        "w": "revolution.",
+        "s": 0.67,
+        "e": 1.55
+      },
+      {
+        "w": "The",
+        "s": 1.56,
+        "e": 1.7
+      },
+      {
+        "w": "Tsar",
+        "s": 1.75,
+        "e": 1.98
+      },
+      {
+        "w": "is",
+        "s": 2.13,
+        "e": 2.14
+      },
+      {
+        "w": "overthrown,",
+        "s": 2.14,
+        "e": 2.79
+      },
+      {
+        "w": "and",
+        "s": 2.79,
+        "e": 2.98
+      },
+      {
+        "w": "a",
+        "s": 3.04,
+        "e": 3.04
+      },
+      {
+        "w": "civil",
+        "s": 3.13,
+        "e": 3.34
+      },
+      {
+        "w": "war",
+        "s": 3.34,
+        "e": 3.52
+      },
+      {
+        "w": "follows.",
+        "s": 3.52,
+        "e": 3.96
+      }
+    ]
+  },
+  {
+    "id": "b3",
+    "file": "audio/whatif/ep01/b3.wav",
+    "sec": 5.187938,
+    "voice": "Puck",
+    "text": "In the real world, America actually sent about eight-thousand troops into Siberia, landing at Vladivostok.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.12
+      },
+      {
+        "w": "the",
+        "s": 0.12,
+        "e": 0.3
+      },
+      {
+        "w": "real",
+        "s": 0.3,
+        "e": 0.55
+      },
+      {
+        "w": "world,",
+        "s": 0.55,
+        "e": 0.96
+      },
+      {
+        "w": "America",
+        "s": 1.02,
+        "e": 1.28
+      },
+      {
+        "w": "actually",
+        "s": 1.28,
+        "e": 1.6
+      },
+      {
+        "w": "sent",
+        "s": 1.6,
+        "e": 1.88
+      },
+      {
+        "w": "about",
+        "s": 1.88,
+        "e": 1.968
+      },
+      {
+        "w": "eight-",
+        "s": 2.128,
+        "e": 2.128
+      },
+      {
+        "w": "thousand",
+        "s": 2.128,
+        "e": 2.73
+      },
+      {
+        "w": "troops",
+        "s": 2.73,
+        "e": 3.04
+      },
+      {
+        "w": "into",
+        "s": 3.04,
+        "e": 3.33
+      },
+      {
+        "w": "Siberia,",
+        "s": 3.33,
+        "e": 3.96
+      },
+      {
+        "w": "landing",
+        "s": 3.96,
+        "e": 4.38
+      },
+      {
+        "w": "at",
+        "s": 4.38,
+        "e": 4.44
+      },
+      {
+        "w": "Vladivostok.",
+        "s": 4.51,
+        "e": 5.18
+      }
+    ]
+  },
+  {
+    "id": "b4",
+    "file": "audio/whatif/ep01/b4.wav",
+    "sec": 6.084896,
+    "voice": "Puck",
+    "text": "In Path B, America might grab Alaska in the chaos. But let's say it fails, and the Reds win.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.11
+      },
+      {
+        "w": "Path",
+        "s": 0.18,
+        "e": 0.35
+      },
+      {
+        "w": "B,",
+        "s": 0.52,
+        "e": 0.73
+      },
+      {
+        "w": "America",
+        "s": 0.73,
+        "e": 1.25
+      },
+      {
+        "w": "might",
+        "s": 1.34,
+        "e": 1.72
+      },
+      {
+        "w": "grab",
+        "s": 1.855,
+        "e": 2.04
+      },
+      {
+        "w": "Alaska",
+        "s": 2.04,
+        "e": 2.53
+      },
+      {
+        "w": "in",
+        "s": 2.53,
+        "e": 2.7
+      },
+      {
+        "w": "the",
+        "s": 2.7,
+        "e": 2.94
+      },
+      {
+        "w": "chaos.",
+        "s": 2.94,
+        "e": 3.66
+      },
+      {
+        "w": "But",
+        "s": 3.66,
+        "e": 3.87
+      },
+      {
+        "w": "let's",
+        "s": 3.87,
+        "e": 4.22
+      },
+      {
+        "w": "say",
+        "s": 4.22,
+        "e": 4.43
+      },
+      {
+        "w": "it",
+        "s": 4.43,
+        "e": 4.5
+      },
+      {
+        "w": "fails,",
+        "s": 4.62,
+        "e": 5
+      },
+      {
+        "w": "and",
+        "s": 5,
+        "e": 5.13
+      },
+      {
+        "w": "the",
+        "s": 5.13,
+        "e": 5.34
+      },
+      {
+        "w": "Reds",
+        "s": 5.34,
+        "e": 5.62
+      },
+      {
+        "w": "win.",
+        "s": 5.62,
+        "e": 6.07
+      }
+    ]
+  },
+  {
+    "id": "b5",
+    "file": "audio/whatif/ep01/b5.wav",
+    "sec": 6.960438,
+    "voice": "Puck",
+    "text": "Now the Soviet Union owns a piece of North America, with a land border to Canada over one-thousand-five-hundred miles long.",
+    "words": [
+      {
+        "w": "Now",
+        "s": 0,
+        "e": 0.18
+      },
+      {
+        "w": "the",
+        "s": 0.18,
+        "e": 0.36
+      },
+      {
+        "w": "Soviet",
+        "s": 0.36,
+        "e": 0.72
+      },
+      {
+        "w": "Union",
+        "s": 0.77,
+        "e": 1.06
+      },
+      {
+        "w": "owns",
+        "s": 1.06,
+        "e": 1.33
+      },
+      {
+        "w": "a",
+        "s": 1.33,
+        "e": 1.39
+      },
+      {
+        "w": "piece",
+        "s": 1.39,
+        "e": 1.72
+      },
+      {
+        "w": "of",
+        "s": 1.72,
+        "e": 1.85
+      },
+      {
+        "w": "North",
+        "s": 1.85,
+        "e": 2.17
+      },
+      {
+        "w": "America,",
+        "s": 2.23,
+        "e": 2.67
+      },
+      {
+        "w": "with",
+        "s": 2.67,
+        "e": 2.97
+      },
+      {
+        "w": "a",
+        "s": 2.97,
+        "e": 3.04
+      },
+      {
+        "w": "land",
+        "s": 3.04,
+        "e": 3.33
+      },
+      {
+        "w": "border",
+        "s": 3.33,
+        "e": 3.77
+      },
+      {
+        "w": "to",
+        "s": 3.77,
+        "e": 3.91
+      },
+      {
+        "w": "Canada",
+        "s": 3.91,
+        "e": 4.4
+      },
+      {
+        "w": "over",
+        "s": 4.4,
+        "e": 4.84
+      },
+      {
+        "w": "one-",
+        "s": 4.84,
+        "e": 4.84
+      },
+      {
+        "w": "thousand-",
+        "s": 4.84,
+        "e": 4.84
+      },
+      {
+        "w": "five-",
+        "s": 4.84,
+        "e": 4.84
+      },
+      {
+        "w": "hundred",
+        "s": 4.84,
+        "e": 6.11
+      },
+      {
+        "w": "miles",
+        "s": 6.11,
+        "e": 6.56
+      },
+      {
+        "w": "long.",
+        "s": 6.56,
+        "e": 6.96
+      }
+    ]
+  },
+  {
+    "id": "b6",
+    "file": "audio/whatif/ep01/b6.wav",
+    "sec": 6.044188,
+    "voice": "Puck",
+    "text": "In nineteen-sixty-two, the Soviets put missiles in Cuba, ninety miles from Florida, and the world came close to nuclear war.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.013
+      },
+      {
+        "w": "nineteen-",
+        "s": 0.013,
+        "e": 0.14
+      },
+      {
+        "w": "sixty-",
+        "s": 0.14,
+        "e": 0.355
+      },
+      {
+        "w": "two,",
+        "s": 0.355,
+        "e": 1.14
+      },
+      {
+        "w": "the",
+        "s": 1.21,
+        "e": 1.31
+      },
+      {
+        "w": "Soviets",
+        "s": 1.31,
+        "e": 1.65
+      },
+      {
+        "w": "put",
+        "s": 1.72,
+        "e": 1.79
+      },
+      {
+        "w": "missiles",
+        "s": 1.83,
+        "e": 2.22
+      },
+      {
+        "w": "in",
+        "s": 2.22,
+        "e": 2.39
+      },
+      {
+        "w": "Cuba,",
+        "s": 2.42,
+        "e": 2.88
+      },
+      {
+        "w": "ninety",
+        "s": 2.88,
+        "e": 3.28
+      },
+      {
+        "w": "miles",
+        "s": 3.28,
+        "e": 3.55
+      },
+      {
+        "w": "from",
+        "s": 3.55,
+        "e": 3.69
+      },
+      {
+        "w": "Florida,",
+        "s": 3.7,
+        "e": 4.07
+      },
+      {
+        "w": "and",
+        "s": 4.41,
+        "e": 4.56
+      },
+      {
+        "w": "the",
+        "s": 4.56,
+        "e": 4.61
+      },
+      {
+        "w": "world",
+        "s": 4.62,
+        "e": 4.82
+      },
+      {
+        "w": "came",
+        "s": 4.9,
+        "e": 5.04
+      },
+      {
+        "w": "close",
+        "s": 5.06,
+        "e": 5.29
+      },
+      {
+        "w": "to",
+        "s": 5.29,
+        "e": 5.39
+      },
+      {
+        "w": "nuclear",
+        "s": 5.39,
+        "e": 5.73
+      },
+      {
+        "w": "war.",
+        "s": 5.73,
+        "e": 6.04
+      }
+    ]
+  },
+  {
+    "id": "b7",
+    "file": "audio/whatif/ep01/b7.wav",
+    "sec": 6.625604,
+    "voice": "Puck",
+    "text": "In Path B, there's nothing to smuggle. The missiles are already on Soviet soil, less than one-thousand miles from Seattle.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.13
+      },
+      {
+        "w": "Path",
+        "s": 0.15,
+        "e": 0.37
+      },
+      {
+        "w": "B,",
+        "s": 0.47,
+        "e": 0.66
+      },
+      {
+        "w": "there's",
+        "s": 0.876,
+        "e": 0.99
+      },
+      {
+        "w": "nothing",
+        "s": 0.99,
+        "e": 1.32
+      },
+      {
+        "w": "to",
+        "s": 1.32,
+        "e": 1.41
+      },
+      {
+        "w": "smuggle.",
+        "s": 1.41,
+        "e": 1.92
+      },
+      {
+        "w": "The",
+        "s": 2.499,
+        "e": 2.499
+      },
+      {
+        "w": "missiles",
+        "s": 2.499,
+        "e": 2.72
+      },
+      {
+        "w": "are",
+        "s": 2.72,
+        "e": 2.93
+      },
+      {
+        "w": "already",
+        "s": 2.94,
+        "e": 3.45
+      },
+      {
+        "w": "on",
+        "s": 3.45,
+        "e": 3.59
+      },
+      {
+        "w": "Soviet",
+        "s": 3.59,
+        "e": 4.03
+      },
+      {
+        "w": "soil,",
+        "s": 4.03,
+        "e": 4.41
+      },
+      {
+        "w": "less",
+        "s": 4.975,
+        "e": 4.975
+      },
+      {
+        "w": "than",
+        "s": 4.975,
+        "e": 4.975
+      },
+      {
+        "w": "one-",
+        "s": 4.975,
+        "e": 4.975
+      },
+      {
+        "w": "thousand",
+        "s": 4.975,
+        "e": 5.61
+      },
+      {
+        "w": "miles",
+        "s": 5.61,
+        "e": 5.86
+      },
+      {
+        "w": "from",
+        "s": 5.86,
+        "e": 6.05
+      },
+      {
+        "w": "Seattle.",
+        "s": 6.05,
+        "e": 6.58
+      }
+    ]
+  },
+  {
+    "id": "b8",
+    "file": "audio/whatif/ep01/b8.wav",
+    "sec": 3.265583,
+    "voice": "Puck",
+    "text": "Prudhoe Bay oil would pay for the Red Army, not for America.",
+    "words": [
+      {
+        "w": "Prudhoe",
+        "s": 0.05,
+        "e": 0.36
+      },
+      {
+        "w": "Bay",
+        "s": 0.36,
+        "e": 0.51
+      },
+      {
+        "w": "oil",
+        "s": 0.53,
+        "e": 0.68
+      },
+      {
+        "w": "would",
+        "s": 0.68,
+        "e": 0.89
+      },
+      {
+        "w": "pay",
+        "s": 0.97,
+        "e": 1.14
+      },
+      {
+        "w": "for",
+        "s": 1.14,
+        "e": 1.29
+      },
+      {
+        "w": "the",
+        "s": 1.3,
+        "e": 1.46
+      },
+      {
+        "w": "Red",
+        "s": 1.46,
+        "e": 1.62
+      },
+      {
+        "w": "Army,",
+        "s": 1.62,
+        "e": 1.91
+      },
+      {
+        "w": "not",
+        "s": 2.566,
+        "e": 2.566
+      },
+      {
+        "w": "for",
+        "s": 2.566,
+        "e": 2.566
+      },
+      {
+        "w": "America.",
+        "s": 2.56,
+        "e": 3.2
+      }
+    ]
+  },
+  {
+    "id": "b9",
+    "file": "audio/whatif/ep01/b9.wav",
+    "sec": 3.974438,
+    "voice": "Puck",
+    "text": "And Canada becomes the front line of the Cold War, like West Germany in our world.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0.06,
+        "e": 0.16
+      },
+      {
+        "w": "Canada",
+        "s": 0.2,
+        "e": 0.52
+      },
+      {
+        "w": "becomes",
+        "s": 0.52,
+        "e": 0.89
+      },
+      {
+        "w": "the",
+        "s": 0.93,
+        "e": 1.01
+      },
+      {
+        "w": "front",
+        "s": 1.21,
+        "e": 1.37
+      },
+      {
+        "w": "line",
+        "s": 1.44,
+        "e": 1.64
+      },
+      {
+        "w": "of",
+        "s": 1.64,
+        "e": 1.71
+      },
+      {
+        "w": "the",
+        "s": 1.76,
+        "e": 1.88
+      },
+      {
+        "w": "Cold",
+        "s": 1.88,
+        "e": 2.08
+      },
+      {
+        "w": "War,",
+        "s": 2.16,
+        "e": 2.34
+      },
+      {
+        "w": "like",
+        "s": 2.717,
+        "e": 2.717
+      },
+      {
+        "w": "West",
+        "s": 2.71,
+        "e": 2.82
+      },
+      {
+        "w": "Germany",
+        "s": 2.82,
+        "e": 3.22
+      },
+      {
+        "w": "in",
+        "s": 3.22,
+        "e": 3.33
+      },
+      {
+        "w": "our",
+        "s": 3.33,
+        "e": 3.5
+      },
+      {
+        "w": "world.",
+        "s": 3.5,
+        "e": 3.88
+      }
+    ]
+  },
+  {
+    "id": "b10",
+    "file": "audio/whatif/ep01/b10.wav",
+    "sec": 3.712833,
+    "voice": "Puck",
+    "text": "America would have to pour its troops and money into defending its own continent.",
+    "words": [
+      {
+        "w": "America",
+        "s": 0,
+        "e": 0.24
+      },
+      {
+        "w": "would",
+        "s": 0.32,
+        "e": 0.52
+      },
+      {
+        "w": "have",
+        "s": 0.52,
+        "e": 0.7
+      },
+      {
+        "w": "to",
+        "s": 0.7,
+        "e": 0.77
+      },
+      {
+        "w": "pour",
+        "s": 0.83,
+        "e": 1.06
+      },
+      {
+        "w": "its",
+        "s": 1.06,
+        "e": 1.22
+      },
+      {
+        "w": "troops",
+        "s": 1.28,
+        "e": 1.66
+      },
+      {
+        "w": "and",
+        "s": 1.66,
+        "e": 1.82
+      },
+      {
+        "w": "money",
+        "s": 1.82,
+        "e": 2.1
+      },
+      {
+        "w": "into",
+        "s": 2.4,
+        "e": 2.4
+      },
+      {
+        "w": "defending",
+        "s": 2.4,
+        "e": 2.85
+      },
+      {
+        "w": "its",
+        "s": 2.85,
+        "e": 3.01
+      },
+      {
+        "w": "own",
+        "s": 3.05,
+        "e": 3.19
+      },
+      {
+        "w": "continent.",
+        "s": 3.19,
+        "e": 3.71
+      }
+    ]
+  },
+  {
+    "id": "you1",
+    "file": "audio/whatif/ep01/you1.wav",
+    "sec": 1.306625,
+    "voice": "Puck",
+    "text": "So what would that mean for you?",
+    "words": [
+      {
+        "w": "So",
+        "s": 0.02,
+        "e": 0.08
+      },
+      {
+        "w": "what",
+        "s": 0.1,
+        "e": 0.27
+      },
+      {
+        "w": "would",
+        "s": 0.27,
+        "e": 0.5
+      },
+      {
+        "w": "that",
+        "s": 0.5,
+        "e": 0.68
+      },
+      {
+        "w": "mean",
+        "s": 0.68,
+        "e": 0.86
+      },
+      {
+        "w": "for",
+        "s": 0.86,
+        "e": 0.99
+      },
+      {
+        "w": "you?",
+        "s": 0.99,
+        "e": 1.27
+      }
+    ]
+  },
+  {
+    "id": "you2",
+    "file": "audio/whatif/ep01/you2.wav",
+    "sec": 5.50525,
+    "voice": "Puck",
+    "text": "At its peak in nineteen-eighty-eight, Alaska's North Slope pumped about a quarter of all the oil produced in the United States.",
+    "words": [
+      {
+        "w": "At",
+        "s": 0,
+        "e": 0.1
+      },
+      {
+        "w": "its",
+        "s": 0.1,
+        "e": 0.23
+      },
+      {
+        "w": "peak",
+        "s": 0.32,
+        "e": 0.45
+      },
+      {
+        "w": "in",
+        "s": 0.45,
+        "e": 0.477
+      },
+      {
+        "w": "nineteen-",
+        "s": 0.477,
+        "e": 0.57
+      },
+      {
+        "w": "eighty-",
+        "s": 0.57,
+        "e": 0.57
+      },
+      {
+        "w": "eight,",
+        "s": 0.57,
+        "e": 1.36
+      },
+      {
+        "w": "Alaska's",
+        "s": 1.36,
+        "e": 1.8
+      },
+      {
+        "w": "North",
+        "s": 1.8,
+        "e": 2.03
+      },
+      {
+        "w": "Slope",
+        "s": 2.08,
+        "e": 2.35
+      },
+      {
+        "w": "pumped",
+        "s": 2.499,
+        "e": 2.74
+      },
+      {
+        "w": "about",
+        "s": 2.79,
+        "e": 3.09
+      },
+      {
+        "w": "a",
+        "s": 3.09,
+        "e": 3.15
+      },
+      {
+        "w": "quarter",
+        "s": 3.15,
+        "e": 3.58
+      },
+      {
+        "w": "of",
+        "s": 3.58,
+        "e": 3.69
+      },
+      {
+        "w": "all",
+        "s": 3.78,
+        "e": 3.88
+      },
+      {
+        "w": "the",
+        "s": 3.88,
+        "e": 4.06
+      },
+      {
+        "w": "oil",
+        "s": 4.06,
+        "e": 4.28
+      },
+      {
+        "w": "produced",
+        "s": 4.28,
+        "e": 4.68
+      },
+      {
+        "w": "in",
+        "s": 4.68,
+        "e": 4.76
+      },
+      {
+        "w": "the",
+        "s": 4.76,
+        "e": 4.88
+      },
+      {
+        "w": "United",
+        "s": 4.88,
+        "e": 5.12
+      },
+      {
+        "w": "States.",
+        "s": 5.12,
+        "e": 5.47
+      }
+    ]
+  },
+  {
+    "id": "you3",
+    "file": "audio/whatif/ep01/you3.wav",
+    "sec": 6.033479,
+    "voice": "Puck",
+    "text": "Since nineteen-eighty-two, every Alaskan has received a yearly check from that oil money. The Permanent Fund Dividend.",
+    "words": [
+      {
+        "w": "Since",
+        "s": 0.03,
+        "e": 0.182
+      },
+      {
+        "w": "nineteen-",
+        "s": 0.182,
+        "e": 0.182
+      },
+      {
+        "w": "eighty-",
+        "s": 0.182,
+        "e": 0.35
+      },
+      {
+        "w": "two,",
+        "s": 0.35,
+        "e": 0.84
+      },
+      {
+        "w": "every",
+        "s": 0.84,
+        "e": 1.39
+      },
+      {
+        "w": "Alaskan",
+        "s": 1.39,
+        "e": 2.16
+      },
+      {
+        "w": "has",
+        "s": 2.16,
+        "e": 2.28
+      },
+      {
+        "w": "received",
+        "s": 2.28,
+        "e": 2.64
+      },
+      {
+        "w": "a",
+        "s": 2.64,
+        "e": 2.7
+      },
+      {
+        "w": "yearly",
+        "s": 2.7,
+        "e": 3.07
+      },
+      {
+        "w": "check",
+        "s": 3.14,
+        "e": 3.36
+      },
+      {
+        "w": "from",
+        "s": 3.45,
+        "e": 3.56
+      },
+      {
+        "w": "that",
+        "s": 3.56,
+        "e": 3.78
+      },
+      {
+        "w": "oil",
+        "s": 3.78,
+        "e": 3.96
+      },
+      {
+        "w": "money.",
+        "s": 3.96,
+        "e": 4.18
+      },
+      {
+        "w": "The",
+        "s": 4.739,
+        "e": 4.739
+      },
+      {
+        "w": "Permanent",
+        "s": 4.72,
+        "e": 5.1
+      },
+      {
+        "w": "Fund",
+        "s": 5.17,
+        "e": 5.46
+      },
+      {
+        "w": "Dividend.",
+        "s": 5.638,
+        "e": 6.03
+      }
+    ]
+  },
+  {
+    "id": "you4",
+    "file": "audio/whatif/ep01/you4.wav",
+    "sec": 5.317375,
+    "voice": "Puck",
+    "text": "About six out of every ten pounds of wild seafood caught in the US comes from Alaskan waters.",
+    "words": [
+      {
+        "w": "About",
+        "s": 0,
+        "e": 0.36
+      },
+      {
+        "w": "six",
+        "s": 0.36,
+        "e": 0.52
+      },
+      {
+        "w": "out",
+        "s": 0.59,
+        "e": 0.78
+      },
+      {
+        "w": "of",
+        "s": 0.78,
+        "e": 0.91
+      },
+      {
+        "w": "every",
+        "s": 1.083,
+        "e": 1.28
+      },
+      {
+        "w": "ten",
+        "s": 1.28,
+        "e": 1.71
+      },
+      {
+        "w": "pounds",
+        "s": 1.71,
+        "e": 2.18
+      },
+      {
+        "w": "of",
+        "s": 2.18,
+        "e": 2.27
+      },
+      {
+        "w": "wild",
+        "s": 2.28,
+        "e": 2.59
+      },
+      {
+        "w": "seafood",
+        "s": 2.6,
+        "e": 3.04
+      },
+      {
+        "w": "caught",
+        "s": 3.13,
+        "e": 3.36
+      },
+      {
+        "w": "in",
+        "s": 3.36,
+        "e": 3.42
+      },
+      {
+        "w": "the",
+        "s": 3.42,
+        "e": 3.48
+      },
+      {
+        "w": "US",
+        "s": 3.48,
+        "e": 3.71
+      },
+      {
+        "w": "comes",
+        "s": 3.88,
+        "e": 4.23
+      },
+      {
+        "w": "from",
+        "s": 4.31,
+        "e": 4.4
+      },
+      {
+        "w": "Alaskan",
+        "s": 4.4,
+        "e": 4.86
+      },
+      {
+        "w": "waters.",
+        "s": 4.86,
+        "e": 5.31
+      }
+    ]
+  },
+  {
+    "id": "you5",
+    "file": "audio/whatif/ep01/you5.wav",
+    "sec": 6.499042,
+    "voice": "Puck",
+    "text": "And today, most of America's long-range missile interceptors are based in Alaska, at Fort Greely, guarding the whole country.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0,
+        "e": 0.13
+      },
+      {
+        "w": "today,",
+        "s": 0.19,
+        "e": 0.63
+      },
+      {
+        "w": "most",
+        "s": 0.83,
+        "e": 0.88
+      },
+      {
+        "w": "of",
+        "s": 0.88,
+        "e": 0.96
+      },
+      {
+        "w": "America's",
+        "s": 1.02,
+        "e": 1.6
+      },
+      {
+        "w": "long-",
+        "s": 1.6,
+        "e": 1.85
+      },
+      {
+        "w": "range",
+        "s": 1.85,
+        "e": 2.12
+      },
+      {
+        "w": "missile",
+        "s": 2.12,
+        "e": 2.48
+      },
+      {
+        "w": "interceptors",
+        "s": 2.48,
+        "e": 3.1
+      },
+      {
+        "w": "are",
+        "s": 3.1,
+        "e": 3.32
+      },
+      {
+        "w": "based",
+        "s": 3.4,
+        "e": 3.71
+      },
+      {
+        "w": "in",
+        "s": 3.71,
+        "e": 3.86
+      },
+      {
+        "w": "Alaska,",
+        "s": 3.86,
+        "e": 4.46
+      },
+      {
+        "w": "at",
+        "s": 4.784,
+        "e": 4.784
+      },
+      {
+        "w": "Fort",
+        "s": 4.78,
+        "e": 4.93
+      },
+      {
+        "w": "Greely,",
+        "s": 5,
+        "e": 5.25
+      },
+      {
+        "w": "guarding",
+        "s": 5.5,
+        "e": 5.66
+      },
+      {
+        "w": "the",
+        "s": 5.66,
+        "e": 5.79
+      },
+      {
+        "w": "whole",
+        "s": 5.79,
+        "e": 6.02
+      },
+      {
+        "w": "country.",
+        "s": 6.02,
+        "e": 6.46
+      }
+    ]
+  },
+  {
+    "id": "you6",
+    "file": "audio/whatif/ep01/you6.wav",
+    "sec": 7.970813,
+    "voice": "Puck",
+    "text": "In Path B, every one of those flips. The oil, the fish, the shield. Instead of protecting you, that land would be aimed at you.",
+    "words": [
+      {
+        "w": "In",
+        "s": 0,
+        "e": 0.14
+      },
+      {
+        "w": "Path",
+        "s": 0.14,
+        "e": 0.42
+      },
+      {
+        "w": "B,",
+        "s": 0.42,
+        "e": 0.58
+      },
+      {
+        "w": "every",
+        "s": 0.9,
+        "e": 0.98
+      },
+      {
+        "w": "one",
+        "s": 0.98,
+        "e": 1.19
+      },
+      {
+        "w": "of",
+        "s": 1.19,
+        "e": 1.33
+      },
+      {
+        "w": "those",
+        "s": 1.33,
+        "e": 1.68
+      },
+      {
+        "w": "flips.",
+        "s": 1.68,
+        "e": 2.18
+      },
+      {
+        "w": "The",
+        "s": 2.63,
+        "e": 2.68
+      },
+      {
+        "w": "oil,",
+        "s": 2.68,
+        "e": 3.12
+      },
+      {
+        "w": "the",
+        "s": 3.3,
+        "e": 3.52
+      },
+      {
+        "w": "fish,",
+        "s": 3.52,
+        "e": 3.81
+      },
+      {
+        "w": "the",
+        "s": 3.97,
+        "e": 4.09
+      },
+      {
+        "w": "shield.",
+        "s": 4.09,
+        "e": 4.39
+      },
+      {
+        "w": "Instead",
+        "s": 5.052,
+        "e": 5.052
+      },
+      {
+        "w": "of",
+        "s": 5.052,
+        "e": 5.052
+      },
+      {
+        "w": "protecting",
+        "s": 5.04,
+        "e": 5.59
+      },
+      {
+        "w": "you,",
+        "s": 6.351,
+        "e": 6.351
+      },
+      {
+        "w": "that",
+        "s": 6.351,
+        "e": 6.351
+      },
+      {
+        "w": "land",
+        "s": 6.351,
+        "e": 6.56
+      },
+      {
+        "w": "would",
+        "s": 6.56,
+        "e": 6.89
+      },
+      {
+        "w": "be",
+        "s": 6.89,
+        "e": 6.98
+      },
+      {
+        "w": "aimed",
+        "s": 7.06,
+        "e": 7.2
+      },
+      {
+        "w": "at",
+        "s": 7.28,
+        "e": 7.48
+      },
+      {
+        "w": "you.",
+        "s": 7.65,
+        "e": 7.94
+      }
+    ]
+  },
+  {
+    "id": "back",
+    "file": "audio/whatif/ep01/back.wav",
+    "sec": 0.766771,
+    "voice": "Puck",
+    "text": "Back to the real world.",
+    "words": [
+      {
+        "w": "Back",
+        "s": 0,
+        "e": 0.11
+      },
+      {
+        "w": "to",
+        "s": 0.18,
+        "e": 0.23
+      },
+      {
+        "w": "the",
+        "s": 0.24,
+        "e": 0.36
+      },
+      {
+        "w": "real",
+        "s": 0.36,
+        "e": 0.51
+      },
+      {
+        "w": "world.",
+        "s": 0.51,
+        "e": 0.76
+      }
+    ]
+  },
+  {
+    "id": "ans1",
+    "file": "audio/whatif/ep01/ans1.wav",
+    "sec": 7.396604,
+    "voice": "Puck",
+    "text": "Russia sold because it knew it couldn't keep Alaska. Better to get paid than lose it to Britain for nothing. At the time, it made sense.",
+    "words": [
+      {
+        "w": "Russia",
+        "s": 0.02,
+        "e": 0.38
+      },
+      {
+        "w": "sold",
+        "s": 0.38,
+        "e": 0.62
+      },
+      {
+        "w": "because",
+        "s": 0.949,
+        "e": 1.06
+      },
+      {
+        "w": "it",
+        "s": 1.07,
+        "e": 1.19
+      },
+      {
+        "w": "knew",
+        "s": 1.19,
+        "e": 1.46
+      },
+      {
+        "w": "it",
+        "s": 1.46,
+        "e": 1.53
+      },
+      {
+        "w": "couldn't",
+        "s": 1.62,
+        "e": 1.89
+      },
+      {
+        "w": "keep",
+        "s": 1.92,
+        "e": 2.07
+      },
+      {
+        "w": "Alaska.",
+        "s": 2.12,
+        "e": 2.54
+      },
+      {
+        "w": "Better",
+        "s": 3.122,
+        "e": 3.122
+      },
+      {
+        "w": "to",
+        "s": 3.122,
+        "e": 3.122
+      },
+      {
+        "w": "get",
+        "s": 3.12,
+        "e": 3.14
+      },
+      {
+        "w": "paid",
+        "s": 3.14,
+        "e": 3.36
+      },
+      {
+        "w": "than",
+        "s": 3.36,
+        "e": 3.58
+      },
+      {
+        "w": "lose",
+        "s": 3.58,
+        "e": 3.75
+      },
+      {
+        "w": "it",
+        "s": 3.77,
+        "e": 3.84
+      },
+      {
+        "w": "to",
+        "s": 4.02,
+        "e": 4.02
+      },
+      {
+        "w": "Britain",
+        "s": 4.06,
+        "e": 4.41
+      },
+      {
+        "w": "for",
+        "s": 4.41,
+        "e": 4.57
+      },
+      {
+        "w": "nothing.",
+        "s": 4.57,
+        "e": 5.17
+      },
+      {
+        "w": "At",
+        "s": 5.861,
+        "e": 5.861
+      },
+      {
+        "w": "the",
+        "s": 5.861,
+        "e": 5.861
+      },
+      {
+        "w": "time,",
+        "s": 5.861,
+        "e": 6.28
+      },
+      {
+        "w": "it",
+        "s": 6.28,
+        "e": 6.443
+      },
+      {
+        "w": "made",
+        "s": 6.783,
+        "e": 6.88
+      },
+      {
+        "w": "sense.",
+        "s": 6.89,
+        "e": 7.397
+      }
+    ]
+  },
+  {
+    "id": "ans2",
+    "file": "audio/whatif/ep01/ans2.wav",
+    "sec": 5.248917,
+    "voice": "Puck",
+    "text": "America got more than gold and oil. It got a front door to the Pacific and the Arctic.",
+    "words": [
+      {
+        "w": "America",
+        "s": 0,
+        "e": 0.4
+      },
+      {
+        "w": "got",
+        "s": 0.4,
+        "e": 0.57
+      },
+      {
+        "w": "more",
+        "s": 0.6,
+        "e": 0.83
+      },
+      {
+        "w": "than",
+        "s": 0.83,
+        "e": 1.06
+      },
+      {
+        "w": "gold",
+        "s": 1.06,
+        "e": 1.31
+      },
+      {
+        "w": "and",
+        "s": 1.31,
+        "e": 1.49
+      },
+      {
+        "w": "oil.",
+        "s": 1.49,
+        "e": 1.84
+      },
+      {
+        "w": "It",
+        "s": 2.28,
+        "e": 2.28
+      },
+      {
+        "w": "got",
+        "s": 2.28,
+        "e": 2.3
+      },
+      {
+        "w": "a",
+        "s": 2.3,
+        "e": 2.39
+      },
+      {
+        "w": "front",
+        "s": 2.39,
+        "e": 2.83
+      },
+      {
+        "w": "door",
+        "s": 2.83,
+        "e": 3.17
+      },
+      {
+        "w": "to",
+        "s": 3.18,
+        "e": 3.35
+      },
+      {
+        "w": "the",
+        "s": 3.39,
+        "e": 3.63
+      },
+      {
+        "w": "Pacific",
+        "s": 3.66,
+        "e": 4.12
+      },
+      {
+        "w": "and",
+        "s": 4.55,
+        "e": 4.68
+      },
+      {
+        "w": "the",
+        "s": 4.68,
+        "e": 4.79
+      },
+      {
+        "w": "Arctic.",
+        "s": 5.047,
+        "e": 5.24
+      }
+    ]
+  },
+  {
+    "id": "ans3",
+    "file": "audio/whatif/ep01/ans3.wav",
+    "sec": 6.630188,
+    "voice": "Puck",
+    "text": "And without the deal, the likely ending is a Canadian Alaska. The scary one is the Soviets in North America.",
+    "words": [
+      {
+        "w": "And",
+        "s": 0,
+        "e": 0.1
+      },
+      {
+        "w": "without",
+        "s": 0.1,
+        "e": 0.3
+      },
+      {
+        "w": "the",
+        "s": 0.37,
+        "e": 0.4
+      },
+      {
+        "w": "deal,",
+        "s": 0.46,
+        "e": 0.64
+      },
+      {
+        "w": "the",
+        "s": 1.089,
+        "e": 1.089
+      },
+      {
+        "w": "likely",
+        "s": 1.09,
+        "e": 1.4
+      },
+      {
+        "w": "ending",
+        "s": 1.4,
+        "e": 1.87
+      },
+      {
+        "w": "is",
+        "s": 1.92,
+        "e": 2.04
+      },
+      {
+        "w": "a",
+        "s": 2.04,
+        "e": 2.1
+      },
+      {
+        "w": "Canadian",
+        "s": 2.1,
+        "e": 2.58
+      },
+      {
+        "w": "Alaska.",
+        "s": 2.58,
+        "e": 3.13
+      },
+      {
+        "w": "The",
+        "s": 3.876,
+        "e": 3.876
+      },
+      {
+        "w": "scary",
+        "s": 3.876,
+        "e": 3.876
+      },
+      {
+        "w": "one",
+        "s": 3.876,
+        "e": 4.06
+      },
+      {
+        "w": "is",
+        "s": 4.06,
+        "e": 4.15
+      },
+      {
+        "w": "the",
+        "s": 4.21,
+        "e": 4.43
+      },
+      {
+        "w": "Soviets",
+        "s": 4.85,
+        "e": 5.06
+      },
+      {
+        "w": "in",
+        "s": 5.06,
+        "e": 5.22
+      },
+      {
+        "w": "North",
+        "s": 5.22,
+        "e": 5.63
+      },
+      {
+        "w": "America.",
+        "s": 5.65,
+        "e": 6.52
+      }
+    ]
+  },
+  {
+    "id": "comment",
+    "file": "audio/whatif/ep01/comment.wav",
+    "sec": 4.998313,
+    "voice": "Puck",
+    "text": "So, if you were the Tsar in eighteen-sixty-seven, would you have sold? Tell me in the comments.",
+    "words": [
+      {
+        "w": "So,",
+        "s": 0.03,
+        "e": 0.17
+      },
+      {
+        "w": "if",
+        "s": 0.587,
+        "e": 0.587
+      },
+      {
+        "w": "you",
+        "s": 0.58,
+        "e": 0.59
+      },
+      {
+        "w": "were",
+        "s": 0.59,
+        "e": 0.93
+      },
+      {
+        "w": "the",
+        "s": 0.93,
+        "e": 1.18
+      },
+      {
+        "w": "Tsar",
+        "s": 1.18,
+        "e": 1.47
+      },
+      {
+        "w": "in",
+        "s": 1.47,
+        "e": 1.51
+      },
+      {
+        "w": "eighteen-",
+        "s": 1.51,
+        "e": 1.69
+      },
+      {
+        "w": "sixty-",
+        "s": 1.69,
+        "e": 1.69
+      },
+      {
+        "w": "seven,",
+        "s": 1.69,
+        "e": 2.9
+      },
+      {
+        "w": "would",
+        "s": 2.93,
+        "e": 3.25
+      },
+      {
+        "w": "you",
+        "s": 3.25,
+        "e": 3.46
+      },
+      {
+        "w": "have",
+        "s": 3.46,
+        "e": 3.57
+      },
+      {
+        "w": "sold?",
+        "s": 4.247,
+        "e": 4.247
+      },
+      {
+        "w": "Tell",
+        "s": 4.27,
+        "e": 4.42
+      },
+      {
+        "w": "me",
+        "s": 4.42,
+        "e": 4.48
+      },
+      {
+        "w": "in",
+        "s": 4.6,
+        "e": 4.6
+      },
+      {
+        "w": "the",
+        "s": 4.73,
+        "e": 4.73
+      },
+      {
+        "w": "comments.",
+        "s": 4.82,
+        "e": 4.998
+      }
+    ]
+  },
+  {
+    "id": "next",
+    "file": "audio/whatif/ep01/next.wav",
+    "sec": 5.184979,
+    "voice": "Puck",
+    "text": "Next time: what if Napoleon never sold Louisiana, and half of America stayed French?",
+    "words": [
+      {
+        "w": "Next",
+        "s": 0.02,
+        "e": 0.26
+      },
+      {
+        "w": "time:",
+        "s": 0.26,
+        "e": 0.64
+      },
+      {
+        "w": "what",
+        "s": 0.84,
+        "e": 0.9
+      },
+      {
+        "w": "if",
+        "s": 0.9,
+        "e": 0.99
+      },
+      {
+        "w": "Napoleon",
+        "s": 1.09,
+        "e": 1.56
+      },
+      {
+        "w": "never",
+        "s": 1.56,
+        "e": 1.94
+      },
+      {
+        "w": "sold",
+        "s": 1.97,
+        "e": 2.29
+      },
+      {
+        "w": "Louisiana,",
+        "s": 2.29,
+        "e": 3.03
+      },
+      {
+        "w": "and",
+        "s": 3.491,
+        "e": 3.491
+      },
+      {
+        "w": "half",
+        "s": 3.49,
+        "e": 3.83
+      },
+      {
+        "w": "of",
+        "s": 3.92,
+        "e": 4.02
+      },
+      {
+        "w": "America",
+        "s": 4.02,
+        "e": 4.34
+      },
+      {
+        "w": "stayed",
+        "s": 4.37,
+        "e": 4.65
+      },
+      {
+        "w": "French?",
+        "s": 4.66,
+        "e": 5.12
+      }
+    ]
+  }
+]

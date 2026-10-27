@@ -1,165 +1,105 @@
 import { interpolate, useCurrentFrame } from "remotion";
 import { Arrow } from "../../../components/Arrow";
 import { PointLabel } from "../../../components/Labels";
-import { SFX } from "../../../components/Sound";
-import { clamp, GOLD, RED, view } from "../news/kit";
-import { chain, type ChapterN } from "../nrs/beats";
-import { C, Tent } from "../nrs/kit";
-import { BattleMark, CityDot, MapTag, Ring } from "../nrs/map";
-import { PL, R, VW } from "../nrs/places";
-import { BattleScene, Candle, CompareScene, CoronationScene, MarchScene, Noble, PAL, PassScene, RetreatScene, RiverCampScene, SiegeCampScene, SkirtScene, V2 } from "../nrs/scenes";
-import { B, Bed, heads, Hit, wf } from "./beatsKit";
+import { clamp, view } from "../news/kit";
+import { CityDot } from "../ep05/beatsKit";
+import { Compare } from "../ep05/cards";
+import { B, BURMA_C, GOLD, RED, TAK_C, wp, type Chapter6 } from "./beatsKit";
+import { Battle, CampRing } from "./mapkit";
+import { Bed, Hit, SFX } from "./mix";
+import { PL, VW } from "./places";
+import { ChroniclesScene, FloodFightScene, GateRideScene, InquiryScene, PowderStoreScene, RampartGunScene, WallLookoutScene } from "./scenes";
 
-// Episode 6, chapter 1 "ก่อนศึก" (beats recap → plan, พ.ศ. 2130–2135): recap, Naresuan crowned, the crown prince's
-// first try and Nanda's anger, the last invasion in three columns, the numbers, the camp at Nong Sarai and the plan.
+// Chapter 1 (who → debate): why Phraya Tak decided to leave the besieged capital.
 const T = {
-  recap: B.recap.start,
-  back: wf("recap", "ถอย", 0.85),
-  crown: B.crown.start,
-  king: wf("crown", "ครองราชย์", 0.35),
-  ekat: wf("crown", "เอกาทศรถ", 0.75),
-  test: B.test.start,
-  come: wf("test", "ยก", 0.7),
-  lose: wf("test", "พ่าย", 0.9),
-  scold: B.scold.start,
-  skirt: wf("scold", "ผ้า", 0.7),
-  again: wf("scold", "อีก", 0.92),
-  march: B.march.start,
-  pass: wf("march", "เจดีย์", 0.4),
-  lamao: wf("march", "ละเมา", 0.65),
-  navy: wf("march", "เรือ", 0.88),
-  size: B.size.start,
-  small: wf("size", "หมื่น", 0.6, 1),
-  turn: B.turn.start,
-  khmer: wf("turn", "เขมร", 0.2),
-  suphan: wf("turn", "สุพรรณบุรี", 0.55),
-  camp: wf("turn", "หนอง", 0.75),
-  plan: B.plan.start,
-  feint: wf("plan", "ถอย", 0.35),
-  strike: wf("plan", "ตี", 0.9),
+  who: B.who.start,
+  tak: wp("who", "ตาก", 0.4),
+  defend: wp("who", "ป้องกัน", 0.7),
+  gun: B.gun.start,
+  ask: wp("gun", "อนุญาต", 0.7),
+  fired: B.fired.start,
+  fire: wp("fired", "ยิง", 0.4),
+  probe: wp("fired", "สอบสวน", 0.8),
+  phet: B.phet.start,
+  sang: wp("phet", "สังฆาวาส", 0.7),
+  judge: B.judge.start,
+  out: wp("judge", "ข้างนอก", 0.65),
+  debate: B.debate.start,
+  flee: wp("debate", "หนี", 0.45),
+  order: wp("debate", "รับสั่ง", 0.6),
+  real: wp("debate", "จริง", 0.85),
 };
-const END = B.dawn.start;
-const TEST = [T.come + 20, T.come + 44];
+const END = B.phichai.start;
 
-type Sc = { id: string; start: number; end: number };
-
-// War council: the king and his generals kneel round a cloth map by lamplight; markers move on it.
-const CouncilScene = ({ id, start, end }: Sc) => {
-  const frame = useCurrentFrame();
-  return (
-    <V2 id={id} anchor={PL.nongsarai} start={start} end={end} sky={["#1a120c", "#3a2414"]} accent={GOLD} warm={0.12}>
-      {(g, pan, lt) => {
-        const back = interpolate(lt, [20, 60], [0, 1], clamp);
-        const fwd = interpolate(lt, [90, 120], [0, 1], clamp);
-        const cx = g.x + g.W * 0.5 + pan * 0.5;
-        const cy = g.ground - 20 * g.s;
-        return (
-          <g>
-            <rect x={g.x} y={g.y} width={g.W} height={g.H} fill="#2a1a10" />
-            <Tent x={cx} y={g.ground + 40 * g.s} w={g.W * 1.1} s={g.s} color="#4a2a18" stripe={RED} lit={0.3} />
-            <path d={`M${cx - 200 * g.s} ${cy} L${cx + 200 * g.s} ${cy} L${cx + 160 * g.s} ${cy - 60 * g.s} L${cx - 160 * g.s} ${cy - 60 * g.s} Z`} fill="#e9dcc0" stroke={PAL.ink} strokeWidth={2 * g.s} />
-            <path d={`M${cx - 150 * g.s} ${cy - 30 * g.s} Q${cx} ${cy - 50 * g.s} ${cx + 150 * g.s} ${cy - 20 * g.s}`} stroke="#4a8ab0" strokeWidth={3 * g.s} fill="none" />
-            <circle cx={cx + (40 - back * 60 + fwd * 120) * g.s} cy={cy - 28 * g.s} r={9 * g.s} fill={RED} stroke={PAL.ink} strokeWidth={1.4 * g.s} />
-            {[0, 1, 2].map((i) => <circle key={i} cx={cx + (100 + i * 22 - back * 40) * g.s} cy={cy - (18 + i * 8) * g.s} r={7 * g.s} fill={PAL.chalk} stroke={PAL.ink} strokeWidth={1.2 * g.s} />)}
-            <Noble x={cx - 250 * g.s} y={g.ground - 4 * g.s} scale={g.sc * 0.7} mode="sit" jacket="#9a2a1e" />
-            {[0, 1, 2].map((i) => <Noble key={i} x={cx + (230 + i * 70) * g.s} y={g.ground - 4 * g.s} scale={g.sc * 0.6} mode="kneel" flip bow={0.4 + 0.2 * Math.sin(frame * 0.05 + i)} phase={i} jacket={["#efe6d0", PAL.indigo, "#c9b48a"][i]} />)}
-            <Candle x={cx - 180 * g.s} y={cy} s={g.s * 1.3} />
-          </g>
-        );
-      }}
-    </V2>
-  );
-};
-
-export const e6c1: ChapterN = {
-  name: "ก่อนศึก",
-  from: B.recap.start,
+export const e6c1: Chapter6 = {
+  name: "ทำไมต้องออก",
+  from: T.who,
   to: END,
   cams: (w, h) => [
-    { frame: T.recap, cam: view(VW.region, w, h, 0.9, 0.1) },
-    { frame: T.back, cam: view(VW.west, w, h, 0.9, 0.1) },
-    { frame: T.crown, cam: view(VW.central, w, h, 0.9, 0.1) },
-    { frame: T.test, cam: view(VW.north, w, h, 0.8, 0.1) },
-    { frame: T.scold, cam: view(VW.pegu, w, h, 0.9, 0.1) },
-    { frame: T.march, cam: view(VW.region, w, h, 1.0, 0.1) },
-    { frame: T.size, cam: view(VW.west, w, h, 0.85, 0.1) },
-    { frame: T.turn, cam: view(VW.west, w, h, 0.85, 0.1) },
-    { frame: T.suphan, cam: view(VW.suphan, w, h, 0.9, 0.1) },
-    { frame: T.plan, cam: view(VW.nongsarai, w, h, 0.85, 0.1) },
+    { frame: T.who, cam: view(VW.siam, w, h, 0.9, 0.06) },
+    { frame: T.gun, cam: view(VW.island, w, h, 0.85, 0.06) },
+    { frame: T.phet, cam: view(VW.hook, w, h, 1.1, 0.06) },
+    { frame: T.judge, cam: view(VW.hook, w, h, 0.95, 0.06) },
   ],
-  years: [[T.recap, "2130"], [T.crown, "2133"], [T.march, "2135"]],
+  years: [[T.who, "2309"]],
   heads: [
-    ...heads(["recap"]),
-    ...heads(["crown"], { crown: { portrait: "naresuan_king", chips: [{ text: "พระเอกาทศรถ เสมอพระเจ้าแผ่นดิน", f: T.ekat }] } }),
-    ...heads(["test"], { test: { portrait: "mingyi_swa", color: RED } }),
-    ...heads(["scold"], { scold: { portrait: "nanda_bayin", color: RED } }),
-    ...heads(["march"], { march: { color: RED, chips: [{ text: "เจดีย์สามองค์", f: T.pass }, { text: "แม่ละเมา", f: T.lamao }, { text: "ทัพเรือเชียงใหม่", f: T.navy }] } }),
-    ...heads(["size"], { size: { stat: (f: number) => (f < T.small ? "240,000" : "24,000"), label: "คน", color: RED } }),
-    ...heads(["turn"], { turn: { portrait: "naresuan_king" } }),
-    ...heads(["plan"]),
+    { f: T.who, tag: "พระยาตาก (สิน)", head: "เจ้าเมืองตาก", color: GOLD, portrait: "taksin_general" },
+    { f: T.defend, tag: "พ.ศ. 2309", head: "ถูกเรียกมาป้องกันกรุง", color: GOLD },
+    { f: T.gun, tag: "ในกรุง", head: "ดินปืนเริ่มขาด", color: RED },
+    { f: T.ask, tag: "คำสั่ง", head: "ยิงทุกนัดต้องขออนุญาต", color: RED },
+    { f: T.fired, tag: "ยิงโดยไม่ขอ", head: "ถูกสอบสวนเอาผิด", color: RED },
+    { f: T.phet, tag: "ศึกวัดสังฆาวาส", head: "พระยาเพชรบุรีตาย", color: RED },
+    { f: T.judge, tag: "อยู่ หรือ ออก", head: "ออกไปรวมคนกลับมาสู้", color: GOLD },
+    { f: T.debate, tag: "นักประวัติศาสตร์", head: "ยังถกเถียงกันอยู่", color: GOLD },
   ],
   Map: () => {
     const frame = useCurrentFrame();
+    const ring = interpolate(frame, [T.who, T.gun], [0.6, 1], clamp) * interpolate(frame, [END - 10, END + 10], [1, 0.7], clamp);
     return (
       <>
-        <CityDot at={PL.ayut} color={GOLD} r={16} />
-        <PointLabel at={PL.ayut} text="อยุธยา" start={T.recap + 6} color={GOLD} size={0.8} />
-        <Arrow points={R.retreat1587} start={T.recap + 20} end={T.back + 20} color={RED} width={12} variant="dashed" />
-        <Ring at={PL.ayut} r={0.12} color={GOLD} start={T.king} end={T.test} />
-        <Arrow points={R.swa1590} start={T.come} end={T.come + 30} color={RED} width={14} />
-        <BattleMark at={[100.0, 16.2]} start={T.lose - 10} end={T.scold} color={GOLD} />
-        <CityDot at={PL.pegu} color={RED} r={16} start={T.scold} />
-        <PointLabel at={PL.pegu} text="หงสาวดี" start={T.scold + 6} color={RED} size={0.85} />
-        <Arrow points={R.swa1592} start={T.pass - 10} end={T.pass + 30} color={RED} width={16} />
-        <Arrow points={R.maelamao} start={T.lamao - 6} end={T.lamao + 30} color={RED} width={12} />
-        <Arrow points={R.cmNavy} start={T.navy - 6} end={T.navy + 30} color="#3fbf6a" width={10} variant="dashed" />
-        <PointLabel at={PL.threePagodas} text="ด่านเจดีย์สามองค์" start={T.pass} color={RED} size={0.65} />
-        <Arrow points={R.toKhmerAbort} start={T.khmer - 10} end={T.khmer + 15} color={GOLD} width={10} variant="dashed" opacity={interpolate(frame, [T.suphan, T.suphan + 15], [1, 0], clamp)} />
-        <Arrow points={R.toNongsarai} start={T.suphan - 10} end={T.camp} color={GOLD} width={16} />
-        <CityDot at={PL.nongsarai} color={GOLD} r={14} start={T.camp} />
-        <PointLabel at={PL.nongsarai} text="หนองสาหร่าย" start={T.camp} color={GOLD} size={0.8} />
-        <MapTag at={[99.93, 14.55]} text="แม่น้ำท่าคอย (โดยประมาณ)" start={T.camp + 10} end={T.plan + 20} color="#bfe6ff" size={22} />
-        <Arrow points={[[99.88, 14.62], [99.93, 14.63], [99.96, 14.64]]} start={T.feint} end={T.feint + 20} color={GOLD} width={10} variant="dashed" />
-        <Arrow points={[[99.99, 14.66], [99.95, 14.64], [99.9, 14.62]]} start={T.strike - 10} end={T.strike + 10} color={GOLD} width={14} />
+        <CampRing k={ring} />
+        <CityDot at={PL.ayut} color={RED} r={14} start={T.who} />
+        <CityDot at={PL.tak} color={TAK_C} r={14} start={T.tak - 6} end={T.gun} />
+        {frame < T.gun && <PointLabel at={PL.tak} text="เมืองตาก" start={T.tak} color={TAK_C} size={0.85} />}
+        <Arrow points={[PL.tak, [99.9, 15.6], PL.ayut]} start={T.tak} end={T.defend + 10} color={TAK_C} width={10} variant="dashed" opacity={interpolate(frame, [T.gun, T.gun + 15], [1, 0], clamp)} />
+        <Battle at={PL.sangkhawat} start={T.sang - 4} end={T.judge} />
+        {frame >= T.phet && frame < T.judge + 10 && <PointLabel at={PL.sangkhawat} text="วัดสังฆาวาส (ประมาณ)" start={T.sang} color={BURMA_C} size={0.75} />}
       </>
     );
   },
-  Panels: () =>
-    chain(
-      [
-        [T.recap, (a, b) => <SiegeCampScene id="e6c1camp" start={a} end={b} />],
-        [T.back, (a, b) => <RetreatScene id="e6c1ret" start={a} end={b} />],
-        [T.crown, (a, b) => <CoronationScene id="e6c1crown" start={a} end={b} />],
-        [T.test, (a, b) => <BattleScene id="e6c1bat" at={[100.0, 16.2]} hits={TEST} start={a} end={b} />],
-        [T.scold, (a, b) => <SkirtScene id="e6c1skirt" throw={T.skirt} start={a} end={b} />],
-        [T.march, (a, b) => <PassScene id="e6c1pass" side="burma" start={a} end={b} />],
-        [T.lamao, (a, b) => <MarchScene id="e6c1march" at={PL.maelamao} side="burma" dir={1} start={a} end={b} />],
-        [T.size, (a, b) => <CompareScene id="e6c1cmp" left="khoi" right="parabaik" tilt={-1} start={a} end={b} />],
-        [T.turn, (a, b) => <MarchScene id="e6c1turn" at={PL.suphan} side="siam" dir={-1} light="dusk" start={a} end={b} />],
-        [T.camp, (a, b) => <RiverCampScene id="e6c1river" start={a} end={b} />],
-        [T.plan, (a, b) => <CouncilScene id="e6c1plan" start={a} end={b} />],
-      ],
-      END,
-    ),
+  Panels: () => (
+    <>
+      <GateRideScene id="e6gate" anchor={PL.ayut} start={T.who} end={T.gun + 14} />
+      <PowderStoreScene id="e6powder" anchor={PL.ayut} start={T.gun} end={T.fired + 14} />
+      <RampartGunScene id="e6gun" anchor={PL.ayut} start={T.fired} end={T.probe + 14} fire={T.fire + 8} />
+      <InquiryScene id="e6inq" anchor={PL.ayut} start={T.probe} end={T.phet + 14} />
+      <FloodFightScene id="e6flood" anchor={PL.sangkhawat} start={T.phet} end={T.judge + 14} shots={[T.phet + 20, T.sang + 6]} />
+      <WallLookoutScene id="e6look2" anchor={PL.ayut} start={T.judge} end={T.debate + 14} />
+      <ChroniclesScene id="e6chron" anchor={PL.ayut} start={T.debate} end={T.flee + 14} />
+    </>
+  ),
+  Screen: () => (
+    <Compare start={T.flee} end={END} title="ทำไมพระยาตากออกจากกรุง" left={{ tag: "บางคนว่า", text: "หนี", color: "#ff6b5f", f: T.flee, icon: "book" }} right={{ tag: "บางคนว่า", text: "มีรับสั่งให้ออก", color: GOLD, f: T.order, icon: "thai" }} stamp={{ text: "ออกไปจริง กลับมาจริง", f: T.real, color: GOLD }} />
+  ),
   sfx: [
-    [T.ekat, SFX.pop, 0.3],
-    [T.pass, SFX.pop, 0.3],
-    [T.lamao, SFX.pop, 0.3],
-    [T.navy, SFX.pop, 0.3],
-    [T.pass - 10, SFX.whoosh, 0.3],
-    [T.feint, SFX.whoosh, 0.25],
+    [T.tak, SFX.pop, 0.3],
+    [T.ask, SFX.tick, 0.3],
+    [T.probe, SFX.hit, 0.3],
+    [T.flee, SFX.pop, 0.3],
+    [T.order, SFX.pop, 0.3],
+    [T.real, SFX.hit, 0.35],
   ],
   Audio: () => (
     <>
-      <Bed id="wind" from={T.recap} to={T.crown} volume={0.15} />
-      <Hit id="gong" at={T.king} volume={0.45} />
-      <Bed id="crowd_cheer" from={T.king} to={T.test} volume={0.1} />
-      {TEST.map((f, i) => <Hit key={f} id={i ? "sword_battle" : "battle_cry"} at={f} volume={0.4} />)}
-      <Hit id="wood_hit" at={T.skirt} volume={0.35} />
-      <Bed id="war_drums" from={T.march} to={T.turn} volume={0.3} />
-      <Bed id="army_marching" from={T.march} to={T.size} volume={0.2} />
-      <Hit id="elephant" at={T.turn + 30} volume={0.35} />
-      <Bed id="fire_crackle" from={T.plan} to={END + 10} volume={0.18} />
+      <Hit id="horse_neigh" at={T.who + 12} volume={0.35} />
+      <Bed id="horse_gallop" from={T.who} to={T.gun + 30} volume={0.12} />
+      <Bed id="fire_crackle" from={T.gun} to={T.fired + 40} volume={0.16} />
+      <Hit id="cannon_old" at={T.fire + 8} volume={0.7} />
+      <Hit id="gong" at={T.probe + 4} volume={0.3} />
+      <Bed id="firefight" from={T.phet} to={T.judge + 30} volume={0.14} />
+      <Hit id="cannon_far" at={T.phet + 20} volume={0.4} />
+      <Hit id="cannon_far" at={T.sang + 6} volume={0.4} />
+      <Bed id="wind" from={T.judge} to={END + 40} volume={0.16} />
     </>
   ),
 };

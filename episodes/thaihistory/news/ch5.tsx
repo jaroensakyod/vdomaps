@@ -78,7 +78,7 @@ const Glow = ({ f, color, k }: { f: typeof CHINA; color: string; k: number }) =>
 };
 
 // Qing soldier: round hat with a red tassel, blue padded coat, spear with a pennant.
-const QingSoldier = ({ x, y, scale = 1, phase = 0, flip = false }: { x: number; y: number; scale?: number; phase?: number; flip?: boolean }) => {
+export const QingSoldier = ({ x, y, scale = 1, phase = 0, flip = false }: { x: number; y: number; scale?: number; phase?: number; flip?: boolean }) => {
   const frame = useCurrentFrame();
   const t = frame * 0.3 + phase;
   const sw = Math.sin(t) * 15;

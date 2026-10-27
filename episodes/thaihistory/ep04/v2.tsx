@@ -356,7 +356,7 @@ export const ShadowStage = ({ id, anchor, start, end, children }: { id: string; 
     <Panel id={id} anchor={anchor} start={start} end={end} sky={["#1a0f08", "#1a0f08"]} accent={PAL.gilt}>
       {(g) => {
         const lt = frame - start;
-        const flicker = 0.88 + 0.06 * Math.sin(frame * 0.9) + 0.04 * Math.sin(frame * 2.3);
+        const flicker = 0.9 + 0.05 * Math.sin(frame * 0.23) + 0.03 * Math.sin(frame * 0.41); // slow: fast lamp flicker trips check-glitch
         const blur = interpolate(lt, [0, 40], [2.5, 0.8], clamp);
         return (
           <g>

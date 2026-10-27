@@ -20,3 +20,8 @@ reference/
 # E-book build output (node course/ebook/build.mjs)
 course/ebook/out/
 course/ebook/node_modules/
+
+# Motion capture: MediaPipe model (downloaded by npm run mocap) and temporary frames
+**/mocap/*.task
+**/mocap/.frames/
+**/mocap/.chrome/

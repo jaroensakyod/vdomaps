@@ -1,6 +1,6 @@
 import { loadFont } from "@remotion/google-fonts/Kanit";
 import type { FeatureCollection, MultiLineString } from "geojson";
-import type { ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { camForFeature, projectionFor, type Cam } from "../../../components/camera";
 import { InsetPanel, type InsetGeom } from "../../../components/Inset";
@@ -17,6 +17,16 @@ export const font = loadFont("normal", { weights: ["400", "700", "900"], subsets
 export const RED = "#ff3b30";
 export const GOLD = "#ffc94a";
 export const BLUE = "#4fa3ff";
+// Layout options (default = the approved look). compact: smaller head card; panelScale: illustration box shrunk
+// about its bottom edge. Set by an episode with <LayoutCtx.Provider> to keep more of the map clear.
+// panelHide (0..1): how far the illustration panel is tucked away (the episode raises it while the camera moves).
+export const LayoutCtx = createContext({ compact: false, panelScale: 1, panelHide: 0 });
+// House-standard clear layout values: camera zoomed out and its focus raised into the band between the compact head
+// card and the shrunk panel. Episodes: cam.scale × camScale, <MapFrame focusY>, LayoutCtx { compact, panelScale,
+// panelHide: panelHideAt(keys, frame) } — see thaihistory/ep05/Ep.tsx (Ep05Clear).
+// Storyboard: a scene built for one place can be reused anywhere — its leader line then points at this anchor.
+export const AnchorCtx = createContext<[number, number] | null>(null);
+export const CLEAR = { camScale: 0.8, focusY: 0.444, panelScale: 0.8 };
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 export const LAYOUT = { lead: 3, gap: 16 };
@@ -74,6 +84,25 @@ export const Rivers = ({ hi = {} }: { hi?: Record<string, number> }) => {
     </g>
   );
 };
+
+// Lift near-black water off the floor (house rule 25 Oct 2026, from the Facebook check "วิดีโอของคุณมีขอบ"): Blue
+// Marble ocean is so dark that a sea filling the bottom of a 9:16 frame reads as a black letterbox. A shadow-only
+// curve on the imagery lifts near-black to deep blue (luma ~29, so cropdetect limit 24 no longer trips) and leaves
+// mid-tones and land almost untouched. Wrap the <Raster> in it.
+export const SeaLift = ({ children }: { children: ReactNode }) => (
+  <g filter="url(#sealift)">
+    <defs>
+      <filter id="sealift" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="0.05 0.29 0.53 0.77 1" />
+          <feFuncG type="table" tableValues="0.13 0.32 0.54 0.77 1" />
+          <feFuncB type="table" tableValues="0.20 0.36 0.57 0.79 1" />
+        </feComponentTransfer>
+      </filter>
+    </defs>
+    {children}
+  </g>
+);
 
 // Night grade over the imagery + a fire glow at a point.
 export const NightGrade = ({ k, fireAt }: { k: number; fireAt: [number, number] }) => {
@@ -135,26 +164,27 @@ export const FloodLayer = ({ at: c, radius, k }: { at: [number, number]; radius:
 };
 
 // Top bar: channel badge, chapter, year chip.
-export const TopBar = ({ chapter, year }: { chapter: string; year: string }) => {
+export const TopBar = ({ chapter, year, channel = "ประวัติศาสตร์บนแผนที่" }: { chapter: string; year: string; channel?: string }) => {
   const { width, height } = useVideoConfig();
   const s = Math.min(width, height) / 1080;
   return (
     <div style={{ position: "absolute", top: height * 0.045, left: 50 * s, right: 50 * s, display: "flex", alignItems: "center", justifyContent: "space-between", fontFamily: font, color: "#fff", lineHeight: 1.4 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 14 * s }}>
-        <div style={{ background: RED, padding: `${4 * s}px ${16 * s}px`, borderRadius: 8 * s, fontWeight: 900, fontSize: 32 * s }}>ประวัติศาสตร์บนแผนที่</div>
+        <div style={{ background: RED, padding: `${4 * s}px ${16 * s}px`, borderRadius: 8 * s, fontWeight: 900, fontSize: 32 * s }}>{channel}</div>
         <div style={{ fontSize: 30 * s, fontWeight: 700, opacity: 0.92 }}>{chapter}</div>
       </div>
-      <div style={{ background: "rgba(8,14,26,0.8)", border: `${2 * s}px solid rgba(255,255,255,0.25)`, padding: `${2 * s}px ${16 * s}px`, borderRadius: 30 * s, fontWeight: 700, fontSize: 30 * s }}>พ.ศ. {year}</div>
+      {year && <div style={{ background: "rgba(8,14,26,0.8)", border: `${2 * s}px solid rgba(255,255,255,0.25)`, padding: `${2 * s}px ${16 * s}px`, borderRadius: 30 * s, fontWeight: 700, fontSize: 30 * s }}>{/^d/.test(year) ? `พ.ศ. ${year}` : year}</div>}
     </div>
   );
 };
 
 // One card per shot: [frame, tag, headline, stat?, statLabel?, color?]. The card stays; text swaps on each shot.
-export type Head = { f: number; tag: string; head: string; stat?: string | ((frame: number) => string); label?: string; color?: string; chips?: { text: string; f: number }[]; portrait?: string };
+export type Head = { f: number; tag: string; head: string; stat?: string | ((frame: number) => string); label?: string; color?: string; chips?: { text: string; f: number }[]; portrait?: string; photo?: string };
 export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to: number }) => {
   const frame = useCurrentFrame();
   const { width, height, fps } = useVideoConfig();
-  const s = Math.min(width, height) / 1080;
+  const { compact } = useContext(LayoutCtx);
+  const s = (Math.min(width, height) / 1080) * (compact ? 0.72 : 1);
   if (frame < from || frame > to) return null;
   const list = heads.filter((h) => frame >= h.f);
   if (!list.length) return null;
@@ -162,16 +192,19 @@ export const HeadCard = ({ heads, from, to }: { heads: Head[]; from: number; to:
   if (!h.head) return null; // an empty head hands the top slot to a chapter overlay (quote, poll)
   const k = spring({ frame: frame - from, fps, config: { damping: 14 } });
   const o = interpolate(frame, [to - 8, to], [1, 0], clamp);
-  const swap = spring({ frame: frame - h.f, fps, config: { damping: 16 } });
+  const swapRaw = spring({ frame: frame - h.f, fps, config: { damping: 16 } });
+  // clear layout: new text starts at 70 % so the card never goes blank for a frame (with the panel tucked away
+  // during camera moves, that blank frame showed up as a brightness dip in check-glitch).
+  const swap = compact ? 0.7 + 0.3 * swapRaw : swapRaw;
   const color = h.color ?? RED;
   const stat = typeof h.stat === "function" ? h.stat(frame) : h.stat;
   return (
-    <div style={{ position: "absolute", left: 50 * s, right: 50 * s, top: height * 0.1, transform: `translateX(${(1 - k) * -60 * s}px)`, opacity: k * o, fontFamily: font, color: "#fff", background: "rgba(8,14,26,0.86)", borderLeft: `${8 * s}px solid ${color}`, borderRadius: 14 * s, padding: `${18 * s}px ${30 * s}px`, boxShadow: `0 ${10 * s}px ${30 * s}px rgba(0,0,0,0.5)`, lineHeight: 1.4 }}>
+    <div style={{ position: "absolute", left: compact ? 40 : 50 * s, right: compact ? undefined : 50 * s, maxWidth: compact ? width * 0.82 : undefined, top: height * (compact ? 0.085 : 0.1), transform: `translateX(${(1 - k) * -60 * s}px)`, opacity: k * o, fontFamily: font, color: "#fff", background: "rgba(8,14,26,0.86)", borderLeft: `${8 * s}px solid ${color}`, borderRadius: 14 * s, padding: `${18 * s}px ${30 * s}px`, boxShadow: `0 ${10 * s}px ${30 * s}px rgba(0,0,0,0.5)`, lineHeight: 1.4 }}>
       {h.portrait && (
         // AI-drawn portrait (style A, episodes/thaihistory/portraits.json): always labelled ภาพประกอบ
         <div style={{ float: "left", position: "relative", width: 190 * s, height: 190 * s, marginRight: 24 * s, transform: `scale(${0.8 + 0.2 * swap})`, opacity: swap }}>
-          <Img src={staticFile(`portraits/thaihistory/${h.portrait}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 14 * s, border: `${4 * s}px solid ${color}` }} />
-          <span style={{ position: "absolute", left: 8 * s, bottom: 8 * s, background: "rgba(8,14,26,0.75)", fontSize: 16 * s, padding: `0 ${8 * s}px`, borderRadius: 6 * s }}>ภาพประกอบ</span>
+          <Img src={staticFile(h.portrait.includes("/") ? `portraits/${h.portrait}.jpg` : `portraits/thaihistory/${h.portrait}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 14 * s, border: `${4 * s}px solid ${color}` }} />
+          <span style={{ position: "absolute", left: 8 * s, bottom: 8 * s, background: "rgba(8,14,26,0.75)", fontSize: 16 * s, padding: `0 ${8 * s}px`, borderRadius: 6 * s }}>{h.photo ?? "ภาพประกอบ"}</span>
         </div>
       )}
       <span style={{ background: "rgba(255,255,255,0.14)", padding: `${2 * s}px ${14 * s}px`, borderRadius: 30 * s, fontSize: 26 * s, fontWeight: 700 }}>{h.tag}</span>
@@ -204,11 +237,19 @@ export const CAPTION_TOP = 0.765;
 
 // Standard illustration panel for this episode.
 // Consecutive panels must overlap: pass the next panel's start + 14 as `end`.
-export const Panel = ({ id, anchor, start, end, sky, accent = RED, children }: { id: string; anchor: [number, number]; start: number; end: number; sky: [string, string]; accent?: string; children: (g: InsetGeom) => ReactNode }) => (
-  <InsetPanel id={id} anchor={anchor} label="ภาพประกอบ" start={start} end={end} sky={sky} font={font} accent={accent} top={PANEL_TOP} panelHeight={PANEL_H}>
-    {children}
-  </InsetPanel>
-);
+export const Panel = ({ id, anchor, start, end, sky, accent = RED, size, children }: { id: string; anchor: [number, number]; start: number; end: number; sky: [string, string]; accent?: string; size?: { w: number; h: number }; children: (g: InsetGeom) => ReactNode }) => {
+  const { panelScale, panelHide } = useContext(LayoutCtx);
+  const forced = useContext(AnchorCtx);
+  const { height } = useVideoConfig();
+  if (panelHide >= 0.999) return null;
+  return (
+    <g opacity={1 - panelHide} transform={panelHide > 0 ? `translate(0,${panelHide * panelHide * height * 0.06})` : undefined}>
+    <InsetPanel id={id} anchor={forced ?? anchor} label="ภาพประกอบ" start={start} end={end} sky={sky} font={font} accent={accent} top={PANEL_TOP} panelHeight={size?.h ?? PANEL_H} panelWidth={size?.w} boxScale={panelScale}>
+      {children}
+    </InsetPanel>
+    </g>
+  );
+};
 
 // Ayutthaya skyline: prangs and bell chedis, optionally burning.
 type G = { x: number; W: number; ground: number; s: number };

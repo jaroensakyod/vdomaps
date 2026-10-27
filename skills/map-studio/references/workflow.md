@@ -45,7 +45,8 @@ Follow `pacing.md`. Mark every approximate geography with *(approx.)*. Present t
 - Render draft at lower quality (`--scale=0.5`) for review if the video is long.
 
 ## 8. Deliver  ⛔ GATE 3 — user reviews the final render
-- Final render (`--crf 18`), then `npm run loudness -- out/<slug>.mp4` (−14 LUFS), `npm run srt -- <slug>`,
+- Final render (`--crf 18`; long videos: `npm run render:chunks -- <Comp> out/<slug>.mp4 --loudness --glitch`, which
+  renders 3 parts side by side and also runs the two checks), then `npm run loudness -- out/<slug>.mp4` (−14 LUFS), `npm run srt -- <slug>`,
   `npm run describe -- <slug>` (chapters, sources, map + music credits) and `npm run thumb -- …`. See `audio.md`.
 - Hand over file paths. Do not upload.
 

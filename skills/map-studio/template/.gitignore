@@ -3,6 +3,7 @@ out
 whisper.cpp
 whisper-cuda
 public/raster/
+costs.jsonl
 .env
 .env.*
 !.env.example

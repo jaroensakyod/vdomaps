@@ -16,6 +16,7 @@
 // Daily cap: when a model says to wait hours, the script moves on to TTS_FALLBACK (default
 // gemini-3.8-flash-lite-tts, same voices, own quota) and marks those beats with "model" in timing.json.
 import "./env.mjs";
+import { meter } from "./gemini-cost.mjs";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 
@@ -34,6 +35,7 @@ const voiceFor = (b) => b.voice ?? (b.speaker ? voices[b.speaker] : undefined) ?
 const dir = `public/audio/${slug}`;
 mkdirSync(dir, { recursive: true });
 let requests = 0;
+const cost = meter("tts", slug);
 
 // One Gemini TTS request → 48 kHz WAV at `out` (untrimmed).
 const speak = async (text, voice, out) => {
@@ -72,6 +74,7 @@ const speak = async (text, voice, out) => {
     console.log(`  rate limited, retrying in ${wait} s`);
     await new Promise((r) => setTimeout(r, wait * 1000));
   }
+  if (json.usageMetadata) cost.add(model, json);
   const part = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
   if (!part) throw new Error(`TTS failed: ${JSON.stringify(json).slice(0, 300)}`);
   const raw = `${out}.raw`;

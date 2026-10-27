@@ -57,6 +57,33 @@ All components referenced here are in `template/src/components/`. Read their sou
 - Fetch rasters wider than the shot so 9:16 framing does not show the edge.
 - Keep big images ≤ 8192 px; one world Blue Marble (8192×4096) + one regional image is plenty.
 
+## Stills that move (free 2.5D: Flow images, paintings, photos)
+
+Real character motion from AI video (local Wan/FramePack, Flow or Grok video) is optional and costs GPU time or
+credits. The default, which runs on any student laptop with no API and no credits:
+
+1. Make the still: Google Flow → Nano Banana, 0 credits (9:16 for full screen, 16:9 for map panels). Keep the style
+   one look per episode (e.g. hand-coloured engraving next to an old map). Never show a real king's face up close.
+2. `npm run flow-layers -- <image> <name>` → `public/flow/<name>-depth.png`, `<name>-L0..L5.png`, `<name>.json`.
+   Depth Anything V2 small runs on the CPU (~5–10 s an image; the ~100 MB model downloads once). Each layer is
+   its depth band plus what lies nearer, repainted from the band's own colours, so drifting never doubles objects.
+   Add `--vivid` for sepia / old-paper pictures over an old map (they blend in otherwise): paper → white, blue sky
+   wash, more saturation — colours only, the lines stay exactly as drawn.
+3. Draw it with `<Flow25D>` (`src/components/Flow25D.tsx`) inside any svg — `box` = the InsetPanel geom for a map
+   panel (give the panel the picture's aspect: news-kit `Panel size={{ w: PANEL_H * aspect, h: PANEL_H }}`, so the
+   frame fits the picture) — or `<Flow25DScreen>` full screen. Options: `zoom`, `pan`, `parallax`, `hits` (soft
+   shake + flash), `wind` areas in picture fractions (flags, parasols, trees), `smokeBehind`, `light` [x, y] with
+   rays, `dust`. Keep `windStrength` ≤ 3: thin spires and spears melt above that.
+4. More motion (cut-out animation, still free): list the parts in a `parts.json` (box + a few clicks + pivot in
+   picture fractions, `parent` for parts that ride on another, `depth`), run `npm run flow-parts -- <name> parts.json`
+   (SlimSAM on the CPU, ~15 s; holes are repainted) and `npm run flow-layers -- public/flow/<name>-base.jpg
+   <name>-base`, then `<Flow25D name="<name>-base" rig="<name>" pose={(part, frame) => ({ rotate, dx, dy })}>`.
+   Keep body moves to a few degrees / px; only tools and arms swing far. Reference: `episodes/thaihistory/ep10`
+   (`duel-parts.json`, `duelPose` in chapters.tsx).
+5. One still carries ~5–7 s; check a tile of frames (`ffmpeg -i clip.mp4 -vf fps=3,tile=6x2 -frames:v 1 tile.jpg`)
+   for doubled edges before a full render.
+Reference: `episodes/thaihistory/ep10` (old-map base + Flow stills).
+
 ## Thai text
 - Load with `@remotion/google-fonts/<Font>` (`loadFont()` at module top) — e.g. NotoSansThai, IBMPlexSansThai,
   Sarabun, Kanit. Font loading is awaited by Remotion automatically.
