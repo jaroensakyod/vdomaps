@@ -9,6 +9,7 @@ import { Ep06, E6_FRAMES } from "./ep06/Ep";
 import { Ep07, E7_FRAMES } from "./ep07/Ep";
 import { Ep08, E8_FRAMES } from "./ep08/Ep";
 import { Ep09, E9_FRAMES } from "./ep09/Ep";
+import { Ep10, E10_FRAMES } from "./ep10/Ep";
 import { PiyaPost } from "./piya/Post";
 import { ThStyle } from "./StyleFrames";
 
@@ -21,6 +22,7 @@ import { ThStyle } from "./StyleFrames";
 // Ep07 = episode 7, ทุบหม้อข้าว ตีจันทบุรี (~4.5 min, clear layout).
 // Ep08 = episode 8, ธนบุรีและค่ายโพธิ์สามต้น (~3.5 min, clear layout).
 // Ep09 = episode 9, กษัตริย์โดนยิงขา ศึกเกยไชย (~3.5 min, clear layout).
+// Ep10 = episode 10, ยุทธหัตถีเกิดที่ไหนกันแน่ (~10 min, clear layout).
 export const ThaiHistoryCompositions = () => (
   <>
     <Composition id="THNews" component={ThNewsEp} durationInFrames={TH_NEWS_FRAMES} fps={30} width={1080} height={1920} />
@@ -35,6 +37,7 @@ export const ThaiHistoryCompositions = () => (
     <Composition id="Ep07" component={Ep07} durationInFrames={E7_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep08" component={Ep08} durationInFrames={E8_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep09" component={Ep09} durationInFrames={E9_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Ep10" component={Ep10} durationInFrames={E10_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="PiyaPost" component={PiyaPost} durationInFrames={1} fps={30} width={1080} height={1350} />
   </>
 );
