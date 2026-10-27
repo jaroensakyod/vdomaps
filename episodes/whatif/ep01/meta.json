@@ -1,0 +1,38 @@
+{
+  "lang": "en",
+  "title": "What If Russia Never Sold Alaska?",
+  "summary": "In 1867 Russia sold Alaska to the United States for just $7.2 million, more land than Texas, California and Montana combined. Why did the Tsar sell? And if he hadn't, would Alaska be Canadian today, or Soviet, with missiles on North American soil? We follow the real story on satellite maps, then tear up the treaty and follow two what-if paths. Everything marked WHAT IF is speculation; everything else is sourced below.",
+  "chapters": [
+    { "beat": "hook", "title": "What if Russia never sold Alaska?" },
+    { "beat": "strait", "title": "How Russia got to America" },
+    { "beat": "why", "title": "Why Russia wanted out" },
+    { "beat": "seward", "title": "The midnight deal" },
+    { "beat": "fork", "title": "The fork" },
+    { "beat": "a1", "title": "Path A: Alaska becomes Canada" },
+    { "beat": "b1", "title": "Path B: Soviet Alaska" },
+    { "beat": "you1", "title": "What it would mean for you" },
+    { "beat": "back", "title": "The answer" }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Alaska_Purchase",
+    "https://www.loc.gov/item/today-in-history/march-30/",
+    "https://www.rochester.edu/newscenter/?p=308482",
+    "https://constitutioncenter.org/blog/the-alaska-purchase-folly-or-good-fortune",
+    "https://www.historytoday.com/archive/months-past/alaska-purchase",
+    "https://www.cfr.org/article/remembering-the-alaska-purchase",
+    "https://www.nps.gov/parkhistory/online_books/sitk/adhi/adhi2e.htm",
+    "https://www.nps.gov/articles/ladd-field.htm",
+    "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196190/lend-lease-aircraft-to-the-soviet-union/",
+    "https://en.wikipedia.org/wiki/American_Expeditionary_Force,_Siberia",
+    "https://www.petroleumnews.com/pnarchpop/895815351.shtml",
+    "https://pfd.alaska.gov/Division-Info/Historical-Timeline",
+    "https://www.adn.com/business-economy/2018/12/18/alaska-dominates-us-seafood-industry/",
+    "https://www.defensenews.com/air-warfare/2025/03/04/boeing-grows-alaska-based-homeland-missile-defense-silo-count-by-20/"
+  ],
+  "credits": [
+    "Maps: NASA Blue Marble imagery (public domain) · Borders: Natural Earth (public domain) · US states: US Census TIGER via geoBoundaries (public domain)",
+    "Routes, borders and positions are approximate · Everything labelled WHAT IF is speculation, not history",
+    "Illustrations and portraits are drawn for this video (portraits made with AI), not real images · Narration: AI voice (Gemini TTS)",
+    "Sound effects: Mixkit and Pixabay (free licences)"
+  ]
+}

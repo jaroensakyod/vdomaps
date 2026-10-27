@@ -10,6 +10,10 @@ import { Ep07, E7_FRAMES } from "./ep07/Ep";
 import { Ep08, E8_FRAMES } from "./ep08/Ep";
 import { Ep09, E9_FRAMES } from "./ep09/Ep";
 import { Ep10, E10_FRAMES } from "./ep10/Ep";
+import { AntiqueTest, ANTIQUE_FRAMES } from "./lab/AntiqueTest";
+import { AntiqueTable, TABLE_FRAMES } from "./lab/AntiqueTable";
+import { AntiqueCalm, CALM_FRAMES } from "./lab/AntiqueCalm";
+import { DioramaTest, DIORAMA_FRAMES } from "./lab/DioramaTest";
 import { PiyaPost } from "./piya/Post";
 import { ThStyle } from "./StyleFrames";
 
@@ -38,6 +42,10 @@ export const ThaiHistoryCompositions = () => (
     <Composition id="Ep08" component={Ep08} durationInFrames={E8_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep09" component={Ep09} durationInFrames={E9_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep10" component={Ep10} durationInFrames={E10_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="AntiqueTest" component={AntiqueTest} durationInFrames={ANTIQUE_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="AntiqueTable" component={AntiqueTable} durationInFrames={TABLE_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="AntiqueCalm" component={AntiqueCalm} durationInFrames={CALM_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="DioramaTest" component={DioramaTest} durationInFrames={DIORAMA_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="PiyaPost" component={PiyaPost} durationInFrames={1} fps={30} width={1080} height={1350} />
   </>
 );

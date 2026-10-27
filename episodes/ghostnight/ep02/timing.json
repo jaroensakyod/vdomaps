@@ -1,0 +1,326 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/ordertisam/ep02/hook.wav",
+    "sec": 2.903833,
+    "voice": "Puck",
+    "text": "มีเสียงเรียกชื่อผม จากใต้น้ำ"
+  },
+  {
+    "id": "title",
+    "file": "audio/ordertisam/ep02/title.wav",
+    "sec": 3.120438,
+    "voice": "Puck",
+    "text": "ออเดอร์ตีสาม ตอนที่สอง ผีพราย"
+  },
+  {
+    "id": "recap1",
+    "file": "audio/ordertisam/ep02/recap1.wav",
+    "sec": 2.870938,
+    "voice": "Puck",
+    "text": "ตอนที่แล้ว ผมเอาข้าวต้มมัดไปส่งให้นางตานี"
+  },
+  {
+    "id": "recap2",
+    "file": "audio/ordertisam/ep02/recap2.wav",
+    "sec": 3.491417,
+    "voice": "Puck",
+    "text": "แล้วรู้ว่า คนที่ติดค้างเธอมายี่สิบปี คือลุงเชิด"
+  },
+  {
+    "id": "order1",
+    "file": "audio/ordertisam/ep02/order1.wav",
+    "sec": 3.568042,
+    "voice": "Puck",
+    "text": "ลุงไม่ยอมพูดอะไรอีกเลย ส่วนออเดอร์ใหม่ ยังรอให้ผมกดรับ"
+  },
+  {
+    "id": "order2",
+    "file": "audio/ordertisam/ep02/order2.wav",
+    "sec": 4.580729,
+    "voice": "Puck",
+    "text": "ไข่ต้มสองฟอง พวงมาลัยหนึ่งพวง ส่งที่ศาลาท่าน้ำวัด"
+  },
+  {
+    "id": "note1",
+    "file": "audio/ordertisam/ep02/note1.wav",
+    "sec": 1.340021,
+    "voice": "Puck",
+    "text": "หมายเหตุเขียนว่า"
+  },
+  {
+    "id": "note2",
+    "file": "audio/ordertisam/ep02/note2.wav",
+    "sec": 2.101729,
+    "voice": "Puck",
+    "text": "ถ้ามีคนเรียกชื่อ อย่าขานรับ",
+    "speed": 0.95
+  },
+  {
+    "id": "rule4a",
+    "file": "audio/ordertisam/ep02/rule4a.wav",
+    "sec": 1.646604,
+    "voice": "Algenib",
+    "text": "กฎของกะดึก ข้อสี่",
+    "speed": 0.92
+  },
+  {
+    "id": "rule4b",
+    "file": "audio/ordertisam/ep02/rule4b.wav",
+    "sec": 4.175917,
+    "voice": "Algenib",
+    "text": "ที่ท่าน้ำตอนดึก ใครเรียกชื่อ ห้ามขานรับเด็ดขาด",
+    "speed": 0.92
+  },
+  {
+    "id": "rule4c",
+    "file": "audio/ordertisam/ep02/rule4c.wav",
+    "sec": 3.438958,
+    "voice": "Algenib",
+    "text": "ขานรับเมื่อไหร่ มันจะพาเอ็งลงน้ำไป",
+    "speed": 0.92
+  },
+  {
+    "id": "ride1",
+    "file": "audio/ordertisam/ep02/ride1.wav",
+    "sec": 2.461229,
+    "voice": "Puck",
+    "text": "วัดอยู่ริมแม่น้ำ ท้ายตลาดเก่า"
+  },
+  {
+    "id": "ride2",
+    "file": "audio/ordertisam/ep02/ride2.wav",
+    "sec": 4.109063,
+    "voice": "Puck",
+    "text": "ศาลาท่าน้ำเงียบสนิท มีแต่เสียงน้ำกระทบตลิ่ง"
+  },
+  {
+    "id": "ride3",
+    "file": "audio/ordertisam/ep02/ride3.wav",
+    "sec": 3.319958,
+    "voice": "Puck",
+    "text": "บนน้ำ มีแสงสีฟ้าเล็กๆ ลอยอยู่เป็นจุดๆ"
+  },
+  {
+    "id": "recall",
+    "file": "audio/ordertisam/ep02/recall.wav",
+    "sec": 1.406229,
+    "voice": "Puck",
+    "text": "ลุงเชิดเคยเล่าว่า"
+  },
+  {
+    "id": "rule5a",
+    "file": "audio/ordertisam/ep02/rule5a.wav",
+    "sec": 1.510625,
+    "voice": "Algenib",
+    "text": "กฎของกะดึก ข้อห้า",
+    "speed": 0.92
+  },
+  {
+    "id": "rule5b",
+    "file": "audio/ordertisam/ep02/rule5b.wav",
+    "sec": 3.278375,
+    "voice": "Algenib",
+    "text": "คนที่จมน้ำตาย จะกลายเป็นผีพราย",
+    "speed": 0.92
+  },
+  {
+    "id": "rule5c",
+    "file": "audio/ordertisam/ep02/rule5c.wav",
+    "sec": 3.386438,
+    "voice": "Algenib",
+    "text": "มันต้องหาตัวตายตัวแทน ถึงจะได้ไปเกิด",
+    "speed": 0.92
+  },
+  {
+    "id": "place",
+    "file": "audio/ordertisam/ep02/place.wav",
+    "sec": 3.798708,
+    "voice": "Puck",
+    "text": "ผมวางไข่ต้มกับพวงมาลัย ไว้ที่ขั้นบันไดสุดท้าย"
+  },
+  {
+    "id": "call1",
+    "file": "audio/ordertisam/ep02/call1.wav",
+    "sec": 2.6095,
+    "voice": "Gacrux",
+    "text": "เก่ง เก่งลูก",
+    "speed": 0.85
+  },
+  {
+    "id": "freeze1",
+    "file": "audio/ordertisam/ep02/freeze1.wav",
+    "sec": 1.882,
+    "voice": "Puck",
+    "text": "เสียงนั้น เหมือนเสียงแม่ผมทุกอย่าง"
+  },
+  {
+    "id": "call2",
+    "file": "audio/ordertisam/ep02/call2.wav",
+    "sec": 1.745688,
+    "voice": "Gacrux",
+    "text": "เก่ง ลงมาหาแม่หน่อยลูก",
+    "speed": 0.85
+  },
+  {
+    "id": "freeze2",
+    "file": "audio/ordertisam/ep02/freeze2.wav",
+    "sec": 2.753333,
+    "voice": "Puck",
+    "text": "แต่แม่ผมอยู่ขอนแก่น ห่างจากที่นี่ห้าร้อยกิโล"
+  },
+  {
+    "id": "bite",
+    "file": "audio/ordertisam/ep02/bite.wav",
+    "sec": 2.069208,
+    "voice": "Puck",
+    "text": "ผมกัดปากตัวเองไว้ ไม่ให้ตอบ"
+  },
+  {
+    "id": "grab",
+    "file": "audio/ordertisam/ep02/grab.wav",
+    "sec": 2.344583,
+    "voice": "Puck",
+    "text": "แล้วมีมือเย็นๆ จับข้อเท้าผมไว้"
+  },
+  {
+    "id": "boy0",
+    "file": "audio/ordertisam/ep02/boy0.wav",
+    "sec": 2.148583,
+    "voice": "Puck",
+    "text": "เป็นเด็กผู้ชาย ตัวเปียกทั้งตัว"
+  },
+  {
+    "id": "b1",
+    "file": "audio/ordertisam/ep02/b1.wav",
+    "sec": 2.461104,
+    "voice": "Leda",
+    "text": "พี่ ไม่ต้องกลัวนะ ผมไม่ได้อยากได้ตัวพี่",
+    "speed": 0.95
+  },
+  {
+    "id": "b2",
+    "file": "audio/ordertisam/ep02/b2.wav",
+    "sec": 1.195854,
+    "voice": "Leda",
+    "text": "ผมแค่รอเพื่อน",
+    "speed": 0.95
+  },
+  {
+    "id": "b3",
+    "file": "audio/ordertisam/ep02/b3.wav",
+    "sec": 4.18325,
+    "voice": "Leda",
+    "text": "ผมกับต้น นั่งเรือข้ามฟาก แล้วเรือล่ม",
+    "speed": 0.95
+  },
+  {
+    "id": "b4",
+    "file": "audio/ordertisam/ep02/b4.wav",
+    "sec": 3.146458,
+    "voice": "Leda",
+    "text": "ต้นรอด เขาสัญญาว่าจะกลับมาทำบุญให้ผม",
+    "speed": 0.95
+  },
+  {
+    "id": "b5",
+    "file": "audio/ordertisam/ep02/b5.wav",
+    "sec": 2.36575,
+    "voice": "Leda",
+    "text": "แต่ต้นไม่เคยกลับมาอีกเลย",
+    "speed": 0.92
+  },
+  {
+    "id": "eggs",
+    "file": "audio/ordertisam/ep02/eggs.wav",
+    "sec": 3.588729,
+    "voice": "Puck",
+    "text": "ไข่ต้มกับพวงมาลัยที่ผมถือมา คือของที่ต้นสัญญาไว้"
+  },
+  {
+    "id": "notenough",
+    "file": "audio/ordertisam/ep02/notenough.wav",
+    "sec": 1.348896,
+    "voice": "Puck",
+    "text": "แต่ของอย่างเดียว ยังไม่พอ"
+  },
+  {
+    "id": "dawn",
+    "file": "audio/ordertisam/ep02/dawn.wav",
+    "sec": 3.961521,
+    "voice": "Puck",
+    "text": "พอฟ้าสาง ผมเข้าไปทำบุญในวัด แล้วกรวดน้ำไปให้เขา"
+  },
+  {
+    "id": "fade",
+    "file": "audio/ordertisam/ep02/fade.wav",
+    "sec": 3.536292,
+    "voice": "Puck",
+    "text": "แสงสีฟ้าบนน้ำ ค่อยๆ หายไปทีละดวง"
+  },
+  {
+    "id": "back1",
+    "file": "audio/ordertisam/ep02/back1.wav",
+    "sec": 3.889271,
+    "voice": "Puck",
+    "text": "ผมกลับมาที่ร้าน ลุงเชิดจ้องมองขาผม"
+  },
+  {
+    "id": "c1",
+    "file": "audio/ordertisam/ep02/c1.wav",
+    "sec": 2.148188,
+    "voice": "Algenib",
+    "text": "เมื่อคืน เอ็งขานรับมันไปหรือเปล่า",
+    "speed": 0.9
+  },
+  {
+    "id": "k1",
+    "file": "audio/ordertisam/ep02/k1.wav",
+    "sec": 1.249792,
+    "voice": "Puck",
+    "text": "ผมไม่ได้ตอบนะลุง"
+  },
+  {
+    "id": "c2",
+    "file": "audio/ordertisam/ep02/c2.wav",
+    "sec": 1.691813,
+    "voice": "Algenib",
+    "text": "แล้วทำไมขาเอ็ง ยังเปียกอยู่",
+    "speed": 0.9
+  },
+  {
+    "id": "wet",
+    "file": "audio/ordertisam/ep02/wet.wav",
+    "sec": 3.852604,
+    "voice": "Puck",
+    "text": "ผมก้มลงมอง มีรอยมือเล็กๆ เปียกอยู่ที่ข้อเท้า"
+  },
+  {
+    "id": "next1",
+    "file": "audio/ordertisam/ep02/next1.wav",
+    "sec": 3.181396,
+    "voice": "Puck",
+    "text": "ตีสามสี่สิบสี่ ออเดอร์ใหม่เด้งขึ้นมา"
+  },
+  {
+    "id": "next2",
+    "file": "audio/ordertisam/ep02/next2.wav",
+    "sec": 5.367271,
+    "voice": "Puck",
+    "text": "ตุ๊กตาหนึ่งตัว นมกล่องหนึ่งกล่อง ส่งที่หอพักร้าง ชั้นสี่"
+  },
+  {
+    "id": "cta1",
+    "file": "audio/ordertisam/ep02/cta1.wav",
+    "sec": 4.73375,
+    "voice": "Puck",
+    "text": "คิดว่าเก่งขานรับไปหรือเปล่า ขานรับ พิมพ์หนึ่ง ไม่ได้ขานรับ พิมพ์สอง"
+  },
+  {
+    "id": "cta2",
+    "file": "audio/ordertisam/ep02/cta2.wav",
+    "sec": 3.211313,
+    "voice": "Puck",
+    "text": "กดติดตามออเดอร์ตีสามไว้ ออเดอร์ต่อไป กำลังเด้ง"
+  }
+]

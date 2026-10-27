@@ -1,4 +1,5 @@
 // YouTube description with chapters, sources and credits. Usage: node scripts/describe.mjs <slug> [--fps 30 --lead 12 --gap 8]
+// meta.json "lang": "en" switches the section headings to English (default Thai).
 // Reads src/episodes/<slug>/meta.json (creates a stub to fill in on first run), beats.json and timing.json.
 // Chapter times come from the beat each chapter starts on, so they follow the VO after every re-render.
 // Writes out/<slug>-description.txt.
@@ -57,14 +58,14 @@ if (meta.chapters?.length) {
   // YouTube only shows chapters when there are ≥ 3, each ≥ 10 s long.
   const short = ch.filter((c, i) => (ch[i + 1]?.sec ?? total) - c.sec < 10);
   if (ch.length < 3 || short.length) console.warn(`⚠ YouTube ignores chapters unless there are ≥ 3 and each is ≥ 10 s${short.length ? ` (too short: ${short.map((c) => c.title).join(", ")})` : ""}`);
-  out.push("บทในคลิป", ...ch.map((c) => `${clock(c.sec)} ${c.title}`), "");
+  out.push(meta.lang === "en" ? "Chapters" : "บทในคลิป", ...ch.map((c) => `${clock(c.sec)} ${c.title}`), "");
 }
 
 let sources = meta.sources ?? [];
 if (!sources.length && existsSync(`${dir}/sources.md`))
   sources = [...new Set(readFileSync(`${dir}/sources.md`, "utf8").match(/https?:\/\/[^\s)|>]+/g) ?? [])];
-if (sources.length) out.push("แหล่งข้อมูล", ...sources.map((s) => `- ${s}`), "");
-if (meta.credits?.length) out.push("เครดิตแผนที่", ...meta.credits.map((s) => `- ${s}`), "");
+if (sources.length) out.push(meta.lang === "en" ? "Sources" : "แหล่งข้อมูล", ...sources.map((s) => `- ${s}`), "");
+if (meta.credits?.length) out.push(meta.lang === "en" ? "Credits" : "เครดิตแผนที่", ...meta.credits.map((s) => `- ${s}`), "");
 if (meta.music?.length) out.push("เพลงและเสียงประกอบ", ...meta.music.map((s) => `- ${s}`), "");
 if (meta.note) out.push(meta.note);
 if (meta.tags?.length) out.push("", meta.tags.map((t) => `#${t.replace(/\s+/g, "")}`).join(" "));

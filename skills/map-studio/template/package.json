@@ -16,6 +16,7 @@
     "sfx": "node scripts/sfx.mjs",
     "loudness": "node scripts/loudness.mjs",
     "render:batch": "node scripts/render-batch.mjs",
+    "render:chunks": "node scripts/render-chunks.mjs",
     "image": "node scripts/image-gemini.mjs",
     "imagery": "node scripts/fetch-imagery.mjs",
     "dem": "node scripts/fetch-dem.mjs",
@@ -24,6 +25,7 @@
     "history": "node scripts/fetch-history.mjs",
     "sfx-lib": "node scripts/sfx-lib.mjs",
     "cost": "node scripts/cost-report.mjs",
+    "mocap": "node scripts/mocap.mjs",
     "flow-layers": "node scripts/flow-layers.mjs",
     "flow-parts": "node scripts/flow-parts.mjs"
   },
@@ -46,6 +48,7 @@
     "@types/react": "^19.1.0",
     "@types/topojson-client": "^3.1.5",
     "@types/topojson-specification": "^1.0.5",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@mediapipe/tasks-vision": "0.10.21"
   }
 }

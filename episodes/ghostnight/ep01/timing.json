@@ -1,0 +1,378 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/ordertisam/ep01/hook.wav",
+    "sec": 2.508021,
+    "voice": "Puck",
+    "text": "ออเดอร์นี้ ส่งให้ต้นกล้วย?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "title",
+    "file": "audio/ordertisam/ep01/title.wav",
+    "sec": 3.580833,
+    "voice": "Puck",
+    "text": "ออเดอร์ตีสาม ตอนที่หนึ่ง นางตานี",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "me1",
+    "file": "audio/ordertisam/ep01/me1.wav",
+    "sec": 2.077,
+    "voice": "Puck",
+    "text": "ผมชื่อเก่ง เป็นไรเดอร์ได้สามอาทิตย์",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "me2",
+    "file": "audio/ordertisam/ep01/me2.wav",
+    "sec": 2.248313,
+    "voice": "Puck",
+    "text": "รับกะดึก เพราะค่ารอบแพงกว่า",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "ping",
+    "file": "audio/ordertisam/ep01/ping.wav",
+    "sec": 2.452979,
+    "voice": "Puck",
+    "text": "คืนนั้น ตีสามพอดี มีออเดอร์เด้ง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "order",
+    "file": "audio/ordertisam/ep01/order.wav",
+    "sec": 4.72,
+    "voice": "Puck",
+    "text": "ข้าวต้มมัดหนึ่งห่อ น้ำแดงหนึ่งขวด ค่าส่งห้าร้อยบาท",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "note1",
+    "file": "audio/ordertisam/ep01/note1.wav",
+    "sec": 1.602521,
+    "voice": "Puck",
+    "text": "หมายเหตุถึงไรเดอร์ เขียนว่า",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "note2",
+    "file": "audio/ordertisam/ep01/note2.wav",
+    "sec": 2.152563,
+    "voice": "Puck",
+    "text": "วางไว้ที่โคนต้น ไม่ต้องเรียก",
+    "speed": 0.95,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "cherd1",
+    "file": "audio/ordertisam/ep01/cherd1.wav",
+    "sec": 4.340313,
+    "voice": "Puck",
+    "text": "ผมเอาไปให้ลุงเชิดดู ไรเดอร์รุ่นพี่ ที่นั่งหน้าร้านสะดวกซื้อทุกคืน",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "cherd2",
+    "file": "audio/ordertisam/ep01/cherd2.wav",
+    "sec": 1.36675,
+    "voice": "Puck",
+    "text": "ลุงเงียบไปนานมาก",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "rule1a",
+    "file": "audio/ordertisam/ep01/rule1a.wav",
+    "sec": 1.862292,
+    "voice": "Algenib",
+    "text": "กฎของกะดึก ข้อหนึ่ง",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "rule1b",
+    "file": "audio/ordertisam/ep01/rule1b.wav",
+    "sec": 3.100188,
+    "voice": "Algenib",
+    "text": "ออเดอร์ที่มีน้ำแดง ไม่ใช่ของให้คนกิน",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "accept",
+    "file": "audio/ordertisam/ep01/accept.wav",
+    "sec": 2.656292,
+    "voice": "Puck",
+    "text": "แต่ห้าร้อยบาท ส่งเงินให้แม่ได้ทั้งอาทิตย์",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "ride1",
+    "file": "audio/ordertisam/ep01/ride1.wav",
+    "sec": 2.437417,
+    "voice": "Puck",
+    "text": "หมุดพาผมไปสุดซอย ที่ไม่มีบ้านสักหลัง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "ride2",
+    "file": "audio/ordertisam/ep01/ride2.wav",
+    "sec": 3.018542,
+    "voice": "Puck",
+    "text": "มีแค่กอกล้วยกอเดียว กลางที่ดินรกร้าง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "ride3",
+    "file": "audio/ordertisam/ep01/ride3.wav",
+    "sec": 4.115667,
+    "voice": "Puck",
+    "text": "ผูกผ้าแพรเต็มต้น เขียว ชมพู เหลือง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "ride4",
+    "file": "audio/ordertisam/ep01/ride4.wav",
+    "sec": 2.448917,
+    "voice": "Puck",
+    "text": "ที่โคนต้น มีลอตเตอรี่เก่าเสียบอยู่เป็นปึก",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "recall",
+    "file": "audio/ordertisam/ep01/recall.wav",
+    "sec": 1.376896,
+    "voice": "Puck",
+    "text": "ลุงเชิดเคยบอกว่า",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "rule2a",
+    "file": "audio/ordertisam/ep01/rule2a.wav",
+    "sec": 1.634146,
+    "voice": "Algenib",
+    "text": "กฎของกะดึก ข้อสอง",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "rule2b",
+    "file": "audio/ordertisam/ep01/rule2b.wav",
+    "sec": 4.702667,
+    "voice": "Algenib",
+    "text": "ไม่มีใครปลูกกล้วยตานีไว้ใกล้บ้าน เพราะมีนางตานีอยู่ในต้น",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "rule2c",
+    "file": "audio/ordertisam/ep01/rule2c.wav",
+    "sec": 3.048,
+    "voice": "Algenib",
+    "text": "คนกล้าเข้าไปหามันอยู่อย่างเดียว คือไปขอหวย",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "place",
+    "file": "audio/ordertisam/ep01/place.wav",
+    "sec": 2.380938,
+    "voice": "Puck",
+    "text": "ผมวางของที่โคนต้น ตามหมายเหตุ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "coming",
+    "file": "audio/ordertisam/ep01/coming.wav",
+    "sec": 2.143979,
+    "voice": "Puck",
+    "text": "แอปเด้งขึ้นมาว่า ลูกค้ากำลังมารับ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "leaves",
+    "file": "audio/ordertisam/ep01/leaves.wav",
+    "sec": 3.644479,
+    "voice": "Puck",
+    "text": "แต่ไม่มีลมสักนิด ใบกล้วยกลับไหวทั้งกอ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "rule3a",
+    "file": "audio/ordertisam/ep01/rule3a.wav",
+    "sec": 1.574854,
+    "voice": "Algenib",
+    "text": "กฎของกะดึก ข้อสาม",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "rule3b",
+    "file": "audio/ordertisam/ep01/rule3b.wav",
+    "sec": 2.881854,
+    "voice": "Algenib",
+    "text": "ถ้าลูกค้าออกมารับเอง อย่ามองที่เท้า",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "look",
+    "file": "audio/ordertisam/ep01/look.wav",
+    "sec": 1.055417,
+    "voice": "Puck",
+    "text": "แล้วผมก็มอง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "tani1",
+    "file": "audio/ordertisam/ep01/tani1.wav",
+    "sec": 4.662042,
+    "voice": "Puck",
+    "text": "เธอสวยมาก ชุดไทยสีเขียว เหมือนใบกล้วยอ่อน",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "tani2",
+    "file": "audio/ordertisam/ep01/tani2.wav",
+    "sec": 1.729188,
+    "voice": "Puck",
+    "text": "แต่เธอไม่แตะของที่ผมวางเลย",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "t1",
+    "file": "audio/ordertisam/ep01/t1.wav",
+    "sec": 1.432708,
+    "voice": "Achernar",
+    "text": "ไม่ใช่ของฉัน",
+    "speed": 0.9,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "t2",
+    "file": "audio/ordertisam/ep01/t2.wav",
+    "sec": 3.12825,
+    "voice": "Achernar",
+    "text": "ของคนที่สัญญาไว้ ยี่สิบปีก่อน",
+    "speed": 0.9,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "t3",
+    "file": "audio/ordertisam/ep01/t3.wav",
+    "sec": 3.727313,
+    "voice": "Achernar",
+    "text": "เขาขอเลข ฉันให้ เขาถูกรางวัล",
+    "speed": 0.9,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "t4",
+    "file": "audio/ordertisam/ep01/t4.wav",
+    "sec": 3.598792,
+    "voice": "Achernar",
+    "text": "เขาบอกจะกลับมาแก้บน ด้วยข้าวต้มมัดกับน้ำแดง",
+    "speed": 0.9,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "t5",
+    "file": "audio/ordertisam/ep01/t5.wav",
+    "sec": 2.815896,
+    "voice": "Achernar",
+    "text": "ฉันรอเขาทุกคืน ยี่สิบปี",
+    "speed": 0.88,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "point",
+    "file": "audio/ordertisam/ep01/point.wav",
+    "sec": 1.610354,
+    "voice": "Puck",
+    "text": "แล้วเธอก็ชี้ไปที่ปากซอย",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "t6",
+    "file": "audio/ordertisam/ep01/t6.wav",
+    "sec": 2.600875,
+    "voice": "Achernar",
+    "text": "บอกเชิดด้วยนะ ว่าฉันยังรอ",
+    "speed": 0.88,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "back1",
+    "file": "audio/ordertisam/ep01/back1.wav",
+    "sec": 3.782167,
+    "voice": "Puck",
+    "text": "ผมขี่กลับมาหน้าร้าน ลุงเชิดยังนั่งที่เดิม",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "back2",
+    "file": "audio/ordertisam/ep01/back2.wav",
+    "sec": 2.342229,
+    "voice": "Puck",
+    "text": "ผมยังไม่ทันพูดอะไร ลุงก็พูดก่อน",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "c1",
+    "file": "audio/ordertisam/ep01/c1.wav",
+    "sec": 1.574729,
+    "voice": "Algenib",
+    "text": "เธอยังรออยู่ใช่ไหม",
+    "speed": 0.9,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "k1",
+    "file": "audio/ordertisam/ep01/k1.wav",
+    "sec": 0.830771,
+    "voice": "Puck",
+    "text": "ลุงรู้ได้ไง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "c2",
+    "file": "audio/ordertisam/ep01/c2.wav",
+    "sec": 4.084188,
+    "voice": "Algenib",
+    "text": "เพราะออเดอร์นั้น เมื่อยี่สิบปีก่อน คนสั่งคือลุงเอง",
+    "speed": 0.9,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "next1",
+    "file": "audio/ordertisam/ep01/next1.wav",
+    "sec": 3.028396,
+    "voice": "Puck",
+    "text": "ผมยังไม่ทันถามต่อ มือถือก็สั่นอีกครั้ง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "next2",
+    "file": "audio/ordertisam/ep01/next2.wav",
+    "sec": 7.1335,
+    "voice": "Puck",
+    "text": "ตีสามสามสิบสาม ไข่ต้มสองฟอง พวงมาลัยหนึ่งพวง ส่งที่ศาลาท่าน้ำวัด",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "cta1",
+    "file": "audio/ordertisam/ep01/cta1.wav",
+    "sec": 3.444542,
+    "voice": "Puck",
+    "text": "ถ้าเป็นคุณ กดรับไหม รับ พิมพ์หนึ่ง ปฏิเสธ พิมพ์สอง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "cta2",
+    "file": "audio/ordertisam/ep01/cta2.wav",
+    "sec": 3.281875,
+    "voice": "Puck",
+    "text": "กดติดตามออเดอร์ตีสามไว้ ออเดอร์ต่อไป กำลังเด้ง",
+    "model": "gemini-3.8-flash-lite-tts"
+  }
+]

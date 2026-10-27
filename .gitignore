@@ -9,3 +9,8 @@ public/audio/
 
 # SFX library: licences forbid redistributing the raw files (see skills/map-studio/template/sfx/library.json)
 **/public/sfx/lib/
+
+# Motion capture: MediaPipe model (downloaded by npm run mocap) and temporary frames
+**/mocap/*.task
+**/mocap/.frames/
+**/mocap/.chrome/
