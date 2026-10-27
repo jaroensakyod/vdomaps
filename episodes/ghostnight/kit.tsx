@@ -579,6 +579,232 @@ export const Chip = ({ text, f, y = 250, color = "rgba(12,12,18,0.85)", border =
   );
 };
 
+// ---------- HUD cards (news-style data cards: pay, nights, clock, stamps, end card) ----------
+const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
+const easeOut = (t: number) => 1 - Math.pow(1 - clamp01(t), 3);
+const HUD = { card: "#f6efe0", ink: "#1d1a16", soft: "#8a8070", gold: "#d9a43a", pill: "#1d1a16" };
+
+const HudCard = ({ label, f, x, y, w, accent = C.app, children }: { label: string; f: number; x: number; y: number; w: number; accent?: string; children: ReactNode }) => {
+  const k = easeOut(f / 8);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: x,
+        top: y,
+        width: w,
+        opacity: k,
+        transform: `translateX(${(1 - k) * -60}px)`,
+        background: HUD.card,
+        borderLeft: `12px solid ${accent}`,
+        borderRadius: 18,
+        padding: "22px 30px 24px",
+        boxShadow: "0 14px 34px rgba(0,0,0,0.45)",
+        fontFamily: UI,
+        color: HUD.ink,
+      }}
+    >
+      <div style={{ display: "inline-flex", alignItems: "center", gap: 12, background: HUD.pill, color: "#fff", borderRadius: 24, padding: "4px 20px", fontSize: 28, fontWeight: 700 }}>
+        <span style={{ width: 12, height: 12, borderRadius: 6, background: accent }} />
+        {label}
+      </div>
+      {children}
+    </div>
+  );
+};
+
+// counts from `from` to `value` over ~20 frames after the card lands; rate × n line when both given
+export const PayCard = ({ value, f, from = 0, rate, n, unit = "฿", label = "ค่าจ้าง · PAY", note, x = 60, y = 300, accent = C.tani }: { value: number; f: number; from?: number; rate?: number; n?: number; unit?: string; label?: string; note?: string; x?: number; y?: number; accent?: string }) => {
+  const v = Math.round(from + (value - from) * easeOut((f - 8) / 20));
+  return (
+    <HudCard label={label} f={f} x={x} y={y} w={560} accent={accent}>
+      {rate !== undefined && n !== undefined && (
+        <div style={{ marginTop: 14, fontSize: 44, fontWeight: 700, color: HUD.soft }}>
+          {rate.toLocaleString("en-US")} × <span style={{ color: HUD.ink, fontSize: 60 }}>{n}</span> =
+        </div>
+      )}
+      <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginTop: 6 }}>
+        <span style={{ fontSize: 130, fontWeight: 800, lineHeight: 1, color: accent }}>{v.toLocaleString("en-US")}</span>
+        <span style={{ fontSize: 56, fontWeight: 700, color: HUD.soft }}>{unit}</span>
+      </div>
+      {note && <div style={{ marginTop: 8, fontSize: 34, fontWeight: 700 }}>{note}</div>}
+    </HudCard>
+  );
+};
+
+// boxes 1..total, the first `done` filled; the newest one pops in. stamp defaults to "เหลืออีก N คืน"
+export const NightTrack = ({ done, f, total = 7, label = "คืนที่ · NIGHT", stamp, x = 60, y = 300, accent = HUD.gold }: { done: number; f: number; total?: number; label?: string; stamp?: string | false; x?: number; y?: number; accent?: string }) => {
+  const pop = easeOut((f - 10) / 8);
+  const left = total - done;
+  const st = stamp === false ? null : stamp ?? (left > 0 ? `เหลืออีก ${left} คืน` : "ครบแล้ว");
+  return (
+    <HudCard label={label} f={f} x={x} y={y} w={640} accent={accent}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 10 }}>
+        <span style={{ fontSize: 120, fontWeight: 800, lineHeight: 1 }}>{done}</span>
+        <span style={{ fontSize: 56, fontWeight: 700, color: HUD.soft }}>/ {total}</span>
+      </div>
+      <div style={{ display: "flex", gap: 12, marginTop: 16 }}>
+        {Array.from({ length: total }, (_, i) => {
+          const filled = i < done - 1 || (i === done - 1 && pop > 0.5);
+          const s = i === done - 1 ? 1 + 0.35 * Math.sin(Math.PI * pop) : 1;
+          return (
+            <div key={i} style={{ width: 58, height: 58, borderRadius: 10, border: `4px solid ${HUD.ink}`, background: filled ? accent : "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32, fontWeight: 800, transform: `scale(${s})` }}>
+              {i + 1}
+            </div>
+          );
+        })}
+      </div>
+      {st && (
+        <div style={{ position: "absolute", right: 26, bottom: 96 }}>
+          <StampMark text={st} f={f - 22} size={40} rot={-10} />
+        </div>
+      )}
+    </HudCard>
+  );
+};
+
+// minutes since midnight (pass an interpolated value to roll the clock); moon at night, sun 05:00–18:00
+export const ClockCard = ({ min, f, label, x = 60, y = 300, accent = "#7f93d6" }: { min: number; f: number; label?: string; x?: number; y?: number; accent?: string }) => {
+  const m = ((Math.floor(min) % 1440) + 1440) % 1440;
+  const hh = String(Math.floor(m / 60)).padStart(2, "0");
+  const mm = String(m % 60).padStart(2, "0");
+  const day = m >= 300 && m < 1080;
+  return (
+    <HudCard label={label ?? (day ? "เช้า · DAY" : "กลางคืน · NIGHT")} f={f} x={x} y={y} w={470} accent={day ? HUD.gold : accent}>
+      <div style={{ display: "flex", alignItems: "center", gap: 22, marginTop: 10 }}>
+        <svg width={76} height={76} viewBox="-40 -40 80 80">
+          {day ? (
+            <g>
+              {Array.from({ length: 8 }, (_, i) => (
+                <line key={i} x1={0} y1={-26} x2={0} y2={-36} stroke={HUD.gold} strokeWidth={6} strokeLinecap="round" transform={`rotate(${i * 45})`} />
+              ))}
+              <circle r={18} fill={HUD.gold} />
+            </g>
+          ) : (
+            <path d="M8,-30 A30,30 0 1,0 30,8 A24,24 0 1,1 8,-30 Z" fill={HUD.ink} />
+          )}
+        </svg>
+        <span style={{ fontSize: 120, fontWeight: 800, lineHeight: 1, fontVariantNumeric: "tabular-nums", letterSpacing: 2 }}>
+          {hh}:{mm}
+        </span>
+      </div>
+    </HudCard>
+  );
+};
+
+// red rubber stamp that slams in (scale 2.2 → 1 in 5 frames, small shake). StampMark = inline, Stamp = placed on the stage
+const StampMark = ({ text, f, size = 72, rot = -8, color = C.red }: { text: string; f: number; size?: number; rot?: number; color?: string }) => {
+  if (f < 0) return null;
+  const k = clamp01(f / 5);
+  const shake = f >= 5 && f < 11 ? Math.sin(f * 2.4) * 6 * (1 - (f - 5) / 6) : 0;
+  return (
+    <div
+      style={{
+        display: "inline-block",
+        transform: `translate(${shake}px,0) rotate(${rot}deg) scale(${2.2 - 1.2 * k})`,
+        opacity: 0.25 + 0.7 * k,
+        border: `${Math.max(4, size / 12)}px solid ${color}`,
+        outline: `${Math.max(2, size / 24)}px solid ${color}`,
+        outlineOffset: size / 10,
+        borderRadius: size / 5,
+        padding: `${size * 0.08}px ${size * 0.35}px`,
+        fontFamily: UI,
+        fontWeight: 800,
+        fontSize: size,
+        lineHeight: 1.25,
+        color,
+        whiteSpace: "nowrap",
+        background: "rgba(246,239,224,0.18)",
+        textShadow: "0 0 1px rgba(0,0,0,0.3)",
+      }}
+    >
+      {text}
+    </div>
+  );
+};
+
+export const Stamp = ({ text, f, x = 540, y = 760, size = 96, rot = -8, color = C.red }: { text: string; f: number; x?: number; y?: number; size?: number; rot?: number; color?: string }) => (
+  <div style={{ position: "absolute", left: x, top: y, transform: "translate(-50%,-50%)" }}>
+    <StampMark text={text} f={f} size={size} rot={rot} color={color} />
+  </div>
+);
+
+// SVG: hand-drawn red ellipse around a clue, drawn on over ~10 frames, two loose passes, then a soft pulse
+export const ClueRing = ({ x, y, rx, ry, f, color = C.red, w = 9 }: { x: number; y: number; rx: number; ry: number; f: number; color?: string; w?: number }) => {
+  const len = Math.PI * (3 * (rx + ry) - Math.sqrt((3 * rx + ry) * (rx + 3 * ry)));
+  const draw = easeOut(f / 10);
+  const pulse = f > 12 ? 1 + 0.03 * Math.sin((f - 12) / 5) : 1;
+  return (
+    <g transform={`translate(${x},${y}) scale(${pulse})`} fill="none" stroke={color} strokeLinecap="round">
+      <ellipse rx={rx} ry={ry} transform="rotate(-4)" strokeWidth={w} strokeDasharray={len * 1.1} strokeDashoffset={len * 1.1 * (1 - draw)} />
+      <ellipse rx={rx * 1.04} ry={ry * 0.95} transform="rotate(3)" strokeWidth={w * 0.55} opacity={0.7} strokeDasharray={len * 1.1} strokeDashoffset={len * 1.1 * (1 - clamp01((f - 4) / 10))} />
+    </g>
+  );
+};
+
+// big sound word ("ก๊อก ก๊อก ก๊อก!"): words pop in one by one with a jitter; `hot` = index of the word drawn in color
+export const Onomato = ({ text, f, x = 540, y = 600, size = 120, rot = -6, color = "#fff", hot = -1, hotColor = C.red, gap = 6 }: { text: string; f: number; x?: number; y?: number; size?: number; rot?: number; color?: string; hot?: number; hotColor?: string; gap?: number }) => {
+  const words = text.split(" ");
+  return (
+    <div style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) rotate(${rot}deg)`, display: "flex", gap: size * 0.25, alignItems: "flex-end", whiteSpace: "nowrap" }}>
+      {words.map((wd, i) => {
+        const t = f - i * gap;
+        if (t < 0) return null;
+        const k = easeOut(t / 4);
+        const jit = Math.sin(t * 3.1 + i) * 4 * Math.max(0, 1 - t / 14);
+        return (
+          <span
+            key={i}
+            style={{
+              fontFamily: UI,
+              fontWeight: 800,
+              fontSize: size * (1 + i * 0.12),
+              lineHeight: 1,
+              color: i === hot ? hotColor : color,
+              WebkitTextStroke: `${size / 9}px ${OL}`,
+              paintOrder: "stroke fill",
+              transform: `translate(${jit}px,${(1 - k) * 30 - i * size * 0.08}px) scale(${0.4 + 0.6 * k})`,
+              opacity: k,
+              display: "inline-block",
+            }}
+          >
+            {wd}
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+
+// full-screen end card over the last scene: series · this episode ✓ · NEXT episode + teaser · comment question
+export const EndCard = ({ f, series, tag = "GHOST SERIES", ep, next, teaser, question, accent = C.red, size = 130 }: { f: number; series: string; tag?: string; ep: string; next?: string; teaser?: string; question?: string; accent?: string; size?: number }) => {
+  const at = (s: number) => easeOut((f - s) / 9);
+  const row = (s: number) => ({ opacity: at(s), transform: `translateY(${(1 - at(s)) * 30}px)` });
+  return (
+    <div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, rgba(8,6,6,${0.85 * at(0)}) 0%, rgba(8,6,6,${0.35 * at(0)}) 45%, rgba(8,6,6,${0.9 * at(0)}) 100%)`, fontFamily: UI, color: "#fff", textAlign: "center" }}>
+      <div style={{ ...row(2), marginTop: 190, fontSize: 32, fontWeight: 700, letterSpacing: 3, color: "#d8cfbf" }}>• {tag}</div>
+      <div style={{ ...row(5), marginTop: 10, fontSize: size, fontWeight: 800, lineHeight: 1.1, WebkitTextStroke: `10px ${OL}`, paintOrder: "stroke fill" }}>{series}</div>
+      <div style={{ ...row(9), marginTop: 22 }}>
+        <span style={{ background: "#fff", color: HUD.ink, borderRadius: 14, padding: "8px 30px", fontSize: 46, fontWeight: 800 }}>{ep} ✓</span>
+      </div>
+      {next && (
+        <div style={{ position: "absolute", left: 0, right: 0, top: 1240 }}>
+          <div style={{ ...row(16), fontSize: 32, fontWeight: 700, color: "#d8cfbf" }}>ตอนต่อไป · NEXT</div>
+          <div style={{ ...row(19), marginTop: 14 }}>
+            <span style={{ background: accent, borderRadius: 14, padding: "8px 34px", fontSize: 64, fontWeight: 800 }}>{next}</span>
+          </div>
+          {teaser && <div style={{ ...row(24), marginTop: 30, fontSize: 44, fontWeight: 700, padding: "0 70px" }}>{teaser}</div>}
+        </div>
+      )}
+      {question && (
+        <div style={{ ...row(32), position: "absolute", left: 0, right: 0, top: 1640 }}>
+          <span style={{ background: "rgba(255,255,255,0.92)", color: HUD.ink, borderRadius: 40, padding: "14px 40px", fontSize: 42, fontWeight: 700 }}>💬 {question}</span>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const Vignette = ({ k = 0.75 }: { k?: number }) => (
   <g pointerEvents="none">
     <defs>
