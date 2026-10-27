@@ -1,6 +1,57 @@
-import { interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import type { ReactNode } from "react";
+import { continueRender, delayRender, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { useEffect, useState, type ReactNode } from "react";
 import { useJson } from "./useJson";
+
+// SVG <image> is not awaited by Remotion (unlike <Img>), so a frame could be captured before a layer had loaded
+// (blank panel, flagged by check-glitch). Hold the render until every file is decoded; decoded files are cached.
+const loaded = new Map<string, Promise<void>>();
+const load = (url: string) => {
+  if (!loaded.has(url))
+    loaded.set(
+      url,
+      new Promise<void>((ok) => {
+        const im = new Image();
+        im.onload = () => (im.decode ? im.decode().then(ok, ok) : ok());
+        im.onerror = () => ok();
+        im.src = url;
+      }),
+    );
+  return loaded.get(url)!;
+};
+const useImagesReady = (urls: string[]) => {
+  const key = urls.join("|");
+  const [handle] = useState(() => (urls.length ? delayRender(`flow images ${urls[0]}`) : null));
+  useEffect(() => {
+    if (handle === null) return;
+    Promise.all(urls.map(load)).then(() => continueRender(handle));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key, handle]);
+};
+// A picture inside the svg drawn with Remotion's <Img> in a foreignObject: <Img> holds each frame until the bitmap
+// is decoded, which a plain svg <image> does not (frames came out blank or half-faded).
+const Pic = ({ src, x, y, w, h }: { src: string; x: number; y: number; w: number; h: number }) => (
+  <foreignObject x={x} y={y} width={w} height={h}>
+    <Img src={src} style={{ width: "100%", height: "100%", display: "block" }} />
+  </foreignObject>
+);
+/** Draw a still's files tiny and almost invisible from `from` to `to` (e.g. 45 frames before a panel opens), so the
+ *  browser has them decoded and painted when the panel's first frame is captured — without it a new panel's first
+ *  frame sometimes still showed the previous picture (check-glitch flags it). Put it inside the same svg. */
+export const FlowWarm = ({ name, from, to, layers = 6, rig, parts = [] }: { name: string; from: number; to: number; layers?: number; rig?: string; parts?: string[] }) => {
+  const frame = useCurrentFrame();
+  if (frame < from || frame > to) return null;
+  const files = [...Array.from({ length: layers }, (_, i) => staticFile(`flow/${name}-L${i}.png`)), ...parts.map((p) => staticFile(`flow/${rig}-part-${p}.png`))];
+  return (
+    <g opacity={0.01}>
+      {files.map((f, i) => <Pic key={f} src={f} x={i * 3} y={0} w={3} h={3} />)}
+    </g>
+  );
+};
+// Preloads the layer and part files once their counts are known (after the json arrives).
+const Preload = ({ urls }: { urls: string[] }) => {
+  useImagesReady(urls);
+  return null;
+};
 
 // Free 2.5D motion for one still (a Flow / Nano Banana image, a painting, a photo). Prepare it once with
 //   npm run flow-layers -- <image> <name>
@@ -88,7 +139,7 @@ export const Flow25D = ({ name, id, box, start, end, zoom = [1.04, 1.12], pan = 
   };
   const layer = (i: number) => {
     const p = place(i / (meta.layers - 1));
-    return <image key={i} href={staticFile(`flow/${name}-L${i}.png`)} x={p.x} y={p.y} width={p.w} height={p.h} preserveAspectRatio="none" />;
+    return <Pic key={i} src={staticFile(`flow/${name}-L${i}.png`)} {...p} />;
   };
   // Cut-out parts: each sprite is full-picture size, placed like a layer at the part's depth; its pose rotates and
   // shifts it about its pivot, and its children are drawn inside its group so they follow.
@@ -107,7 +158,9 @@ export const Flow25D = ({ name, id, box, start, end, zoom = [1.04, 1.12], pan = 
             <filter id={`${id}-mb-${p.id}`} x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation={blur} /></filter>
           </defs>
         )}
-        <image href={staticFile(`flow/${rig}-part-${p.id}.png`)} x={at.x} y={at.y} width={at.w} height={at.h} preserveAspectRatio="none" filter={blur > 0.3 ? `url(#${id}-mb-${p.id})` : undefined} />
+        <g filter={blur > 0.3 ? `url(#${id}-mb-${p.id})` : undefined}>
+          <Pic src={staticFile(`flow/${rig}-part-${p.id}.png`)} x={at.x} y={at.y} w={at.w} h={at.h} />
+        </g>
         {parts.filter((c) => c.parent === p.id).map(drawPart)}
       </g>
     );
@@ -140,8 +193,13 @@ export const Flow25D = ({ name, id, box, start, end, zoom = [1.04, 1.12], pan = 
   const smokeAt = smokeBehind ?? Math.floor(meta.layers / 2);
   const near = place(1);
   const mid = place(0.5);
+  const files = [
+    ...Array.from({ length: meta.layers }, (_, i) => staticFile(`flow/${name}-L${i}.png`)),
+    ...parts.map((p) => staticFile(`flow/${rig}-part-${p.id}.png`)),
+  ];
   return (
     <g>
+      <Preload urls={files} />
       <defs>
         <clipPath id={`${id}-box`}><rect x={box.x} y={box.y} width={box.w} height={box.h} /></clipPath>
         {/* wind: fractal noise that scrolls sideways (see the wind group below), used to ripple the chosen areas */}

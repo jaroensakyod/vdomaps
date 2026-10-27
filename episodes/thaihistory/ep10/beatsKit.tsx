@@ -4,7 +4,8 @@ import beatsText from "./beats.json";
 import timing from "./timing.json";
 
 // Episode 10 timing (same layout as episodes 6–9): beats, lookup by id, word cue frames, voice spans.
-export const BEATS = buildBeats(timing, beatsText, LAYOUT);
+// 12-frame gaps (not the kit's 16) and narration sped up 6 % with atempo keep the episode near 10 minutes.
+export const BEATS = buildBeats(timing, beatsText, { ...LAYOUT, gap: 12 });
 export const B = Object.fromEntries(BEATS.map((b) => [b.id, b]));
 export const wp = (id: string, part: string, k = 0.5) => {
   const b = B[id];

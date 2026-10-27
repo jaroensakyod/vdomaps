@@ -1,5 +1,5 @@
 import { Easing, interpolate, useCurrentFrame } from "remotion";
-import type { Pose } from "../../../components/Flow25D";
+import { FlowWarm, type Pose } from "../../../components/Flow25D";
 import { Arrow } from "../../../components/Arrow";
 import { PointLabel } from "../../../components/Labels";
 import { clamp, view } from "../news/kit";
@@ -31,7 +31,7 @@ const glaiveAngle = (f: number) => {
   // arm + glaive about the shoulder: slow wind-up back, a fast cut down, a small overshoot, then half-way back
   return ease(f, 8, strike - 10, 0, -14) + ease(f, strike - 10, strike - 3, 0, 40, Easing.in(Easing.quad)) - wobble(f, strike - 3, 5, 0.6, 8) + ease(f, strike + 14, strike + 60, 0, -16);
 };
-const duelPose = (part: string, f: number): Pose => {
+export const duelPose = (part: string, f: number): Pose => {
   const { clash, strike } = T0;
   const walking = f < clash ? 1 : f < strike ? 0.25 : 0.15;
   switch (part) {
@@ -92,7 +92,7 @@ const T0 = {
 export const e10c0: Chapter10 = {
   name: "ช้างชนกันที่ไหน?",
   from: 0,
-  to: B.two ? B.two.start : E10_END,
+  to: B.free ? B.free.start : E10_END,
   cams: (w, h) => [
     { frame: 0, cam: view(VW.suphan, w, h, 0.95, 0.06) },
     { frame: T0.where, cam: view(VW.both, w, h, 0.92, 0.06) },
@@ -100,7 +100,8 @@ export const e10c0: Chapter10 = {
   years: [[0, "2135"]],
   heads: [
     { f: T0.famous, tag: "ศึกที่คนไทยรู้จักที่สุด", head: "ยุทธหัตถี พ.ศ. 2135", color: GOLD, chips: [{ text: "แบบเรียน", f: T0.book }, { text: "หนัง", f: T0.film }, { text: "ธนบัตร", f: T0.note }] },
-    { f: T0.twist, tag: "ช้างชนกันตรงไหน?", head: "ดอนเจดีย์ 2 แห่ง ห่างราว 70 กม.", color: RED },
+    { f: T0.twist, tag: "ช้างชนกันตรงไหน?", head: "คำตอบมีมากกว่าหนึ่งจุด", color: RED },
+    ...(B.two ? [{ f: B.two.start, tag: "ดอนเจดีย์ มีสองแห่ง", head: "ห่างกันราว 70 กม.", color: RED }, { f: B.question.start, tag: "คำถามของวันนี้", head: "เกิดที่ไหนกันแน่?", color: GOLD }] : []),
   ],
   Map: () => (
     <>
@@ -115,6 +116,7 @@ export const e10c0: Chapter10 = {
   ),
   Panels: () => (
     <>
+      <FlowWarm name="ep10-chedi" from={T0.battle - 45} to={T0.battle + 3} />
       <FlowPanel id="e10mon" anchor={PL.donSuphan} start={T0.battle} end={T0.twist + 14} name="ep10-chedi" accent={GOLD} light={[0.85, 0.08]} wind={[[0.37, 0.06, 0.48, 0.26], [0, 0.34, 0.18, 0.64], [0.86, 0.45, 1, 0.66]]} />
     </>
   ),

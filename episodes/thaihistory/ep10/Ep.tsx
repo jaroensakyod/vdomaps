@@ -7,11 +7,12 @@ import { Sfx } from "../../../components/Sound";
 import { CAPTION_TOP, CLEAR, font, HeadCard, LayoutCtx, TopBar } from "../news/kit";
 import { BEATS, type Chapter10 } from "./beatsKit";
 import { E10_END, e10c0 } from "./chapters";
+import { C1Audio, e10c1, e10c2, e10c3, e10c4, e10c5, e10c6, e10c7, e10c8 } from "./chapters2";
 import { UI_GAIN } from "./mix";
 
 // ประวัติศาสตร์บนแผนที่ ตอน 10: ยุทธหัตถีเกิดที่ไหนกันแน่ — news look, clear layout, illustration style v2,
 // recorded sound. The base map is Bellin / van der Schley 1770 (a real scan, public domain), not satellite. Same no-stutter / no-flicker build as episodes 6–9.
-export const E10_CHAPTERS: Chapter10[] = [e10c0];
+export const E10_CHAPTERS: Chapter10[] = [e10c0, e10c1, e10c2, e10c3, e10c4, e10c5, e10c6, e10c7, e10c8];
 export const E10_FRAMES = E10_END;
 
 // Soft vignette over the old map so pins and captions read; the paper stays visible.
@@ -52,6 +53,7 @@ export const Ep10 = () => {
         ))}
         {E10_CHAPTERS.flatMap((c) => c.sfx.map(([f, src, v], i) => <Sfx key={`${c.name}${i}`} src={src} at={Math.max(0, f)} volume={v * UI_GAIN} />))}
         {E10_CHAPTERS.map((c) => (c.Audio ? <c.Audio key={`a${c.name}`} /> : null))}
+        <C1Audio />
         <MapFrame cam={cam} focusY={CLEAR.focusY}>
           <Raster layers={[{ name: "bellin1770" }]} />
           <OldMapTint />
