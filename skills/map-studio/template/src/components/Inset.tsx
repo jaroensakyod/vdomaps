@@ -19,6 +19,7 @@ export const InsetPanel = ({
   accent = "#ff3b30",
   top,
   panelHeight,
+  panelWidth,
   boxScale = 1,
   children,
 }: {
@@ -34,6 +35,8 @@ export const InsetPanel = ({
   top?: number;
   /** 9:16 only: panel height in px at 1080 (default 380) */
   panelHeight?: number;
+  /** 9:16 only: panel width in px at 1080, centred (default: full width minus 100) */
+  panelWidth?: number;
   /** shrink the panel box about its bottom centre (the leader line still ends on the box) */
   boxScale?: number;
   children: (g: InsetGeom) => ReactNode;
@@ -45,9 +48,9 @@ export const InsetPanel = ({
   const p = projection(anchor);
   if (!p) return null;
   const vertical = height > width;
-  const W = vertical ? width - 100 * s : 780 * s;
+  const W = vertical ? (panelWidth !== undefined ? panelWidth * s : width - 100 * s) : 780 * s;
   const H = vertical ? (panelHeight ?? 380) * s : 420 * s;
-  const x = vertical ? 50 * s : width - W - 40 * s;
+  const x = vertical ? (width - W) / 2 : width - W - 40 * s;
   const y = vertical && top !== undefined ? height * top : vertical ? Math.min(Math.max(p[1] + 60 * s, 660 * s), height * 0.695 - H) : Math.min(Math.max(p[1] - H / 2, 150 * s), height - H - 150 * s);
   const ground = y + H - 46 * s;
   const sc = (vertical ? 1.55 : 1.5) * s;
