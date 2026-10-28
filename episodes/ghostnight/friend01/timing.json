@@ -1,0 +1,363 @@
+[
+  {
+    "id": "hook",
+    "file": "audio/ordertisam/friend01/hook.wav",
+    "sec": 2.493083,
+    "voice": "Kore",
+    "text": "เพื่อนกลับมา… แต่ไม่ใช่คนเดิม",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "hook2",
+    "file": "audio/ordertisam/friend01/hook2.wav",
+    "sec": 4.346625,
+    "voice": "Kore",
+    "text": "ตอนกลางวันมันคือฝน ตอนกลางคืน… กูไม่แน่ใจ",
+    "speed": 0.95,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "title",
+    "file": "audio/ordertisam/friend01/title.wav",
+    "sec": 3.341,
+    "voice": "Kore",
+    "text": "เพื่อนรัก ตอนที่หนึ่ง กลับมาไม่เหมือนเดิม",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p1",
+    "file": "audio/ordertisam/friend01/p1.wav",
+    "sec": 3.491958,
+    "voice": "Kore",
+    "text": "กูชื่อแพร ฝนเป็นเพื่อนกูตั้งแต่ยังวิ่งเล่นในนา",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p2",
+    "file": "audio/ordertisam/friend01/p2.wav",
+    "sec": 4.330438,
+    "voice": "Kore",
+    "text": "กูห้าว มันสวย ตากลมโต ใครเห็นก็ต้องทัก",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p3",
+    "file": "audio/ordertisam/friend01/p3.wav",
+    "sec": 4.663667,
+    "voice": "Kore",
+    "text": "จบมอสาม เราเข้าเมืองไปทำงานด้วยกัน กินนอนห้องเดียวกันทุกวัน",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p4",
+    "file": "audio/ordertisam/friend01/p4.wav",
+    "sec": 2.943771,
+    "voice": "Kore",
+    "text": "จนต่างคนต่างมีแฟน ก็แยกห้อง แยกทาง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p5",
+    "file": "audio/ordertisam/friend01/p5.wav",
+    "sec": 4.589813,
+    "voice": "Kore",
+    "text": "มันแต่งงาน กูย้ายไปกรุงเทพ เจอกันแค่ปีละครั้งตอนสงกรานต์",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p6",
+    "file": "audio/ordertisam/friend01/p6.wav",
+    "sec": 2.571958,
+    "voice": "Kore",
+    "text": "สิบแปดปีต่อมา กูกลับมาอยู่บ้าน",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "m1",
+    "file": "audio/ordertisam/friend01/m1.wav",
+    "sec": 4.058396,
+    "voice": "Sulafat",
+    "text": "อีฝนก็กลับมาอยู่บ้านแล้วเด้อ ได้ข่าวว่าเลิกกับผัว"
+  },
+  {
+    "id": "p7",
+    "file": "audio/ordertisam/friend01/p7.wav",
+    "sec": 2.406833,
+    "voice": "Kore",
+    "text": "กูฟังผ่านๆ คิดว่าว่างแล้วค่อยไปหา",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p8",
+    "file": "audio/ordertisam/friend01/p8.wav",
+    "sec": 2.070521,
+    "voice": "Kore",
+    "text": "แต่ดันเจอมันก่อน ที่ตลาดนัด",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p9",
+    "file": "audio/ordertisam/friend01/p9.wav",
+    "sec": 1.744458,
+    "voice": "Kore",
+    "text": "ฝนผอมจนกูเกือบจำไม่ได้",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p10",
+    "file": "audio/ordertisam/friend01/p10.wav",
+    "sec": 6.420688,
+    "voice": "Kore",
+    "text": "กูคว้าแขนมันไว้ ถามไถ่สารพัด มันตอบทุกคำ… แต่ไม่สบตากูเลยสักครั้ง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p11",
+    "file": "audio/ordertisam/friend01/p11.wav",
+    "sec": 2.423042,
+    "voice": "Kore",
+    "text": "อีกไม่กี่วัน กูเจอมันอีกที่ร้านชำ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p12",
+    "file": "audio/ordertisam/friend01/p12.wav",
+    "sec": 3.094667,
+    "voice": "Kore",
+    "text": "ปั่นจักรยานมา ทั้งที่ปกติขี่มอเตอร์ไซค์",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p13",
+    "file": "audio/ordertisam/friend01/p13.wav",
+    "sec": 3.142625,
+    "voice": "Kore",
+    "text": "หัวโน ตาเขียวช้ำ เท้าพันผ้าไว้",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "f1",
+    "file": "audio/ordertisam/friend01/f1.wav",
+    "sec": 2.720542,
+    "voice": "Despina",
+    "text": "สอยฝักเพกา… มันหล่นใส่หัว"
+  },
+  {
+    "id": "p14",
+    "file": "audio/ordertisam/friend01/p14.wav",
+    "sec": 4.103417,
+    "voice": "Kore",
+    "text": "ฝักเพกาอะไร จะทำให้ตาเขียวได้ขนาดนั้น",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p15",
+    "file": "audio/ordertisam/friend01/p15.wav",
+    "sec": 2.390667,
+    "voice": "Kore",
+    "text": "มันรู้ว่ากูไม่เชื่อ รีบปั่นหนีไปเลย",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p16",
+    "file": "audio/ordertisam/friend01/p16.wav",
+    "sec": 2.880188,
+    "voice": "Kore",
+    "text": "กูขับรถตามไปที่บ้าน เจอแต่แม่ของมัน",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "mf1",
+    "file": "audio/ordertisam/friend01/mf1.wav",
+    "sec": 6.239438,
+    "voice": "Gacrux",
+    "text": "มันเมาแล้วขี่รถไปชนกำแพงบ้านเขา รถพัง แม่ก็ไม่ซ่อมให้แล้ว"
+  },
+  {
+    "id": "mf2",
+    "file": "audio/ordertisam/friend01/mf2.wav",
+    "sec": 2.421021,
+    "voice": "Gacrux",
+    "text": "มันติดเหล้ามาตั้งแต่อยู่กับผัวคนแรก"
+  },
+  {
+    "id": "mf3",
+    "file": "audio/ordertisam/friend01/mf3.wav",
+    "sec": 4.237771,
+    "voice": "Gacrux",
+    "text": "กลางวันก็ปกติดี แต่พอตกค่ำ… มันเป็นอีกคน",
+    "speed": 0.93
+  },
+  {
+    "id": "p17",
+    "file": "audio/ordertisam/friend01/p17.wav",
+    "sec": 6.089583,
+    "voice": "Kore",
+    "text": "แม่ฝนเล่าว่ากลางดึก มันพูดคนเดียว รื้อตู้ รื้อครัว คุยกับแมว",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p18",
+    "file": "audio/ordertisam/friend01/p18.wav",
+    "sec": 5.780208,
+    "voice": "Kore",
+    "text": "บางคืน มันถือมีดออกไปนอกบ้าน ตะโกนท้าใครก็ไม่รู้ ที่ไม่มีใครมองเห็น",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "f2",
+    "file": "audio/ordertisam/friend01/f2.wav",
+    "sec": 2.076354,
+    "voice": "Despina",
+    "text": "มึงเข้ามาเลย! คิดว่ากูจะยอมมึงเหรอ!",
+    "speed": 1.12
+  },
+  {
+    "id": "p19",
+    "file": "audio/ordertisam/friend01/p19.wav",
+    "sec": 3.072896,
+    "voice": "Kore",
+    "text": "แล้วก็ฟันต้นกล้วยข้างบ้าน จนขาดเป็นท่อนๆ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p20",
+    "file": "audio/ordertisam/friend01/p20.wav",
+    "sec": 3.373125,
+    "voice": "Kore",
+    "text": "ยายกับหลาน ได้แต่กอดกันอยู่ในห้อง ไม่กล้าหลับ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "p21",
+    "file": "audio/ordertisam/friend01/p21.wav",
+    "sec": 4.811708,
+    "voice": "Kore",
+    "text": "บางคืนแม่ทนไม่ไหว ยื่นเหล้าให้ลูกเอง… มันถึงจะยอมหลับ",
+    "speed": 0.95,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "mf4",
+    "file": "audio/ordertisam/friend01/mf4.wav",
+    "sec": 4.580875,
+    "voice": "Gacrux",
+    "text": "แพร… เป็นเพื่อนกัน ช่วยคุยกับมันให้แม่หน่อยเถอะ",
+    "speed": 0.95
+  },
+  {
+    "id": "p22",
+    "file": "audio/ordertisam/friend01/p22.wav",
+    "sec": 3.465521,
+    "voice": "Kore",
+    "text": "กูเลยโทรหามัน ให้เอามะละกอมาตำส้มตำกินที่นา"
+  },
+  {
+    "id": "p23",
+    "file": "audio/ordertisam/friend01/p23.wav",
+    "sec": 3.348,
+    "voice": "Kore",
+    "text": "ที่นากูมีมะละกอเต็มต้น… กูแค่อยากให้มันออกมา"
+  },
+  {
+    "id": "p24",
+    "file": "audio/ordertisam/friend01/p24.wav",
+    "sec": 3.258708,
+    "voice": "Kore",
+    "text": "ส้มตำหมดครก เรานอนเปลคุยกันใต้เถียงนา"
+  },
+  {
+    "id": "p25",
+    "file": "audio/ordertisam/friend01/p25.wav",
+    "sec": 2.635188,
+    "voice": "Kore",
+    "text": "มึงมีเรื่องอะไรค้างใจ เล่าให้กูฟังได้ไหม"
+  },
+  {
+    "id": "p26",
+    "file": "audio/ordertisam/friend01/p26.wav",
+    "sec": 0.555542,
+    "voice": "Kore",
+    "text": "มันเงียบ"
+  },
+  {
+    "id": "p27",
+    "file": "audio/ordertisam/friend01/p27.wav",
+    "sec": 3.502125,
+    "voice": "Kore",
+    "text": "เอางี้ เงินสี่ร้อยที่มึงยืมกูไป ไม่ต้องคืนแล้ว"
+  },
+  {
+    "id": "p28",
+    "file": "audio/ordertisam/friend01/p28.wav",
+    "sec": 0.809063,
+    "voice": "Kore",
+    "text": "มันก็ยังเงียบ"
+  },
+  {
+    "id": "p29",
+    "file": "audio/ordertisam/friend01/p29.wav",
+    "sec": 5.575333,
+    "voice": "Kore",
+    "text": "มึงจำได้ไหม เราสัญญากันตั้งแต่เด็ก ความลับของมึง กูเก็บให้ทุกเรื่อง",
+    "speed": 0.95
+  },
+  {
+    "id": "p30",
+    "file": "audio/ordertisam/friend01/p30.wav",
+    "sec": 2.337146,
+    "voice": "Kore",
+    "text": "เล่าจบ เดี๋ยวกูพาไปสระผมที่ตลาด"
+  },
+  {
+    "id": "p31",
+    "file": "audio/ordertisam/friend01/p31.wav",
+    "sec": 3.815521,
+    "voice": "Kore",
+    "text": "ฝนรักสวยรักงามที่สุดที่กูรู้จัก… มันยิ้มออกมานิดนึง"
+  },
+  {
+    "id": "f3",
+    "file": "audio/ordertisam/friend01/f3.wav",
+    "sec": 2.040729,
+    "voice": "Despina",
+    "text": "เรื่องนี้… ห้ามบอกแม่นะ",
+    "speed": 0.9
+  },
+  {
+    "id": "p32",
+    "file": "audio/ordertisam/friend01/p32.wav",
+    "sec": 2.257167,
+    "voice": "Kore",
+    "text": "แล้วมันก็เล่า… เรื่องผู้ชายคนนั้น"
+  },
+  {
+    "id": "p33",
+    "file": "audio/ordertisam/friend01/p33.wav",
+    "sec": 2.623229,
+    "voice": "Kore",
+    "text": "ทหารที่บอกมันว่า เลิกกับเมียไปนานแล้ว"
+  },
+  {
+    "id": "p34",
+    "file": "audio/ordertisam/friend01/p34.wav",
+    "sec": 3.2055,
+    "voice": "Kore",
+    "text": "จนวันที่ผู้หญิงคนหนึ่ง ขับรถมาจอดหน้าบ้าน",
+    "speed": 0.93
+  },
+  {
+    "id": "next",
+    "file": "audio/ordertisam/friend01/next.wav",
+    "sec": 1.564125,
+    "voice": "Kore",
+    "text": "ตอนหน้า… เดินเข้าไป"
+  },
+  {
+    "id": "ask",
+    "file": "audio/ordertisam/friend01/ask.wav",
+    "sec": 2.651417,
+    "voice": "Kore",
+    "text": "ถ้าเป็นคุณ จะเชื่อคำแก้ตัวของเพื่อนไหม"
+  }
+]

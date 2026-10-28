@@ -6,12 +6,13 @@ import { buildBeats, cues, totalFrames } from "../../components/subs.mjs";
 import { C, Grain, H, UI, Vignette, W } from "./kit";
 
 export type Ctx = { f: number; d: number; F: number };
-export type Shot = { svg: ReactNode; html?: ReactNode; zoom?: [number, number]; origin?: [number, number]; shake?: number; style?: CSSProperties };
+// bg: drawn under the svg inside the camera move (e.g. a Flow25DScreen) · svgStyle: CSS on the character layer only (night tint)
+export type Shot = { svg: ReactNode; bg?: ReactNode; svgStyle?: CSSProperties; html?: ReactNode; zoom?: [number, number]; origin?: [number, number]; shake?: number; style?: CSSProperties };
 export type Scenes = Record<string, (c: Ctx) => Shot>;
 type BeatMeta = { id: string; scene: string; speaker?: string; text: string };
 
 export const SEPIA: CSSProperties = { filter: "grayscale(0.85) sepia(0.55) contrast(1.05) brightness(0.9)" };
-const BORDER: Record<string, string> = { cherd: C.cherd, tani: C.tani, boy: "#7fd0ff", mom: "#ff8fb1" };
+const BORDER: Record<string, string> = { cherd: C.cherd, tani: C.tani, boy: "#7fd0ff", mom: "#ff8fb1", fon: "#ff8fb1", momfon: "#e9b65a", praemom: "#8fd08a" };
 // Ghost voices use the processed take (<id>-fx.wav: echo, lower pitch).
 const FX = new Set(["tani", "mom", "boy"]);
 
@@ -46,7 +47,8 @@ export const makeEpisode = (beats: BeatMeta[], timing: { id: string; file: strin
     return (
       <AbsoluteFill style={{ backgroundColor: "#000" }}>
         <AbsoluteFill style={{ ...shot.style, transform: `translate(${sh ? Math.sin(f * 2.3) * sh : 0}px,${sh ? Math.cos(f * 1.9) * sh : 0}px) scale(${z})`, transformOrigin: `${ox}px ${oy}px` }}>
-          <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+          {shot.bg}
+          <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", ...shot.svgStyle }}>
             {shot.svg}
           </svg>
         </AbsoluteFill>

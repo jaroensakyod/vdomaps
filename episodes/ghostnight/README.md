@@ -4,6 +4,10 @@
 - `reference-sigmalens.md` — คลิปต้นแบบ Sigma Lens "เฝ้าศพ 7 คืน": สูตรงานแลกเงิน+กฎ การ์ด HUD ทุกช็อต
 - `series.md` — คอนเซปต์ ตัวละคร รายชื่อตอน · `ep01-script.md` / `ep01-caption.txt` — บทและแคปชันตอน 1
 - `kit.tsx` — ตัวละครชิบิ (เก่ง ลุงเชิด เชิดตอนหนุ่ม นางตานี) ฉากซอย ร้านสะดวกซื้อ กอกล้วย มือถือ/การ์ดออเดอร์ การ์ดกฎ · การ์ด HUD: `PayCard` `NightTrack` `ClockCard` `Stamp` `ClueRing` (SVG) `Onomato` `EndCard`
+- `slim.tsx` — ตัวละครเพรียวไม่มีเส้นขอบ (ชาย/หญิง ผม 5 ทรง ผ้าถุง จีวร รองเท้าคู่โต ของถือ มีด แก้ว) · ชุดตัวละคร "เพื่อนรัก": `SLIM_PRAE` `SLIM_FON*` `SLIM_MOM` `SLIM_DAD` `SLIM_TOM` `SLIM_MONK` `SLIM_KID`
+- `plan-friend.md` — แผนซีรีส์ "เพื่อนรัก" 3 ตอน (ดัดแปลงจากเรื่องเล่าทางบ้าน)
+- `friend01/` — "เพื่อนรัก" EP.1: `beats.json` `voices.json` (แพร Kore · ฝน Despina · แม่ฝน Gacrux · แม่แพร Sulafat) `FriendEp01.tsx` (ฉาก Flow เบลอ 2.5D + Slim) `script.md` `caption.txt` · ฉาก Flow: `ep-friend01-sets.md`
+- `yod/` — "เรื่องผีในวัด" (ดัดแปลงจากคลิปอาจารย์ยอด): `plan.md` (3 เรื่อง เรื่องย่อ ตัวละคร ฉาก Flow ช็อตลิสต์ C-1) · `transcript-asr.txt` (บทถอดเสียงจาก ASR ใช้อ่านอย่างเดียว)
 - `ep01/` — `beats.json` (บท + ผู้พูด + ฉาก), `timing.json` (จาก TTS), `Ep01.tsx` (ฉาก ซับ เสียง)
 
 ติดตั้ง: คัดลอกโฟลเดอร์นี้ (ยกเว้นไฟล์ .md) ไปที่ `src/episodes/ordertisam/` ของโปรเจกต์ แล้วใส่ `<OrderCompositions />` ใน `src/Root.tsx`
