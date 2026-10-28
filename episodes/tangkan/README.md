@@ -34,5 +34,8 @@ node scripts/stills-at.mjs Tangkan-EP01 out/tangkan/stills 10 230 480 870 1100 -
 node scripts/render-chunks.mjs Tangkan-EP01 out/tangkan/tangkan-ep01.mp4 --parts 2 --concurrency 3 --gl angle --loudness --glitch
 ```
 
+## เพจ
+- `page.md` ชื่อเพจ ชื่อผู้ใช้ คำแนะนำตัว About หมวดหมู่ โพสต์แรก · `Branding.tsx` ปก 1640×624 + โปรไฟล์ 1080×1080 (`TangkanPageCover` / `TangkanPageProfile`)
+
 ## ตอน
 - `ep01/` ผายมือ vs ผายลม: ปิดด้วย "ถ้าเผลอผายลมไปแล้ว ให้รีบผายมือไปทางคนข้างๆ" (ชี้ไปที่แมว)
