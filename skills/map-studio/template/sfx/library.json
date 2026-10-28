@@ -859,6 +859,95 @@
    "src": "mixkit",
    "mixkit": 1143,
    "title": "Cinematic whoosh deep impact"
+  },
+  {
+   "id": "fart_strong",
+   "cat": "comedy",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 3050,
+   "title": "Cartoon strong fart"
+  },
+  {
+   "id": "fart_small",
+   "cat": "comedy",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 2891,
+   "title": "Cartoon fart sound"
+  },
+  {
+   "id": "fart_triple",
+   "cat": "comedy",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 3055,
+   "title": "Cartoon fart triple"
+  },
+  {
+   "id": "trombone_fail",
+   "cat": "comedy",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 744,
+   "title": "Trombone disappoint"
+  },
+  {
+   "id": "boing_hit",
+   "cat": "comedy",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 2894,
+   "title": "Boing hit sound"
+  },
+  {
+   "id": "elevator_ding",
+   "cat": "building",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 2863,
+   "title": "Elevator tone"
+  },
+  {
+   "id": "door_slide_soft",
+   "cat": "building",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 1908,
+   "title": "Cupboard soft sliding door"
+  },
+  {
+   "id": "hotel_lobby",
+   "cat": "people",
+   "kind": "bed",
+   "src": "mixkit",
+   "mixkit": 365,
+   "title": "Hotel lobby crowd ambience and footsteps",
+   "len": 40
+  },
+  {
+   "id": "gasp_female",
+   "cat": "people",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 965,
+   "title": "Female shocked gasp"
+  },
+  {
+   "id": "gasp_male",
+   "cat": "people",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 966,
+   "title": "Male astonished gasp"
+  },
+  {
+   "id": "cat_meow_angry",
+   "cat": "animals",
+   "kind": "shot",
+   "src": "mixkit",
+   "mixkit": 94,
+   "title": "Angry cartoon kitty meow"
   }
  ]
 }

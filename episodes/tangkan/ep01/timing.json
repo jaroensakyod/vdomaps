@@ -1,0 +1,99 @@
+[
+  {
+    "id": "h1",
+    "file": "audio/tangkan/ep01/h1.wav",
+    "sec": 3.179917,
+    "voice": "Charon",
+    "text": "หลายคนยังสับสน ระหว่างผายมือ กับผายลม",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "h2",
+    "file": "audio/tangkan/ep01/h2.wav",
+    "sec": 1.479229,
+    "voice": "Charon",
+    "text": "วันนี้มาดูความต่างกันแบบชัดๆ ครับ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "a1",
+    "file": "audio/tangkan/ep01/a1.wav",
+    "sec": 3.621458,
+    "voice": "Charon",
+    "text": "ผายมือ ยื่นมือออกไปข้างหน้า อย่างสุภาพ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "a2",
+    "file": "audio/tangkan/ep01/a2.wav",
+    "sec": 3.218021,
+    "voice": "Charon",
+    "text": "ผายลม ไม่ต้องใช้มือ แต่ต้องเกร็งนิดนึง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "b1",
+    "file": "audio/tangkan/ep01/b1.wav",
+    "sec": 1.534438,
+    "voice": "Charon",
+    "text": "ผายมือ ไม่มีเสียง",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "b2",
+    "file": "audio/tangkan/ep01/b2.wav",
+    "sec": 2.820042,
+    "voice": "Charon",
+    "text": "ผายลม บางทีมีเสียง บางทีก็เงียบ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "b3",
+    "file": "audio/tangkan/ep01/b3.wav",
+    "sec": 1.611854,
+    "voice": "Charon",
+    "text": "ซึ่งแบบเงียบ อันตรายกว่ามาก",
+    "speed": 0.92,
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "c1",
+    "file": "audio/tangkan/ep01/c1.wav",
+    "sec": 2.096958,
+    "voice": "Charon",
+    "text": "ผายมือ ใช้เชิญคนเข้ามา",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "c2",
+    "file": "audio/tangkan/ep01/c2.wav",
+    "sec": 2.093104,
+    "voice": "Charon",
+    "text": "ผายลม ใช้เชิญคนออกไป",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "c3",
+    "file": "audio/tangkan/ep01/c3.wav",
+    "sec": 3.537458,
+    "voice": "Charon",
+    "text": "ส่วนระยะทำการ ขึ้นอยู่กับว่า เมื่อเที่ยงกินอะไรมา",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "e1",
+    "file": "audio/tangkan/ep01/e1.wav",
+    "sec": 2.532354,
+    "voice": "Algenib",
+    "text": "สรุปง่ายๆ นะครับ ถ้าเผลอผายลมไปแล้ว",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  {
+    "id": "e2",
+    "file": "audio/tangkan/ep01/e2.wav",
+    "sec": 2.165229,
+    "voice": "Algenib",
+    "text": "ให้รีบผายมือ ไปทางคนข้างๆ ทันทีครับ",
+    "model": "gemini-3.8-flash-lite-tts"
+  }
+]
