@@ -9,6 +9,7 @@ import { Ep06, E6_FRAMES } from "./ep06/Ep";
 import { Ep07, E7_FRAMES } from "./ep07/Ep";
 import { Ep08, E8_FRAMES } from "./ep08/Ep";
 import { Ep09, E9_FRAMES } from "./ep09/Ep";
+import { Mumate01, MUMATE01_FRAMES } from "./mumate01/Ep";
 import { Ep10, E10_FRAMES } from "./ep10/Ep";
 import { AntiqueTest, ANTIQUE_FRAMES } from "./lab/AntiqueTest";
 import { AntiqueTable, TABLE_FRAMES } from "./lab/AntiqueTable";
@@ -41,6 +42,7 @@ export const ThaiHistoryCompositions = () => (
     <Composition id="Ep07" component={Ep07} durationInFrames={E7_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep08" component={Ep08} durationInFrames={E8_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep09" component={Ep09} durationInFrames={E9_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Mumate01" component={Mumate01} durationInFrames={MUMATE01_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep10" component={Ep10} durationInFrames={E10_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="AntiqueTest" component={AntiqueTest} durationInFrames={ANTIQUE_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="AntiqueTable" component={AntiqueTable} durationInFrames={TABLE_FRAMES} fps={30} width={1080} height={1920} />
