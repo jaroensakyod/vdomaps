@@ -191,7 +191,7 @@ if (process.env.BATCH) {
 const need = process.env.BATCH ? chunks.length : todo.length;
 if (need) {
   const free = models.map((m) => [m, Math.max(0, left(m))]);
-  console.log(`quota: this run needs ~${need} request(s)${process.env.BATCH ? "" : " (BATCH=1 would need far fewer)"} · left today: ${free.map(([m, n]) => `${m} ${n}/${CAP}`).join(", ")}`);
+  console.log(`quota: this run needs ~${need} request(s)${process.env.BATCH || need <= 5 ? "" : " (BATCH=1 would need far fewer)"} · left today: ${free.map(([m, n]) => `${m} ${n}/${CAP}`).join(", ")}`);
   if (free[0][1] < need) {
     const total = free.reduce((a, [, n]) => a + n, 0);
     if (total < need && !process.env.QUOTA_OK)
