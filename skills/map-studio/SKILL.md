@@ -35,6 +35,12 @@ current step needs:
 5. **Lock the style** in `project/style.json` after the user approves the style frame, and reuse it for every
    episode so the channel looks consistent.
 6. **One scene = one idea.** A camera move, a fill, a label pop — never all at once.
+7. **TTS quota is a daily budget (Tier 1: 100 requests per TTS model per day, 10 a minute; Google counts refused
+   attempts too).** Always run `BATCH=1` for more than ~5 beats, read the `quota:` line before it starts, and never
+   loop re-runs on a 429. On "not enough TTS quota" or "daily TTS quota used up", stop and tell the user when it comes
+   back (midnight Pacific ≈ 14:00 Thailand, 15:00 outside US daylight time); don't hand-roll a per-beat fallback, a
+   second key or another project. Plan the day: one 10-min episode in BATCH ≈ 5–8 requests, per beat ≈ 60–80.
+   Details: `references/audio.md` → "Quota guard".
 
 ## House standard for every video (all channels)
 

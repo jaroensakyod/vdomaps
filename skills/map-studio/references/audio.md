@@ -8,6 +8,19 @@
   beat lengths then come straight from the audio, no alignment needed.
 
 ### Gemini TTS (tested, works for Thai) — `scripts/tts-gemini.mjs`
+
+#### Quota guard (added 29 Oct 2026 after a day of 127 logged requests hit both models' 100/day cap)
+- Cause that day: one episode (ep11) fell back to one request per beat = 78 requests, ten Shorts took 45 more,
+  and 429 retries were counted by Google but not by `costs.jsonl` — so the dashboard and the API disagreed.
+- `tts-quota.json` (git-ignored, project root) counts **every** HTTP attempt per model per Pacific day. Before the
+  first request the script prints `quota: this run needs ~N request(s) · left today: …` and stops if it cannot
+  finish (`TTS_DAILY_CAP`, default 100; `QUOTA_OK=1` overrides when the counter is wrong, e.g. after a tier upgrade).
+- Requests are spaced `TTS_GAP_MS` apart (default 7000 ms ≈ 8.5 a minute) so the 10-a-minute limit never answers 429.
+- A batch Whisper cannot cut cleanly is halved and retried (4+ beats); only chunks of 2–3 beats go per beat.
+- The first daily-cap answer (`generate_requests_per_model_per_day`) marks the model full and the error says when
+  the quota returns in Bangkok time. Finished beats stay in `timing.json`; re-run the same command then.
+- The ledger only sees this machine. Requests made elsewhere with the same key (another folder, Colab, AI Studio)
+  are not in it — if the API says capped while the ledger says free, trust the API.
 - Keys starting `AQ.` / `AIza` from Google AI Studio work with **Gemini TTS**, not with Cloud Text-to-Speech
   (that API rejects API keys: "API keys are not supported").
 - `GEMINI_API_KEY=... node scripts/tts-gemini.mjs <slug> [voice] [model]` reads `src/episodes/<slug>/beats.json`

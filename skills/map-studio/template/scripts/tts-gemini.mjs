@@ -15,6 +15,14 @@
 //
 // Daily cap: when a model says to wait hours, the script moves on to TTS_FALLBACK (default
 // gemini-3.8-flash-lite-tts, same voices, own quota) and marks those beats with "model" in timing.json.
+//
+// Quota guard (Tier 1 = 100 requests a day per TTS model, 10 a minute; Google counts every attempt, refused ones too):
+// - tts-quota.json (git-ignored) counts every HTTP attempt per model per Pacific day (Google resets at midnight
+//   Pacific = 14:00/15:00 in Thailand). Before any request the script prints what this run needs and what is left, and
+//   stops when it does not fit (TTS_DAILY_CAP, default 100; QUOTA_OK=1 runs anyway, e.g. after a tier upgrade).
+// - Requests are spaced TTS_GAP_MS apart (default 7000 ≈ 8.5 a minute), so the per-minute limit never answers 429.
+// - A batch that cannot be cut cleanly is split in half and retried (4+ beats), not redone one request per beat.
+// - The first daily-cap answer marks that model full in tts-quota.json and prints when the quota comes back.
 import "./env.mjs";
 import { meter } from "./gemini-cost.mjs";
 import { execFileSync } from "node:child_process";
@@ -37,6 +45,32 @@ mkdirSync(dir, { recursive: true });
 let requests = 0;
 const cost = meter("tts", slug);
 
+// Per-model request ledger for the current Pacific day (the day Google's daily quota counts in).
+const CAP = Number(process.env.TTS_DAILY_CAP ?? 100);
+const GAP = Number(process.env.TTS_GAP_MS ?? 7000);
+const QUOTA_FILE = "tts-quota.json";
+const pacificDay = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles" }).format(new Date());
+const ledger = () => {
+  const all = existsSync(QUOTA_FILE) ? JSON.parse(readFileSync(QUOTA_FILE, "utf8")) : {};
+  return all[pacificDay()] ?? {};
+};
+const book = (m, n, full = false) => {
+  const all = existsSync(QUOTA_FILE) ? JSON.parse(readFileSync(QUOTA_FILE, "utf8")) : {};
+  const day = pacificDay();
+  const today = (all[day] ??= {});
+  today[m] = full ? Math.max(CAP, (today[m] ?? 0) + n) : (today[m] ?? 0) + n;
+  writeFileSync(QUOTA_FILE, JSON.stringify({ [day]: today }, null, 1)); // older days are dropped
+};
+const left = (m) => CAP - (ledger()[m] ?? 0);
+// When the daily quota comes back: next midnight in Los Angeles, shown in Bangkok time.
+const resetAt = () => {
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone: "America/Los_Angeles", hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" })
+    .formatToParts(new Date()).map((x) => [x.type, Number(x.value)]));
+  const ms = (86400 - (p.hour * 3600 + p.minute * 60 + p.second)) * 1000;
+  return new Date(Date.now() + ms).toLocaleTimeString("th-TH", { timeZone: "Asia/Bangkok", hour: "2-digit", minute: "2-digit" });
+};
+let lastCall = 0;
+
 // One Gemini TTS request → 48 kHz WAV at `out` (untrimmed).
 const speak = async (text, voice, out) => {
   // Rate-limited keys: on 429, wait the delay the API suggests (or 30 s) and retry — unless it is the daily cap.
@@ -44,6 +78,10 @@ const speak = async (text, voice, out) => {
   for (let attempt = 1; ; attempt++) {
     // A dropped connection mid-response ("fetch failed", "other side closed") is retried too, after 15 s.
     try {
+      const wait = lastCall + GAP - Date.now();
+      if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+      lastCall = Date.now();
+      book(model, 1);
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -63,9 +101,10 @@ const speak = async (text, voice, out) => {
     if (json.error?.code !== 429 || attempt >= 8) break;
     const hint = JSON.stringify(json.error.details ?? []).match(/"retryDelay":"(\d+)s"/);
     const wait = (hint ? Number(hint[1]) : 30) + 2;
-    if (wait > 300) {
+    if (wait > 300 || /per_day|PerDay/.test(JSON.stringify(json.error))) {
+      book(model, 0, true);
       const next = models[models.indexOf(model) + 1];
-      if (!next) throw new Error(`daily TTS quota used up on ${models.join(", ")} (the API asks to wait ${(wait / 3600).toFixed(1)} h) — try again later`);
+      if (!next) throw new Error(`daily TTS quota used up on ${models.join(", ")} — it comes back at about ${resetAt()} (Bangkok); re-run then, finished beats are kept`);
       console.log(`  ⚠ daily quota used up on ${model} — switching to ${next}`);
       model = next;
       attempt = 0;
@@ -127,18 +166,17 @@ const perBeat = async (list) => {
     rmSync(take);
     timing.set(beat.id, t);
     console.log(beat.id.padEnd(10), t.sec.toFixed(2), t.voice);
+    save(); // a crash later keeps the beats made so far
   }
 };
 
-if (!process.env.BATCH) await perBeat(todo);
-else {
-  const { bare, charTimes, silences, snapToSilence, whisper } = await import("./whisper-lib.mjs");
+// Long episodes: at most BATCH_CHARS characters per request (default 1000, about 1.5 min of Thai), so a take stays
+// well inside the output limit of the model and one bad take costs little.
+const chunks = [];
+if (process.env.BATCH) {
   const groups = new Map();
   for (const b of todo) groups.set(voiceFor(b), [...(groups.get(voiceFor(b)) ?? []), b]);
-  // Long episodes: at most BATCH_CHARS characters per request (default 1000, about 1.5 min of Thai), so a take stays
-  // well inside the output limit of the model and one bad take costs little.
   const max = Number(process.env.BATCH_CHARS ?? 1000);
-  const chunks = [];
   for (const [voice, all] of groups) {
     let cur = [];
     for (const b of all) {
@@ -147,7 +185,26 @@ else {
     }
     chunks.push([voice, cur]);
   }
-  for (const [voice, list] of chunks) {
+}
+
+// Quota check before the first request: a run that cannot finish today should not start.
+const need = process.env.BATCH ? chunks.length : todo.length;
+if (need) {
+  const free = models.map((m) => [m, Math.max(0, left(m))]);
+  console.log(`quota: this run needs ~${need} request(s)${process.env.BATCH ? "" : " (BATCH=1 would need far fewer)"} · left today: ${free.map(([m, n]) => `${m} ${n}/${CAP}`).join(", ")}`);
+  if (free[0][1] < need) {
+    const total = free.reduce((a, [, n]) => a + n, 0);
+    if (total < need && !process.env.QUOTA_OK)
+      throw new Error(`not enough TTS quota today (${total} left, ${need} needed) — it comes back at about ${resetAt()} (Bangkok).${process.env.BATCH ? "" : " Use BATCH=1,"} QUOTA_OK=1 runs anyway if the counter is wrong`);
+    console.log(`  ⚠ ${models[0]} has only ${free[0][1]} left — some beats will be made on the fallback model (the voice may sound a little different)`);
+  }
+}
+
+if (!process.env.BATCH) await perBeat(todo);
+else {
+  const { bare, charTimes, silences, snapToSilence, whisper } = await import("./whisper-lib.mjs");
+  while (chunks.length) {
+    const [voice, list] = chunks.shift();
     if (list.length === 1) {
       await perBeat(list);
       continue;
@@ -170,9 +227,16 @@ else {
     const overlap = spans.some((sp, k) => k && sp[0] < spans[k - 1][1] - 0.05);
     console.log(`${voice}: ${list.length} beats in 1 request, ${total.toFixed(1)} s, match ${(score * 100).toFixed(0)}%${overlap ? ", paragraphs overlap" : ""}`);
     if (score < 0.75 || overlap) {
-      console.log(`  ⚠ cannot cut ${voice} cleanly — one request per beat instead`);
       rmSync(take), rmSync(wav16, { force: true }), rmSync(`${wav16}.json`, { force: true });
-      await perBeat(list);
+      // Halve and retry: two more requests instead of one per beat (a 20-beat chunk would cost 20).
+      if (list.length >= 4) {
+        const half = Math.ceil(list.length / 2);
+        console.log(`  ⚠ cannot cut ${voice} cleanly — retrying as two takes of ${half} and ${list.length - half} beats`);
+        chunks.unshift([voice, list.slice(0, half)], [voice, list.slice(half)]);
+      } else {
+        console.log(`  ⚠ cannot cut ${voice} cleanly — one request per beat instead`);
+        await perBeat(list);
+      }
       continue;
     }
     // Whisper runs a little late, so each cut moves into the nearest real silence of the take — unless that silence
