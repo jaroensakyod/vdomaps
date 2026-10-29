@@ -170,13 +170,13 @@ const perBeat = async (list) => {
   }
 };
 
-// Long episodes: at most BATCH_CHARS characters per request (default 1000, about 1.5 min of Thai), so a take stays
+// Long episodes: at most BATCH_CHARS characters per request (default 500, about 45 s of Thai): a take stays
 // well inside the output limit of the model and one bad take costs little.
 const chunks = [];
 if (process.env.BATCH) {
   const groups = new Map();
   for (const b of todo) groups.set(voiceFor(b), [...(groups.get(voiceFor(b)) ?? []), b]);
-  const max = Number(process.env.BATCH_CHARS ?? 1000);
+  const max = Number(process.env.BATCH_CHARS ?? 500);
   for (const [voice, all] of groups) {
     let cur = [];
     for (const b of all) {

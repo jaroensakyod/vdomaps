@@ -15,6 +15,8 @@ const BRANCH: Record<string, [El, string]> = {
   巳: ["fire", "งู"], 午: ["fire", "ม้า"], 未: ["earth", "แพะ"], 申: ["metal", "ลิง"], 酉: ["metal", "ไก่"],
   戌: ["earth", "หมา"], 亥: ["water", "หมู"],
 };
+// Mumate wordmark (white script, pink dot), from the brand file the user supplied.
+export const MumateLogo = ({ h }: { h: number }) => <Img src={staticFile("brand/mumate-white.png")} style={{ height: h, width: h * 4.32 }} />;
 const HAN = "'Noto Serif SC','Microsoft YaHei','SimSun',serif";
 
 const useS = () => {
@@ -90,7 +92,7 @@ export const BaziCard = ({ at, fill, glow = [] }: { at: [number, CardPos][]; fil
             );
           })}
         </div>
-        <div style={{ textAlign: "right", fontSize: 22 * s, marginTop: 12 * s, opacity: 0.75 }}>คำนวณด้วยระบบ Mumate</div>
+        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 10 * s, fontSize: 22 * s, marginTop: 12 * s, opacity: 0.85 }}>คำนวณด้วยระบบ <MumateLogo h={34 * s} /></div>
       </div>
     </div>
   );
@@ -269,7 +271,7 @@ export const MumateCTA = ({ from, to }: { from: number; to: number }) => {
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top: height * 0.12, display: "flex", flexDirection: "column", alignItems: "center", opacity: o, fontFamily: font, transform: `translateY(${(1 - k) * 60 * s}px)` }}>
       <div style={{ width: 560 * s, borderRadius: 60 * s, background: "linear-gradient(170deg,#1b1530,#0f1a2a)", border: `${6 * s}px solid #ffffff22`, boxShadow: `0 20px 80px rgba(0,0,0,0.7), 0 0 60px ${GOLD}44`, padding: `${40 * s}px ${36 * s}px`, color: "#fff", textAlign: "center" }}>
-        <div style={{ fontSize: 72 * s, fontWeight: 900, letterSpacing: 2 * s, background: `linear-gradient(90deg, ${GOLD}, #ffd9a8)`, WebkitBackgroundClip: "text", color: "transparent" }}>Mumate</div>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 * s }}><MumateLogo h={100 * s} /></div>
         <div style={{ fontSize: 30 * s, opacity: 0.85, marginBottom: 26 * s }}>ดวงปาจื้อใน LINE</div>
         <div style={{ display: "flex", justifyContent: "center", gap: 14 * s, marginBottom: 22 * s }}>
           {(["wood", "fire", "earth", "metal", "water"] as El[]).map((e, i) => {

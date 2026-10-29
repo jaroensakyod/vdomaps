@@ -8,6 +8,7 @@
     "data": "node scripts/fetch-data.mjs",
     "typecheck": "tsc --noEmit",
     "tts": "node scripts/tts-gemini.mjs",
+    "pitch": "node scripts/voice-pitch.mjs",
     "transcribe": "node scripts/transcribe.mjs",
     "align": "node scripts/align.mjs",
     "srt": "node scripts/srt.mjs",

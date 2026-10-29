@@ -41,6 +41,10 @@ current step needs:
    back (midnight Pacific ≈ 14:00 Thailand, 15:00 outside US daylight time); don't hand-roll a per-beat fallback, a
    second key or another project. Plan the day: one 10-min episode in BATCH ≈ 5–8 requests, per beat ≈ 60–80.
    Details: `references/audio.md` → "Quota guard".
+8. **One voice from start to end.** A long BATCH take drifts deeper paragraph by paragraph, and viewers hear "a
+   different voice" over that stretch. Keep `BATCH_CHARS` at the 500 default (never raise it to save requests), run
+   `npm run pitch -- <slug>` after every TTS run, and re-make flagged beats one request each before timing or
+   rendering. Never mix TTS models in one episode, and never fix a length mismatch by speeding a beat up more than ~5 %.
 
 ## House standard for every video (all channels)
 

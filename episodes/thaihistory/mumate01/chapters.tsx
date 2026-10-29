@@ -15,7 +15,7 @@ import { NightCrossScene, OrdainScene, RuinDigScene, WallAssaultScene } from "..
 import { ArmyArriveScene, ChronicleScene as RoyalChronicle, DawnRiverScene, DuskRiverScene, FortScene } from "../ep04/ch5";
 import { ChronicleScene as FadedChronicle } from "../ep04/ch6";
 import { B, BURMA_C, GOLD, RED, TAK_C, wp, type ChapterM } from "./beatsKit";
-import { ElementPoll, HookTitle, MumateCTA, PillarSlam, ThreeYears, TwoCards, YearChip, Cycle, LuckRibbon } from "./bazi";
+import { ElementPoll, HookTitle, MumateLogo, MumateCTA, PillarSlam, ThreeYears, TwoCards, YearChip, Cycle, LuckRibbon } from "./bazi";
 import { Bed, Hit, SFX } from "./mix";
 import { PL, ROUTE, VW } from "./places";
 import { ForgeScene, QuenchScene, SheathScene } from "./scenes";
@@ -569,7 +569,7 @@ const NextCard = ({ from, to }: { from: number; to: number }) => {
     <div style={{ position: "absolute", left: 0, right: 0, top: height * 0.22, textAlign: "center", fontFamily: font, color: "#fff", opacity: k }}>
       <div style={{ fontSize: 160 * s, fontWeight: 900, color: GOLD, textShadow: "0 6px 30px #000" }}>?</div>
       <div style={{ fontSize: 64 * s, fontWeight: 900, textShadow: "0 4px 20px #000" }}>ตอนหน้า ดวงของใคร?</div>
-      <div style={{ fontSize: 36 * s, marginTop: 20 * s, opacity: 0.9 }}>ประวัติศาสตร์บนแผนที่ × Mumate</div>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 16 * s, fontSize: 36 * s, marginTop: 20 * s }}>ประวัติศาสตร์บนแผนที่ × <MumateLogo h={58 * s} /></div>
     </div>
   );
 };

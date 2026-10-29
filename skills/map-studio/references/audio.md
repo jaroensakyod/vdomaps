@@ -9,6 +9,17 @@
 
 ### Gemini TTS (tested, works for Thai) — `scripts/tts-gemini.mjs`
 
+#### Voice drift (added 29 Oct 2026 after mumate01: "0:55–2:10 sounds like another voice")
+- In a BATCH take Gemini's narrator sinks as it reads on: 133 Hz in the first paragraph, ~103 Hz ten paragraphs
+  (≈1000 characters) later. Per-beat comparisons call every beat "same voice", but a run of low beats in a row is
+  clearly heard as a different, deeper narrator. The flash vs flash-lite models also differ.
+- Default `BATCH_CHARS` is now 500 (≈ 45 s of Thai, ~8–10 requests for a 10-min episode).
+- After TTS: `npm run pitch -- <slug>` lists each beat's median pitch and flags beats >10 % below the episode median
+  and any run of 3+ low beats. Remove flagged beats from `timing.json`, run `tts` without BATCH (one request each),
+  check again. Then `transcribe` the new takes (they can still mangle names — "Mumate" came back as "movement").
+- If the episode is already rendered: re-made beats change length, so re-time (`align` / `pause-words`) and
+  re-render. Stretching a new take to the old length is fine only within ~5 % (`atempo`); beyond that it is audible.
+
 #### Quota guard (added 29 Oct 2026 after a day of 127 logged requests hit both models' 100/day cap)
 - Cause that day: one episode (ep11) fell back to one request per beat = 78 requests, ten Shorts took 45 more,
   and 429 retries were counted by Google but not by `costs.jsonl` — so the dashboard and the API disagreed.
